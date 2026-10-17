@@ -1,6 +1,7 @@
 ---
 name: "go-roark"
-description: "Write Go integrations with the unofficial Roark API client for voice AI agents, calls, chats, simulations, run plans, personas, metrics and monitoring. Use when Go code needs Roark API access or already imports github.com/psyb0t/go-roark."
+description: "Unofficial Go client for the Roark voice AI agent testing and monitoring API. Package roark (github.com/psyb0t/go-roark), generated with oapi-codegen, has typed methods for agents, calls and transcripts, chats, simulations, run plans, personas, metrics, webhooks and projects, authenticated with a bearer key. Use when Go code needs Roark API access or already imports github.com/psyb0t/go-roark."
+license: MIT
 homepage: https://github.com/psyb0t/go-roark
 user-invocable: true
 metadata:
@@ -9,8 +10,6 @@ metadata:
     requires:
       bins:
         - go
-      env:
-        - ROARK_API_KEY
 permissions:
   filesystem: "Guides edits to the Go source of the current project. The library reads and writes no files."
   shell: "The Go toolchain (`go get`, `go build`, `go test`) to add and compile the dependency."
@@ -23,7 +22,7 @@ Unofficial, typed Go client for the Roark API, in package `roark` at the module 
 
 Read [references/setup.md](references/setup.md) before choosing an operation. It covers installation, project selection, operation names, pagination and response handling.
 
-## Security and safety
+## Security & safety
 
 - Read the bearer credential from `ROARK_API_KEY`. Never hardcode, commit or log it, and never print a request with its `Authorization` header.
 - Use `https://api.roark.ai`. Project-scoped API keys are bound to one project. User-scoped credentials can select an accessible project through `X-Roark-Project-Id` in the request editor.
@@ -36,11 +35,25 @@ Read [references/setup.md](references/setup.md) before choosing an operation. It
 - Go code needs to run voice AI simulations or manage Roark test resources, at the user's request.
 - The project already imports `github.com/psyb0t/go-roark`.
 
-## When not to use
+## When NOT to use
 
 - The code is not Go. This module ships only a Go package.
 - You need a client maintained by Roark. This one is unofficial and not affiliated with Roark.
 - You want to change the generated client itself. See `AGENTS.md` in the repository.
+
+## Finding endpoints and types
+
+The examples below cover a few calls. Every operation in the spec has a generated method, and the spec's descriptions are on them as Go doc comments. Look names and fields up instead of guessing. After `go get github.com/psyb0t/go-roark`, from inside your module:
+
+```bash
+go doc github.com/psyb0t/go-roark ClientWithResponsesInterface  # every endpoint method
+go doc github.com/psyb0t/go-roark GetV1CallParams               # one method, params type or model
+go doc -all github.com/psyb0t/go-roark                          # the whole package
+```
+
+The same documentation is at https://pkg.go.dev/github.com/psyb0t/go-roark.
+
+Method names come from the spec's operation IDs. `<OperationId>WithResponse` takes the context, then the path parameters in order, then `*<OperationId>Params` when the operation has query or header parameters, then the request body when it has one. The `JSON200` field (or `JSON201` and so on, per declared status) holds the decoded body; it is nil for any other status. The spec's operation IDs spell out the method and route, so `GET /v1/call/{callId}/transcript` is `GetV1CallByCallIdTranscriptWithResponse`.
 
 ## Usage
 

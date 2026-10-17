@@ -54,6 +54,8 @@ func main() {
 
 The same code is in `example_test.go`, so `make test` checks that it compiles.
 
+The full API is in the [Go reference](https://pkg.go.dev/github.com/psyb0t/go-roark); from inside your module, `go doc github.com/psyb0t/go-roark` prints the same.
+
 The client covers all 160 operations across 107 paths in the source spec: agents and prompts, calls and transcripts, chats, personas, simulations and run plans, metrics and collection jobs, customer flows, webhooks, issues, managed configuration, knowledge bases, organization projects and benchmarks. Method names follow the spec's operation IDs, normalized to Go identifiers.
 
 ## Auth

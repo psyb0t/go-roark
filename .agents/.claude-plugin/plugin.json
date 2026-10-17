@@ -1,0 +1,19 @@
+{
+  "name": "go-roark",
+  "description": "Unofficial Go client for the Roark API: voice AI agents, calls, chats, simulations, metrics and monitoring, generated from the spec Roark publishes.",
+  "author": {
+    "name": "psyb0t",
+    "url": "https://github.com/psyb0t"
+  },
+  "homepage": "https://github.com/psyb0t/go-roark",
+  "license": "MIT",
+  "keywords": [
+    "roark",
+    "voice-ai",
+    "testing",
+    "monitoring",
+    "api-client",
+    "go-library",
+    "openapi"
+  ]
+}

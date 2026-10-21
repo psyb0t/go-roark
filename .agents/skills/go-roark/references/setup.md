@@ -4,7 +4,7 @@ This module is unofficial and not affiliated with Roark.
 
 ## Requirements
 
-- Go 1.26.9 or newer, per the module's `go.mod`.
+- Go 1.26.10 or newer, per the module's `go.mod`.
 - A Roark bearer credential exported as `ROARK_API_KEY`.
 
 ## Install

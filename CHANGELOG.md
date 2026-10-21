@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.1.2, 2026-10-21
+
+- Added dashboard endpoints: `GetV1Dashboard`, `PostV1Dashboard`, `GetV1DashboardByDashboardId`, `PutV1DashboardByDashboardId`, `DeleteV1DashboardByDashboardId` and `GetV1DashboardByDashboardIdData`.
+- Added widget endpoints: `PostV1DashboardByDashboardIdWidget`, `PutV1DashboardByDashboardIdWidgetByWidgetId`, `DeleteV1DashboardByDashboardIdWidgetByWidgetId` and `GetV1DashboardByDashboardIdWidgetByWidgetIdData`.
+- Added analytics endpoints: `PostV1AnalyticsQuery` and `GetV1AnalyticsSchema`.
+- Added cost endpoints: `GetV1CallByCallIdCost` and `GetV1SimulationPlanJobByJobIdCost`.
+- Each new operation has `Client` methods, `WithBody` variants where the request has a body, and `WithResponse` methods on `ClientWithResponses`, plus new request and response types and enums such as `AnalyticsQueryComparisonGroupsColor`.
+- `ClientInterface` and `ClientWithResponsesInterface` gained the matching methods. Code that implements these interfaces, such as test mocks, must add them.
+- The Go toolchain and the `go` line in `go.mod` moved from 1.26.9 to 1.26.10, which fixes GO-2026-6809 in `crypto/x509`. The development image and the setup guide use the same version.
+
 ## v0.1.1, 2026-10-17
 
 - Documentation only. The agent skill explains how to look up every endpoint, parameter and model with `go doc` or on pkg.go.dev, and declares its license.

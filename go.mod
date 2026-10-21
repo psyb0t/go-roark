@@ -1,6 +1,6 @@
 module github.com/psyb0t/go-roark
 
-go 1.26.9
+go 1.26.10
 
 require (
 	github.com/oapi-codegen/runtime v1.7.0

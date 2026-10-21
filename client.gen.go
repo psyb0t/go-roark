@@ -472,6 +472,993 @@ func (e AlertThresholdTriggerType) Valid() bool {
 	}
 }
 
+// Defines values for AnalyticsQueryComparisonGroupsColor.
+const (
+	AnalyticsQueryComparisonGroupsColorAMBER  AnalyticsQueryComparisonGroupsColor = "AMBER"
+	AnalyticsQueryComparisonGroupsColorBLUE   AnalyticsQueryComparisonGroupsColor = "BLUE"
+	AnalyticsQueryComparisonGroupsColorCYAN   AnalyticsQueryComparisonGroupsColor = "CYAN"
+	AnalyticsQueryComparisonGroupsColorGREEN  AnalyticsQueryComparisonGroupsColor = "GREEN"
+	AnalyticsQueryComparisonGroupsColorGREY   AnalyticsQueryComparisonGroupsColor = "GREY"
+	AnalyticsQueryComparisonGroupsColorINDIGO AnalyticsQueryComparisonGroupsColor = "INDIGO"
+	AnalyticsQueryComparisonGroupsColorORANGE AnalyticsQueryComparisonGroupsColor = "ORANGE"
+	AnalyticsQueryComparisonGroupsColorPEACH  AnalyticsQueryComparisonGroupsColor = "PEACH"
+	AnalyticsQueryComparisonGroupsColorPURPLE AnalyticsQueryComparisonGroupsColor = "PURPLE"
+	AnalyticsQueryComparisonGroupsColorRED    AnalyticsQueryComparisonGroupsColor = "RED"
+	AnalyticsQueryComparisonGroupsColorROSE   AnalyticsQueryComparisonGroupsColor = "ROSE"
+	AnalyticsQueryComparisonGroupsColorTEAL   AnalyticsQueryComparisonGroupsColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryComparisonGroupsColor enum.
+func (e AnalyticsQueryComparisonGroupsColor) Valid() bool {
+	switch e {
+	case AnalyticsQueryComparisonGroupsColorAMBER:
+		return true
+	case AnalyticsQueryComparisonGroupsColorBLUE:
+		return true
+	case AnalyticsQueryComparisonGroupsColorCYAN:
+		return true
+	case AnalyticsQueryComparisonGroupsColorGREEN:
+		return true
+	case AnalyticsQueryComparisonGroupsColorGREY:
+		return true
+	case AnalyticsQueryComparisonGroupsColorINDIGO:
+		return true
+	case AnalyticsQueryComparisonGroupsColorORANGE:
+		return true
+	case AnalyticsQueryComparisonGroupsColorPEACH:
+		return true
+	case AnalyticsQueryComparisonGroupsColorPURPLE:
+		return true
+	case AnalyticsQueryComparisonGroupsColorRED:
+		return true
+	case AnalyticsQueryComparisonGroupsColorROSE:
+		return true
+	case AnalyticsQueryComparisonGroupsColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryComparisonGroupsFiltersOperator.
+const (
+	AnalyticsQueryComparisonGroupsFiltersOperatorCONTAINS             AnalyticsQueryComparisonGroupsFiltersOperator = "CONTAINS"
+	AnalyticsQueryComparisonGroupsFiltersOperatorEQUALS               AnalyticsQueryComparisonGroupsFiltersOperator = "EQUALS"
+	AnalyticsQueryComparisonGroupsFiltersOperatorGREATERTHAN          AnalyticsQueryComparisonGroupsFiltersOperator = "GREATER_THAN"
+	AnalyticsQueryComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO AnalyticsQueryComparisonGroupsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	AnalyticsQueryComparisonGroupsFiltersOperatorLESSTHAN             AnalyticsQueryComparisonGroupsFiltersOperator = "LESS_THAN"
+	AnalyticsQueryComparisonGroupsFiltersOperatorLESSTHANOREQUALTO    AnalyticsQueryComparisonGroupsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	AnalyticsQueryComparisonGroupsFiltersOperatorNOTEQUALS            AnalyticsQueryComparisonGroupsFiltersOperator = "NOT_EQUALS"
+	AnalyticsQueryComparisonGroupsFiltersOperatorSTARTSWITH           AnalyticsQueryComparisonGroupsFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryComparisonGroupsFiltersOperator enum.
+func (e AnalyticsQueryComparisonGroupsFiltersOperator) Valid() bool {
+	switch e {
+	case AnalyticsQueryComparisonGroupsFiltersOperatorCONTAINS:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersOperatorEQUALS:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersOperatorGREATERTHAN:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersOperatorLESSTHAN:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersOperatorNOTEQUALS:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryComparisonGroupsFiltersType.
+const (
+	AnalyticsQueryComparisonGroupsFiltersTypeAGENTPROPERTY  AnalyticsQueryComparisonGroupsFiltersType = "AGENT_PROPERTY"
+	AnalyticsQueryComparisonGroupsFiltersTypeCALLID         AnalyticsQueryComparisonGroupsFiltersType = "CALL_ID"
+	AnalyticsQueryComparisonGroupsFiltersTypeCALLPROPERTY   AnalyticsQueryComparisonGroupsFiltersType = "CALL_PROPERTY"
+	AnalyticsQueryComparisonGroupsFiltersTypeDATASET        AnalyticsQueryComparisonGroupsFiltersType = "DATASET"
+	AnalyticsQueryComparisonGroupsFiltersTypeMETRICPROPERTY AnalyticsQueryComparisonGroupsFiltersType = "METRIC_PROPERTY"
+	AnalyticsQueryComparisonGroupsFiltersTypeMETRICVALUE    AnalyticsQueryComparisonGroupsFiltersType = "METRIC_VALUE"
+	AnalyticsQueryComparisonGroupsFiltersTypeMODALITY       AnalyticsQueryComparisonGroupsFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryComparisonGroupsFiltersType enum.
+func (e AnalyticsQueryComparisonGroupsFiltersType) Valid() bool {
+	switch e {
+	case AnalyticsQueryComparisonGroupsFiltersTypeAGENTPROPERTY:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersTypeCALLID:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersTypeCALLPROPERTY:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersTypeDATASET:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersTypeMETRICPROPERTY:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersTypeMETRICVALUE:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryComparisonMode.
+const (
+	AnalyticsQueryComparisonModeNONE           AnalyticsQueryComparisonMode = "NONE"
+	AnalyticsQueryComparisonModePREVIOUSPERIOD AnalyticsQueryComparisonMode = "PREVIOUS_PERIOD"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryComparisonMode enum.
+func (e AnalyticsQueryComparisonMode) Valid() bool {
+	switch e {
+	case AnalyticsQueryComparisonModeNONE:
+		return true
+	case AnalyticsQueryComparisonModePREVIOUSPERIOD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryFiltersOperator.
+const (
+	AnalyticsQueryFiltersOperatorCONTAINS             AnalyticsQueryFiltersOperator = "CONTAINS"
+	AnalyticsQueryFiltersOperatorEQUALS               AnalyticsQueryFiltersOperator = "EQUALS"
+	AnalyticsQueryFiltersOperatorGREATERTHAN          AnalyticsQueryFiltersOperator = "GREATER_THAN"
+	AnalyticsQueryFiltersOperatorGREATERTHANOREQUALTO AnalyticsQueryFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	AnalyticsQueryFiltersOperatorLESSTHAN             AnalyticsQueryFiltersOperator = "LESS_THAN"
+	AnalyticsQueryFiltersOperatorLESSTHANOREQUALTO    AnalyticsQueryFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	AnalyticsQueryFiltersOperatorNOTEQUALS            AnalyticsQueryFiltersOperator = "NOT_EQUALS"
+	AnalyticsQueryFiltersOperatorSTARTSWITH           AnalyticsQueryFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryFiltersOperator enum.
+func (e AnalyticsQueryFiltersOperator) Valid() bool {
+	switch e {
+	case AnalyticsQueryFiltersOperatorCONTAINS:
+		return true
+	case AnalyticsQueryFiltersOperatorEQUALS:
+		return true
+	case AnalyticsQueryFiltersOperatorGREATERTHAN:
+		return true
+	case AnalyticsQueryFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case AnalyticsQueryFiltersOperatorLESSTHAN:
+		return true
+	case AnalyticsQueryFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case AnalyticsQueryFiltersOperatorNOTEQUALS:
+		return true
+	case AnalyticsQueryFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryFiltersType.
+const (
+	AnalyticsQueryFiltersTypeAGENTPROPERTY  AnalyticsQueryFiltersType = "AGENT_PROPERTY"
+	AnalyticsQueryFiltersTypeCALLID         AnalyticsQueryFiltersType = "CALL_ID"
+	AnalyticsQueryFiltersTypeCALLPROPERTY   AnalyticsQueryFiltersType = "CALL_PROPERTY"
+	AnalyticsQueryFiltersTypeDATASET        AnalyticsQueryFiltersType = "DATASET"
+	AnalyticsQueryFiltersTypeMETRICPROPERTY AnalyticsQueryFiltersType = "METRIC_PROPERTY"
+	AnalyticsQueryFiltersTypeMETRICVALUE    AnalyticsQueryFiltersType = "METRIC_VALUE"
+	AnalyticsQueryFiltersTypeMODALITY       AnalyticsQueryFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryFiltersType enum.
+func (e AnalyticsQueryFiltersType) Valid() bool {
+	switch e {
+	case AnalyticsQueryFiltersTypeAGENTPROPERTY:
+		return true
+	case AnalyticsQueryFiltersTypeCALLID:
+		return true
+	case AnalyticsQueryFiltersTypeCALLPROPERTY:
+		return true
+	case AnalyticsQueryFiltersTypeDATASET:
+		return true
+	case AnalyticsQueryFiltersTypeMETRICPROPERTY:
+		return true
+	case AnalyticsQueryFiltersTypeMETRICVALUE:
+		return true
+	case AnalyticsQueryFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryInterval.
+const (
+	AnalyticsQueryIntervalDAY   AnalyticsQueryInterval = "DAY"
+	AnalyticsQueryIntervalHOUR  AnalyticsQueryInterval = "HOUR"
+	AnalyticsQueryIntervalMONTH AnalyticsQueryInterval = "MONTH"
+	AnalyticsQueryIntervalWEEK  AnalyticsQueryInterval = "WEEK"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryInterval enum.
+func (e AnalyticsQueryInterval) Valid() bool {
+	switch e {
+	case AnalyticsQueryIntervalDAY:
+		return true
+	case AnalyticsQueryIntervalHOUR:
+		return true
+	case AnalyticsQueryIntervalMONTH:
+		return true
+	case AnalyticsQueryIntervalWEEK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryMeasuresAggregation.
+const (
+	AnalyticsQueryMeasuresAggregationAVG        AnalyticsQueryMeasuresAggregation = "AVG"
+	AnalyticsQueryMeasuresAggregationCOUNT      AnalyticsQueryMeasuresAggregation = "COUNT"
+	AnalyticsQueryMeasuresAggregationMAX        AnalyticsQueryMeasuresAggregation = "MAX"
+	AnalyticsQueryMeasuresAggregationMEDIAN     AnalyticsQueryMeasuresAggregation = "MEDIAN"
+	AnalyticsQueryMeasuresAggregationMIN        AnalyticsQueryMeasuresAggregation = "MIN"
+	AnalyticsQueryMeasuresAggregationPASSRATE   AnalyticsQueryMeasuresAggregation = "PASS_RATE"
+	AnalyticsQueryMeasuresAggregationPERCENTILE AnalyticsQueryMeasuresAggregation = "PERCENTILE"
+	AnalyticsQueryMeasuresAggregationSUM        AnalyticsQueryMeasuresAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryMeasuresAggregation enum.
+func (e AnalyticsQueryMeasuresAggregation) Valid() bool {
+	switch e {
+	case AnalyticsQueryMeasuresAggregationAVG:
+		return true
+	case AnalyticsQueryMeasuresAggregationCOUNT:
+		return true
+	case AnalyticsQueryMeasuresAggregationMAX:
+		return true
+	case AnalyticsQueryMeasuresAggregationMEDIAN:
+		return true
+	case AnalyticsQueryMeasuresAggregationMIN:
+		return true
+	case AnalyticsQueryMeasuresAggregationPASSRATE:
+		return true
+	case AnalyticsQueryMeasuresAggregationPERCENTILE:
+		return true
+	case AnalyticsQueryMeasuresAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryMeasuresBreakdownType.
+const (
+	AnalyticsQueryMeasuresBreakdownTypeAGENTPROPERTY  AnalyticsQueryMeasuresBreakdownType = "AGENT_PROPERTY"
+	AnalyticsQueryMeasuresBreakdownTypeCALLPROPERTY   AnalyticsQueryMeasuresBreakdownType = "CALL_PROPERTY"
+	AnalyticsQueryMeasuresBreakdownTypeDATASET        AnalyticsQueryMeasuresBreakdownType = "DATASET"
+	AnalyticsQueryMeasuresBreakdownTypeMETRICPROPERTY AnalyticsQueryMeasuresBreakdownType = "METRIC_PROPERTY"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryMeasuresBreakdownType enum.
+func (e AnalyticsQueryMeasuresBreakdownType) Valid() bool {
+	switch e {
+	case AnalyticsQueryMeasuresBreakdownTypeAGENTPROPERTY:
+		return true
+	case AnalyticsQueryMeasuresBreakdownTypeCALLPROPERTY:
+		return true
+	case AnalyticsQueryMeasuresBreakdownTypeDATASET:
+		return true
+	case AnalyticsQueryMeasuresBreakdownTypeMETRICPROPERTY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryMeasuresColor.
+const (
+	AnalyticsQueryMeasuresColorAMBER  AnalyticsQueryMeasuresColor = "AMBER"
+	AnalyticsQueryMeasuresColorBLUE   AnalyticsQueryMeasuresColor = "BLUE"
+	AnalyticsQueryMeasuresColorCYAN   AnalyticsQueryMeasuresColor = "CYAN"
+	AnalyticsQueryMeasuresColorGREEN  AnalyticsQueryMeasuresColor = "GREEN"
+	AnalyticsQueryMeasuresColorGREY   AnalyticsQueryMeasuresColor = "GREY"
+	AnalyticsQueryMeasuresColorINDIGO AnalyticsQueryMeasuresColor = "INDIGO"
+	AnalyticsQueryMeasuresColorORANGE AnalyticsQueryMeasuresColor = "ORANGE"
+	AnalyticsQueryMeasuresColorPEACH  AnalyticsQueryMeasuresColor = "PEACH"
+	AnalyticsQueryMeasuresColorPURPLE AnalyticsQueryMeasuresColor = "PURPLE"
+	AnalyticsQueryMeasuresColorRED    AnalyticsQueryMeasuresColor = "RED"
+	AnalyticsQueryMeasuresColorROSE   AnalyticsQueryMeasuresColor = "ROSE"
+	AnalyticsQueryMeasuresColorTEAL   AnalyticsQueryMeasuresColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryMeasuresColor enum.
+func (e AnalyticsQueryMeasuresColor) Valid() bool {
+	switch e {
+	case AnalyticsQueryMeasuresColorAMBER:
+		return true
+	case AnalyticsQueryMeasuresColorBLUE:
+		return true
+	case AnalyticsQueryMeasuresColorCYAN:
+		return true
+	case AnalyticsQueryMeasuresColorGREEN:
+		return true
+	case AnalyticsQueryMeasuresColorGREY:
+		return true
+	case AnalyticsQueryMeasuresColorINDIGO:
+		return true
+	case AnalyticsQueryMeasuresColorORANGE:
+		return true
+	case AnalyticsQueryMeasuresColorPEACH:
+		return true
+	case AnalyticsQueryMeasuresColorPURPLE:
+		return true
+	case AnalyticsQueryMeasuresColorRED:
+		return true
+	case AnalyticsQueryMeasuresColorROSE:
+		return true
+	case AnalyticsQueryMeasuresColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryMeasuresDistinctBy.
+const (
+	AnalyticsQueryMeasuresDistinctByCALL AnalyticsQueryMeasuresDistinctBy = "CALL"
+	AnalyticsQueryMeasuresDistinctByNONE AnalyticsQueryMeasuresDistinctBy = "NONE"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryMeasuresDistinctBy enum.
+func (e AnalyticsQueryMeasuresDistinctBy) Valid() bool {
+	switch e {
+	case AnalyticsQueryMeasuresDistinctByCALL:
+		return true
+	case AnalyticsQueryMeasuresDistinctByNONE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryMeasuresFiltersOperator.
+const (
+	AnalyticsQueryMeasuresFiltersOperatorCONTAINS             AnalyticsQueryMeasuresFiltersOperator = "CONTAINS"
+	AnalyticsQueryMeasuresFiltersOperatorEQUALS               AnalyticsQueryMeasuresFiltersOperator = "EQUALS"
+	AnalyticsQueryMeasuresFiltersOperatorGREATERTHAN          AnalyticsQueryMeasuresFiltersOperator = "GREATER_THAN"
+	AnalyticsQueryMeasuresFiltersOperatorGREATERTHANOREQUALTO AnalyticsQueryMeasuresFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	AnalyticsQueryMeasuresFiltersOperatorLESSTHAN             AnalyticsQueryMeasuresFiltersOperator = "LESS_THAN"
+	AnalyticsQueryMeasuresFiltersOperatorLESSTHANOREQUALTO    AnalyticsQueryMeasuresFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	AnalyticsQueryMeasuresFiltersOperatorNOTEQUALS            AnalyticsQueryMeasuresFiltersOperator = "NOT_EQUALS"
+	AnalyticsQueryMeasuresFiltersOperatorSTARTSWITH           AnalyticsQueryMeasuresFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryMeasuresFiltersOperator enum.
+func (e AnalyticsQueryMeasuresFiltersOperator) Valid() bool {
+	switch e {
+	case AnalyticsQueryMeasuresFiltersOperatorCONTAINS:
+		return true
+	case AnalyticsQueryMeasuresFiltersOperatorEQUALS:
+		return true
+	case AnalyticsQueryMeasuresFiltersOperatorGREATERTHAN:
+		return true
+	case AnalyticsQueryMeasuresFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case AnalyticsQueryMeasuresFiltersOperatorLESSTHAN:
+		return true
+	case AnalyticsQueryMeasuresFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case AnalyticsQueryMeasuresFiltersOperatorNOTEQUALS:
+		return true
+	case AnalyticsQueryMeasuresFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryMeasuresFiltersType.
+const (
+	AnalyticsQueryMeasuresFiltersTypeAGENTPROPERTY  AnalyticsQueryMeasuresFiltersType = "AGENT_PROPERTY"
+	AnalyticsQueryMeasuresFiltersTypeCALLID         AnalyticsQueryMeasuresFiltersType = "CALL_ID"
+	AnalyticsQueryMeasuresFiltersTypeCALLPROPERTY   AnalyticsQueryMeasuresFiltersType = "CALL_PROPERTY"
+	AnalyticsQueryMeasuresFiltersTypeDATASET        AnalyticsQueryMeasuresFiltersType = "DATASET"
+	AnalyticsQueryMeasuresFiltersTypeMETRICPROPERTY AnalyticsQueryMeasuresFiltersType = "METRIC_PROPERTY"
+	AnalyticsQueryMeasuresFiltersTypeMETRICVALUE    AnalyticsQueryMeasuresFiltersType = "METRIC_VALUE"
+	AnalyticsQueryMeasuresFiltersTypeMODALITY       AnalyticsQueryMeasuresFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryMeasuresFiltersType enum.
+func (e AnalyticsQueryMeasuresFiltersType) Valid() bool {
+	switch e {
+	case AnalyticsQueryMeasuresFiltersTypeAGENTPROPERTY:
+		return true
+	case AnalyticsQueryMeasuresFiltersTypeCALLID:
+		return true
+	case AnalyticsQueryMeasuresFiltersTypeCALLPROPERTY:
+		return true
+	case AnalyticsQueryMeasuresFiltersTypeDATASET:
+		return true
+	case AnalyticsQueryMeasuresFiltersTypeMETRICPROPERTY:
+		return true
+	case AnalyticsQueryMeasuresFiltersTypeMETRICVALUE:
+		return true
+	case AnalyticsQueryMeasuresFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryMeasuresNestedAggregation.
+const (
+	AnalyticsQueryMeasuresNestedAggregationAVG        AnalyticsQueryMeasuresNestedAggregation = "AVG"
+	AnalyticsQueryMeasuresNestedAggregationCOUNT      AnalyticsQueryMeasuresNestedAggregation = "COUNT"
+	AnalyticsQueryMeasuresNestedAggregationMAX        AnalyticsQueryMeasuresNestedAggregation = "MAX"
+	AnalyticsQueryMeasuresNestedAggregationMEDIAN     AnalyticsQueryMeasuresNestedAggregation = "MEDIAN"
+	AnalyticsQueryMeasuresNestedAggregationMIN        AnalyticsQueryMeasuresNestedAggregation = "MIN"
+	AnalyticsQueryMeasuresNestedAggregationPASSRATE   AnalyticsQueryMeasuresNestedAggregation = "PASS_RATE"
+	AnalyticsQueryMeasuresNestedAggregationPERCENTILE AnalyticsQueryMeasuresNestedAggregation = "PERCENTILE"
+	AnalyticsQueryMeasuresNestedAggregationSUM        AnalyticsQueryMeasuresNestedAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryMeasuresNestedAggregation enum.
+func (e AnalyticsQueryMeasuresNestedAggregation) Valid() bool {
+	switch e {
+	case AnalyticsQueryMeasuresNestedAggregationAVG:
+		return true
+	case AnalyticsQueryMeasuresNestedAggregationCOUNT:
+		return true
+	case AnalyticsQueryMeasuresNestedAggregationMAX:
+		return true
+	case AnalyticsQueryMeasuresNestedAggregationMEDIAN:
+		return true
+	case AnalyticsQueryMeasuresNestedAggregationMIN:
+		return true
+	case AnalyticsQueryMeasuresNestedAggregationPASSRATE:
+		return true
+	case AnalyticsQueryMeasuresNestedAggregationPERCENTILE:
+		return true
+	case AnalyticsQueryMeasuresNestedAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryMeasuresPassOperator.
+const (
+	AnalyticsQueryMeasuresPassOperatorCONTAINS             AnalyticsQueryMeasuresPassOperator = "CONTAINS"
+	AnalyticsQueryMeasuresPassOperatorEQUALS               AnalyticsQueryMeasuresPassOperator = "EQUALS"
+	AnalyticsQueryMeasuresPassOperatorGREATERTHAN          AnalyticsQueryMeasuresPassOperator = "GREATER_THAN"
+	AnalyticsQueryMeasuresPassOperatorGREATERTHANOREQUALTO AnalyticsQueryMeasuresPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	AnalyticsQueryMeasuresPassOperatorLESSTHAN             AnalyticsQueryMeasuresPassOperator = "LESS_THAN"
+	AnalyticsQueryMeasuresPassOperatorLESSTHANOREQUALTO    AnalyticsQueryMeasuresPassOperator = "LESS_THAN_OR_EQUAL_TO"
+	AnalyticsQueryMeasuresPassOperatorNOTEQUALS            AnalyticsQueryMeasuresPassOperator = "NOT_EQUALS"
+	AnalyticsQueryMeasuresPassOperatorSTARTSWITH           AnalyticsQueryMeasuresPassOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryMeasuresPassOperator enum.
+func (e AnalyticsQueryMeasuresPassOperator) Valid() bool {
+	switch e {
+	case AnalyticsQueryMeasuresPassOperatorCONTAINS:
+		return true
+	case AnalyticsQueryMeasuresPassOperatorEQUALS:
+		return true
+	case AnalyticsQueryMeasuresPassOperatorGREATERTHAN:
+		return true
+	case AnalyticsQueryMeasuresPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case AnalyticsQueryMeasuresPassOperatorLESSTHAN:
+		return true
+	case AnalyticsQueryMeasuresPassOperatorLESSTHANOREQUALTO:
+		return true
+	case AnalyticsQueryMeasuresPassOperatorNOTEQUALS:
+		return true
+	case AnalyticsQueryMeasuresPassOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryMeasuresType.
+const (
+	AnalyticsQueryMeasuresTypeCONVERSATION AnalyticsQueryMeasuresType = "CONVERSATION"
+	AnalyticsQueryMeasuresTypeMETRIC       AnalyticsQueryMeasuresType = "METRIC"
+	AnalyticsQueryMeasuresTypeUPTIME       AnalyticsQueryMeasuresType = "UPTIME"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryMeasuresType enum.
+func (e AnalyticsQueryMeasuresType) Valid() bool {
+	switch e {
+	case AnalyticsQueryMeasuresTypeCONVERSATION:
+		return true
+	case AnalyticsQueryMeasuresTypeMETRIC:
+		return true
+	case AnalyticsQueryMeasuresTypeUPTIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryTimeRange0Type.
+const (
+	AnalyticsQueryTimeRange0TypeLAST AnalyticsQueryTimeRange0Type = "LAST"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryTimeRange0Type enum.
+func (e AnalyticsQueryTimeRange0Type) Valid() bool {
+	switch e {
+	case AnalyticsQueryTimeRange0TypeLAST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryTimeRange0Unit.
+const (
+	AnalyticsQueryTimeRange0UnitDAYS   AnalyticsQueryTimeRange0Unit = "DAYS"
+	AnalyticsQueryTimeRange0UnitMONTHS AnalyticsQueryTimeRange0Unit = "MONTHS"
+	AnalyticsQueryTimeRange0UnitWEEKS  AnalyticsQueryTimeRange0Unit = "WEEKS"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryTimeRange0Unit enum.
+func (e AnalyticsQueryTimeRange0Unit) Valid() bool {
+	switch e {
+	case AnalyticsQueryTimeRange0UnitDAYS:
+		return true
+	case AnalyticsQueryTimeRange0UnitMONTHS:
+		return true
+	case AnalyticsQueryTimeRange0UnitWEEKS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryTimeRange1Period.
+const (
+	AnalyticsQueryTimeRange1PeriodLASTMONTH AnalyticsQueryTimeRange1Period = "LAST_MONTH"
+	AnalyticsQueryTimeRange1PeriodLASTWEEK  AnalyticsQueryTimeRange1Period = "LAST_WEEK"
+	AnalyticsQueryTimeRange1PeriodLASTYEAR  AnalyticsQueryTimeRange1Period = "LAST_YEAR"
+	AnalyticsQueryTimeRange1PeriodTHISMONTH AnalyticsQueryTimeRange1Period = "THIS_MONTH"
+	AnalyticsQueryTimeRange1PeriodTHISWEEK  AnalyticsQueryTimeRange1Period = "THIS_WEEK"
+	AnalyticsQueryTimeRange1PeriodTHISYEAR  AnalyticsQueryTimeRange1Period = "THIS_YEAR"
+	AnalyticsQueryTimeRange1PeriodTODAY     AnalyticsQueryTimeRange1Period = "TODAY"
+	AnalyticsQueryTimeRange1PeriodYESTERDAY AnalyticsQueryTimeRange1Period = "YESTERDAY"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryTimeRange1Period enum.
+func (e AnalyticsQueryTimeRange1Period) Valid() bool {
+	switch e {
+	case AnalyticsQueryTimeRange1PeriodLASTMONTH:
+		return true
+	case AnalyticsQueryTimeRange1PeriodLASTWEEK:
+		return true
+	case AnalyticsQueryTimeRange1PeriodLASTYEAR:
+		return true
+	case AnalyticsQueryTimeRange1PeriodTHISMONTH:
+		return true
+	case AnalyticsQueryTimeRange1PeriodTHISWEEK:
+		return true
+	case AnalyticsQueryTimeRange1PeriodTHISYEAR:
+		return true
+	case AnalyticsQueryTimeRange1PeriodTODAY:
+		return true
+	case AnalyticsQueryTimeRange1PeriodYESTERDAY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryTimeRange1Type.
+const (
+	AnalyticsQueryTimeRange1TypeCALENDARALIGNED AnalyticsQueryTimeRange1Type = "CALENDAR_ALIGNED"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryTimeRange1Type enum.
+func (e AnalyticsQueryTimeRange1Type) Valid() bool {
+	switch e {
+	case AnalyticsQueryTimeRange1TypeCALENDARALIGNED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryTimeRange2Type.
+const (
+	AnalyticsQueryTimeRange2TypeFIXED AnalyticsQueryTimeRange2Type = "FIXED"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryTimeRange2Type enum.
+func (e AnalyticsQueryTimeRange2Type) Valid() bool {
+	switch e {
+	case AnalyticsQueryTimeRange2TypeFIXED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsQueryTimeRange3Type.
+const (
+	AnalyticsQueryTimeRange3TypeSINCE AnalyticsQueryTimeRange3Type = "SINCE"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsQueryTimeRange3Type enum.
+func (e AnalyticsQueryTimeRange3Type) Valid() bool {
+	switch e {
+	case AnalyticsQueryTimeRange3TypeSINCE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsResultInterval.
+const (
+	AnalyticsResultIntervalDAY   AnalyticsResultInterval = "DAY"
+	AnalyticsResultIntervalHOUR  AnalyticsResultInterval = "HOUR"
+	AnalyticsResultIntervalMONTH AnalyticsResultInterval = "MONTH"
+	AnalyticsResultIntervalWEEK  AnalyticsResultInterval = "WEEK"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsResultInterval enum.
+func (e AnalyticsResultInterval) Valid() bool {
+	switch e {
+	case AnalyticsResultIntervalDAY:
+		return true
+	case AnalyticsResultIntervalHOUR:
+		return true
+	case AnalyticsResultIntervalMONTH:
+		return true
+	case AnalyticsResultIntervalWEEK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsResultSeriesAggregation.
+const (
+	AnalyticsResultSeriesAggregationAVG        AnalyticsResultSeriesAggregation = "AVG"
+	AnalyticsResultSeriesAggregationCOUNT      AnalyticsResultSeriesAggregation = "COUNT"
+	AnalyticsResultSeriesAggregationMAX        AnalyticsResultSeriesAggregation = "MAX"
+	AnalyticsResultSeriesAggregationMEDIAN     AnalyticsResultSeriesAggregation = "MEDIAN"
+	AnalyticsResultSeriesAggregationMIN        AnalyticsResultSeriesAggregation = "MIN"
+	AnalyticsResultSeriesAggregationPASSRATE   AnalyticsResultSeriesAggregation = "PASS_RATE"
+	AnalyticsResultSeriesAggregationPERCENTILE AnalyticsResultSeriesAggregation = "PERCENTILE"
+	AnalyticsResultSeriesAggregationSUM        AnalyticsResultSeriesAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsResultSeriesAggregation enum.
+func (e AnalyticsResultSeriesAggregation) Valid() bool {
+	switch e {
+	case AnalyticsResultSeriesAggregationAVG:
+		return true
+	case AnalyticsResultSeriesAggregationCOUNT:
+		return true
+	case AnalyticsResultSeriesAggregationMAX:
+		return true
+	case AnalyticsResultSeriesAggregationMEDIAN:
+		return true
+	case AnalyticsResultSeriesAggregationMIN:
+		return true
+	case AnalyticsResultSeriesAggregationPASSRATE:
+		return true
+	case AnalyticsResultSeriesAggregationPERCENTILE:
+		return true
+	case AnalyticsResultSeriesAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsResultSeriesType.
+const (
+	AnalyticsResultSeriesTypeCONVERSATION AnalyticsResultSeriesType = "CONVERSATION"
+	AnalyticsResultSeriesTypeMETRIC       AnalyticsResultSeriesType = "METRIC"
+	AnalyticsResultSeriesTypeUPTIME       AnalyticsResultSeriesType = "UPTIME"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsResultSeriesType enum.
+func (e AnalyticsResultSeriesType) Valid() bool {
+	switch e {
+	case AnalyticsResultSeriesTypeCONVERSATION:
+		return true
+	case AnalyticsResultSeriesTypeMETRIC:
+		return true
+	case AnalyticsResultSeriesTypeUPTIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsSchemaBreakdownsType.
+const (
+	AnalyticsSchemaBreakdownsTypeAGENTPROPERTY  AnalyticsSchemaBreakdownsType = "AGENT_PROPERTY"
+	AnalyticsSchemaBreakdownsTypeCALLPROPERTY   AnalyticsSchemaBreakdownsType = "CALL_PROPERTY"
+	AnalyticsSchemaBreakdownsTypeDATASET        AnalyticsSchemaBreakdownsType = "DATASET"
+	AnalyticsSchemaBreakdownsTypeMETRICPROPERTY AnalyticsSchemaBreakdownsType = "METRIC_PROPERTY"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsSchemaBreakdownsType enum.
+func (e AnalyticsSchemaBreakdownsType) Valid() bool {
+	switch e {
+	case AnalyticsSchemaBreakdownsTypeAGENTPROPERTY:
+		return true
+	case AnalyticsSchemaBreakdownsTypeCALLPROPERTY:
+		return true
+	case AnalyticsSchemaBreakdownsTypeDATASET:
+		return true
+	case AnalyticsSchemaBreakdownsTypeMETRICPROPERTY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsSchemaDisplayTypes.
+const (
+	AnalyticsSchemaDisplayTypesLINE       AnalyticsSchemaDisplayTypes = "LINE"
+	AnalyticsSchemaDisplayTypesNUMBER     AnalyticsSchemaDisplayTypes = "NUMBER"
+	AnalyticsSchemaDisplayTypesRADAR      AnalyticsSchemaDisplayTypes = "RADAR"
+	AnalyticsSchemaDisplayTypesSTACKEDBAR AnalyticsSchemaDisplayTypes = "STACKED_BAR"
+	AnalyticsSchemaDisplayTypesTABLE      AnalyticsSchemaDisplayTypes = "TABLE"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsSchemaDisplayTypes enum.
+func (e AnalyticsSchemaDisplayTypes) Valid() bool {
+	switch e {
+	case AnalyticsSchemaDisplayTypesLINE:
+		return true
+	case AnalyticsSchemaDisplayTypesNUMBER:
+		return true
+	case AnalyticsSchemaDisplayTypesRADAR:
+		return true
+	case AnalyticsSchemaDisplayTypesSTACKEDBAR:
+		return true
+	case AnalyticsSchemaDisplayTypesTABLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsSchemaFiltersType.
+const (
+	AnalyticsSchemaFiltersTypeAGENTPROPERTY  AnalyticsSchemaFiltersType = "AGENT_PROPERTY"
+	AnalyticsSchemaFiltersTypeCALLID         AnalyticsSchemaFiltersType = "CALL_ID"
+	AnalyticsSchemaFiltersTypeCALLPROPERTY   AnalyticsSchemaFiltersType = "CALL_PROPERTY"
+	AnalyticsSchemaFiltersTypeDATASET        AnalyticsSchemaFiltersType = "DATASET"
+	AnalyticsSchemaFiltersTypeMETRICPROPERTY AnalyticsSchemaFiltersType = "METRIC_PROPERTY"
+	AnalyticsSchemaFiltersTypeMETRICVALUE    AnalyticsSchemaFiltersType = "METRIC_VALUE"
+	AnalyticsSchemaFiltersTypeMODALITY       AnalyticsSchemaFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsSchemaFiltersType enum.
+func (e AnalyticsSchemaFiltersType) Valid() bool {
+	switch e {
+	case AnalyticsSchemaFiltersTypeAGENTPROPERTY:
+		return true
+	case AnalyticsSchemaFiltersTypeCALLID:
+		return true
+	case AnalyticsSchemaFiltersTypeCALLPROPERTY:
+		return true
+	case AnalyticsSchemaFiltersTypeDATASET:
+		return true
+	case AnalyticsSchemaFiltersTypeMETRICPROPERTY:
+		return true
+	case AnalyticsSchemaFiltersTypeMETRICVALUE:
+		return true
+	case AnalyticsSchemaFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsSchemaIntervals.
+const (
+	AnalyticsSchemaIntervalsDAY   AnalyticsSchemaIntervals = "DAY"
+	AnalyticsSchemaIntervalsHOUR  AnalyticsSchemaIntervals = "HOUR"
+	AnalyticsSchemaIntervalsMONTH AnalyticsSchemaIntervals = "MONTH"
+	AnalyticsSchemaIntervalsWEEK  AnalyticsSchemaIntervals = "WEEK"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsSchemaIntervals enum.
+func (e AnalyticsSchemaIntervals) Valid() bool {
+	switch e {
+	case AnalyticsSchemaIntervalsDAY:
+		return true
+	case AnalyticsSchemaIntervalsHOUR:
+		return true
+	case AnalyticsSchemaIntervalsMONTH:
+		return true
+	case AnalyticsSchemaIntervalsWEEK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsSchemaMeasureTypesAggregations.
+const (
+	AnalyticsSchemaMeasureTypesAggregationsAVG        AnalyticsSchemaMeasureTypesAggregations = "AVG"
+	AnalyticsSchemaMeasureTypesAggregationsCOUNT      AnalyticsSchemaMeasureTypesAggregations = "COUNT"
+	AnalyticsSchemaMeasureTypesAggregationsMAX        AnalyticsSchemaMeasureTypesAggregations = "MAX"
+	AnalyticsSchemaMeasureTypesAggregationsMEDIAN     AnalyticsSchemaMeasureTypesAggregations = "MEDIAN"
+	AnalyticsSchemaMeasureTypesAggregationsMIN        AnalyticsSchemaMeasureTypesAggregations = "MIN"
+	AnalyticsSchemaMeasureTypesAggregationsPASSRATE   AnalyticsSchemaMeasureTypesAggregations = "PASS_RATE"
+	AnalyticsSchemaMeasureTypesAggregationsPERCENTILE AnalyticsSchemaMeasureTypesAggregations = "PERCENTILE"
+	AnalyticsSchemaMeasureTypesAggregationsSUM        AnalyticsSchemaMeasureTypesAggregations = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsSchemaMeasureTypesAggregations enum.
+func (e AnalyticsSchemaMeasureTypesAggregations) Valid() bool {
+	switch e {
+	case AnalyticsSchemaMeasureTypesAggregationsAVG:
+		return true
+	case AnalyticsSchemaMeasureTypesAggregationsCOUNT:
+		return true
+	case AnalyticsSchemaMeasureTypesAggregationsMAX:
+		return true
+	case AnalyticsSchemaMeasureTypesAggregationsMEDIAN:
+		return true
+	case AnalyticsSchemaMeasureTypesAggregationsMIN:
+		return true
+	case AnalyticsSchemaMeasureTypesAggregationsPASSRATE:
+		return true
+	case AnalyticsSchemaMeasureTypesAggregationsPERCENTILE:
+		return true
+	case AnalyticsSchemaMeasureTypesAggregationsSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsSchemaMeasureTypesType.
+const (
+	AnalyticsSchemaMeasureTypesTypeCONVERSATION AnalyticsSchemaMeasureTypesType = "CONVERSATION"
+	AnalyticsSchemaMeasureTypesTypeMETRIC       AnalyticsSchemaMeasureTypesType = "METRIC"
+	AnalyticsSchemaMeasureTypesTypeUPTIME       AnalyticsSchemaMeasureTypesType = "UPTIME"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsSchemaMeasureTypesType enum.
+func (e AnalyticsSchemaMeasureTypesType) Valid() bool {
+	switch e {
+	case AnalyticsSchemaMeasureTypesTypeCONVERSATION:
+		return true
+	case AnalyticsSchemaMeasureTypesTypeMETRIC:
+		return true
+	case AnalyticsSchemaMeasureTypesTypeUPTIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsSchemaMetricsAggregations.
+const (
+	AnalyticsSchemaMetricsAggregationsAVG        AnalyticsSchemaMetricsAggregations = "AVG"
+	AnalyticsSchemaMetricsAggregationsCOUNT      AnalyticsSchemaMetricsAggregations = "COUNT"
+	AnalyticsSchemaMetricsAggregationsMAX        AnalyticsSchemaMetricsAggregations = "MAX"
+	AnalyticsSchemaMetricsAggregationsMEDIAN     AnalyticsSchemaMetricsAggregations = "MEDIAN"
+	AnalyticsSchemaMetricsAggregationsMIN        AnalyticsSchemaMetricsAggregations = "MIN"
+	AnalyticsSchemaMetricsAggregationsPASSRATE   AnalyticsSchemaMetricsAggregations = "PASS_RATE"
+	AnalyticsSchemaMetricsAggregationsPERCENTILE AnalyticsSchemaMetricsAggregations = "PERCENTILE"
+	AnalyticsSchemaMetricsAggregationsSUM        AnalyticsSchemaMetricsAggregations = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsSchemaMetricsAggregations enum.
+func (e AnalyticsSchemaMetricsAggregations) Valid() bool {
+	switch e {
+	case AnalyticsSchemaMetricsAggregationsAVG:
+		return true
+	case AnalyticsSchemaMetricsAggregationsCOUNT:
+		return true
+	case AnalyticsSchemaMetricsAggregationsMAX:
+		return true
+	case AnalyticsSchemaMetricsAggregationsMEDIAN:
+		return true
+	case AnalyticsSchemaMetricsAggregationsMIN:
+		return true
+	case AnalyticsSchemaMetricsAggregationsPASSRATE:
+		return true
+	case AnalyticsSchemaMetricsAggregationsPERCENTILE:
+		return true
+	case AnalyticsSchemaMetricsAggregationsSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsSchemaMetricsDefaultAggregation.
+const (
+	AnalyticsSchemaMetricsDefaultAggregationAVG        AnalyticsSchemaMetricsDefaultAggregation = "AVG"
+	AnalyticsSchemaMetricsDefaultAggregationCOUNT      AnalyticsSchemaMetricsDefaultAggregation = "COUNT"
+	AnalyticsSchemaMetricsDefaultAggregationMAX        AnalyticsSchemaMetricsDefaultAggregation = "MAX"
+	AnalyticsSchemaMetricsDefaultAggregationMEDIAN     AnalyticsSchemaMetricsDefaultAggregation = "MEDIAN"
+	AnalyticsSchemaMetricsDefaultAggregationMIN        AnalyticsSchemaMetricsDefaultAggregation = "MIN"
+	AnalyticsSchemaMetricsDefaultAggregationPASSRATE   AnalyticsSchemaMetricsDefaultAggregation = "PASS_RATE"
+	AnalyticsSchemaMetricsDefaultAggregationPERCENTILE AnalyticsSchemaMetricsDefaultAggregation = "PERCENTILE"
+	AnalyticsSchemaMetricsDefaultAggregationSUM        AnalyticsSchemaMetricsDefaultAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsSchemaMetricsDefaultAggregation enum.
+func (e AnalyticsSchemaMetricsDefaultAggregation) Valid() bool {
+	switch e {
+	case AnalyticsSchemaMetricsDefaultAggregationAVG:
+		return true
+	case AnalyticsSchemaMetricsDefaultAggregationCOUNT:
+		return true
+	case AnalyticsSchemaMetricsDefaultAggregationMAX:
+		return true
+	case AnalyticsSchemaMetricsDefaultAggregationMEDIAN:
+		return true
+	case AnalyticsSchemaMetricsDefaultAggregationMIN:
+		return true
+	case AnalyticsSchemaMetricsDefaultAggregationPASSRATE:
+		return true
+	case AnalyticsSchemaMetricsDefaultAggregationPERCENTILE:
+		return true
+	case AnalyticsSchemaMetricsDefaultAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnalyticsSchemaOperators.
+const (
+	AnalyticsSchemaOperatorsCONTAINS             AnalyticsSchemaOperators = "CONTAINS"
+	AnalyticsSchemaOperatorsEQUALS               AnalyticsSchemaOperators = "EQUALS"
+	AnalyticsSchemaOperatorsGREATERTHAN          AnalyticsSchemaOperators = "GREATER_THAN"
+	AnalyticsSchemaOperatorsGREATERTHANOREQUALTO AnalyticsSchemaOperators = "GREATER_THAN_OR_EQUAL_TO"
+	AnalyticsSchemaOperatorsLESSTHAN             AnalyticsSchemaOperators = "LESS_THAN"
+	AnalyticsSchemaOperatorsLESSTHANOREQUALTO    AnalyticsSchemaOperators = "LESS_THAN_OR_EQUAL_TO"
+	AnalyticsSchemaOperatorsNOTEQUALS            AnalyticsSchemaOperators = "NOT_EQUALS"
+	AnalyticsSchemaOperatorsSTARTSWITH           AnalyticsSchemaOperators = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the AnalyticsSchemaOperators enum.
+func (e AnalyticsSchemaOperators) Valid() bool {
+	switch e {
+	case AnalyticsSchemaOperatorsCONTAINS:
+		return true
+	case AnalyticsSchemaOperatorsEQUALS:
+		return true
+	case AnalyticsSchemaOperatorsGREATERTHAN:
+		return true
+	case AnalyticsSchemaOperatorsGREATERTHANOREQUALTO:
+		return true
+	case AnalyticsSchemaOperatorsLESSTHAN:
+		return true
+	case AnalyticsSchemaOperatorsLESSTHANOREQUALTO:
+		return true
+	case AnalyticsSchemaOperatorsNOTEQUALS:
+		return true
+	case AnalyticsSchemaOperatorsSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AppendToolInvocationsRequestToolInvocationsParameters0Type.
 const (
 	AppendToolInvocationsRequestToolInvocationsParameters0TypeBoolean AppendToolInvocationsRequestToolInvocationsParameters0Type = "boolean"
@@ -859,6 +1846,108 @@ const (
 func (e CallAnalysisFailedWebhookVersion) Valid() bool {
 	switch e {
 	case CallAnalysisFailedWebhookVersionN10:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CallCostCurrency.
+const (
+	CallCostCurrencyUsd CallCostCurrency = "usd"
+)
+
+// Valid indicates whether the value is a known member of the CallCostCurrency enum.
+func (e CallCostCurrency) Valid() bool {
+	switch e {
+	case CallCostCurrencyUsd:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CallCostLineQuantityUnit.
+const (
+	CallCostLineQuantityUnitAUDIOSECONDS CallCostLineQuantityUnit = "AUDIO_SECONDS"
+	CallCostLineQuantityUnitCHARACTERS   CallCostLineQuantityUnit = "CHARACTERS"
+	CallCostLineQuantityUnitINPUTTOKENS  CallCostLineQuantityUnit = "INPUT_TOKENS"
+	CallCostLineQuantityUnitMINUTES      CallCostLineQuantityUnit = "MINUTES"
+	CallCostLineQuantityUnitOUTPUTTOKENS CallCostLineQuantityUnit = "OUTPUT_TOKENS"
+	CallCostLineQuantityUnitUNITS        CallCostLineQuantityUnit = "UNITS"
+)
+
+// Valid indicates whether the value is a known member of the CallCostLineQuantityUnit enum.
+func (e CallCostLineQuantityUnit) Valid() bool {
+	switch e {
+	case CallCostLineQuantityUnitAUDIOSECONDS:
+		return true
+	case CallCostLineQuantityUnitCHARACTERS:
+		return true
+	case CallCostLineQuantityUnitINPUTTOKENS:
+		return true
+	case CallCostLineQuantityUnitMINUTES:
+		return true
+	case CallCostLineQuantityUnitOUTPUTTOKENS:
+		return true
+	case CallCostLineQuantityUnitUNITS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CallCostLineSource.
+const (
+	CallCostLineSourceINTERNALLLM    CallCostLineSource = "INTERNAL_LLM"
+	CallCostLineSourceINTERNALSTT    CallCostLineSource = "INTERNAL_STT"
+	CallCostLineSourceMETRIC         CallCostLineSource = "METRIC"
+	CallCostLineSourceSIMLLM         CallCostLineSource = "SIM_LLM"
+	CallCostLineSourceSIMPLATFORMFEE CallCostLineSource = "SIM_PLATFORM_FEE"
+	CallCostLineSourceSIMSTT         CallCostLineSource = "SIM_STT"
+	CallCostLineSourceSIMTELEPHONY   CallCostLineSource = "SIM_TELEPHONY"
+	CallCostLineSourceSIMTTS         CallCostLineSource = "SIM_TTS"
+	CallCostLineSourceTRANSCRIPTION  CallCostLineSource = "TRANSCRIPTION"
+)
+
+// Valid indicates whether the value is a known member of the CallCostLineSource enum.
+func (e CallCostLineSource) Valid() bool {
+	switch e {
+	case CallCostLineSourceINTERNALLLM:
+		return true
+	case CallCostLineSourceINTERNALSTT:
+		return true
+	case CallCostLineSourceMETRIC:
+		return true
+	case CallCostLineSourceSIMLLM:
+		return true
+	case CallCostLineSourceSIMPLATFORMFEE:
+		return true
+	case CallCostLineSourceSIMSTT:
+		return true
+	case CallCostLineSourceSIMTELEPHONY:
+		return true
+	case CallCostLineSourceSIMTTS:
+		return true
+	case CallCostLineSourceTRANSCRIPTION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CallCostLineSurface.
+const (
+	CallCostLineSurfacePOSTCALL   CallCostLineSurface = "POST_CALL"
+	CallCostLineSurfaceSIMULATION CallCostLineSurface = "SIMULATION"
+)
+
+// Valid indicates whether the value is a known member of the CallCostLineSurface enum.
+func (e CallCostLineSurface) Valid() bool {
+	switch e {
+	case CallCostLineSurfacePOSTCALL:
+		return true
+	case CallCostLineSurfaceSIMULATION:
 		return true
 	default:
 		return false
@@ -1329,6 +2418,7 @@ const (
 	ConfigApplyChangeKindAgent                 ConfigApplyChangeKind = "agent"
 	ConfigApplyChangeKindAlert                 ConfigApplyChangeKind = "alert"
 	ConfigApplyChangeKindCollector             ConfigApplyChangeKind = "collector"
+	ConfigApplyChangeKindDashboard             ConfigApplyChangeKind = "dashboard"
 	ConfigApplyChangeKindFlow                  ConfigApplyChangeKind = "flow"
 	ConfigApplyChangeKindHttpRequestDefinition ConfigApplyChangeKind = "httpRequestDefinition"
 	ConfigApplyChangeKindMember                ConfigApplyChangeKind = "member"
@@ -1348,6 +2438,8 @@ func (e ConfigApplyChangeKind) Valid() bool {
 	case ConfigApplyChangeKindAlert:
 		return true
 	case ConfigApplyChangeKindCollector:
+		return true
+	case ConfigApplyChangeKindDashboard:
 		return true
 	case ConfigApplyChangeKindFlow:
 		return true
@@ -1422,6 +2514,7 @@ const (
 	ConfigDiffChangeKindAgent                 ConfigDiffChangeKind = "agent"
 	ConfigDiffChangeKindAlert                 ConfigDiffChangeKind = "alert"
 	ConfigDiffChangeKindCollector             ConfigDiffChangeKind = "collector"
+	ConfigDiffChangeKindDashboard             ConfigDiffChangeKind = "dashboard"
 	ConfigDiffChangeKindFlow                  ConfigDiffChangeKind = "flow"
 	ConfigDiffChangeKindHttpRequestDefinition ConfigDiffChangeKind = "httpRequestDefinition"
 	ConfigDiffChangeKindMember                ConfigDiffChangeKind = "member"
@@ -1441,6 +2534,8 @@ func (e ConfigDiffChangeKind) Valid() bool {
 	case ConfigDiffChangeKindAlert:
 		return true
 	case ConfigDiffChangeKindCollector:
+		return true
+	case ConfigDiffChangeKindDashboard:
 		return true
 	case ConfigDiffChangeKindFlow:
 		return true
@@ -1573,6 +2668,63 @@ func (e ConfigOffScriptThen) Valid() bool {
 	case ConfigOffScriptThenHANGUPINVALIDATE:
 		return true
 	case ConfigOffScriptThenMOVEON:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CostBreakdownItemSource.
+const (
+	CostBreakdownItemSourceINTERNALLLM    CostBreakdownItemSource = "INTERNAL_LLM"
+	CostBreakdownItemSourceINTERNALSTT    CostBreakdownItemSource = "INTERNAL_STT"
+	CostBreakdownItemSourceMETRIC         CostBreakdownItemSource = "METRIC"
+	CostBreakdownItemSourceSIMLLM         CostBreakdownItemSource = "SIM_LLM"
+	CostBreakdownItemSourceSIMPLATFORMFEE CostBreakdownItemSource = "SIM_PLATFORM_FEE"
+	CostBreakdownItemSourceSIMSTT         CostBreakdownItemSource = "SIM_STT"
+	CostBreakdownItemSourceSIMTELEPHONY   CostBreakdownItemSource = "SIM_TELEPHONY"
+	CostBreakdownItemSourceSIMTTS         CostBreakdownItemSource = "SIM_TTS"
+	CostBreakdownItemSourceTRANSCRIPTION  CostBreakdownItemSource = "TRANSCRIPTION"
+)
+
+// Valid indicates whether the value is a known member of the CostBreakdownItemSource enum.
+func (e CostBreakdownItemSource) Valid() bool {
+	switch e {
+	case CostBreakdownItemSourceINTERNALLLM:
+		return true
+	case CostBreakdownItemSourceINTERNALSTT:
+		return true
+	case CostBreakdownItemSourceMETRIC:
+		return true
+	case CostBreakdownItemSourceSIMLLM:
+		return true
+	case CostBreakdownItemSourceSIMPLATFORMFEE:
+		return true
+	case CostBreakdownItemSourceSIMSTT:
+		return true
+	case CostBreakdownItemSourceSIMTELEPHONY:
+		return true
+	case CostBreakdownItemSourceSIMTTS:
+		return true
+	case CostBreakdownItemSourceTRANSCRIPTION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CostBreakdownItemSurface.
+const (
+	CostBreakdownItemSurfacePOSTCALL   CostBreakdownItemSurface = "POST_CALL"
+	CostBreakdownItemSurfaceSIMULATION CostBreakdownItemSurface = "SIMULATION"
+)
+
+// Valid indicates whether the value is a known member of the CostBreakdownItemSurface enum.
+func (e CostBreakdownItemSurface) Valid() bool {
+	switch e {
+	case CostBreakdownItemSurfacePOSTCALL:
+		return true
+	case CostBreakdownItemSurfaceSIMULATION:
 		return true
 	default:
 		return false
@@ -2359,6 +3511,3483 @@ func (e CreateWebhookResponseEvents) Valid() bool {
 	case CreateWebhookResponseEventsSIMULATIONRUNPLANJOBFAILED:
 		return true
 	case CreateWebhookResponseEventsSIMULATIONRUNPLANJOBSTARTED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardFiltersOperator.
+const (
+	DashboardFiltersOperatorCONTAINS             DashboardFiltersOperator = "CONTAINS"
+	DashboardFiltersOperatorEQUALS               DashboardFiltersOperator = "EQUALS"
+	DashboardFiltersOperatorGREATERTHAN          DashboardFiltersOperator = "GREATER_THAN"
+	DashboardFiltersOperatorGREATERTHANOREQUALTO DashboardFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardFiltersOperatorLESSTHAN             DashboardFiltersOperator = "LESS_THAN"
+	DashboardFiltersOperatorLESSTHANOREQUALTO    DashboardFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardFiltersOperatorNOTEQUALS            DashboardFiltersOperator = "NOT_EQUALS"
+	DashboardFiltersOperatorSTARTSWITH           DashboardFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardFiltersOperator enum.
+func (e DashboardFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardFiltersOperatorCONTAINS:
+		return true
+	case DashboardFiltersOperatorEQUALS:
+		return true
+	case DashboardFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardFiltersOperatorLESSTHAN:
+		return true
+	case DashboardFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardFiltersType.
+const (
+	DashboardFiltersTypeAGENTPROPERTY  DashboardFiltersType = "AGENT_PROPERTY"
+	DashboardFiltersTypeCALLID         DashboardFiltersType = "CALL_ID"
+	DashboardFiltersTypeCALLPROPERTY   DashboardFiltersType = "CALL_PROPERTY"
+	DashboardFiltersTypeDATASET        DashboardFiltersType = "DATASET"
+	DashboardFiltersTypeMETRICPROPERTY DashboardFiltersType = "METRIC_PROPERTY"
+	DashboardFiltersTypeMETRICVALUE    DashboardFiltersType = "METRIC_VALUE"
+	DashboardFiltersTypeMODALITY       DashboardFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardFiltersType enum.
+func (e DashboardFiltersType) Valid() bool {
+	switch e {
+	case DashboardFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardFiltersTypeCALLID:
+		return true
+	case DashboardFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardFiltersTypeDATASET:
+		return true
+	case DashboardFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardFiltersTypeMETRICVALUE:
+		return true
+	case DashboardFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardTimeRange0Type.
+const (
+	DashboardTimeRange0TypeLAST DashboardTimeRange0Type = "LAST"
+)
+
+// Valid indicates whether the value is a known member of the DashboardTimeRange0Type enum.
+func (e DashboardTimeRange0Type) Valid() bool {
+	switch e {
+	case DashboardTimeRange0TypeLAST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardTimeRange0Unit.
+const (
+	DashboardTimeRange0UnitDAYS   DashboardTimeRange0Unit = "DAYS"
+	DashboardTimeRange0UnitMONTHS DashboardTimeRange0Unit = "MONTHS"
+	DashboardTimeRange0UnitWEEKS  DashboardTimeRange0Unit = "WEEKS"
+)
+
+// Valid indicates whether the value is a known member of the DashboardTimeRange0Unit enum.
+func (e DashboardTimeRange0Unit) Valid() bool {
+	switch e {
+	case DashboardTimeRange0UnitDAYS:
+		return true
+	case DashboardTimeRange0UnitMONTHS:
+		return true
+	case DashboardTimeRange0UnitWEEKS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardTimeRange1Period.
+const (
+	DashboardTimeRange1PeriodLASTMONTH DashboardTimeRange1Period = "LAST_MONTH"
+	DashboardTimeRange1PeriodLASTWEEK  DashboardTimeRange1Period = "LAST_WEEK"
+	DashboardTimeRange1PeriodLASTYEAR  DashboardTimeRange1Period = "LAST_YEAR"
+	DashboardTimeRange1PeriodTHISMONTH DashboardTimeRange1Period = "THIS_MONTH"
+	DashboardTimeRange1PeriodTHISWEEK  DashboardTimeRange1Period = "THIS_WEEK"
+	DashboardTimeRange1PeriodTHISYEAR  DashboardTimeRange1Period = "THIS_YEAR"
+	DashboardTimeRange1PeriodTODAY     DashboardTimeRange1Period = "TODAY"
+	DashboardTimeRange1PeriodYESTERDAY DashboardTimeRange1Period = "YESTERDAY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardTimeRange1Period enum.
+func (e DashboardTimeRange1Period) Valid() bool {
+	switch e {
+	case DashboardTimeRange1PeriodLASTMONTH:
+		return true
+	case DashboardTimeRange1PeriodLASTWEEK:
+		return true
+	case DashboardTimeRange1PeriodLASTYEAR:
+		return true
+	case DashboardTimeRange1PeriodTHISMONTH:
+		return true
+	case DashboardTimeRange1PeriodTHISWEEK:
+		return true
+	case DashboardTimeRange1PeriodTHISYEAR:
+		return true
+	case DashboardTimeRange1PeriodTODAY:
+		return true
+	case DashboardTimeRange1PeriodYESTERDAY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardTimeRange1Type.
+const (
+	DashboardTimeRange1TypeCALENDARALIGNED DashboardTimeRange1Type = "CALENDAR_ALIGNED"
+)
+
+// Valid indicates whether the value is a known member of the DashboardTimeRange1Type enum.
+func (e DashboardTimeRange1Type) Valid() bool {
+	switch e {
+	case DashboardTimeRange1TypeCALENDARALIGNED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardTimeRange2Type.
+const (
+	DashboardTimeRange2TypeFIXED DashboardTimeRange2Type = "FIXED"
+)
+
+// Valid indicates whether the value is a known member of the DashboardTimeRange2Type enum.
+func (e DashboardTimeRange2Type) Valid() bool {
+	switch e {
+	case DashboardTimeRange2TypeFIXED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardTimeRange3Type.
+const (
+	DashboardTimeRange3TypeSINCE DashboardTimeRange3Type = "SINCE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardTimeRange3Type enum.
+func (e DashboardTimeRange3Type) Valid() bool {
+	switch e {
+	case DashboardTimeRange3TypeSINCE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsComparisonGroupsColor.
+const (
+	DashboardWidgetsComparisonGroupsColorAMBER  DashboardWidgetsComparisonGroupsColor = "AMBER"
+	DashboardWidgetsComparisonGroupsColorBLUE   DashboardWidgetsComparisonGroupsColor = "BLUE"
+	DashboardWidgetsComparisonGroupsColorCYAN   DashboardWidgetsComparisonGroupsColor = "CYAN"
+	DashboardWidgetsComparisonGroupsColorGREEN  DashboardWidgetsComparisonGroupsColor = "GREEN"
+	DashboardWidgetsComparisonGroupsColorGREY   DashboardWidgetsComparisonGroupsColor = "GREY"
+	DashboardWidgetsComparisonGroupsColorINDIGO DashboardWidgetsComparisonGroupsColor = "INDIGO"
+	DashboardWidgetsComparisonGroupsColorORANGE DashboardWidgetsComparisonGroupsColor = "ORANGE"
+	DashboardWidgetsComparisonGroupsColorPEACH  DashboardWidgetsComparisonGroupsColor = "PEACH"
+	DashboardWidgetsComparisonGroupsColorPURPLE DashboardWidgetsComparisonGroupsColor = "PURPLE"
+	DashboardWidgetsComparisonGroupsColorRED    DashboardWidgetsComparisonGroupsColor = "RED"
+	DashboardWidgetsComparisonGroupsColorROSE   DashboardWidgetsComparisonGroupsColor = "ROSE"
+	DashboardWidgetsComparisonGroupsColorTEAL   DashboardWidgetsComparisonGroupsColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsComparisonGroupsColor enum.
+func (e DashboardWidgetsComparisonGroupsColor) Valid() bool {
+	switch e {
+	case DashboardWidgetsComparisonGroupsColorAMBER:
+		return true
+	case DashboardWidgetsComparisonGroupsColorBLUE:
+		return true
+	case DashboardWidgetsComparisonGroupsColorCYAN:
+		return true
+	case DashboardWidgetsComparisonGroupsColorGREEN:
+		return true
+	case DashboardWidgetsComparisonGroupsColorGREY:
+		return true
+	case DashboardWidgetsComparisonGroupsColorINDIGO:
+		return true
+	case DashboardWidgetsComparisonGroupsColorORANGE:
+		return true
+	case DashboardWidgetsComparisonGroupsColorPEACH:
+		return true
+	case DashboardWidgetsComparisonGroupsColorPURPLE:
+		return true
+	case DashboardWidgetsComparisonGroupsColorRED:
+		return true
+	case DashboardWidgetsComparisonGroupsColorROSE:
+		return true
+	case DashboardWidgetsComparisonGroupsColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsComparisonGroupsFiltersOperator.
+const (
+	DashboardWidgetsComparisonGroupsFiltersOperatorCONTAINS             DashboardWidgetsComparisonGroupsFiltersOperator = "CONTAINS"
+	DashboardWidgetsComparisonGroupsFiltersOperatorEQUALS               DashboardWidgetsComparisonGroupsFiltersOperator = "EQUALS"
+	DashboardWidgetsComparisonGroupsFiltersOperatorGREATERTHAN          DashboardWidgetsComparisonGroupsFiltersOperator = "GREATER_THAN"
+	DashboardWidgetsComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetsComparisonGroupsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetsComparisonGroupsFiltersOperatorLESSTHAN             DashboardWidgetsComparisonGroupsFiltersOperator = "LESS_THAN"
+	DashboardWidgetsComparisonGroupsFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetsComparisonGroupsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardWidgetsComparisonGroupsFiltersOperatorNOTEQUALS            DashboardWidgetsComparisonGroupsFiltersOperator = "NOT_EQUALS"
+	DashboardWidgetsComparisonGroupsFiltersOperatorSTARTSWITH           DashboardWidgetsComparisonGroupsFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsComparisonGroupsFiltersOperator enum.
+func (e DashboardWidgetsComparisonGroupsFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardWidgetsComparisonGroupsFiltersOperatorCONTAINS:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersOperatorEQUALS:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersOperatorLESSTHAN:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsComparisonGroupsFiltersType.
+const (
+	DashboardWidgetsComparisonGroupsFiltersTypeAGENTPROPERTY  DashboardWidgetsComparisonGroupsFiltersType = "AGENT_PROPERTY"
+	DashboardWidgetsComparisonGroupsFiltersTypeCALLID         DashboardWidgetsComparisonGroupsFiltersType = "CALL_ID"
+	DashboardWidgetsComparisonGroupsFiltersTypeCALLPROPERTY   DashboardWidgetsComparisonGroupsFiltersType = "CALL_PROPERTY"
+	DashboardWidgetsComparisonGroupsFiltersTypeDATASET        DashboardWidgetsComparisonGroupsFiltersType = "DATASET"
+	DashboardWidgetsComparisonGroupsFiltersTypeMETRICPROPERTY DashboardWidgetsComparisonGroupsFiltersType = "METRIC_PROPERTY"
+	DashboardWidgetsComparisonGroupsFiltersTypeMETRICVALUE    DashboardWidgetsComparisonGroupsFiltersType = "METRIC_VALUE"
+	DashboardWidgetsComparisonGroupsFiltersTypeMODALITY       DashboardWidgetsComparisonGroupsFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsComparisonGroupsFiltersType enum.
+func (e DashboardWidgetsComparisonGroupsFiltersType) Valid() bool {
+	switch e {
+	case DashboardWidgetsComparisonGroupsFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersTypeCALLID:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersTypeDATASET:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersTypeMETRICVALUE:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsComparisonMode.
+const (
+	DashboardWidgetsComparisonModeNONE           DashboardWidgetsComparisonMode = "NONE"
+	DashboardWidgetsComparisonModePREVIOUSPERIOD DashboardWidgetsComparisonMode = "PREVIOUS_PERIOD"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsComparisonMode enum.
+func (e DashboardWidgetsComparisonMode) Valid() bool {
+	switch e {
+	case DashboardWidgetsComparisonModeNONE:
+		return true
+	case DashboardWidgetsComparisonModePREVIOUSPERIOD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsDisplay.
+const (
+	DashboardWidgetsDisplayLINE       DashboardWidgetsDisplay = "LINE"
+	DashboardWidgetsDisplayNUMBER     DashboardWidgetsDisplay = "NUMBER"
+	DashboardWidgetsDisplayRADAR      DashboardWidgetsDisplay = "RADAR"
+	DashboardWidgetsDisplaySTACKEDBAR DashboardWidgetsDisplay = "STACKED_BAR"
+	DashboardWidgetsDisplayTABLE      DashboardWidgetsDisplay = "TABLE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsDisplay enum.
+func (e DashboardWidgetsDisplay) Valid() bool {
+	switch e {
+	case DashboardWidgetsDisplayLINE:
+		return true
+	case DashboardWidgetsDisplayNUMBER:
+		return true
+	case DashboardWidgetsDisplayRADAR:
+		return true
+	case DashboardWidgetsDisplaySTACKEDBAR:
+		return true
+	case DashboardWidgetsDisplayTABLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsFiltersOperator.
+const (
+	DashboardWidgetsFiltersOperatorCONTAINS             DashboardWidgetsFiltersOperator = "CONTAINS"
+	DashboardWidgetsFiltersOperatorEQUALS               DashboardWidgetsFiltersOperator = "EQUALS"
+	DashboardWidgetsFiltersOperatorGREATERTHAN          DashboardWidgetsFiltersOperator = "GREATER_THAN"
+	DashboardWidgetsFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetsFiltersOperatorLESSTHAN             DashboardWidgetsFiltersOperator = "LESS_THAN"
+	DashboardWidgetsFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardWidgetsFiltersOperatorNOTEQUALS            DashboardWidgetsFiltersOperator = "NOT_EQUALS"
+	DashboardWidgetsFiltersOperatorSTARTSWITH           DashboardWidgetsFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsFiltersOperator enum.
+func (e DashboardWidgetsFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardWidgetsFiltersOperatorCONTAINS:
+		return true
+	case DashboardWidgetsFiltersOperatorEQUALS:
+		return true
+	case DashboardWidgetsFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardWidgetsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetsFiltersOperatorLESSTHAN:
+		return true
+	case DashboardWidgetsFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardWidgetsFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardWidgetsFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsFiltersType.
+const (
+	DashboardWidgetsFiltersTypeAGENTPROPERTY  DashboardWidgetsFiltersType = "AGENT_PROPERTY"
+	DashboardWidgetsFiltersTypeCALLID         DashboardWidgetsFiltersType = "CALL_ID"
+	DashboardWidgetsFiltersTypeCALLPROPERTY   DashboardWidgetsFiltersType = "CALL_PROPERTY"
+	DashboardWidgetsFiltersTypeDATASET        DashboardWidgetsFiltersType = "DATASET"
+	DashboardWidgetsFiltersTypeMETRICPROPERTY DashboardWidgetsFiltersType = "METRIC_PROPERTY"
+	DashboardWidgetsFiltersTypeMETRICVALUE    DashboardWidgetsFiltersType = "METRIC_VALUE"
+	DashboardWidgetsFiltersTypeMODALITY       DashboardWidgetsFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsFiltersType enum.
+func (e DashboardWidgetsFiltersType) Valid() bool {
+	switch e {
+	case DashboardWidgetsFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardWidgetsFiltersTypeCALLID:
+		return true
+	case DashboardWidgetsFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardWidgetsFiltersTypeDATASET:
+		return true
+	case DashboardWidgetsFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardWidgetsFiltersTypeMETRICVALUE:
+		return true
+	case DashboardWidgetsFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsInterval.
+const (
+	DashboardWidgetsIntervalDAY   DashboardWidgetsInterval = "DAY"
+	DashboardWidgetsIntervalHOUR  DashboardWidgetsInterval = "HOUR"
+	DashboardWidgetsIntervalMONTH DashboardWidgetsInterval = "MONTH"
+	DashboardWidgetsIntervalWEEK  DashboardWidgetsInterval = "WEEK"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsInterval enum.
+func (e DashboardWidgetsInterval) Valid() bool {
+	switch e {
+	case DashboardWidgetsIntervalDAY:
+		return true
+	case DashboardWidgetsIntervalHOUR:
+		return true
+	case DashboardWidgetsIntervalMONTH:
+		return true
+	case DashboardWidgetsIntervalWEEK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsMeasuresAggregation.
+const (
+	DashboardWidgetsMeasuresAggregationAVG        DashboardWidgetsMeasuresAggregation = "AVG"
+	DashboardWidgetsMeasuresAggregationCOUNT      DashboardWidgetsMeasuresAggregation = "COUNT"
+	DashboardWidgetsMeasuresAggregationMAX        DashboardWidgetsMeasuresAggregation = "MAX"
+	DashboardWidgetsMeasuresAggregationMEDIAN     DashboardWidgetsMeasuresAggregation = "MEDIAN"
+	DashboardWidgetsMeasuresAggregationMIN        DashboardWidgetsMeasuresAggregation = "MIN"
+	DashboardWidgetsMeasuresAggregationPASSRATE   DashboardWidgetsMeasuresAggregation = "PASS_RATE"
+	DashboardWidgetsMeasuresAggregationPERCENTILE DashboardWidgetsMeasuresAggregation = "PERCENTILE"
+	DashboardWidgetsMeasuresAggregationSUM        DashboardWidgetsMeasuresAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsMeasuresAggregation enum.
+func (e DashboardWidgetsMeasuresAggregation) Valid() bool {
+	switch e {
+	case DashboardWidgetsMeasuresAggregationAVG:
+		return true
+	case DashboardWidgetsMeasuresAggregationCOUNT:
+		return true
+	case DashboardWidgetsMeasuresAggregationMAX:
+		return true
+	case DashboardWidgetsMeasuresAggregationMEDIAN:
+		return true
+	case DashboardWidgetsMeasuresAggregationMIN:
+		return true
+	case DashboardWidgetsMeasuresAggregationPASSRATE:
+		return true
+	case DashboardWidgetsMeasuresAggregationPERCENTILE:
+		return true
+	case DashboardWidgetsMeasuresAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsMeasuresBreakdownType.
+const (
+	DashboardWidgetsMeasuresBreakdownTypeAGENTPROPERTY  DashboardWidgetsMeasuresBreakdownType = "AGENT_PROPERTY"
+	DashboardWidgetsMeasuresBreakdownTypeCALLPROPERTY   DashboardWidgetsMeasuresBreakdownType = "CALL_PROPERTY"
+	DashboardWidgetsMeasuresBreakdownTypeDATASET        DashboardWidgetsMeasuresBreakdownType = "DATASET"
+	DashboardWidgetsMeasuresBreakdownTypeMETRICPROPERTY DashboardWidgetsMeasuresBreakdownType = "METRIC_PROPERTY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsMeasuresBreakdownType enum.
+func (e DashboardWidgetsMeasuresBreakdownType) Valid() bool {
+	switch e {
+	case DashboardWidgetsMeasuresBreakdownTypeAGENTPROPERTY:
+		return true
+	case DashboardWidgetsMeasuresBreakdownTypeCALLPROPERTY:
+		return true
+	case DashboardWidgetsMeasuresBreakdownTypeDATASET:
+		return true
+	case DashboardWidgetsMeasuresBreakdownTypeMETRICPROPERTY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsMeasuresColor.
+const (
+	DashboardWidgetsMeasuresColorAMBER  DashboardWidgetsMeasuresColor = "AMBER"
+	DashboardWidgetsMeasuresColorBLUE   DashboardWidgetsMeasuresColor = "BLUE"
+	DashboardWidgetsMeasuresColorCYAN   DashboardWidgetsMeasuresColor = "CYAN"
+	DashboardWidgetsMeasuresColorGREEN  DashboardWidgetsMeasuresColor = "GREEN"
+	DashboardWidgetsMeasuresColorGREY   DashboardWidgetsMeasuresColor = "GREY"
+	DashboardWidgetsMeasuresColorINDIGO DashboardWidgetsMeasuresColor = "INDIGO"
+	DashboardWidgetsMeasuresColorORANGE DashboardWidgetsMeasuresColor = "ORANGE"
+	DashboardWidgetsMeasuresColorPEACH  DashboardWidgetsMeasuresColor = "PEACH"
+	DashboardWidgetsMeasuresColorPURPLE DashboardWidgetsMeasuresColor = "PURPLE"
+	DashboardWidgetsMeasuresColorRED    DashboardWidgetsMeasuresColor = "RED"
+	DashboardWidgetsMeasuresColorROSE   DashboardWidgetsMeasuresColor = "ROSE"
+	DashboardWidgetsMeasuresColorTEAL   DashboardWidgetsMeasuresColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsMeasuresColor enum.
+func (e DashboardWidgetsMeasuresColor) Valid() bool {
+	switch e {
+	case DashboardWidgetsMeasuresColorAMBER:
+		return true
+	case DashboardWidgetsMeasuresColorBLUE:
+		return true
+	case DashboardWidgetsMeasuresColorCYAN:
+		return true
+	case DashboardWidgetsMeasuresColorGREEN:
+		return true
+	case DashboardWidgetsMeasuresColorGREY:
+		return true
+	case DashboardWidgetsMeasuresColorINDIGO:
+		return true
+	case DashboardWidgetsMeasuresColorORANGE:
+		return true
+	case DashboardWidgetsMeasuresColorPEACH:
+		return true
+	case DashboardWidgetsMeasuresColorPURPLE:
+		return true
+	case DashboardWidgetsMeasuresColorRED:
+		return true
+	case DashboardWidgetsMeasuresColorROSE:
+		return true
+	case DashboardWidgetsMeasuresColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsMeasuresDistinctBy.
+const (
+	DashboardWidgetsMeasuresDistinctByCALL DashboardWidgetsMeasuresDistinctBy = "CALL"
+	DashboardWidgetsMeasuresDistinctByNONE DashboardWidgetsMeasuresDistinctBy = "NONE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsMeasuresDistinctBy enum.
+func (e DashboardWidgetsMeasuresDistinctBy) Valid() bool {
+	switch e {
+	case DashboardWidgetsMeasuresDistinctByCALL:
+		return true
+	case DashboardWidgetsMeasuresDistinctByNONE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsMeasuresFiltersOperator.
+const (
+	DashboardWidgetsMeasuresFiltersOperatorCONTAINS             DashboardWidgetsMeasuresFiltersOperator = "CONTAINS"
+	DashboardWidgetsMeasuresFiltersOperatorEQUALS               DashboardWidgetsMeasuresFiltersOperator = "EQUALS"
+	DashboardWidgetsMeasuresFiltersOperatorGREATERTHAN          DashboardWidgetsMeasuresFiltersOperator = "GREATER_THAN"
+	DashboardWidgetsMeasuresFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetsMeasuresFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetsMeasuresFiltersOperatorLESSTHAN             DashboardWidgetsMeasuresFiltersOperator = "LESS_THAN"
+	DashboardWidgetsMeasuresFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetsMeasuresFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardWidgetsMeasuresFiltersOperatorNOTEQUALS            DashboardWidgetsMeasuresFiltersOperator = "NOT_EQUALS"
+	DashboardWidgetsMeasuresFiltersOperatorSTARTSWITH           DashboardWidgetsMeasuresFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsMeasuresFiltersOperator enum.
+func (e DashboardWidgetsMeasuresFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardWidgetsMeasuresFiltersOperatorCONTAINS:
+		return true
+	case DashboardWidgetsMeasuresFiltersOperatorEQUALS:
+		return true
+	case DashboardWidgetsMeasuresFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardWidgetsMeasuresFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetsMeasuresFiltersOperatorLESSTHAN:
+		return true
+	case DashboardWidgetsMeasuresFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardWidgetsMeasuresFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardWidgetsMeasuresFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsMeasuresFiltersType.
+const (
+	DashboardWidgetsMeasuresFiltersTypeAGENTPROPERTY  DashboardWidgetsMeasuresFiltersType = "AGENT_PROPERTY"
+	DashboardWidgetsMeasuresFiltersTypeCALLID         DashboardWidgetsMeasuresFiltersType = "CALL_ID"
+	DashboardWidgetsMeasuresFiltersTypeCALLPROPERTY   DashboardWidgetsMeasuresFiltersType = "CALL_PROPERTY"
+	DashboardWidgetsMeasuresFiltersTypeDATASET        DashboardWidgetsMeasuresFiltersType = "DATASET"
+	DashboardWidgetsMeasuresFiltersTypeMETRICPROPERTY DashboardWidgetsMeasuresFiltersType = "METRIC_PROPERTY"
+	DashboardWidgetsMeasuresFiltersTypeMETRICVALUE    DashboardWidgetsMeasuresFiltersType = "METRIC_VALUE"
+	DashboardWidgetsMeasuresFiltersTypeMODALITY       DashboardWidgetsMeasuresFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsMeasuresFiltersType enum.
+func (e DashboardWidgetsMeasuresFiltersType) Valid() bool {
+	switch e {
+	case DashboardWidgetsMeasuresFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardWidgetsMeasuresFiltersTypeCALLID:
+		return true
+	case DashboardWidgetsMeasuresFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardWidgetsMeasuresFiltersTypeDATASET:
+		return true
+	case DashboardWidgetsMeasuresFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardWidgetsMeasuresFiltersTypeMETRICVALUE:
+		return true
+	case DashboardWidgetsMeasuresFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsMeasuresNestedAggregation.
+const (
+	DashboardWidgetsMeasuresNestedAggregationAVG        DashboardWidgetsMeasuresNestedAggregation = "AVG"
+	DashboardWidgetsMeasuresNestedAggregationCOUNT      DashboardWidgetsMeasuresNestedAggregation = "COUNT"
+	DashboardWidgetsMeasuresNestedAggregationMAX        DashboardWidgetsMeasuresNestedAggregation = "MAX"
+	DashboardWidgetsMeasuresNestedAggregationMEDIAN     DashboardWidgetsMeasuresNestedAggregation = "MEDIAN"
+	DashboardWidgetsMeasuresNestedAggregationMIN        DashboardWidgetsMeasuresNestedAggregation = "MIN"
+	DashboardWidgetsMeasuresNestedAggregationPASSRATE   DashboardWidgetsMeasuresNestedAggregation = "PASS_RATE"
+	DashboardWidgetsMeasuresNestedAggregationPERCENTILE DashboardWidgetsMeasuresNestedAggregation = "PERCENTILE"
+	DashboardWidgetsMeasuresNestedAggregationSUM        DashboardWidgetsMeasuresNestedAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsMeasuresNestedAggregation enum.
+func (e DashboardWidgetsMeasuresNestedAggregation) Valid() bool {
+	switch e {
+	case DashboardWidgetsMeasuresNestedAggregationAVG:
+		return true
+	case DashboardWidgetsMeasuresNestedAggregationCOUNT:
+		return true
+	case DashboardWidgetsMeasuresNestedAggregationMAX:
+		return true
+	case DashboardWidgetsMeasuresNestedAggregationMEDIAN:
+		return true
+	case DashboardWidgetsMeasuresNestedAggregationMIN:
+		return true
+	case DashboardWidgetsMeasuresNestedAggregationPASSRATE:
+		return true
+	case DashboardWidgetsMeasuresNestedAggregationPERCENTILE:
+		return true
+	case DashboardWidgetsMeasuresNestedAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsMeasuresPassOperator.
+const (
+	DashboardWidgetsMeasuresPassOperatorCONTAINS             DashboardWidgetsMeasuresPassOperator = "CONTAINS"
+	DashboardWidgetsMeasuresPassOperatorEQUALS               DashboardWidgetsMeasuresPassOperator = "EQUALS"
+	DashboardWidgetsMeasuresPassOperatorGREATERTHAN          DashboardWidgetsMeasuresPassOperator = "GREATER_THAN"
+	DashboardWidgetsMeasuresPassOperatorGREATERTHANOREQUALTO DashboardWidgetsMeasuresPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetsMeasuresPassOperatorLESSTHAN             DashboardWidgetsMeasuresPassOperator = "LESS_THAN"
+	DashboardWidgetsMeasuresPassOperatorLESSTHANOREQUALTO    DashboardWidgetsMeasuresPassOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardWidgetsMeasuresPassOperatorNOTEQUALS            DashboardWidgetsMeasuresPassOperator = "NOT_EQUALS"
+	DashboardWidgetsMeasuresPassOperatorSTARTSWITH           DashboardWidgetsMeasuresPassOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsMeasuresPassOperator enum.
+func (e DashboardWidgetsMeasuresPassOperator) Valid() bool {
+	switch e {
+	case DashboardWidgetsMeasuresPassOperatorCONTAINS:
+		return true
+	case DashboardWidgetsMeasuresPassOperatorEQUALS:
+		return true
+	case DashboardWidgetsMeasuresPassOperatorGREATERTHAN:
+		return true
+	case DashboardWidgetsMeasuresPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetsMeasuresPassOperatorLESSTHAN:
+		return true
+	case DashboardWidgetsMeasuresPassOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardWidgetsMeasuresPassOperatorNOTEQUALS:
+		return true
+	case DashboardWidgetsMeasuresPassOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsMeasuresType.
+const (
+	DashboardWidgetsMeasuresTypeCONVERSATION DashboardWidgetsMeasuresType = "CONVERSATION"
+	DashboardWidgetsMeasuresTypeMETRIC       DashboardWidgetsMeasuresType = "METRIC"
+	DashboardWidgetsMeasuresTypeUPTIME       DashboardWidgetsMeasuresType = "UPTIME"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsMeasuresType enum.
+func (e DashboardWidgetsMeasuresType) Valid() bool {
+	switch e {
+	case DashboardWidgetsMeasuresTypeCONVERSATION:
+		return true
+	case DashboardWidgetsMeasuresTypeMETRIC:
+		return true
+	case DashboardWidgetsMeasuresTypeUPTIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetsSize.
+const (
+	DashboardWidgetsSizeEXTRALARGE DashboardWidgetsSize = "EXTRA_LARGE"
+	DashboardWidgetsSizeLARGE      DashboardWidgetsSize = "LARGE"
+	DashboardWidgetsSizeMEDIUM     DashboardWidgetsSize = "MEDIUM"
+	DashboardWidgetsSizeSMALL      DashboardWidgetsSize = "SMALL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetsSize enum.
+func (e DashboardWidgetsSize) Valid() bool {
+	switch e {
+	case DashboardWidgetsSizeEXTRALARGE:
+		return true
+	case DashboardWidgetsSizeLARGE:
+		return true
+	case DashboardWidgetsSizeMEDIUM:
+		return true
+	case DashboardWidgetsSizeSMALL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardConfigKind.
+const (
+	DashboardConfigKindDashboard DashboardConfigKind = "dashboard"
+)
+
+// Valid indicates whether the value is a known member of the DashboardConfigKind enum.
+func (e DashboardConfigKind) Valid() bool {
+	switch e {
+	case DashboardConfigKindDashboard:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardDataWidgetsInterval.
+const (
+	DashboardDataWidgetsIntervalDAY   DashboardDataWidgetsInterval = "DAY"
+	DashboardDataWidgetsIntervalHOUR  DashboardDataWidgetsInterval = "HOUR"
+	DashboardDataWidgetsIntervalMONTH DashboardDataWidgetsInterval = "MONTH"
+	DashboardDataWidgetsIntervalWEEK  DashboardDataWidgetsInterval = "WEEK"
+)
+
+// Valid indicates whether the value is a known member of the DashboardDataWidgetsInterval enum.
+func (e DashboardDataWidgetsInterval) Valid() bool {
+	switch e {
+	case DashboardDataWidgetsIntervalDAY:
+		return true
+	case DashboardDataWidgetsIntervalHOUR:
+		return true
+	case DashboardDataWidgetsIntervalMONTH:
+		return true
+	case DashboardDataWidgetsIntervalWEEK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardDataWidgetsSeriesAggregation.
+const (
+	DashboardDataWidgetsSeriesAggregationAVG        DashboardDataWidgetsSeriesAggregation = "AVG"
+	DashboardDataWidgetsSeriesAggregationCOUNT      DashboardDataWidgetsSeriesAggregation = "COUNT"
+	DashboardDataWidgetsSeriesAggregationMAX        DashboardDataWidgetsSeriesAggregation = "MAX"
+	DashboardDataWidgetsSeriesAggregationMEDIAN     DashboardDataWidgetsSeriesAggregation = "MEDIAN"
+	DashboardDataWidgetsSeriesAggregationMIN        DashboardDataWidgetsSeriesAggregation = "MIN"
+	DashboardDataWidgetsSeriesAggregationPASSRATE   DashboardDataWidgetsSeriesAggregation = "PASS_RATE"
+	DashboardDataWidgetsSeriesAggregationPERCENTILE DashboardDataWidgetsSeriesAggregation = "PERCENTILE"
+	DashboardDataWidgetsSeriesAggregationSUM        DashboardDataWidgetsSeriesAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the DashboardDataWidgetsSeriesAggregation enum.
+func (e DashboardDataWidgetsSeriesAggregation) Valid() bool {
+	switch e {
+	case DashboardDataWidgetsSeriesAggregationAVG:
+		return true
+	case DashboardDataWidgetsSeriesAggregationCOUNT:
+		return true
+	case DashboardDataWidgetsSeriesAggregationMAX:
+		return true
+	case DashboardDataWidgetsSeriesAggregationMEDIAN:
+		return true
+	case DashboardDataWidgetsSeriesAggregationMIN:
+		return true
+	case DashboardDataWidgetsSeriesAggregationPASSRATE:
+		return true
+	case DashboardDataWidgetsSeriesAggregationPERCENTILE:
+		return true
+	case DashboardDataWidgetsSeriesAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardDataWidgetsSeriesType.
+const (
+	DashboardDataWidgetsSeriesTypeCONVERSATION DashboardDataWidgetsSeriesType = "CONVERSATION"
+	DashboardDataWidgetsSeriesTypeMETRIC       DashboardDataWidgetsSeriesType = "METRIC"
+	DashboardDataWidgetsSeriesTypeUPTIME       DashboardDataWidgetsSeriesType = "UPTIME"
+)
+
+// Valid indicates whether the value is a known member of the DashboardDataWidgetsSeriesType enum.
+func (e DashboardDataWidgetsSeriesType) Valid() bool {
+	switch e {
+	case DashboardDataWidgetsSeriesTypeCONVERSATION:
+		return true
+	case DashboardDataWidgetsSeriesTypeMETRIC:
+		return true
+	case DashboardDataWidgetsSeriesTypeUPTIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardFilterConfigOperator.
+const (
+	DashboardFilterConfigOperatorCONTAINS             DashboardFilterConfigOperator = "CONTAINS"
+	DashboardFilterConfigOperatorEQUALS               DashboardFilterConfigOperator = "EQUALS"
+	DashboardFilterConfigOperatorGREATERTHAN          DashboardFilterConfigOperator = "GREATER_THAN"
+	DashboardFilterConfigOperatorGREATERTHANOREQUALTO DashboardFilterConfigOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardFilterConfigOperatorLESSTHAN             DashboardFilterConfigOperator = "LESS_THAN"
+	DashboardFilterConfigOperatorLESSTHANOREQUALTO    DashboardFilterConfigOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardFilterConfigOperatorNOTEQUALS            DashboardFilterConfigOperator = "NOT_EQUALS"
+	DashboardFilterConfigOperatorSTARTSWITH           DashboardFilterConfigOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardFilterConfigOperator enum.
+func (e DashboardFilterConfigOperator) Valid() bool {
+	switch e {
+	case DashboardFilterConfigOperatorCONTAINS:
+		return true
+	case DashboardFilterConfigOperatorEQUALS:
+		return true
+	case DashboardFilterConfigOperatorGREATERTHAN:
+		return true
+	case DashboardFilterConfigOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardFilterConfigOperatorLESSTHAN:
+		return true
+	case DashboardFilterConfigOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardFilterConfigOperatorNOTEQUALS:
+		return true
+	case DashboardFilterConfigOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardFilterConfigType.
+const (
+	DashboardFilterConfigTypeAGENTPROPERTY  DashboardFilterConfigType = "AGENT_PROPERTY"
+	DashboardFilterConfigTypeCALLID         DashboardFilterConfigType = "CALL_ID"
+	DashboardFilterConfigTypeCALLPROPERTY   DashboardFilterConfigType = "CALL_PROPERTY"
+	DashboardFilterConfigTypeDATASET        DashboardFilterConfigType = "DATASET"
+	DashboardFilterConfigTypeMETRICPROPERTY DashboardFilterConfigType = "METRIC_PROPERTY"
+	DashboardFilterConfigTypeMODALITY       DashboardFilterConfigType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardFilterConfigType enum.
+func (e DashboardFilterConfigType) Valid() bool {
+	switch e {
+	case DashboardFilterConfigTypeAGENTPROPERTY:
+		return true
+	case DashboardFilterConfigTypeCALLID:
+		return true
+	case DashboardFilterConfigTypeCALLPROPERTY:
+		return true
+	case DashboardFilterConfigTypeDATASET:
+		return true
+	case DashboardFilterConfigTypeMETRICPROPERTY:
+		return true
+	case DashboardFilterConfigTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputFiltersOperator.
+const (
+	DashboardInputFiltersOperatorCONTAINS             DashboardInputFiltersOperator = "CONTAINS"
+	DashboardInputFiltersOperatorEQUALS               DashboardInputFiltersOperator = "EQUALS"
+	DashboardInputFiltersOperatorGREATERTHAN          DashboardInputFiltersOperator = "GREATER_THAN"
+	DashboardInputFiltersOperatorGREATERTHANOREQUALTO DashboardInputFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardInputFiltersOperatorLESSTHAN             DashboardInputFiltersOperator = "LESS_THAN"
+	DashboardInputFiltersOperatorLESSTHANOREQUALTO    DashboardInputFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardInputFiltersOperatorNOTEQUALS            DashboardInputFiltersOperator = "NOT_EQUALS"
+	DashboardInputFiltersOperatorSTARTSWITH           DashboardInputFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputFiltersOperator enum.
+func (e DashboardInputFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardInputFiltersOperatorCONTAINS:
+		return true
+	case DashboardInputFiltersOperatorEQUALS:
+		return true
+	case DashboardInputFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardInputFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardInputFiltersOperatorLESSTHAN:
+		return true
+	case DashboardInputFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardInputFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardInputFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputFiltersType.
+const (
+	DashboardInputFiltersTypeAGENTPROPERTY  DashboardInputFiltersType = "AGENT_PROPERTY"
+	DashboardInputFiltersTypeCALLID         DashboardInputFiltersType = "CALL_ID"
+	DashboardInputFiltersTypeCALLPROPERTY   DashboardInputFiltersType = "CALL_PROPERTY"
+	DashboardInputFiltersTypeDATASET        DashboardInputFiltersType = "DATASET"
+	DashboardInputFiltersTypeMETRICPROPERTY DashboardInputFiltersType = "METRIC_PROPERTY"
+	DashboardInputFiltersTypeMETRICVALUE    DashboardInputFiltersType = "METRIC_VALUE"
+	DashboardInputFiltersTypeMODALITY       DashboardInputFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputFiltersType enum.
+func (e DashboardInputFiltersType) Valid() bool {
+	switch e {
+	case DashboardInputFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardInputFiltersTypeCALLID:
+		return true
+	case DashboardInputFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardInputFiltersTypeDATASET:
+		return true
+	case DashboardInputFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardInputFiltersTypeMETRICVALUE:
+		return true
+	case DashboardInputFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputTimeRange0Type.
+const (
+	DashboardInputTimeRange0TypeLAST DashboardInputTimeRange0Type = "LAST"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputTimeRange0Type enum.
+func (e DashboardInputTimeRange0Type) Valid() bool {
+	switch e {
+	case DashboardInputTimeRange0TypeLAST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputTimeRange0Unit.
+const (
+	DashboardInputTimeRange0UnitDAYS   DashboardInputTimeRange0Unit = "DAYS"
+	DashboardInputTimeRange0UnitMONTHS DashboardInputTimeRange0Unit = "MONTHS"
+	DashboardInputTimeRange0UnitWEEKS  DashboardInputTimeRange0Unit = "WEEKS"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputTimeRange0Unit enum.
+func (e DashboardInputTimeRange0Unit) Valid() bool {
+	switch e {
+	case DashboardInputTimeRange0UnitDAYS:
+		return true
+	case DashboardInputTimeRange0UnitMONTHS:
+		return true
+	case DashboardInputTimeRange0UnitWEEKS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputTimeRange1Period.
+const (
+	DashboardInputTimeRange1PeriodLASTMONTH DashboardInputTimeRange1Period = "LAST_MONTH"
+	DashboardInputTimeRange1PeriodLASTWEEK  DashboardInputTimeRange1Period = "LAST_WEEK"
+	DashboardInputTimeRange1PeriodLASTYEAR  DashboardInputTimeRange1Period = "LAST_YEAR"
+	DashboardInputTimeRange1PeriodTHISMONTH DashboardInputTimeRange1Period = "THIS_MONTH"
+	DashboardInputTimeRange1PeriodTHISWEEK  DashboardInputTimeRange1Period = "THIS_WEEK"
+	DashboardInputTimeRange1PeriodTHISYEAR  DashboardInputTimeRange1Period = "THIS_YEAR"
+	DashboardInputTimeRange1PeriodTODAY     DashboardInputTimeRange1Period = "TODAY"
+	DashboardInputTimeRange1PeriodYESTERDAY DashboardInputTimeRange1Period = "YESTERDAY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputTimeRange1Period enum.
+func (e DashboardInputTimeRange1Period) Valid() bool {
+	switch e {
+	case DashboardInputTimeRange1PeriodLASTMONTH:
+		return true
+	case DashboardInputTimeRange1PeriodLASTWEEK:
+		return true
+	case DashboardInputTimeRange1PeriodLASTYEAR:
+		return true
+	case DashboardInputTimeRange1PeriodTHISMONTH:
+		return true
+	case DashboardInputTimeRange1PeriodTHISWEEK:
+		return true
+	case DashboardInputTimeRange1PeriodTHISYEAR:
+		return true
+	case DashboardInputTimeRange1PeriodTODAY:
+		return true
+	case DashboardInputTimeRange1PeriodYESTERDAY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputTimeRange1Type.
+const (
+	DashboardInputTimeRange1TypeCALENDARALIGNED DashboardInputTimeRange1Type = "CALENDAR_ALIGNED"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputTimeRange1Type enum.
+func (e DashboardInputTimeRange1Type) Valid() bool {
+	switch e {
+	case DashboardInputTimeRange1TypeCALENDARALIGNED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputTimeRange2Type.
+const (
+	DashboardInputTimeRange2TypeFIXED DashboardInputTimeRange2Type = "FIXED"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputTimeRange2Type enum.
+func (e DashboardInputTimeRange2Type) Valid() bool {
+	switch e {
+	case DashboardInputTimeRange2TypeFIXED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputTimeRange3Type.
+const (
+	DashboardInputTimeRange3TypeSINCE DashboardInputTimeRange3Type = "SINCE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputTimeRange3Type enum.
+func (e DashboardInputTimeRange3Type) Valid() bool {
+	switch e {
+	case DashboardInputTimeRange3TypeSINCE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsComparisonGroupsColor.
+const (
+	DashboardInputWidgetsComparisonGroupsColorAMBER  DashboardInputWidgetsComparisonGroupsColor = "AMBER"
+	DashboardInputWidgetsComparisonGroupsColorBLUE   DashboardInputWidgetsComparisonGroupsColor = "BLUE"
+	DashboardInputWidgetsComparisonGroupsColorCYAN   DashboardInputWidgetsComparisonGroupsColor = "CYAN"
+	DashboardInputWidgetsComparisonGroupsColorGREEN  DashboardInputWidgetsComparisonGroupsColor = "GREEN"
+	DashboardInputWidgetsComparisonGroupsColorGREY   DashboardInputWidgetsComparisonGroupsColor = "GREY"
+	DashboardInputWidgetsComparisonGroupsColorINDIGO DashboardInputWidgetsComparisonGroupsColor = "INDIGO"
+	DashboardInputWidgetsComparisonGroupsColorORANGE DashboardInputWidgetsComparisonGroupsColor = "ORANGE"
+	DashboardInputWidgetsComparisonGroupsColorPEACH  DashboardInputWidgetsComparisonGroupsColor = "PEACH"
+	DashboardInputWidgetsComparisonGroupsColorPURPLE DashboardInputWidgetsComparisonGroupsColor = "PURPLE"
+	DashboardInputWidgetsComparisonGroupsColorRED    DashboardInputWidgetsComparisonGroupsColor = "RED"
+	DashboardInputWidgetsComparisonGroupsColorROSE   DashboardInputWidgetsComparisonGroupsColor = "ROSE"
+	DashboardInputWidgetsComparisonGroupsColorTEAL   DashboardInputWidgetsComparisonGroupsColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsComparisonGroupsColor enum.
+func (e DashboardInputWidgetsComparisonGroupsColor) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsComparisonGroupsColorAMBER:
+		return true
+	case DashboardInputWidgetsComparisonGroupsColorBLUE:
+		return true
+	case DashboardInputWidgetsComparisonGroupsColorCYAN:
+		return true
+	case DashboardInputWidgetsComparisonGroupsColorGREEN:
+		return true
+	case DashboardInputWidgetsComparisonGroupsColorGREY:
+		return true
+	case DashboardInputWidgetsComparisonGroupsColorINDIGO:
+		return true
+	case DashboardInputWidgetsComparisonGroupsColorORANGE:
+		return true
+	case DashboardInputWidgetsComparisonGroupsColorPEACH:
+		return true
+	case DashboardInputWidgetsComparisonGroupsColorPURPLE:
+		return true
+	case DashboardInputWidgetsComparisonGroupsColorRED:
+		return true
+	case DashboardInputWidgetsComparisonGroupsColorROSE:
+		return true
+	case DashboardInputWidgetsComparisonGroupsColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsComparisonGroupsFiltersOperator.
+const (
+	DashboardInputWidgetsComparisonGroupsFiltersOperatorCONTAINS             DashboardInputWidgetsComparisonGroupsFiltersOperator = "CONTAINS"
+	DashboardInputWidgetsComparisonGroupsFiltersOperatorEQUALS               DashboardInputWidgetsComparisonGroupsFiltersOperator = "EQUALS"
+	DashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHAN          DashboardInputWidgetsComparisonGroupsFiltersOperator = "GREATER_THAN"
+	DashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO DashboardInputWidgetsComparisonGroupsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHAN             DashboardInputWidgetsComparisonGroupsFiltersOperator = "LESS_THAN"
+	DashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHANOREQUALTO    DashboardInputWidgetsComparisonGroupsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardInputWidgetsComparisonGroupsFiltersOperatorNOTEQUALS            DashboardInputWidgetsComparisonGroupsFiltersOperator = "NOT_EQUALS"
+	DashboardInputWidgetsComparisonGroupsFiltersOperatorSTARTSWITH           DashboardInputWidgetsComparisonGroupsFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsComparisonGroupsFiltersOperator enum.
+func (e DashboardInputWidgetsComparisonGroupsFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsComparisonGroupsFiltersOperatorCONTAINS:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersOperatorEQUALS:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHAN:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsComparisonGroupsFiltersType.
+const (
+	DashboardInputWidgetsComparisonGroupsFiltersTypeAGENTPROPERTY  DashboardInputWidgetsComparisonGroupsFiltersType = "AGENT_PROPERTY"
+	DashboardInputWidgetsComparisonGroupsFiltersTypeCALLID         DashboardInputWidgetsComparisonGroupsFiltersType = "CALL_ID"
+	DashboardInputWidgetsComparisonGroupsFiltersTypeCALLPROPERTY   DashboardInputWidgetsComparisonGroupsFiltersType = "CALL_PROPERTY"
+	DashboardInputWidgetsComparisonGroupsFiltersTypeDATASET        DashboardInputWidgetsComparisonGroupsFiltersType = "DATASET"
+	DashboardInputWidgetsComparisonGroupsFiltersTypeMETRICPROPERTY DashboardInputWidgetsComparisonGroupsFiltersType = "METRIC_PROPERTY"
+	DashboardInputWidgetsComparisonGroupsFiltersTypeMETRICVALUE    DashboardInputWidgetsComparisonGroupsFiltersType = "METRIC_VALUE"
+	DashboardInputWidgetsComparisonGroupsFiltersTypeMODALITY       DashboardInputWidgetsComparisonGroupsFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsComparisonGroupsFiltersType enum.
+func (e DashboardInputWidgetsComparisonGroupsFiltersType) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsComparisonGroupsFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersTypeCALLID:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersTypeDATASET:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersTypeMETRICVALUE:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsComparisonMode.
+const (
+	DashboardInputWidgetsComparisonModeNONE           DashboardInputWidgetsComparisonMode = "NONE"
+	DashboardInputWidgetsComparisonModePREVIOUSPERIOD DashboardInputWidgetsComparisonMode = "PREVIOUS_PERIOD"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsComparisonMode enum.
+func (e DashboardInputWidgetsComparisonMode) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsComparisonModeNONE:
+		return true
+	case DashboardInputWidgetsComparisonModePREVIOUSPERIOD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsDisplay.
+const (
+	DashboardInputWidgetsDisplayLINE       DashboardInputWidgetsDisplay = "LINE"
+	DashboardInputWidgetsDisplayNUMBER     DashboardInputWidgetsDisplay = "NUMBER"
+	DashboardInputWidgetsDisplayRADAR      DashboardInputWidgetsDisplay = "RADAR"
+	DashboardInputWidgetsDisplaySTACKEDBAR DashboardInputWidgetsDisplay = "STACKED_BAR"
+	DashboardInputWidgetsDisplayTABLE      DashboardInputWidgetsDisplay = "TABLE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsDisplay enum.
+func (e DashboardInputWidgetsDisplay) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsDisplayLINE:
+		return true
+	case DashboardInputWidgetsDisplayNUMBER:
+		return true
+	case DashboardInputWidgetsDisplayRADAR:
+		return true
+	case DashboardInputWidgetsDisplaySTACKEDBAR:
+		return true
+	case DashboardInputWidgetsDisplayTABLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsFiltersOperator.
+const (
+	DashboardInputWidgetsFiltersOperatorCONTAINS             DashboardInputWidgetsFiltersOperator = "CONTAINS"
+	DashboardInputWidgetsFiltersOperatorEQUALS               DashboardInputWidgetsFiltersOperator = "EQUALS"
+	DashboardInputWidgetsFiltersOperatorGREATERTHAN          DashboardInputWidgetsFiltersOperator = "GREATER_THAN"
+	DashboardInputWidgetsFiltersOperatorGREATERTHANOREQUALTO DashboardInputWidgetsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardInputWidgetsFiltersOperatorLESSTHAN             DashboardInputWidgetsFiltersOperator = "LESS_THAN"
+	DashboardInputWidgetsFiltersOperatorLESSTHANOREQUALTO    DashboardInputWidgetsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardInputWidgetsFiltersOperatorNOTEQUALS            DashboardInputWidgetsFiltersOperator = "NOT_EQUALS"
+	DashboardInputWidgetsFiltersOperatorSTARTSWITH           DashboardInputWidgetsFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsFiltersOperator enum.
+func (e DashboardInputWidgetsFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsFiltersOperatorCONTAINS:
+		return true
+	case DashboardInputWidgetsFiltersOperatorEQUALS:
+		return true
+	case DashboardInputWidgetsFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardInputWidgetsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardInputWidgetsFiltersOperatorLESSTHAN:
+		return true
+	case DashboardInputWidgetsFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardInputWidgetsFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardInputWidgetsFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsFiltersType.
+const (
+	DashboardInputWidgetsFiltersTypeAGENTPROPERTY  DashboardInputWidgetsFiltersType = "AGENT_PROPERTY"
+	DashboardInputWidgetsFiltersTypeCALLID         DashboardInputWidgetsFiltersType = "CALL_ID"
+	DashboardInputWidgetsFiltersTypeCALLPROPERTY   DashboardInputWidgetsFiltersType = "CALL_PROPERTY"
+	DashboardInputWidgetsFiltersTypeDATASET        DashboardInputWidgetsFiltersType = "DATASET"
+	DashboardInputWidgetsFiltersTypeMETRICPROPERTY DashboardInputWidgetsFiltersType = "METRIC_PROPERTY"
+	DashboardInputWidgetsFiltersTypeMETRICVALUE    DashboardInputWidgetsFiltersType = "METRIC_VALUE"
+	DashboardInputWidgetsFiltersTypeMODALITY       DashboardInputWidgetsFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsFiltersType enum.
+func (e DashboardInputWidgetsFiltersType) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardInputWidgetsFiltersTypeCALLID:
+		return true
+	case DashboardInputWidgetsFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardInputWidgetsFiltersTypeDATASET:
+		return true
+	case DashboardInputWidgetsFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardInputWidgetsFiltersTypeMETRICVALUE:
+		return true
+	case DashboardInputWidgetsFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsInterval.
+const (
+	DashboardInputWidgetsIntervalDAY   DashboardInputWidgetsInterval = "DAY"
+	DashboardInputWidgetsIntervalHOUR  DashboardInputWidgetsInterval = "HOUR"
+	DashboardInputWidgetsIntervalMONTH DashboardInputWidgetsInterval = "MONTH"
+	DashboardInputWidgetsIntervalWEEK  DashboardInputWidgetsInterval = "WEEK"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsInterval enum.
+func (e DashboardInputWidgetsInterval) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsIntervalDAY:
+		return true
+	case DashboardInputWidgetsIntervalHOUR:
+		return true
+	case DashboardInputWidgetsIntervalMONTH:
+		return true
+	case DashboardInputWidgetsIntervalWEEK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsMeasuresAggregation.
+const (
+	DashboardInputWidgetsMeasuresAggregationAVG        DashboardInputWidgetsMeasuresAggregation = "AVG"
+	DashboardInputWidgetsMeasuresAggregationCOUNT      DashboardInputWidgetsMeasuresAggregation = "COUNT"
+	DashboardInputWidgetsMeasuresAggregationMAX        DashboardInputWidgetsMeasuresAggregation = "MAX"
+	DashboardInputWidgetsMeasuresAggregationMEDIAN     DashboardInputWidgetsMeasuresAggregation = "MEDIAN"
+	DashboardInputWidgetsMeasuresAggregationMIN        DashboardInputWidgetsMeasuresAggregation = "MIN"
+	DashboardInputWidgetsMeasuresAggregationPASSRATE   DashboardInputWidgetsMeasuresAggregation = "PASS_RATE"
+	DashboardInputWidgetsMeasuresAggregationPERCENTILE DashboardInputWidgetsMeasuresAggregation = "PERCENTILE"
+	DashboardInputWidgetsMeasuresAggregationSUM        DashboardInputWidgetsMeasuresAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsMeasuresAggregation enum.
+func (e DashboardInputWidgetsMeasuresAggregation) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsMeasuresAggregationAVG:
+		return true
+	case DashboardInputWidgetsMeasuresAggregationCOUNT:
+		return true
+	case DashboardInputWidgetsMeasuresAggregationMAX:
+		return true
+	case DashboardInputWidgetsMeasuresAggregationMEDIAN:
+		return true
+	case DashboardInputWidgetsMeasuresAggregationMIN:
+		return true
+	case DashboardInputWidgetsMeasuresAggregationPASSRATE:
+		return true
+	case DashboardInputWidgetsMeasuresAggregationPERCENTILE:
+		return true
+	case DashboardInputWidgetsMeasuresAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsMeasuresBreakdownType.
+const (
+	DashboardInputWidgetsMeasuresBreakdownTypeAGENTPROPERTY  DashboardInputWidgetsMeasuresBreakdownType = "AGENT_PROPERTY"
+	DashboardInputWidgetsMeasuresBreakdownTypeCALLPROPERTY   DashboardInputWidgetsMeasuresBreakdownType = "CALL_PROPERTY"
+	DashboardInputWidgetsMeasuresBreakdownTypeDATASET        DashboardInputWidgetsMeasuresBreakdownType = "DATASET"
+	DashboardInputWidgetsMeasuresBreakdownTypeMETRICPROPERTY DashboardInputWidgetsMeasuresBreakdownType = "METRIC_PROPERTY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsMeasuresBreakdownType enum.
+func (e DashboardInputWidgetsMeasuresBreakdownType) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsMeasuresBreakdownTypeAGENTPROPERTY:
+		return true
+	case DashboardInputWidgetsMeasuresBreakdownTypeCALLPROPERTY:
+		return true
+	case DashboardInputWidgetsMeasuresBreakdownTypeDATASET:
+		return true
+	case DashboardInputWidgetsMeasuresBreakdownTypeMETRICPROPERTY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsMeasuresColor.
+const (
+	DashboardInputWidgetsMeasuresColorAMBER  DashboardInputWidgetsMeasuresColor = "AMBER"
+	DashboardInputWidgetsMeasuresColorBLUE   DashboardInputWidgetsMeasuresColor = "BLUE"
+	DashboardInputWidgetsMeasuresColorCYAN   DashboardInputWidgetsMeasuresColor = "CYAN"
+	DashboardInputWidgetsMeasuresColorGREEN  DashboardInputWidgetsMeasuresColor = "GREEN"
+	DashboardInputWidgetsMeasuresColorGREY   DashboardInputWidgetsMeasuresColor = "GREY"
+	DashboardInputWidgetsMeasuresColorINDIGO DashboardInputWidgetsMeasuresColor = "INDIGO"
+	DashboardInputWidgetsMeasuresColorORANGE DashboardInputWidgetsMeasuresColor = "ORANGE"
+	DashboardInputWidgetsMeasuresColorPEACH  DashboardInputWidgetsMeasuresColor = "PEACH"
+	DashboardInputWidgetsMeasuresColorPURPLE DashboardInputWidgetsMeasuresColor = "PURPLE"
+	DashboardInputWidgetsMeasuresColorRED    DashboardInputWidgetsMeasuresColor = "RED"
+	DashboardInputWidgetsMeasuresColorROSE   DashboardInputWidgetsMeasuresColor = "ROSE"
+	DashboardInputWidgetsMeasuresColorTEAL   DashboardInputWidgetsMeasuresColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsMeasuresColor enum.
+func (e DashboardInputWidgetsMeasuresColor) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsMeasuresColorAMBER:
+		return true
+	case DashboardInputWidgetsMeasuresColorBLUE:
+		return true
+	case DashboardInputWidgetsMeasuresColorCYAN:
+		return true
+	case DashboardInputWidgetsMeasuresColorGREEN:
+		return true
+	case DashboardInputWidgetsMeasuresColorGREY:
+		return true
+	case DashboardInputWidgetsMeasuresColorINDIGO:
+		return true
+	case DashboardInputWidgetsMeasuresColorORANGE:
+		return true
+	case DashboardInputWidgetsMeasuresColorPEACH:
+		return true
+	case DashboardInputWidgetsMeasuresColorPURPLE:
+		return true
+	case DashboardInputWidgetsMeasuresColorRED:
+		return true
+	case DashboardInputWidgetsMeasuresColorROSE:
+		return true
+	case DashboardInputWidgetsMeasuresColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsMeasuresDistinctBy.
+const (
+	DashboardInputWidgetsMeasuresDistinctByCALL DashboardInputWidgetsMeasuresDistinctBy = "CALL"
+	DashboardInputWidgetsMeasuresDistinctByNONE DashboardInputWidgetsMeasuresDistinctBy = "NONE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsMeasuresDistinctBy enum.
+func (e DashboardInputWidgetsMeasuresDistinctBy) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsMeasuresDistinctByCALL:
+		return true
+	case DashboardInputWidgetsMeasuresDistinctByNONE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsMeasuresFiltersOperator.
+const (
+	DashboardInputWidgetsMeasuresFiltersOperatorCONTAINS             DashboardInputWidgetsMeasuresFiltersOperator = "CONTAINS"
+	DashboardInputWidgetsMeasuresFiltersOperatorEQUALS               DashboardInputWidgetsMeasuresFiltersOperator = "EQUALS"
+	DashboardInputWidgetsMeasuresFiltersOperatorGREATERTHAN          DashboardInputWidgetsMeasuresFiltersOperator = "GREATER_THAN"
+	DashboardInputWidgetsMeasuresFiltersOperatorGREATERTHANOREQUALTO DashboardInputWidgetsMeasuresFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardInputWidgetsMeasuresFiltersOperatorLESSTHAN             DashboardInputWidgetsMeasuresFiltersOperator = "LESS_THAN"
+	DashboardInputWidgetsMeasuresFiltersOperatorLESSTHANOREQUALTO    DashboardInputWidgetsMeasuresFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardInputWidgetsMeasuresFiltersOperatorNOTEQUALS            DashboardInputWidgetsMeasuresFiltersOperator = "NOT_EQUALS"
+	DashboardInputWidgetsMeasuresFiltersOperatorSTARTSWITH           DashboardInputWidgetsMeasuresFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsMeasuresFiltersOperator enum.
+func (e DashboardInputWidgetsMeasuresFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsMeasuresFiltersOperatorCONTAINS:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersOperatorEQUALS:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersOperatorLESSTHAN:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsMeasuresFiltersType.
+const (
+	DashboardInputWidgetsMeasuresFiltersTypeAGENTPROPERTY  DashboardInputWidgetsMeasuresFiltersType = "AGENT_PROPERTY"
+	DashboardInputWidgetsMeasuresFiltersTypeCALLID         DashboardInputWidgetsMeasuresFiltersType = "CALL_ID"
+	DashboardInputWidgetsMeasuresFiltersTypeCALLPROPERTY   DashboardInputWidgetsMeasuresFiltersType = "CALL_PROPERTY"
+	DashboardInputWidgetsMeasuresFiltersTypeDATASET        DashboardInputWidgetsMeasuresFiltersType = "DATASET"
+	DashboardInputWidgetsMeasuresFiltersTypeMETRICPROPERTY DashboardInputWidgetsMeasuresFiltersType = "METRIC_PROPERTY"
+	DashboardInputWidgetsMeasuresFiltersTypeMETRICVALUE    DashboardInputWidgetsMeasuresFiltersType = "METRIC_VALUE"
+	DashboardInputWidgetsMeasuresFiltersTypeMODALITY       DashboardInputWidgetsMeasuresFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsMeasuresFiltersType enum.
+func (e DashboardInputWidgetsMeasuresFiltersType) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsMeasuresFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersTypeCALLID:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersTypeDATASET:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersTypeMETRICVALUE:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsMeasuresNestedAggregation.
+const (
+	DashboardInputWidgetsMeasuresNestedAggregationAVG        DashboardInputWidgetsMeasuresNestedAggregation = "AVG"
+	DashboardInputWidgetsMeasuresNestedAggregationCOUNT      DashboardInputWidgetsMeasuresNestedAggregation = "COUNT"
+	DashboardInputWidgetsMeasuresNestedAggregationMAX        DashboardInputWidgetsMeasuresNestedAggregation = "MAX"
+	DashboardInputWidgetsMeasuresNestedAggregationMEDIAN     DashboardInputWidgetsMeasuresNestedAggregation = "MEDIAN"
+	DashboardInputWidgetsMeasuresNestedAggregationMIN        DashboardInputWidgetsMeasuresNestedAggregation = "MIN"
+	DashboardInputWidgetsMeasuresNestedAggregationPASSRATE   DashboardInputWidgetsMeasuresNestedAggregation = "PASS_RATE"
+	DashboardInputWidgetsMeasuresNestedAggregationPERCENTILE DashboardInputWidgetsMeasuresNestedAggregation = "PERCENTILE"
+	DashboardInputWidgetsMeasuresNestedAggregationSUM        DashboardInputWidgetsMeasuresNestedAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsMeasuresNestedAggregation enum.
+func (e DashboardInputWidgetsMeasuresNestedAggregation) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsMeasuresNestedAggregationAVG:
+		return true
+	case DashboardInputWidgetsMeasuresNestedAggregationCOUNT:
+		return true
+	case DashboardInputWidgetsMeasuresNestedAggregationMAX:
+		return true
+	case DashboardInputWidgetsMeasuresNestedAggregationMEDIAN:
+		return true
+	case DashboardInputWidgetsMeasuresNestedAggregationMIN:
+		return true
+	case DashboardInputWidgetsMeasuresNestedAggregationPASSRATE:
+		return true
+	case DashboardInputWidgetsMeasuresNestedAggregationPERCENTILE:
+		return true
+	case DashboardInputWidgetsMeasuresNestedAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsMeasuresPassOperator.
+const (
+	DashboardInputWidgetsMeasuresPassOperatorCONTAINS             DashboardInputWidgetsMeasuresPassOperator = "CONTAINS"
+	DashboardInputWidgetsMeasuresPassOperatorEQUALS               DashboardInputWidgetsMeasuresPassOperator = "EQUALS"
+	DashboardInputWidgetsMeasuresPassOperatorGREATERTHAN          DashboardInputWidgetsMeasuresPassOperator = "GREATER_THAN"
+	DashboardInputWidgetsMeasuresPassOperatorGREATERTHANOREQUALTO DashboardInputWidgetsMeasuresPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardInputWidgetsMeasuresPassOperatorLESSTHAN             DashboardInputWidgetsMeasuresPassOperator = "LESS_THAN"
+	DashboardInputWidgetsMeasuresPassOperatorLESSTHANOREQUALTO    DashboardInputWidgetsMeasuresPassOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardInputWidgetsMeasuresPassOperatorNOTEQUALS            DashboardInputWidgetsMeasuresPassOperator = "NOT_EQUALS"
+	DashboardInputWidgetsMeasuresPassOperatorSTARTSWITH           DashboardInputWidgetsMeasuresPassOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsMeasuresPassOperator enum.
+func (e DashboardInputWidgetsMeasuresPassOperator) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsMeasuresPassOperatorCONTAINS:
+		return true
+	case DashboardInputWidgetsMeasuresPassOperatorEQUALS:
+		return true
+	case DashboardInputWidgetsMeasuresPassOperatorGREATERTHAN:
+		return true
+	case DashboardInputWidgetsMeasuresPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardInputWidgetsMeasuresPassOperatorLESSTHAN:
+		return true
+	case DashboardInputWidgetsMeasuresPassOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardInputWidgetsMeasuresPassOperatorNOTEQUALS:
+		return true
+	case DashboardInputWidgetsMeasuresPassOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsMeasuresType.
+const (
+	DashboardInputWidgetsMeasuresTypeCONVERSATION DashboardInputWidgetsMeasuresType = "CONVERSATION"
+	DashboardInputWidgetsMeasuresTypeMETRIC       DashboardInputWidgetsMeasuresType = "METRIC"
+	DashboardInputWidgetsMeasuresTypeUPTIME       DashboardInputWidgetsMeasuresType = "UPTIME"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsMeasuresType enum.
+func (e DashboardInputWidgetsMeasuresType) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsMeasuresTypeCONVERSATION:
+		return true
+	case DashboardInputWidgetsMeasuresTypeMETRIC:
+		return true
+	case DashboardInputWidgetsMeasuresTypeUPTIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardInputWidgetsSize.
+const (
+	DashboardInputWidgetsSizeEXTRALARGE DashboardInputWidgetsSize = "EXTRA_LARGE"
+	DashboardInputWidgetsSizeLARGE      DashboardInputWidgetsSize = "LARGE"
+	DashboardInputWidgetsSizeMEDIUM     DashboardInputWidgetsSize = "MEDIUM"
+	DashboardInputWidgetsSizeSMALL      DashboardInputWidgetsSize = "SMALL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardInputWidgetsSize enum.
+func (e DashboardInputWidgetsSize) Valid() bool {
+	switch e {
+	case DashboardInputWidgetsSizeEXTRALARGE:
+		return true
+	case DashboardInputWidgetsSizeLARGE:
+		return true
+	case DashboardInputWidgetsSizeMEDIUM:
+		return true
+	case DashboardInputWidgetsSizeSMALL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardMeasureConfigAggregation.
+const (
+	DashboardMeasureConfigAggregationAVG        DashboardMeasureConfigAggregation = "AVG"
+	DashboardMeasureConfigAggregationCOUNT      DashboardMeasureConfigAggregation = "COUNT"
+	DashboardMeasureConfigAggregationMAX        DashboardMeasureConfigAggregation = "MAX"
+	DashboardMeasureConfigAggregationMEDIAN     DashboardMeasureConfigAggregation = "MEDIAN"
+	DashboardMeasureConfigAggregationMIN        DashboardMeasureConfigAggregation = "MIN"
+	DashboardMeasureConfigAggregationPASSRATE   DashboardMeasureConfigAggregation = "PASS_RATE"
+	DashboardMeasureConfigAggregationPERCENTILE DashboardMeasureConfigAggregation = "PERCENTILE"
+	DashboardMeasureConfigAggregationSUM        DashboardMeasureConfigAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the DashboardMeasureConfigAggregation enum.
+func (e DashboardMeasureConfigAggregation) Valid() bool {
+	switch e {
+	case DashboardMeasureConfigAggregationAVG:
+		return true
+	case DashboardMeasureConfigAggregationCOUNT:
+		return true
+	case DashboardMeasureConfigAggregationMAX:
+		return true
+	case DashboardMeasureConfigAggregationMEDIAN:
+		return true
+	case DashboardMeasureConfigAggregationMIN:
+		return true
+	case DashboardMeasureConfigAggregationPASSRATE:
+		return true
+	case DashboardMeasureConfigAggregationPERCENTILE:
+		return true
+	case DashboardMeasureConfigAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardMeasureConfigBreakdownType.
+const (
+	DashboardMeasureConfigBreakdownTypeAGENTPROPERTY  DashboardMeasureConfigBreakdownType = "AGENT_PROPERTY"
+	DashboardMeasureConfigBreakdownTypeCALLPROPERTY   DashboardMeasureConfigBreakdownType = "CALL_PROPERTY"
+	DashboardMeasureConfigBreakdownTypeDATASET        DashboardMeasureConfigBreakdownType = "DATASET"
+	DashboardMeasureConfigBreakdownTypeMETRICPROPERTY DashboardMeasureConfigBreakdownType = "METRIC_PROPERTY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardMeasureConfigBreakdownType enum.
+func (e DashboardMeasureConfigBreakdownType) Valid() bool {
+	switch e {
+	case DashboardMeasureConfigBreakdownTypeAGENTPROPERTY:
+		return true
+	case DashboardMeasureConfigBreakdownTypeCALLPROPERTY:
+		return true
+	case DashboardMeasureConfigBreakdownTypeDATASET:
+		return true
+	case DashboardMeasureConfigBreakdownTypeMETRICPROPERTY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardMeasureConfigColor.
+const (
+	DashboardMeasureConfigColorAMBER  DashboardMeasureConfigColor = "AMBER"
+	DashboardMeasureConfigColorBLUE   DashboardMeasureConfigColor = "BLUE"
+	DashboardMeasureConfigColorCYAN   DashboardMeasureConfigColor = "CYAN"
+	DashboardMeasureConfigColorGREEN  DashboardMeasureConfigColor = "GREEN"
+	DashboardMeasureConfigColorGREY   DashboardMeasureConfigColor = "GREY"
+	DashboardMeasureConfigColorINDIGO DashboardMeasureConfigColor = "INDIGO"
+	DashboardMeasureConfigColorORANGE DashboardMeasureConfigColor = "ORANGE"
+	DashboardMeasureConfigColorPEACH  DashboardMeasureConfigColor = "PEACH"
+	DashboardMeasureConfigColorPURPLE DashboardMeasureConfigColor = "PURPLE"
+	DashboardMeasureConfigColorRED    DashboardMeasureConfigColor = "RED"
+	DashboardMeasureConfigColorROSE   DashboardMeasureConfigColor = "ROSE"
+	DashboardMeasureConfigColorTEAL   DashboardMeasureConfigColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardMeasureConfigColor enum.
+func (e DashboardMeasureConfigColor) Valid() bool {
+	switch e {
+	case DashboardMeasureConfigColorAMBER:
+		return true
+	case DashboardMeasureConfigColorBLUE:
+		return true
+	case DashboardMeasureConfigColorCYAN:
+		return true
+	case DashboardMeasureConfigColorGREEN:
+		return true
+	case DashboardMeasureConfigColorGREY:
+		return true
+	case DashboardMeasureConfigColorINDIGO:
+		return true
+	case DashboardMeasureConfigColorORANGE:
+		return true
+	case DashboardMeasureConfigColorPEACH:
+		return true
+	case DashboardMeasureConfigColorPURPLE:
+		return true
+	case DashboardMeasureConfigColorRED:
+		return true
+	case DashboardMeasureConfigColorROSE:
+		return true
+	case DashboardMeasureConfigColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardMeasureConfigDistinctBy.
+const (
+	DashboardMeasureConfigDistinctByCALL DashboardMeasureConfigDistinctBy = "CALL"
+	DashboardMeasureConfigDistinctByNONE DashboardMeasureConfigDistinctBy = "NONE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardMeasureConfigDistinctBy enum.
+func (e DashboardMeasureConfigDistinctBy) Valid() bool {
+	switch e {
+	case DashboardMeasureConfigDistinctByCALL:
+		return true
+	case DashboardMeasureConfigDistinctByNONE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardMeasureConfigNestedAggregation.
+const (
+	DashboardMeasureConfigNestedAggregationAVG        DashboardMeasureConfigNestedAggregation = "AVG"
+	DashboardMeasureConfigNestedAggregationCOUNT      DashboardMeasureConfigNestedAggregation = "COUNT"
+	DashboardMeasureConfigNestedAggregationMAX        DashboardMeasureConfigNestedAggregation = "MAX"
+	DashboardMeasureConfigNestedAggregationMEDIAN     DashboardMeasureConfigNestedAggregation = "MEDIAN"
+	DashboardMeasureConfigNestedAggregationMIN        DashboardMeasureConfigNestedAggregation = "MIN"
+	DashboardMeasureConfigNestedAggregationPASSRATE   DashboardMeasureConfigNestedAggregation = "PASS_RATE"
+	DashboardMeasureConfigNestedAggregationPERCENTILE DashboardMeasureConfigNestedAggregation = "PERCENTILE"
+	DashboardMeasureConfigNestedAggregationSUM        DashboardMeasureConfigNestedAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the DashboardMeasureConfigNestedAggregation enum.
+func (e DashboardMeasureConfigNestedAggregation) Valid() bool {
+	switch e {
+	case DashboardMeasureConfigNestedAggregationAVG:
+		return true
+	case DashboardMeasureConfigNestedAggregationCOUNT:
+		return true
+	case DashboardMeasureConfigNestedAggregationMAX:
+		return true
+	case DashboardMeasureConfigNestedAggregationMEDIAN:
+		return true
+	case DashboardMeasureConfigNestedAggregationMIN:
+		return true
+	case DashboardMeasureConfigNestedAggregationPASSRATE:
+		return true
+	case DashboardMeasureConfigNestedAggregationPERCENTILE:
+		return true
+	case DashboardMeasureConfigNestedAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardMeasureConfigPassOperator.
+const (
+	DashboardMeasureConfigPassOperatorCONTAINS             DashboardMeasureConfigPassOperator = "CONTAINS"
+	DashboardMeasureConfigPassOperatorEQUALS               DashboardMeasureConfigPassOperator = "EQUALS"
+	DashboardMeasureConfigPassOperatorGREATERTHAN          DashboardMeasureConfigPassOperator = "GREATER_THAN"
+	DashboardMeasureConfigPassOperatorGREATERTHANOREQUALTO DashboardMeasureConfigPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardMeasureConfigPassOperatorLESSTHAN             DashboardMeasureConfigPassOperator = "LESS_THAN"
+	DashboardMeasureConfigPassOperatorLESSTHANOREQUALTO    DashboardMeasureConfigPassOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardMeasureConfigPassOperatorNOTEQUALS            DashboardMeasureConfigPassOperator = "NOT_EQUALS"
+	DashboardMeasureConfigPassOperatorSTARTSWITH           DashboardMeasureConfigPassOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardMeasureConfigPassOperator enum.
+func (e DashboardMeasureConfigPassOperator) Valid() bool {
+	switch e {
+	case DashboardMeasureConfigPassOperatorCONTAINS:
+		return true
+	case DashboardMeasureConfigPassOperatorEQUALS:
+		return true
+	case DashboardMeasureConfigPassOperatorGREATERTHAN:
+		return true
+	case DashboardMeasureConfigPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardMeasureConfigPassOperatorLESSTHAN:
+		return true
+	case DashboardMeasureConfigPassOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardMeasureConfigPassOperatorNOTEQUALS:
+		return true
+	case DashboardMeasureConfigPassOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardMeasureConfigType.
+const (
+	DashboardMeasureConfigTypeCONVERSATION DashboardMeasureConfigType = "CONVERSATION"
+	DashboardMeasureConfigTypeMETRIC       DashboardMeasureConfigType = "METRIC"
+	DashboardMeasureConfigTypeUPTIME       DashboardMeasureConfigType = "UPTIME"
+)
+
+// Valid indicates whether the value is a known member of the DashboardMeasureConfigType enum.
+func (e DashboardMeasureConfigType) Valid() bool {
+	switch e {
+	case DashboardMeasureConfigTypeCONVERSATION:
+		return true
+	case DashboardMeasureConfigTypeMETRIC:
+		return true
+	case DashboardMeasureConfigTypeUPTIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardSummaryTimeRange0Type.
+const (
+	DashboardSummaryTimeRange0TypeLAST DashboardSummaryTimeRange0Type = "LAST"
+)
+
+// Valid indicates whether the value is a known member of the DashboardSummaryTimeRange0Type enum.
+func (e DashboardSummaryTimeRange0Type) Valid() bool {
+	switch e {
+	case DashboardSummaryTimeRange0TypeLAST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardSummaryTimeRange0Unit.
+const (
+	DashboardSummaryTimeRange0UnitDAYS   DashboardSummaryTimeRange0Unit = "DAYS"
+	DashboardSummaryTimeRange0UnitMONTHS DashboardSummaryTimeRange0Unit = "MONTHS"
+	DashboardSummaryTimeRange0UnitWEEKS  DashboardSummaryTimeRange0Unit = "WEEKS"
+)
+
+// Valid indicates whether the value is a known member of the DashboardSummaryTimeRange0Unit enum.
+func (e DashboardSummaryTimeRange0Unit) Valid() bool {
+	switch e {
+	case DashboardSummaryTimeRange0UnitDAYS:
+		return true
+	case DashboardSummaryTimeRange0UnitMONTHS:
+		return true
+	case DashboardSummaryTimeRange0UnitWEEKS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardSummaryTimeRange1Period.
+const (
+	DashboardSummaryTimeRange1PeriodLASTMONTH DashboardSummaryTimeRange1Period = "LAST_MONTH"
+	DashboardSummaryTimeRange1PeriodLASTWEEK  DashboardSummaryTimeRange1Period = "LAST_WEEK"
+	DashboardSummaryTimeRange1PeriodLASTYEAR  DashboardSummaryTimeRange1Period = "LAST_YEAR"
+	DashboardSummaryTimeRange1PeriodTHISMONTH DashboardSummaryTimeRange1Period = "THIS_MONTH"
+	DashboardSummaryTimeRange1PeriodTHISWEEK  DashboardSummaryTimeRange1Period = "THIS_WEEK"
+	DashboardSummaryTimeRange1PeriodTHISYEAR  DashboardSummaryTimeRange1Period = "THIS_YEAR"
+	DashboardSummaryTimeRange1PeriodTODAY     DashboardSummaryTimeRange1Period = "TODAY"
+	DashboardSummaryTimeRange1PeriodYESTERDAY DashboardSummaryTimeRange1Period = "YESTERDAY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardSummaryTimeRange1Period enum.
+func (e DashboardSummaryTimeRange1Period) Valid() bool {
+	switch e {
+	case DashboardSummaryTimeRange1PeriodLASTMONTH:
+		return true
+	case DashboardSummaryTimeRange1PeriodLASTWEEK:
+		return true
+	case DashboardSummaryTimeRange1PeriodLASTYEAR:
+		return true
+	case DashboardSummaryTimeRange1PeriodTHISMONTH:
+		return true
+	case DashboardSummaryTimeRange1PeriodTHISWEEK:
+		return true
+	case DashboardSummaryTimeRange1PeriodTHISYEAR:
+		return true
+	case DashboardSummaryTimeRange1PeriodTODAY:
+		return true
+	case DashboardSummaryTimeRange1PeriodYESTERDAY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardSummaryTimeRange1Type.
+const (
+	DashboardSummaryTimeRange1TypeCALENDARALIGNED DashboardSummaryTimeRange1Type = "CALENDAR_ALIGNED"
+)
+
+// Valid indicates whether the value is a known member of the DashboardSummaryTimeRange1Type enum.
+func (e DashboardSummaryTimeRange1Type) Valid() bool {
+	switch e {
+	case DashboardSummaryTimeRange1TypeCALENDARALIGNED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardSummaryTimeRange2Type.
+const (
+	DashboardSummaryTimeRange2TypeFIXED DashboardSummaryTimeRange2Type = "FIXED"
+)
+
+// Valid indicates whether the value is a known member of the DashboardSummaryTimeRange2Type enum.
+func (e DashboardSummaryTimeRange2Type) Valid() bool {
+	switch e {
+	case DashboardSummaryTimeRange2TypeFIXED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardSummaryTimeRange3Type.
+const (
+	DashboardSummaryTimeRange3TypeSINCE DashboardSummaryTimeRange3Type = "SINCE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardSummaryTimeRange3Type enum.
+func (e DashboardSummaryTimeRange3Type) Valid() bool {
+	switch e {
+	case DashboardSummaryTimeRange3TypeSINCE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardTimeRangeConfig0Type.
+const (
+	DashboardTimeRangeConfig0TypeLAST DashboardTimeRangeConfig0Type = "LAST"
+)
+
+// Valid indicates whether the value is a known member of the DashboardTimeRangeConfig0Type enum.
+func (e DashboardTimeRangeConfig0Type) Valid() bool {
+	switch e {
+	case DashboardTimeRangeConfig0TypeLAST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardTimeRangeConfig0Unit.
+const (
+	DashboardTimeRangeConfig0UnitDAYS   DashboardTimeRangeConfig0Unit = "DAYS"
+	DashboardTimeRangeConfig0UnitMONTHS DashboardTimeRangeConfig0Unit = "MONTHS"
+	DashboardTimeRangeConfig0UnitWEEKS  DashboardTimeRangeConfig0Unit = "WEEKS"
+)
+
+// Valid indicates whether the value is a known member of the DashboardTimeRangeConfig0Unit enum.
+func (e DashboardTimeRangeConfig0Unit) Valid() bool {
+	switch e {
+	case DashboardTimeRangeConfig0UnitDAYS:
+		return true
+	case DashboardTimeRangeConfig0UnitMONTHS:
+		return true
+	case DashboardTimeRangeConfig0UnitWEEKS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardTimeRangeConfig1Period.
+const (
+	DashboardTimeRangeConfig1PeriodLASTMONTH DashboardTimeRangeConfig1Period = "LAST_MONTH"
+	DashboardTimeRangeConfig1PeriodLASTWEEK  DashboardTimeRangeConfig1Period = "LAST_WEEK"
+	DashboardTimeRangeConfig1PeriodLASTYEAR  DashboardTimeRangeConfig1Period = "LAST_YEAR"
+	DashboardTimeRangeConfig1PeriodTHISMONTH DashboardTimeRangeConfig1Period = "THIS_MONTH"
+	DashboardTimeRangeConfig1PeriodTHISWEEK  DashboardTimeRangeConfig1Period = "THIS_WEEK"
+	DashboardTimeRangeConfig1PeriodTHISYEAR  DashboardTimeRangeConfig1Period = "THIS_YEAR"
+	DashboardTimeRangeConfig1PeriodTODAY     DashboardTimeRangeConfig1Period = "TODAY"
+	DashboardTimeRangeConfig1PeriodYESTERDAY DashboardTimeRangeConfig1Period = "YESTERDAY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardTimeRangeConfig1Period enum.
+func (e DashboardTimeRangeConfig1Period) Valid() bool {
+	switch e {
+	case DashboardTimeRangeConfig1PeriodLASTMONTH:
+		return true
+	case DashboardTimeRangeConfig1PeriodLASTWEEK:
+		return true
+	case DashboardTimeRangeConfig1PeriodLASTYEAR:
+		return true
+	case DashboardTimeRangeConfig1PeriodTHISMONTH:
+		return true
+	case DashboardTimeRangeConfig1PeriodTHISWEEK:
+		return true
+	case DashboardTimeRangeConfig1PeriodTHISYEAR:
+		return true
+	case DashboardTimeRangeConfig1PeriodTODAY:
+		return true
+	case DashboardTimeRangeConfig1PeriodYESTERDAY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardTimeRangeConfig1Type.
+const (
+	DashboardTimeRangeConfig1TypeCALENDARALIGNED DashboardTimeRangeConfig1Type = "CALENDAR_ALIGNED"
+)
+
+// Valid indicates whether the value is a known member of the DashboardTimeRangeConfig1Type enum.
+func (e DashboardTimeRangeConfig1Type) Valid() bool {
+	switch e {
+	case DashboardTimeRangeConfig1TypeCALENDARALIGNED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardTimeRangeConfig2Type.
+const (
+	DashboardTimeRangeConfig2TypeFIXED DashboardTimeRangeConfig2Type = "FIXED"
+)
+
+// Valid indicates whether the value is a known member of the DashboardTimeRangeConfig2Type enum.
+func (e DashboardTimeRangeConfig2Type) Valid() bool {
+	switch e {
+	case DashboardTimeRangeConfig2TypeFIXED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardTimeRangeConfig3Type.
+const (
+	DashboardTimeRangeConfig3TypeSINCE DashboardTimeRangeConfig3Type = "SINCE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardTimeRangeConfig3Type enum.
+func (e DashboardTimeRangeConfig3Type) Valid() bool {
+	switch e {
+	case DashboardTimeRangeConfig3TypeSINCE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetComparisonGroupsColor.
+const (
+	DashboardWidgetComparisonGroupsColorAMBER  DashboardWidgetComparisonGroupsColor = "AMBER"
+	DashboardWidgetComparisonGroupsColorBLUE   DashboardWidgetComparisonGroupsColor = "BLUE"
+	DashboardWidgetComparisonGroupsColorCYAN   DashboardWidgetComparisonGroupsColor = "CYAN"
+	DashboardWidgetComparisonGroupsColorGREEN  DashboardWidgetComparisonGroupsColor = "GREEN"
+	DashboardWidgetComparisonGroupsColorGREY   DashboardWidgetComparisonGroupsColor = "GREY"
+	DashboardWidgetComparisonGroupsColorINDIGO DashboardWidgetComparisonGroupsColor = "INDIGO"
+	DashboardWidgetComparisonGroupsColorORANGE DashboardWidgetComparisonGroupsColor = "ORANGE"
+	DashboardWidgetComparisonGroupsColorPEACH  DashboardWidgetComparisonGroupsColor = "PEACH"
+	DashboardWidgetComparisonGroupsColorPURPLE DashboardWidgetComparisonGroupsColor = "PURPLE"
+	DashboardWidgetComparisonGroupsColorRED    DashboardWidgetComparisonGroupsColor = "RED"
+	DashboardWidgetComparisonGroupsColorROSE   DashboardWidgetComparisonGroupsColor = "ROSE"
+	DashboardWidgetComparisonGroupsColorTEAL   DashboardWidgetComparisonGroupsColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetComparisonGroupsColor enum.
+func (e DashboardWidgetComparisonGroupsColor) Valid() bool {
+	switch e {
+	case DashboardWidgetComparisonGroupsColorAMBER:
+		return true
+	case DashboardWidgetComparisonGroupsColorBLUE:
+		return true
+	case DashboardWidgetComparisonGroupsColorCYAN:
+		return true
+	case DashboardWidgetComparisonGroupsColorGREEN:
+		return true
+	case DashboardWidgetComparisonGroupsColorGREY:
+		return true
+	case DashboardWidgetComparisonGroupsColorINDIGO:
+		return true
+	case DashboardWidgetComparisonGroupsColorORANGE:
+		return true
+	case DashboardWidgetComparisonGroupsColorPEACH:
+		return true
+	case DashboardWidgetComparisonGroupsColorPURPLE:
+		return true
+	case DashboardWidgetComparisonGroupsColorRED:
+		return true
+	case DashboardWidgetComparisonGroupsColorROSE:
+		return true
+	case DashboardWidgetComparisonGroupsColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetComparisonGroupsFiltersOperator.
+const (
+	DashboardWidgetComparisonGroupsFiltersOperatorCONTAINS             DashboardWidgetComparisonGroupsFiltersOperator = "CONTAINS"
+	DashboardWidgetComparisonGroupsFiltersOperatorEQUALS               DashboardWidgetComparisonGroupsFiltersOperator = "EQUALS"
+	DashboardWidgetComparisonGroupsFiltersOperatorGREATERTHAN          DashboardWidgetComparisonGroupsFiltersOperator = "GREATER_THAN"
+	DashboardWidgetComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetComparisonGroupsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetComparisonGroupsFiltersOperatorLESSTHAN             DashboardWidgetComparisonGroupsFiltersOperator = "LESS_THAN"
+	DashboardWidgetComparisonGroupsFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetComparisonGroupsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardWidgetComparisonGroupsFiltersOperatorNOTEQUALS            DashboardWidgetComparisonGroupsFiltersOperator = "NOT_EQUALS"
+	DashboardWidgetComparisonGroupsFiltersOperatorSTARTSWITH           DashboardWidgetComparisonGroupsFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetComparisonGroupsFiltersOperator enum.
+func (e DashboardWidgetComparisonGroupsFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardWidgetComparisonGroupsFiltersOperatorCONTAINS:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersOperatorEQUALS:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersOperatorLESSTHAN:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetComparisonGroupsFiltersType.
+const (
+	DashboardWidgetComparisonGroupsFiltersTypeAGENTPROPERTY  DashboardWidgetComparisonGroupsFiltersType = "AGENT_PROPERTY"
+	DashboardWidgetComparisonGroupsFiltersTypeCALLID         DashboardWidgetComparisonGroupsFiltersType = "CALL_ID"
+	DashboardWidgetComparisonGroupsFiltersTypeCALLPROPERTY   DashboardWidgetComparisonGroupsFiltersType = "CALL_PROPERTY"
+	DashboardWidgetComparisonGroupsFiltersTypeDATASET        DashboardWidgetComparisonGroupsFiltersType = "DATASET"
+	DashboardWidgetComparisonGroupsFiltersTypeMETRICPROPERTY DashboardWidgetComparisonGroupsFiltersType = "METRIC_PROPERTY"
+	DashboardWidgetComparisonGroupsFiltersTypeMETRICVALUE    DashboardWidgetComparisonGroupsFiltersType = "METRIC_VALUE"
+	DashboardWidgetComparisonGroupsFiltersTypeMODALITY       DashboardWidgetComparisonGroupsFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetComparisonGroupsFiltersType enum.
+func (e DashboardWidgetComparisonGroupsFiltersType) Valid() bool {
+	switch e {
+	case DashboardWidgetComparisonGroupsFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersTypeCALLID:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersTypeDATASET:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersTypeMETRICVALUE:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetComparisonMode.
+const (
+	DashboardWidgetComparisonModeNONE           DashboardWidgetComparisonMode = "NONE"
+	DashboardWidgetComparisonModePREVIOUSPERIOD DashboardWidgetComparisonMode = "PREVIOUS_PERIOD"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetComparisonMode enum.
+func (e DashboardWidgetComparisonMode) Valid() bool {
+	switch e {
+	case DashboardWidgetComparisonModeNONE:
+		return true
+	case DashboardWidgetComparisonModePREVIOUSPERIOD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetDisplay.
+const (
+	DashboardWidgetDisplayLINE       DashboardWidgetDisplay = "LINE"
+	DashboardWidgetDisplayNUMBER     DashboardWidgetDisplay = "NUMBER"
+	DashboardWidgetDisplayRADAR      DashboardWidgetDisplay = "RADAR"
+	DashboardWidgetDisplaySTACKEDBAR DashboardWidgetDisplay = "STACKED_BAR"
+	DashboardWidgetDisplayTABLE      DashboardWidgetDisplay = "TABLE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetDisplay enum.
+func (e DashboardWidgetDisplay) Valid() bool {
+	switch e {
+	case DashboardWidgetDisplayLINE:
+		return true
+	case DashboardWidgetDisplayNUMBER:
+		return true
+	case DashboardWidgetDisplayRADAR:
+		return true
+	case DashboardWidgetDisplaySTACKEDBAR:
+		return true
+	case DashboardWidgetDisplayTABLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetFiltersOperator.
+const (
+	DashboardWidgetFiltersOperatorCONTAINS             DashboardWidgetFiltersOperator = "CONTAINS"
+	DashboardWidgetFiltersOperatorEQUALS               DashboardWidgetFiltersOperator = "EQUALS"
+	DashboardWidgetFiltersOperatorGREATERTHAN          DashboardWidgetFiltersOperator = "GREATER_THAN"
+	DashboardWidgetFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetFiltersOperatorLESSTHAN             DashboardWidgetFiltersOperator = "LESS_THAN"
+	DashboardWidgetFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardWidgetFiltersOperatorNOTEQUALS            DashboardWidgetFiltersOperator = "NOT_EQUALS"
+	DashboardWidgetFiltersOperatorSTARTSWITH           DashboardWidgetFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetFiltersOperator enum.
+func (e DashboardWidgetFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardWidgetFiltersOperatorCONTAINS:
+		return true
+	case DashboardWidgetFiltersOperatorEQUALS:
+		return true
+	case DashboardWidgetFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardWidgetFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetFiltersOperatorLESSTHAN:
+		return true
+	case DashboardWidgetFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardWidgetFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardWidgetFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetFiltersType.
+const (
+	DashboardWidgetFiltersTypeAGENTPROPERTY  DashboardWidgetFiltersType = "AGENT_PROPERTY"
+	DashboardWidgetFiltersTypeCALLID         DashboardWidgetFiltersType = "CALL_ID"
+	DashboardWidgetFiltersTypeCALLPROPERTY   DashboardWidgetFiltersType = "CALL_PROPERTY"
+	DashboardWidgetFiltersTypeDATASET        DashboardWidgetFiltersType = "DATASET"
+	DashboardWidgetFiltersTypeMETRICPROPERTY DashboardWidgetFiltersType = "METRIC_PROPERTY"
+	DashboardWidgetFiltersTypeMETRICVALUE    DashboardWidgetFiltersType = "METRIC_VALUE"
+	DashboardWidgetFiltersTypeMODALITY       DashboardWidgetFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetFiltersType enum.
+func (e DashboardWidgetFiltersType) Valid() bool {
+	switch e {
+	case DashboardWidgetFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardWidgetFiltersTypeCALLID:
+		return true
+	case DashboardWidgetFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardWidgetFiltersTypeDATASET:
+		return true
+	case DashboardWidgetFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardWidgetFiltersTypeMETRICVALUE:
+		return true
+	case DashboardWidgetFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInterval.
+const (
+	DashboardWidgetIntervalDAY   DashboardWidgetInterval = "DAY"
+	DashboardWidgetIntervalHOUR  DashboardWidgetInterval = "HOUR"
+	DashboardWidgetIntervalMONTH DashboardWidgetInterval = "MONTH"
+	DashboardWidgetIntervalWEEK  DashboardWidgetInterval = "WEEK"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInterval enum.
+func (e DashboardWidgetInterval) Valid() bool {
+	switch e {
+	case DashboardWidgetIntervalDAY:
+		return true
+	case DashboardWidgetIntervalHOUR:
+		return true
+	case DashboardWidgetIntervalMONTH:
+		return true
+	case DashboardWidgetIntervalWEEK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetMeasuresAggregation.
+const (
+	DashboardWidgetMeasuresAggregationAVG        DashboardWidgetMeasuresAggregation = "AVG"
+	DashboardWidgetMeasuresAggregationCOUNT      DashboardWidgetMeasuresAggregation = "COUNT"
+	DashboardWidgetMeasuresAggregationMAX        DashboardWidgetMeasuresAggregation = "MAX"
+	DashboardWidgetMeasuresAggregationMEDIAN     DashboardWidgetMeasuresAggregation = "MEDIAN"
+	DashboardWidgetMeasuresAggregationMIN        DashboardWidgetMeasuresAggregation = "MIN"
+	DashboardWidgetMeasuresAggregationPASSRATE   DashboardWidgetMeasuresAggregation = "PASS_RATE"
+	DashboardWidgetMeasuresAggregationPERCENTILE DashboardWidgetMeasuresAggregation = "PERCENTILE"
+	DashboardWidgetMeasuresAggregationSUM        DashboardWidgetMeasuresAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetMeasuresAggregation enum.
+func (e DashboardWidgetMeasuresAggregation) Valid() bool {
+	switch e {
+	case DashboardWidgetMeasuresAggregationAVG:
+		return true
+	case DashboardWidgetMeasuresAggregationCOUNT:
+		return true
+	case DashboardWidgetMeasuresAggregationMAX:
+		return true
+	case DashboardWidgetMeasuresAggregationMEDIAN:
+		return true
+	case DashboardWidgetMeasuresAggregationMIN:
+		return true
+	case DashboardWidgetMeasuresAggregationPASSRATE:
+		return true
+	case DashboardWidgetMeasuresAggregationPERCENTILE:
+		return true
+	case DashboardWidgetMeasuresAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetMeasuresBreakdownType.
+const (
+	DashboardWidgetMeasuresBreakdownTypeAGENTPROPERTY  DashboardWidgetMeasuresBreakdownType = "AGENT_PROPERTY"
+	DashboardWidgetMeasuresBreakdownTypeCALLPROPERTY   DashboardWidgetMeasuresBreakdownType = "CALL_PROPERTY"
+	DashboardWidgetMeasuresBreakdownTypeDATASET        DashboardWidgetMeasuresBreakdownType = "DATASET"
+	DashboardWidgetMeasuresBreakdownTypeMETRICPROPERTY DashboardWidgetMeasuresBreakdownType = "METRIC_PROPERTY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetMeasuresBreakdownType enum.
+func (e DashboardWidgetMeasuresBreakdownType) Valid() bool {
+	switch e {
+	case DashboardWidgetMeasuresBreakdownTypeAGENTPROPERTY:
+		return true
+	case DashboardWidgetMeasuresBreakdownTypeCALLPROPERTY:
+		return true
+	case DashboardWidgetMeasuresBreakdownTypeDATASET:
+		return true
+	case DashboardWidgetMeasuresBreakdownTypeMETRICPROPERTY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetMeasuresColor.
+const (
+	DashboardWidgetMeasuresColorAMBER  DashboardWidgetMeasuresColor = "AMBER"
+	DashboardWidgetMeasuresColorBLUE   DashboardWidgetMeasuresColor = "BLUE"
+	DashboardWidgetMeasuresColorCYAN   DashboardWidgetMeasuresColor = "CYAN"
+	DashboardWidgetMeasuresColorGREEN  DashboardWidgetMeasuresColor = "GREEN"
+	DashboardWidgetMeasuresColorGREY   DashboardWidgetMeasuresColor = "GREY"
+	DashboardWidgetMeasuresColorINDIGO DashboardWidgetMeasuresColor = "INDIGO"
+	DashboardWidgetMeasuresColorORANGE DashboardWidgetMeasuresColor = "ORANGE"
+	DashboardWidgetMeasuresColorPEACH  DashboardWidgetMeasuresColor = "PEACH"
+	DashboardWidgetMeasuresColorPURPLE DashboardWidgetMeasuresColor = "PURPLE"
+	DashboardWidgetMeasuresColorRED    DashboardWidgetMeasuresColor = "RED"
+	DashboardWidgetMeasuresColorROSE   DashboardWidgetMeasuresColor = "ROSE"
+	DashboardWidgetMeasuresColorTEAL   DashboardWidgetMeasuresColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetMeasuresColor enum.
+func (e DashboardWidgetMeasuresColor) Valid() bool {
+	switch e {
+	case DashboardWidgetMeasuresColorAMBER:
+		return true
+	case DashboardWidgetMeasuresColorBLUE:
+		return true
+	case DashboardWidgetMeasuresColorCYAN:
+		return true
+	case DashboardWidgetMeasuresColorGREEN:
+		return true
+	case DashboardWidgetMeasuresColorGREY:
+		return true
+	case DashboardWidgetMeasuresColorINDIGO:
+		return true
+	case DashboardWidgetMeasuresColorORANGE:
+		return true
+	case DashboardWidgetMeasuresColorPEACH:
+		return true
+	case DashboardWidgetMeasuresColorPURPLE:
+		return true
+	case DashboardWidgetMeasuresColorRED:
+		return true
+	case DashboardWidgetMeasuresColorROSE:
+		return true
+	case DashboardWidgetMeasuresColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetMeasuresDistinctBy.
+const (
+	DashboardWidgetMeasuresDistinctByCALL DashboardWidgetMeasuresDistinctBy = "CALL"
+	DashboardWidgetMeasuresDistinctByNONE DashboardWidgetMeasuresDistinctBy = "NONE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetMeasuresDistinctBy enum.
+func (e DashboardWidgetMeasuresDistinctBy) Valid() bool {
+	switch e {
+	case DashboardWidgetMeasuresDistinctByCALL:
+		return true
+	case DashboardWidgetMeasuresDistinctByNONE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetMeasuresFiltersOperator.
+const (
+	DashboardWidgetMeasuresFiltersOperatorCONTAINS             DashboardWidgetMeasuresFiltersOperator = "CONTAINS"
+	DashboardWidgetMeasuresFiltersOperatorEQUALS               DashboardWidgetMeasuresFiltersOperator = "EQUALS"
+	DashboardWidgetMeasuresFiltersOperatorGREATERTHAN          DashboardWidgetMeasuresFiltersOperator = "GREATER_THAN"
+	DashboardWidgetMeasuresFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetMeasuresFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetMeasuresFiltersOperatorLESSTHAN             DashboardWidgetMeasuresFiltersOperator = "LESS_THAN"
+	DashboardWidgetMeasuresFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetMeasuresFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardWidgetMeasuresFiltersOperatorNOTEQUALS            DashboardWidgetMeasuresFiltersOperator = "NOT_EQUALS"
+	DashboardWidgetMeasuresFiltersOperatorSTARTSWITH           DashboardWidgetMeasuresFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetMeasuresFiltersOperator enum.
+func (e DashboardWidgetMeasuresFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardWidgetMeasuresFiltersOperatorCONTAINS:
+		return true
+	case DashboardWidgetMeasuresFiltersOperatorEQUALS:
+		return true
+	case DashboardWidgetMeasuresFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardWidgetMeasuresFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetMeasuresFiltersOperatorLESSTHAN:
+		return true
+	case DashboardWidgetMeasuresFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardWidgetMeasuresFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardWidgetMeasuresFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetMeasuresFiltersType.
+const (
+	DashboardWidgetMeasuresFiltersTypeAGENTPROPERTY  DashboardWidgetMeasuresFiltersType = "AGENT_PROPERTY"
+	DashboardWidgetMeasuresFiltersTypeCALLID         DashboardWidgetMeasuresFiltersType = "CALL_ID"
+	DashboardWidgetMeasuresFiltersTypeCALLPROPERTY   DashboardWidgetMeasuresFiltersType = "CALL_PROPERTY"
+	DashboardWidgetMeasuresFiltersTypeDATASET        DashboardWidgetMeasuresFiltersType = "DATASET"
+	DashboardWidgetMeasuresFiltersTypeMETRICPROPERTY DashboardWidgetMeasuresFiltersType = "METRIC_PROPERTY"
+	DashboardWidgetMeasuresFiltersTypeMETRICVALUE    DashboardWidgetMeasuresFiltersType = "METRIC_VALUE"
+	DashboardWidgetMeasuresFiltersTypeMODALITY       DashboardWidgetMeasuresFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetMeasuresFiltersType enum.
+func (e DashboardWidgetMeasuresFiltersType) Valid() bool {
+	switch e {
+	case DashboardWidgetMeasuresFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardWidgetMeasuresFiltersTypeCALLID:
+		return true
+	case DashboardWidgetMeasuresFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardWidgetMeasuresFiltersTypeDATASET:
+		return true
+	case DashboardWidgetMeasuresFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardWidgetMeasuresFiltersTypeMETRICVALUE:
+		return true
+	case DashboardWidgetMeasuresFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetMeasuresNestedAggregation.
+const (
+	DashboardWidgetMeasuresNestedAggregationAVG        DashboardWidgetMeasuresNestedAggregation = "AVG"
+	DashboardWidgetMeasuresNestedAggregationCOUNT      DashboardWidgetMeasuresNestedAggregation = "COUNT"
+	DashboardWidgetMeasuresNestedAggregationMAX        DashboardWidgetMeasuresNestedAggregation = "MAX"
+	DashboardWidgetMeasuresNestedAggregationMEDIAN     DashboardWidgetMeasuresNestedAggregation = "MEDIAN"
+	DashboardWidgetMeasuresNestedAggregationMIN        DashboardWidgetMeasuresNestedAggregation = "MIN"
+	DashboardWidgetMeasuresNestedAggregationPASSRATE   DashboardWidgetMeasuresNestedAggregation = "PASS_RATE"
+	DashboardWidgetMeasuresNestedAggregationPERCENTILE DashboardWidgetMeasuresNestedAggregation = "PERCENTILE"
+	DashboardWidgetMeasuresNestedAggregationSUM        DashboardWidgetMeasuresNestedAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetMeasuresNestedAggregation enum.
+func (e DashboardWidgetMeasuresNestedAggregation) Valid() bool {
+	switch e {
+	case DashboardWidgetMeasuresNestedAggregationAVG:
+		return true
+	case DashboardWidgetMeasuresNestedAggregationCOUNT:
+		return true
+	case DashboardWidgetMeasuresNestedAggregationMAX:
+		return true
+	case DashboardWidgetMeasuresNestedAggregationMEDIAN:
+		return true
+	case DashboardWidgetMeasuresNestedAggregationMIN:
+		return true
+	case DashboardWidgetMeasuresNestedAggregationPASSRATE:
+		return true
+	case DashboardWidgetMeasuresNestedAggregationPERCENTILE:
+		return true
+	case DashboardWidgetMeasuresNestedAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetMeasuresPassOperator.
+const (
+	DashboardWidgetMeasuresPassOperatorCONTAINS             DashboardWidgetMeasuresPassOperator = "CONTAINS"
+	DashboardWidgetMeasuresPassOperatorEQUALS               DashboardWidgetMeasuresPassOperator = "EQUALS"
+	DashboardWidgetMeasuresPassOperatorGREATERTHAN          DashboardWidgetMeasuresPassOperator = "GREATER_THAN"
+	DashboardWidgetMeasuresPassOperatorGREATERTHANOREQUALTO DashboardWidgetMeasuresPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetMeasuresPassOperatorLESSTHAN             DashboardWidgetMeasuresPassOperator = "LESS_THAN"
+	DashboardWidgetMeasuresPassOperatorLESSTHANOREQUALTO    DashboardWidgetMeasuresPassOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardWidgetMeasuresPassOperatorNOTEQUALS            DashboardWidgetMeasuresPassOperator = "NOT_EQUALS"
+	DashboardWidgetMeasuresPassOperatorSTARTSWITH           DashboardWidgetMeasuresPassOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetMeasuresPassOperator enum.
+func (e DashboardWidgetMeasuresPassOperator) Valid() bool {
+	switch e {
+	case DashboardWidgetMeasuresPassOperatorCONTAINS:
+		return true
+	case DashboardWidgetMeasuresPassOperatorEQUALS:
+		return true
+	case DashboardWidgetMeasuresPassOperatorGREATERTHAN:
+		return true
+	case DashboardWidgetMeasuresPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetMeasuresPassOperatorLESSTHAN:
+		return true
+	case DashboardWidgetMeasuresPassOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardWidgetMeasuresPassOperatorNOTEQUALS:
+		return true
+	case DashboardWidgetMeasuresPassOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetMeasuresType.
+const (
+	DashboardWidgetMeasuresTypeCONVERSATION DashboardWidgetMeasuresType = "CONVERSATION"
+	DashboardWidgetMeasuresTypeMETRIC       DashboardWidgetMeasuresType = "METRIC"
+	DashboardWidgetMeasuresTypeUPTIME       DashboardWidgetMeasuresType = "UPTIME"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetMeasuresType enum.
+func (e DashboardWidgetMeasuresType) Valid() bool {
+	switch e {
+	case DashboardWidgetMeasuresTypeCONVERSATION:
+		return true
+	case DashboardWidgetMeasuresTypeMETRIC:
+		return true
+	case DashboardWidgetMeasuresTypeUPTIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetSize.
+const (
+	DashboardWidgetSizeEXTRALARGE DashboardWidgetSize = "EXTRA_LARGE"
+	DashboardWidgetSizeLARGE      DashboardWidgetSize = "LARGE"
+	DashboardWidgetSizeMEDIUM     DashboardWidgetSize = "MEDIUM"
+	DashboardWidgetSizeSMALL      DashboardWidgetSize = "SMALL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetSize enum.
+func (e DashboardWidgetSize) Valid() bool {
+	switch e {
+	case DashboardWidgetSizeEXTRALARGE:
+		return true
+	case DashboardWidgetSizeLARGE:
+		return true
+	case DashboardWidgetSizeMEDIUM:
+		return true
+	case DashboardWidgetSizeSMALL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetConfigComparisonGroupsColor.
+const (
+	DashboardWidgetConfigComparisonGroupsColorAMBER  DashboardWidgetConfigComparisonGroupsColor = "AMBER"
+	DashboardWidgetConfigComparisonGroupsColorBLUE   DashboardWidgetConfigComparisonGroupsColor = "BLUE"
+	DashboardWidgetConfigComparisonGroupsColorCYAN   DashboardWidgetConfigComparisonGroupsColor = "CYAN"
+	DashboardWidgetConfigComparisonGroupsColorGREEN  DashboardWidgetConfigComparisonGroupsColor = "GREEN"
+	DashboardWidgetConfigComparisonGroupsColorGREY   DashboardWidgetConfigComparisonGroupsColor = "GREY"
+	DashboardWidgetConfigComparisonGroupsColorINDIGO DashboardWidgetConfigComparisonGroupsColor = "INDIGO"
+	DashboardWidgetConfigComparisonGroupsColorORANGE DashboardWidgetConfigComparisonGroupsColor = "ORANGE"
+	DashboardWidgetConfigComparisonGroupsColorPEACH  DashboardWidgetConfigComparisonGroupsColor = "PEACH"
+	DashboardWidgetConfigComparisonGroupsColorPURPLE DashboardWidgetConfigComparisonGroupsColor = "PURPLE"
+	DashboardWidgetConfigComparisonGroupsColorRED    DashboardWidgetConfigComparisonGroupsColor = "RED"
+	DashboardWidgetConfigComparisonGroupsColorROSE   DashboardWidgetConfigComparisonGroupsColor = "ROSE"
+	DashboardWidgetConfigComparisonGroupsColorTEAL   DashboardWidgetConfigComparisonGroupsColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetConfigComparisonGroupsColor enum.
+func (e DashboardWidgetConfigComparisonGroupsColor) Valid() bool {
+	switch e {
+	case DashboardWidgetConfigComparisonGroupsColorAMBER:
+		return true
+	case DashboardWidgetConfigComparisonGroupsColorBLUE:
+		return true
+	case DashboardWidgetConfigComparisonGroupsColorCYAN:
+		return true
+	case DashboardWidgetConfigComparisonGroupsColorGREEN:
+		return true
+	case DashboardWidgetConfigComparisonGroupsColorGREY:
+		return true
+	case DashboardWidgetConfigComparisonGroupsColorINDIGO:
+		return true
+	case DashboardWidgetConfigComparisonGroupsColorORANGE:
+		return true
+	case DashboardWidgetConfigComparisonGroupsColorPEACH:
+		return true
+	case DashboardWidgetConfigComparisonGroupsColorPURPLE:
+		return true
+	case DashboardWidgetConfigComparisonGroupsColorRED:
+		return true
+	case DashboardWidgetConfigComparisonGroupsColorROSE:
+		return true
+	case DashboardWidgetConfigComparisonGroupsColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetConfigComparisonMode.
+const (
+	DashboardWidgetConfigComparisonModeNONE           DashboardWidgetConfigComparisonMode = "NONE"
+	DashboardWidgetConfigComparisonModePREVIOUSPERIOD DashboardWidgetConfigComparisonMode = "PREVIOUS_PERIOD"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetConfigComparisonMode enum.
+func (e DashboardWidgetConfigComparisonMode) Valid() bool {
+	switch e {
+	case DashboardWidgetConfigComparisonModeNONE:
+		return true
+	case DashboardWidgetConfigComparisonModePREVIOUSPERIOD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetConfigDisplay.
+const (
+	DashboardWidgetConfigDisplayLINE       DashboardWidgetConfigDisplay = "LINE"
+	DashboardWidgetConfigDisplayNUMBER     DashboardWidgetConfigDisplay = "NUMBER"
+	DashboardWidgetConfigDisplayRADAR      DashboardWidgetConfigDisplay = "RADAR"
+	DashboardWidgetConfigDisplaySTACKEDBAR DashboardWidgetConfigDisplay = "STACKED_BAR"
+	DashboardWidgetConfigDisplayTABLE      DashboardWidgetConfigDisplay = "TABLE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetConfigDisplay enum.
+func (e DashboardWidgetConfigDisplay) Valid() bool {
+	switch e {
+	case DashboardWidgetConfigDisplayLINE:
+		return true
+	case DashboardWidgetConfigDisplayNUMBER:
+		return true
+	case DashboardWidgetConfigDisplayRADAR:
+		return true
+	case DashboardWidgetConfigDisplaySTACKEDBAR:
+		return true
+	case DashboardWidgetConfigDisplayTABLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetConfigInterval.
+const (
+	DashboardWidgetConfigIntervalDAY   DashboardWidgetConfigInterval = "DAY"
+	DashboardWidgetConfigIntervalHOUR  DashboardWidgetConfigInterval = "HOUR"
+	DashboardWidgetConfigIntervalMONTH DashboardWidgetConfigInterval = "MONTH"
+	DashboardWidgetConfigIntervalWEEK  DashboardWidgetConfigInterval = "WEEK"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetConfigInterval enum.
+func (e DashboardWidgetConfigInterval) Valid() bool {
+	switch e {
+	case DashboardWidgetConfigIntervalDAY:
+		return true
+	case DashboardWidgetConfigIntervalHOUR:
+		return true
+	case DashboardWidgetConfigIntervalMONTH:
+		return true
+	case DashboardWidgetConfigIntervalWEEK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetConfigSize.
+const (
+	DashboardWidgetConfigSizeEXTRALARGE DashboardWidgetConfigSize = "EXTRA_LARGE"
+	DashboardWidgetConfigSizeLARGE      DashboardWidgetConfigSize = "LARGE"
+	DashboardWidgetConfigSizeMEDIUM     DashboardWidgetConfigSize = "MEDIUM"
+	DashboardWidgetConfigSizeSMALL      DashboardWidgetConfigSize = "SMALL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetConfigSize enum.
+func (e DashboardWidgetConfigSize) Valid() bool {
+	switch e {
+	case DashboardWidgetConfigSizeEXTRALARGE:
+		return true
+	case DashboardWidgetConfigSizeLARGE:
+		return true
+	case DashboardWidgetConfigSizeMEDIUM:
+		return true
+	case DashboardWidgetConfigSizeSMALL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetDataInterval.
+const (
+	DashboardWidgetDataIntervalDAY   DashboardWidgetDataInterval = "DAY"
+	DashboardWidgetDataIntervalHOUR  DashboardWidgetDataInterval = "HOUR"
+	DashboardWidgetDataIntervalMONTH DashboardWidgetDataInterval = "MONTH"
+	DashboardWidgetDataIntervalWEEK  DashboardWidgetDataInterval = "WEEK"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetDataInterval enum.
+func (e DashboardWidgetDataInterval) Valid() bool {
+	switch e {
+	case DashboardWidgetDataIntervalDAY:
+		return true
+	case DashboardWidgetDataIntervalHOUR:
+		return true
+	case DashboardWidgetDataIntervalMONTH:
+		return true
+	case DashboardWidgetDataIntervalWEEK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetDataSeriesAggregation.
+const (
+	DashboardWidgetDataSeriesAggregationAVG        DashboardWidgetDataSeriesAggregation = "AVG"
+	DashboardWidgetDataSeriesAggregationCOUNT      DashboardWidgetDataSeriesAggregation = "COUNT"
+	DashboardWidgetDataSeriesAggregationMAX        DashboardWidgetDataSeriesAggregation = "MAX"
+	DashboardWidgetDataSeriesAggregationMEDIAN     DashboardWidgetDataSeriesAggregation = "MEDIAN"
+	DashboardWidgetDataSeriesAggregationMIN        DashboardWidgetDataSeriesAggregation = "MIN"
+	DashboardWidgetDataSeriesAggregationPASSRATE   DashboardWidgetDataSeriesAggregation = "PASS_RATE"
+	DashboardWidgetDataSeriesAggregationPERCENTILE DashboardWidgetDataSeriesAggregation = "PERCENTILE"
+	DashboardWidgetDataSeriesAggregationSUM        DashboardWidgetDataSeriesAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetDataSeriesAggregation enum.
+func (e DashboardWidgetDataSeriesAggregation) Valid() bool {
+	switch e {
+	case DashboardWidgetDataSeriesAggregationAVG:
+		return true
+	case DashboardWidgetDataSeriesAggregationCOUNT:
+		return true
+	case DashboardWidgetDataSeriesAggregationMAX:
+		return true
+	case DashboardWidgetDataSeriesAggregationMEDIAN:
+		return true
+	case DashboardWidgetDataSeriesAggregationMIN:
+		return true
+	case DashboardWidgetDataSeriesAggregationPASSRATE:
+		return true
+	case DashboardWidgetDataSeriesAggregationPERCENTILE:
+		return true
+	case DashboardWidgetDataSeriesAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetDataSeriesType.
+const (
+	DashboardWidgetDataSeriesTypeCONVERSATION DashboardWidgetDataSeriesType = "CONVERSATION"
+	DashboardWidgetDataSeriesTypeMETRIC       DashboardWidgetDataSeriesType = "METRIC"
+	DashboardWidgetDataSeriesTypeUPTIME       DashboardWidgetDataSeriesType = "UPTIME"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetDataSeriesType enum.
+func (e DashboardWidgetDataSeriesType) Valid() bool {
+	switch e {
+	case DashboardWidgetDataSeriesTypeCONVERSATION:
+		return true
+	case DashboardWidgetDataSeriesTypeMETRIC:
+		return true
+	case DashboardWidgetDataSeriesTypeUPTIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputComparisonGroupsColor.
+const (
+	DashboardWidgetInputComparisonGroupsColorAMBER  DashboardWidgetInputComparisonGroupsColor = "AMBER"
+	DashboardWidgetInputComparisonGroupsColorBLUE   DashboardWidgetInputComparisonGroupsColor = "BLUE"
+	DashboardWidgetInputComparisonGroupsColorCYAN   DashboardWidgetInputComparisonGroupsColor = "CYAN"
+	DashboardWidgetInputComparisonGroupsColorGREEN  DashboardWidgetInputComparisonGroupsColor = "GREEN"
+	DashboardWidgetInputComparisonGroupsColorGREY   DashboardWidgetInputComparisonGroupsColor = "GREY"
+	DashboardWidgetInputComparisonGroupsColorINDIGO DashboardWidgetInputComparisonGroupsColor = "INDIGO"
+	DashboardWidgetInputComparisonGroupsColorORANGE DashboardWidgetInputComparisonGroupsColor = "ORANGE"
+	DashboardWidgetInputComparisonGroupsColorPEACH  DashboardWidgetInputComparisonGroupsColor = "PEACH"
+	DashboardWidgetInputComparisonGroupsColorPURPLE DashboardWidgetInputComparisonGroupsColor = "PURPLE"
+	DashboardWidgetInputComparisonGroupsColorRED    DashboardWidgetInputComparisonGroupsColor = "RED"
+	DashboardWidgetInputComparisonGroupsColorROSE   DashboardWidgetInputComparisonGroupsColor = "ROSE"
+	DashboardWidgetInputComparisonGroupsColorTEAL   DashboardWidgetInputComparisonGroupsColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputComparisonGroupsColor enum.
+func (e DashboardWidgetInputComparisonGroupsColor) Valid() bool {
+	switch e {
+	case DashboardWidgetInputComparisonGroupsColorAMBER:
+		return true
+	case DashboardWidgetInputComparisonGroupsColorBLUE:
+		return true
+	case DashboardWidgetInputComparisonGroupsColorCYAN:
+		return true
+	case DashboardWidgetInputComparisonGroupsColorGREEN:
+		return true
+	case DashboardWidgetInputComparisonGroupsColorGREY:
+		return true
+	case DashboardWidgetInputComparisonGroupsColorINDIGO:
+		return true
+	case DashboardWidgetInputComparisonGroupsColorORANGE:
+		return true
+	case DashboardWidgetInputComparisonGroupsColorPEACH:
+		return true
+	case DashboardWidgetInputComparisonGroupsColorPURPLE:
+		return true
+	case DashboardWidgetInputComparisonGroupsColorRED:
+		return true
+	case DashboardWidgetInputComparisonGroupsColorROSE:
+		return true
+	case DashboardWidgetInputComparisonGroupsColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputComparisonGroupsFiltersOperator.
+const (
+	DashboardWidgetInputComparisonGroupsFiltersOperatorCONTAINS             DashboardWidgetInputComparisonGroupsFiltersOperator = "CONTAINS"
+	DashboardWidgetInputComparisonGroupsFiltersOperatorEQUALS               DashboardWidgetInputComparisonGroupsFiltersOperator = "EQUALS"
+	DashboardWidgetInputComparisonGroupsFiltersOperatorGREATERTHAN          DashboardWidgetInputComparisonGroupsFiltersOperator = "GREATER_THAN"
+	DashboardWidgetInputComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetInputComparisonGroupsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetInputComparisonGroupsFiltersOperatorLESSTHAN             DashboardWidgetInputComparisonGroupsFiltersOperator = "LESS_THAN"
+	DashboardWidgetInputComparisonGroupsFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetInputComparisonGroupsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardWidgetInputComparisonGroupsFiltersOperatorNOTEQUALS            DashboardWidgetInputComparisonGroupsFiltersOperator = "NOT_EQUALS"
+	DashboardWidgetInputComparisonGroupsFiltersOperatorSTARTSWITH           DashboardWidgetInputComparisonGroupsFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputComparisonGroupsFiltersOperator enum.
+func (e DashboardWidgetInputComparisonGroupsFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardWidgetInputComparisonGroupsFiltersOperatorCONTAINS:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersOperatorEQUALS:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersOperatorLESSTHAN:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputComparisonGroupsFiltersType.
+const (
+	DashboardWidgetInputComparisonGroupsFiltersTypeAGENTPROPERTY  DashboardWidgetInputComparisonGroupsFiltersType = "AGENT_PROPERTY"
+	DashboardWidgetInputComparisonGroupsFiltersTypeCALLID         DashboardWidgetInputComparisonGroupsFiltersType = "CALL_ID"
+	DashboardWidgetInputComparisonGroupsFiltersTypeCALLPROPERTY   DashboardWidgetInputComparisonGroupsFiltersType = "CALL_PROPERTY"
+	DashboardWidgetInputComparisonGroupsFiltersTypeDATASET        DashboardWidgetInputComparisonGroupsFiltersType = "DATASET"
+	DashboardWidgetInputComparisonGroupsFiltersTypeMETRICPROPERTY DashboardWidgetInputComparisonGroupsFiltersType = "METRIC_PROPERTY"
+	DashboardWidgetInputComparisonGroupsFiltersTypeMETRICVALUE    DashboardWidgetInputComparisonGroupsFiltersType = "METRIC_VALUE"
+	DashboardWidgetInputComparisonGroupsFiltersTypeMODALITY       DashboardWidgetInputComparisonGroupsFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputComparisonGroupsFiltersType enum.
+func (e DashboardWidgetInputComparisonGroupsFiltersType) Valid() bool {
+	switch e {
+	case DashboardWidgetInputComparisonGroupsFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersTypeCALLID:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersTypeDATASET:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersTypeMETRICVALUE:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputComparisonMode.
+const (
+	DashboardWidgetInputComparisonModeNONE           DashboardWidgetInputComparisonMode = "NONE"
+	DashboardWidgetInputComparisonModePREVIOUSPERIOD DashboardWidgetInputComparisonMode = "PREVIOUS_PERIOD"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputComparisonMode enum.
+func (e DashboardWidgetInputComparisonMode) Valid() bool {
+	switch e {
+	case DashboardWidgetInputComparisonModeNONE:
+		return true
+	case DashboardWidgetInputComparisonModePREVIOUSPERIOD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputDisplay.
+const (
+	DashboardWidgetInputDisplayLINE       DashboardWidgetInputDisplay = "LINE"
+	DashboardWidgetInputDisplayNUMBER     DashboardWidgetInputDisplay = "NUMBER"
+	DashboardWidgetInputDisplayRADAR      DashboardWidgetInputDisplay = "RADAR"
+	DashboardWidgetInputDisplaySTACKEDBAR DashboardWidgetInputDisplay = "STACKED_BAR"
+	DashboardWidgetInputDisplayTABLE      DashboardWidgetInputDisplay = "TABLE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputDisplay enum.
+func (e DashboardWidgetInputDisplay) Valid() bool {
+	switch e {
+	case DashboardWidgetInputDisplayLINE:
+		return true
+	case DashboardWidgetInputDisplayNUMBER:
+		return true
+	case DashboardWidgetInputDisplayRADAR:
+		return true
+	case DashboardWidgetInputDisplaySTACKEDBAR:
+		return true
+	case DashboardWidgetInputDisplayTABLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputFiltersOperator.
+const (
+	DashboardWidgetInputFiltersOperatorCONTAINS             DashboardWidgetInputFiltersOperator = "CONTAINS"
+	DashboardWidgetInputFiltersOperatorEQUALS               DashboardWidgetInputFiltersOperator = "EQUALS"
+	DashboardWidgetInputFiltersOperatorGREATERTHAN          DashboardWidgetInputFiltersOperator = "GREATER_THAN"
+	DashboardWidgetInputFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetInputFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetInputFiltersOperatorLESSTHAN             DashboardWidgetInputFiltersOperator = "LESS_THAN"
+	DashboardWidgetInputFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetInputFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardWidgetInputFiltersOperatorNOTEQUALS            DashboardWidgetInputFiltersOperator = "NOT_EQUALS"
+	DashboardWidgetInputFiltersOperatorSTARTSWITH           DashboardWidgetInputFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputFiltersOperator enum.
+func (e DashboardWidgetInputFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardWidgetInputFiltersOperatorCONTAINS:
+		return true
+	case DashboardWidgetInputFiltersOperatorEQUALS:
+		return true
+	case DashboardWidgetInputFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardWidgetInputFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetInputFiltersOperatorLESSTHAN:
+		return true
+	case DashboardWidgetInputFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardWidgetInputFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardWidgetInputFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputFiltersType.
+const (
+	DashboardWidgetInputFiltersTypeAGENTPROPERTY  DashboardWidgetInputFiltersType = "AGENT_PROPERTY"
+	DashboardWidgetInputFiltersTypeCALLID         DashboardWidgetInputFiltersType = "CALL_ID"
+	DashboardWidgetInputFiltersTypeCALLPROPERTY   DashboardWidgetInputFiltersType = "CALL_PROPERTY"
+	DashboardWidgetInputFiltersTypeDATASET        DashboardWidgetInputFiltersType = "DATASET"
+	DashboardWidgetInputFiltersTypeMETRICPROPERTY DashboardWidgetInputFiltersType = "METRIC_PROPERTY"
+	DashboardWidgetInputFiltersTypeMETRICVALUE    DashboardWidgetInputFiltersType = "METRIC_VALUE"
+	DashboardWidgetInputFiltersTypeMODALITY       DashboardWidgetInputFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputFiltersType enum.
+func (e DashboardWidgetInputFiltersType) Valid() bool {
+	switch e {
+	case DashboardWidgetInputFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardWidgetInputFiltersTypeCALLID:
+		return true
+	case DashboardWidgetInputFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardWidgetInputFiltersTypeDATASET:
+		return true
+	case DashboardWidgetInputFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardWidgetInputFiltersTypeMETRICVALUE:
+		return true
+	case DashboardWidgetInputFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputInterval.
+const (
+	DashboardWidgetInputIntervalDAY   DashboardWidgetInputInterval = "DAY"
+	DashboardWidgetInputIntervalHOUR  DashboardWidgetInputInterval = "HOUR"
+	DashboardWidgetInputIntervalMONTH DashboardWidgetInputInterval = "MONTH"
+	DashboardWidgetInputIntervalWEEK  DashboardWidgetInputInterval = "WEEK"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputInterval enum.
+func (e DashboardWidgetInputInterval) Valid() bool {
+	switch e {
+	case DashboardWidgetInputIntervalDAY:
+		return true
+	case DashboardWidgetInputIntervalHOUR:
+		return true
+	case DashboardWidgetInputIntervalMONTH:
+		return true
+	case DashboardWidgetInputIntervalWEEK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputMeasuresAggregation.
+const (
+	DashboardWidgetInputMeasuresAggregationAVG        DashboardWidgetInputMeasuresAggregation = "AVG"
+	DashboardWidgetInputMeasuresAggregationCOUNT      DashboardWidgetInputMeasuresAggregation = "COUNT"
+	DashboardWidgetInputMeasuresAggregationMAX        DashboardWidgetInputMeasuresAggregation = "MAX"
+	DashboardWidgetInputMeasuresAggregationMEDIAN     DashboardWidgetInputMeasuresAggregation = "MEDIAN"
+	DashboardWidgetInputMeasuresAggregationMIN        DashboardWidgetInputMeasuresAggregation = "MIN"
+	DashboardWidgetInputMeasuresAggregationPASSRATE   DashboardWidgetInputMeasuresAggregation = "PASS_RATE"
+	DashboardWidgetInputMeasuresAggregationPERCENTILE DashboardWidgetInputMeasuresAggregation = "PERCENTILE"
+	DashboardWidgetInputMeasuresAggregationSUM        DashboardWidgetInputMeasuresAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputMeasuresAggregation enum.
+func (e DashboardWidgetInputMeasuresAggregation) Valid() bool {
+	switch e {
+	case DashboardWidgetInputMeasuresAggregationAVG:
+		return true
+	case DashboardWidgetInputMeasuresAggregationCOUNT:
+		return true
+	case DashboardWidgetInputMeasuresAggregationMAX:
+		return true
+	case DashboardWidgetInputMeasuresAggregationMEDIAN:
+		return true
+	case DashboardWidgetInputMeasuresAggregationMIN:
+		return true
+	case DashboardWidgetInputMeasuresAggregationPASSRATE:
+		return true
+	case DashboardWidgetInputMeasuresAggregationPERCENTILE:
+		return true
+	case DashboardWidgetInputMeasuresAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputMeasuresBreakdownType.
+const (
+	DashboardWidgetInputMeasuresBreakdownTypeAGENTPROPERTY  DashboardWidgetInputMeasuresBreakdownType = "AGENT_PROPERTY"
+	DashboardWidgetInputMeasuresBreakdownTypeCALLPROPERTY   DashboardWidgetInputMeasuresBreakdownType = "CALL_PROPERTY"
+	DashboardWidgetInputMeasuresBreakdownTypeDATASET        DashboardWidgetInputMeasuresBreakdownType = "DATASET"
+	DashboardWidgetInputMeasuresBreakdownTypeMETRICPROPERTY DashboardWidgetInputMeasuresBreakdownType = "METRIC_PROPERTY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputMeasuresBreakdownType enum.
+func (e DashboardWidgetInputMeasuresBreakdownType) Valid() bool {
+	switch e {
+	case DashboardWidgetInputMeasuresBreakdownTypeAGENTPROPERTY:
+		return true
+	case DashboardWidgetInputMeasuresBreakdownTypeCALLPROPERTY:
+		return true
+	case DashboardWidgetInputMeasuresBreakdownTypeDATASET:
+		return true
+	case DashboardWidgetInputMeasuresBreakdownTypeMETRICPROPERTY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputMeasuresColor.
+const (
+	DashboardWidgetInputMeasuresColorAMBER  DashboardWidgetInputMeasuresColor = "AMBER"
+	DashboardWidgetInputMeasuresColorBLUE   DashboardWidgetInputMeasuresColor = "BLUE"
+	DashboardWidgetInputMeasuresColorCYAN   DashboardWidgetInputMeasuresColor = "CYAN"
+	DashboardWidgetInputMeasuresColorGREEN  DashboardWidgetInputMeasuresColor = "GREEN"
+	DashboardWidgetInputMeasuresColorGREY   DashboardWidgetInputMeasuresColor = "GREY"
+	DashboardWidgetInputMeasuresColorINDIGO DashboardWidgetInputMeasuresColor = "INDIGO"
+	DashboardWidgetInputMeasuresColorORANGE DashboardWidgetInputMeasuresColor = "ORANGE"
+	DashboardWidgetInputMeasuresColorPEACH  DashboardWidgetInputMeasuresColor = "PEACH"
+	DashboardWidgetInputMeasuresColorPURPLE DashboardWidgetInputMeasuresColor = "PURPLE"
+	DashboardWidgetInputMeasuresColorRED    DashboardWidgetInputMeasuresColor = "RED"
+	DashboardWidgetInputMeasuresColorROSE   DashboardWidgetInputMeasuresColor = "ROSE"
+	DashboardWidgetInputMeasuresColorTEAL   DashboardWidgetInputMeasuresColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputMeasuresColor enum.
+func (e DashboardWidgetInputMeasuresColor) Valid() bool {
+	switch e {
+	case DashboardWidgetInputMeasuresColorAMBER:
+		return true
+	case DashboardWidgetInputMeasuresColorBLUE:
+		return true
+	case DashboardWidgetInputMeasuresColorCYAN:
+		return true
+	case DashboardWidgetInputMeasuresColorGREEN:
+		return true
+	case DashboardWidgetInputMeasuresColorGREY:
+		return true
+	case DashboardWidgetInputMeasuresColorINDIGO:
+		return true
+	case DashboardWidgetInputMeasuresColorORANGE:
+		return true
+	case DashboardWidgetInputMeasuresColorPEACH:
+		return true
+	case DashboardWidgetInputMeasuresColorPURPLE:
+		return true
+	case DashboardWidgetInputMeasuresColorRED:
+		return true
+	case DashboardWidgetInputMeasuresColorROSE:
+		return true
+	case DashboardWidgetInputMeasuresColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputMeasuresDistinctBy.
+const (
+	DashboardWidgetInputMeasuresDistinctByCALL DashboardWidgetInputMeasuresDistinctBy = "CALL"
+	DashboardWidgetInputMeasuresDistinctByNONE DashboardWidgetInputMeasuresDistinctBy = "NONE"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputMeasuresDistinctBy enum.
+func (e DashboardWidgetInputMeasuresDistinctBy) Valid() bool {
+	switch e {
+	case DashboardWidgetInputMeasuresDistinctByCALL:
+		return true
+	case DashboardWidgetInputMeasuresDistinctByNONE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputMeasuresFiltersOperator.
+const (
+	DashboardWidgetInputMeasuresFiltersOperatorCONTAINS             DashboardWidgetInputMeasuresFiltersOperator = "CONTAINS"
+	DashboardWidgetInputMeasuresFiltersOperatorEQUALS               DashboardWidgetInputMeasuresFiltersOperator = "EQUALS"
+	DashboardWidgetInputMeasuresFiltersOperatorGREATERTHAN          DashboardWidgetInputMeasuresFiltersOperator = "GREATER_THAN"
+	DashboardWidgetInputMeasuresFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetInputMeasuresFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetInputMeasuresFiltersOperatorLESSTHAN             DashboardWidgetInputMeasuresFiltersOperator = "LESS_THAN"
+	DashboardWidgetInputMeasuresFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetInputMeasuresFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardWidgetInputMeasuresFiltersOperatorNOTEQUALS            DashboardWidgetInputMeasuresFiltersOperator = "NOT_EQUALS"
+	DashboardWidgetInputMeasuresFiltersOperatorSTARTSWITH           DashboardWidgetInputMeasuresFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputMeasuresFiltersOperator enum.
+func (e DashboardWidgetInputMeasuresFiltersOperator) Valid() bool {
+	switch e {
+	case DashboardWidgetInputMeasuresFiltersOperatorCONTAINS:
+		return true
+	case DashboardWidgetInputMeasuresFiltersOperatorEQUALS:
+		return true
+	case DashboardWidgetInputMeasuresFiltersOperatorGREATERTHAN:
+		return true
+	case DashboardWidgetInputMeasuresFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetInputMeasuresFiltersOperatorLESSTHAN:
+		return true
+	case DashboardWidgetInputMeasuresFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardWidgetInputMeasuresFiltersOperatorNOTEQUALS:
+		return true
+	case DashboardWidgetInputMeasuresFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputMeasuresFiltersType.
+const (
+	DashboardWidgetInputMeasuresFiltersTypeAGENTPROPERTY  DashboardWidgetInputMeasuresFiltersType = "AGENT_PROPERTY"
+	DashboardWidgetInputMeasuresFiltersTypeCALLID         DashboardWidgetInputMeasuresFiltersType = "CALL_ID"
+	DashboardWidgetInputMeasuresFiltersTypeCALLPROPERTY   DashboardWidgetInputMeasuresFiltersType = "CALL_PROPERTY"
+	DashboardWidgetInputMeasuresFiltersTypeDATASET        DashboardWidgetInputMeasuresFiltersType = "DATASET"
+	DashboardWidgetInputMeasuresFiltersTypeMETRICPROPERTY DashboardWidgetInputMeasuresFiltersType = "METRIC_PROPERTY"
+	DashboardWidgetInputMeasuresFiltersTypeMETRICVALUE    DashboardWidgetInputMeasuresFiltersType = "METRIC_VALUE"
+	DashboardWidgetInputMeasuresFiltersTypeMODALITY       DashboardWidgetInputMeasuresFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputMeasuresFiltersType enum.
+func (e DashboardWidgetInputMeasuresFiltersType) Valid() bool {
+	switch e {
+	case DashboardWidgetInputMeasuresFiltersTypeAGENTPROPERTY:
+		return true
+	case DashboardWidgetInputMeasuresFiltersTypeCALLID:
+		return true
+	case DashboardWidgetInputMeasuresFiltersTypeCALLPROPERTY:
+		return true
+	case DashboardWidgetInputMeasuresFiltersTypeDATASET:
+		return true
+	case DashboardWidgetInputMeasuresFiltersTypeMETRICPROPERTY:
+		return true
+	case DashboardWidgetInputMeasuresFiltersTypeMETRICVALUE:
+		return true
+	case DashboardWidgetInputMeasuresFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputMeasuresNestedAggregation.
+const (
+	DashboardWidgetInputMeasuresNestedAggregationAVG        DashboardWidgetInputMeasuresNestedAggregation = "AVG"
+	DashboardWidgetInputMeasuresNestedAggregationCOUNT      DashboardWidgetInputMeasuresNestedAggregation = "COUNT"
+	DashboardWidgetInputMeasuresNestedAggregationMAX        DashboardWidgetInputMeasuresNestedAggregation = "MAX"
+	DashboardWidgetInputMeasuresNestedAggregationMEDIAN     DashboardWidgetInputMeasuresNestedAggregation = "MEDIAN"
+	DashboardWidgetInputMeasuresNestedAggregationMIN        DashboardWidgetInputMeasuresNestedAggregation = "MIN"
+	DashboardWidgetInputMeasuresNestedAggregationPASSRATE   DashboardWidgetInputMeasuresNestedAggregation = "PASS_RATE"
+	DashboardWidgetInputMeasuresNestedAggregationPERCENTILE DashboardWidgetInputMeasuresNestedAggregation = "PERCENTILE"
+	DashboardWidgetInputMeasuresNestedAggregationSUM        DashboardWidgetInputMeasuresNestedAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputMeasuresNestedAggregation enum.
+func (e DashboardWidgetInputMeasuresNestedAggregation) Valid() bool {
+	switch e {
+	case DashboardWidgetInputMeasuresNestedAggregationAVG:
+		return true
+	case DashboardWidgetInputMeasuresNestedAggregationCOUNT:
+		return true
+	case DashboardWidgetInputMeasuresNestedAggregationMAX:
+		return true
+	case DashboardWidgetInputMeasuresNestedAggregationMEDIAN:
+		return true
+	case DashboardWidgetInputMeasuresNestedAggregationMIN:
+		return true
+	case DashboardWidgetInputMeasuresNestedAggregationPASSRATE:
+		return true
+	case DashboardWidgetInputMeasuresNestedAggregationPERCENTILE:
+		return true
+	case DashboardWidgetInputMeasuresNestedAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputMeasuresPassOperator.
+const (
+	DashboardWidgetInputMeasuresPassOperatorCONTAINS             DashboardWidgetInputMeasuresPassOperator = "CONTAINS"
+	DashboardWidgetInputMeasuresPassOperatorEQUALS               DashboardWidgetInputMeasuresPassOperator = "EQUALS"
+	DashboardWidgetInputMeasuresPassOperatorGREATERTHAN          DashboardWidgetInputMeasuresPassOperator = "GREATER_THAN"
+	DashboardWidgetInputMeasuresPassOperatorGREATERTHANOREQUALTO DashboardWidgetInputMeasuresPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetInputMeasuresPassOperatorLESSTHAN             DashboardWidgetInputMeasuresPassOperator = "LESS_THAN"
+	DashboardWidgetInputMeasuresPassOperatorLESSTHANOREQUALTO    DashboardWidgetInputMeasuresPassOperator = "LESS_THAN_OR_EQUAL_TO"
+	DashboardWidgetInputMeasuresPassOperatorNOTEQUALS            DashboardWidgetInputMeasuresPassOperator = "NOT_EQUALS"
+	DashboardWidgetInputMeasuresPassOperatorSTARTSWITH           DashboardWidgetInputMeasuresPassOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputMeasuresPassOperator enum.
+func (e DashboardWidgetInputMeasuresPassOperator) Valid() bool {
+	switch e {
+	case DashboardWidgetInputMeasuresPassOperatorCONTAINS:
+		return true
+	case DashboardWidgetInputMeasuresPassOperatorEQUALS:
+		return true
+	case DashboardWidgetInputMeasuresPassOperatorGREATERTHAN:
+		return true
+	case DashboardWidgetInputMeasuresPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetInputMeasuresPassOperatorLESSTHAN:
+		return true
+	case DashboardWidgetInputMeasuresPassOperatorLESSTHANOREQUALTO:
+		return true
+	case DashboardWidgetInputMeasuresPassOperatorNOTEQUALS:
+		return true
+	case DashboardWidgetInputMeasuresPassOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputMeasuresType.
+const (
+	DashboardWidgetInputMeasuresTypeCONVERSATION DashboardWidgetInputMeasuresType = "CONVERSATION"
+	DashboardWidgetInputMeasuresTypeMETRIC       DashboardWidgetInputMeasuresType = "METRIC"
+	DashboardWidgetInputMeasuresTypeUPTIME       DashboardWidgetInputMeasuresType = "UPTIME"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputMeasuresType enum.
+func (e DashboardWidgetInputMeasuresType) Valid() bool {
+	switch e {
+	case DashboardWidgetInputMeasuresTypeCONVERSATION:
+		return true
+	case DashboardWidgetInputMeasuresTypeMETRIC:
+		return true
+	case DashboardWidgetInputMeasuresTypeUPTIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashboardWidgetInputSize.
+const (
+	DashboardWidgetInputSizeEXTRALARGE DashboardWidgetInputSize = "EXTRA_LARGE"
+	DashboardWidgetInputSizeLARGE      DashboardWidgetInputSize = "LARGE"
+	DashboardWidgetInputSizeMEDIUM     DashboardWidgetInputSize = "MEDIUM"
+	DashboardWidgetInputSizeSMALL      DashboardWidgetInputSize = "SMALL"
+)
+
+// Valid indicates whether the value is a known member of the DashboardWidgetInputSize enum.
+func (e DashboardWidgetInputSize) Valid() bool {
+	switch e {
+	case DashboardWidgetInputSizeEXTRALARGE:
+		return true
+	case DashboardWidgetInputSizeLARGE:
+		return true
+	case DashboardWidgetInputSizeMEDIUM:
+		return true
+	case DashboardWidgetInputSizeSMALL:
 		return true
 	default:
 		return false
@@ -9550,6 +14179,21 @@ func (e SimulationRunCallResultValuesParticipantRole) Valid() bool {
 	}
 }
 
+// Defines values for SimulationRunCostCurrency.
+const (
+	SimulationRunCostCurrencyUsd SimulationRunCostCurrency = "usd"
+)
+
+// Valid indicates whether the value is a known member of the SimulationRunCostCurrency enum.
+func (e SimulationRunCostCurrency) Valid() bool {
+	switch e {
+	case SimulationRunCostCurrencyUsd:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for SimulationRunDebriefStatus.
 const (
 	SimulationRunDebriefStatusFAILED     SimulationRunDebriefStatus = "FAILED"
@@ -10990,6 +15634,759 @@ func (e UpdateCustomerFlowInputScriptAdherence) Valid() bool {
 	case UpdateCustomerFlowInputScriptAdherenceLOOSE:
 		return true
 	case UpdateCustomerFlowInputScriptAdherenceSTRICT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputFiltersOperator.
+const (
+	UpdateDashboardInputFiltersOperatorCONTAINS             UpdateDashboardInputFiltersOperator = "CONTAINS"
+	UpdateDashboardInputFiltersOperatorEQUALS               UpdateDashboardInputFiltersOperator = "EQUALS"
+	UpdateDashboardInputFiltersOperatorGREATERTHAN          UpdateDashboardInputFiltersOperator = "GREATER_THAN"
+	UpdateDashboardInputFiltersOperatorGREATERTHANOREQUALTO UpdateDashboardInputFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputFiltersOperatorLESSTHAN             UpdateDashboardInputFiltersOperator = "LESS_THAN"
+	UpdateDashboardInputFiltersOperatorLESSTHANOREQUALTO    UpdateDashboardInputFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputFiltersOperatorNOTEQUALS            UpdateDashboardInputFiltersOperator = "NOT_EQUALS"
+	UpdateDashboardInputFiltersOperatorSTARTSWITH           UpdateDashboardInputFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputFiltersOperator enum.
+func (e UpdateDashboardInputFiltersOperator) Valid() bool {
+	switch e {
+	case UpdateDashboardInputFiltersOperatorCONTAINS:
+		return true
+	case UpdateDashboardInputFiltersOperatorEQUALS:
+		return true
+	case UpdateDashboardInputFiltersOperatorGREATERTHAN:
+		return true
+	case UpdateDashboardInputFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputFiltersOperatorLESSTHAN:
+		return true
+	case UpdateDashboardInputFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputFiltersOperatorNOTEQUALS:
+		return true
+	case UpdateDashboardInputFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputFiltersType.
+const (
+	UpdateDashboardInputFiltersTypeAGENTPROPERTY  UpdateDashboardInputFiltersType = "AGENT_PROPERTY"
+	UpdateDashboardInputFiltersTypeCALLID         UpdateDashboardInputFiltersType = "CALL_ID"
+	UpdateDashboardInputFiltersTypeCALLPROPERTY   UpdateDashboardInputFiltersType = "CALL_PROPERTY"
+	UpdateDashboardInputFiltersTypeDATASET        UpdateDashboardInputFiltersType = "DATASET"
+	UpdateDashboardInputFiltersTypeMETRICPROPERTY UpdateDashboardInputFiltersType = "METRIC_PROPERTY"
+	UpdateDashboardInputFiltersTypeMETRICVALUE    UpdateDashboardInputFiltersType = "METRIC_VALUE"
+	UpdateDashboardInputFiltersTypeMODALITY       UpdateDashboardInputFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputFiltersType enum.
+func (e UpdateDashboardInputFiltersType) Valid() bool {
+	switch e {
+	case UpdateDashboardInputFiltersTypeAGENTPROPERTY:
+		return true
+	case UpdateDashboardInputFiltersTypeCALLID:
+		return true
+	case UpdateDashboardInputFiltersTypeCALLPROPERTY:
+		return true
+	case UpdateDashboardInputFiltersTypeDATASET:
+		return true
+	case UpdateDashboardInputFiltersTypeMETRICPROPERTY:
+		return true
+	case UpdateDashboardInputFiltersTypeMETRICVALUE:
+		return true
+	case UpdateDashboardInputFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputTimeRange0Type.
+const (
+	UpdateDashboardInputTimeRange0TypeLAST UpdateDashboardInputTimeRange0Type = "LAST"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputTimeRange0Type enum.
+func (e UpdateDashboardInputTimeRange0Type) Valid() bool {
+	switch e {
+	case UpdateDashboardInputTimeRange0TypeLAST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputTimeRange0Unit.
+const (
+	UpdateDashboardInputTimeRange0UnitDAYS   UpdateDashboardInputTimeRange0Unit = "DAYS"
+	UpdateDashboardInputTimeRange0UnitMONTHS UpdateDashboardInputTimeRange0Unit = "MONTHS"
+	UpdateDashboardInputTimeRange0UnitWEEKS  UpdateDashboardInputTimeRange0Unit = "WEEKS"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputTimeRange0Unit enum.
+func (e UpdateDashboardInputTimeRange0Unit) Valid() bool {
+	switch e {
+	case UpdateDashboardInputTimeRange0UnitDAYS:
+		return true
+	case UpdateDashboardInputTimeRange0UnitMONTHS:
+		return true
+	case UpdateDashboardInputTimeRange0UnitWEEKS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputTimeRange1Period.
+const (
+	UpdateDashboardInputTimeRange1PeriodLASTMONTH UpdateDashboardInputTimeRange1Period = "LAST_MONTH"
+	UpdateDashboardInputTimeRange1PeriodLASTWEEK  UpdateDashboardInputTimeRange1Period = "LAST_WEEK"
+	UpdateDashboardInputTimeRange1PeriodLASTYEAR  UpdateDashboardInputTimeRange1Period = "LAST_YEAR"
+	UpdateDashboardInputTimeRange1PeriodTHISMONTH UpdateDashboardInputTimeRange1Period = "THIS_MONTH"
+	UpdateDashboardInputTimeRange1PeriodTHISWEEK  UpdateDashboardInputTimeRange1Period = "THIS_WEEK"
+	UpdateDashboardInputTimeRange1PeriodTHISYEAR  UpdateDashboardInputTimeRange1Period = "THIS_YEAR"
+	UpdateDashboardInputTimeRange1PeriodTODAY     UpdateDashboardInputTimeRange1Period = "TODAY"
+	UpdateDashboardInputTimeRange1PeriodYESTERDAY UpdateDashboardInputTimeRange1Period = "YESTERDAY"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputTimeRange1Period enum.
+func (e UpdateDashboardInputTimeRange1Period) Valid() bool {
+	switch e {
+	case UpdateDashboardInputTimeRange1PeriodLASTMONTH:
+		return true
+	case UpdateDashboardInputTimeRange1PeriodLASTWEEK:
+		return true
+	case UpdateDashboardInputTimeRange1PeriodLASTYEAR:
+		return true
+	case UpdateDashboardInputTimeRange1PeriodTHISMONTH:
+		return true
+	case UpdateDashboardInputTimeRange1PeriodTHISWEEK:
+		return true
+	case UpdateDashboardInputTimeRange1PeriodTHISYEAR:
+		return true
+	case UpdateDashboardInputTimeRange1PeriodTODAY:
+		return true
+	case UpdateDashboardInputTimeRange1PeriodYESTERDAY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputTimeRange1Type.
+const (
+	UpdateDashboardInputTimeRange1TypeCALENDARALIGNED UpdateDashboardInputTimeRange1Type = "CALENDAR_ALIGNED"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputTimeRange1Type enum.
+func (e UpdateDashboardInputTimeRange1Type) Valid() bool {
+	switch e {
+	case UpdateDashboardInputTimeRange1TypeCALENDARALIGNED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputTimeRange2Type.
+const (
+	UpdateDashboardInputTimeRange2TypeFIXED UpdateDashboardInputTimeRange2Type = "FIXED"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputTimeRange2Type enum.
+func (e UpdateDashboardInputTimeRange2Type) Valid() bool {
+	switch e {
+	case UpdateDashboardInputTimeRange2TypeFIXED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputTimeRange3Type.
+const (
+	UpdateDashboardInputTimeRange3TypeSINCE UpdateDashboardInputTimeRange3Type = "SINCE"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputTimeRange3Type enum.
+func (e UpdateDashboardInputTimeRange3Type) Valid() bool {
+	switch e {
+	case UpdateDashboardInputTimeRange3TypeSINCE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsComparisonGroupsColor.
+const (
+	UpdateDashboardInputWidgetsComparisonGroupsColorAMBER  UpdateDashboardInputWidgetsComparisonGroupsColor = "AMBER"
+	UpdateDashboardInputWidgetsComparisonGroupsColorBLUE   UpdateDashboardInputWidgetsComparisonGroupsColor = "BLUE"
+	UpdateDashboardInputWidgetsComparisonGroupsColorCYAN   UpdateDashboardInputWidgetsComparisonGroupsColor = "CYAN"
+	UpdateDashboardInputWidgetsComparisonGroupsColorGREEN  UpdateDashboardInputWidgetsComparisonGroupsColor = "GREEN"
+	UpdateDashboardInputWidgetsComparisonGroupsColorGREY   UpdateDashboardInputWidgetsComparisonGroupsColor = "GREY"
+	UpdateDashboardInputWidgetsComparisonGroupsColorINDIGO UpdateDashboardInputWidgetsComparisonGroupsColor = "INDIGO"
+	UpdateDashboardInputWidgetsComparisonGroupsColorORANGE UpdateDashboardInputWidgetsComparisonGroupsColor = "ORANGE"
+	UpdateDashboardInputWidgetsComparisonGroupsColorPEACH  UpdateDashboardInputWidgetsComparisonGroupsColor = "PEACH"
+	UpdateDashboardInputWidgetsComparisonGroupsColorPURPLE UpdateDashboardInputWidgetsComparisonGroupsColor = "PURPLE"
+	UpdateDashboardInputWidgetsComparisonGroupsColorRED    UpdateDashboardInputWidgetsComparisonGroupsColor = "RED"
+	UpdateDashboardInputWidgetsComparisonGroupsColorROSE   UpdateDashboardInputWidgetsComparisonGroupsColor = "ROSE"
+	UpdateDashboardInputWidgetsComparisonGroupsColorTEAL   UpdateDashboardInputWidgetsComparisonGroupsColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsComparisonGroupsColor enum.
+func (e UpdateDashboardInputWidgetsComparisonGroupsColor) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsComparisonGroupsColorAMBER:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsColorBLUE:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsColorCYAN:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsColorGREEN:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsColorGREY:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsColorINDIGO:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsColorORANGE:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsColorPEACH:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsColorPURPLE:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsColorRED:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsColorROSE:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator.
+const (
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorCONTAINS             UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "CONTAINS"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorEQUALS               UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "EQUALS"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHAN          UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "GREATER_THAN"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHAN             UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "LESS_THAN"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHANOREQUALTO    UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorNOTEQUALS            UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "NOT_EQUALS"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorSTARTSWITH           UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator enum.
+func (e UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorCONTAINS:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorEQUALS:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHAN:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHAN:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorNOTEQUALS:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsComparisonGroupsFiltersType.
+const (
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeAGENTPROPERTY  UpdateDashboardInputWidgetsComparisonGroupsFiltersType = "AGENT_PROPERTY"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeCALLID         UpdateDashboardInputWidgetsComparisonGroupsFiltersType = "CALL_ID"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeCALLPROPERTY   UpdateDashboardInputWidgetsComparisonGroupsFiltersType = "CALL_PROPERTY"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeDATASET        UpdateDashboardInputWidgetsComparisonGroupsFiltersType = "DATASET"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeMETRICPROPERTY UpdateDashboardInputWidgetsComparisonGroupsFiltersType = "METRIC_PROPERTY"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeMETRICVALUE    UpdateDashboardInputWidgetsComparisonGroupsFiltersType = "METRIC_VALUE"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeMODALITY       UpdateDashboardInputWidgetsComparisonGroupsFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsComparisonGroupsFiltersType enum.
+func (e UpdateDashboardInputWidgetsComparisonGroupsFiltersType) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeAGENTPROPERTY:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeCALLID:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeCALLPROPERTY:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeDATASET:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeMETRICPROPERTY:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeMETRICVALUE:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsComparisonMode.
+const (
+	UpdateDashboardInputWidgetsComparisonModeNONE           UpdateDashboardInputWidgetsComparisonMode = "NONE"
+	UpdateDashboardInputWidgetsComparisonModePREVIOUSPERIOD UpdateDashboardInputWidgetsComparisonMode = "PREVIOUS_PERIOD"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsComparisonMode enum.
+func (e UpdateDashboardInputWidgetsComparisonMode) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsComparisonModeNONE:
+		return true
+	case UpdateDashboardInputWidgetsComparisonModePREVIOUSPERIOD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsDisplay.
+const (
+	UpdateDashboardInputWidgetsDisplayLINE       UpdateDashboardInputWidgetsDisplay = "LINE"
+	UpdateDashboardInputWidgetsDisplayNUMBER     UpdateDashboardInputWidgetsDisplay = "NUMBER"
+	UpdateDashboardInputWidgetsDisplayRADAR      UpdateDashboardInputWidgetsDisplay = "RADAR"
+	UpdateDashboardInputWidgetsDisplaySTACKEDBAR UpdateDashboardInputWidgetsDisplay = "STACKED_BAR"
+	UpdateDashboardInputWidgetsDisplayTABLE      UpdateDashboardInputWidgetsDisplay = "TABLE"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsDisplay enum.
+func (e UpdateDashboardInputWidgetsDisplay) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsDisplayLINE:
+		return true
+	case UpdateDashboardInputWidgetsDisplayNUMBER:
+		return true
+	case UpdateDashboardInputWidgetsDisplayRADAR:
+		return true
+	case UpdateDashboardInputWidgetsDisplaySTACKEDBAR:
+		return true
+	case UpdateDashboardInputWidgetsDisplayTABLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsFiltersOperator.
+const (
+	UpdateDashboardInputWidgetsFiltersOperatorCONTAINS             UpdateDashboardInputWidgetsFiltersOperator = "CONTAINS"
+	UpdateDashboardInputWidgetsFiltersOperatorEQUALS               UpdateDashboardInputWidgetsFiltersOperator = "EQUALS"
+	UpdateDashboardInputWidgetsFiltersOperatorGREATERTHAN          UpdateDashboardInputWidgetsFiltersOperator = "GREATER_THAN"
+	UpdateDashboardInputWidgetsFiltersOperatorGREATERTHANOREQUALTO UpdateDashboardInputWidgetsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputWidgetsFiltersOperatorLESSTHAN             UpdateDashboardInputWidgetsFiltersOperator = "LESS_THAN"
+	UpdateDashboardInputWidgetsFiltersOperatorLESSTHANOREQUALTO    UpdateDashboardInputWidgetsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputWidgetsFiltersOperatorNOTEQUALS            UpdateDashboardInputWidgetsFiltersOperator = "NOT_EQUALS"
+	UpdateDashboardInputWidgetsFiltersOperatorSTARTSWITH           UpdateDashboardInputWidgetsFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsFiltersOperator enum.
+func (e UpdateDashboardInputWidgetsFiltersOperator) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsFiltersOperatorCONTAINS:
+		return true
+	case UpdateDashboardInputWidgetsFiltersOperatorEQUALS:
+		return true
+	case UpdateDashboardInputWidgetsFiltersOperatorGREATERTHAN:
+		return true
+	case UpdateDashboardInputWidgetsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputWidgetsFiltersOperatorLESSTHAN:
+		return true
+	case UpdateDashboardInputWidgetsFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputWidgetsFiltersOperatorNOTEQUALS:
+		return true
+	case UpdateDashboardInputWidgetsFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsFiltersType.
+const (
+	UpdateDashboardInputWidgetsFiltersTypeAGENTPROPERTY  UpdateDashboardInputWidgetsFiltersType = "AGENT_PROPERTY"
+	UpdateDashboardInputWidgetsFiltersTypeCALLID         UpdateDashboardInputWidgetsFiltersType = "CALL_ID"
+	UpdateDashboardInputWidgetsFiltersTypeCALLPROPERTY   UpdateDashboardInputWidgetsFiltersType = "CALL_PROPERTY"
+	UpdateDashboardInputWidgetsFiltersTypeDATASET        UpdateDashboardInputWidgetsFiltersType = "DATASET"
+	UpdateDashboardInputWidgetsFiltersTypeMETRICPROPERTY UpdateDashboardInputWidgetsFiltersType = "METRIC_PROPERTY"
+	UpdateDashboardInputWidgetsFiltersTypeMETRICVALUE    UpdateDashboardInputWidgetsFiltersType = "METRIC_VALUE"
+	UpdateDashboardInputWidgetsFiltersTypeMODALITY       UpdateDashboardInputWidgetsFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsFiltersType enum.
+func (e UpdateDashboardInputWidgetsFiltersType) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsFiltersTypeAGENTPROPERTY:
+		return true
+	case UpdateDashboardInputWidgetsFiltersTypeCALLID:
+		return true
+	case UpdateDashboardInputWidgetsFiltersTypeCALLPROPERTY:
+		return true
+	case UpdateDashboardInputWidgetsFiltersTypeDATASET:
+		return true
+	case UpdateDashboardInputWidgetsFiltersTypeMETRICPROPERTY:
+		return true
+	case UpdateDashboardInputWidgetsFiltersTypeMETRICVALUE:
+		return true
+	case UpdateDashboardInputWidgetsFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsInterval.
+const (
+	UpdateDashboardInputWidgetsIntervalDAY   UpdateDashboardInputWidgetsInterval = "DAY"
+	UpdateDashboardInputWidgetsIntervalHOUR  UpdateDashboardInputWidgetsInterval = "HOUR"
+	UpdateDashboardInputWidgetsIntervalMONTH UpdateDashboardInputWidgetsInterval = "MONTH"
+	UpdateDashboardInputWidgetsIntervalWEEK  UpdateDashboardInputWidgetsInterval = "WEEK"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsInterval enum.
+func (e UpdateDashboardInputWidgetsInterval) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsIntervalDAY:
+		return true
+	case UpdateDashboardInputWidgetsIntervalHOUR:
+		return true
+	case UpdateDashboardInputWidgetsIntervalMONTH:
+		return true
+	case UpdateDashboardInputWidgetsIntervalWEEK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsMeasuresAggregation.
+const (
+	UpdateDashboardInputWidgetsMeasuresAggregationAVG        UpdateDashboardInputWidgetsMeasuresAggregation = "AVG"
+	UpdateDashboardInputWidgetsMeasuresAggregationCOUNT      UpdateDashboardInputWidgetsMeasuresAggregation = "COUNT"
+	UpdateDashboardInputWidgetsMeasuresAggregationMAX        UpdateDashboardInputWidgetsMeasuresAggregation = "MAX"
+	UpdateDashboardInputWidgetsMeasuresAggregationMEDIAN     UpdateDashboardInputWidgetsMeasuresAggregation = "MEDIAN"
+	UpdateDashboardInputWidgetsMeasuresAggregationMIN        UpdateDashboardInputWidgetsMeasuresAggregation = "MIN"
+	UpdateDashboardInputWidgetsMeasuresAggregationPASSRATE   UpdateDashboardInputWidgetsMeasuresAggregation = "PASS_RATE"
+	UpdateDashboardInputWidgetsMeasuresAggregationPERCENTILE UpdateDashboardInputWidgetsMeasuresAggregation = "PERCENTILE"
+	UpdateDashboardInputWidgetsMeasuresAggregationSUM        UpdateDashboardInputWidgetsMeasuresAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsMeasuresAggregation enum.
+func (e UpdateDashboardInputWidgetsMeasuresAggregation) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsMeasuresAggregationAVG:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresAggregationCOUNT:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresAggregationMAX:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresAggregationMEDIAN:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresAggregationMIN:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresAggregationPASSRATE:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresAggregationPERCENTILE:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsMeasuresBreakdownType.
+const (
+	UpdateDashboardInputWidgetsMeasuresBreakdownTypeAGENTPROPERTY  UpdateDashboardInputWidgetsMeasuresBreakdownType = "AGENT_PROPERTY"
+	UpdateDashboardInputWidgetsMeasuresBreakdownTypeCALLPROPERTY   UpdateDashboardInputWidgetsMeasuresBreakdownType = "CALL_PROPERTY"
+	UpdateDashboardInputWidgetsMeasuresBreakdownTypeDATASET        UpdateDashboardInputWidgetsMeasuresBreakdownType = "DATASET"
+	UpdateDashboardInputWidgetsMeasuresBreakdownTypeMETRICPROPERTY UpdateDashboardInputWidgetsMeasuresBreakdownType = "METRIC_PROPERTY"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsMeasuresBreakdownType enum.
+func (e UpdateDashboardInputWidgetsMeasuresBreakdownType) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsMeasuresBreakdownTypeAGENTPROPERTY:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresBreakdownTypeCALLPROPERTY:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresBreakdownTypeDATASET:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresBreakdownTypeMETRICPROPERTY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsMeasuresColor.
+const (
+	UpdateDashboardInputWidgetsMeasuresColorAMBER  UpdateDashboardInputWidgetsMeasuresColor = "AMBER"
+	UpdateDashboardInputWidgetsMeasuresColorBLUE   UpdateDashboardInputWidgetsMeasuresColor = "BLUE"
+	UpdateDashboardInputWidgetsMeasuresColorCYAN   UpdateDashboardInputWidgetsMeasuresColor = "CYAN"
+	UpdateDashboardInputWidgetsMeasuresColorGREEN  UpdateDashboardInputWidgetsMeasuresColor = "GREEN"
+	UpdateDashboardInputWidgetsMeasuresColorGREY   UpdateDashboardInputWidgetsMeasuresColor = "GREY"
+	UpdateDashboardInputWidgetsMeasuresColorINDIGO UpdateDashboardInputWidgetsMeasuresColor = "INDIGO"
+	UpdateDashboardInputWidgetsMeasuresColorORANGE UpdateDashboardInputWidgetsMeasuresColor = "ORANGE"
+	UpdateDashboardInputWidgetsMeasuresColorPEACH  UpdateDashboardInputWidgetsMeasuresColor = "PEACH"
+	UpdateDashboardInputWidgetsMeasuresColorPURPLE UpdateDashboardInputWidgetsMeasuresColor = "PURPLE"
+	UpdateDashboardInputWidgetsMeasuresColorRED    UpdateDashboardInputWidgetsMeasuresColor = "RED"
+	UpdateDashboardInputWidgetsMeasuresColorROSE   UpdateDashboardInputWidgetsMeasuresColor = "ROSE"
+	UpdateDashboardInputWidgetsMeasuresColorTEAL   UpdateDashboardInputWidgetsMeasuresColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsMeasuresColor enum.
+func (e UpdateDashboardInputWidgetsMeasuresColor) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsMeasuresColorAMBER:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresColorBLUE:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresColorCYAN:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresColorGREEN:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresColorGREY:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresColorINDIGO:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresColorORANGE:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresColorPEACH:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresColorPURPLE:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresColorRED:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresColorROSE:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsMeasuresDistinctBy.
+const (
+	UpdateDashboardInputWidgetsMeasuresDistinctByCALL UpdateDashboardInputWidgetsMeasuresDistinctBy = "CALL"
+	UpdateDashboardInputWidgetsMeasuresDistinctByNONE UpdateDashboardInputWidgetsMeasuresDistinctBy = "NONE"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsMeasuresDistinctBy enum.
+func (e UpdateDashboardInputWidgetsMeasuresDistinctBy) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsMeasuresDistinctByCALL:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresDistinctByNONE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsMeasuresFiltersOperator.
+const (
+	UpdateDashboardInputWidgetsMeasuresFiltersOperatorCONTAINS             UpdateDashboardInputWidgetsMeasuresFiltersOperator = "CONTAINS"
+	UpdateDashboardInputWidgetsMeasuresFiltersOperatorEQUALS               UpdateDashboardInputWidgetsMeasuresFiltersOperator = "EQUALS"
+	UpdateDashboardInputWidgetsMeasuresFiltersOperatorGREATERTHAN          UpdateDashboardInputWidgetsMeasuresFiltersOperator = "GREATER_THAN"
+	UpdateDashboardInputWidgetsMeasuresFiltersOperatorGREATERTHANOREQUALTO UpdateDashboardInputWidgetsMeasuresFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputWidgetsMeasuresFiltersOperatorLESSTHAN             UpdateDashboardInputWidgetsMeasuresFiltersOperator = "LESS_THAN"
+	UpdateDashboardInputWidgetsMeasuresFiltersOperatorLESSTHANOREQUALTO    UpdateDashboardInputWidgetsMeasuresFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputWidgetsMeasuresFiltersOperatorNOTEQUALS            UpdateDashboardInputWidgetsMeasuresFiltersOperator = "NOT_EQUALS"
+	UpdateDashboardInputWidgetsMeasuresFiltersOperatorSTARTSWITH           UpdateDashboardInputWidgetsMeasuresFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsMeasuresFiltersOperator enum.
+func (e UpdateDashboardInputWidgetsMeasuresFiltersOperator) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorCONTAINS:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorEQUALS:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorGREATERTHAN:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorLESSTHAN:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorNOTEQUALS:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsMeasuresFiltersType.
+const (
+	UpdateDashboardInputWidgetsMeasuresFiltersTypeAGENTPROPERTY  UpdateDashboardInputWidgetsMeasuresFiltersType = "AGENT_PROPERTY"
+	UpdateDashboardInputWidgetsMeasuresFiltersTypeCALLID         UpdateDashboardInputWidgetsMeasuresFiltersType = "CALL_ID"
+	UpdateDashboardInputWidgetsMeasuresFiltersTypeCALLPROPERTY   UpdateDashboardInputWidgetsMeasuresFiltersType = "CALL_PROPERTY"
+	UpdateDashboardInputWidgetsMeasuresFiltersTypeDATASET        UpdateDashboardInputWidgetsMeasuresFiltersType = "DATASET"
+	UpdateDashboardInputWidgetsMeasuresFiltersTypeMETRICPROPERTY UpdateDashboardInputWidgetsMeasuresFiltersType = "METRIC_PROPERTY"
+	UpdateDashboardInputWidgetsMeasuresFiltersTypeMETRICVALUE    UpdateDashboardInputWidgetsMeasuresFiltersType = "METRIC_VALUE"
+	UpdateDashboardInputWidgetsMeasuresFiltersTypeMODALITY       UpdateDashboardInputWidgetsMeasuresFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsMeasuresFiltersType enum.
+func (e UpdateDashboardInputWidgetsMeasuresFiltersType) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsMeasuresFiltersTypeAGENTPROPERTY:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersTypeCALLID:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersTypeCALLPROPERTY:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersTypeDATASET:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersTypeMETRICPROPERTY:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersTypeMETRICVALUE:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsMeasuresNestedAggregation.
+const (
+	UpdateDashboardInputWidgetsMeasuresNestedAggregationAVG        UpdateDashboardInputWidgetsMeasuresNestedAggregation = "AVG"
+	UpdateDashboardInputWidgetsMeasuresNestedAggregationCOUNT      UpdateDashboardInputWidgetsMeasuresNestedAggregation = "COUNT"
+	UpdateDashboardInputWidgetsMeasuresNestedAggregationMAX        UpdateDashboardInputWidgetsMeasuresNestedAggregation = "MAX"
+	UpdateDashboardInputWidgetsMeasuresNestedAggregationMEDIAN     UpdateDashboardInputWidgetsMeasuresNestedAggregation = "MEDIAN"
+	UpdateDashboardInputWidgetsMeasuresNestedAggregationMIN        UpdateDashboardInputWidgetsMeasuresNestedAggregation = "MIN"
+	UpdateDashboardInputWidgetsMeasuresNestedAggregationPASSRATE   UpdateDashboardInputWidgetsMeasuresNestedAggregation = "PASS_RATE"
+	UpdateDashboardInputWidgetsMeasuresNestedAggregationPERCENTILE UpdateDashboardInputWidgetsMeasuresNestedAggregation = "PERCENTILE"
+	UpdateDashboardInputWidgetsMeasuresNestedAggregationSUM        UpdateDashboardInputWidgetsMeasuresNestedAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsMeasuresNestedAggregation enum.
+func (e UpdateDashboardInputWidgetsMeasuresNestedAggregation) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsMeasuresNestedAggregationAVG:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresNestedAggregationCOUNT:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresNestedAggregationMAX:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresNestedAggregationMEDIAN:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresNestedAggregationMIN:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresNestedAggregationPASSRATE:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresNestedAggregationPERCENTILE:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresNestedAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsMeasuresPassOperator.
+const (
+	UpdateDashboardInputWidgetsMeasuresPassOperatorCONTAINS             UpdateDashboardInputWidgetsMeasuresPassOperator = "CONTAINS"
+	UpdateDashboardInputWidgetsMeasuresPassOperatorEQUALS               UpdateDashboardInputWidgetsMeasuresPassOperator = "EQUALS"
+	UpdateDashboardInputWidgetsMeasuresPassOperatorGREATERTHAN          UpdateDashboardInputWidgetsMeasuresPassOperator = "GREATER_THAN"
+	UpdateDashboardInputWidgetsMeasuresPassOperatorGREATERTHANOREQUALTO UpdateDashboardInputWidgetsMeasuresPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputWidgetsMeasuresPassOperatorLESSTHAN             UpdateDashboardInputWidgetsMeasuresPassOperator = "LESS_THAN"
+	UpdateDashboardInputWidgetsMeasuresPassOperatorLESSTHANOREQUALTO    UpdateDashboardInputWidgetsMeasuresPassOperator = "LESS_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputWidgetsMeasuresPassOperatorNOTEQUALS            UpdateDashboardInputWidgetsMeasuresPassOperator = "NOT_EQUALS"
+	UpdateDashboardInputWidgetsMeasuresPassOperatorSTARTSWITH           UpdateDashboardInputWidgetsMeasuresPassOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsMeasuresPassOperator enum.
+func (e UpdateDashboardInputWidgetsMeasuresPassOperator) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsMeasuresPassOperatorCONTAINS:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresPassOperatorEQUALS:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresPassOperatorGREATERTHAN:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresPassOperatorLESSTHAN:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresPassOperatorLESSTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresPassOperatorNOTEQUALS:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresPassOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsMeasuresType.
+const (
+	UpdateDashboardInputWidgetsMeasuresTypeCONVERSATION UpdateDashboardInputWidgetsMeasuresType = "CONVERSATION"
+	UpdateDashboardInputWidgetsMeasuresTypeMETRIC       UpdateDashboardInputWidgetsMeasuresType = "METRIC"
+	UpdateDashboardInputWidgetsMeasuresTypeUPTIME       UpdateDashboardInputWidgetsMeasuresType = "UPTIME"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsMeasuresType enum.
+func (e UpdateDashboardInputWidgetsMeasuresType) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsMeasuresTypeCONVERSATION:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresTypeMETRIC:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresTypeUPTIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateDashboardInputWidgetsSize.
+const (
+	UpdateDashboardInputWidgetsSizeEXTRALARGE UpdateDashboardInputWidgetsSize = "EXTRA_LARGE"
+	UpdateDashboardInputWidgetsSizeLARGE      UpdateDashboardInputWidgetsSize = "LARGE"
+	UpdateDashboardInputWidgetsSizeMEDIUM     UpdateDashboardInputWidgetsSize = "MEDIUM"
+	UpdateDashboardInputWidgetsSizeSMALL      UpdateDashboardInputWidgetsSize = "SMALL"
+)
+
+// Valid indicates whether the value is a known member of the UpdateDashboardInputWidgetsSize enum.
+func (e UpdateDashboardInputWidgetsSize) Valid() bool {
+	switch e {
+	case UpdateDashboardInputWidgetsSizeEXTRALARGE:
+		return true
+	case UpdateDashboardInputWidgetsSizeLARGE:
+		return true
+	case UpdateDashboardInputWidgetsSizeMEDIUM:
+		return true
+	case UpdateDashboardInputWidgetsSizeSMALL:
 		return true
 	default:
 		return false
@@ -13261,6 +18658,36 @@ func (e GetV1CustomerFlowParamsIncludeSystem) Valid() bool {
 	case GetV1CustomerFlowParamsIncludeSystemFalse:
 		return true
 	case GetV1CustomerFlowParamsIncludeSystemTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeleted.
+const (
+	DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeletedTrue DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeleted = true
+)
+
+// Valid indicates whether the value is a known member of the DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeleted enum.
+func (e DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeleted) Valid() bool {
+	switch e {
+	case DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeletedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeleted.
+const (
+	DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeletedTrue DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeleted = true
+)
+
+// Valid indicates whether the value is a known member of the DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeleted enum.
+func (e DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeleted) Valid() bool {
+	switch e {
+	case DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeletedTrue:
 		return true
 	default:
 		return false
@@ -17088,6 +22515,375 @@ type AlertThresholdTriggerOperator string
 // AlertThresholdTriggerType defines model for AlertThresholdTrigger.Type.
 type AlertThresholdTriggerType string
 
+// AnalyticsQuery An aggregate query: one or more measures over a time window, optionally filtered, broken down and compared. GET /v1/analytics/schema lists the metrics, filters and breakdowns available.
+//
+// Example: {"filters":[{"type":"MODALITY","value":"call"}],"interval":"DAY","measures":[{"aggregation":"AVG","metric":"sentiment_score"},{"aggregation":"COUNT","type":"CONVERSATION"}],"timeRange":{"type":"LAST","unit":"DAYS","value":7},"timezone":"Europe/London"}
+type AnalyticsQuery struct {
+	// ComparisonGroups Run every measure once per named filter set, e.g. one group per agent.
+	ComparisonGroups *[]struct {
+		Color   *AnalyticsQueryComparisonGroupsColor `json:"color,omitempty"`
+		Filters []struct {
+			// Operator Defaults to EQUALS.
+			Operator *AnalyticsQueryComparisonGroupsFiltersOperator `json:"operator,omitempty"`
+
+			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+			Property *string `json:"property,omitempty"`
+
+			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+			Type AnalyticsQueryComparisonGroupsFiltersType `json:"type"`
+
+			// Value The value to compare against (an agent id, "call" / "chat", a property value).
+			Value AnalyticsQuery_ComparisonGroups_Filters_Value `json:"value"`
+		} `json:"filters"`
+
+		// Name The series label; unique within the query.
+		Name string `json:"name"`
+	} `json:"comparisonGroups,omitempty"`
+
+	// ComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
+	ComparisonMode *AnalyticsQueryComparisonMode `json:"comparisonMode,omitempty"`
+
+	// Filters Applied to every measure, on top of each measure's own filters.
+	Filters *[]struct {
+		// Operator Defaults to EQUALS.
+		Operator *AnalyticsQueryFiltersOperator `json:"operator,omitempty"`
+
+		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+		Property *string `json:"property,omitempty"`
+
+		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+		Type AnalyticsQueryFiltersType `json:"type"`
+
+		// Value The value to compare against (an agent id, "call" / "chat", a property value).
+		Value AnalyticsQuery_Filters_Value `json:"value"`
+	} `json:"filters,omitempty"`
+
+	// IncludeBuckets Set false to return only the window totals.
+	IncludeBuckets *bool `json:"includeBuckets,omitempty"`
+
+	// Interval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
+	Interval *AnalyticsQueryInterval `json:"interval,omitempty"`
+
+	// Measures What to aggregate: 1 to 10 measures.
+	Measures []struct {
+		// Aggregation Defaults by output type: AVG for numeric metrics, COUNT (split by value) for classification and text, PASS_RATE for thresholds and uptime, COUNT for conversations.
+		Aggregation *AnalyticsQueryMeasuresAggregation `json:"aggregation,omitempty"`
+
+		// Breakdown Split the measure into one series per value of this dimension (the largest 50 are returned). Ignored while comparisonGroups are set: each group is then one series.
+		Breakdown *struct {
+			// Property The property to split by. Required for CALL_PROPERTY and METRIC_PROPERTY.
+			Property *string                             `json:"property,omitempty"`
+			Type     AnalyticsQueryMeasuresBreakdownType `json:"type"`
+		} `json:"breakdown,omitempty"`
+
+		// Color Chart color on a dashboard.
+		Color *AnalyticsQueryMeasuresColor `json:"color,omitempty"`
+
+		// DistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
+		DistinctBy *AnalyticsQueryMeasuresDistinctBy `json:"distinctBy,omitempty"`
+
+		// Filters Filters for this measure only, on top of the query's filters.
+		Filters *[]struct {
+			// Operator Defaults to EQUALS.
+			Operator *AnalyticsQueryMeasuresFiltersOperator `json:"operator,omitempty"`
+
+			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+			Property *string `json:"property,omitempty"`
+
+			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+			Type AnalyticsQueryMeasuresFiltersType `json:"type"`
+
+			// Value The value to compare against (an agent id, "call" / "chat", a property value).
+			Value AnalyticsQuery_Measures_Filters_Value `json:"value"`
+		} `json:"filters,omitempty"`
+
+		// IsBaseline Mark one measure as the baseline: every series also reports its value as a percentage of it.
+		IsBaseline *bool `json:"isBaseline,omitempty"`
+
+		// Metric The metric's slug (e.g. `task_completion`) or id. Required for METRIC.
+		Metric *string `json:"metric,omitempty"`
+
+		// NestedAggregation How each conversation is folded when distinctBy is CALL. Defaults to SUM under SUM, else AVG.
+		NestedAggregation           *AnalyticsQueryMeasuresNestedAggregation `json:"nestedAggregation,omitempty"`
+		NestedAggregationPercentile *int                                     `json:"nestedAggregationPercentile,omitempty"`
+
+		// PassOperator PASS_RATE condition operator. Omit for a threshold metric: its own condition is used.
+		PassOperator *AnalyticsQueryMeasuresPassOperator `json:"passOperator,omitempty"`
+
+		// PassValue PASS_RATE condition value, e.g. 4 or "resolved".
+		PassValue *AnalyticsQuery_Measures_PassValue `json:"passValue,omitempty"`
+
+		// Percentile Required with PERCENTILE, e.g. 95.
+		Percentile *int `json:"percentile,omitempty"`
+
+		// Type METRIC (default): a metric's values. CONVERSATION: conversation counts. UPTIME: health-check outcomes.
+		Type *AnalyticsQueryMeasuresType `json:"type,omitempty"`
+	} `json:"measures"`
+
+	// TimeRange Defaults to the last 30 days.
+	TimeRange *AnalyticsQuery_TimeRange `json:"timeRange,omitempty"`
+
+	// Timezone IANA zone that buckets and calendar periods align to, e.g. America/New_York. Defaults to UTC.
+	Timezone *string `json:"timezone,omitempty"`
+}
+
+// AnalyticsQueryComparisonGroupsColor defines model for AnalyticsQuery.ComparisonGroups.Color.
+type AnalyticsQueryComparisonGroupsColor string
+
+// AnalyticsQueryComparisonGroupsFiltersOperator Defaults to EQUALS.
+type AnalyticsQueryComparisonGroupsFiltersOperator string
+
+// AnalyticsQueryComparisonGroupsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type AnalyticsQueryComparisonGroupsFiltersType string
+
+// AnalyticsQueryComparisonGroupsFiltersValue0 defines model for AnalyticsQuery.ComparisonGroups.Filters.Value.0.
+type AnalyticsQueryComparisonGroupsFiltersValue0 = string
+
+// AnalyticsQueryComparisonGroupsFiltersValue1 defines model for AnalyticsQuery.ComparisonGroups.Filters.Value.1.
+type AnalyticsQueryComparisonGroupsFiltersValue1 = float64
+
+// AnalyticsQueryComparisonGroupsFiltersValue2 defines model for AnalyticsQuery.ComparisonGroups.Filters.Value.2.
+type AnalyticsQueryComparisonGroupsFiltersValue2 = bool
+
+// AnalyticsQuery_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type AnalyticsQuery_ComparisonGroups_Filters_Value struct {
+	union json.RawMessage
+}
+
+// AnalyticsQueryComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
+type AnalyticsQueryComparisonMode string
+
+// AnalyticsQueryFiltersOperator Defaults to EQUALS.
+type AnalyticsQueryFiltersOperator string
+
+// AnalyticsQueryFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type AnalyticsQueryFiltersType string
+
+// AnalyticsQueryFiltersValue0 defines model for AnalyticsQuery.Filters.Value.0.
+type AnalyticsQueryFiltersValue0 = string
+
+// AnalyticsQueryFiltersValue1 defines model for AnalyticsQuery.Filters.Value.1.
+type AnalyticsQueryFiltersValue1 = float64
+
+// AnalyticsQueryFiltersValue2 defines model for AnalyticsQuery.Filters.Value.2.
+type AnalyticsQueryFiltersValue2 = bool
+
+// AnalyticsQuery_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type AnalyticsQuery_Filters_Value struct {
+	union json.RawMessage
+}
+
+// AnalyticsQueryInterval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
+type AnalyticsQueryInterval string
+
+// AnalyticsQueryMeasuresAggregation Defaults by output type: AVG for numeric metrics, COUNT (split by value) for classification and text, PASS_RATE for thresholds and uptime, COUNT for conversations.
+type AnalyticsQueryMeasuresAggregation string
+
+// AnalyticsQueryMeasuresBreakdownType defines model for AnalyticsQuery.Measures.Breakdown.Type.
+type AnalyticsQueryMeasuresBreakdownType string
+
+// AnalyticsQueryMeasuresColor Chart color on a dashboard.
+type AnalyticsQueryMeasuresColor string
+
+// AnalyticsQueryMeasuresDistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
+type AnalyticsQueryMeasuresDistinctBy string
+
+// AnalyticsQueryMeasuresFiltersOperator Defaults to EQUALS.
+type AnalyticsQueryMeasuresFiltersOperator string
+
+// AnalyticsQueryMeasuresFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type AnalyticsQueryMeasuresFiltersType string
+
+// AnalyticsQueryMeasuresFiltersValue0 defines model for AnalyticsQuery.Measures.Filters.Value.0.
+type AnalyticsQueryMeasuresFiltersValue0 = string
+
+// AnalyticsQueryMeasuresFiltersValue1 defines model for AnalyticsQuery.Measures.Filters.Value.1.
+type AnalyticsQueryMeasuresFiltersValue1 = float64
+
+// AnalyticsQueryMeasuresFiltersValue2 defines model for AnalyticsQuery.Measures.Filters.Value.2.
+type AnalyticsQueryMeasuresFiltersValue2 = bool
+
+// AnalyticsQuery_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type AnalyticsQuery_Measures_Filters_Value struct {
+	union json.RawMessage
+}
+
+// AnalyticsQueryMeasuresNestedAggregation How each conversation is folded when distinctBy is CALL. Defaults to SUM under SUM, else AVG.
+type AnalyticsQueryMeasuresNestedAggregation string
+
+// AnalyticsQueryMeasuresPassOperator PASS_RATE condition operator. Omit for a threshold metric: its own condition is used.
+type AnalyticsQueryMeasuresPassOperator string
+
+// AnalyticsQueryMeasuresPassValue0 defines model for AnalyticsQuery.Measures.PassValue.0.
+type AnalyticsQueryMeasuresPassValue0 = string
+
+// AnalyticsQueryMeasuresPassValue1 defines model for AnalyticsQuery.Measures.PassValue.1.
+type AnalyticsQueryMeasuresPassValue1 = float64
+
+// AnalyticsQueryMeasuresPassValue2 defines model for AnalyticsQuery.Measures.PassValue.2.
+type AnalyticsQueryMeasuresPassValue2 = bool
+
+// AnalyticsQuery_Measures_PassValue PASS_RATE condition value, e.g. 4 or "resolved".
+type AnalyticsQuery_Measures_PassValue struct {
+	union json.RawMessage
+}
+
+// AnalyticsQueryMeasuresType METRIC (default): a metric's values. CONVERSATION: conversation counts. UPTIME: health-check outcomes.
+type AnalyticsQueryMeasuresType string
+
+// AnalyticsQueryTimeRange0 defines model for AnalyticsQuery.TimeRange.0.
+type AnalyticsQueryTimeRange0 struct {
+	Type  AnalyticsQueryTimeRange0Type `json:"type"`
+	Unit  AnalyticsQueryTimeRange0Unit `json:"unit"`
+	Value int                          `json:"value"`
+}
+
+// AnalyticsQueryTimeRange0Type defines model for AnalyticsQuery.TimeRange.0.Type.
+type AnalyticsQueryTimeRange0Type string
+
+// AnalyticsQueryTimeRange0Unit defines model for AnalyticsQuery.TimeRange.0.Unit.
+type AnalyticsQueryTimeRange0Unit string
+
+// AnalyticsQueryTimeRange1 defines model for AnalyticsQuery.TimeRange.1.
+type AnalyticsQueryTimeRange1 struct {
+	Period AnalyticsQueryTimeRange1Period `json:"period"`
+	Type   AnalyticsQueryTimeRange1Type   `json:"type"`
+}
+
+// AnalyticsQueryTimeRange1Period defines model for AnalyticsQuery.TimeRange.1.Period.
+type AnalyticsQueryTimeRange1Period string
+
+// AnalyticsQueryTimeRange1Type defines model for AnalyticsQuery.TimeRange.1.Type.
+type AnalyticsQueryTimeRange1Type string
+
+// AnalyticsQueryTimeRange2 defines model for AnalyticsQuery.TimeRange.2.
+type AnalyticsQueryTimeRange2 struct {
+	From time.Time                    `json:"from"`
+	To   time.Time                    `json:"to"`
+	Type AnalyticsQueryTimeRange2Type `json:"type"`
+}
+
+// AnalyticsQueryTimeRange2Type defines model for AnalyticsQuery.TimeRange.2.Type.
+type AnalyticsQueryTimeRange2Type string
+
+// AnalyticsQueryTimeRange3 defines model for AnalyticsQuery.TimeRange.3.
+type AnalyticsQueryTimeRange3 struct {
+	From time.Time                    `json:"from"`
+	Type AnalyticsQueryTimeRange3Type `json:"type"`
+}
+
+// AnalyticsQueryTimeRange3Type defines model for AnalyticsQuery.TimeRange.3.Type.
+type AnalyticsQueryTimeRange3Type string
+
+// AnalyticsQuery_TimeRange Defaults to the last 30 days.
+type AnalyticsQuery_TimeRange struct {
+	union json.RawMessage
+}
+
+// AnalyticsResult One series per measure (or per breakdown value / comparison group). `value` is the aggregate over the whole window; `buckets` hold the per-interval values.
+type AnalyticsResult struct {
+	From          string                  `json:"from"`
+	Interval      AnalyticsResultInterval `json:"interval"`
+	OmittedSeries int                     `json:"omittedSeries"`
+	Series        []struct {
+		Aggregation    AnalyticsResultSeriesAggregation `json:"aggregation"`
+		BreakdownValue *string                          `json:"breakdownValue"`
+		Buckets        []struct {
+			ComparisonDate       *string  `json:"comparisonDate,omitempty"`
+			ComparisonValue      *float64 `json:"comparisonValue,omitempty"`
+			Date                 string   `json:"date"`
+			Passed               *float64 `json:"passed,omitempty"`
+			PercentageOfBaseline *float64 `json:"percentageOfBaseline,omitempty"`
+			SampleSize           *float64 `json:"sampleSize,omitempty"`
+			Value                float64  `json:"value"`
+		} `json:"buckets"`
+		ComparisonGroup      *string                   `json:"comparisonGroup"`
+		ComparisonValue      *float64                  `json:"comparisonValue"`
+		MeasureIndex         int                       `json:"measureIndex"`
+		Metric               *string                   `json:"metric"`
+		PercentageOfBaseline *float64                  `json:"percentageOfBaseline"`
+		SampleSize           *float64                  `json:"sampleSize"`
+		Type                 AnalyticsResultSeriesType `json:"type"`
+		Value                float64                   `json:"value"`
+	} `json:"series"`
+	Timezone string `json:"timezone"`
+	To       string `json:"to"`
+}
+
+// AnalyticsResultInterval defines model for AnalyticsResult.Interval.
+type AnalyticsResultInterval string
+
+// AnalyticsResultSeriesAggregation defines model for AnalyticsResult.Series.Aggregation.
+type AnalyticsResultSeriesAggregation string
+
+// AnalyticsResultSeriesType defines model for AnalyticsResult.Series.Type.
+type AnalyticsResultSeriesType string
+
+// AnalyticsSchema What can be queried in this project: metrics (by slug), measure types, filters, breakdowns.
+type AnalyticsSchema struct {
+	Breakdowns []struct {
+		Description string                        `json:"description"`
+		Type        AnalyticsSchemaBreakdownsType `json:"type"`
+	} `json:"breakdowns"`
+	CallProperties []struct {
+		IsSystem  bool   `json:"isSystem"`
+		Name      string `json:"name"`
+		ValueType string `json:"valueType"`
+	} `json:"callProperties"`
+	DisplayTypes []AnalyticsSchemaDisplayTypes `json:"displayTypes"`
+	Filters      []struct {
+		Description string `json:"description"`
+		Properties  []struct {
+			Description string `json:"description"`
+			Property    string `json:"property"`
+		} `json:"properties"`
+		Type AnalyticsSchemaFiltersType `json:"type"`
+	} `json:"filters"`
+	Intervals    []AnalyticsSchemaIntervals `json:"intervals"`
+	MeasureTypes []struct {
+		Aggregations []AnalyticsSchemaMeasureTypesAggregations `json:"aggregations"`
+		Description  string                                    `json:"description"`
+		Type         AnalyticsSchemaMeasureTypesType           `json:"type"`
+	} `json:"measureTypes"`
+	Metrics []struct {
+		Aggregations       []AnalyticsSchemaMetricsAggregations     `json:"aggregations"`
+		DefaultAggregation AnalyticsSchemaMetricsDefaultAggregation `json:"defaultAggregation"`
+		Id                 openapi_types.UUID                       `json:"id"`
+		IsThreshold        bool                                     `json:"isThreshold"`
+		Name               string                                   `json:"name"`
+		OutputType         string                                   `json:"outputType"`
+		Slug               string                                   `json:"slug"`
+	} `json:"metrics"`
+	Operators []AnalyticsSchemaOperators `json:"operators"`
+}
+
+// AnalyticsSchemaBreakdownsType defines model for AnalyticsSchema.Breakdowns.Type.
+type AnalyticsSchemaBreakdownsType string
+
+// AnalyticsSchemaDisplayTypes defines model for AnalyticsSchema.DisplayTypes.
+type AnalyticsSchemaDisplayTypes string
+
+// AnalyticsSchemaFiltersType defines model for AnalyticsSchema.Filters.Type.
+type AnalyticsSchemaFiltersType string
+
+// AnalyticsSchemaIntervals defines model for AnalyticsSchema.Intervals.
+type AnalyticsSchemaIntervals string
+
+// AnalyticsSchemaMeasureTypesAggregations defines model for AnalyticsSchema.MeasureTypes.Aggregations.
+type AnalyticsSchemaMeasureTypesAggregations string
+
+// AnalyticsSchemaMeasureTypesType defines model for AnalyticsSchema.MeasureTypes.Type.
+type AnalyticsSchemaMeasureTypesType string
+
+// AnalyticsSchemaMetricsAggregations defines model for AnalyticsSchema.Metrics.Aggregations.
+type AnalyticsSchemaMetricsAggregations string
+
+// AnalyticsSchemaMetricsDefaultAggregation defines model for AnalyticsSchema.Metrics.DefaultAggregation.
+type AnalyticsSchemaMetricsDefaultAggregation string
+
+// AnalyticsSchemaOperators defines model for AnalyticsSchema.Operators.
+type AnalyticsSchemaOperators string
+
 // AppendToolInvocationsRequest Attach tool invocations to an existing call, optionally (re)scoring metrics over them.
 type AppendToolInvocationsRequest struct {
 	// Metrics Optional. Metric definitions to (re)score on this call after the tool invocations are attached, e.g. the Tool Invocation Analysis metrics. Triggers a metric collection job (billed, credit-gated) and requires the 'metric:create' permission. Omit to attach tools without scoring. Max 20.
@@ -17580,6 +23376,58 @@ type CallAnalysisFailedWebhookEvent string
 //
 // Example: 1.0
 type CallAnalysisFailedWebhookVersion string
+
+// CallCost defines model for CallCost.
+type CallCost struct {
+	// Breakdown Spend by cost type. Sums to totalUsdMicros.
+	Breakdown []CostBreakdownItem `json:"breakdown"`
+	CallId    openapi_types.UUID  `json:"callId"`
+	Currency  CallCostCurrency    `json:"currency"`
+
+	// Items Every billable cost line attributed to the call.
+	Items    []CallCostLine `json:"items"`
+	TotalUsd float64        `json:"totalUsd"`
+
+	// TotalUsdMicros Total billable spend for this call, in micro-dollars.
+	TotalUsdMicros int `json:"totalUsdMicros"`
+}
+
+// CallCostCurrency defines model for CallCost.Currency.
+type CallCostCurrency string
+
+// CallCostLine defines model for CallCostLine.
+type CallCostLine struct {
+	AmountUsd       float64 `json:"amountUsd"`
+	AmountUsdMicros int     `json:"amountUsdMicros"`
+
+	// EventId Stable id of the cost event. Use it to deduplicate.
+	EventId string `json:"eventId"`
+
+	// MetricCollectionJobId The grading pass a METRIC line paid for. A call graded twice carries one line per pass.
+	MetricCollectionJobId *openapi_types.UUID `json:"metricCollectionJobId"`
+
+	// MetricDefinitionId The metric a METRIC line was charged for.
+	MetricDefinitionId *openapi_types.UUID `json:"metricDefinitionId"`
+	Model              *string             `json:"model"`
+
+	// OccurredAt When the cost was incurred, ISO 8601.
+	OccurredAt      string                   `json:"occurredAt"`
+	Provider        *string                  `json:"provider"`
+	Quantity        float64                  `json:"quantity"`
+	QuantityUnit    CallCostLineQuantityUnit `json:"quantityUnit"`
+	SimulationJobId *openapi_types.UUID      `json:"simulationJobId"`
+	Source          CallCostLineSource       `json:"source"`
+	Surface         CallCostLineSurface      `json:"surface"`
+}
+
+// CallCostLineQuantityUnit defines model for CallCostLine.QuantityUnit.
+type CallCostLineQuantityUnit string
+
+// CallCostLineSource defines model for CallCostLine.Source.
+type CallCostLineSource string
+
+// CallCostLineSurface defines model for CallCostLine.Surface.
+type CallCostLineSurface string
 
 // CallCreate Call creation payload. Supports singular (agent/customer) or plural (agents/customers) formats.
 type CallCreate struct {
@@ -18334,6 +24182,30 @@ type ConfigOffScriptReaction string
 
 // ConfigOffScriptThen defines model for ConfigOffScript.Then.
 type ConfigOffScriptThen string
+
+// CostBreakdownItem defines model for CostBreakdownItem.
+type CostBreakdownItem struct {
+	// AmountUsd The same figure in US dollars.
+	AmountUsd float64 `json:"amountUsd"`
+
+	// AmountUsdMicros Billable spend for this type, in micro-dollars.
+	AmountUsdMicros int `json:"amountUsdMicros"`
+
+	// Quantity Units billed (see the line items for the unit).
+	Quantity float64 `json:"quantity"`
+
+	// Source The cost source, e.g. SIM_PLATFORM_FEE, SIM_LLM, METRIC.
+	Source CostBreakdownItemSource `json:"source"`
+
+	// Surface SIMULATION or POST_CALL.
+	Surface CostBreakdownItemSurface `json:"surface"`
+}
+
+// CostBreakdownItemSource The cost source, e.g. SIM_PLATFORM_FEE, SIM_LLM, METRIC.
+type CostBreakdownItemSource string
+
+// CostBreakdownItemSurface SIMULATION or POST_CALL.
+type CostBreakdownItemSurface string
 
 // CreateAgentEndpointInput Input for creating an agent endpoint
 type CreateAgentEndpointInput struct {
@@ -19323,6 +25195,1413 @@ type CreateWebhookResponseEvents string
 type CustomerFlow struct {
 	union json.RawMessage
 }
+
+// Dashboard defines model for Dashboard.
+type Dashboard struct {
+	// ConfigManaged Managed by config as code (`kind: dashboard`). A managed dashboard is read-only here: edits return 409; change it in the config file.
+	ConfigManaged bool    `json:"configManaged"`
+	CreatedAt     string  `json:"createdAt"`
+	Description   *string `json:"description"`
+	Filters       []struct {
+		// Operator Defaults to EQUALS.
+		Operator *DashboardFiltersOperator `json:"operator,omitempty"`
+
+		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+		Property *string `json:"property,omitempty"`
+
+		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+		Type DashboardFiltersType `json:"type"`
+
+		// Value The value to compare against (an agent id, "call" / "chat", a property value).
+		Value Dashboard_Filters_Value `json:"value"`
+	} `json:"filters"`
+	Id        openapi_types.UUID `json:"id"`
+	IsDefault bool               `json:"isDefault"`
+	Name      string             `json:"name"`
+
+	// TimeRange The window: LAST n DAYS/WEEKS/MONTHS up to now, a CALENDAR_ALIGNED period (TODAY, YESTERDAY, THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR, LAST_YEAR), FIXED from/to, or SINCE a date. At most 731 days (two years).
+	TimeRange *Dashboard_TimeRange `json:"timeRange"`
+	UpdatedAt string               `json:"updatedAt"`
+	Widgets   []struct {
+		// ComparisonGroups Run every measure once per named filter set, e.g. one group per agent.
+		ComparisonGroups *[]struct {
+			Color   *DashboardWidgetsComparisonGroupsColor `json:"color,omitempty"`
+			Filters []struct {
+				// Operator Defaults to EQUALS.
+				Operator *DashboardWidgetsComparisonGroupsFiltersOperator `json:"operator,omitempty"`
+
+				// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+				Property *string `json:"property,omitempty"`
+
+				// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+				Type DashboardWidgetsComparisonGroupsFiltersType `json:"type"`
+
+				// Value The value to compare against (an agent id, "call" / "chat", a property value).
+				Value Dashboard_Widgets_ComparisonGroups_Filters_Value `json:"value"`
+			} `json:"filters"`
+
+			// Name The series label; unique within the query.
+			Name string `json:"name"`
+		} `json:"comparisonGroups,omitempty"`
+
+		// ComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
+		ComparisonMode *DashboardWidgetsComparisonMode `json:"comparisonMode,omitempty"`
+		Description    *string                         `json:"description,omitempty"`
+
+		// Display Chart type. Defaults to LINE.
+		Display *DashboardWidgetsDisplay `json:"display,omitempty"`
+
+		// Filters Applied to every measure, on top of each measure's own filters.
+		Filters *[]struct {
+			// Operator Defaults to EQUALS.
+			Operator *DashboardWidgetsFiltersOperator `json:"operator,omitempty"`
+
+			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+			Property *string `json:"property,omitempty"`
+
+			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+			Type DashboardWidgetsFiltersType `json:"type"`
+
+			// Value The value to compare against (an agent id, "call" / "chat", a property value).
+			Value Dashboard_Widgets_Filters_Value `json:"value"`
+		} `json:"filters,omitempty"`
+		Id openapi_types.UUID `json:"id"`
+
+		// Interval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
+		Interval *DashboardWidgetsInterval `json:"interval,omitempty"`
+
+		// Measures What to aggregate: 1 to 10 measures.
+		Measures []struct {
+			// Aggregation Defaults by output type: AVG for numeric metrics, COUNT (split by value) for classification and text, PASS_RATE for thresholds and uptime, COUNT for conversations.
+			Aggregation *DashboardWidgetsMeasuresAggregation `json:"aggregation,omitempty"`
+
+			// Breakdown Split the measure into one series per value of this dimension (the largest 50 are returned). Ignored while comparisonGroups are set: each group is then one series.
+			Breakdown *struct {
+				// Property The property to split by. Required for CALL_PROPERTY and METRIC_PROPERTY.
+				Property *string                               `json:"property,omitempty"`
+				Type     DashboardWidgetsMeasuresBreakdownType `json:"type"`
+			} `json:"breakdown,omitempty"`
+
+			// Color Chart color on a dashboard.
+			Color *DashboardWidgetsMeasuresColor `json:"color,omitempty"`
+
+			// DistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
+			DistinctBy *DashboardWidgetsMeasuresDistinctBy `json:"distinctBy,omitempty"`
+
+			// Filters Filters for this measure only, on top of the query's filters.
+			Filters *[]struct {
+				// Operator Defaults to EQUALS.
+				Operator *DashboardWidgetsMeasuresFiltersOperator `json:"operator,omitempty"`
+
+				// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+				Property *string `json:"property,omitempty"`
+
+				// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+				Type DashboardWidgetsMeasuresFiltersType `json:"type"`
+
+				// Value The value to compare against (an agent id, "call" / "chat", a property value).
+				Value Dashboard_Widgets_Measures_Filters_Value `json:"value"`
+			} `json:"filters,omitempty"`
+
+			// IsBaseline Mark one measure as the baseline: every series also reports its value as a percentage of it.
+			IsBaseline *bool `json:"isBaseline,omitempty"`
+
+			// Metric The metric's slug (e.g. `task_completion`) or id. Required for METRIC.
+			Metric *string `json:"metric,omitempty"`
+
+			// NestedAggregation How each conversation is folded when distinctBy is CALL. Defaults to SUM under SUM, else AVG.
+			NestedAggregation           *DashboardWidgetsMeasuresNestedAggregation `json:"nestedAggregation,omitempty"`
+			NestedAggregationPercentile *int                                       `json:"nestedAggregationPercentile,omitempty"`
+
+			// PassOperator PASS_RATE condition operator. Omit for a threshold metric: its own condition is used.
+			PassOperator *DashboardWidgetsMeasuresPassOperator `json:"passOperator,omitempty"`
+
+			// PassValue PASS_RATE condition value, e.g. 4 or "resolved".
+			PassValue *Dashboard_Widgets_Measures_PassValue `json:"passValue,omitempty"`
+
+			// Percentile Required with PERCENTILE, e.g. 95.
+			Percentile *int `json:"percentile,omitempty"`
+
+			// Type METRIC (default): a metric's values. CONVERSATION: conversation counts. UPTIME: health-check outcomes.
+			Type *DashboardWidgetsMeasuresType `json:"type,omitempty"`
+		} `json:"measures"`
+
+		// Name Unique on the dashboard: how the widget is matched on update.
+		Name string `json:"name"`
+
+		// Size Grid width. Defaults to MEDIUM.
+		Size *DashboardWidgetsSize `json:"size,omitempty"`
+	} `json:"widgets"`
+}
+
+// DashboardFiltersOperator Defaults to EQUALS.
+type DashboardFiltersOperator string
+
+// DashboardFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardFiltersType string
+
+// DashboardFiltersValue0 defines model for Dashboard.Filters.Value.0.
+type DashboardFiltersValue0 = string
+
+// DashboardFiltersValue1 defines model for Dashboard.Filters.Value.1.
+type DashboardFiltersValue1 = float64
+
+// DashboardFiltersValue2 defines model for Dashboard.Filters.Value.2.
+type DashboardFiltersValue2 = bool
+
+// Dashboard_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type Dashboard_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardTimeRange0 defines model for Dashboard.TimeRange.0.
+type DashboardTimeRange0 struct {
+	Type  DashboardTimeRange0Type `json:"type"`
+	Unit  DashboardTimeRange0Unit `json:"unit"`
+	Value int                     `json:"value"`
+}
+
+// DashboardTimeRange0Type defines model for Dashboard.TimeRange.0.Type.
+type DashboardTimeRange0Type string
+
+// DashboardTimeRange0Unit defines model for Dashboard.TimeRange.0.Unit.
+type DashboardTimeRange0Unit string
+
+// DashboardTimeRange1 defines model for Dashboard.TimeRange.1.
+type DashboardTimeRange1 struct {
+	Period DashboardTimeRange1Period `json:"period"`
+	Type   DashboardTimeRange1Type   `json:"type"`
+}
+
+// DashboardTimeRange1Period defines model for Dashboard.TimeRange.1.Period.
+type DashboardTimeRange1Period string
+
+// DashboardTimeRange1Type defines model for Dashboard.TimeRange.1.Type.
+type DashboardTimeRange1Type string
+
+// DashboardTimeRange2 defines model for Dashboard.TimeRange.2.
+type DashboardTimeRange2 struct {
+	From time.Time               `json:"from"`
+	To   time.Time               `json:"to"`
+	Type DashboardTimeRange2Type `json:"type"`
+}
+
+// DashboardTimeRange2Type defines model for Dashboard.TimeRange.2.Type.
+type DashboardTimeRange2Type string
+
+// DashboardTimeRange3 defines model for Dashboard.TimeRange.3.
+type DashboardTimeRange3 struct {
+	From time.Time               `json:"from"`
+	Type DashboardTimeRange3Type `json:"type"`
+}
+
+// DashboardTimeRange3Type defines model for Dashboard.TimeRange.3.Type.
+type DashboardTimeRange3Type string
+
+// Dashboard_TimeRange The window: LAST n DAYS/WEEKS/MONTHS up to now, a CALENDAR_ALIGNED period (TODAY, YESTERDAY, THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR, LAST_YEAR), FIXED from/to, or SINCE a date. At most 731 days (two years).
+type Dashboard_TimeRange struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetsComparisonGroupsColor defines model for Dashboard.Widgets.ComparisonGroups.Color.
+type DashboardWidgetsComparisonGroupsColor string
+
+// DashboardWidgetsComparisonGroupsFiltersOperator Defaults to EQUALS.
+type DashboardWidgetsComparisonGroupsFiltersOperator string
+
+// DashboardWidgetsComparisonGroupsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardWidgetsComparisonGroupsFiltersType string
+
+// DashboardWidgetsComparisonGroupsFiltersValue0 defines model for Dashboard.Widgets.ComparisonGroups.Filters.Value.0.
+type DashboardWidgetsComparisonGroupsFiltersValue0 = string
+
+// DashboardWidgetsComparisonGroupsFiltersValue1 defines model for Dashboard.Widgets.ComparisonGroups.Filters.Value.1.
+type DashboardWidgetsComparisonGroupsFiltersValue1 = float64
+
+// DashboardWidgetsComparisonGroupsFiltersValue2 defines model for Dashboard.Widgets.ComparisonGroups.Filters.Value.2.
+type DashboardWidgetsComparisonGroupsFiltersValue2 = bool
+
+// Dashboard_Widgets_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type Dashboard_Widgets_ComparisonGroups_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetsComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
+type DashboardWidgetsComparisonMode string
+
+// DashboardWidgetsDisplay Chart type. Defaults to LINE.
+type DashboardWidgetsDisplay string
+
+// DashboardWidgetsFiltersOperator Defaults to EQUALS.
+type DashboardWidgetsFiltersOperator string
+
+// DashboardWidgetsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardWidgetsFiltersType string
+
+// DashboardWidgetsFiltersValue0 defines model for Dashboard.Widgets.Filters.Value.0.
+type DashboardWidgetsFiltersValue0 = string
+
+// DashboardWidgetsFiltersValue1 defines model for Dashboard.Widgets.Filters.Value.1.
+type DashboardWidgetsFiltersValue1 = float64
+
+// DashboardWidgetsFiltersValue2 defines model for Dashboard.Widgets.Filters.Value.2.
+type DashboardWidgetsFiltersValue2 = bool
+
+// Dashboard_Widgets_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type Dashboard_Widgets_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetsInterval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
+type DashboardWidgetsInterval string
+
+// DashboardWidgetsMeasuresAggregation Defaults by output type: AVG for numeric metrics, COUNT (split by value) for classification and text, PASS_RATE for thresholds and uptime, COUNT for conversations.
+type DashboardWidgetsMeasuresAggregation string
+
+// DashboardWidgetsMeasuresBreakdownType defines model for Dashboard.Widgets.Measures.Breakdown.Type.
+type DashboardWidgetsMeasuresBreakdownType string
+
+// DashboardWidgetsMeasuresColor Chart color on a dashboard.
+type DashboardWidgetsMeasuresColor string
+
+// DashboardWidgetsMeasuresDistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
+type DashboardWidgetsMeasuresDistinctBy string
+
+// DashboardWidgetsMeasuresFiltersOperator Defaults to EQUALS.
+type DashboardWidgetsMeasuresFiltersOperator string
+
+// DashboardWidgetsMeasuresFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardWidgetsMeasuresFiltersType string
+
+// DashboardWidgetsMeasuresFiltersValue0 defines model for Dashboard.Widgets.Measures.Filters.Value.0.
+type DashboardWidgetsMeasuresFiltersValue0 = string
+
+// DashboardWidgetsMeasuresFiltersValue1 defines model for Dashboard.Widgets.Measures.Filters.Value.1.
+type DashboardWidgetsMeasuresFiltersValue1 = float64
+
+// DashboardWidgetsMeasuresFiltersValue2 defines model for Dashboard.Widgets.Measures.Filters.Value.2.
+type DashboardWidgetsMeasuresFiltersValue2 = bool
+
+// Dashboard_Widgets_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type Dashboard_Widgets_Measures_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetsMeasuresNestedAggregation How each conversation is folded when distinctBy is CALL. Defaults to SUM under SUM, else AVG.
+type DashboardWidgetsMeasuresNestedAggregation string
+
+// DashboardWidgetsMeasuresPassOperator PASS_RATE condition operator. Omit for a threshold metric: its own condition is used.
+type DashboardWidgetsMeasuresPassOperator string
+
+// DashboardWidgetsMeasuresPassValue0 defines model for Dashboard.Widgets.Measures.PassValue.0.
+type DashboardWidgetsMeasuresPassValue0 = string
+
+// DashboardWidgetsMeasuresPassValue1 defines model for Dashboard.Widgets.Measures.PassValue.1.
+type DashboardWidgetsMeasuresPassValue1 = float64
+
+// DashboardWidgetsMeasuresPassValue2 defines model for Dashboard.Widgets.Measures.PassValue.2.
+type DashboardWidgetsMeasuresPassValue2 = bool
+
+// Dashboard_Widgets_Measures_PassValue PASS_RATE condition value, e.g. 4 or "resolved".
+type Dashboard_Widgets_Measures_PassValue struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetsMeasuresType METRIC (default): a metric's values. CONVERSATION: conversation counts. UPTIME: health-check outcomes.
+type DashboardWidgetsMeasuresType string
+
+// DashboardWidgetsSize Grid width. Defaults to MEDIUM.
+type DashboardWidgetsSize string
+
+// DashboardConfig defines model for DashboardConfig.
+type DashboardConfig struct {
+	Description *string                   `json:"description,omitempty"`
+	DisplayName *string                   `json:"displayName,omitempty"`
+	Filters     *[]DashboardFilterConfig  `json:"filters,omitempty"`
+	IsDefault   *bool                     `json:"isDefault,omitempty"`
+	Kind        DashboardConfigKind       `json:"kind"`
+	Name        string                    `json:"name"`
+	TimeRange   *DashboardTimeRangeConfig `json:"timeRange,omitempty"`
+	Widgets     *[]DashboardWidgetConfig  `json:"widgets,omitempty"`
+}
+
+// DashboardConfigKind defines model for DashboardConfig.Kind.
+type DashboardConfigKind string
+
+// DashboardData Every widget's series over the window, top to bottom. A widget that fails on its own (say its metric was deleted) carries `error` and no series; the others still return.
+type DashboardData struct {
+	DashboardId openapi_types.UUID `json:"dashboardId"`
+	From        string             `json:"from"`
+	Timezone    string             `json:"timezone"`
+	To          string             `json:"to"`
+	Widgets     []struct {
+		Blocked       bool                         `json:"blocked"`
+		Error         *string                      `json:"error"`
+		Interval      DashboardDataWidgetsInterval `json:"interval"`
+		Name          string                       `json:"name"`
+		OmittedSeries int                          `json:"omittedSeries"`
+		Series        []struct {
+			Aggregation    DashboardDataWidgetsSeriesAggregation `json:"aggregation"`
+			BreakdownValue *string                               `json:"breakdownValue"`
+			Buckets        []struct {
+				ComparisonDate       *string  `json:"comparisonDate,omitempty"`
+				ComparisonValue      *float64 `json:"comparisonValue,omitempty"`
+				Date                 string   `json:"date"`
+				Passed               *float64 `json:"passed,omitempty"`
+				PercentageOfBaseline *float64 `json:"percentageOfBaseline,omitempty"`
+				SampleSize           *float64 `json:"sampleSize,omitempty"`
+				Value                float64  `json:"value"`
+			} `json:"buckets"`
+			ComparisonGroup      *string                        `json:"comparisonGroup"`
+			ComparisonValue      *float64                       `json:"comparisonValue"`
+			MeasureIndex         int                            `json:"measureIndex"`
+			Metric               *string                        `json:"metric"`
+			PercentageOfBaseline *float64                       `json:"percentageOfBaseline"`
+			SampleSize           *float64                       `json:"sampleSize"`
+			Type                 DashboardDataWidgetsSeriesType `json:"type"`
+			Value                float64                        `json:"value"`
+		} `json:"series"`
+		WidgetId openapi_types.UUID `json:"widgetId"`
+	} `json:"widgets"`
+}
+
+// DashboardDataWidgetsInterval defines model for DashboardData.Widgets.Interval.
+type DashboardDataWidgetsInterval string
+
+// DashboardDataWidgetsSeriesAggregation defines model for DashboardData.Widgets.Series.Aggregation.
+type DashboardDataWidgetsSeriesAggregation string
+
+// DashboardDataWidgetsSeriesType defines model for DashboardData.Widgets.Series.Type.
+type DashboardDataWidgetsSeriesType string
+
+// DashboardFilterConfig defines model for DashboardFilterConfig.
+type DashboardFilterConfig struct {
+	Operator *DashboardFilterConfigOperator `json:"operator,omitempty"`
+	Property *string                        `json:"property,omitempty"`
+	Type     DashboardFilterConfigType      `json:"type"`
+	Value    DashboardFilterConfig_Value    `json:"value"`
+}
+
+// DashboardFilterConfigOperator defines model for DashboardFilterConfig.Operator.
+type DashboardFilterConfigOperator string
+
+// DashboardFilterConfigType defines model for DashboardFilterConfig.Type.
+type DashboardFilterConfigType string
+
+// DashboardFilterConfigValue0 defines model for DashboardFilterConfig.Value.0.
+type DashboardFilterConfigValue0 = string
+
+// DashboardFilterConfigValue1 defines model for DashboardFilterConfig.Value.1.
+type DashboardFilterConfigValue1 = float64
+
+// DashboardFilterConfigValue2 defines model for DashboardFilterConfig.Value.2.
+type DashboardFilterConfigValue2 = bool
+
+// DashboardFilterConfig_Value defines model for DashboardFilterConfig.Value.
+type DashboardFilterConfig_Value struct {
+	union json.RawMessage
+}
+
+// DashboardInput A dashboard: a name, the window and filters every widget reads, and its widgets top to bottom. Each widget is an analytics query (the shape POST /v1/analytics/query takes) plus a name, chart type and size.
+//
+// Example: {"filters":[{"type":"MODALITY","value":"call"}],"name":"Support agent health","timeRange":{"type":"LAST","unit":"DAYS","value":30},"widgets":[{"display":"LINE","interval":"DAY","measures":[{"aggregation":"AVG","metric":"sentiment_score"}],"name":"Sentiment","size":"LARGE"},{"display":"NUMBER","measures":[{"type":"CONVERSATION"}],"name":"Calls"}]}
+type DashboardInput struct {
+	Description *string `json:"description,omitempty"`
+	Filters     *[]struct {
+		// Operator Defaults to EQUALS.
+		Operator *DashboardInputFiltersOperator `json:"operator,omitempty"`
+
+		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+		Property *string `json:"property,omitempty"`
+
+		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+		Type DashboardInputFiltersType `json:"type"`
+
+		// Value The value to compare against (an agent id, "call" / "chat", a property value).
+		Value DashboardInput_Filters_Value `json:"value"`
+	} `json:"filters,omitempty"`
+	IsDefault *bool  `json:"isDefault,omitempty"`
+	Name      string `json:"name"`
+
+	// TimeRange The window: LAST n DAYS/WEEKS/MONTHS up to now, a CALENDAR_ALIGNED period (TODAY, YESTERDAY, THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR, LAST_YEAR), FIXED from/to, or SINCE a date. At most 731 days (two years).
+	TimeRange *DashboardInput_TimeRange `json:"timeRange,omitempty"`
+	Widgets   *[]struct {
+		// ComparisonGroups Run every measure once per named filter set, e.g. one group per agent.
+		ComparisonGroups *[]struct {
+			Color   *DashboardInputWidgetsComparisonGroupsColor `json:"color,omitempty"`
+			Filters []struct {
+				// Operator Defaults to EQUALS.
+				Operator *DashboardInputWidgetsComparisonGroupsFiltersOperator `json:"operator,omitempty"`
+
+				// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+				Property *string `json:"property,omitempty"`
+
+				// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+				Type DashboardInputWidgetsComparisonGroupsFiltersType `json:"type"`
+
+				// Value The value to compare against (an agent id, "call" / "chat", a property value).
+				Value DashboardInput_Widgets_ComparisonGroups_Filters_Value `json:"value"`
+			} `json:"filters"`
+
+			// Name The series label; unique within the query.
+			Name string `json:"name"`
+		} `json:"comparisonGroups,omitempty"`
+
+		// ComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
+		ComparisonMode *DashboardInputWidgetsComparisonMode `json:"comparisonMode,omitempty"`
+		Description    *string                              `json:"description,omitempty"`
+
+		// Display Chart type. Defaults to LINE.
+		Display *DashboardInputWidgetsDisplay `json:"display,omitempty"`
+
+		// Filters Applied to every measure, on top of each measure's own filters.
+		Filters *[]struct {
+			// Operator Defaults to EQUALS.
+			Operator *DashboardInputWidgetsFiltersOperator `json:"operator,omitempty"`
+
+			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+			Property *string `json:"property,omitempty"`
+
+			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+			Type DashboardInputWidgetsFiltersType `json:"type"`
+
+			// Value The value to compare against (an agent id, "call" / "chat", a property value).
+			Value DashboardInput_Widgets_Filters_Value `json:"value"`
+		} `json:"filters,omitempty"`
+
+		// Interval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
+		Interval *DashboardInputWidgetsInterval `json:"interval,omitempty"`
+
+		// Measures What to aggregate: 1 to 10 measures.
+		Measures []struct {
+			// Aggregation Defaults by output type: AVG for numeric metrics, COUNT (split by value) for classification and text, PASS_RATE for thresholds and uptime, COUNT for conversations.
+			Aggregation *DashboardInputWidgetsMeasuresAggregation `json:"aggregation,omitempty"`
+
+			// Breakdown Split the measure into one series per value of this dimension (the largest 50 are returned). Ignored while comparisonGroups are set: each group is then one series.
+			Breakdown *struct {
+				// Property The property to split by. Required for CALL_PROPERTY and METRIC_PROPERTY.
+				Property *string                                    `json:"property,omitempty"`
+				Type     DashboardInputWidgetsMeasuresBreakdownType `json:"type"`
+			} `json:"breakdown,omitempty"`
+
+			// Color Chart color on a dashboard.
+			Color *DashboardInputWidgetsMeasuresColor `json:"color,omitempty"`
+
+			// DistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
+			DistinctBy *DashboardInputWidgetsMeasuresDistinctBy `json:"distinctBy,omitempty"`
+
+			// Filters Filters for this measure only, on top of the query's filters.
+			Filters *[]struct {
+				// Operator Defaults to EQUALS.
+				Operator *DashboardInputWidgetsMeasuresFiltersOperator `json:"operator,omitempty"`
+
+				// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+				Property *string `json:"property,omitempty"`
+
+				// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+				Type DashboardInputWidgetsMeasuresFiltersType `json:"type"`
+
+				// Value The value to compare against (an agent id, "call" / "chat", a property value).
+				Value DashboardInput_Widgets_Measures_Filters_Value `json:"value"`
+			} `json:"filters,omitempty"`
+
+			// IsBaseline Mark one measure as the baseline: every series also reports its value as a percentage of it.
+			IsBaseline *bool `json:"isBaseline,omitempty"`
+
+			// Metric The metric's slug (e.g. `task_completion`) or id. Required for METRIC.
+			Metric *string `json:"metric,omitempty"`
+
+			// NestedAggregation How each conversation is folded when distinctBy is CALL. Defaults to SUM under SUM, else AVG.
+			NestedAggregation           *DashboardInputWidgetsMeasuresNestedAggregation `json:"nestedAggregation,omitempty"`
+			NestedAggregationPercentile *int                                            `json:"nestedAggregationPercentile,omitempty"`
+
+			// PassOperator PASS_RATE condition operator. Omit for a threshold metric: its own condition is used.
+			PassOperator *DashboardInputWidgetsMeasuresPassOperator `json:"passOperator,omitempty"`
+
+			// PassValue PASS_RATE condition value, e.g. 4 or "resolved".
+			PassValue *DashboardInput_Widgets_Measures_PassValue `json:"passValue,omitempty"`
+
+			// Percentile Required with PERCENTILE, e.g. 95.
+			Percentile *int `json:"percentile,omitempty"`
+
+			// Type METRIC (default): a metric's values. CONVERSATION: conversation counts. UPTIME: health-check outcomes.
+			Type *DashboardInputWidgetsMeasuresType `json:"type,omitempty"`
+		} `json:"measures"`
+
+		// Name Unique on the dashboard: how the widget is matched on update.
+		Name string `json:"name"`
+
+		// Size Grid width. Defaults to MEDIUM.
+		Size *DashboardInputWidgetsSize `json:"size,omitempty"`
+	} `json:"widgets,omitempty"`
+}
+
+// DashboardInputFiltersOperator Defaults to EQUALS.
+type DashboardInputFiltersOperator string
+
+// DashboardInputFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardInputFiltersType string
+
+// DashboardInputFiltersValue0 defines model for DashboardInput.Filters.Value.0.
+type DashboardInputFiltersValue0 = string
+
+// DashboardInputFiltersValue1 defines model for DashboardInput.Filters.Value.1.
+type DashboardInputFiltersValue1 = float64
+
+// DashboardInputFiltersValue2 defines model for DashboardInput.Filters.Value.2.
+type DashboardInputFiltersValue2 = bool
+
+// DashboardInput_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type DashboardInput_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardInputTimeRange0 defines model for DashboardInput.TimeRange.0.
+type DashboardInputTimeRange0 struct {
+	Type  DashboardInputTimeRange0Type `json:"type"`
+	Unit  DashboardInputTimeRange0Unit `json:"unit"`
+	Value int                          `json:"value"`
+}
+
+// DashboardInputTimeRange0Type defines model for DashboardInput.TimeRange.0.Type.
+type DashboardInputTimeRange0Type string
+
+// DashboardInputTimeRange0Unit defines model for DashboardInput.TimeRange.0.Unit.
+type DashboardInputTimeRange0Unit string
+
+// DashboardInputTimeRange1 defines model for DashboardInput.TimeRange.1.
+type DashboardInputTimeRange1 struct {
+	Period DashboardInputTimeRange1Period `json:"period"`
+	Type   DashboardInputTimeRange1Type   `json:"type"`
+}
+
+// DashboardInputTimeRange1Period defines model for DashboardInput.TimeRange.1.Period.
+type DashboardInputTimeRange1Period string
+
+// DashboardInputTimeRange1Type defines model for DashboardInput.TimeRange.1.Type.
+type DashboardInputTimeRange1Type string
+
+// DashboardInputTimeRange2 defines model for DashboardInput.TimeRange.2.
+type DashboardInputTimeRange2 struct {
+	From time.Time                    `json:"from"`
+	To   time.Time                    `json:"to"`
+	Type DashboardInputTimeRange2Type `json:"type"`
+}
+
+// DashboardInputTimeRange2Type defines model for DashboardInput.TimeRange.2.Type.
+type DashboardInputTimeRange2Type string
+
+// DashboardInputTimeRange3 defines model for DashboardInput.TimeRange.3.
+type DashboardInputTimeRange3 struct {
+	From time.Time                    `json:"from"`
+	Type DashboardInputTimeRange3Type `json:"type"`
+}
+
+// DashboardInputTimeRange3Type defines model for DashboardInput.TimeRange.3.Type.
+type DashboardInputTimeRange3Type string
+
+// DashboardInput_TimeRange The window: LAST n DAYS/WEEKS/MONTHS up to now, a CALENDAR_ALIGNED period (TODAY, YESTERDAY, THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR, LAST_YEAR), FIXED from/to, or SINCE a date. At most 731 days (two years).
+type DashboardInput_TimeRange struct {
+	union json.RawMessage
+}
+
+// DashboardInputWidgetsComparisonGroupsColor defines model for DashboardInput.Widgets.ComparisonGroups.Color.
+type DashboardInputWidgetsComparisonGroupsColor string
+
+// DashboardInputWidgetsComparisonGroupsFiltersOperator Defaults to EQUALS.
+type DashboardInputWidgetsComparisonGroupsFiltersOperator string
+
+// DashboardInputWidgetsComparisonGroupsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardInputWidgetsComparisonGroupsFiltersType string
+
+// DashboardInputWidgetsComparisonGroupsFiltersValue0 defines model for DashboardInput.Widgets.ComparisonGroups.Filters.Value.0.
+type DashboardInputWidgetsComparisonGroupsFiltersValue0 = string
+
+// DashboardInputWidgetsComparisonGroupsFiltersValue1 defines model for DashboardInput.Widgets.ComparisonGroups.Filters.Value.1.
+type DashboardInputWidgetsComparisonGroupsFiltersValue1 = float64
+
+// DashboardInputWidgetsComparisonGroupsFiltersValue2 defines model for DashboardInput.Widgets.ComparisonGroups.Filters.Value.2.
+type DashboardInputWidgetsComparisonGroupsFiltersValue2 = bool
+
+// DashboardInput_Widgets_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type DashboardInput_Widgets_ComparisonGroups_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardInputWidgetsComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
+type DashboardInputWidgetsComparisonMode string
+
+// DashboardInputWidgetsDisplay Chart type. Defaults to LINE.
+type DashboardInputWidgetsDisplay string
+
+// DashboardInputWidgetsFiltersOperator Defaults to EQUALS.
+type DashboardInputWidgetsFiltersOperator string
+
+// DashboardInputWidgetsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardInputWidgetsFiltersType string
+
+// DashboardInputWidgetsFiltersValue0 defines model for DashboardInput.Widgets.Filters.Value.0.
+type DashboardInputWidgetsFiltersValue0 = string
+
+// DashboardInputWidgetsFiltersValue1 defines model for DashboardInput.Widgets.Filters.Value.1.
+type DashboardInputWidgetsFiltersValue1 = float64
+
+// DashboardInputWidgetsFiltersValue2 defines model for DashboardInput.Widgets.Filters.Value.2.
+type DashboardInputWidgetsFiltersValue2 = bool
+
+// DashboardInput_Widgets_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type DashboardInput_Widgets_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardInputWidgetsInterval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
+type DashboardInputWidgetsInterval string
+
+// DashboardInputWidgetsMeasuresAggregation Defaults by output type: AVG for numeric metrics, COUNT (split by value) for classification and text, PASS_RATE for thresholds and uptime, COUNT for conversations.
+type DashboardInputWidgetsMeasuresAggregation string
+
+// DashboardInputWidgetsMeasuresBreakdownType defines model for DashboardInput.Widgets.Measures.Breakdown.Type.
+type DashboardInputWidgetsMeasuresBreakdownType string
+
+// DashboardInputWidgetsMeasuresColor Chart color on a dashboard.
+type DashboardInputWidgetsMeasuresColor string
+
+// DashboardInputWidgetsMeasuresDistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
+type DashboardInputWidgetsMeasuresDistinctBy string
+
+// DashboardInputWidgetsMeasuresFiltersOperator Defaults to EQUALS.
+type DashboardInputWidgetsMeasuresFiltersOperator string
+
+// DashboardInputWidgetsMeasuresFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardInputWidgetsMeasuresFiltersType string
+
+// DashboardInputWidgetsMeasuresFiltersValue0 defines model for DashboardInput.Widgets.Measures.Filters.Value.0.
+type DashboardInputWidgetsMeasuresFiltersValue0 = string
+
+// DashboardInputWidgetsMeasuresFiltersValue1 defines model for DashboardInput.Widgets.Measures.Filters.Value.1.
+type DashboardInputWidgetsMeasuresFiltersValue1 = float64
+
+// DashboardInputWidgetsMeasuresFiltersValue2 defines model for DashboardInput.Widgets.Measures.Filters.Value.2.
+type DashboardInputWidgetsMeasuresFiltersValue2 = bool
+
+// DashboardInput_Widgets_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type DashboardInput_Widgets_Measures_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardInputWidgetsMeasuresNestedAggregation How each conversation is folded when distinctBy is CALL. Defaults to SUM under SUM, else AVG.
+type DashboardInputWidgetsMeasuresNestedAggregation string
+
+// DashboardInputWidgetsMeasuresPassOperator PASS_RATE condition operator. Omit for a threshold metric: its own condition is used.
+type DashboardInputWidgetsMeasuresPassOperator string
+
+// DashboardInputWidgetsMeasuresPassValue0 defines model for DashboardInput.Widgets.Measures.PassValue.0.
+type DashboardInputWidgetsMeasuresPassValue0 = string
+
+// DashboardInputWidgetsMeasuresPassValue1 defines model for DashboardInput.Widgets.Measures.PassValue.1.
+type DashboardInputWidgetsMeasuresPassValue1 = float64
+
+// DashboardInputWidgetsMeasuresPassValue2 defines model for DashboardInput.Widgets.Measures.PassValue.2.
+type DashboardInputWidgetsMeasuresPassValue2 = bool
+
+// DashboardInput_Widgets_Measures_PassValue PASS_RATE condition value, e.g. 4 or "resolved".
+type DashboardInput_Widgets_Measures_PassValue struct {
+	union json.RawMessage
+}
+
+// DashboardInputWidgetsMeasuresType METRIC (default): a metric's values. CONVERSATION: conversation counts. UPTIME: health-check outcomes.
+type DashboardInputWidgetsMeasuresType string
+
+// DashboardInputWidgetsSize Grid width. Defaults to MEDIUM.
+type DashboardInputWidgetsSize string
+
+// DashboardMeasureConfig defines model for DashboardMeasureConfig.
+type DashboardMeasureConfig struct {
+	Aggregation *DashboardMeasureConfigAggregation `json:"aggregation,omitempty"`
+	Breakdown   *struct {
+		Property *string                             `json:"property,omitempty"`
+		Type     DashboardMeasureConfigBreakdownType `json:"type"`
+	} `json:"breakdown,omitempty"`
+	Color                       *DashboardMeasureConfigColor             `json:"color,omitempty"`
+	DistinctBy                  *DashboardMeasureConfigDistinctBy        `json:"distinctBy,omitempty"`
+	Filters                     *[]DashboardFilterConfig                 `json:"filters,omitempty"`
+	IsBaseline                  *bool                                    `json:"isBaseline,omitempty"`
+	Metric                      *string                                  `json:"metric,omitempty"`
+	NestedAggregation           *DashboardMeasureConfigNestedAggregation `json:"nestedAggregation,omitempty"`
+	NestedAggregationPercentile *int                                     `json:"nestedAggregationPercentile,omitempty"`
+	PassOperator                *DashboardMeasureConfigPassOperator      `json:"passOperator,omitempty"`
+	PassValue                   *DashboardMeasureConfig_PassValue        `json:"passValue,omitempty"`
+	Percentile                  *int                                     `json:"percentile,omitempty"`
+	Type                        *DashboardMeasureConfigType              `json:"type,omitempty"`
+}
+
+// DashboardMeasureConfigAggregation defines model for DashboardMeasureConfig.Aggregation.
+type DashboardMeasureConfigAggregation string
+
+// DashboardMeasureConfigBreakdownType defines model for DashboardMeasureConfig.Breakdown.Type.
+type DashboardMeasureConfigBreakdownType string
+
+// DashboardMeasureConfigColor defines model for DashboardMeasureConfig.Color.
+type DashboardMeasureConfigColor string
+
+// DashboardMeasureConfigDistinctBy defines model for DashboardMeasureConfig.DistinctBy.
+type DashboardMeasureConfigDistinctBy string
+
+// DashboardMeasureConfigNestedAggregation defines model for DashboardMeasureConfig.NestedAggregation.
+type DashboardMeasureConfigNestedAggregation string
+
+// DashboardMeasureConfigPassOperator defines model for DashboardMeasureConfig.PassOperator.
+type DashboardMeasureConfigPassOperator string
+
+// DashboardMeasureConfigPassValue0 defines model for DashboardMeasureConfig.PassValue.0.
+type DashboardMeasureConfigPassValue0 = string
+
+// DashboardMeasureConfigPassValue1 defines model for DashboardMeasureConfig.PassValue.1.
+type DashboardMeasureConfigPassValue1 = float64
+
+// DashboardMeasureConfigPassValue2 defines model for DashboardMeasureConfig.PassValue.2.
+type DashboardMeasureConfigPassValue2 = bool
+
+// DashboardMeasureConfig_PassValue defines model for DashboardMeasureConfig.PassValue.
+type DashboardMeasureConfig_PassValue struct {
+	union json.RawMessage
+}
+
+// DashboardMeasureConfigType defines model for DashboardMeasureConfig.Type.
+type DashboardMeasureConfigType string
+
+// DashboardSummary defines model for DashboardSummary.
+type DashboardSummary struct {
+	// ConfigManaged Managed by config as code (`kind: dashboard`). A managed dashboard is read-only here: edits return 409; change it in the config file.
+	ConfigManaged bool               `json:"configManaged"`
+	CreatedAt     string             `json:"createdAt"`
+	Description   *string            `json:"description"`
+	Id            openapi_types.UUID `json:"id"`
+	IsDefault     bool               `json:"isDefault"`
+	Name          string             `json:"name"`
+
+	// TimeRange The window: LAST n DAYS/WEEKS/MONTHS up to now, a CALENDAR_ALIGNED period (TODAY, YESTERDAY, THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR, LAST_YEAR), FIXED from/to, or SINCE a date. At most 731 days (two years).
+	TimeRange *DashboardSummary_TimeRange `json:"timeRange"`
+	UpdatedAt string                      `json:"updatedAt"`
+}
+
+// DashboardSummaryTimeRange0 defines model for DashboardSummary.TimeRange.0.
+type DashboardSummaryTimeRange0 struct {
+	Type  DashboardSummaryTimeRange0Type `json:"type"`
+	Unit  DashboardSummaryTimeRange0Unit `json:"unit"`
+	Value int                            `json:"value"`
+}
+
+// DashboardSummaryTimeRange0Type defines model for DashboardSummary.TimeRange.0.Type.
+type DashboardSummaryTimeRange0Type string
+
+// DashboardSummaryTimeRange0Unit defines model for DashboardSummary.TimeRange.0.Unit.
+type DashboardSummaryTimeRange0Unit string
+
+// DashboardSummaryTimeRange1 defines model for DashboardSummary.TimeRange.1.
+type DashboardSummaryTimeRange1 struct {
+	Period DashboardSummaryTimeRange1Period `json:"period"`
+	Type   DashboardSummaryTimeRange1Type   `json:"type"`
+}
+
+// DashboardSummaryTimeRange1Period defines model for DashboardSummary.TimeRange.1.Period.
+type DashboardSummaryTimeRange1Period string
+
+// DashboardSummaryTimeRange1Type defines model for DashboardSummary.TimeRange.1.Type.
+type DashboardSummaryTimeRange1Type string
+
+// DashboardSummaryTimeRange2 defines model for DashboardSummary.TimeRange.2.
+type DashboardSummaryTimeRange2 struct {
+	From time.Time                      `json:"from"`
+	To   time.Time                      `json:"to"`
+	Type DashboardSummaryTimeRange2Type `json:"type"`
+}
+
+// DashboardSummaryTimeRange2Type defines model for DashboardSummary.TimeRange.2.Type.
+type DashboardSummaryTimeRange2Type string
+
+// DashboardSummaryTimeRange3 defines model for DashboardSummary.TimeRange.3.
+type DashboardSummaryTimeRange3 struct {
+	From time.Time                      `json:"from"`
+	Type DashboardSummaryTimeRange3Type `json:"type"`
+}
+
+// DashboardSummaryTimeRange3Type defines model for DashboardSummary.TimeRange.3.Type.
+type DashboardSummaryTimeRange3Type string
+
+// DashboardSummary_TimeRange The window: LAST n DAYS/WEEKS/MONTHS up to now, a CALENDAR_ALIGNED period (TODAY, YESTERDAY, THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR, LAST_YEAR), FIXED from/to, or SINCE a date. At most 731 days (two years).
+type DashboardSummary_TimeRange struct {
+	union json.RawMessage
+}
+
+// DashboardTimeRangeConfig defines model for DashboardTimeRangeConfig.
+type DashboardTimeRangeConfig struct {
+	union json.RawMessage
+}
+
+// DashboardTimeRangeConfig0 defines model for DashboardTimeRangeConfig.0.
+type DashboardTimeRangeConfig0 struct {
+	Type  DashboardTimeRangeConfig0Type `json:"type"`
+	Unit  DashboardTimeRangeConfig0Unit `json:"unit"`
+	Value int                           `json:"value"`
+}
+
+// DashboardTimeRangeConfig0Type defines model for DashboardTimeRangeConfig.0.Type.
+type DashboardTimeRangeConfig0Type string
+
+// DashboardTimeRangeConfig0Unit defines model for DashboardTimeRangeConfig.0.Unit.
+type DashboardTimeRangeConfig0Unit string
+
+// DashboardTimeRangeConfig1 defines model for DashboardTimeRangeConfig.1.
+type DashboardTimeRangeConfig1 struct {
+	Period DashboardTimeRangeConfig1Period `json:"period"`
+	Type   DashboardTimeRangeConfig1Type   `json:"type"`
+}
+
+// DashboardTimeRangeConfig1Period defines model for DashboardTimeRangeConfig.1.Period.
+type DashboardTimeRangeConfig1Period string
+
+// DashboardTimeRangeConfig1Type defines model for DashboardTimeRangeConfig.1.Type.
+type DashboardTimeRangeConfig1Type string
+
+// DashboardTimeRangeConfig2 defines model for DashboardTimeRangeConfig.2.
+type DashboardTimeRangeConfig2 struct {
+	From time.Time                     `json:"from"`
+	To   time.Time                     `json:"to"`
+	Type DashboardTimeRangeConfig2Type `json:"type"`
+}
+
+// DashboardTimeRangeConfig2Type defines model for DashboardTimeRangeConfig.2.Type.
+type DashboardTimeRangeConfig2Type string
+
+// DashboardTimeRangeConfig3 defines model for DashboardTimeRangeConfig.3.
+type DashboardTimeRangeConfig3 struct {
+	From time.Time                     `json:"from"`
+	Type DashboardTimeRangeConfig3Type `json:"type"`
+}
+
+// DashboardTimeRangeConfig3Type defines model for DashboardTimeRangeConfig.3.Type.
+type DashboardTimeRangeConfig3Type string
+
+// DashboardWidget defines model for DashboardWidget.
+type DashboardWidget struct {
+	// ComparisonGroups Run every measure once per named filter set, e.g. one group per agent.
+	ComparisonGroups *[]struct {
+		Color   *DashboardWidgetComparisonGroupsColor `json:"color,omitempty"`
+		Filters []struct {
+			// Operator Defaults to EQUALS.
+			Operator *DashboardWidgetComparisonGroupsFiltersOperator `json:"operator,omitempty"`
+
+			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+			Property *string `json:"property,omitempty"`
+
+			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+			Type DashboardWidgetComparisonGroupsFiltersType `json:"type"`
+
+			// Value The value to compare against (an agent id, "call" / "chat", a property value).
+			Value DashboardWidget_ComparisonGroups_Filters_Value `json:"value"`
+		} `json:"filters"`
+
+		// Name The series label; unique within the query.
+		Name string `json:"name"`
+	} `json:"comparisonGroups,omitempty"`
+
+	// ComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
+	ComparisonMode *DashboardWidgetComparisonMode `json:"comparisonMode,omitempty"`
+	Description    *string                        `json:"description,omitempty"`
+
+	// Display Chart type. Defaults to LINE.
+	Display *DashboardWidgetDisplay `json:"display,omitempty"`
+
+	// Filters Applied to every measure, on top of each measure's own filters.
+	Filters *[]struct {
+		// Operator Defaults to EQUALS.
+		Operator *DashboardWidgetFiltersOperator `json:"operator,omitempty"`
+
+		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+		Property *string `json:"property,omitempty"`
+
+		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+		Type DashboardWidgetFiltersType `json:"type"`
+
+		// Value The value to compare against (an agent id, "call" / "chat", a property value).
+		Value DashboardWidget_Filters_Value `json:"value"`
+	} `json:"filters,omitempty"`
+	Id openapi_types.UUID `json:"id"`
+
+	// Interval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
+	Interval *DashboardWidgetInterval `json:"interval,omitempty"`
+
+	// Measures What to aggregate: 1 to 10 measures.
+	Measures []struct {
+		// Aggregation Defaults by output type: AVG for numeric metrics, COUNT (split by value) for classification and text, PASS_RATE for thresholds and uptime, COUNT for conversations.
+		Aggregation *DashboardWidgetMeasuresAggregation `json:"aggregation,omitempty"`
+
+		// Breakdown Split the measure into one series per value of this dimension (the largest 50 are returned). Ignored while comparisonGroups are set: each group is then one series.
+		Breakdown *struct {
+			// Property The property to split by. Required for CALL_PROPERTY and METRIC_PROPERTY.
+			Property *string                              `json:"property,omitempty"`
+			Type     DashboardWidgetMeasuresBreakdownType `json:"type"`
+		} `json:"breakdown,omitempty"`
+
+		// Color Chart color on a dashboard.
+		Color *DashboardWidgetMeasuresColor `json:"color,omitempty"`
+
+		// DistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
+		DistinctBy *DashboardWidgetMeasuresDistinctBy `json:"distinctBy,omitempty"`
+
+		// Filters Filters for this measure only, on top of the query's filters.
+		Filters *[]struct {
+			// Operator Defaults to EQUALS.
+			Operator *DashboardWidgetMeasuresFiltersOperator `json:"operator,omitempty"`
+
+			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+			Property *string `json:"property,omitempty"`
+
+			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+			Type DashboardWidgetMeasuresFiltersType `json:"type"`
+
+			// Value The value to compare against (an agent id, "call" / "chat", a property value).
+			Value DashboardWidget_Measures_Filters_Value `json:"value"`
+		} `json:"filters,omitempty"`
+
+		// IsBaseline Mark one measure as the baseline: every series also reports its value as a percentage of it.
+		IsBaseline *bool `json:"isBaseline,omitempty"`
+
+		// Metric The metric's slug (e.g. `task_completion`) or id. Required for METRIC.
+		Metric *string `json:"metric,omitempty"`
+
+		// NestedAggregation How each conversation is folded when distinctBy is CALL. Defaults to SUM under SUM, else AVG.
+		NestedAggregation           *DashboardWidgetMeasuresNestedAggregation `json:"nestedAggregation,omitempty"`
+		NestedAggregationPercentile *int                                      `json:"nestedAggregationPercentile,omitempty"`
+
+		// PassOperator PASS_RATE condition operator. Omit for a threshold metric: its own condition is used.
+		PassOperator *DashboardWidgetMeasuresPassOperator `json:"passOperator,omitempty"`
+
+		// PassValue PASS_RATE condition value, e.g. 4 or "resolved".
+		PassValue *DashboardWidget_Measures_PassValue `json:"passValue,omitempty"`
+
+		// Percentile Required with PERCENTILE, e.g. 95.
+		Percentile *int `json:"percentile,omitempty"`
+
+		// Type METRIC (default): a metric's values. CONVERSATION: conversation counts. UPTIME: health-check outcomes.
+		Type *DashboardWidgetMeasuresType `json:"type,omitempty"`
+	} `json:"measures"`
+
+	// Name Unique on the dashboard: how the widget is matched on update.
+	Name string `json:"name"`
+
+	// Size Grid width. Defaults to MEDIUM.
+	Size *DashboardWidgetSize `json:"size,omitempty"`
+}
+
+// DashboardWidgetComparisonGroupsColor defines model for DashboardWidget.ComparisonGroups.Color.
+type DashboardWidgetComparisonGroupsColor string
+
+// DashboardWidgetComparisonGroupsFiltersOperator Defaults to EQUALS.
+type DashboardWidgetComparisonGroupsFiltersOperator string
+
+// DashboardWidgetComparisonGroupsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardWidgetComparisonGroupsFiltersType string
+
+// DashboardWidgetComparisonGroupsFiltersValue0 defines model for DashboardWidget.ComparisonGroups.Filters.Value.0.
+type DashboardWidgetComparisonGroupsFiltersValue0 = string
+
+// DashboardWidgetComparisonGroupsFiltersValue1 defines model for DashboardWidget.ComparisonGroups.Filters.Value.1.
+type DashboardWidgetComparisonGroupsFiltersValue1 = float64
+
+// DashboardWidgetComparisonGroupsFiltersValue2 defines model for DashboardWidget.ComparisonGroups.Filters.Value.2.
+type DashboardWidgetComparisonGroupsFiltersValue2 = bool
+
+// DashboardWidget_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type DashboardWidget_ComparisonGroups_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
+type DashboardWidgetComparisonMode string
+
+// DashboardWidgetDisplay Chart type. Defaults to LINE.
+type DashboardWidgetDisplay string
+
+// DashboardWidgetFiltersOperator Defaults to EQUALS.
+type DashboardWidgetFiltersOperator string
+
+// DashboardWidgetFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardWidgetFiltersType string
+
+// DashboardWidgetFiltersValue0 defines model for DashboardWidget.Filters.Value.0.
+type DashboardWidgetFiltersValue0 = string
+
+// DashboardWidgetFiltersValue1 defines model for DashboardWidget.Filters.Value.1.
+type DashboardWidgetFiltersValue1 = float64
+
+// DashboardWidgetFiltersValue2 defines model for DashboardWidget.Filters.Value.2.
+type DashboardWidgetFiltersValue2 = bool
+
+// DashboardWidget_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type DashboardWidget_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetInterval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
+type DashboardWidgetInterval string
+
+// DashboardWidgetMeasuresAggregation Defaults by output type: AVG for numeric metrics, COUNT (split by value) for classification and text, PASS_RATE for thresholds and uptime, COUNT for conversations.
+type DashboardWidgetMeasuresAggregation string
+
+// DashboardWidgetMeasuresBreakdownType defines model for DashboardWidget.Measures.Breakdown.Type.
+type DashboardWidgetMeasuresBreakdownType string
+
+// DashboardWidgetMeasuresColor Chart color on a dashboard.
+type DashboardWidgetMeasuresColor string
+
+// DashboardWidgetMeasuresDistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
+type DashboardWidgetMeasuresDistinctBy string
+
+// DashboardWidgetMeasuresFiltersOperator Defaults to EQUALS.
+type DashboardWidgetMeasuresFiltersOperator string
+
+// DashboardWidgetMeasuresFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardWidgetMeasuresFiltersType string
+
+// DashboardWidgetMeasuresFiltersValue0 defines model for DashboardWidget.Measures.Filters.Value.0.
+type DashboardWidgetMeasuresFiltersValue0 = string
+
+// DashboardWidgetMeasuresFiltersValue1 defines model for DashboardWidget.Measures.Filters.Value.1.
+type DashboardWidgetMeasuresFiltersValue1 = float64
+
+// DashboardWidgetMeasuresFiltersValue2 defines model for DashboardWidget.Measures.Filters.Value.2.
+type DashboardWidgetMeasuresFiltersValue2 = bool
+
+// DashboardWidget_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type DashboardWidget_Measures_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetMeasuresNestedAggregation How each conversation is folded when distinctBy is CALL. Defaults to SUM under SUM, else AVG.
+type DashboardWidgetMeasuresNestedAggregation string
+
+// DashboardWidgetMeasuresPassOperator PASS_RATE condition operator. Omit for a threshold metric: its own condition is used.
+type DashboardWidgetMeasuresPassOperator string
+
+// DashboardWidgetMeasuresPassValue0 defines model for DashboardWidget.Measures.PassValue.0.
+type DashboardWidgetMeasuresPassValue0 = string
+
+// DashboardWidgetMeasuresPassValue1 defines model for DashboardWidget.Measures.PassValue.1.
+type DashboardWidgetMeasuresPassValue1 = float64
+
+// DashboardWidgetMeasuresPassValue2 defines model for DashboardWidget.Measures.PassValue.2.
+type DashboardWidgetMeasuresPassValue2 = bool
+
+// DashboardWidget_Measures_PassValue PASS_RATE condition value, e.g. 4 or "resolved".
+type DashboardWidget_Measures_PassValue struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetMeasuresType METRIC (default): a metric's values. CONVERSATION: conversation counts. UPTIME: health-check outcomes.
+type DashboardWidgetMeasuresType string
+
+// DashboardWidgetSize Grid width. Defaults to MEDIUM.
+type DashboardWidgetSize string
+
+// DashboardWidgetConfig defines model for DashboardWidgetConfig.
+type DashboardWidgetConfig struct {
+	ComparisonGroups *[]struct {
+		Color   *DashboardWidgetConfigComparisonGroupsColor `json:"color,omitempty"`
+		Filters []DashboardFilterConfig                     `json:"filters"`
+		Name    string                                      `json:"name"`
+	} `json:"comparisonGroups,omitempty"`
+	ComparisonMode *DashboardWidgetConfigComparisonMode `json:"comparisonMode,omitempty"`
+	Description    *string                              `json:"description,omitempty"`
+	Display        *DashboardWidgetConfigDisplay        `json:"display,omitempty"`
+	Filters        *[]DashboardFilterConfig             `json:"filters,omitempty"`
+	Interval       *DashboardWidgetConfigInterval       `json:"interval,omitempty"`
+	Measures       []DashboardMeasureConfig             `json:"measures"`
+	Name           string                               `json:"name"`
+	Size           *DashboardWidgetConfigSize           `json:"size,omitempty"`
+}
+
+// DashboardWidgetConfigComparisonGroupsColor defines model for DashboardWidgetConfig.ComparisonGroups.Color.
+type DashboardWidgetConfigComparisonGroupsColor string
+
+// DashboardWidgetConfigComparisonMode defines model for DashboardWidgetConfig.ComparisonMode.
+type DashboardWidgetConfigComparisonMode string
+
+// DashboardWidgetConfigDisplay defines model for DashboardWidgetConfig.Display.
+type DashboardWidgetConfigDisplay string
+
+// DashboardWidgetConfigInterval defines model for DashboardWidgetConfig.Interval.
+type DashboardWidgetConfigInterval string
+
+// DashboardWidgetConfigSize defines model for DashboardWidgetConfig.Size.
+type DashboardWidgetConfigSize string
+
+// DashboardWidgetData defines model for DashboardWidgetData.
+type DashboardWidgetData struct {
+	Blocked       bool                        `json:"blocked"`
+	Error         *string                     `json:"error"`
+	From          string                      `json:"from"`
+	Interval      DashboardWidgetDataInterval `json:"interval"`
+	Name          string                      `json:"name"`
+	OmittedSeries int                         `json:"omittedSeries"`
+	Series        []struct {
+		Aggregation    DashboardWidgetDataSeriesAggregation `json:"aggregation"`
+		BreakdownValue *string                              `json:"breakdownValue"`
+		Buckets        []struct {
+			ComparisonDate       *string  `json:"comparisonDate,omitempty"`
+			ComparisonValue      *float64 `json:"comparisonValue,omitempty"`
+			Date                 string   `json:"date"`
+			Passed               *float64 `json:"passed,omitempty"`
+			PercentageOfBaseline *float64 `json:"percentageOfBaseline,omitempty"`
+			SampleSize           *float64 `json:"sampleSize,omitempty"`
+			Value                float64  `json:"value"`
+		} `json:"buckets"`
+		ComparisonGroup      *string                       `json:"comparisonGroup"`
+		ComparisonValue      *float64                      `json:"comparisonValue"`
+		MeasureIndex         int                           `json:"measureIndex"`
+		Metric               *string                       `json:"metric"`
+		PercentageOfBaseline *float64                      `json:"percentageOfBaseline"`
+		SampleSize           *float64                      `json:"sampleSize"`
+		Type                 DashboardWidgetDataSeriesType `json:"type"`
+		Value                float64                       `json:"value"`
+	} `json:"series"`
+	Timezone string             `json:"timezone"`
+	To       string             `json:"to"`
+	WidgetId openapi_types.UUID `json:"widgetId"`
+}
+
+// DashboardWidgetDataInterval defines model for DashboardWidgetData.Interval.
+type DashboardWidgetDataInterval string
+
+// DashboardWidgetDataSeriesAggregation defines model for DashboardWidgetData.Series.Aggregation.
+type DashboardWidgetDataSeriesAggregation string
+
+// DashboardWidgetDataSeriesType defines model for DashboardWidgetData.Series.Type.
+type DashboardWidgetDataSeriesType string
+
+// DashboardWidgetInput One widget: an analytics query plus its name (unique on the dashboard), chart type and size.
+//
+// Example: {"display":"LINE","interval":"DAY","measures":[{"aggregation":"AVG","metric":"sentiment_score"}],"name":"Sentiment","size":"LARGE"}
+type DashboardWidgetInput struct {
+	// ComparisonGroups Run every measure once per named filter set, e.g. one group per agent.
+	ComparisonGroups *[]struct {
+		Color   *DashboardWidgetInputComparisonGroupsColor `json:"color,omitempty"`
+		Filters []struct {
+			// Operator Defaults to EQUALS.
+			Operator *DashboardWidgetInputComparisonGroupsFiltersOperator `json:"operator,omitempty"`
+
+			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+			Property *string `json:"property,omitempty"`
+
+			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+			Type DashboardWidgetInputComparisonGroupsFiltersType `json:"type"`
+
+			// Value The value to compare against (an agent id, "call" / "chat", a property value).
+			Value DashboardWidgetInput_ComparisonGroups_Filters_Value `json:"value"`
+		} `json:"filters"`
+
+		// Name The series label; unique within the query.
+		Name string `json:"name"`
+	} `json:"comparisonGroups,omitempty"`
+
+	// ComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
+	ComparisonMode *DashboardWidgetInputComparisonMode `json:"comparisonMode,omitempty"`
+	Description    *string                             `json:"description,omitempty"`
+
+	// Display Chart type. Defaults to LINE.
+	Display *DashboardWidgetInputDisplay `json:"display,omitempty"`
+
+	// Filters Applied to every measure, on top of each measure's own filters.
+	Filters *[]struct {
+		// Operator Defaults to EQUALS.
+		Operator *DashboardWidgetInputFiltersOperator `json:"operator,omitempty"`
+
+		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+		Property *string `json:"property,omitempty"`
+
+		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+		Type DashboardWidgetInputFiltersType `json:"type"`
+
+		// Value The value to compare against (an agent id, "call" / "chat", a property value).
+		Value DashboardWidgetInput_Filters_Value `json:"value"`
+	} `json:"filters,omitempty"`
+
+	// Interval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
+	Interval *DashboardWidgetInputInterval `json:"interval,omitempty"`
+
+	// Measures What to aggregate: 1 to 10 measures.
+	Measures []struct {
+		// Aggregation Defaults by output type: AVG for numeric metrics, COUNT (split by value) for classification and text, PASS_RATE for thresholds and uptime, COUNT for conversations.
+		Aggregation *DashboardWidgetInputMeasuresAggregation `json:"aggregation,omitempty"`
+
+		// Breakdown Split the measure into one series per value of this dimension (the largest 50 are returned). Ignored while comparisonGroups are set: each group is then one series.
+		Breakdown *struct {
+			// Property The property to split by. Required for CALL_PROPERTY and METRIC_PROPERTY.
+			Property *string                                   `json:"property,omitempty"`
+			Type     DashboardWidgetInputMeasuresBreakdownType `json:"type"`
+		} `json:"breakdown,omitempty"`
+
+		// Color Chart color on a dashboard.
+		Color *DashboardWidgetInputMeasuresColor `json:"color,omitempty"`
+
+		// DistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
+		DistinctBy *DashboardWidgetInputMeasuresDistinctBy `json:"distinctBy,omitempty"`
+
+		// Filters Filters for this measure only, on top of the query's filters.
+		Filters *[]struct {
+			// Operator Defaults to EQUALS.
+			Operator *DashboardWidgetInputMeasuresFiltersOperator `json:"operator,omitempty"`
+
+			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+			Property *string `json:"property,omitempty"`
+
+			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+			Type DashboardWidgetInputMeasuresFiltersType `json:"type"`
+
+			// Value The value to compare against (an agent id, "call" / "chat", a property value).
+			Value DashboardWidgetInput_Measures_Filters_Value `json:"value"`
+		} `json:"filters,omitempty"`
+
+		// IsBaseline Mark one measure as the baseline: every series also reports its value as a percentage of it.
+		IsBaseline *bool `json:"isBaseline,omitempty"`
+
+		// Metric The metric's slug (e.g. `task_completion`) or id. Required for METRIC.
+		Metric *string `json:"metric,omitempty"`
+
+		// NestedAggregation How each conversation is folded when distinctBy is CALL. Defaults to SUM under SUM, else AVG.
+		NestedAggregation           *DashboardWidgetInputMeasuresNestedAggregation `json:"nestedAggregation,omitempty"`
+		NestedAggregationPercentile *int                                           `json:"nestedAggregationPercentile,omitempty"`
+
+		// PassOperator PASS_RATE condition operator. Omit for a threshold metric: its own condition is used.
+		PassOperator *DashboardWidgetInputMeasuresPassOperator `json:"passOperator,omitempty"`
+
+		// PassValue PASS_RATE condition value, e.g. 4 or "resolved".
+		PassValue *DashboardWidgetInput_Measures_PassValue `json:"passValue,omitempty"`
+
+		// Percentile Required with PERCENTILE, e.g. 95.
+		Percentile *int `json:"percentile,omitempty"`
+
+		// Type METRIC (default): a metric's values. CONVERSATION: conversation counts. UPTIME: health-check outcomes.
+		Type *DashboardWidgetInputMeasuresType `json:"type,omitempty"`
+	} `json:"measures"`
+
+	// Name Unique on the dashboard: how the widget is matched on update.
+	Name string `json:"name"`
+
+	// Size Grid width. Defaults to MEDIUM.
+	Size *DashboardWidgetInputSize `json:"size,omitempty"`
+}
+
+// DashboardWidgetInputComparisonGroupsColor defines model for DashboardWidgetInput.ComparisonGroups.Color.
+type DashboardWidgetInputComparisonGroupsColor string
+
+// DashboardWidgetInputComparisonGroupsFiltersOperator Defaults to EQUALS.
+type DashboardWidgetInputComparisonGroupsFiltersOperator string
+
+// DashboardWidgetInputComparisonGroupsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardWidgetInputComparisonGroupsFiltersType string
+
+// DashboardWidgetInputComparisonGroupsFiltersValue0 defines model for DashboardWidgetInput.ComparisonGroups.Filters.Value.0.
+type DashboardWidgetInputComparisonGroupsFiltersValue0 = string
+
+// DashboardWidgetInputComparisonGroupsFiltersValue1 defines model for DashboardWidgetInput.ComparisonGroups.Filters.Value.1.
+type DashboardWidgetInputComparisonGroupsFiltersValue1 = float64
+
+// DashboardWidgetInputComparisonGroupsFiltersValue2 defines model for DashboardWidgetInput.ComparisonGroups.Filters.Value.2.
+type DashboardWidgetInputComparisonGroupsFiltersValue2 = bool
+
+// DashboardWidgetInput_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type DashboardWidgetInput_ComparisonGroups_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetInputComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
+type DashboardWidgetInputComparisonMode string
+
+// DashboardWidgetInputDisplay Chart type. Defaults to LINE.
+type DashboardWidgetInputDisplay string
+
+// DashboardWidgetInputFiltersOperator Defaults to EQUALS.
+type DashboardWidgetInputFiltersOperator string
+
+// DashboardWidgetInputFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardWidgetInputFiltersType string
+
+// DashboardWidgetInputFiltersValue0 defines model for DashboardWidgetInput.Filters.Value.0.
+type DashboardWidgetInputFiltersValue0 = string
+
+// DashboardWidgetInputFiltersValue1 defines model for DashboardWidgetInput.Filters.Value.1.
+type DashboardWidgetInputFiltersValue1 = float64
+
+// DashboardWidgetInputFiltersValue2 defines model for DashboardWidgetInput.Filters.Value.2.
+type DashboardWidgetInputFiltersValue2 = bool
+
+// DashboardWidgetInput_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type DashboardWidgetInput_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetInputInterval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
+type DashboardWidgetInputInterval string
+
+// DashboardWidgetInputMeasuresAggregation Defaults by output type: AVG for numeric metrics, COUNT (split by value) for classification and text, PASS_RATE for thresholds and uptime, COUNT for conversations.
+type DashboardWidgetInputMeasuresAggregation string
+
+// DashboardWidgetInputMeasuresBreakdownType defines model for DashboardWidgetInput.Measures.Breakdown.Type.
+type DashboardWidgetInputMeasuresBreakdownType string
+
+// DashboardWidgetInputMeasuresColor Chart color on a dashboard.
+type DashboardWidgetInputMeasuresColor string
+
+// DashboardWidgetInputMeasuresDistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
+type DashboardWidgetInputMeasuresDistinctBy string
+
+// DashboardWidgetInputMeasuresFiltersOperator Defaults to EQUALS.
+type DashboardWidgetInputMeasuresFiltersOperator string
+
+// DashboardWidgetInputMeasuresFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type DashboardWidgetInputMeasuresFiltersType string
+
+// DashboardWidgetInputMeasuresFiltersValue0 defines model for DashboardWidgetInput.Measures.Filters.Value.0.
+type DashboardWidgetInputMeasuresFiltersValue0 = string
+
+// DashboardWidgetInputMeasuresFiltersValue1 defines model for DashboardWidgetInput.Measures.Filters.Value.1.
+type DashboardWidgetInputMeasuresFiltersValue1 = float64
+
+// DashboardWidgetInputMeasuresFiltersValue2 defines model for DashboardWidgetInput.Measures.Filters.Value.2.
+type DashboardWidgetInputMeasuresFiltersValue2 = bool
+
+// DashboardWidgetInput_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type DashboardWidgetInput_Measures_Filters_Value struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetInputMeasuresNestedAggregation How each conversation is folded when distinctBy is CALL. Defaults to SUM under SUM, else AVG.
+type DashboardWidgetInputMeasuresNestedAggregation string
+
+// DashboardWidgetInputMeasuresPassOperator PASS_RATE condition operator. Omit for a threshold metric: its own condition is used.
+type DashboardWidgetInputMeasuresPassOperator string
+
+// DashboardWidgetInputMeasuresPassValue0 defines model for DashboardWidgetInput.Measures.PassValue.0.
+type DashboardWidgetInputMeasuresPassValue0 = string
+
+// DashboardWidgetInputMeasuresPassValue1 defines model for DashboardWidgetInput.Measures.PassValue.1.
+type DashboardWidgetInputMeasuresPassValue1 = float64
+
+// DashboardWidgetInputMeasuresPassValue2 defines model for DashboardWidgetInput.Measures.PassValue.2.
+type DashboardWidgetInputMeasuresPassValue2 = bool
+
+// DashboardWidgetInput_Measures_PassValue PASS_RATE condition value, e.g. 4 or "resolved".
+type DashboardWidgetInput_Measures_PassValue struct {
+	union json.RawMessage
+}
+
+// DashboardWidgetInputMeasuresType METRIC (default): a metric's values. CONVERSATION: conversation counts. UPTIME: health-check outcomes.
+type DashboardWidgetInputMeasuresType string
+
+// DashboardWidgetInputSize Grid width. Defaults to MEDIUM.
+type DashboardWidgetInputSize string
 
 // DeleteEnvironmentResponse defines model for DeleteEnvironmentResponse.
 type DeleteEnvironmentResponse struct {
@@ -24624,6 +31903,17 @@ type SimulationPlanScheduleConfig5 struct {
 // SimulationPlanScheduleConfig5Type defines model for SimulationPlanScheduleConfig.5.Type.
 type SimulationPlanScheduleConfig5Type string
 
+// SimulationRunCallCost defines model for SimulationRunCallCost.
+type SimulationRunCallCost struct {
+	AmountUsd       float64             `json:"amountUsd"`
+	AmountUsdMicros int                 `json:"amountUsdMicros"`
+	Breakdown       []CostBreakdownItem `json:"breakdown"`
+
+	// ConversationId The call (voice runs) or chat (chat runs) the spend is attributed to. Null for costs incurred before the conversation existed; use simulationJobId to join those.
+	ConversationId  *openapi_types.UUID `json:"conversationId"`
+	SimulationJobId *openapi_types.UUID `json:"simulationJobId"`
+}
+
 // SimulationRunCallResult defines model for SimulationRunCallResult.
 type SimulationRunCallResult struct {
 	AgentName     *string `json:"agentName"`
@@ -24683,6 +31973,24 @@ type SimulationRunCallResultValuesValue2 = string
 type SimulationRunCallResult_Values_Value struct {
 	union json.RawMessage
 }
+
+// SimulationRunCost defines model for SimulationRunCost.
+type SimulationRunCost struct {
+	// Breakdown Spend by cost type. Sums to totalUsdMicros.
+	Breakdown []CostBreakdownItem `json:"breakdown"`
+
+	// Calls Spend per simulated call in the run.
+	Calls    []SimulationRunCallCost   `json:"calls"`
+	Currency SimulationRunCostCurrency `json:"currency"`
+	JobId    openapi_types.UUID        `json:"jobId"`
+	TotalUsd float64                   `json:"totalUsd"`
+
+	// TotalUsdMicros Total billable spend for the run, in micro-dollars.
+	TotalUsdMicros int `json:"totalUsdMicros"`
+}
+
+// SimulationRunCostCurrency defines model for SimulationRunCost.Currency.
+type SimulationRunCostCurrency string
 
 // SimulationRunDebrief The run’s written debrief: executive summary, failure themes and recommendations. Generated automatically when a run with graded calls settles.
 //
@@ -26168,6 +33476,319 @@ type UpdateCustomerFlowInputBranchingMode string
 
 // UpdateCustomerFlowInputScriptAdherence Scripted flows only. How closely a run follows the script. LOOSE (default) hands the whole script to the simulated customer as one prompt; it keeps the call moving whatever your agent says. STRICT runs the script as a state machine on the agent service: at every agent step the simulated customer waits, silent, until your agent has said the expected line, and only then moves on. Scripted flows only; STRICT needs the agent-service transport and is not available on realtime models.
 type UpdateCustomerFlowInputScriptAdherence string
+
+// UpdateDashboardInput Omitted fields keep their current value. `widgets`, when sent, replaces the list: widgets are matched by name, so one that keeps its name keeps its id; a new name adds a widget and a missing one removes it.
+//
+// Example: {"timeRange":{"period":"THIS_MONTH","type":"CALENDAR_ALIGNED"}}
+type UpdateDashboardInput struct {
+	Description *string `json:"description,omitempty"`
+	Filters     *[]struct {
+		// Operator Defaults to EQUALS.
+		Operator *UpdateDashboardInputFiltersOperator `json:"operator,omitempty"`
+
+		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+		Property *string `json:"property,omitempty"`
+
+		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+		Type UpdateDashboardInputFiltersType `json:"type"`
+
+		// Value The value to compare against (an agent id, "call" / "chat", a property value).
+		Value UpdateDashboardInput_Filters_Value `json:"value"`
+	} `json:"filters,omitempty"`
+	IsDefault *bool   `json:"isDefault,omitempty"`
+	Name      *string `json:"name,omitempty"`
+
+	// TimeRange The window: LAST n DAYS/WEEKS/MONTHS up to now, a CALENDAR_ALIGNED period (TODAY, YESTERDAY, THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR, LAST_YEAR), FIXED from/to, or SINCE a date. At most 731 days (two years).
+	TimeRange *UpdateDashboardInput_TimeRange `json:"timeRange,omitempty"`
+	Widgets   *[]struct {
+		// ComparisonGroups Run every measure once per named filter set, e.g. one group per agent.
+		ComparisonGroups *[]struct {
+			Color   *UpdateDashboardInputWidgetsComparisonGroupsColor `json:"color,omitempty"`
+			Filters []struct {
+				// Operator Defaults to EQUALS.
+				Operator *UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator `json:"operator,omitempty"`
+
+				// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+				Property *string `json:"property,omitempty"`
+
+				// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+				Type UpdateDashboardInputWidgetsComparisonGroupsFiltersType `json:"type"`
+
+				// Value The value to compare against (an agent id, "call" / "chat", a property value).
+				Value UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value `json:"value"`
+			} `json:"filters"`
+
+			// Name The series label; unique within the query.
+			Name string `json:"name"`
+		} `json:"comparisonGroups,omitempty"`
+
+		// ComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
+		ComparisonMode *UpdateDashboardInputWidgetsComparisonMode `json:"comparisonMode,omitempty"`
+		Description    *string                                    `json:"description,omitempty"`
+
+		// Display Chart type. Defaults to LINE.
+		Display *UpdateDashboardInputWidgetsDisplay `json:"display,omitempty"`
+
+		// Filters Applied to every measure, on top of each measure's own filters.
+		Filters *[]struct {
+			// Operator Defaults to EQUALS.
+			Operator *UpdateDashboardInputWidgetsFiltersOperator `json:"operator,omitempty"`
+
+			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+			Property *string `json:"property,omitempty"`
+
+			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+			Type UpdateDashboardInputWidgetsFiltersType `json:"type"`
+
+			// Value The value to compare against (an agent id, "call" / "chat", a property value).
+			Value UpdateDashboardInput_Widgets_Filters_Value `json:"value"`
+		} `json:"filters,omitempty"`
+
+		// Interval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
+		Interval *UpdateDashboardInputWidgetsInterval `json:"interval,omitempty"`
+
+		// Measures What to aggregate: 1 to 10 measures.
+		Measures []struct {
+			// Aggregation Defaults by output type: AVG for numeric metrics, COUNT (split by value) for classification and text, PASS_RATE for thresholds and uptime, COUNT for conversations.
+			Aggregation *UpdateDashboardInputWidgetsMeasuresAggregation `json:"aggregation,omitempty"`
+
+			// Breakdown Split the measure into one series per value of this dimension (the largest 50 are returned). Ignored while comparisonGroups are set: each group is then one series.
+			Breakdown *struct {
+				// Property The property to split by. Required for CALL_PROPERTY and METRIC_PROPERTY.
+				Property *string                                          `json:"property,omitempty"`
+				Type     UpdateDashboardInputWidgetsMeasuresBreakdownType `json:"type"`
+			} `json:"breakdown,omitempty"`
+
+			// Color Chart color on a dashboard.
+			Color *UpdateDashboardInputWidgetsMeasuresColor `json:"color,omitempty"`
+
+			// DistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
+			DistinctBy *UpdateDashboardInputWidgetsMeasuresDistinctBy `json:"distinctBy,omitempty"`
+
+			// Filters Filters for this measure only, on top of the query's filters.
+			Filters *[]struct {
+				// Operator Defaults to EQUALS.
+				Operator *UpdateDashboardInputWidgetsMeasuresFiltersOperator `json:"operator,omitempty"`
+
+				// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+				Property *string `json:"property,omitempty"`
+
+				// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+				Type UpdateDashboardInputWidgetsMeasuresFiltersType `json:"type"`
+
+				// Value The value to compare against (an agent id, "call" / "chat", a property value).
+				Value UpdateDashboardInput_Widgets_Measures_Filters_Value `json:"value"`
+			} `json:"filters,omitempty"`
+
+			// IsBaseline Mark one measure as the baseline: every series also reports its value as a percentage of it.
+			IsBaseline *bool `json:"isBaseline,omitempty"`
+
+			// Metric The metric's slug (e.g. `task_completion`) or id. Required for METRIC.
+			Metric *string `json:"metric,omitempty"`
+
+			// NestedAggregation How each conversation is folded when distinctBy is CALL. Defaults to SUM under SUM, else AVG.
+			NestedAggregation           *UpdateDashboardInputWidgetsMeasuresNestedAggregation `json:"nestedAggregation,omitempty"`
+			NestedAggregationPercentile *int                                                  `json:"nestedAggregationPercentile,omitempty"`
+
+			// PassOperator PASS_RATE condition operator. Omit for a threshold metric: its own condition is used.
+			PassOperator *UpdateDashboardInputWidgetsMeasuresPassOperator `json:"passOperator,omitempty"`
+
+			// PassValue PASS_RATE condition value, e.g. 4 or "resolved".
+			PassValue *UpdateDashboardInput_Widgets_Measures_PassValue `json:"passValue,omitempty"`
+
+			// Percentile Required with PERCENTILE, e.g. 95.
+			Percentile *int `json:"percentile,omitempty"`
+
+			// Type METRIC (default): a metric's values. CONVERSATION: conversation counts. UPTIME: health-check outcomes.
+			Type *UpdateDashboardInputWidgetsMeasuresType `json:"type,omitempty"`
+		} `json:"measures"`
+
+		// Name Unique on the dashboard: how the widget is matched on update.
+		Name string `json:"name"`
+
+		// Size Grid width. Defaults to MEDIUM.
+		Size *UpdateDashboardInputWidgetsSize `json:"size,omitempty"`
+	} `json:"widgets,omitempty"`
+}
+
+// UpdateDashboardInputFiltersOperator Defaults to EQUALS.
+type UpdateDashboardInputFiltersOperator string
+
+// UpdateDashboardInputFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type UpdateDashboardInputFiltersType string
+
+// UpdateDashboardInputFiltersValue0 defines model for UpdateDashboardInput.Filters.Value.0.
+type UpdateDashboardInputFiltersValue0 = string
+
+// UpdateDashboardInputFiltersValue1 defines model for UpdateDashboardInput.Filters.Value.1.
+type UpdateDashboardInputFiltersValue1 = float64
+
+// UpdateDashboardInputFiltersValue2 defines model for UpdateDashboardInput.Filters.Value.2.
+type UpdateDashboardInputFiltersValue2 = bool
+
+// UpdateDashboardInput_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type UpdateDashboardInput_Filters_Value struct {
+	union json.RawMessage
+}
+
+// UpdateDashboardInputTimeRange0 defines model for UpdateDashboardInput.TimeRange.0.
+type UpdateDashboardInputTimeRange0 struct {
+	Type  UpdateDashboardInputTimeRange0Type `json:"type"`
+	Unit  UpdateDashboardInputTimeRange0Unit `json:"unit"`
+	Value int                                `json:"value"`
+}
+
+// UpdateDashboardInputTimeRange0Type defines model for UpdateDashboardInput.TimeRange.0.Type.
+type UpdateDashboardInputTimeRange0Type string
+
+// UpdateDashboardInputTimeRange0Unit defines model for UpdateDashboardInput.TimeRange.0.Unit.
+type UpdateDashboardInputTimeRange0Unit string
+
+// UpdateDashboardInputTimeRange1 defines model for UpdateDashboardInput.TimeRange.1.
+type UpdateDashboardInputTimeRange1 struct {
+	Period UpdateDashboardInputTimeRange1Period `json:"period"`
+	Type   UpdateDashboardInputTimeRange1Type   `json:"type"`
+}
+
+// UpdateDashboardInputTimeRange1Period defines model for UpdateDashboardInput.TimeRange.1.Period.
+type UpdateDashboardInputTimeRange1Period string
+
+// UpdateDashboardInputTimeRange1Type defines model for UpdateDashboardInput.TimeRange.1.Type.
+type UpdateDashboardInputTimeRange1Type string
+
+// UpdateDashboardInputTimeRange2 defines model for UpdateDashboardInput.TimeRange.2.
+type UpdateDashboardInputTimeRange2 struct {
+	From time.Time                          `json:"from"`
+	To   time.Time                          `json:"to"`
+	Type UpdateDashboardInputTimeRange2Type `json:"type"`
+}
+
+// UpdateDashboardInputTimeRange2Type defines model for UpdateDashboardInput.TimeRange.2.Type.
+type UpdateDashboardInputTimeRange2Type string
+
+// UpdateDashboardInputTimeRange3 defines model for UpdateDashboardInput.TimeRange.3.
+type UpdateDashboardInputTimeRange3 struct {
+	From time.Time                          `json:"from"`
+	Type UpdateDashboardInputTimeRange3Type `json:"type"`
+}
+
+// UpdateDashboardInputTimeRange3Type defines model for UpdateDashboardInput.TimeRange.3.Type.
+type UpdateDashboardInputTimeRange3Type string
+
+// UpdateDashboardInput_TimeRange The window: LAST n DAYS/WEEKS/MONTHS up to now, a CALENDAR_ALIGNED period (TODAY, YESTERDAY, THIS_WEEK, LAST_WEEK, THIS_MONTH, LAST_MONTH, THIS_YEAR, LAST_YEAR), FIXED from/to, or SINCE a date. At most 731 days (two years).
+type UpdateDashboardInput_TimeRange struct {
+	union json.RawMessage
+}
+
+// UpdateDashboardInputWidgetsComparisonGroupsColor defines model for UpdateDashboardInput.Widgets.ComparisonGroups.Color.
+type UpdateDashboardInputWidgetsComparisonGroupsColor string
+
+// UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator Defaults to EQUALS.
+type UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator string
+
+// UpdateDashboardInputWidgetsComparisonGroupsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type UpdateDashboardInputWidgetsComparisonGroupsFiltersType string
+
+// UpdateDashboardInputWidgetsComparisonGroupsFiltersValue0 defines model for UpdateDashboardInput.Widgets.ComparisonGroups.Filters.Value.0.
+type UpdateDashboardInputWidgetsComparisonGroupsFiltersValue0 = string
+
+// UpdateDashboardInputWidgetsComparisonGroupsFiltersValue1 defines model for UpdateDashboardInput.Widgets.ComparisonGroups.Filters.Value.1.
+type UpdateDashboardInputWidgetsComparisonGroupsFiltersValue1 = float64
+
+// UpdateDashboardInputWidgetsComparisonGroupsFiltersValue2 defines model for UpdateDashboardInput.Widgets.ComparisonGroups.Filters.Value.2.
+type UpdateDashboardInputWidgetsComparisonGroupsFiltersValue2 = bool
+
+// UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value struct {
+	union json.RawMessage
+}
+
+// UpdateDashboardInputWidgetsComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
+type UpdateDashboardInputWidgetsComparisonMode string
+
+// UpdateDashboardInputWidgetsDisplay Chart type. Defaults to LINE.
+type UpdateDashboardInputWidgetsDisplay string
+
+// UpdateDashboardInputWidgetsFiltersOperator Defaults to EQUALS.
+type UpdateDashboardInputWidgetsFiltersOperator string
+
+// UpdateDashboardInputWidgetsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type UpdateDashboardInputWidgetsFiltersType string
+
+// UpdateDashboardInputWidgetsFiltersValue0 defines model for UpdateDashboardInput.Widgets.Filters.Value.0.
+type UpdateDashboardInputWidgetsFiltersValue0 = string
+
+// UpdateDashboardInputWidgetsFiltersValue1 defines model for UpdateDashboardInput.Widgets.Filters.Value.1.
+type UpdateDashboardInputWidgetsFiltersValue1 = float64
+
+// UpdateDashboardInputWidgetsFiltersValue2 defines model for UpdateDashboardInput.Widgets.Filters.Value.2.
+type UpdateDashboardInputWidgetsFiltersValue2 = bool
+
+// UpdateDashboardInput_Widgets_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type UpdateDashboardInput_Widgets_Filters_Value struct {
+	union json.RawMessage
+}
+
+// UpdateDashboardInputWidgetsInterval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
+type UpdateDashboardInputWidgetsInterval string
+
+// UpdateDashboardInputWidgetsMeasuresAggregation Defaults by output type: AVG for numeric metrics, COUNT (split by value) for classification and text, PASS_RATE for thresholds and uptime, COUNT for conversations.
+type UpdateDashboardInputWidgetsMeasuresAggregation string
+
+// UpdateDashboardInputWidgetsMeasuresBreakdownType defines model for UpdateDashboardInput.Widgets.Measures.Breakdown.Type.
+type UpdateDashboardInputWidgetsMeasuresBreakdownType string
+
+// UpdateDashboardInputWidgetsMeasuresColor Chart color on a dashboard.
+type UpdateDashboardInputWidgetsMeasuresColor string
+
+// UpdateDashboardInputWidgetsMeasuresDistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
+type UpdateDashboardInputWidgetsMeasuresDistinctBy string
+
+// UpdateDashboardInputWidgetsMeasuresFiltersOperator Defaults to EQUALS.
+type UpdateDashboardInputWidgetsMeasuresFiltersOperator string
+
+// UpdateDashboardInputWidgetsMeasuresFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type UpdateDashboardInputWidgetsMeasuresFiltersType string
+
+// UpdateDashboardInputWidgetsMeasuresFiltersValue0 defines model for UpdateDashboardInput.Widgets.Measures.Filters.Value.0.
+type UpdateDashboardInputWidgetsMeasuresFiltersValue0 = string
+
+// UpdateDashboardInputWidgetsMeasuresFiltersValue1 defines model for UpdateDashboardInput.Widgets.Measures.Filters.Value.1.
+type UpdateDashboardInputWidgetsMeasuresFiltersValue1 = float64
+
+// UpdateDashboardInputWidgetsMeasuresFiltersValue2 defines model for UpdateDashboardInput.Widgets.Measures.Filters.Value.2.
+type UpdateDashboardInputWidgetsMeasuresFiltersValue2 = bool
+
+// UpdateDashboardInput_Widgets_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+type UpdateDashboardInput_Widgets_Measures_Filters_Value struct {
+	union json.RawMessage
+}
+
+// UpdateDashboardInputWidgetsMeasuresNestedAggregation How each conversation is folded when distinctBy is CALL. Defaults to SUM under SUM, else AVG.
+type UpdateDashboardInputWidgetsMeasuresNestedAggregation string
+
+// UpdateDashboardInputWidgetsMeasuresPassOperator PASS_RATE condition operator. Omit for a threshold metric: its own condition is used.
+type UpdateDashboardInputWidgetsMeasuresPassOperator string
+
+// UpdateDashboardInputWidgetsMeasuresPassValue0 defines model for UpdateDashboardInput.Widgets.Measures.PassValue.0.
+type UpdateDashboardInputWidgetsMeasuresPassValue0 = string
+
+// UpdateDashboardInputWidgetsMeasuresPassValue1 defines model for UpdateDashboardInput.Widgets.Measures.PassValue.1.
+type UpdateDashboardInputWidgetsMeasuresPassValue1 = float64
+
+// UpdateDashboardInputWidgetsMeasuresPassValue2 defines model for UpdateDashboardInput.Widgets.Measures.PassValue.2.
+type UpdateDashboardInputWidgetsMeasuresPassValue2 = bool
+
+// UpdateDashboardInput_Widgets_Measures_PassValue PASS_RATE condition value, e.g. 4 or "resolved".
+type UpdateDashboardInput_Widgets_Measures_PassValue struct {
+	union json.RawMessage
+}
+
+// UpdateDashboardInputWidgetsMeasuresType METRIC (default): a metric's values. CONVERSATION: conversation counts. UPTIME: health-check outcomes.
+type UpdateDashboardInputWidgetsMeasuresType string
+
+// UpdateDashboardInputWidgetsSize Grid width. Defaults to MEDIUM.
+type UpdateDashboardInputWidgetsSize string
 
 // UpdateEnvironmentInput Input for updating an environment. Only the fields sent are changed. Roark-curated environments cannot be edited.
 type UpdateEnvironmentInput struct {
@@ -27970,6 +35591,26 @@ type GetV1CustomerFlowParamsType string
 // GetV1CustomerFlowParamsIncludeSystem defines parameters for GetV1CustomerFlow.
 type GetV1CustomerFlowParamsIncludeSystem string
 
+// DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeleted defines parameters for DeleteV1DashboardByDashboardId.
+type DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeleted bool
+
+// GetV1DashboardByDashboardIdDataParams defines parameters for GetV1DashboardByDashboardIdData.
+type GetV1DashboardByDashboardIdDataParams struct {
+	From     *time.Time `form:"from,omitempty" json:"from,omitempty"`
+	To       *time.Time `form:"to,omitempty" json:"to,omitempty"`
+	Timezone *string    `form:"timezone,omitempty" json:"timezone,omitempty"`
+}
+
+// DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeleted defines parameters for DeleteV1DashboardByDashboardIdWidgetByWidgetId.
+type DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeleted bool
+
+// GetV1DashboardByDashboardIdWidgetByWidgetIdDataParams defines parameters for GetV1DashboardByDashboardIdWidgetByWidgetIdData.
+type GetV1DashboardByDashboardIdWidgetByWidgetIdDataParams struct {
+	From     *time.Time `form:"from,omitempty" json:"from,omitempty"`
+	To       *time.Time `form:"to,omitempty" json:"to,omitempty"`
+	Timezone *string    `form:"timezone,omitempty" json:"timezone,omitempty"`
+}
+
 // GetV1HttpRequestDefinitionParams defines parameters for GetV1HttpRequestDefinition.
 type GetV1HttpRequestDefinitionParams struct {
 	Limit *int    `form:"limit,omitempty" json:"limit,omitempty"`
@@ -28670,6 +36311,9 @@ type PutV1AgentByAgentIdJSONRequestBody PutV1AgentByAgentIdJSONBody
 // PutV1AgentByAgentIdPromptsJSONRequestBody defines body for PutV1AgentByAgentIdPrompts for application/json ContentType.
 type PutV1AgentByAgentIdPromptsJSONRequestBody = SetAgentPromptInput
 
+// PostV1AnalyticsQueryJSONRequestBody defines body for PostV1AnalyticsQuery for application/json ContentType.
+type PostV1AnalyticsQueryJSONRequestBody = AnalyticsQuery
+
 // PostV1AutoimproveJobJSONRequestBody defines body for PostV1AutoimproveJob for application/json ContentType.
 type PostV1AutoimproveJobJSONRequestBody = CreateAutoimproveJobInput
 
@@ -28720,6 +36364,18 @@ type PutV1CustomerFlowByFlowIdGraphJSONRequestBody = ReplaceFlowStepsInput
 
 // PutV1CustomerFlowByFlowIdHappyPathJSONRequestBody defines body for PutV1CustomerFlowByFlowIdHappyPath for application/json ContentType.
 type PutV1CustomerFlowByFlowIdHappyPathJSONRequestBody = UpdateFlowVariantInput
+
+// PostV1DashboardJSONRequestBody defines body for PostV1Dashboard for application/json ContentType.
+type PostV1DashboardJSONRequestBody = DashboardInput
+
+// PutV1DashboardByDashboardIdJSONRequestBody defines body for PutV1DashboardByDashboardId for application/json ContentType.
+type PutV1DashboardByDashboardIdJSONRequestBody = UpdateDashboardInput
+
+// PostV1DashboardByDashboardIdWidgetJSONRequestBody defines body for PostV1DashboardByDashboardIdWidget for application/json ContentType.
+type PostV1DashboardByDashboardIdWidgetJSONRequestBody = DashboardWidgetInput
+
+// PutV1DashboardByDashboardIdWidgetByWidgetIdJSONRequestBody defines body for PutV1DashboardByDashboardIdWidgetByWidgetId for application/json ContentType.
+type PutV1DashboardByDashboardIdWidgetByWidgetIdJSONRequestBody = DashboardWidgetInput
 
 // PostV1HttpRequestDefinitionJSONRequestBody defines body for PostV1HttpRequestDefinition for application/json ContentType.
 type PostV1HttpRequestDefinitionJSONRequestBody = CreateHttpRequestDefinitionInput
@@ -28964,6 +36620,472 @@ func (t AlertConfig_Trigger) MarshalJSON() ([]byte, error) {
 }
 
 func (t *AlertConfig_Trigger) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAnalyticsQueryComparisonGroupsFiltersValue0 returns the union data inside the AnalyticsQuery_ComparisonGroups_Filters_Value as a AnalyticsQueryComparisonGroupsFiltersValue0
+func (t AnalyticsQuery_ComparisonGroups_Filters_Value) AsAnalyticsQueryComparisonGroupsFiltersValue0() (AnalyticsQueryComparisonGroupsFiltersValue0, error) {
+	var body AnalyticsQueryComparisonGroupsFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryComparisonGroupsFiltersValue0 overwrites any union data inside the AnalyticsQuery_ComparisonGroups_Filters_Value as the provided AnalyticsQueryComparisonGroupsFiltersValue0
+func (t *AnalyticsQuery_ComparisonGroups_Filters_Value) FromAnalyticsQueryComparisonGroupsFiltersValue0(v AnalyticsQueryComparisonGroupsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryComparisonGroupsFiltersValue0 performs a merge with any union data inside the AnalyticsQuery_ComparisonGroups_Filters_Value, using the provided AnalyticsQueryComparisonGroupsFiltersValue0
+func (t *AnalyticsQuery_ComparisonGroups_Filters_Value) MergeAnalyticsQueryComparisonGroupsFiltersValue0(v AnalyticsQueryComparisonGroupsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnalyticsQueryComparisonGroupsFiltersValue1 returns the union data inside the AnalyticsQuery_ComparisonGroups_Filters_Value as a AnalyticsQueryComparisonGroupsFiltersValue1
+func (t AnalyticsQuery_ComparisonGroups_Filters_Value) AsAnalyticsQueryComparisonGroupsFiltersValue1() (AnalyticsQueryComparisonGroupsFiltersValue1, error) {
+	var body AnalyticsQueryComparisonGroupsFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryComparisonGroupsFiltersValue1 overwrites any union data inside the AnalyticsQuery_ComparisonGroups_Filters_Value as the provided AnalyticsQueryComparisonGroupsFiltersValue1
+func (t *AnalyticsQuery_ComparisonGroups_Filters_Value) FromAnalyticsQueryComparisonGroupsFiltersValue1(v AnalyticsQueryComparisonGroupsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryComparisonGroupsFiltersValue1 performs a merge with any union data inside the AnalyticsQuery_ComparisonGroups_Filters_Value, using the provided AnalyticsQueryComparisonGroupsFiltersValue1
+func (t *AnalyticsQuery_ComparisonGroups_Filters_Value) MergeAnalyticsQueryComparisonGroupsFiltersValue1(v AnalyticsQueryComparisonGroupsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnalyticsQueryComparisonGroupsFiltersValue2 returns the union data inside the AnalyticsQuery_ComparisonGroups_Filters_Value as a AnalyticsQueryComparisonGroupsFiltersValue2
+func (t AnalyticsQuery_ComparisonGroups_Filters_Value) AsAnalyticsQueryComparisonGroupsFiltersValue2() (AnalyticsQueryComparisonGroupsFiltersValue2, error) {
+	var body AnalyticsQueryComparisonGroupsFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryComparisonGroupsFiltersValue2 overwrites any union data inside the AnalyticsQuery_ComparisonGroups_Filters_Value as the provided AnalyticsQueryComparisonGroupsFiltersValue2
+func (t *AnalyticsQuery_ComparisonGroups_Filters_Value) FromAnalyticsQueryComparisonGroupsFiltersValue2(v AnalyticsQueryComparisonGroupsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryComparisonGroupsFiltersValue2 performs a merge with any union data inside the AnalyticsQuery_ComparisonGroups_Filters_Value, using the provided AnalyticsQueryComparisonGroupsFiltersValue2
+func (t *AnalyticsQuery_ComparisonGroups_Filters_Value) MergeAnalyticsQueryComparisonGroupsFiltersValue2(v AnalyticsQueryComparisonGroupsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AnalyticsQuery_ComparisonGroups_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AnalyticsQuery_ComparisonGroups_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAnalyticsQueryFiltersValue0 returns the union data inside the AnalyticsQuery_Filters_Value as a AnalyticsQueryFiltersValue0
+func (t AnalyticsQuery_Filters_Value) AsAnalyticsQueryFiltersValue0() (AnalyticsQueryFiltersValue0, error) {
+	var body AnalyticsQueryFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryFiltersValue0 overwrites any union data inside the AnalyticsQuery_Filters_Value as the provided AnalyticsQueryFiltersValue0
+func (t *AnalyticsQuery_Filters_Value) FromAnalyticsQueryFiltersValue0(v AnalyticsQueryFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryFiltersValue0 performs a merge with any union data inside the AnalyticsQuery_Filters_Value, using the provided AnalyticsQueryFiltersValue0
+func (t *AnalyticsQuery_Filters_Value) MergeAnalyticsQueryFiltersValue0(v AnalyticsQueryFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnalyticsQueryFiltersValue1 returns the union data inside the AnalyticsQuery_Filters_Value as a AnalyticsQueryFiltersValue1
+func (t AnalyticsQuery_Filters_Value) AsAnalyticsQueryFiltersValue1() (AnalyticsQueryFiltersValue1, error) {
+	var body AnalyticsQueryFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryFiltersValue1 overwrites any union data inside the AnalyticsQuery_Filters_Value as the provided AnalyticsQueryFiltersValue1
+func (t *AnalyticsQuery_Filters_Value) FromAnalyticsQueryFiltersValue1(v AnalyticsQueryFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryFiltersValue1 performs a merge with any union data inside the AnalyticsQuery_Filters_Value, using the provided AnalyticsQueryFiltersValue1
+func (t *AnalyticsQuery_Filters_Value) MergeAnalyticsQueryFiltersValue1(v AnalyticsQueryFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnalyticsQueryFiltersValue2 returns the union data inside the AnalyticsQuery_Filters_Value as a AnalyticsQueryFiltersValue2
+func (t AnalyticsQuery_Filters_Value) AsAnalyticsQueryFiltersValue2() (AnalyticsQueryFiltersValue2, error) {
+	var body AnalyticsQueryFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryFiltersValue2 overwrites any union data inside the AnalyticsQuery_Filters_Value as the provided AnalyticsQueryFiltersValue2
+func (t *AnalyticsQuery_Filters_Value) FromAnalyticsQueryFiltersValue2(v AnalyticsQueryFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryFiltersValue2 performs a merge with any union data inside the AnalyticsQuery_Filters_Value, using the provided AnalyticsQueryFiltersValue2
+func (t *AnalyticsQuery_Filters_Value) MergeAnalyticsQueryFiltersValue2(v AnalyticsQueryFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AnalyticsQuery_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AnalyticsQuery_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAnalyticsQueryMeasuresFiltersValue0 returns the union data inside the AnalyticsQuery_Measures_Filters_Value as a AnalyticsQueryMeasuresFiltersValue0
+func (t AnalyticsQuery_Measures_Filters_Value) AsAnalyticsQueryMeasuresFiltersValue0() (AnalyticsQueryMeasuresFiltersValue0, error) {
+	var body AnalyticsQueryMeasuresFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryMeasuresFiltersValue0 overwrites any union data inside the AnalyticsQuery_Measures_Filters_Value as the provided AnalyticsQueryMeasuresFiltersValue0
+func (t *AnalyticsQuery_Measures_Filters_Value) FromAnalyticsQueryMeasuresFiltersValue0(v AnalyticsQueryMeasuresFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryMeasuresFiltersValue0 performs a merge with any union data inside the AnalyticsQuery_Measures_Filters_Value, using the provided AnalyticsQueryMeasuresFiltersValue0
+func (t *AnalyticsQuery_Measures_Filters_Value) MergeAnalyticsQueryMeasuresFiltersValue0(v AnalyticsQueryMeasuresFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnalyticsQueryMeasuresFiltersValue1 returns the union data inside the AnalyticsQuery_Measures_Filters_Value as a AnalyticsQueryMeasuresFiltersValue1
+func (t AnalyticsQuery_Measures_Filters_Value) AsAnalyticsQueryMeasuresFiltersValue1() (AnalyticsQueryMeasuresFiltersValue1, error) {
+	var body AnalyticsQueryMeasuresFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryMeasuresFiltersValue1 overwrites any union data inside the AnalyticsQuery_Measures_Filters_Value as the provided AnalyticsQueryMeasuresFiltersValue1
+func (t *AnalyticsQuery_Measures_Filters_Value) FromAnalyticsQueryMeasuresFiltersValue1(v AnalyticsQueryMeasuresFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryMeasuresFiltersValue1 performs a merge with any union data inside the AnalyticsQuery_Measures_Filters_Value, using the provided AnalyticsQueryMeasuresFiltersValue1
+func (t *AnalyticsQuery_Measures_Filters_Value) MergeAnalyticsQueryMeasuresFiltersValue1(v AnalyticsQueryMeasuresFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnalyticsQueryMeasuresFiltersValue2 returns the union data inside the AnalyticsQuery_Measures_Filters_Value as a AnalyticsQueryMeasuresFiltersValue2
+func (t AnalyticsQuery_Measures_Filters_Value) AsAnalyticsQueryMeasuresFiltersValue2() (AnalyticsQueryMeasuresFiltersValue2, error) {
+	var body AnalyticsQueryMeasuresFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryMeasuresFiltersValue2 overwrites any union data inside the AnalyticsQuery_Measures_Filters_Value as the provided AnalyticsQueryMeasuresFiltersValue2
+func (t *AnalyticsQuery_Measures_Filters_Value) FromAnalyticsQueryMeasuresFiltersValue2(v AnalyticsQueryMeasuresFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryMeasuresFiltersValue2 performs a merge with any union data inside the AnalyticsQuery_Measures_Filters_Value, using the provided AnalyticsQueryMeasuresFiltersValue2
+func (t *AnalyticsQuery_Measures_Filters_Value) MergeAnalyticsQueryMeasuresFiltersValue2(v AnalyticsQueryMeasuresFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AnalyticsQuery_Measures_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AnalyticsQuery_Measures_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAnalyticsQueryMeasuresPassValue0 returns the union data inside the AnalyticsQuery_Measures_PassValue as a AnalyticsQueryMeasuresPassValue0
+func (t AnalyticsQuery_Measures_PassValue) AsAnalyticsQueryMeasuresPassValue0() (AnalyticsQueryMeasuresPassValue0, error) {
+	var body AnalyticsQueryMeasuresPassValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryMeasuresPassValue0 overwrites any union data inside the AnalyticsQuery_Measures_PassValue as the provided AnalyticsQueryMeasuresPassValue0
+func (t *AnalyticsQuery_Measures_PassValue) FromAnalyticsQueryMeasuresPassValue0(v AnalyticsQueryMeasuresPassValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryMeasuresPassValue0 performs a merge with any union data inside the AnalyticsQuery_Measures_PassValue, using the provided AnalyticsQueryMeasuresPassValue0
+func (t *AnalyticsQuery_Measures_PassValue) MergeAnalyticsQueryMeasuresPassValue0(v AnalyticsQueryMeasuresPassValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnalyticsQueryMeasuresPassValue1 returns the union data inside the AnalyticsQuery_Measures_PassValue as a AnalyticsQueryMeasuresPassValue1
+func (t AnalyticsQuery_Measures_PassValue) AsAnalyticsQueryMeasuresPassValue1() (AnalyticsQueryMeasuresPassValue1, error) {
+	var body AnalyticsQueryMeasuresPassValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryMeasuresPassValue1 overwrites any union data inside the AnalyticsQuery_Measures_PassValue as the provided AnalyticsQueryMeasuresPassValue1
+func (t *AnalyticsQuery_Measures_PassValue) FromAnalyticsQueryMeasuresPassValue1(v AnalyticsQueryMeasuresPassValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryMeasuresPassValue1 performs a merge with any union data inside the AnalyticsQuery_Measures_PassValue, using the provided AnalyticsQueryMeasuresPassValue1
+func (t *AnalyticsQuery_Measures_PassValue) MergeAnalyticsQueryMeasuresPassValue1(v AnalyticsQueryMeasuresPassValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnalyticsQueryMeasuresPassValue2 returns the union data inside the AnalyticsQuery_Measures_PassValue as a AnalyticsQueryMeasuresPassValue2
+func (t AnalyticsQuery_Measures_PassValue) AsAnalyticsQueryMeasuresPassValue2() (AnalyticsQueryMeasuresPassValue2, error) {
+	var body AnalyticsQueryMeasuresPassValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryMeasuresPassValue2 overwrites any union data inside the AnalyticsQuery_Measures_PassValue as the provided AnalyticsQueryMeasuresPassValue2
+func (t *AnalyticsQuery_Measures_PassValue) FromAnalyticsQueryMeasuresPassValue2(v AnalyticsQueryMeasuresPassValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryMeasuresPassValue2 performs a merge with any union data inside the AnalyticsQuery_Measures_PassValue, using the provided AnalyticsQueryMeasuresPassValue2
+func (t *AnalyticsQuery_Measures_PassValue) MergeAnalyticsQueryMeasuresPassValue2(v AnalyticsQueryMeasuresPassValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AnalyticsQuery_Measures_PassValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AnalyticsQuery_Measures_PassValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAnalyticsQueryTimeRange0 returns the union data inside the AnalyticsQuery_TimeRange as a AnalyticsQueryTimeRange0
+func (t AnalyticsQuery_TimeRange) AsAnalyticsQueryTimeRange0() (AnalyticsQueryTimeRange0, error) {
+	var body AnalyticsQueryTimeRange0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryTimeRange0 overwrites any union data inside the AnalyticsQuery_TimeRange as the provided AnalyticsQueryTimeRange0
+func (t *AnalyticsQuery_TimeRange) FromAnalyticsQueryTimeRange0(v AnalyticsQueryTimeRange0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryTimeRange0 performs a merge with any union data inside the AnalyticsQuery_TimeRange, using the provided AnalyticsQueryTimeRange0
+func (t *AnalyticsQuery_TimeRange) MergeAnalyticsQueryTimeRange0(v AnalyticsQueryTimeRange0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnalyticsQueryTimeRange1 returns the union data inside the AnalyticsQuery_TimeRange as a AnalyticsQueryTimeRange1
+func (t AnalyticsQuery_TimeRange) AsAnalyticsQueryTimeRange1() (AnalyticsQueryTimeRange1, error) {
+	var body AnalyticsQueryTimeRange1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryTimeRange1 overwrites any union data inside the AnalyticsQuery_TimeRange as the provided AnalyticsQueryTimeRange1
+func (t *AnalyticsQuery_TimeRange) FromAnalyticsQueryTimeRange1(v AnalyticsQueryTimeRange1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryTimeRange1 performs a merge with any union data inside the AnalyticsQuery_TimeRange, using the provided AnalyticsQueryTimeRange1
+func (t *AnalyticsQuery_TimeRange) MergeAnalyticsQueryTimeRange1(v AnalyticsQueryTimeRange1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnalyticsQueryTimeRange2 returns the union data inside the AnalyticsQuery_TimeRange as a AnalyticsQueryTimeRange2
+func (t AnalyticsQuery_TimeRange) AsAnalyticsQueryTimeRange2() (AnalyticsQueryTimeRange2, error) {
+	var body AnalyticsQueryTimeRange2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryTimeRange2 overwrites any union data inside the AnalyticsQuery_TimeRange as the provided AnalyticsQueryTimeRange2
+func (t *AnalyticsQuery_TimeRange) FromAnalyticsQueryTimeRange2(v AnalyticsQueryTimeRange2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryTimeRange2 performs a merge with any union data inside the AnalyticsQuery_TimeRange, using the provided AnalyticsQueryTimeRange2
+func (t *AnalyticsQuery_TimeRange) MergeAnalyticsQueryTimeRange2(v AnalyticsQueryTimeRange2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnalyticsQueryTimeRange3 returns the union data inside the AnalyticsQuery_TimeRange as a AnalyticsQueryTimeRange3
+func (t AnalyticsQuery_TimeRange) AsAnalyticsQueryTimeRange3() (AnalyticsQueryTimeRange3, error) {
+	var body AnalyticsQueryTimeRange3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnalyticsQueryTimeRange3 overwrites any union data inside the AnalyticsQuery_TimeRange as the provided AnalyticsQueryTimeRange3
+func (t *AnalyticsQuery_TimeRange) FromAnalyticsQueryTimeRange3(v AnalyticsQueryTimeRange3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnalyticsQueryTimeRange3 performs a merge with any union data inside the AnalyticsQuery_TimeRange, using the provided AnalyticsQueryTimeRange3
+func (t *AnalyticsQuery_TimeRange) MergeAnalyticsQueryTimeRange3(v AnalyticsQueryTimeRange3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AnalyticsQuery_TimeRange) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AnalyticsQuery_TimeRange) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -30478,6 +38600,32 @@ func (t *ConfigBundleResources0) MergeToolConfig(v ToolConfig) error {
 	return err
 }
 
+// AsDashboardConfig returns the union data inside the ConfigBundleResources0 as a DashboardConfig
+func (t ConfigBundleResources0) AsDashboardConfig() (DashboardConfig, error) {
+	var body DashboardConfig
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardConfig overwrites any union data inside the ConfigBundleResources0 as the provided DashboardConfig
+func (t *ConfigBundleResources0) FromDashboardConfig(v DashboardConfig) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardConfig performs a merge with any union data inside the ConfigBundleResources0, using the provided DashboardConfig
+func (t *ConfigBundleResources0) MergeDashboardConfig(v DashboardConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t ConfigBundleResources0) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -31368,6 +39516,2222 @@ func (t CustomerFlow) MarshalJSON() ([]byte, error) {
 }
 
 func (t *CustomerFlow) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardFiltersValue0 returns the union data inside the Dashboard_Filters_Value as a DashboardFiltersValue0
+func (t Dashboard_Filters_Value) AsDashboardFiltersValue0() (DashboardFiltersValue0, error) {
+	var body DashboardFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardFiltersValue0 overwrites any union data inside the Dashboard_Filters_Value as the provided DashboardFiltersValue0
+func (t *Dashboard_Filters_Value) FromDashboardFiltersValue0(v DashboardFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardFiltersValue0 performs a merge with any union data inside the Dashboard_Filters_Value, using the provided DashboardFiltersValue0
+func (t *Dashboard_Filters_Value) MergeDashboardFiltersValue0(v DashboardFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardFiltersValue1 returns the union data inside the Dashboard_Filters_Value as a DashboardFiltersValue1
+func (t Dashboard_Filters_Value) AsDashboardFiltersValue1() (DashboardFiltersValue1, error) {
+	var body DashboardFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardFiltersValue1 overwrites any union data inside the Dashboard_Filters_Value as the provided DashboardFiltersValue1
+func (t *Dashboard_Filters_Value) FromDashboardFiltersValue1(v DashboardFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardFiltersValue1 performs a merge with any union data inside the Dashboard_Filters_Value, using the provided DashboardFiltersValue1
+func (t *Dashboard_Filters_Value) MergeDashboardFiltersValue1(v DashboardFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardFiltersValue2 returns the union data inside the Dashboard_Filters_Value as a DashboardFiltersValue2
+func (t Dashboard_Filters_Value) AsDashboardFiltersValue2() (DashboardFiltersValue2, error) {
+	var body DashboardFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardFiltersValue2 overwrites any union data inside the Dashboard_Filters_Value as the provided DashboardFiltersValue2
+func (t *Dashboard_Filters_Value) FromDashboardFiltersValue2(v DashboardFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardFiltersValue2 performs a merge with any union data inside the Dashboard_Filters_Value, using the provided DashboardFiltersValue2
+func (t *Dashboard_Filters_Value) MergeDashboardFiltersValue2(v DashboardFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t Dashboard_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *Dashboard_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardTimeRange0 returns the union data inside the Dashboard_TimeRange as a DashboardTimeRange0
+func (t Dashboard_TimeRange) AsDashboardTimeRange0() (DashboardTimeRange0, error) {
+	var body DashboardTimeRange0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardTimeRange0 overwrites any union data inside the Dashboard_TimeRange as the provided DashboardTimeRange0
+func (t *Dashboard_TimeRange) FromDashboardTimeRange0(v DashboardTimeRange0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardTimeRange0 performs a merge with any union data inside the Dashboard_TimeRange, using the provided DashboardTimeRange0
+func (t *Dashboard_TimeRange) MergeDashboardTimeRange0(v DashboardTimeRange0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardTimeRange1 returns the union data inside the Dashboard_TimeRange as a DashboardTimeRange1
+func (t Dashboard_TimeRange) AsDashboardTimeRange1() (DashboardTimeRange1, error) {
+	var body DashboardTimeRange1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardTimeRange1 overwrites any union data inside the Dashboard_TimeRange as the provided DashboardTimeRange1
+func (t *Dashboard_TimeRange) FromDashboardTimeRange1(v DashboardTimeRange1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardTimeRange1 performs a merge with any union data inside the Dashboard_TimeRange, using the provided DashboardTimeRange1
+func (t *Dashboard_TimeRange) MergeDashboardTimeRange1(v DashboardTimeRange1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardTimeRange2 returns the union data inside the Dashboard_TimeRange as a DashboardTimeRange2
+func (t Dashboard_TimeRange) AsDashboardTimeRange2() (DashboardTimeRange2, error) {
+	var body DashboardTimeRange2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardTimeRange2 overwrites any union data inside the Dashboard_TimeRange as the provided DashboardTimeRange2
+func (t *Dashboard_TimeRange) FromDashboardTimeRange2(v DashboardTimeRange2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardTimeRange2 performs a merge with any union data inside the Dashboard_TimeRange, using the provided DashboardTimeRange2
+func (t *Dashboard_TimeRange) MergeDashboardTimeRange2(v DashboardTimeRange2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardTimeRange3 returns the union data inside the Dashboard_TimeRange as a DashboardTimeRange3
+func (t Dashboard_TimeRange) AsDashboardTimeRange3() (DashboardTimeRange3, error) {
+	var body DashboardTimeRange3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardTimeRange3 overwrites any union data inside the Dashboard_TimeRange as the provided DashboardTimeRange3
+func (t *Dashboard_TimeRange) FromDashboardTimeRange3(v DashboardTimeRange3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardTimeRange3 performs a merge with any union data inside the Dashboard_TimeRange, using the provided DashboardTimeRange3
+func (t *Dashboard_TimeRange) MergeDashboardTimeRange3(v DashboardTimeRange3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t Dashboard_TimeRange) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *Dashboard_TimeRange) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardWidgetsComparisonGroupsFiltersValue0 returns the union data inside the Dashboard_Widgets_ComparisonGroups_Filters_Value as a DashboardWidgetsComparisonGroupsFiltersValue0
+func (t Dashboard_Widgets_ComparisonGroups_Filters_Value) AsDashboardWidgetsComparisonGroupsFiltersValue0() (DashboardWidgetsComparisonGroupsFiltersValue0, error) {
+	var body DashboardWidgetsComparisonGroupsFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetsComparisonGroupsFiltersValue0 overwrites any union data inside the Dashboard_Widgets_ComparisonGroups_Filters_Value as the provided DashboardWidgetsComparisonGroupsFiltersValue0
+func (t *Dashboard_Widgets_ComparisonGroups_Filters_Value) FromDashboardWidgetsComparisonGroupsFiltersValue0(v DashboardWidgetsComparisonGroupsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetsComparisonGroupsFiltersValue0 performs a merge with any union data inside the Dashboard_Widgets_ComparisonGroups_Filters_Value, using the provided DashboardWidgetsComparisonGroupsFiltersValue0
+func (t *Dashboard_Widgets_ComparisonGroups_Filters_Value) MergeDashboardWidgetsComparisonGroupsFiltersValue0(v DashboardWidgetsComparisonGroupsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetsComparisonGroupsFiltersValue1 returns the union data inside the Dashboard_Widgets_ComparisonGroups_Filters_Value as a DashboardWidgetsComparisonGroupsFiltersValue1
+func (t Dashboard_Widgets_ComparisonGroups_Filters_Value) AsDashboardWidgetsComparisonGroupsFiltersValue1() (DashboardWidgetsComparisonGroupsFiltersValue1, error) {
+	var body DashboardWidgetsComparisonGroupsFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetsComparisonGroupsFiltersValue1 overwrites any union data inside the Dashboard_Widgets_ComparisonGroups_Filters_Value as the provided DashboardWidgetsComparisonGroupsFiltersValue1
+func (t *Dashboard_Widgets_ComparisonGroups_Filters_Value) FromDashboardWidgetsComparisonGroupsFiltersValue1(v DashboardWidgetsComparisonGroupsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetsComparisonGroupsFiltersValue1 performs a merge with any union data inside the Dashboard_Widgets_ComparisonGroups_Filters_Value, using the provided DashboardWidgetsComparisonGroupsFiltersValue1
+func (t *Dashboard_Widgets_ComparisonGroups_Filters_Value) MergeDashboardWidgetsComparisonGroupsFiltersValue1(v DashboardWidgetsComparisonGroupsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetsComparisonGroupsFiltersValue2 returns the union data inside the Dashboard_Widgets_ComparisonGroups_Filters_Value as a DashboardWidgetsComparisonGroupsFiltersValue2
+func (t Dashboard_Widgets_ComparisonGroups_Filters_Value) AsDashboardWidgetsComparisonGroupsFiltersValue2() (DashboardWidgetsComparisonGroupsFiltersValue2, error) {
+	var body DashboardWidgetsComparisonGroupsFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetsComparisonGroupsFiltersValue2 overwrites any union data inside the Dashboard_Widgets_ComparisonGroups_Filters_Value as the provided DashboardWidgetsComparisonGroupsFiltersValue2
+func (t *Dashboard_Widgets_ComparisonGroups_Filters_Value) FromDashboardWidgetsComparisonGroupsFiltersValue2(v DashboardWidgetsComparisonGroupsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetsComparisonGroupsFiltersValue2 performs a merge with any union data inside the Dashboard_Widgets_ComparisonGroups_Filters_Value, using the provided DashboardWidgetsComparisonGroupsFiltersValue2
+func (t *Dashboard_Widgets_ComparisonGroups_Filters_Value) MergeDashboardWidgetsComparisonGroupsFiltersValue2(v DashboardWidgetsComparisonGroupsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t Dashboard_Widgets_ComparisonGroups_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *Dashboard_Widgets_ComparisonGroups_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardWidgetsFiltersValue0 returns the union data inside the Dashboard_Widgets_Filters_Value as a DashboardWidgetsFiltersValue0
+func (t Dashboard_Widgets_Filters_Value) AsDashboardWidgetsFiltersValue0() (DashboardWidgetsFiltersValue0, error) {
+	var body DashboardWidgetsFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetsFiltersValue0 overwrites any union data inside the Dashboard_Widgets_Filters_Value as the provided DashboardWidgetsFiltersValue0
+func (t *Dashboard_Widgets_Filters_Value) FromDashboardWidgetsFiltersValue0(v DashboardWidgetsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetsFiltersValue0 performs a merge with any union data inside the Dashboard_Widgets_Filters_Value, using the provided DashboardWidgetsFiltersValue0
+func (t *Dashboard_Widgets_Filters_Value) MergeDashboardWidgetsFiltersValue0(v DashboardWidgetsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetsFiltersValue1 returns the union data inside the Dashboard_Widgets_Filters_Value as a DashboardWidgetsFiltersValue1
+func (t Dashboard_Widgets_Filters_Value) AsDashboardWidgetsFiltersValue1() (DashboardWidgetsFiltersValue1, error) {
+	var body DashboardWidgetsFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetsFiltersValue1 overwrites any union data inside the Dashboard_Widgets_Filters_Value as the provided DashboardWidgetsFiltersValue1
+func (t *Dashboard_Widgets_Filters_Value) FromDashboardWidgetsFiltersValue1(v DashboardWidgetsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetsFiltersValue1 performs a merge with any union data inside the Dashboard_Widgets_Filters_Value, using the provided DashboardWidgetsFiltersValue1
+func (t *Dashboard_Widgets_Filters_Value) MergeDashboardWidgetsFiltersValue1(v DashboardWidgetsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetsFiltersValue2 returns the union data inside the Dashboard_Widgets_Filters_Value as a DashboardWidgetsFiltersValue2
+func (t Dashboard_Widgets_Filters_Value) AsDashboardWidgetsFiltersValue2() (DashboardWidgetsFiltersValue2, error) {
+	var body DashboardWidgetsFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetsFiltersValue2 overwrites any union data inside the Dashboard_Widgets_Filters_Value as the provided DashboardWidgetsFiltersValue2
+func (t *Dashboard_Widgets_Filters_Value) FromDashboardWidgetsFiltersValue2(v DashboardWidgetsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetsFiltersValue2 performs a merge with any union data inside the Dashboard_Widgets_Filters_Value, using the provided DashboardWidgetsFiltersValue2
+func (t *Dashboard_Widgets_Filters_Value) MergeDashboardWidgetsFiltersValue2(v DashboardWidgetsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t Dashboard_Widgets_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *Dashboard_Widgets_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardWidgetsMeasuresFiltersValue0 returns the union data inside the Dashboard_Widgets_Measures_Filters_Value as a DashboardWidgetsMeasuresFiltersValue0
+func (t Dashboard_Widgets_Measures_Filters_Value) AsDashboardWidgetsMeasuresFiltersValue0() (DashboardWidgetsMeasuresFiltersValue0, error) {
+	var body DashboardWidgetsMeasuresFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetsMeasuresFiltersValue0 overwrites any union data inside the Dashboard_Widgets_Measures_Filters_Value as the provided DashboardWidgetsMeasuresFiltersValue0
+func (t *Dashboard_Widgets_Measures_Filters_Value) FromDashboardWidgetsMeasuresFiltersValue0(v DashboardWidgetsMeasuresFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetsMeasuresFiltersValue0 performs a merge with any union data inside the Dashboard_Widgets_Measures_Filters_Value, using the provided DashboardWidgetsMeasuresFiltersValue0
+func (t *Dashboard_Widgets_Measures_Filters_Value) MergeDashboardWidgetsMeasuresFiltersValue0(v DashboardWidgetsMeasuresFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetsMeasuresFiltersValue1 returns the union data inside the Dashboard_Widgets_Measures_Filters_Value as a DashboardWidgetsMeasuresFiltersValue1
+func (t Dashboard_Widgets_Measures_Filters_Value) AsDashboardWidgetsMeasuresFiltersValue1() (DashboardWidgetsMeasuresFiltersValue1, error) {
+	var body DashboardWidgetsMeasuresFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetsMeasuresFiltersValue1 overwrites any union data inside the Dashboard_Widgets_Measures_Filters_Value as the provided DashboardWidgetsMeasuresFiltersValue1
+func (t *Dashboard_Widgets_Measures_Filters_Value) FromDashboardWidgetsMeasuresFiltersValue1(v DashboardWidgetsMeasuresFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetsMeasuresFiltersValue1 performs a merge with any union data inside the Dashboard_Widgets_Measures_Filters_Value, using the provided DashboardWidgetsMeasuresFiltersValue1
+func (t *Dashboard_Widgets_Measures_Filters_Value) MergeDashboardWidgetsMeasuresFiltersValue1(v DashboardWidgetsMeasuresFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetsMeasuresFiltersValue2 returns the union data inside the Dashboard_Widgets_Measures_Filters_Value as a DashboardWidgetsMeasuresFiltersValue2
+func (t Dashboard_Widgets_Measures_Filters_Value) AsDashboardWidgetsMeasuresFiltersValue2() (DashboardWidgetsMeasuresFiltersValue2, error) {
+	var body DashboardWidgetsMeasuresFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetsMeasuresFiltersValue2 overwrites any union data inside the Dashboard_Widgets_Measures_Filters_Value as the provided DashboardWidgetsMeasuresFiltersValue2
+func (t *Dashboard_Widgets_Measures_Filters_Value) FromDashboardWidgetsMeasuresFiltersValue2(v DashboardWidgetsMeasuresFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetsMeasuresFiltersValue2 performs a merge with any union data inside the Dashboard_Widgets_Measures_Filters_Value, using the provided DashboardWidgetsMeasuresFiltersValue2
+func (t *Dashboard_Widgets_Measures_Filters_Value) MergeDashboardWidgetsMeasuresFiltersValue2(v DashboardWidgetsMeasuresFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t Dashboard_Widgets_Measures_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *Dashboard_Widgets_Measures_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardWidgetsMeasuresPassValue0 returns the union data inside the Dashboard_Widgets_Measures_PassValue as a DashboardWidgetsMeasuresPassValue0
+func (t Dashboard_Widgets_Measures_PassValue) AsDashboardWidgetsMeasuresPassValue0() (DashboardWidgetsMeasuresPassValue0, error) {
+	var body DashboardWidgetsMeasuresPassValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetsMeasuresPassValue0 overwrites any union data inside the Dashboard_Widgets_Measures_PassValue as the provided DashboardWidgetsMeasuresPassValue0
+func (t *Dashboard_Widgets_Measures_PassValue) FromDashboardWidgetsMeasuresPassValue0(v DashboardWidgetsMeasuresPassValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetsMeasuresPassValue0 performs a merge with any union data inside the Dashboard_Widgets_Measures_PassValue, using the provided DashboardWidgetsMeasuresPassValue0
+func (t *Dashboard_Widgets_Measures_PassValue) MergeDashboardWidgetsMeasuresPassValue0(v DashboardWidgetsMeasuresPassValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetsMeasuresPassValue1 returns the union data inside the Dashboard_Widgets_Measures_PassValue as a DashboardWidgetsMeasuresPassValue1
+func (t Dashboard_Widgets_Measures_PassValue) AsDashboardWidgetsMeasuresPassValue1() (DashboardWidgetsMeasuresPassValue1, error) {
+	var body DashboardWidgetsMeasuresPassValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetsMeasuresPassValue1 overwrites any union data inside the Dashboard_Widgets_Measures_PassValue as the provided DashboardWidgetsMeasuresPassValue1
+func (t *Dashboard_Widgets_Measures_PassValue) FromDashboardWidgetsMeasuresPassValue1(v DashboardWidgetsMeasuresPassValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetsMeasuresPassValue1 performs a merge with any union data inside the Dashboard_Widgets_Measures_PassValue, using the provided DashboardWidgetsMeasuresPassValue1
+func (t *Dashboard_Widgets_Measures_PassValue) MergeDashboardWidgetsMeasuresPassValue1(v DashboardWidgetsMeasuresPassValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetsMeasuresPassValue2 returns the union data inside the Dashboard_Widgets_Measures_PassValue as a DashboardWidgetsMeasuresPassValue2
+func (t Dashboard_Widgets_Measures_PassValue) AsDashboardWidgetsMeasuresPassValue2() (DashboardWidgetsMeasuresPassValue2, error) {
+	var body DashboardWidgetsMeasuresPassValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetsMeasuresPassValue2 overwrites any union data inside the Dashboard_Widgets_Measures_PassValue as the provided DashboardWidgetsMeasuresPassValue2
+func (t *Dashboard_Widgets_Measures_PassValue) FromDashboardWidgetsMeasuresPassValue2(v DashboardWidgetsMeasuresPassValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetsMeasuresPassValue2 performs a merge with any union data inside the Dashboard_Widgets_Measures_PassValue, using the provided DashboardWidgetsMeasuresPassValue2
+func (t *Dashboard_Widgets_Measures_PassValue) MergeDashboardWidgetsMeasuresPassValue2(v DashboardWidgetsMeasuresPassValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t Dashboard_Widgets_Measures_PassValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *Dashboard_Widgets_Measures_PassValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardFilterConfigValue0 returns the union data inside the DashboardFilterConfig_Value as a DashboardFilterConfigValue0
+func (t DashboardFilterConfig_Value) AsDashboardFilterConfigValue0() (DashboardFilterConfigValue0, error) {
+	var body DashboardFilterConfigValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardFilterConfigValue0 overwrites any union data inside the DashboardFilterConfig_Value as the provided DashboardFilterConfigValue0
+func (t *DashboardFilterConfig_Value) FromDashboardFilterConfigValue0(v DashboardFilterConfigValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardFilterConfigValue0 performs a merge with any union data inside the DashboardFilterConfig_Value, using the provided DashboardFilterConfigValue0
+func (t *DashboardFilterConfig_Value) MergeDashboardFilterConfigValue0(v DashboardFilterConfigValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardFilterConfigValue1 returns the union data inside the DashboardFilterConfig_Value as a DashboardFilterConfigValue1
+func (t DashboardFilterConfig_Value) AsDashboardFilterConfigValue1() (DashboardFilterConfigValue1, error) {
+	var body DashboardFilterConfigValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardFilterConfigValue1 overwrites any union data inside the DashboardFilterConfig_Value as the provided DashboardFilterConfigValue1
+func (t *DashboardFilterConfig_Value) FromDashboardFilterConfigValue1(v DashboardFilterConfigValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardFilterConfigValue1 performs a merge with any union data inside the DashboardFilterConfig_Value, using the provided DashboardFilterConfigValue1
+func (t *DashboardFilterConfig_Value) MergeDashboardFilterConfigValue1(v DashboardFilterConfigValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardFilterConfigValue2 returns the union data inside the DashboardFilterConfig_Value as a DashboardFilterConfigValue2
+func (t DashboardFilterConfig_Value) AsDashboardFilterConfigValue2() (DashboardFilterConfigValue2, error) {
+	var body DashboardFilterConfigValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardFilterConfigValue2 overwrites any union data inside the DashboardFilterConfig_Value as the provided DashboardFilterConfigValue2
+func (t *DashboardFilterConfig_Value) FromDashboardFilterConfigValue2(v DashboardFilterConfigValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardFilterConfigValue2 performs a merge with any union data inside the DashboardFilterConfig_Value, using the provided DashboardFilterConfigValue2
+func (t *DashboardFilterConfig_Value) MergeDashboardFilterConfigValue2(v DashboardFilterConfigValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardFilterConfig_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardFilterConfig_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardInputFiltersValue0 returns the union data inside the DashboardInput_Filters_Value as a DashboardInputFiltersValue0
+func (t DashboardInput_Filters_Value) AsDashboardInputFiltersValue0() (DashboardInputFiltersValue0, error) {
+	var body DashboardInputFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputFiltersValue0 overwrites any union data inside the DashboardInput_Filters_Value as the provided DashboardInputFiltersValue0
+func (t *DashboardInput_Filters_Value) FromDashboardInputFiltersValue0(v DashboardInputFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputFiltersValue0 performs a merge with any union data inside the DashboardInput_Filters_Value, using the provided DashboardInputFiltersValue0
+func (t *DashboardInput_Filters_Value) MergeDashboardInputFiltersValue0(v DashboardInputFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputFiltersValue1 returns the union data inside the DashboardInput_Filters_Value as a DashboardInputFiltersValue1
+func (t DashboardInput_Filters_Value) AsDashboardInputFiltersValue1() (DashboardInputFiltersValue1, error) {
+	var body DashboardInputFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputFiltersValue1 overwrites any union data inside the DashboardInput_Filters_Value as the provided DashboardInputFiltersValue1
+func (t *DashboardInput_Filters_Value) FromDashboardInputFiltersValue1(v DashboardInputFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputFiltersValue1 performs a merge with any union data inside the DashboardInput_Filters_Value, using the provided DashboardInputFiltersValue1
+func (t *DashboardInput_Filters_Value) MergeDashboardInputFiltersValue1(v DashboardInputFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputFiltersValue2 returns the union data inside the DashboardInput_Filters_Value as a DashboardInputFiltersValue2
+func (t DashboardInput_Filters_Value) AsDashboardInputFiltersValue2() (DashboardInputFiltersValue2, error) {
+	var body DashboardInputFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputFiltersValue2 overwrites any union data inside the DashboardInput_Filters_Value as the provided DashboardInputFiltersValue2
+func (t *DashboardInput_Filters_Value) FromDashboardInputFiltersValue2(v DashboardInputFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputFiltersValue2 performs a merge with any union data inside the DashboardInput_Filters_Value, using the provided DashboardInputFiltersValue2
+func (t *DashboardInput_Filters_Value) MergeDashboardInputFiltersValue2(v DashboardInputFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardInput_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardInput_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardInputTimeRange0 returns the union data inside the DashboardInput_TimeRange as a DashboardInputTimeRange0
+func (t DashboardInput_TimeRange) AsDashboardInputTimeRange0() (DashboardInputTimeRange0, error) {
+	var body DashboardInputTimeRange0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputTimeRange0 overwrites any union data inside the DashboardInput_TimeRange as the provided DashboardInputTimeRange0
+func (t *DashboardInput_TimeRange) FromDashboardInputTimeRange0(v DashboardInputTimeRange0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputTimeRange0 performs a merge with any union data inside the DashboardInput_TimeRange, using the provided DashboardInputTimeRange0
+func (t *DashboardInput_TimeRange) MergeDashboardInputTimeRange0(v DashboardInputTimeRange0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputTimeRange1 returns the union data inside the DashboardInput_TimeRange as a DashboardInputTimeRange1
+func (t DashboardInput_TimeRange) AsDashboardInputTimeRange1() (DashboardInputTimeRange1, error) {
+	var body DashboardInputTimeRange1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputTimeRange1 overwrites any union data inside the DashboardInput_TimeRange as the provided DashboardInputTimeRange1
+func (t *DashboardInput_TimeRange) FromDashboardInputTimeRange1(v DashboardInputTimeRange1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputTimeRange1 performs a merge with any union data inside the DashboardInput_TimeRange, using the provided DashboardInputTimeRange1
+func (t *DashboardInput_TimeRange) MergeDashboardInputTimeRange1(v DashboardInputTimeRange1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputTimeRange2 returns the union data inside the DashboardInput_TimeRange as a DashboardInputTimeRange2
+func (t DashboardInput_TimeRange) AsDashboardInputTimeRange2() (DashboardInputTimeRange2, error) {
+	var body DashboardInputTimeRange2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputTimeRange2 overwrites any union data inside the DashboardInput_TimeRange as the provided DashboardInputTimeRange2
+func (t *DashboardInput_TimeRange) FromDashboardInputTimeRange2(v DashboardInputTimeRange2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputTimeRange2 performs a merge with any union data inside the DashboardInput_TimeRange, using the provided DashboardInputTimeRange2
+func (t *DashboardInput_TimeRange) MergeDashboardInputTimeRange2(v DashboardInputTimeRange2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputTimeRange3 returns the union data inside the DashboardInput_TimeRange as a DashboardInputTimeRange3
+func (t DashboardInput_TimeRange) AsDashboardInputTimeRange3() (DashboardInputTimeRange3, error) {
+	var body DashboardInputTimeRange3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputTimeRange3 overwrites any union data inside the DashboardInput_TimeRange as the provided DashboardInputTimeRange3
+func (t *DashboardInput_TimeRange) FromDashboardInputTimeRange3(v DashboardInputTimeRange3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputTimeRange3 performs a merge with any union data inside the DashboardInput_TimeRange, using the provided DashboardInputTimeRange3
+func (t *DashboardInput_TimeRange) MergeDashboardInputTimeRange3(v DashboardInputTimeRange3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardInput_TimeRange) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardInput_TimeRange) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardInputWidgetsComparisonGroupsFiltersValue0 returns the union data inside the DashboardInput_Widgets_ComparisonGroups_Filters_Value as a DashboardInputWidgetsComparisonGroupsFiltersValue0
+func (t DashboardInput_Widgets_ComparisonGroups_Filters_Value) AsDashboardInputWidgetsComparisonGroupsFiltersValue0() (DashboardInputWidgetsComparisonGroupsFiltersValue0, error) {
+	var body DashboardInputWidgetsComparisonGroupsFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputWidgetsComparisonGroupsFiltersValue0 overwrites any union data inside the DashboardInput_Widgets_ComparisonGroups_Filters_Value as the provided DashboardInputWidgetsComparisonGroupsFiltersValue0
+func (t *DashboardInput_Widgets_ComparisonGroups_Filters_Value) FromDashboardInputWidgetsComparisonGroupsFiltersValue0(v DashboardInputWidgetsComparisonGroupsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputWidgetsComparisonGroupsFiltersValue0 performs a merge with any union data inside the DashboardInput_Widgets_ComparisonGroups_Filters_Value, using the provided DashboardInputWidgetsComparisonGroupsFiltersValue0
+func (t *DashboardInput_Widgets_ComparisonGroups_Filters_Value) MergeDashboardInputWidgetsComparisonGroupsFiltersValue0(v DashboardInputWidgetsComparisonGroupsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputWidgetsComparisonGroupsFiltersValue1 returns the union data inside the DashboardInput_Widgets_ComparisonGroups_Filters_Value as a DashboardInputWidgetsComparisonGroupsFiltersValue1
+func (t DashboardInput_Widgets_ComparisonGroups_Filters_Value) AsDashboardInputWidgetsComparisonGroupsFiltersValue1() (DashboardInputWidgetsComparisonGroupsFiltersValue1, error) {
+	var body DashboardInputWidgetsComparisonGroupsFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputWidgetsComparisonGroupsFiltersValue1 overwrites any union data inside the DashboardInput_Widgets_ComparisonGroups_Filters_Value as the provided DashboardInputWidgetsComparisonGroupsFiltersValue1
+func (t *DashboardInput_Widgets_ComparisonGroups_Filters_Value) FromDashboardInputWidgetsComparisonGroupsFiltersValue1(v DashboardInputWidgetsComparisonGroupsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputWidgetsComparisonGroupsFiltersValue1 performs a merge with any union data inside the DashboardInput_Widgets_ComparisonGroups_Filters_Value, using the provided DashboardInputWidgetsComparisonGroupsFiltersValue1
+func (t *DashboardInput_Widgets_ComparisonGroups_Filters_Value) MergeDashboardInputWidgetsComparisonGroupsFiltersValue1(v DashboardInputWidgetsComparisonGroupsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputWidgetsComparisonGroupsFiltersValue2 returns the union data inside the DashboardInput_Widgets_ComparisonGroups_Filters_Value as a DashboardInputWidgetsComparisonGroupsFiltersValue2
+func (t DashboardInput_Widgets_ComparisonGroups_Filters_Value) AsDashboardInputWidgetsComparisonGroupsFiltersValue2() (DashboardInputWidgetsComparisonGroupsFiltersValue2, error) {
+	var body DashboardInputWidgetsComparisonGroupsFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputWidgetsComparisonGroupsFiltersValue2 overwrites any union data inside the DashboardInput_Widgets_ComparisonGroups_Filters_Value as the provided DashboardInputWidgetsComparisonGroupsFiltersValue2
+func (t *DashboardInput_Widgets_ComparisonGroups_Filters_Value) FromDashboardInputWidgetsComparisonGroupsFiltersValue2(v DashboardInputWidgetsComparisonGroupsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputWidgetsComparisonGroupsFiltersValue2 performs a merge with any union data inside the DashboardInput_Widgets_ComparisonGroups_Filters_Value, using the provided DashboardInputWidgetsComparisonGroupsFiltersValue2
+func (t *DashboardInput_Widgets_ComparisonGroups_Filters_Value) MergeDashboardInputWidgetsComparisonGroupsFiltersValue2(v DashboardInputWidgetsComparisonGroupsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardInput_Widgets_ComparisonGroups_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardInput_Widgets_ComparisonGroups_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardInputWidgetsFiltersValue0 returns the union data inside the DashboardInput_Widgets_Filters_Value as a DashboardInputWidgetsFiltersValue0
+func (t DashboardInput_Widgets_Filters_Value) AsDashboardInputWidgetsFiltersValue0() (DashboardInputWidgetsFiltersValue0, error) {
+	var body DashboardInputWidgetsFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputWidgetsFiltersValue0 overwrites any union data inside the DashboardInput_Widgets_Filters_Value as the provided DashboardInputWidgetsFiltersValue0
+func (t *DashboardInput_Widgets_Filters_Value) FromDashboardInputWidgetsFiltersValue0(v DashboardInputWidgetsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputWidgetsFiltersValue0 performs a merge with any union data inside the DashboardInput_Widgets_Filters_Value, using the provided DashboardInputWidgetsFiltersValue0
+func (t *DashboardInput_Widgets_Filters_Value) MergeDashboardInputWidgetsFiltersValue0(v DashboardInputWidgetsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputWidgetsFiltersValue1 returns the union data inside the DashboardInput_Widgets_Filters_Value as a DashboardInputWidgetsFiltersValue1
+func (t DashboardInput_Widgets_Filters_Value) AsDashboardInputWidgetsFiltersValue1() (DashboardInputWidgetsFiltersValue1, error) {
+	var body DashboardInputWidgetsFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputWidgetsFiltersValue1 overwrites any union data inside the DashboardInput_Widgets_Filters_Value as the provided DashboardInputWidgetsFiltersValue1
+func (t *DashboardInput_Widgets_Filters_Value) FromDashboardInputWidgetsFiltersValue1(v DashboardInputWidgetsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputWidgetsFiltersValue1 performs a merge with any union data inside the DashboardInput_Widgets_Filters_Value, using the provided DashboardInputWidgetsFiltersValue1
+func (t *DashboardInput_Widgets_Filters_Value) MergeDashboardInputWidgetsFiltersValue1(v DashboardInputWidgetsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputWidgetsFiltersValue2 returns the union data inside the DashboardInput_Widgets_Filters_Value as a DashboardInputWidgetsFiltersValue2
+func (t DashboardInput_Widgets_Filters_Value) AsDashboardInputWidgetsFiltersValue2() (DashboardInputWidgetsFiltersValue2, error) {
+	var body DashboardInputWidgetsFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputWidgetsFiltersValue2 overwrites any union data inside the DashboardInput_Widgets_Filters_Value as the provided DashboardInputWidgetsFiltersValue2
+func (t *DashboardInput_Widgets_Filters_Value) FromDashboardInputWidgetsFiltersValue2(v DashboardInputWidgetsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputWidgetsFiltersValue2 performs a merge with any union data inside the DashboardInput_Widgets_Filters_Value, using the provided DashboardInputWidgetsFiltersValue2
+func (t *DashboardInput_Widgets_Filters_Value) MergeDashboardInputWidgetsFiltersValue2(v DashboardInputWidgetsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardInput_Widgets_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardInput_Widgets_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardInputWidgetsMeasuresFiltersValue0 returns the union data inside the DashboardInput_Widgets_Measures_Filters_Value as a DashboardInputWidgetsMeasuresFiltersValue0
+func (t DashboardInput_Widgets_Measures_Filters_Value) AsDashboardInputWidgetsMeasuresFiltersValue0() (DashboardInputWidgetsMeasuresFiltersValue0, error) {
+	var body DashboardInputWidgetsMeasuresFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputWidgetsMeasuresFiltersValue0 overwrites any union data inside the DashboardInput_Widgets_Measures_Filters_Value as the provided DashboardInputWidgetsMeasuresFiltersValue0
+func (t *DashboardInput_Widgets_Measures_Filters_Value) FromDashboardInputWidgetsMeasuresFiltersValue0(v DashboardInputWidgetsMeasuresFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputWidgetsMeasuresFiltersValue0 performs a merge with any union data inside the DashboardInput_Widgets_Measures_Filters_Value, using the provided DashboardInputWidgetsMeasuresFiltersValue0
+func (t *DashboardInput_Widgets_Measures_Filters_Value) MergeDashboardInputWidgetsMeasuresFiltersValue0(v DashboardInputWidgetsMeasuresFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputWidgetsMeasuresFiltersValue1 returns the union data inside the DashboardInput_Widgets_Measures_Filters_Value as a DashboardInputWidgetsMeasuresFiltersValue1
+func (t DashboardInput_Widgets_Measures_Filters_Value) AsDashboardInputWidgetsMeasuresFiltersValue1() (DashboardInputWidgetsMeasuresFiltersValue1, error) {
+	var body DashboardInputWidgetsMeasuresFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputWidgetsMeasuresFiltersValue1 overwrites any union data inside the DashboardInput_Widgets_Measures_Filters_Value as the provided DashboardInputWidgetsMeasuresFiltersValue1
+func (t *DashboardInput_Widgets_Measures_Filters_Value) FromDashboardInputWidgetsMeasuresFiltersValue1(v DashboardInputWidgetsMeasuresFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputWidgetsMeasuresFiltersValue1 performs a merge with any union data inside the DashboardInput_Widgets_Measures_Filters_Value, using the provided DashboardInputWidgetsMeasuresFiltersValue1
+func (t *DashboardInput_Widgets_Measures_Filters_Value) MergeDashboardInputWidgetsMeasuresFiltersValue1(v DashboardInputWidgetsMeasuresFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputWidgetsMeasuresFiltersValue2 returns the union data inside the DashboardInput_Widgets_Measures_Filters_Value as a DashboardInputWidgetsMeasuresFiltersValue2
+func (t DashboardInput_Widgets_Measures_Filters_Value) AsDashboardInputWidgetsMeasuresFiltersValue2() (DashboardInputWidgetsMeasuresFiltersValue2, error) {
+	var body DashboardInputWidgetsMeasuresFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputWidgetsMeasuresFiltersValue2 overwrites any union data inside the DashboardInput_Widgets_Measures_Filters_Value as the provided DashboardInputWidgetsMeasuresFiltersValue2
+func (t *DashboardInput_Widgets_Measures_Filters_Value) FromDashboardInputWidgetsMeasuresFiltersValue2(v DashboardInputWidgetsMeasuresFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputWidgetsMeasuresFiltersValue2 performs a merge with any union data inside the DashboardInput_Widgets_Measures_Filters_Value, using the provided DashboardInputWidgetsMeasuresFiltersValue2
+func (t *DashboardInput_Widgets_Measures_Filters_Value) MergeDashboardInputWidgetsMeasuresFiltersValue2(v DashboardInputWidgetsMeasuresFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardInput_Widgets_Measures_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardInput_Widgets_Measures_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardInputWidgetsMeasuresPassValue0 returns the union data inside the DashboardInput_Widgets_Measures_PassValue as a DashboardInputWidgetsMeasuresPassValue0
+func (t DashboardInput_Widgets_Measures_PassValue) AsDashboardInputWidgetsMeasuresPassValue0() (DashboardInputWidgetsMeasuresPassValue0, error) {
+	var body DashboardInputWidgetsMeasuresPassValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputWidgetsMeasuresPassValue0 overwrites any union data inside the DashboardInput_Widgets_Measures_PassValue as the provided DashboardInputWidgetsMeasuresPassValue0
+func (t *DashboardInput_Widgets_Measures_PassValue) FromDashboardInputWidgetsMeasuresPassValue0(v DashboardInputWidgetsMeasuresPassValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputWidgetsMeasuresPassValue0 performs a merge with any union data inside the DashboardInput_Widgets_Measures_PassValue, using the provided DashboardInputWidgetsMeasuresPassValue0
+func (t *DashboardInput_Widgets_Measures_PassValue) MergeDashboardInputWidgetsMeasuresPassValue0(v DashboardInputWidgetsMeasuresPassValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputWidgetsMeasuresPassValue1 returns the union data inside the DashboardInput_Widgets_Measures_PassValue as a DashboardInputWidgetsMeasuresPassValue1
+func (t DashboardInput_Widgets_Measures_PassValue) AsDashboardInputWidgetsMeasuresPassValue1() (DashboardInputWidgetsMeasuresPassValue1, error) {
+	var body DashboardInputWidgetsMeasuresPassValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputWidgetsMeasuresPassValue1 overwrites any union data inside the DashboardInput_Widgets_Measures_PassValue as the provided DashboardInputWidgetsMeasuresPassValue1
+func (t *DashboardInput_Widgets_Measures_PassValue) FromDashboardInputWidgetsMeasuresPassValue1(v DashboardInputWidgetsMeasuresPassValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputWidgetsMeasuresPassValue1 performs a merge with any union data inside the DashboardInput_Widgets_Measures_PassValue, using the provided DashboardInputWidgetsMeasuresPassValue1
+func (t *DashboardInput_Widgets_Measures_PassValue) MergeDashboardInputWidgetsMeasuresPassValue1(v DashboardInputWidgetsMeasuresPassValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardInputWidgetsMeasuresPassValue2 returns the union data inside the DashboardInput_Widgets_Measures_PassValue as a DashboardInputWidgetsMeasuresPassValue2
+func (t DashboardInput_Widgets_Measures_PassValue) AsDashboardInputWidgetsMeasuresPassValue2() (DashboardInputWidgetsMeasuresPassValue2, error) {
+	var body DashboardInputWidgetsMeasuresPassValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardInputWidgetsMeasuresPassValue2 overwrites any union data inside the DashboardInput_Widgets_Measures_PassValue as the provided DashboardInputWidgetsMeasuresPassValue2
+func (t *DashboardInput_Widgets_Measures_PassValue) FromDashboardInputWidgetsMeasuresPassValue2(v DashboardInputWidgetsMeasuresPassValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardInputWidgetsMeasuresPassValue2 performs a merge with any union data inside the DashboardInput_Widgets_Measures_PassValue, using the provided DashboardInputWidgetsMeasuresPassValue2
+func (t *DashboardInput_Widgets_Measures_PassValue) MergeDashboardInputWidgetsMeasuresPassValue2(v DashboardInputWidgetsMeasuresPassValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardInput_Widgets_Measures_PassValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardInput_Widgets_Measures_PassValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardMeasureConfigPassValue0 returns the union data inside the DashboardMeasureConfig_PassValue as a DashboardMeasureConfigPassValue0
+func (t DashboardMeasureConfig_PassValue) AsDashboardMeasureConfigPassValue0() (DashboardMeasureConfigPassValue0, error) {
+	var body DashboardMeasureConfigPassValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardMeasureConfigPassValue0 overwrites any union data inside the DashboardMeasureConfig_PassValue as the provided DashboardMeasureConfigPassValue0
+func (t *DashboardMeasureConfig_PassValue) FromDashboardMeasureConfigPassValue0(v DashboardMeasureConfigPassValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardMeasureConfigPassValue0 performs a merge with any union data inside the DashboardMeasureConfig_PassValue, using the provided DashboardMeasureConfigPassValue0
+func (t *DashboardMeasureConfig_PassValue) MergeDashboardMeasureConfigPassValue0(v DashboardMeasureConfigPassValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardMeasureConfigPassValue1 returns the union data inside the DashboardMeasureConfig_PassValue as a DashboardMeasureConfigPassValue1
+func (t DashboardMeasureConfig_PassValue) AsDashboardMeasureConfigPassValue1() (DashboardMeasureConfigPassValue1, error) {
+	var body DashboardMeasureConfigPassValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardMeasureConfigPassValue1 overwrites any union data inside the DashboardMeasureConfig_PassValue as the provided DashboardMeasureConfigPassValue1
+func (t *DashboardMeasureConfig_PassValue) FromDashboardMeasureConfigPassValue1(v DashboardMeasureConfigPassValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardMeasureConfigPassValue1 performs a merge with any union data inside the DashboardMeasureConfig_PassValue, using the provided DashboardMeasureConfigPassValue1
+func (t *DashboardMeasureConfig_PassValue) MergeDashboardMeasureConfigPassValue1(v DashboardMeasureConfigPassValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardMeasureConfigPassValue2 returns the union data inside the DashboardMeasureConfig_PassValue as a DashboardMeasureConfigPassValue2
+func (t DashboardMeasureConfig_PassValue) AsDashboardMeasureConfigPassValue2() (DashboardMeasureConfigPassValue2, error) {
+	var body DashboardMeasureConfigPassValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardMeasureConfigPassValue2 overwrites any union data inside the DashboardMeasureConfig_PassValue as the provided DashboardMeasureConfigPassValue2
+func (t *DashboardMeasureConfig_PassValue) FromDashboardMeasureConfigPassValue2(v DashboardMeasureConfigPassValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardMeasureConfigPassValue2 performs a merge with any union data inside the DashboardMeasureConfig_PassValue, using the provided DashboardMeasureConfigPassValue2
+func (t *DashboardMeasureConfig_PassValue) MergeDashboardMeasureConfigPassValue2(v DashboardMeasureConfigPassValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardMeasureConfig_PassValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardMeasureConfig_PassValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardSummaryTimeRange0 returns the union data inside the DashboardSummary_TimeRange as a DashboardSummaryTimeRange0
+func (t DashboardSummary_TimeRange) AsDashboardSummaryTimeRange0() (DashboardSummaryTimeRange0, error) {
+	var body DashboardSummaryTimeRange0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardSummaryTimeRange0 overwrites any union data inside the DashboardSummary_TimeRange as the provided DashboardSummaryTimeRange0
+func (t *DashboardSummary_TimeRange) FromDashboardSummaryTimeRange0(v DashboardSummaryTimeRange0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardSummaryTimeRange0 performs a merge with any union data inside the DashboardSummary_TimeRange, using the provided DashboardSummaryTimeRange0
+func (t *DashboardSummary_TimeRange) MergeDashboardSummaryTimeRange0(v DashboardSummaryTimeRange0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardSummaryTimeRange1 returns the union data inside the DashboardSummary_TimeRange as a DashboardSummaryTimeRange1
+func (t DashboardSummary_TimeRange) AsDashboardSummaryTimeRange1() (DashboardSummaryTimeRange1, error) {
+	var body DashboardSummaryTimeRange1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardSummaryTimeRange1 overwrites any union data inside the DashboardSummary_TimeRange as the provided DashboardSummaryTimeRange1
+func (t *DashboardSummary_TimeRange) FromDashboardSummaryTimeRange1(v DashboardSummaryTimeRange1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardSummaryTimeRange1 performs a merge with any union data inside the DashboardSummary_TimeRange, using the provided DashboardSummaryTimeRange1
+func (t *DashboardSummary_TimeRange) MergeDashboardSummaryTimeRange1(v DashboardSummaryTimeRange1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardSummaryTimeRange2 returns the union data inside the DashboardSummary_TimeRange as a DashboardSummaryTimeRange2
+func (t DashboardSummary_TimeRange) AsDashboardSummaryTimeRange2() (DashboardSummaryTimeRange2, error) {
+	var body DashboardSummaryTimeRange2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardSummaryTimeRange2 overwrites any union data inside the DashboardSummary_TimeRange as the provided DashboardSummaryTimeRange2
+func (t *DashboardSummary_TimeRange) FromDashboardSummaryTimeRange2(v DashboardSummaryTimeRange2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardSummaryTimeRange2 performs a merge with any union data inside the DashboardSummary_TimeRange, using the provided DashboardSummaryTimeRange2
+func (t *DashboardSummary_TimeRange) MergeDashboardSummaryTimeRange2(v DashboardSummaryTimeRange2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardSummaryTimeRange3 returns the union data inside the DashboardSummary_TimeRange as a DashboardSummaryTimeRange3
+func (t DashboardSummary_TimeRange) AsDashboardSummaryTimeRange3() (DashboardSummaryTimeRange3, error) {
+	var body DashboardSummaryTimeRange3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardSummaryTimeRange3 overwrites any union data inside the DashboardSummary_TimeRange as the provided DashboardSummaryTimeRange3
+func (t *DashboardSummary_TimeRange) FromDashboardSummaryTimeRange3(v DashboardSummaryTimeRange3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardSummaryTimeRange3 performs a merge with any union data inside the DashboardSummary_TimeRange, using the provided DashboardSummaryTimeRange3
+func (t *DashboardSummary_TimeRange) MergeDashboardSummaryTimeRange3(v DashboardSummaryTimeRange3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardSummary_TimeRange) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardSummary_TimeRange) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardTimeRangeConfig0 returns the union data inside the DashboardTimeRangeConfig as a DashboardTimeRangeConfig0
+func (t DashboardTimeRangeConfig) AsDashboardTimeRangeConfig0() (DashboardTimeRangeConfig0, error) {
+	var body DashboardTimeRangeConfig0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardTimeRangeConfig0 overwrites any union data inside the DashboardTimeRangeConfig as the provided DashboardTimeRangeConfig0
+func (t *DashboardTimeRangeConfig) FromDashboardTimeRangeConfig0(v DashboardTimeRangeConfig0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardTimeRangeConfig0 performs a merge with any union data inside the DashboardTimeRangeConfig, using the provided DashboardTimeRangeConfig0
+func (t *DashboardTimeRangeConfig) MergeDashboardTimeRangeConfig0(v DashboardTimeRangeConfig0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardTimeRangeConfig1 returns the union data inside the DashboardTimeRangeConfig as a DashboardTimeRangeConfig1
+func (t DashboardTimeRangeConfig) AsDashboardTimeRangeConfig1() (DashboardTimeRangeConfig1, error) {
+	var body DashboardTimeRangeConfig1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardTimeRangeConfig1 overwrites any union data inside the DashboardTimeRangeConfig as the provided DashboardTimeRangeConfig1
+func (t *DashboardTimeRangeConfig) FromDashboardTimeRangeConfig1(v DashboardTimeRangeConfig1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardTimeRangeConfig1 performs a merge with any union data inside the DashboardTimeRangeConfig, using the provided DashboardTimeRangeConfig1
+func (t *DashboardTimeRangeConfig) MergeDashboardTimeRangeConfig1(v DashboardTimeRangeConfig1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardTimeRangeConfig2 returns the union data inside the DashboardTimeRangeConfig as a DashboardTimeRangeConfig2
+func (t DashboardTimeRangeConfig) AsDashboardTimeRangeConfig2() (DashboardTimeRangeConfig2, error) {
+	var body DashboardTimeRangeConfig2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardTimeRangeConfig2 overwrites any union data inside the DashboardTimeRangeConfig as the provided DashboardTimeRangeConfig2
+func (t *DashboardTimeRangeConfig) FromDashboardTimeRangeConfig2(v DashboardTimeRangeConfig2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardTimeRangeConfig2 performs a merge with any union data inside the DashboardTimeRangeConfig, using the provided DashboardTimeRangeConfig2
+func (t *DashboardTimeRangeConfig) MergeDashboardTimeRangeConfig2(v DashboardTimeRangeConfig2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardTimeRangeConfig3 returns the union data inside the DashboardTimeRangeConfig as a DashboardTimeRangeConfig3
+func (t DashboardTimeRangeConfig) AsDashboardTimeRangeConfig3() (DashboardTimeRangeConfig3, error) {
+	var body DashboardTimeRangeConfig3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardTimeRangeConfig3 overwrites any union data inside the DashboardTimeRangeConfig as the provided DashboardTimeRangeConfig3
+func (t *DashboardTimeRangeConfig) FromDashboardTimeRangeConfig3(v DashboardTimeRangeConfig3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardTimeRangeConfig3 performs a merge with any union data inside the DashboardTimeRangeConfig, using the provided DashboardTimeRangeConfig3
+func (t *DashboardTimeRangeConfig) MergeDashboardTimeRangeConfig3(v DashboardTimeRangeConfig3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardTimeRangeConfig) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardTimeRangeConfig) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardWidgetComparisonGroupsFiltersValue0 returns the union data inside the DashboardWidget_ComparisonGroups_Filters_Value as a DashboardWidgetComparisonGroupsFiltersValue0
+func (t DashboardWidget_ComparisonGroups_Filters_Value) AsDashboardWidgetComparisonGroupsFiltersValue0() (DashboardWidgetComparisonGroupsFiltersValue0, error) {
+	var body DashboardWidgetComparisonGroupsFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetComparisonGroupsFiltersValue0 overwrites any union data inside the DashboardWidget_ComparisonGroups_Filters_Value as the provided DashboardWidgetComparisonGroupsFiltersValue0
+func (t *DashboardWidget_ComparisonGroups_Filters_Value) FromDashboardWidgetComparisonGroupsFiltersValue0(v DashboardWidgetComparisonGroupsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetComparisonGroupsFiltersValue0 performs a merge with any union data inside the DashboardWidget_ComparisonGroups_Filters_Value, using the provided DashboardWidgetComparisonGroupsFiltersValue0
+func (t *DashboardWidget_ComparisonGroups_Filters_Value) MergeDashboardWidgetComparisonGroupsFiltersValue0(v DashboardWidgetComparisonGroupsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetComparisonGroupsFiltersValue1 returns the union data inside the DashboardWidget_ComparisonGroups_Filters_Value as a DashboardWidgetComparisonGroupsFiltersValue1
+func (t DashboardWidget_ComparisonGroups_Filters_Value) AsDashboardWidgetComparisonGroupsFiltersValue1() (DashboardWidgetComparisonGroupsFiltersValue1, error) {
+	var body DashboardWidgetComparisonGroupsFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetComparisonGroupsFiltersValue1 overwrites any union data inside the DashboardWidget_ComparisonGroups_Filters_Value as the provided DashboardWidgetComparisonGroupsFiltersValue1
+func (t *DashboardWidget_ComparisonGroups_Filters_Value) FromDashboardWidgetComparisonGroupsFiltersValue1(v DashboardWidgetComparisonGroupsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetComparisonGroupsFiltersValue1 performs a merge with any union data inside the DashboardWidget_ComparisonGroups_Filters_Value, using the provided DashboardWidgetComparisonGroupsFiltersValue1
+func (t *DashboardWidget_ComparisonGroups_Filters_Value) MergeDashboardWidgetComparisonGroupsFiltersValue1(v DashboardWidgetComparisonGroupsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetComparisonGroupsFiltersValue2 returns the union data inside the DashboardWidget_ComparisonGroups_Filters_Value as a DashboardWidgetComparisonGroupsFiltersValue2
+func (t DashboardWidget_ComparisonGroups_Filters_Value) AsDashboardWidgetComparisonGroupsFiltersValue2() (DashboardWidgetComparisonGroupsFiltersValue2, error) {
+	var body DashboardWidgetComparisonGroupsFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetComparisonGroupsFiltersValue2 overwrites any union data inside the DashboardWidget_ComparisonGroups_Filters_Value as the provided DashboardWidgetComparisonGroupsFiltersValue2
+func (t *DashboardWidget_ComparisonGroups_Filters_Value) FromDashboardWidgetComparisonGroupsFiltersValue2(v DashboardWidgetComparisonGroupsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetComparisonGroupsFiltersValue2 performs a merge with any union data inside the DashboardWidget_ComparisonGroups_Filters_Value, using the provided DashboardWidgetComparisonGroupsFiltersValue2
+func (t *DashboardWidget_ComparisonGroups_Filters_Value) MergeDashboardWidgetComparisonGroupsFiltersValue2(v DashboardWidgetComparisonGroupsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardWidget_ComparisonGroups_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardWidget_ComparisonGroups_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardWidgetFiltersValue0 returns the union data inside the DashboardWidget_Filters_Value as a DashboardWidgetFiltersValue0
+func (t DashboardWidget_Filters_Value) AsDashboardWidgetFiltersValue0() (DashboardWidgetFiltersValue0, error) {
+	var body DashboardWidgetFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetFiltersValue0 overwrites any union data inside the DashboardWidget_Filters_Value as the provided DashboardWidgetFiltersValue0
+func (t *DashboardWidget_Filters_Value) FromDashboardWidgetFiltersValue0(v DashboardWidgetFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetFiltersValue0 performs a merge with any union data inside the DashboardWidget_Filters_Value, using the provided DashboardWidgetFiltersValue0
+func (t *DashboardWidget_Filters_Value) MergeDashboardWidgetFiltersValue0(v DashboardWidgetFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetFiltersValue1 returns the union data inside the DashboardWidget_Filters_Value as a DashboardWidgetFiltersValue1
+func (t DashboardWidget_Filters_Value) AsDashboardWidgetFiltersValue1() (DashboardWidgetFiltersValue1, error) {
+	var body DashboardWidgetFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetFiltersValue1 overwrites any union data inside the DashboardWidget_Filters_Value as the provided DashboardWidgetFiltersValue1
+func (t *DashboardWidget_Filters_Value) FromDashboardWidgetFiltersValue1(v DashboardWidgetFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetFiltersValue1 performs a merge with any union data inside the DashboardWidget_Filters_Value, using the provided DashboardWidgetFiltersValue1
+func (t *DashboardWidget_Filters_Value) MergeDashboardWidgetFiltersValue1(v DashboardWidgetFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetFiltersValue2 returns the union data inside the DashboardWidget_Filters_Value as a DashboardWidgetFiltersValue2
+func (t DashboardWidget_Filters_Value) AsDashboardWidgetFiltersValue2() (DashboardWidgetFiltersValue2, error) {
+	var body DashboardWidgetFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetFiltersValue2 overwrites any union data inside the DashboardWidget_Filters_Value as the provided DashboardWidgetFiltersValue2
+func (t *DashboardWidget_Filters_Value) FromDashboardWidgetFiltersValue2(v DashboardWidgetFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetFiltersValue2 performs a merge with any union data inside the DashboardWidget_Filters_Value, using the provided DashboardWidgetFiltersValue2
+func (t *DashboardWidget_Filters_Value) MergeDashboardWidgetFiltersValue2(v DashboardWidgetFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardWidget_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardWidget_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardWidgetMeasuresFiltersValue0 returns the union data inside the DashboardWidget_Measures_Filters_Value as a DashboardWidgetMeasuresFiltersValue0
+func (t DashboardWidget_Measures_Filters_Value) AsDashboardWidgetMeasuresFiltersValue0() (DashboardWidgetMeasuresFiltersValue0, error) {
+	var body DashboardWidgetMeasuresFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetMeasuresFiltersValue0 overwrites any union data inside the DashboardWidget_Measures_Filters_Value as the provided DashboardWidgetMeasuresFiltersValue0
+func (t *DashboardWidget_Measures_Filters_Value) FromDashboardWidgetMeasuresFiltersValue0(v DashboardWidgetMeasuresFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetMeasuresFiltersValue0 performs a merge with any union data inside the DashboardWidget_Measures_Filters_Value, using the provided DashboardWidgetMeasuresFiltersValue0
+func (t *DashboardWidget_Measures_Filters_Value) MergeDashboardWidgetMeasuresFiltersValue0(v DashboardWidgetMeasuresFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetMeasuresFiltersValue1 returns the union data inside the DashboardWidget_Measures_Filters_Value as a DashboardWidgetMeasuresFiltersValue1
+func (t DashboardWidget_Measures_Filters_Value) AsDashboardWidgetMeasuresFiltersValue1() (DashboardWidgetMeasuresFiltersValue1, error) {
+	var body DashboardWidgetMeasuresFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetMeasuresFiltersValue1 overwrites any union data inside the DashboardWidget_Measures_Filters_Value as the provided DashboardWidgetMeasuresFiltersValue1
+func (t *DashboardWidget_Measures_Filters_Value) FromDashboardWidgetMeasuresFiltersValue1(v DashboardWidgetMeasuresFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetMeasuresFiltersValue1 performs a merge with any union data inside the DashboardWidget_Measures_Filters_Value, using the provided DashboardWidgetMeasuresFiltersValue1
+func (t *DashboardWidget_Measures_Filters_Value) MergeDashboardWidgetMeasuresFiltersValue1(v DashboardWidgetMeasuresFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetMeasuresFiltersValue2 returns the union data inside the DashboardWidget_Measures_Filters_Value as a DashboardWidgetMeasuresFiltersValue2
+func (t DashboardWidget_Measures_Filters_Value) AsDashboardWidgetMeasuresFiltersValue2() (DashboardWidgetMeasuresFiltersValue2, error) {
+	var body DashboardWidgetMeasuresFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetMeasuresFiltersValue2 overwrites any union data inside the DashboardWidget_Measures_Filters_Value as the provided DashboardWidgetMeasuresFiltersValue2
+func (t *DashboardWidget_Measures_Filters_Value) FromDashboardWidgetMeasuresFiltersValue2(v DashboardWidgetMeasuresFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetMeasuresFiltersValue2 performs a merge with any union data inside the DashboardWidget_Measures_Filters_Value, using the provided DashboardWidgetMeasuresFiltersValue2
+func (t *DashboardWidget_Measures_Filters_Value) MergeDashboardWidgetMeasuresFiltersValue2(v DashboardWidgetMeasuresFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardWidget_Measures_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardWidget_Measures_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardWidgetMeasuresPassValue0 returns the union data inside the DashboardWidget_Measures_PassValue as a DashboardWidgetMeasuresPassValue0
+func (t DashboardWidget_Measures_PassValue) AsDashboardWidgetMeasuresPassValue0() (DashboardWidgetMeasuresPassValue0, error) {
+	var body DashboardWidgetMeasuresPassValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetMeasuresPassValue0 overwrites any union data inside the DashboardWidget_Measures_PassValue as the provided DashboardWidgetMeasuresPassValue0
+func (t *DashboardWidget_Measures_PassValue) FromDashboardWidgetMeasuresPassValue0(v DashboardWidgetMeasuresPassValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetMeasuresPassValue0 performs a merge with any union data inside the DashboardWidget_Measures_PassValue, using the provided DashboardWidgetMeasuresPassValue0
+func (t *DashboardWidget_Measures_PassValue) MergeDashboardWidgetMeasuresPassValue0(v DashboardWidgetMeasuresPassValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetMeasuresPassValue1 returns the union data inside the DashboardWidget_Measures_PassValue as a DashboardWidgetMeasuresPassValue1
+func (t DashboardWidget_Measures_PassValue) AsDashboardWidgetMeasuresPassValue1() (DashboardWidgetMeasuresPassValue1, error) {
+	var body DashboardWidgetMeasuresPassValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetMeasuresPassValue1 overwrites any union data inside the DashboardWidget_Measures_PassValue as the provided DashboardWidgetMeasuresPassValue1
+func (t *DashboardWidget_Measures_PassValue) FromDashboardWidgetMeasuresPassValue1(v DashboardWidgetMeasuresPassValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetMeasuresPassValue1 performs a merge with any union data inside the DashboardWidget_Measures_PassValue, using the provided DashboardWidgetMeasuresPassValue1
+func (t *DashboardWidget_Measures_PassValue) MergeDashboardWidgetMeasuresPassValue1(v DashboardWidgetMeasuresPassValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetMeasuresPassValue2 returns the union data inside the DashboardWidget_Measures_PassValue as a DashboardWidgetMeasuresPassValue2
+func (t DashboardWidget_Measures_PassValue) AsDashboardWidgetMeasuresPassValue2() (DashboardWidgetMeasuresPassValue2, error) {
+	var body DashboardWidgetMeasuresPassValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetMeasuresPassValue2 overwrites any union data inside the DashboardWidget_Measures_PassValue as the provided DashboardWidgetMeasuresPassValue2
+func (t *DashboardWidget_Measures_PassValue) FromDashboardWidgetMeasuresPassValue2(v DashboardWidgetMeasuresPassValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetMeasuresPassValue2 performs a merge with any union data inside the DashboardWidget_Measures_PassValue, using the provided DashboardWidgetMeasuresPassValue2
+func (t *DashboardWidget_Measures_PassValue) MergeDashboardWidgetMeasuresPassValue2(v DashboardWidgetMeasuresPassValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardWidget_Measures_PassValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardWidget_Measures_PassValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardWidgetInputComparisonGroupsFiltersValue0 returns the union data inside the DashboardWidgetInput_ComparisonGroups_Filters_Value as a DashboardWidgetInputComparisonGroupsFiltersValue0
+func (t DashboardWidgetInput_ComparisonGroups_Filters_Value) AsDashboardWidgetInputComparisonGroupsFiltersValue0() (DashboardWidgetInputComparisonGroupsFiltersValue0, error) {
+	var body DashboardWidgetInputComparisonGroupsFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetInputComparisonGroupsFiltersValue0 overwrites any union data inside the DashboardWidgetInput_ComparisonGroups_Filters_Value as the provided DashboardWidgetInputComparisonGroupsFiltersValue0
+func (t *DashboardWidgetInput_ComparisonGroups_Filters_Value) FromDashboardWidgetInputComparisonGroupsFiltersValue0(v DashboardWidgetInputComparisonGroupsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetInputComparisonGroupsFiltersValue0 performs a merge with any union data inside the DashboardWidgetInput_ComparisonGroups_Filters_Value, using the provided DashboardWidgetInputComparisonGroupsFiltersValue0
+func (t *DashboardWidgetInput_ComparisonGroups_Filters_Value) MergeDashboardWidgetInputComparisonGroupsFiltersValue0(v DashboardWidgetInputComparisonGroupsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetInputComparisonGroupsFiltersValue1 returns the union data inside the DashboardWidgetInput_ComparisonGroups_Filters_Value as a DashboardWidgetInputComparisonGroupsFiltersValue1
+func (t DashboardWidgetInput_ComparisonGroups_Filters_Value) AsDashboardWidgetInputComparisonGroupsFiltersValue1() (DashboardWidgetInputComparisonGroupsFiltersValue1, error) {
+	var body DashboardWidgetInputComparisonGroupsFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetInputComparisonGroupsFiltersValue1 overwrites any union data inside the DashboardWidgetInput_ComparisonGroups_Filters_Value as the provided DashboardWidgetInputComparisonGroupsFiltersValue1
+func (t *DashboardWidgetInput_ComparisonGroups_Filters_Value) FromDashboardWidgetInputComparisonGroupsFiltersValue1(v DashboardWidgetInputComparisonGroupsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetInputComparisonGroupsFiltersValue1 performs a merge with any union data inside the DashboardWidgetInput_ComparisonGroups_Filters_Value, using the provided DashboardWidgetInputComparisonGroupsFiltersValue1
+func (t *DashboardWidgetInput_ComparisonGroups_Filters_Value) MergeDashboardWidgetInputComparisonGroupsFiltersValue1(v DashboardWidgetInputComparisonGroupsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetInputComparisonGroupsFiltersValue2 returns the union data inside the DashboardWidgetInput_ComparisonGroups_Filters_Value as a DashboardWidgetInputComparisonGroupsFiltersValue2
+func (t DashboardWidgetInput_ComparisonGroups_Filters_Value) AsDashboardWidgetInputComparisonGroupsFiltersValue2() (DashboardWidgetInputComparisonGroupsFiltersValue2, error) {
+	var body DashboardWidgetInputComparisonGroupsFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetInputComparisonGroupsFiltersValue2 overwrites any union data inside the DashboardWidgetInput_ComparisonGroups_Filters_Value as the provided DashboardWidgetInputComparisonGroupsFiltersValue2
+func (t *DashboardWidgetInput_ComparisonGroups_Filters_Value) FromDashboardWidgetInputComparisonGroupsFiltersValue2(v DashboardWidgetInputComparisonGroupsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetInputComparisonGroupsFiltersValue2 performs a merge with any union data inside the DashboardWidgetInput_ComparisonGroups_Filters_Value, using the provided DashboardWidgetInputComparisonGroupsFiltersValue2
+func (t *DashboardWidgetInput_ComparisonGroups_Filters_Value) MergeDashboardWidgetInputComparisonGroupsFiltersValue2(v DashboardWidgetInputComparisonGroupsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardWidgetInput_ComparisonGroups_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardWidgetInput_ComparisonGroups_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardWidgetInputFiltersValue0 returns the union data inside the DashboardWidgetInput_Filters_Value as a DashboardWidgetInputFiltersValue0
+func (t DashboardWidgetInput_Filters_Value) AsDashboardWidgetInputFiltersValue0() (DashboardWidgetInputFiltersValue0, error) {
+	var body DashboardWidgetInputFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetInputFiltersValue0 overwrites any union data inside the DashboardWidgetInput_Filters_Value as the provided DashboardWidgetInputFiltersValue0
+func (t *DashboardWidgetInput_Filters_Value) FromDashboardWidgetInputFiltersValue0(v DashboardWidgetInputFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetInputFiltersValue0 performs a merge with any union data inside the DashboardWidgetInput_Filters_Value, using the provided DashboardWidgetInputFiltersValue0
+func (t *DashboardWidgetInput_Filters_Value) MergeDashboardWidgetInputFiltersValue0(v DashboardWidgetInputFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetInputFiltersValue1 returns the union data inside the DashboardWidgetInput_Filters_Value as a DashboardWidgetInputFiltersValue1
+func (t DashboardWidgetInput_Filters_Value) AsDashboardWidgetInputFiltersValue1() (DashboardWidgetInputFiltersValue1, error) {
+	var body DashboardWidgetInputFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetInputFiltersValue1 overwrites any union data inside the DashboardWidgetInput_Filters_Value as the provided DashboardWidgetInputFiltersValue1
+func (t *DashboardWidgetInput_Filters_Value) FromDashboardWidgetInputFiltersValue1(v DashboardWidgetInputFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetInputFiltersValue1 performs a merge with any union data inside the DashboardWidgetInput_Filters_Value, using the provided DashboardWidgetInputFiltersValue1
+func (t *DashboardWidgetInput_Filters_Value) MergeDashboardWidgetInputFiltersValue1(v DashboardWidgetInputFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetInputFiltersValue2 returns the union data inside the DashboardWidgetInput_Filters_Value as a DashboardWidgetInputFiltersValue2
+func (t DashboardWidgetInput_Filters_Value) AsDashboardWidgetInputFiltersValue2() (DashboardWidgetInputFiltersValue2, error) {
+	var body DashboardWidgetInputFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetInputFiltersValue2 overwrites any union data inside the DashboardWidgetInput_Filters_Value as the provided DashboardWidgetInputFiltersValue2
+func (t *DashboardWidgetInput_Filters_Value) FromDashboardWidgetInputFiltersValue2(v DashboardWidgetInputFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetInputFiltersValue2 performs a merge with any union data inside the DashboardWidgetInput_Filters_Value, using the provided DashboardWidgetInputFiltersValue2
+func (t *DashboardWidgetInput_Filters_Value) MergeDashboardWidgetInputFiltersValue2(v DashboardWidgetInputFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardWidgetInput_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardWidgetInput_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardWidgetInputMeasuresFiltersValue0 returns the union data inside the DashboardWidgetInput_Measures_Filters_Value as a DashboardWidgetInputMeasuresFiltersValue0
+func (t DashboardWidgetInput_Measures_Filters_Value) AsDashboardWidgetInputMeasuresFiltersValue0() (DashboardWidgetInputMeasuresFiltersValue0, error) {
+	var body DashboardWidgetInputMeasuresFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetInputMeasuresFiltersValue0 overwrites any union data inside the DashboardWidgetInput_Measures_Filters_Value as the provided DashboardWidgetInputMeasuresFiltersValue0
+func (t *DashboardWidgetInput_Measures_Filters_Value) FromDashboardWidgetInputMeasuresFiltersValue0(v DashboardWidgetInputMeasuresFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetInputMeasuresFiltersValue0 performs a merge with any union data inside the DashboardWidgetInput_Measures_Filters_Value, using the provided DashboardWidgetInputMeasuresFiltersValue0
+func (t *DashboardWidgetInput_Measures_Filters_Value) MergeDashboardWidgetInputMeasuresFiltersValue0(v DashboardWidgetInputMeasuresFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetInputMeasuresFiltersValue1 returns the union data inside the DashboardWidgetInput_Measures_Filters_Value as a DashboardWidgetInputMeasuresFiltersValue1
+func (t DashboardWidgetInput_Measures_Filters_Value) AsDashboardWidgetInputMeasuresFiltersValue1() (DashboardWidgetInputMeasuresFiltersValue1, error) {
+	var body DashboardWidgetInputMeasuresFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetInputMeasuresFiltersValue1 overwrites any union data inside the DashboardWidgetInput_Measures_Filters_Value as the provided DashboardWidgetInputMeasuresFiltersValue1
+func (t *DashboardWidgetInput_Measures_Filters_Value) FromDashboardWidgetInputMeasuresFiltersValue1(v DashboardWidgetInputMeasuresFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetInputMeasuresFiltersValue1 performs a merge with any union data inside the DashboardWidgetInput_Measures_Filters_Value, using the provided DashboardWidgetInputMeasuresFiltersValue1
+func (t *DashboardWidgetInput_Measures_Filters_Value) MergeDashboardWidgetInputMeasuresFiltersValue1(v DashboardWidgetInputMeasuresFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetInputMeasuresFiltersValue2 returns the union data inside the DashboardWidgetInput_Measures_Filters_Value as a DashboardWidgetInputMeasuresFiltersValue2
+func (t DashboardWidgetInput_Measures_Filters_Value) AsDashboardWidgetInputMeasuresFiltersValue2() (DashboardWidgetInputMeasuresFiltersValue2, error) {
+	var body DashboardWidgetInputMeasuresFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetInputMeasuresFiltersValue2 overwrites any union data inside the DashboardWidgetInput_Measures_Filters_Value as the provided DashboardWidgetInputMeasuresFiltersValue2
+func (t *DashboardWidgetInput_Measures_Filters_Value) FromDashboardWidgetInputMeasuresFiltersValue2(v DashboardWidgetInputMeasuresFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetInputMeasuresFiltersValue2 performs a merge with any union data inside the DashboardWidgetInput_Measures_Filters_Value, using the provided DashboardWidgetInputMeasuresFiltersValue2
+func (t *DashboardWidgetInput_Measures_Filters_Value) MergeDashboardWidgetInputMeasuresFiltersValue2(v DashboardWidgetInputMeasuresFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardWidgetInput_Measures_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardWidgetInput_Measures_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashboardWidgetInputMeasuresPassValue0 returns the union data inside the DashboardWidgetInput_Measures_PassValue as a DashboardWidgetInputMeasuresPassValue0
+func (t DashboardWidgetInput_Measures_PassValue) AsDashboardWidgetInputMeasuresPassValue0() (DashboardWidgetInputMeasuresPassValue0, error) {
+	var body DashboardWidgetInputMeasuresPassValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetInputMeasuresPassValue0 overwrites any union data inside the DashboardWidgetInput_Measures_PassValue as the provided DashboardWidgetInputMeasuresPassValue0
+func (t *DashboardWidgetInput_Measures_PassValue) FromDashboardWidgetInputMeasuresPassValue0(v DashboardWidgetInputMeasuresPassValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetInputMeasuresPassValue0 performs a merge with any union data inside the DashboardWidgetInput_Measures_PassValue, using the provided DashboardWidgetInputMeasuresPassValue0
+func (t *DashboardWidgetInput_Measures_PassValue) MergeDashboardWidgetInputMeasuresPassValue0(v DashboardWidgetInputMeasuresPassValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetInputMeasuresPassValue1 returns the union data inside the DashboardWidgetInput_Measures_PassValue as a DashboardWidgetInputMeasuresPassValue1
+func (t DashboardWidgetInput_Measures_PassValue) AsDashboardWidgetInputMeasuresPassValue1() (DashboardWidgetInputMeasuresPassValue1, error) {
+	var body DashboardWidgetInputMeasuresPassValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetInputMeasuresPassValue1 overwrites any union data inside the DashboardWidgetInput_Measures_PassValue as the provided DashboardWidgetInputMeasuresPassValue1
+func (t *DashboardWidgetInput_Measures_PassValue) FromDashboardWidgetInputMeasuresPassValue1(v DashboardWidgetInputMeasuresPassValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetInputMeasuresPassValue1 performs a merge with any union data inside the DashboardWidgetInput_Measures_PassValue, using the provided DashboardWidgetInputMeasuresPassValue1
+func (t *DashboardWidgetInput_Measures_PassValue) MergeDashboardWidgetInputMeasuresPassValue1(v DashboardWidgetInputMeasuresPassValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashboardWidgetInputMeasuresPassValue2 returns the union data inside the DashboardWidgetInput_Measures_PassValue as a DashboardWidgetInputMeasuresPassValue2
+func (t DashboardWidgetInput_Measures_PassValue) AsDashboardWidgetInputMeasuresPassValue2() (DashboardWidgetInputMeasuresPassValue2, error) {
+	var body DashboardWidgetInputMeasuresPassValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardWidgetInputMeasuresPassValue2 overwrites any union data inside the DashboardWidgetInput_Measures_PassValue as the provided DashboardWidgetInputMeasuresPassValue2
+func (t *DashboardWidgetInput_Measures_PassValue) FromDashboardWidgetInputMeasuresPassValue2(v DashboardWidgetInputMeasuresPassValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardWidgetInputMeasuresPassValue2 performs a merge with any union data inside the DashboardWidgetInput_Measures_PassValue, using the provided DashboardWidgetInputMeasuresPassValue2
+func (t *DashboardWidgetInput_Measures_PassValue) MergeDashboardWidgetInputMeasuresPassValue2(v DashboardWidgetInputMeasuresPassValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashboardWidgetInput_Measures_PassValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashboardWidgetInput_Measures_PassValue) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -32861,6 +43225,32 @@ func (t *ProjectConfig_Resources_Item) MergeToolConfig(v ToolConfig) error {
 	return err
 }
 
+// AsDashboardConfig returns the union data inside the ProjectConfig_Resources_Item as a DashboardConfig
+func (t ProjectConfig_Resources_Item) AsDashboardConfig() (DashboardConfig, error) {
+	var body DashboardConfig
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashboardConfig overwrites any union data inside the ProjectConfig_Resources_Item as the provided DashboardConfig
+func (t *ProjectConfig_Resources_Item) FromDashboardConfig(v DashboardConfig) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashboardConfig performs a merge with any union data inside the ProjectConfig_Resources_Item, using the provided DashboardConfig
+func (t *ProjectConfig_Resources_Item) MergeDashboardConfig(v DashboardConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t ProjectConfig_Resources_Item) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -33949,6 +44339,560 @@ func (t UpdateCallPropertiesRequest_Properties_AdditionalProperties) MarshalJSON
 }
 
 func (t *UpdateCallPropertiesRequest_Properties_AdditionalProperties) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateDashboardInputFiltersValue0 returns the union data inside the UpdateDashboardInput_Filters_Value as a UpdateDashboardInputFiltersValue0
+func (t UpdateDashboardInput_Filters_Value) AsUpdateDashboardInputFiltersValue0() (UpdateDashboardInputFiltersValue0, error) {
+	var body UpdateDashboardInputFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputFiltersValue0 overwrites any union data inside the UpdateDashboardInput_Filters_Value as the provided UpdateDashboardInputFiltersValue0
+func (t *UpdateDashboardInput_Filters_Value) FromUpdateDashboardInputFiltersValue0(v UpdateDashboardInputFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputFiltersValue0 performs a merge with any union data inside the UpdateDashboardInput_Filters_Value, using the provided UpdateDashboardInputFiltersValue0
+func (t *UpdateDashboardInput_Filters_Value) MergeUpdateDashboardInputFiltersValue0(v UpdateDashboardInputFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputFiltersValue1 returns the union data inside the UpdateDashboardInput_Filters_Value as a UpdateDashboardInputFiltersValue1
+func (t UpdateDashboardInput_Filters_Value) AsUpdateDashboardInputFiltersValue1() (UpdateDashboardInputFiltersValue1, error) {
+	var body UpdateDashboardInputFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputFiltersValue1 overwrites any union data inside the UpdateDashboardInput_Filters_Value as the provided UpdateDashboardInputFiltersValue1
+func (t *UpdateDashboardInput_Filters_Value) FromUpdateDashboardInputFiltersValue1(v UpdateDashboardInputFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputFiltersValue1 performs a merge with any union data inside the UpdateDashboardInput_Filters_Value, using the provided UpdateDashboardInputFiltersValue1
+func (t *UpdateDashboardInput_Filters_Value) MergeUpdateDashboardInputFiltersValue1(v UpdateDashboardInputFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputFiltersValue2 returns the union data inside the UpdateDashboardInput_Filters_Value as a UpdateDashboardInputFiltersValue2
+func (t UpdateDashboardInput_Filters_Value) AsUpdateDashboardInputFiltersValue2() (UpdateDashboardInputFiltersValue2, error) {
+	var body UpdateDashboardInputFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputFiltersValue2 overwrites any union data inside the UpdateDashboardInput_Filters_Value as the provided UpdateDashboardInputFiltersValue2
+func (t *UpdateDashboardInput_Filters_Value) FromUpdateDashboardInputFiltersValue2(v UpdateDashboardInputFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputFiltersValue2 performs a merge with any union data inside the UpdateDashboardInput_Filters_Value, using the provided UpdateDashboardInputFiltersValue2
+func (t *UpdateDashboardInput_Filters_Value) MergeUpdateDashboardInputFiltersValue2(v UpdateDashboardInputFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateDashboardInput_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateDashboardInput_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateDashboardInputTimeRange0 returns the union data inside the UpdateDashboardInput_TimeRange as a UpdateDashboardInputTimeRange0
+func (t UpdateDashboardInput_TimeRange) AsUpdateDashboardInputTimeRange0() (UpdateDashboardInputTimeRange0, error) {
+	var body UpdateDashboardInputTimeRange0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputTimeRange0 overwrites any union data inside the UpdateDashboardInput_TimeRange as the provided UpdateDashboardInputTimeRange0
+func (t *UpdateDashboardInput_TimeRange) FromUpdateDashboardInputTimeRange0(v UpdateDashboardInputTimeRange0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputTimeRange0 performs a merge with any union data inside the UpdateDashboardInput_TimeRange, using the provided UpdateDashboardInputTimeRange0
+func (t *UpdateDashboardInput_TimeRange) MergeUpdateDashboardInputTimeRange0(v UpdateDashboardInputTimeRange0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputTimeRange1 returns the union data inside the UpdateDashboardInput_TimeRange as a UpdateDashboardInputTimeRange1
+func (t UpdateDashboardInput_TimeRange) AsUpdateDashboardInputTimeRange1() (UpdateDashboardInputTimeRange1, error) {
+	var body UpdateDashboardInputTimeRange1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputTimeRange1 overwrites any union data inside the UpdateDashboardInput_TimeRange as the provided UpdateDashboardInputTimeRange1
+func (t *UpdateDashboardInput_TimeRange) FromUpdateDashboardInputTimeRange1(v UpdateDashboardInputTimeRange1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputTimeRange1 performs a merge with any union data inside the UpdateDashboardInput_TimeRange, using the provided UpdateDashboardInputTimeRange1
+func (t *UpdateDashboardInput_TimeRange) MergeUpdateDashboardInputTimeRange1(v UpdateDashboardInputTimeRange1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputTimeRange2 returns the union data inside the UpdateDashboardInput_TimeRange as a UpdateDashboardInputTimeRange2
+func (t UpdateDashboardInput_TimeRange) AsUpdateDashboardInputTimeRange2() (UpdateDashboardInputTimeRange2, error) {
+	var body UpdateDashboardInputTimeRange2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputTimeRange2 overwrites any union data inside the UpdateDashboardInput_TimeRange as the provided UpdateDashboardInputTimeRange2
+func (t *UpdateDashboardInput_TimeRange) FromUpdateDashboardInputTimeRange2(v UpdateDashboardInputTimeRange2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputTimeRange2 performs a merge with any union data inside the UpdateDashboardInput_TimeRange, using the provided UpdateDashboardInputTimeRange2
+func (t *UpdateDashboardInput_TimeRange) MergeUpdateDashboardInputTimeRange2(v UpdateDashboardInputTimeRange2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputTimeRange3 returns the union data inside the UpdateDashboardInput_TimeRange as a UpdateDashboardInputTimeRange3
+func (t UpdateDashboardInput_TimeRange) AsUpdateDashboardInputTimeRange3() (UpdateDashboardInputTimeRange3, error) {
+	var body UpdateDashboardInputTimeRange3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputTimeRange3 overwrites any union data inside the UpdateDashboardInput_TimeRange as the provided UpdateDashboardInputTimeRange3
+func (t *UpdateDashboardInput_TimeRange) FromUpdateDashboardInputTimeRange3(v UpdateDashboardInputTimeRange3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputTimeRange3 performs a merge with any union data inside the UpdateDashboardInput_TimeRange, using the provided UpdateDashboardInputTimeRange3
+func (t *UpdateDashboardInput_TimeRange) MergeUpdateDashboardInputTimeRange3(v UpdateDashboardInputTimeRange3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateDashboardInput_TimeRange) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateDashboardInput_TimeRange) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateDashboardInputWidgetsComparisonGroupsFiltersValue0 returns the union data inside the UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value as a UpdateDashboardInputWidgetsComparisonGroupsFiltersValue0
+func (t UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value) AsUpdateDashboardInputWidgetsComparisonGroupsFiltersValue0() (UpdateDashboardInputWidgetsComparisonGroupsFiltersValue0, error) {
+	var body UpdateDashboardInputWidgetsComparisonGroupsFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputWidgetsComparisonGroupsFiltersValue0 overwrites any union data inside the UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value as the provided UpdateDashboardInputWidgetsComparisonGroupsFiltersValue0
+func (t *UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value) FromUpdateDashboardInputWidgetsComparisonGroupsFiltersValue0(v UpdateDashboardInputWidgetsComparisonGroupsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputWidgetsComparisonGroupsFiltersValue0 performs a merge with any union data inside the UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value, using the provided UpdateDashboardInputWidgetsComparisonGroupsFiltersValue0
+func (t *UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value) MergeUpdateDashboardInputWidgetsComparisonGroupsFiltersValue0(v UpdateDashboardInputWidgetsComparisonGroupsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputWidgetsComparisonGroupsFiltersValue1 returns the union data inside the UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value as a UpdateDashboardInputWidgetsComparisonGroupsFiltersValue1
+func (t UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value) AsUpdateDashboardInputWidgetsComparisonGroupsFiltersValue1() (UpdateDashboardInputWidgetsComparisonGroupsFiltersValue1, error) {
+	var body UpdateDashboardInputWidgetsComparisonGroupsFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputWidgetsComparisonGroupsFiltersValue1 overwrites any union data inside the UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value as the provided UpdateDashboardInputWidgetsComparisonGroupsFiltersValue1
+func (t *UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value) FromUpdateDashboardInputWidgetsComparisonGroupsFiltersValue1(v UpdateDashboardInputWidgetsComparisonGroupsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputWidgetsComparisonGroupsFiltersValue1 performs a merge with any union data inside the UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value, using the provided UpdateDashboardInputWidgetsComparisonGroupsFiltersValue1
+func (t *UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value) MergeUpdateDashboardInputWidgetsComparisonGroupsFiltersValue1(v UpdateDashboardInputWidgetsComparisonGroupsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputWidgetsComparisonGroupsFiltersValue2 returns the union data inside the UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value as a UpdateDashboardInputWidgetsComparisonGroupsFiltersValue2
+func (t UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value) AsUpdateDashboardInputWidgetsComparisonGroupsFiltersValue2() (UpdateDashboardInputWidgetsComparisonGroupsFiltersValue2, error) {
+	var body UpdateDashboardInputWidgetsComparisonGroupsFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputWidgetsComparisonGroupsFiltersValue2 overwrites any union data inside the UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value as the provided UpdateDashboardInputWidgetsComparisonGroupsFiltersValue2
+func (t *UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value) FromUpdateDashboardInputWidgetsComparisonGroupsFiltersValue2(v UpdateDashboardInputWidgetsComparisonGroupsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputWidgetsComparisonGroupsFiltersValue2 performs a merge with any union data inside the UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value, using the provided UpdateDashboardInputWidgetsComparisonGroupsFiltersValue2
+func (t *UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value) MergeUpdateDashboardInputWidgetsComparisonGroupsFiltersValue2(v UpdateDashboardInputWidgetsComparisonGroupsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateDashboardInputWidgetsFiltersValue0 returns the union data inside the UpdateDashboardInput_Widgets_Filters_Value as a UpdateDashboardInputWidgetsFiltersValue0
+func (t UpdateDashboardInput_Widgets_Filters_Value) AsUpdateDashboardInputWidgetsFiltersValue0() (UpdateDashboardInputWidgetsFiltersValue0, error) {
+	var body UpdateDashboardInputWidgetsFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputWidgetsFiltersValue0 overwrites any union data inside the UpdateDashboardInput_Widgets_Filters_Value as the provided UpdateDashboardInputWidgetsFiltersValue0
+func (t *UpdateDashboardInput_Widgets_Filters_Value) FromUpdateDashboardInputWidgetsFiltersValue0(v UpdateDashboardInputWidgetsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputWidgetsFiltersValue0 performs a merge with any union data inside the UpdateDashboardInput_Widgets_Filters_Value, using the provided UpdateDashboardInputWidgetsFiltersValue0
+func (t *UpdateDashboardInput_Widgets_Filters_Value) MergeUpdateDashboardInputWidgetsFiltersValue0(v UpdateDashboardInputWidgetsFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputWidgetsFiltersValue1 returns the union data inside the UpdateDashboardInput_Widgets_Filters_Value as a UpdateDashboardInputWidgetsFiltersValue1
+func (t UpdateDashboardInput_Widgets_Filters_Value) AsUpdateDashboardInputWidgetsFiltersValue1() (UpdateDashboardInputWidgetsFiltersValue1, error) {
+	var body UpdateDashboardInputWidgetsFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputWidgetsFiltersValue1 overwrites any union data inside the UpdateDashboardInput_Widgets_Filters_Value as the provided UpdateDashboardInputWidgetsFiltersValue1
+func (t *UpdateDashboardInput_Widgets_Filters_Value) FromUpdateDashboardInputWidgetsFiltersValue1(v UpdateDashboardInputWidgetsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputWidgetsFiltersValue1 performs a merge with any union data inside the UpdateDashboardInput_Widgets_Filters_Value, using the provided UpdateDashboardInputWidgetsFiltersValue1
+func (t *UpdateDashboardInput_Widgets_Filters_Value) MergeUpdateDashboardInputWidgetsFiltersValue1(v UpdateDashboardInputWidgetsFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputWidgetsFiltersValue2 returns the union data inside the UpdateDashboardInput_Widgets_Filters_Value as a UpdateDashboardInputWidgetsFiltersValue2
+func (t UpdateDashboardInput_Widgets_Filters_Value) AsUpdateDashboardInputWidgetsFiltersValue2() (UpdateDashboardInputWidgetsFiltersValue2, error) {
+	var body UpdateDashboardInputWidgetsFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputWidgetsFiltersValue2 overwrites any union data inside the UpdateDashboardInput_Widgets_Filters_Value as the provided UpdateDashboardInputWidgetsFiltersValue2
+func (t *UpdateDashboardInput_Widgets_Filters_Value) FromUpdateDashboardInputWidgetsFiltersValue2(v UpdateDashboardInputWidgetsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputWidgetsFiltersValue2 performs a merge with any union data inside the UpdateDashboardInput_Widgets_Filters_Value, using the provided UpdateDashboardInputWidgetsFiltersValue2
+func (t *UpdateDashboardInput_Widgets_Filters_Value) MergeUpdateDashboardInputWidgetsFiltersValue2(v UpdateDashboardInputWidgetsFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateDashboardInput_Widgets_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateDashboardInput_Widgets_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateDashboardInputWidgetsMeasuresFiltersValue0 returns the union data inside the UpdateDashboardInput_Widgets_Measures_Filters_Value as a UpdateDashboardInputWidgetsMeasuresFiltersValue0
+func (t UpdateDashboardInput_Widgets_Measures_Filters_Value) AsUpdateDashboardInputWidgetsMeasuresFiltersValue0() (UpdateDashboardInputWidgetsMeasuresFiltersValue0, error) {
+	var body UpdateDashboardInputWidgetsMeasuresFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputWidgetsMeasuresFiltersValue0 overwrites any union data inside the UpdateDashboardInput_Widgets_Measures_Filters_Value as the provided UpdateDashboardInputWidgetsMeasuresFiltersValue0
+func (t *UpdateDashboardInput_Widgets_Measures_Filters_Value) FromUpdateDashboardInputWidgetsMeasuresFiltersValue0(v UpdateDashboardInputWidgetsMeasuresFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputWidgetsMeasuresFiltersValue0 performs a merge with any union data inside the UpdateDashboardInput_Widgets_Measures_Filters_Value, using the provided UpdateDashboardInputWidgetsMeasuresFiltersValue0
+func (t *UpdateDashboardInput_Widgets_Measures_Filters_Value) MergeUpdateDashboardInputWidgetsMeasuresFiltersValue0(v UpdateDashboardInputWidgetsMeasuresFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputWidgetsMeasuresFiltersValue1 returns the union data inside the UpdateDashboardInput_Widgets_Measures_Filters_Value as a UpdateDashboardInputWidgetsMeasuresFiltersValue1
+func (t UpdateDashboardInput_Widgets_Measures_Filters_Value) AsUpdateDashboardInputWidgetsMeasuresFiltersValue1() (UpdateDashboardInputWidgetsMeasuresFiltersValue1, error) {
+	var body UpdateDashboardInputWidgetsMeasuresFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputWidgetsMeasuresFiltersValue1 overwrites any union data inside the UpdateDashboardInput_Widgets_Measures_Filters_Value as the provided UpdateDashboardInputWidgetsMeasuresFiltersValue1
+func (t *UpdateDashboardInput_Widgets_Measures_Filters_Value) FromUpdateDashboardInputWidgetsMeasuresFiltersValue1(v UpdateDashboardInputWidgetsMeasuresFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputWidgetsMeasuresFiltersValue1 performs a merge with any union data inside the UpdateDashboardInput_Widgets_Measures_Filters_Value, using the provided UpdateDashboardInputWidgetsMeasuresFiltersValue1
+func (t *UpdateDashboardInput_Widgets_Measures_Filters_Value) MergeUpdateDashboardInputWidgetsMeasuresFiltersValue1(v UpdateDashboardInputWidgetsMeasuresFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputWidgetsMeasuresFiltersValue2 returns the union data inside the UpdateDashboardInput_Widgets_Measures_Filters_Value as a UpdateDashboardInputWidgetsMeasuresFiltersValue2
+func (t UpdateDashboardInput_Widgets_Measures_Filters_Value) AsUpdateDashboardInputWidgetsMeasuresFiltersValue2() (UpdateDashboardInputWidgetsMeasuresFiltersValue2, error) {
+	var body UpdateDashboardInputWidgetsMeasuresFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputWidgetsMeasuresFiltersValue2 overwrites any union data inside the UpdateDashboardInput_Widgets_Measures_Filters_Value as the provided UpdateDashboardInputWidgetsMeasuresFiltersValue2
+func (t *UpdateDashboardInput_Widgets_Measures_Filters_Value) FromUpdateDashboardInputWidgetsMeasuresFiltersValue2(v UpdateDashboardInputWidgetsMeasuresFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputWidgetsMeasuresFiltersValue2 performs a merge with any union data inside the UpdateDashboardInput_Widgets_Measures_Filters_Value, using the provided UpdateDashboardInputWidgetsMeasuresFiltersValue2
+func (t *UpdateDashboardInput_Widgets_Measures_Filters_Value) MergeUpdateDashboardInputWidgetsMeasuresFiltersValue2(v UpdateDashboardInputWidgetsMeasuresFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateDashboardInput_Widgets_Measures_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateDashboardInput_Widgets_Measures_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateDashboardInputWidgetsMeasuresPassValue0 returns the union data inside the UpdateDashboardInput_Widgets_Measures_PassValue as a UpdateDashboardInputWidgetsMeasuresPassValue0
+func (t UpdateDashboardInput_Widgets_Measures_PassValue) AsUpdateDashboardInputWidgetsMeasuresPassValue0() (UpdateDashboardInputWidgetsMeasuresPassValue0, error) {
+	var body UpdateDashboardInputWidgetsMeasuresPassValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputWidgetsMeasuresPassValue0 overwrites any union data inside the UpdateDashboardInput_Widgets_Measures_PassValue as the provided UpdateDashboardInputWidgetsMeasuresPassValue0
+func (t *UpdateDashboardInput_Widgets_Measures_PassValue) FromUpdateDashboardInputWidgetsMeasuresPassValue0(v UpdateDashboardInputWidgetsMeasuresPassValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputWidgetsMeasuresPassValue0 performs a merge with any union data inside the UpdateDashboardInput_Widgets_Measures_PassValue, using the provided UpdateDashboardInputWidgetsMeasuresPassValue0
+func (t *UpdateDashboardInput_Widgets_Measures_PassValue) MergeUpdateDashboardInputWidgetsMeasuresPassValue0(v UpdateDashboardInputWidgetsMeasuresPassValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputWidgetsMeasuresPassValue1 returns the union data inside the UpdateDashboardInput_Widgets_Measures_PassValue as a UpdateDashboardInputWidgetsMeasuresPassValue1
+func (t UpdateDashboardInput_Widgets_Measures_PassValue) AsUpdateDashboardInputWidgetsMeasuresPassValue1() (UpdateDashboardInputWidgetsMeasuresPassValue1, error) {
+	var body UpdateDashboardInputWidgetsMeasuresPassValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputWidgetsMeasuresPassValue1 overwrites any union data inside the UpdateDashboardInput_Widgets_Measures_PassValue as the provided UpdateDashboardInputWidgetsMeasuresPassValue1
+func (t *UpdateDashboardInput_Widgets_Measures_PassValue) FromUpdateDashboardInputWidgetsMeasuresPassValue1(v UpdateDashboardInputWidgetsMeasuresPassValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputWidgetsMeasuresPassValue1 performs a merge with any union data inside the UpdateDashboardInput_Widgets_Measures_PassValue, using the provided UpdateDashboardInputWidgetsMeasuresPassValue1
+func (t *UpdateDashboardInput_Widgets_Measures_PassValue) MergeUpdateDashboardInputWidgetsMeasuresPassValue1(v UpdateDashboardInputWidgetsMeasuresPassValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateDashboardInputWidgetsMeasuresPassValue2 returns the union data inside the UpdateDashboardInput_Widgets_Measures_PassValue as a UpdateDashboardInputWidgetsMeasuresPassValue2
+func (t UpdateDashboardInput_Widgets_Measures_PassValue) AsUpdateDashboardInputWidgetsMeasuresPassValue2() (UpdateDashboardInputWidgetsMeasuresPassValue2, error) {
+	var body UpdateDashboardInputWidgetsMeasuresPassValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateDashboardInputWidgetsMeasuresPassValue2 overwrites any union data inside the UpdateDashboardInput_Widgets_Measures_PassValue as the provided UpdateDashboardInputWidgetsMeasuresPassValue2
+func (t *UpdateDashboardInput_Widgets_Measures_PassValue) FromUpdateDashboardInputWidgetsMeasuresPassValue2(v UpdateDashboardInputWidgetsMeasuresPassValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateDashboardInputWidgetsMeasuresPassValue2 performs a merge with any union data inside the UpdateDashboardInput_Widgets_Measures_PassValue, using the provided UpdateDashboardInputWidgetsMeasuresPassValue2
+func (t *UpdateDashboardInput_Widgets_Measures_PassValue) MergeUpdateDashboardInputWidgetsMeasuresPassValue2(v UpdateDashboardInputWidgetsMeasuresPassValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateDashboardInput_Widgets_Measures_PassValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateDashboardInput_Widgets_Measures_PassValue) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -35977,6 +46921,64 @@ type ClientInterface interface {
 	// Corresponds with GET /v1/agent/{agentId}/prompts/{promptId}/versions (the `GetV1AgentByAgentIdPromptsByPromptIdVersions` operationId).
 	GetV1AgentByAgentIdPromptsByPromptIdVersions(ctx context.Context, agentId openapi_types.UUID, promptId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// PostV1AnalyticsQueryWithBody Run an analytics query
+	//
+	// Aggregates metric values and conversation counts over a time window and returns one series per
+	// measure, with a total for the window and per-interval buckets. The same query a dashboard widget
+	// runs, without saving anything.
+	//
+	// - `measures`: what to aggregate. A METRIC measure names its metric by slug; CONVERSATION counts
+	//   conversations; UPTIME reads health checks. The aggregation defaults by the metric's output type.
+	// - `timeRange`: LAST n DAYS/WEEKS/MONTHS, a CALENDAR_ALIGNED period (TODAY, THIS_MONTH, ...), FIXED
+	//   from/to, or SINCE. Defaults to the last 30 days; at most 731 days. Calendar periods and buckets
+	//   align to `timezone` (IANA, default UTC).
+	// - `filters` apply to every measure; a measure's own `filters` add to them.
+	// - `breakdown` on a measure returns one series per value (largest 50 kept).
+	// - `comparisonGroups` (2 to 5) run every measure once per named filter set;
+	//   `comparisonMode: PREVIOUS_PERIOD` adds the preceding window's values.
+	//
+	// Values are in the metric's display units. A PASS_RATE is a 0 to 1 share; `sampleSize` 0 means no data.
+	// A query the analytics store cannot answer returns 400 naming the unsupported part.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/analytics/query (the `PostV1AnalyticsQuery` operationId).
+	PostV1AnalyticsQueryWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1AnalyticsQuery Run an analytics query
+	//
+	// Aggregates metric values and conversation counts over a time window and returns one series per
+	// measure, with a total for the window and per-interval buckets. The same query a dashboard widget
+	// runs, without saving anything.
+	//
+	// - `measures`: what to aggregate. A METRIC measure names its metric by slug; CONVERSATION counts
+	//   conversations; UPTIME reads health checks. The aggregation defaults by the metric's output type.
+	// - `timeRange`: LAST n DAYS/WEEKS/MONTHS, a CALENDAR_ALIGNED period (TODAY, THIS_MONTH, ...), FIXED
+	//   from/to, or SINCE. Defaults to the last 30 days; at most 731 days. Calendar periods and buckets
+	//   align to `timezone` (IANA, default UTC).
+	// - `filters` apply to every measure; a measure's own `filters` add to them.
+	// - `breakdown` on a measure returns one series per value (largest 50 kept).
+	// - `comparisonGroups` (2 to 5) run every measure once per named filter set;
+	//   `comparisonMode: PREVIOUS_PERIOD` adds the preceding window's values.
+	//
+	// Values are in the metric's display units. A PASS_RATE is a 0 to 1 share; `sampleSize` 0 means no data.
+	// A query the analytics store cannot answer returns 400 naming the unsupported part.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/analytics/query (the `PostV1AnalyticsQuery` operationId).
+	PostV1AnalyticsQuery(ctx context.Context, body PostV1AnalyticsQueryJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1AnalyticsSchema Get the analytics schema
+	//
+	// Lists what can go into an analytics query for this project: every metric by slug with its output
+	// type, default aggregation and the aggregations it supports; the measure types; the filter and
+	// breakdown types with the properties each accepts; and the custom call properties seen in the project.
+	// Read this first when building a query.
+	//
+	// Corresponds with GET /v1/analytics/schema (the `GetV1AnalyticsSchema` operationId).
+	GetV1AnalyticsSchema(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetV1AutoimproveJob List Autoimprove jobs
 	//
 	// List the Autoimprove jobs in this project, most recent first, capped at 100.
@@ -36151,6 +47153,13 @@ type ClientInterface interface {
 	//
 	// Corresponds with GET /v1/call/{callId} (the `GetV1CallByCallId` operationId).
 	GetV1CallByCallId(ctx context.Context, callId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1CallByCallIdCost Get call cost
+	//
+	// The billable spend attributed to one call, split by cost type, with every cost line behind it. Simulated calls include the costs their simulation incurred before the call connected. Amounts are billable spend only, in exact micro-dollars (`*UsdMicros`) and dollars (`*Usd`, for display). Requires an API key with the `billing:read` permission.
+	//
+	// Corresponds with GET /v1/call/{callId}/cost (the `GetV1CallByCallIdCost` operationId).
+	GetV1CallByCallIdCost(ctx context.Context, callId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1CallByCallIdMetrics List call metrics
 	//
@@ -36503,6 +47512,136 @@ type ClientInterface interface {
 	//
 	// Corresponds with PUT /v1/customer-flow/{flowId}/happy-path (the `PutV1CustomerFlowByFlowIdHappyPath` operationId).
 	PutV1CustomerFlowByFlowIdHappyPath(ctx context.Context, flowId openapi_types.UUID, body PutV1CustomerFlowByFlowIdHappyPathJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1Dashboard List dashboards
+	//
+	// Lists the project's dashboards, the default first. GET /v1/dashboard/{dashboardId} returns the widgets.
+	//
+	// Corresponds with GET /v1/dashboard (the `GetV1Dashboard` operationId).
+	GetV1Dashboard(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1DashboardWithBody Create a dashboard
+	//
+	// Creates a dashboard with its widgets. Each widget is an analytics query (see POST /v1/analytics/query)
+	// with a name unique on the dashboard, a `display` (LINE, NUMBER, RADAR, STACKED_BAR, TABLE) and a
+	// `size` (SMALL, MEDIUM, LARGE, EXTRA_LARGE). Widgets render top to bottom in the order given.
+	//
+	// Dashboard `filters` apply over every widget and must be conversation-level: AGENT_PROPERTY,
+	// CALL_PROPERTY, MODALITY, DATASET or METRIC_VALUE. On a field a widget already filters, the dashboard's wins.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/dashboard (the `PostV1Dashboard` operationId).
+	PostV1DashboardWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1Dashboard Create a dashboard
+	//
+	// Creates a dashboard with its widgets. Each widget is an analytics query (see POST /v1/analytics/query)
+	// with a name unique on the dashboard, a `display` (LINE, NUMBER, RADAR, STACKED_BAR, TABLE) and a
+	// `size` (SMALL, MEDIUM, LARGE, EXTRA_LARGE). Widgets render top to bottom in the order given.
+	//
+	// Dashboard `filters` apply over every widget and must be conversation-level: AGENT_PROPERTY,
+	// CALL_PROPERTY, MODALITY, DATASET or METRIC_VALUE. On a field a widget already filters, the dashboard's wins.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/dashboard (the `PostV1Dashboard` operationId).
+	PostV1Dashboard(ctx context.Context, body PostV1DashboardJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1DashboardByDashboardId Delete a dashboard
+	//
+	// Deletes a dashboard and its widgets. If it was the default, another dashboard becomes the default. A dashboard managed by config as code returns 409.
+	//
+	// Corresponds with DELETE /v1/dashboard/{dashboardId} (the `DeleteV1DashboardByDashboardId` operationId).
+	DeleteV1DashboardByDashboardId(ctx context.Context, dashboardId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1DashboardByDashboardId Get a dashboard
+	//
+	// Returns a dashboard with its widgets top to bottom, each in the shape POST /v1/dashboard accepts, so a dashboard can be read, edited and written back.
+	//
+	// Corresponds with GET /v1/dashboard/{dashboardId} (the `GetV1DashboardByDashboardId` operationId).
+	GetV1DashboardByDashboardId(ctx context.Context, dashboardId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1DashboardByDashboardIdWithBody Update a dashboard
+	//
+	// Edits a dashboard. Omitted fields keep their current value. `widgets`, when sent, replaces the list:
+	// widgets are matched by name, so a widget that keeps its name keeps its id; a new name adds a widget and
+	// a name no longer listed removes it. To change one widget, PUT /v1/dashboard/{dashboardId}/widget/{widgetId}.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/dashboard/{dashboardId} (the `PutV1DashboardByDashboardId` operationId).
+	PutV1DashboardByDashboardIdWithBody(ctx context.Context, dashboardId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1DashboardByDashboardId Update a dashboard
+	//
+	// Edits a dashboard. Omitted fields keep their current value. `widgets`, when sent, replaces the list:
+	// widgets are matched by name, so a widget that keeps its name keeps its id; a new name adds a widget and
+	// a name no longer listed removes it. To change one widget, PUT /v1/dashboard/{dashboardId}/widget/{widgetId}.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /v1/dashboard/{dashboardId} (the `PutV1DashboardByDashboardId` operationId).
+	PutV1DashboardByDashboardId(ctx context.Context, dashboardId openapi_types.UUID, body PutV1DashboardByDashboardIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1DashboardByDashboardIdData Get dashboard data
+	//
+	// Runs every widget on the dashboard and returns each one's series, exactly as the dashboard shows them:
+	// over the dashboard's saved window and with its filters applied. Pass `from` (and optionally `to`) to
+	// read a different window, and `timezone` to align buckets to a zone.
+	//
+	// Corresponds with GET /v1/dashboard/{dashboardId}/data (the `GetV1DashboardByDashboardIdData` operationId).
+	GetV1DashboardByDashboardIdData(ctx context.Context, dashboardId string, params *GetV1DashboardByDashboardIdDataParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1DashboardByDashboardIdWidgetWithBody Add a widget
+	//
+	// Adds a widget to the top of a dashboard. Its name must be unique on the dashboard.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/dashboard/{dashboardId}/widget (the `PostV1DashboardByDashboardIdWidget` operationId).
+	PostV1DashboardByDashboardIdWidgetWithBody(ctx context.Context, dashboardId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1DashboardByDashboardIdWidget Add a widget
+	//
+	// Adds a widget to the top of a dashboard. Its name must be unique on the dashboard.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/dashboard/{dashboardId}/widget (the `PostV1DashboardByDashboardIdWidget` operationId).
+	PostV1DashboardByDashboardIdWidget(ctx context.Context, dashboardId openapi_types.UUID, body PostV1DashboardByDashboardIdWidgetJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1DashboardByDashboardIdWidgetByWidgetId Remove a widget
+	//
+	// Removes a widget from a dashboard.
+	//
+	// Corresponds with DELETE /v1/dashboard/{dashboardId}/widget/{widgetId} (the `DeleteV1DashboardByDashboardIdWidgetByWidgetId` operationId).
+	DeleteV1DashboardByDashboardIdWidgetByWidgetId(ctx context.Context, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1DashboardByDashboardIdWidgetByWidgetIdWithBody Replace a widget
+	//
+	// Replaces a widget's definition. It keeps its id and its place on the dashboard.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/dashboard/{dashboardId}/widget/{widgetId} (the `PutV1DashboardByDashboardIdWidgetByWidgetId` operationId).
+	PutV1DashboardByDashboardIdWidgetByWidgetIdWithBody(ctx context.Context, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1DashboardByDashboardIdWidgetByWidgetId Replace a widget
+	//
+	// Replaces a widget's definition. It keeps its id and its place on the dashboard.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /v1/dashboard/{dashboardId}/widget/{widgetId} (the `PutV1DashboardByDashboardIdWidgetByWidgetId` operationId).
+	PutV1DashboardByDashboardIdWidgetByWidgetId(ctx context.Context, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, body PutV1DashboardByDashboardIdWidgetByWidgetIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1DashboardByDashboardIdWidgetByWidgetIdData Get widget data
+	//
+	// Runs one widget and returns its series, as it reads on its dashboard (the dashboard's window and filters). Accepts the same `from` / `to` / `timezone` overrides as GET /v1/dashboard/{dashboardId}/data.
+	//
+	// Corresponds with GET /v1/dashboard/{dashboardId}/widget/{widgetId}/data (the `GetV1DashboardByDashboardIdWidgetByWidgetIdData` operationId).
+	GetV1DashboardByDashboardIdWidgetByWidgetIdData(ctx context.Context, dashboardId string, widgetId string, params *GetV1DashboardByDashboardIdWidgetByWidgetIdDataParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1HttpRequestDefinition List HTTP request definitions
 	//
@@ -37389,6 +48528,13 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/simulation/plan/job/{jobId}/cancel (the `PostV1SimulationPlanJobByJobIdCancel` operationId).
 	PostV1SimulationPlanJobByJobIdCancel(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetV1SimulationPlanJobByJobIdCost Get simulation run cost
+	//
+	// The billable spend for one simulation run (run plan job), split by cost type, with the spend of each simulated call in it. Safe to call while the run is in progress: totals reflect the costs recorded so far. Amounts are billable spend only, in exact micro-dollars (`*UsdMicros`) and dollars (`*Usd`, for display). Requires an API key with the `billing:read` permission.
+	//
+	// Corresponds with GET /v1/simulation/plan/job/{jobId}/cost (the `GetV1SimulationPlanJobByJobIdCost` operationId).
+	GetV1SimulationPlanJobByJobIdCost(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// PostV1SimulationPlanJobByJobIdDebriefWithBody Generate simulation run debrief
 	//
 	// Request the written debrief for a settled run: executive summary, failure themes and recommendations.
@@ -37697,7 +48843,7 @@ type ClientInterface interface {
 
 	// GetV1Usage Get usage & cost
 	//
-	// Report billable usage and cost for the organization over a time window, broken down by project (highest spend first). Pass `from`/`to` as ISO 8601 timestamps; optionally pass `projectId` to scope the report to one project. Amounts are billable spend only (what we absorb is never included). Authenticated by an organization API key with the `usage:read` permission.
+	// Report billable usage and cost for the organization over a time window, broken down by project (highest spend first). Pass `from`/`to` as ISO 8601 timestamps; optionally pass `projectId` to scope the report to one project. Amounts are billable spend only (what we absorb is never included). Authenticated by either an organization API key with the `usage:read` permission (any project in the organization), or a project API key with the `billing:read` permission (that key's own project only; any other `projectId` is a 403).
 	//
 	// Corresponds with GET /v1/usage (the `GetV1Usage` operationId).
 	GetV1Usage(ctx context.Context, params *GetV1UsageParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -38258,6 +49404,94 @@ func (c *Client) GetV1AgentByAgentIdPromptsByPromptIdVersions(ctx context.Contex
 	return c.Client.Do(req)
 }
 
+// PostV1AnalyticsQueryWithBody Run an analytics query
+//
+// Aggregates metric values and conversation counts over a time window and returns one series per
+// measure, with a total for the window and per-interval buckets. The same query a dashboard widget
+// runs, without saving anything.
+//
+//   - `measures`: what to aggregate. A METRIC measure names its metric by slug; CONVERSATION counts
+//     conversations; UPTIME reads health checks. The aggregation defaults by the metric's output type.
+//   - `timeRange`: LAST n DAYS/WEEKS/MONTHS, a CALENDAR_ALIGNED period (TODAY, THIS_MONTH, ...), FIXED
+//     from/to, or SINCE. Defaults to the last 30 days; at most 731 days. Calendar periods and buckets
+//     align to `timezone` (IANA, default UTC).
+//   - `filters` apply to every measure; a measure's own `filters` add to them.
+//   - `breakdown` on a measure returns one series per value (largest 50 kept).
+//   - `comparisonGroups` (2 to 5) run every measure once per named filter set;
+//     `comparisonMode: PREVIOUS_PERIOD` adds the preceding window's values.
+//
+// Values are in the metric's display units. A PASS_RATE is a 0 to 1 share; `sampleSize` 0 means no data.
+// A query the analytics store cannot answer returns 400 naming the unsupported part.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/analytics/query (the `PostV1AnalyticsQuery` operationId).
+func (c *Client) PostV1AnalyticsQueryWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AnalyticsQueryRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1AnalyticsQuery Run an analytics query
+//
+// Aggregates metric values and conversation counts over a time window and returns one series per
+// measure, with a total for the window and per-interval buckets. The same query a dashboard widget
+// runs, without saving anything.
+//
+//   - `measures`: what to aggregate. A METRIC measure names its metric by slug; CONVERSATION counts
+//     conversations; UPTIME reads health checks. The aggregation defaults by the metric's output type.
+//   - `timeRange`: LAST n DAYS/WEEKS/MONTHS, a CALENDAR_ALIGNED period (TODAY, THIS_MONTH, ...), FIXED
+//     from/to, or SINCE. Defaults to the last 30 days; at most 731 days. Calendar periods and buckets
+//     align to `timezone` (IANA, default UTC).
+//   - `filters` apply to every measure; a measure's own `filters` add to them.
+//   - `breakdown` on a measure returns one series per value (largest 50 kept).
+//   - `comparisonGroups` (2 to 5) run every measure once per named filter set;
+//     `comparisonMode: PREVIOUS_PERIOD` adds the preceding window's values.
+//
+// Values are in the metric's display units. A PASS_RATE is a 0 to 1 share; `sampleSize` 0 means no data.
+// A query the analytics store cannot answer returns 400 naming the unsupported part.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/analytics/query (the `PostV1AnalyticsQuery` operationId).
+func (c *Client) PostV1AnalyticsQuery(ctx context.Context, body PostV1AnalyticsQueryJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AnalyticsQueryRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1AnalyticsSchema Get the analytics schema
+//
+// Lists what can go into an analytics query for this project: every metric by slug with its output
+// type, default aggregation and the aggregations it supports; the measure types; the filter and
+// breakdown types with the properties each accepts; and the custom call properties seen in the project.
+// Read this first when building a query.
+//
+// Corresponds with GET /v1/analytics/schema (the `GetV1AnalyticsSchema` operationId).
+func (c *Client) GetV1AnalyticsSchema(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1AnalyticsSchemaRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GetV1AutoimproveJob List Autoimprove jobs
 //
 // List the Autoimprove jobs in this project, most recent first, capped at 100.
@@ -38633,6 +49867,23 @@ func (c *Client) PostV1Call(ctx context.Context, body PostV1CallJSONRequestBody,
 // Corresponds with GET /v1/call/{callId} (the `GetV1CallByCallId` operationId).
 func (c *Client) GetV1CallByCallId(ctx context.Context, callId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetV1CallByCallIdRequest(c.Server, callId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1CallByCallIdCost Get call cost
+//
+// The billable spend attributed to one call, split by cost type, with every cost line behind it. Simulated calls include the costs their simulation incurred before the call connected. Amounts are billable spend only, in exact micro-dollars (`*UsdMicros`) and dollars (`*Usd`, for display). Requires an API key with the `billing:read` permission.
+//
+// Corresponds with GET /v1/call/{callId}/cost (the `GetV1CallByCallIdCost` operationId).
+func (c *Client) GetV1CallByCallIdCost(ctx context.Context, callId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1CallByCallIdCostRequest(c.Server, callId)
 	if err != nil {
 		return nil, err
 	}
@@ -39365,6 +50616,276 @@ func (c *Client) PutV1CustomerFlowByFlowIdHappyPathWithBody(ctx context.Context,
 // Corresponds with PUT /v1/customer-flow/{flowId}/happy-path (the `PutV1CustomerFlowByFlowIdHappyPath` operationId).
 func (c *Client) PutV1CustomerFlowByFlowIdHappyPath(ctx context.Context, flowId openapi_types.UUID, body PutV1CustomerFlowByFlowIdHappyPathJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPutV1CustomerFlowByFlowIdHappyPathRequest(c.Server, flowId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1Dashboard List dashboards
+//
+// Lists the project's dashboards, the default first. GET /v1/dashboard/{dashboardId} returns the widgets.
+//
+// Corresponds with GET /v1/dashboard (the `GetV1Dashboard` operationId).
+func (c *Client) GetV1Dashboard(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1DashboardRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1DashboardWithBody Create a dashboard
+//
+// Creates a dashboard with its widgets. Each widget is an analytics query (see POST /v1/analytics/query)
+// with a name unique on the dashboard, a `display` (LINE, NUMBER, RADAR, STACKED_BAR, TABLE) and a
+// `size` (SMALL, MEDIUM, LARGE, EXTRA_LARGE). Widgets render top to bottom in the order given.
+//
+// Dashboard `filters` apply over every widget and must be conversation-level: AGENT_PROPERTY,
+// CALL_PROPERTY, MODALITY, DATASET or METRIC_VALUE. On a field a widget already filters, the dashboard's wins.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/dashboard (the `PostV1Dashboard` operationId).
+func (c *Client) PostV1DashboardWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1DashboardRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1Dashboard Create a dashboard
+//
+// Creates a dashboard with its widgets. Each widget is an analytics query (see POST /v1/analytics/query)
+// with a name unique on the dashboard, a `display` (LINE, NUMBER, RADAR, STACKED_BAR, TABLE) and a
+// `size` (SMALL, MEDIUM, LARGE, EXTRA_LARGE). Widgets render top to bottom in the order given.
+//
+// Dashboard `filters` apply over every widget and must be conversation-level: AGENT_PROPERTY,
+// CALL_PROPERTY, MODALITY, DATASET or METRIC_VALUE. On a field a widget already filters, the dashboard's wins.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/dashboard (the `PostV1Dashboard` operationId).
+func (c *Client) PostV1Dashboard(ctx context.Context, body PostV1DashboardJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1DashboardRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1DashboardByDashboardId Delete a dashboard
+//
+// Deletes a dashboard and its widgets. If it was the default, another dashboard becomes the default. A dashboard managed by config as code returns 409.
+//
+// Corresponds with DELETE /v1/dashboard/{dashboardId} (the `DeleteV1DashboardByDashboardId` operationId).
+func (c *Client) DeleteV1DashboardByDashboardId(ctx context.Context, dashboardId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1DashboardByDashboardIdRequest(c.Server, dashboardId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1DashboardByDashboardId Get a dashboard
+//
+// Returns a dashboard with its widgets top to bottom, each in the shape POST /v1/dashboard accepts, so a dashboard can be read, edited and written back.
+//
+// Corresponds with GET /v1/dashboard/{dashboardId} (the `GetV1DashboardByDashboardId` operationId).
+func (c *Client) GetV1DashboardByDashboardId(ctx context.Context, dashboardId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1DashboardByDashboardIdRequest(c.Server, dashboardId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1DashboardByDashboardIdWithBody Update a dashboard
+//
+// Edits a dashboard. Omitted fields keep their current value. `widgets`, when sent, replaces the list:
+// widgets are matched by name, so a widget that keeps its name keeps its id; a new name adds a widget and
+// a name no longer listed removes it. To change one widget, PUT /v1/dashboard/{dashboardId}/widget/{widgetId}.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/dashboard/{dashboardId} (the `PutV1DashboardByDashboardId` operationId).
+func (c *Client) PutV1DashboardByDashboardIdWithBody(ctx context.Context, dashboardId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1DashboardByDashboardIdRequestWithBody(c.Server, dashboardId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1DashboardByDashboardId Update a dashboard
+//
+// Edits a dashboard. Omitted fields keep their current value. `widgets`, when sent, replaces the list:
+// widgets are matched by name, so a widget that keeps its name keeps its id; a new name adds a widget and
+// a name no longer listed removes it. To change one widget, PUT /v1/dashboard/{dashboardId}/widget/{widgetId}.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/dashboard/{dashboardId} (the `PutV1DashboardByDashboardId` operationId).
+func (c *Client) PutV1DashboardByDashboardId(ctx context.Context, dashboardId openapi_types.UUID, body PutV1DashboardByDashboardIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1DashboardByDashboardIdRequest(c.Server, dashboardId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1DashboardByDashboardIdData Get dashboard data
+//
+// Runs every widget on the dashboard and returns each one's series, exactly as the dashboard shows them:
+// over the dashboard's saved window and with its filters applied. Pass `from` (and optionally `to`) to
+// read a different window, and `timezone` to align buckets to a zone.
+//
+// Corresponds with GET /v1/dashboard/{dashboardId}/data (the `GetV1DashboardByDashboardIdData` operationId).
+func (c *Client) GetV1DashboardByDashboardIdData(ctx context.Context, dashboardId string, params *GetV1DashboardByDashboardIdDataParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1DashboardByDashboardIdDataRequest(c.Server, dashboardId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1DashboardByDashboardIdWidgetWithBody Add a widget
+//
+// Adds a widget to the top of a dashboard. Its name must be unique on the dashboard.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/dashboard/{dashboardId}/widget (the `PostV1DashboardByDashboardIdWidget` operationId).
+func (c *Client) PostV1DashboardByDashboardIdWidgetWithBody(ctx context.Context, dashboardId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1DashboardByDashboardIdWidgetRequestWithBody(c.Server, dashboardId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1DashboardByDashboardIdWidget Add a widget
+//
+// Adds a widget to the top of a dashboard. Its name must be unique on the dashboard.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/dashboard/{dashboardId}/widget (the `PostV1DashboardByDashboardIdWidget` operationId).
+func (c *Client) PostV1DashboardByDashboardIdWidget(ctx context.Context, dashboardId openapi_types.UUID, body PostV1DashboardByDashboardIdWidgetJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1DashboardByDashboardIdWidgetRequest(c.Server, dashboardId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1DashboardByDashboardIdWidgetByWidgetId Remove a widget
+//
+// Removes a widget from a dashboard.
+//
+// Corresponds with DELETE /v1/dashboard/{dashboardId}/widget/{widgetId} (the `DeleteV1DashboardByDashboardIdWidgetByWidgetId` operationId).
+func (c *Client) DeleteV1DashboardByDashboardIdWidgetByWidgetId(ctx context.Context, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1DashboardByDashboardIdWidgetByWidgetIdRequest(c.Server, dashboardId, widgetId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1DashboardByDashboardIdWidgetByWidgetIdWithBody Replace a widget
+//
+// Replaces a widget's definition. It keeps its id and its place on the dashboard.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/dashboard/{dashboardId}/widget/{widgetId} (the `PutV1DashboardByDashboardIdWidgetByWidgetId` operationId).
+func (c *Client) PutV1DashboardByDashboardIdWidgetByWidgetIdWithBody(ctx context.Context, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1DashboardByDashboardIdWidgetByWidgetIdRequestWithBody(c.Server, dashboardId, widgetId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1DashboardByDashboardIdWidgetByWidgetId Replace a widget
+//
+// Replaces a widget's definition. It keeps its id and its place on the dashboard.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/dashboard/{dashboardId}/widget/{widgetId} (the `PutV1DashboardByDashboardIdWidgetByWidgetId` operationId).
+func (c *Client) PutV1DashboardByDashboardIdWidgetByWidgetId(ctx context.Context, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, body PutV1DashboardByDashboardIdWidgetByWidgetIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1DashboardByDashboardIdWidgetByWidgetIdRequest(c.Server, dashboardId, widgetId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1DashboardByDashboardIdWidgetByWidgetIdData Get widget data
+//
+// Runs one widget and returns its series, as it reads on its dashboard (the dashboard's window and filters). Accepts the same `from` / `to` / `timezone` overrides as GET /v1/dashboard/{dashboardId}/data.
+//
+// Corresponds with GET /v1/dashboard/{dashboardId}/widget/{widgetId}/data (the `GetV1DashboardByDashboardIdWidgetByWidgetIdData` operationId).
+func (c *Client) GetV1DashboardByDashboardIdWidgetByWidgetIdData(ctx context.Context, dashboardId string, widgetId string, params *GetV1DashboardByDashboardIdWidgetByWidgetIdDataParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1DashboardByDashboardIdWidgetByWidgetIdDataRequest(c.Server, dashboardId, widgetId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -41260,6 +52781,23 @@ func (c *Client) PostV1SimulationPlanJobByJobIdCancel(ctx context.Context, jobId
 	return c.Client.Do(req)
 }
 
+// GetV1SimulationPlanJobByJobIdCost Get simulation run cost
+//
+// The billable spend for one simulation run (run plan job), split by cost type, with the spend of each simulated call in it. Safe to call while the run is in progress: totals reflect the costs recorded so far. Amounts are billable spend only, in exact micro-dollars (`*UsdMicros`) and dollars (`*Usd`, for display). Requires an API key with the `billing:read` permission.
+//
+// Corresponds with GET /v1/simulation/plan/job/{jobId}/cost (the `GetV1SimulationPlanJobByJobIdCost` operationId).
+func (c *Client) GetV1SimulationPlanJobByJobIdCost(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1SimulationPlanJobByJobIdCostRequest(c.Server, jobId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // PostV1SimulationPlanJobByJobIdDebriefWithBody Generate simulation run debrief
 //
 // Request the written debrief for a settled run: executive summary, failure themes and recommendations.
@@ -41836,7 +53374,7 @@ func (c *Client) PostV1SimulationToolMock(ctx context.Context, body PostV1Simula
 
 // GetV1Usage Get usage & cost
 //
-// Report billable usage and cost for the organization over a time window, broken down by project (highest spend first). Pass `from`/`to` as ISO 8601 timestamps; optionally pass `projectId` to scope the report to one project. Amounts are billable spend only (what we absorb is never included). Authenticated by an organization API key with the `usage:read` permission.
+// Report billable usage and cost for the organization over a time window, broken down by project (highest spend first). Pass `from`/`to` as ISO 8601 timestamps; optionally pass `projectId` to scope the report to one project. Amounts are billable spend only (what we absorb is never included). Authenticated by either an organization API key with the `usage:read` permission (any project in the organization), or a project API key with the `billing:read` permission (that key's own project only; any other `projectId` is a 403).
 //
 // Corresponds with GET /v1/usage (the `GetV1Usage` operationId).
 func (c *Client) GetV1Usage(ctx context.Context, params *GetV1UsageParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -42779,6 +54317,73 @@ func NewGetV1AgentByAgentIdPromptsByPromptIdVersionsRequest(server string, agent
 	}
 
 	operationPath := fmt.Sprintf("/v1/agent/%s/prompts/%s/versions", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1AnalyticsQueryRequest calls the generic PostV1AnalyticsQuery builder with application/json body
+func NewPostV1AnalyticsQueryRequest(server string, body PostV1AnalyticsQueryJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1AnalyticsQueryRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1AnalyticsQueryRequestWithBody constructs an http.Request for the PostV1AnalyticsQuery method, with any body, and a specified content type
+func NewPostV1AnalyticsQueryRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/analytics/query")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetV1AnalyticsSchemaRequest constructs an http.Request for the GetV1AnalyticsSchema method
+func NewGetV1AnalyticsSchemaRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/analytics/schema")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -43838,6 +55443,40 @@ func NewGetV1CallByCallIdRequest(server string, callId openapi_types.UUID) (*htt
 	}
 
 	operationPath := fmt.Sprintf("/v1/call/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1CallByCallIdCostRequest constructs an http.Request for the GetV1CallByCallIdCost method
+func NewGetV1CallByCallIdCostRequest(server string, callId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "callId", callId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/call/%s/cost", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -45109,6 +56748,507 @@ func NewPutV1CustomerFlowByFlowIdHappyPathRequestWithBody(server string, flowId 
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetV1DashboardRequest constructs an http.Request for the GetV1Dashboard method
+func NewGetV1DashboardRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/dashboard")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1DashboardRequest calls the generic PostV1Dashboard builder with application/json body
+func NewPostV1DashboardRequest(server string, body PostV1DashboardJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1DashboardRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1DashboardRequestWithBody constructs an http.Request for the PostV1Dashboard method, with any body, and a specified content type
+func NewPostV1DashboardRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/dashboard")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1DashboardByDashboardIdRequest constructs an http.Request for the DeleteV1DashboardByDashboardId method
+func NewDeleteV1DashboardByDashboardIdRequest(server string, dashboardId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "dashboardId", dashboardId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/dashboard/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1DashboardByDashboardIdRequest constructs an http.Request for the GetV1DashboardByDashboardId method
+func NewGetV1DashboardByDashboardIdRequest(server string, dashboardId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "dashboardId", dashboardId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/dashboard/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPutV1DashboardByDashboardIdRequest calls the generic PutV1DashboardByDashboardId builder with application/json body
+func NewPutV1DashboardByDashboardIdRequest(server string, dashboardId openapi_types.UUID, body PutV1DashboardByDashboardIdJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPutV1DashboardByDashboardIdRequestWithBody(server, dashboardId, "application/json", bodyReader)
+}
+
+// NewPutV1DashboardByDashboardIdRequestWithBody constructs an http.Request for the PutV1DashboardByDashboardId method, with any body, and a specified content type
+func NewPutV1DashboardByDashboardIdRequestWithBody(server string, dashboardId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "dashboardId", dashboardId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/dashboard/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetV1DashboardByDashboardIdDataRequest constructs an http.Request for the GetV1DashboardByDashboardIdData method
+func NewGetV1DashboardByDashboardIdDataRequest(server string, dashboardId string, params *GetV1DashboardByDashboardIdDataParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "dashboardId", dashboardId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/dashboard/%s/data", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.From != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "from", *params.From, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.To != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "to", *params.To, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Timezone != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "timezone", *params.Timezone, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1DashboardByDashboardIdWidgetRequest calls the generic PostV1DashboardByDashboardIdWidget builder with application/json body
+func NewPostV1DashboardByDashboardIdWidgetRequest(server string, dashboardId openapi_types.UUID, body PostV1DashboardByDashboardIdWidgetJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1DashboardByDashboardIdWidgetRequestWithBody(server, dashboardId, "application/json", bodyReader)
+}
+
+// NewPostV1DashboardByDashboardIdWidgetRequestWithBody constructs an http.Request for the PostV1DashboardByDashboardIdWidget method, with any body, and a specified content type
+func NewPostV1DashboardByDashboardIdWidgetRequestWithBody(server string, dashboardId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "dashboardId", dashboardId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/dashboard/%s/widget", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1DashboardByDashboardIdWidgetByWidgetIdRequest constructs an http.Request for the DeleteV1DashboardByDashboardIdWidgetByWidgetId method
+func NewDeleteV1DashboardByDashboardIdWidgetByWidgetIdRequest(server string, dashboardId openapi_types.UUID, widgetId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "dashboardId", dashboardId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "widgetId", widgetId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/dashboard/%s/widget/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPutV1DashboardByDashboardIdWidgetByWidgetIdRequest calls the generic PutV1DashboardByDashboardIdWidgetByWidgetId builder with application/json body
+func NewPutV1DashboardByDashboardIdWidgetByWidgetIdRequest(server string, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, body PutV1DashboardByDashboardIdWidgetByWidgetIdJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPutV1DashboardByDashboardIdWidgetByWidgetIdRequestWithBody(server, dashboardId, widgetId, "application/json", bodyReader)
+}
+
+// NewPutV1DashboardByDashboardIdWidgetByWidgetIdRequestWithBody constructs an http.Request for the PutV1DashboardByDashboardIdWidgetByWidgetId method, with any body, and a specified content type
+func NewPutV1DashboardByDashboardIdWidgetByWidgetIdRequestWithBody(server string, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "dashboardId", dashboardId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "widgetId", widgetId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/dashboard/%s/widget/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetV1DashboardByDashboardIdWidgetByWidgetIdDataRequest constructs an http.Request for the GetV1DashboardByDashboardIdWidgetByWidgetIdData method
+func NewGetV1DashboardByDashboardIdWidgetByWidgetIdDataRequest(server string, dashboardId string, widgetId string, params *GetV1DashboardByDashboardIdWidgetByWidgetIdDataParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "dashboardId", dashboardId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "widgetId", widgetId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/dashboard/%s/widget/%s/data", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.From != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "from", *params.From, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.To != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "to", *params.To, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Timezone != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "timezone", *params.Timezone, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -48478,6 +60618,40 @@ func NewPostV1SimulationPlanJobByJobIdCancelRequest(server string, jobId openapi
 	return req, nil
 }
 
+// NewGetV1SimulationPlanJobByJobIdCostRequest constructs an http.Request for the GetV1SimulationPlanJobByJobIdCost method
+func NewGetV1SimulationPlanJobByJobIdCostRequest(server string, jobId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/simulation/plan/job/%s/cost", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewPostV1SimulationPlanJobByJobIdDebriefRequest calls the generic PostV1SimulationPlanJobByJobIdDebrief builder with application/json body
 func NewPostV1SimulationPlanJobByJobIdDebriefRequest(server string, jobId openapi_types.UUID, body PostV1SimulationPlanJobByJobIdDebriefJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -49900,6 +62074,66 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /v1/agent/{agentId}/prompts/{promptId}/versions (the `GetV1AgentByAgentIdPromptsByPromptIdVersions` operationId).
 	GetV1AgentByAgentIdPromptsByPromptIdVersionsWithResponse(ctx context.Context, agentId openapi_types.UUID, promptId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdPromptsByPromptIdVersionsResponse, error)
 
+	// PostV1AnalyticsQueryWithBodyWithResponse Run an analytics query
+	//
+	// Aggregates metric values and conversation counts over a time window and returns one series per
+	// measure, with a total for the window and per-interval buckets. The same query a dashboard widget
+	// runs, without saving anything.
+	//
+	// - `measures`: what to aggregate. A METRIC measure names its metric by slug; CONVERSATION counts
+	//   conversations; UPTIME reads health checks. The aggregation defaults by the metric's output type.
+	// - `timeRange`: LAST n DAYS/WEEKS/MONTHS, a CALENDAR_ALIGNED period (TODAY, THIS_MONTH, ...), FIXED
+	//   from/to, or SINCE. Defaults to the last 30 days; at most 731 days. Calendar periods and buckets
+	//   align to `timezone` (IANA, default UTC).
+	// - `filters` apply to every measure; a measure's own `filters` add to them.
+	// - `breakdown` on a measure returns one series per value (largest 50 kept).
+	// - `comparisonGroups` (2 to 5) run every measure once per named filter set;
+	//   `comparisonMode: PREVIOUS_PERIOD` adds the preceding window's values.
+	//
+	// Values are in the metric's display units. A PASS_RATE is a 0 to 1 share; `sampleSize` 0 means no data.
+	// A query the analytics store cannot answer returns 400 naming the unsupported part.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/analytics/query (the `PostV1AnalyticsQuery` operationId).
+	PostV1AnalyticsQueryWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AnalyticsQueryResponse, error)
+
+	// PostV1AnalyticsQueryWithResponse Run an analytics query
+	//
+	// Aggregates metric values and conversation counts over a time window and returns one series per
+	// measure, with a total for the window and per-interval buckets. The same query a dashboard widget
+	// runs, without saving anything.
+	//
+	// - `measures`: what to aggregate. A METRIC measure names its metric by slug; CONVERSATION counts
+	//   conversations; UPTIME reads health checks. The aggregation defaults by the metric's output type.
+	// - `timeRange`: LAST n DAYS/WEEKS/MONTHS, a CALENDAR_ALIGNED period (TODAY, THIS_MONTH, ...), FIXED
+	//   from/to, or SINCE. Defaults to the last 30 days; at most 731 days. Calendar periods and buckets
+	//   align to `timezone` (IANA, default UTC).
+	// - `filters` apply to every measure; a measure's own `filters` add to them.
+	// - `breakdown` on a measure returns one series per value (largest 50 kept).
+	// - `comparisonGroups` (2 to 5) run every measure once per named filter set;
+	//   `comparisonMode: PREVIOUS_PERIOD` adds the preceding window's values.
+	//
+	// Values are in the metric's display units. A PASS_RATE is a 0 to 1 share; `sampleSize` 0 means no data.
+	// A query the analytics store cannot answer returns 400 naming the unsupported part.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/analytics/query (the `PostV1AnalyticsQuery` operationId).
+	PostV1AnalyticsQueryWithResponse(ctx context.Context, body PostV1AnalyticsQueryJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AnalyticsQueryResponse, error)
+
+	// GetV1AnalyticsSchemaWithResponse Get the analytics schema
+	//
+	// Lists what can go into an analytics query for this project: every metric by slug with its output
+	// type, default aggregation and the aggregations it supports; the measure types; the filter and
+	// breakdown types with the properties each accepts; and the custom call properties seen in the project.
+	// Read this first when building a query.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/analytics/schema (the `GetV1AnalyticsSchema` operationId).
+	GetV1AnalyticsSchemaWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1AnalyticsSchemaResponse, error)
+
 	// GetV1AutoimproveJobWithResponse List Autoimprove jobs
 	//
 	// List the Autoimprove jobs in this project, most recent first, capped at 100.
@@ -50100,6 +62334,15 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with GET /v1/call/{callId} (the `GetV1CallByCallId` operationId).
 	GetV1CallByCallIdWithResponse(ctx context.Context, callId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1CallByCallIdResponse, error)
+
+	// GetV1CallByCallIdCostWithResponse Get call cost
+	//
+	// The billable spend attributed to one call, split by cost type, with every cost line behind it. Simulated calls include the costs their simulation incurred before the call connected. Amounts are billable spend only, in exact micro-dollars (`*UsdMicros`) and dollars (`*Usd`, for display). Requires an API key with the `billing:read` permission.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/call/{callId}/cost (the `GetV1CallByCallIdCost` operationId).
+	GetV1CallByCallIdCostWithResponse(ctx context.Context, callId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1CallByCallIdCostResponse, error)
 
 	// GetV1CallByCallIdMetricsWithResponse List call metrics
 	//
@@ -50476,6 +62719,148 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PUT /v1/customer-flow/{flowId}/happy-path (the `PutV1CustomerFlowByFlowIdHappyPath` operationId).
 	PutV1CustomerFlowByFlowIdHappyPathWithResponse(ctx context.Context, flowId openapi_types.UUID, body PutV1CustomerFlowByFlowIdHappyPathJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1CustomerFlowByFlowIdHappyPathResponse, error)
+
+	// GetV1DashboardWithResponse List dashboards
+	//
+	// Lists the project's dashboards, the default first. GET /v1/dashboard/{dashboardId} returns the widgets.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/dashboard (the `GetV1Dashboard` operationId).
+	GetV1DashboardWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1DashboardResponse, error)
+
+	// PostV1DashboardWithBodyWithResponse Create a dashboard
+	//
+	// Creates a dashboard with its widgets. Each widget is an analytics query (see POST /v1/analytics/query)
+	// with a name unique on the dashboard, a `display` (LINE, NUMBER, RADAR, STACKED_BAR, TABLE) and a
+	// `size` (SMALL, MEDIUM, LARGE, EXTRA_LARGE). Widgets render top to bottom in the order given.
+	//
+	// Dashboard `filters` apply over every widget and must be conversation-level: AGENT_PROPERTY,
+	// CALL_PROPERTY, MODALITY, DATASET or METRIC_VALUE. On a field a widget already filters, the dashboard's wins.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/dashboard (the `PostV1Dashboard` operationId).
+	PostV1DashboardWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1DashboardResponse, error)
+
+	// PostV1DashboardWithResponse Create a dashboard
+	//
+	// Creates a dashboard with its widgets. Each widget is an analytics query (see POST /v1/analytics/query)
+	// with a name unique on the dashboard, a `display` (LINE, NUMBER, RADAR, STACKED_BAR, TABLE) and a
+	// `size` (SMALL, MEDIUM, LARGE, EXTRA_LARGE). Widgets render top to bottom in the order given.
+	//
+	// Dashboard `filters` apply over every widget and must be conversation-level: AGENT_PROPERTY,
+	// CALL_PROPERTY, MODALITY, DATASET or METRIC_VALUE. On a field a widget already filters, the dashboard's wins.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/dashboard (the `PostV1Dashboard` operationId).
+	PostV1DashboardWithResponse(ctx context.Context, body PostV1DashboardJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1DashboardResponse, error)
+
+	// DeleteV1DashboardByDashboardIdWithResponse Delete a dashboard
+	//
+	// Deletes a dashboard and its widgets. If it was the default, another dashboard becomes the default. A dashboard managed by config as code returns 409.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/dashboard/{dashboardId} (the `DeleteV1DashboardByDashboardId` operationId).
+	DeleteV1DashboardByDashboardIdWithResponse(ctx context.Context, dashboardId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1DashboardByDashboardIdResponse, error)
+
+	// GetV1DashboardByDashboardIdWithResponse Get a dashboard
+	//
+	// Returns a dashboard with its widgets top to bottom, each in the shape POST /v1/dashboard accepts, so a dashboard can be read, edited and written back.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/dashboard/{dashboardId} (the `GetV1DashboardByDashboardId` operationId).
+	GetV1DashboardByDashboardIdWithResponse(ctx context.Context, dashboardId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1DashboardByDashboardIdResponse, error)
+
+	// PutV1DashboardByDashboardIdWithBodyWithResponse Update a dashboard
+	//
+	// Edits a dashboard. Omitted fields keep their current value. `widgets`, when sent, replaces the list:
+	// widgets are matched by name, so a widget that keeps its name keeps its id; a new name adds a widget and
+	// a name no longer listed removes it. To change one widget, PUT /v1/dashboard/{dashboardId}/widget/{widgetId}.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/dashboard/{dashboardId} (the `PutV1DashboardByDashboardId` operationId).
+	PutV1DashboardByDashboardIdWithBodyWithResponse(ctx context.Context, dashboardId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1DashboardByDashboardIdResponse, error)
+
+	// PutV1DashboardByDashboardIdWithResponse Update a dashboard
+	//
+	// Edits a dashboard. Omitted fields keep their current value. `widgets`, when sent, replaces the list:
+	// widgets are matched by name, so a widget that keeps its name keeps its id; a new name adds a widget and
+	// a name no longer listed removes it. To change one widget, PUT /v1/dashboard/{dashboardId}/widget/{widgetId}.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/dashboard/{dashboardId} (the `PutV1DashboardByDashboardId` operationId).
+	PutV1DashboardByDashboardIdWithResponse(ctx context.Context, dashboardId openapi_types.UUID, body PutV1DashboardByDashboardIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1DashboardByDashboardIdResponse, error)
+
+	// GetV1DashboardByDashboardIdDataWithResponse Get dashboard data
+	//
+	// Runs every widget on the dashboard and returns each one's series, exactly as the dashboard shows them:
+	// over the dashboard's saved window and with its filters applied. Pass `from` (and optionally `to`) to
+	// read a different window, and `timezone` to align buckets to a zone.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/dashboard/{dashboardId}/data (the `GetV1DashboardByDashboardIdData` operationId).
+	GetV1DashboardByDashboardIdDataWithResponse(ctx context.Context, dashboardId string, params *GetV1DashboardByDashboardIdDataParams, reqEditors ...RequestEditorFn) (*GetV1DashboardByDashboardIdDataResponse, error)
+
+	// PostV1DashboardByDashboardIdWidgetWithBodyWithResponse Add a widget
+	//
+	// Adds a widget to the top of a dashboard. Its name must be unique on the dashboard.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/dashboard/{dashboardId}/widget (the `PostV1DashboardByDashboardIdWidget` operationId).
+	PostV1DashboardByDashboardIdWidgetWithBodyWithResponse(ctx context.Context, dashboardId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1DashboardByDashboardIdWidgetResponse, error)
+
+	// PostV1DashboardByDashboardIdWidgetWithResponse Add a widget
+	//
+	// Adds a widget to the top of a dashboard. Its name must be unique on the dashboard.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/dashboard/{dashboardId}/widget (the `PostV1DashboardByDashboardIdWidget` operationId).
+	PostV1DashboardByDashboardIdWidgetWithResponse(ctx context.Context, dashboardId openapi_types.UUID, body PostV1DashboardByDashboardIdWidgetJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1DashboardByDashboardIdWidgetResponse, error)
+
+	// DeleteV1DashboardByDashboardIdWidgetByWidgetIdWithResponse Remove a widget
+	//
+	// Removes a widget from a dashboard.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/dashboard/{dashboardId}/widget/{widgetId} (the `DeleteV1DashboardByDashboardIdWidgetByWidgetId` operationId).
+	DeleteV1DashboardByDashboardIdWidgetByWidgetIdWithResponse(ctx context.Context, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse, error)
+
+	// PutV1DashboardByDashboardIdWidgetByWidgetIdWithBodyWithResponse Replace a widget
+	//
+	// Replaces a widget's definition. It keeps its id and its place on the dashboard.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/dashboard/{dashboardId}/widget/{widgetId} (the `PutV1DashboardByDashboardIdWidgetByWidgetId` operationId).
+	PutV1DashboardByDashboardIdWidgetByWidgetIdWithBodyWithResponse(ctx context.Context, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1DashboardByDashboardIdWidgetByWidgetIdResponse, error)
+
+	// PutV1DashboardByDashboardIdWidgetByWidgetIdWithResponse Replace a widget
+	//
+	// Replaces a widget's definition. It keeps its id and its place on the dashboard.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/dashboard/{dashboardId}/widget/{widgetId} (the `PutV1DashboardByDashboardIdWidgetByWidgetId` operationId).
+	PutV1DashboardByDashboardIdWidgetByWidgetIdWithResponse(ctx context.Context, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, body PutV1DashboardByDashboardIdWidgetByWidgetIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1DashboardByDashboardIdWidgetByWidgetIdResponse, error)
+
+	// GetV1DashboardByDashboardIdWidgetByWidgetIdDataWithResponse Get widget data
+	//
+	// Runs one widget and returns its series, as it reads on its dashboard (the dashboard's window and filters). Accepts the same `from` / `to` / `timezone` overrides as GET /v1/dashboard/{dashboardId}/data.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/dashboard/{dashboardId}/widget/{widgetId}/data (the `GetV1DashboardByDashboardIdWidgetByWidgetIdData` operationId).
+	GetV1DashboardByDashboardIdWidgetByWidgetIdDataWithResponse(ctx context.Context, dashboardId string, widgetId string, params *GetV1DashboardByDashboardIdWidgetByWidgetIdDataParams, reqEditors ...RequestEditorFn) (*GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse, error)
 
 	// GetV1HttpRequestDefinitionWithResponse List HTTP request definitions
 	//
@@ -51458,6 +63843,15 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/simulation/plan/job/{jobId}/cancel (the `PostV1SimulationPlanJobByJobIdCancel` operationId).
 	PostV1SimulationPlanJobByJobIdCancelWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*PostV1SimulationPlanJobByJobIdCancelResponse, error)
 
+	// GetV1SimulationPlanJobByJobIdCostWithResponse Get simulation run cost
+	//
+	// The billable spend for one simulation run (run plan job), split by cost type, with the spend of each simulated call in it. Safe to call while the run is in progress: totals reflect the costs recorded so far. Amounts are billable spend only, in exact micro-dollars (`*UsdMicros`) and dollars (`*Usd`, for display). Requires an API key with the `billing:read` permission.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/simulation/plan/job/{jobId}/cost (the `GetV1SimulationPlanJobByJobIdCost` operationId).
+	GetV1SimulationPlanJobByJobIdCostWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1SimulationPlanJobByJobIdCostResponse, error)
+
 	// PostV1SimulationPlanJobByJobIdDebriefWithBodyWithResponse Generate simulation run debrief
 	//
 	// Request the written debrief for a settled run: executive summary, failure themes and recommendations.
@@ -51788,7 +64182,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetV1UsageWithResponse Get usage & cost
 	//
-	// Report billable usage and cost for the organization over a time window, broken down by project (highest spend first). Pass `from`/`to` as ISO 8601 timestamps; optionally pass `projectId` to scope the report to one project. Amounts are billable spend only (what we absorb is never included). Authenticated by an organization API key with the `usage:read` permission.
+	// Report billable usage and cost for the organization over a time window, broken down by project (highest spend first). Pass `from`/`to` as ISO 8601 timestamps; optionally pass `projectId` to scope the report to one project. Amounts are billable spend only (what we absorb is never included). Authenticated by either an organization API key with the `usage:read` permission (any project in the organization), or a project API key with the `billing:read` permission (that key's own project only; any other `projectId` is a 403).
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -53523,6 +65917,170 @@ func (r GetV1AgentByAgentIdPromptsByPromptIdVersionsResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetV1AgentByAgentIdPromptsByPromptIdVersionsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1AnalyticsQueryResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data One series per measure (or per breakdown value / comparison group). `value` is the aggregate over the whole window; `buckets` hold the per-interval values.
+		Data AnalyticsResult `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1AnalyticsQueryResponse) GetJSON200() *struct {
+	// Data One series per measure (or per breakdown value / comparison group). `value` is the aggregate over the whole window; `buckets` hold the per-interval values.
+	Data AnalyticsResult `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1AnalyticsQueryResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1AnalyticsQueryResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1AnalyticsQueryResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1AnalyticsQueryResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PostV1AnalyticsQueryResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1AnalyticsQueryResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1AnalyticsQueryResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1AnalyticsQueryResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1AnalyticsQueryResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1AnalyticsQueryResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1AnalyticsSchemaResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data What can be queried in this project: metrics (by slug), measure types, filters, breakdowns.
+		Data AnalyticsSchema `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1AnalyticsSchemaResponse) GetJSON200() *struct {
+	// Data What can be queried in this project: metrics (by slug), measure types, filters, breakdowns.
+	Data AnalyticsSchema `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1AnalyticsSchemaResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1AnalyticsSchemaResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1AnalyticsSchemaResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1AnalyticsSchemaResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1AnalyticsSchemaResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1AnalyticsSchemaResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1AnalyticsSchemaResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1AnalyticsSchemaResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -55503,6 +68061,86 @@ func (r GetV1CallByCallIdResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetV1CallByCallIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1CallByCallIdCostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data CallCost `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1CallByCallIdCostResponse) GetJSON200() *struct {
+	Data CallCost `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1CallByCallIdCostResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1CallByCallIdCostResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1CallByCallIdCostResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1CallByCallIdCostResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1CallByCallIdCostResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1CallByCallIdCostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1CallByCallIdCostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1CallByCallIdCostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1CallByCallIdCostResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -58414,6 +71052,904 @@ func (r PutV1CustomerFlowByFlowIdHappyPathResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r PutV1CustomerFlowByFlowIdHappyPathResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1DashboardResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data []DashboardSummary `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1DashboardResponse) GetJSON200() *struct {
+	Data []DashboardSummary `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1DashboardResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1DashboardResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1DashboardResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1DashboardResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1DashboardResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1DashboardResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1DashboardResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1DashboardResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1DashboardResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1DashboardResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		Data Dashboard `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1DashboardResponse) GetJSON201() *struct {
+	Data Dashboard `json:"data"`
+} {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1DashboardResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1DashboardResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1DashboardResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1DashboardResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1DashboardResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PostV1DashboardResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1DashboardResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1DashboardResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1DashboardResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1DashboardResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1DashboardResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1DashboardByDashboardIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			Deleted DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeleted `json:"deleted"`
+			Id      openapi_types.UUID                                           `json:"id"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1DashboardByDashboardIdResponse) GetJSON200() *struct {
+	Data struct {
+		Deleted DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeleted `json:"deleted"`
+		Id      openapi_types.UUID                                           `json:"id"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1DashboardByDashboardIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r DeleteV1DashboardByDashboardIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1DashboardByDashboardIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r DeleteV1DashboardByDashboardIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r DeleteV1DashboardByDashboardIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1DashboardByDashboardIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1DashboardByDashboardIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1DashboardByDashboardIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1DashboardByDashboardIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1DashboardByDashboardIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1DashboardByDashboardIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data Dashboard `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1DashboardByDashboardIdResponse) GetJSON200() *struct {
+	Data Dashboard `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1DashboardByDashboardIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1DashboardByDashboardIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1DashboardByDashboardIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1DashboardByDashboardIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1DashboardByDashboardIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1DashboardByDashboardIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1DashboardByDashboardIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1DashboardByDashboardIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1DashboardByDashboardIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutV1DashboardByDashboardIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data Dashboard `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutV1DashboardByDashboardIdResponse) GetJSON200() *struct {
+	Data Dashboard `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PutV1DashboardByDashboardIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PutV1DashboardByDashboardIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PutV1DashboardByDashboardIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PutV1DashboardByDashboardIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PutV1DashboardByDashboardIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PutV1DashboardByDashboardIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PutV1DashboardByDashboardIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PutV1DashboardByDashboardIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutV1DashboardByDashboardIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutV1DashboardByDashboardIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutV1DashboardByDashboardIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1DashboardByDashboardIdDataResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data Every widget's series over the window, top to bottom. A widget that fails on its own (say its metric was deleted) carries `error` and no series; the others still return.
+		Data DashboardData `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1DashboardByDashboardIdDataResponse) GetJSON200() *struct {
+	// Data Every widget's series over the window, top to bottom. A widget that fails on its own (say its metric was deleted) carries `error` and no series; the others still return.
+	Data DashboardData `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetV1DashboardByDashboardIdDataResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1DashboardByDashboardIdDataResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1DashboardByDashboardIdDataResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1DashboardByDashboardIdDataResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1DashboardByDashboardIdDataResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1DashboardByDashboardIdDataResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1DashboardByDashboardIdDataResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1DashboardByDashboardIdDataResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1DashboardByDashboardIdDataResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1DashboardByDashboardIdDataResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1DashboardByDashboardIdWidgetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		Data DashboardWidget `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1DashboardByDashboardIdWidgetResponse) GetJSON201() *struct {
+	Data DashboardWidget `json:"data"`
+} {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1DashboardByDashboardIdWidgetResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1DashboardByDashboardIdWidgetResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1DashboardByDashboardIdWidgetResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1DashboardByDashboardIdWidgetResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1DashboardByDashboardIdWidgetResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PostV1DashboardByDashboardIdWidgetResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1DashboardByDashboardIdWidgetResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1DashboardByDashboardIdWidgetResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1DashboardByDashboardIdWidgetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1DashboardByDashboardIdWidgetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1DashboardByDashboardIdWidgetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			Deleted DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeleted `json:"deleted"`
+			Id      openapi_types.UUID                                                           `json:"id"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON200() *struct {
+	Data struct {
+		Deleted DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeleted `json:"deleted"`
+		Id      openapi_types.UUID                                                           `json:"id"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutV1DashboardByDashboardIdWidgetByWidgetIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data DashboardWidget `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON200() *struct {
+	Data DashboardWidget `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PutV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PutV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PutV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PutV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PutV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PutV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PutV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PutV1DashboardByDashboardIdWidgetByWidgetIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutV1DashboardByDashboardIdWidgetByWidgetIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutV1DashboardByDashboardIdWidgetByWidgetIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutV1DashboardByDashboardIdWidgetByWidgetIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data DashboardWidgetData `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse) GetJSON200() *struct {
+	Data DashboardWidgetData `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -65390,6 +78926,86 @@ func (r PostV1SimulationPlanJobByJobIdCancelResponse) ContentType() string {
 	return ""
 }
 
+type GetV1SimulationPlanJobByJobIdCostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data SimulationRunCost `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1SimulationPlanJobByJobIdCostResponse) GetJSON200() *struct {
+	Data SimulationRunCost `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1SimulationPlanJobByJobIdCostResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1SimulationPlanJobByJobIdCostResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1SimulationPlanJobByJobIdCostResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1SimulationPlanJobByJobIdCostResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1SimulationPlanJobByJobIdCostResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1SimulationPlanJobByJobIdCostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1SimulationPlanJobByJobIdCostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1SimulationPlanJobByJobIdCostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1SimulationPlanJobByJobIdCostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type PostV1SimulationPlanJobByJobIdDebriefResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -67843,6 +81459,84 @@ func (c *ClientWithResponses) GetV1AgentByAgentIdPromptsByPromptIdVersionsWithRe
 	return ParseGetV1AgentByAgentIdPromptsByPromptIdVersionsResponse(rsp)
 }
 
+// PostV1AnalyticsQueryWithBodyWithResponse Run an analytics query
+//
+// Aggregates metric values and conversation counts over a time window and returns one series per
+// measure, with a total for the window and per-interval buckets. The same query a dashboard widget
+// runs, without saving anything.
+//
+//   - `measures`: what to aggregate. A METRIC measure names its metric by slug; CONVERSATION counts
+//     conversations; UPTIME reads health checks. The aggregation defaults by the metric's output type.
+//   - `timeRange`: LAST n DAYS/WEEKS/MONTHS, a CALENDAR_ALIGNED period (TODAY, THIS_MONTH, ...), FIXED
+//     from/to, or SINCE. Defaults to the last 30 days; at most 731 days. Calendar periods and buckets
+//     align to `timezone` (IANA, default UTC).
+//   - `filters` apply to every measure; a measure's own `filters` add to them.
+//   - `breakdown` on a measure returns one series per value (largest 50 kept).
+//   - `comparisonGroups` (2 to 5) run every measure once per named filter set;
+//     `comparisonMode: PREVIOUS_PERIOD` adds the preceding window's values.
+//
+// Values are in the metric's display units. A PASS_RATE is a 0 to 1 share; `sampleSize` 0 means no data.
+// A query the analytics store cannot answer returns 400 naming the unsupported part.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/analytics/query (the `PostV1AnalyticsQuery` operationId).
+func (c *ClientWithResponses) PostV1AnalyticsQueryWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AnalyticsQueryResponse, error) {
+	rsp, err := c.PostV1AnalyticsQueryWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1AnalyticsQueryResponse(rsp)
+}
+
+// PostV1AnalyticsQueryWithResponse Run an analytics query
+//
+// Aggregates metric values and conversation counts over a time window and returns one series per
+// measure, with a total for the window and per-interval buckets. The same query a dashboard widget
+// runs, without saving anything.
+//
+//   - `measures`: what to aggregate. A METRIC measure names its metric by slug; CONVERSATION counts
+//     conversations; UPTIME reads health checks. The aggregation defaults by the metric's output type.
+//   - `timeRange`: LAST n DAYS/WEEKS/MONTHS, a CALENDAR_ALIGNED period (TODAY, THIS_MONTH, ...), FIXED
+//     from/to, or SINCE. Defaults to the last 30 days; at most 731 days. Calendar periods and buckets
+//     align to `timezone` (IANA, default UTC).
+//   - `filters` apply to every measure; a measure's own `filters` add to them.
+//   - `breakdown` on a measure returns one series per value (largest 50 kept).
+//   - `comparisonGroups` (2 to 5) run every measure once per named filter set;
+//     `comparisonMode: PREVIOUS_PERIOD` adds the preceding window's values.
+//
+// Values are in the metric's display units. A PASS_RATE is a 0 to 1 share; `sampleSize` 0 means no data.
+// A query the analytics store cannot answer returns 400 naming the unsupported part.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/analytics/query (the `PostV1AnalyticsQuery` operationId).
+func (c *ClientWithResponses) PostV1AnalyticsQueryWithResponse(ctx context.Context, body PostV1AnalyticsQueryJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AnalyticsQueryResponse, error) {
+	rsp, err := c.PostV1AnalyticsQuery(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1AnalyticsQueryResponse(rsp)
+}
+
+// GetV1AnalyticsSchemaWithResponse Get the analytics schema
+//
+// Lists what can go into an analytics query for this project: every metric by slug with its output
+// type, default aggregation and the aggregations it supports; the measure types; the filter and
+// breakdown types with the properties each accepts; and the custom call properties seen in the project.
+// Read this first when building a query.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/analytics/schema (the `GetV1AnalyticsSchema` operationId).
+func (c *ClientWithResponses) GetV1AnalyticsSchemaWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1AnalyticsSchemaResponse, error) {
+	rsp, err := c.GetV1AnalyticsSchema(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1AnalyticsSchemaResponse(rsp)
+}
+
 // GetV1AutoimproveJobWithResponse List Autoimprove jobs
 //
 // List the Autoimprove jobs in this project, most recent first, capped at 100.
@@ -68168,6 +81862,21 @@ func (c *ClientWithResponses) GetV1CallByCallIdWithResponse(ctx context.Context,
 		return nil, err
 	}
 	return ParseGetV1CallByCallIdResponse(rsp)
+}
+
+// GetV1CallByCallIdCostWithResponse Get call cost
+//
+// The billable spend attributed to one call, split by cost type, with every cost line behind it. Simulated calls include the costs their simulation incurred before the call connected. Amounts are billable spend only, in exact micro-dollars (`*UsdMicros`) and dollars (`*Usd`, for display). Requires an API key with the `billing:read` permission.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/call/{callId}/cost (the `GetV1CallByCallIdCost` operationId).
+func (c *ClientWithResponses) GetV1CallByCallIdCostWithResponse(ctx context.Context, callId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1CallByCallIdCostResponse, error) {
+	rsp, err := c.GetV1CallByCallIdCost(ctx, callId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1CallByCallIdCostResponse(rsp)
 }
 
 // GetV1CallByCallIdMetricsWithResponse List call metrics
@@ -68772,6 +82481,232 @@ func (c *ClientWithResponses) PutV1CustomerFlowByFlowIdHappyPathWithResponse(ctx
 		return nil, err
 	}
 	return ParsePutV1CustomerFlowByFlowIdHappyPathResponse(rsp)
+}
+
+// GetV1DashboardWithResponse List dashboards
+//
+// Lists the project's dashboards, the default first. GET /v1/dashboard/{dashboardId} returns the widgets.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/dashboard (the `GetV1Dashboard` operationId).
+func (c *ClientWithResponses) GetV1DashboardWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1DashboardResponse, error) {
+	rsp, err := c.GetV1Dashboard(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1DashboardResponse(rsp)
+}
+
+// PostV1DashboardWithBodyWithResponse Create a dashboard
+//
+// Creates a dashboard with its widgets. Each widget is an analytics query (see POST /v1/analytics/query)
+// with a name unique on the dashboard, a `display` (LINE, NUMBER, RADAR, STACKED_BAR, TABLE) and a
+// `size` (SMALL, MEDIUM, LARGE, EXTRA_LARGE). Widgets render top to bottom in the order given.
+//
+// Dashboard `filters` apply over every widget and must be conversation-level: AGENT_PROPERTY,
+// CALL_PROPERTY, MODALITY, DATASET or METRIC_VALUE. On a field a widget already filters, the dashboard's wins.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/dashboard (the `PostV1Dashboard` operationId).
+func (c *ClientWithResponses) PostV1DashboardWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1DashboardResponse, error) {
+	rsp, err := c.PostV1DashboardWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1DashboardResponse(rsp)
+}
+
+// PostV1DashboardWithResponse Create a dashboard
+//
+// Creates a dashboard with its widgets. Each widget is an analytics query (see POST /v1/analytics/query)
+// with a name unique on the dashboard, a `display` (LINE, NUMBER, RADAR, STACKED_BAR, TABLE) and a
+// `size` (SMALL, MEDIUM, LARGE, EXTRA_LARGE). Widgets render top to bottom in the order given.
+//
+// Dashboard `filters` apply over every widget and must be conversation-level: AGENT_PROPERTY,
+// CALL_PROPERTY, MODALITY, DATASET or METRIC_VALUE. On a field a widget already filters, the dashboard's wins.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/dashboard (the `PostV1Dashboard` operationId).
+func (c *ClientWithResponses) PostV1DashboardWithResponse(ctx context.Context, body PostV1DashboardJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1DashboardResponse, error) {
+	rsp, err := c.PostV1Dashboard(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1DashboardResponse(rsp)
+}
+
+// DeleteV1DashboardByDashboardIdWithResponse Delete a dashboard
+//
+// Deletes a dashboard and its widgets. If it was the default, another dashboard becomes the default. A dashboard managed by config as code returns 409.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/dashboard/{dashboardId} (the `DeleteV1DashboardByDashboardId` operationId).
+func (c *ClientWithResponses) DeleteV1DashboardByDashboardIdWithResponse(ctx context.Context, dashboardId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1DashboardByDashboardIdResponse, error) {
+	rsp, err := c.DeleteV1DashboardByDashboardId(ctx, dashboardId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1DashboardByDashboardIdResponse(rsp)
+}
+
+// GetV1DashboardByDashboardIdWithResponse Get a dashboard
+//
+// Returns a dashboard with its widgets top to bottom, each in the shape POST /v1/dashboard accepts, so a dashboard can be read, edited and written back.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/dashboard/{dashboardId} (the `GetV1DashboardByDashboardId` operationId).
+func (c *ClientWithResponses) GetV1DashboardByDashboardIdWithResponse(ctx context.Context, dashboardId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1DashboardByDashboardIdResponse, error) {
+	rsp, err := c.GetV1DashboardByDashboardId(ctx, dashboardId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1DashboardByDashboardIdResponse(rsp)
+}
+
+// PutV1DashboardByDashboardIdWithBodyWithResponse Update a dashboard
+//
+// Edits a dashboard. Omitted fields keep their current value. `widgets`, when sent, replaces the list:
+// widgets are matched by name, so a widget that keeps its name keeps its id; a new name adds a widget and
+// a name no longer listed removes it. To change one widget, PUT /v1/dashboard/{dashboardId}/widget/{widgetId}.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/dashboard/{dashboardId} (the `PutV1DashboardByDashboardId` operationId).
+func (c *ClientWithResponses) PutV1DashboardByDashboardIdWithBodyWithResponse(ctx context.Context, dashboardId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1DashboardByDashboardIdResponse, error) {
+	rsp, err := c.PutV1DashboardByDashboardIdWithBody(ctx, dashboardId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1DashboardByDashboardIdResponse(rsp)
+}
+
+// PutV1DashboardByDashboardIdWithResponse Update a dashboard
+//
+// Edits a dashboard. Omitted fields keep their current value. `widgets`, when sent, replaces the list:
+// widgets are matched by name, so a widget that keeps its name keeps its id; a new name adds a widget and
+// a name no longer listed removes it. To change one widget, PUT /v1/dashboard/{dashboardId}/widget/{widgetId}.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/dashboard/{dashboardId} (the `PutV1DashboardByDashboardId` operationId).
+func (c *ClientWithResponses) PutV1DashboardByDashboardIdWithResponse(ctx context.Context, dashboardId openapi_types.UUID, body PutV1DashboardByDashboardIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1DashboardByDashboardIdResponse, error) {
+	rsp, err := c.PutV1DashboardByDashboardId(ctx, dashboardId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1DashboardByDashboardIdResponse(rsp)
+}
+
+// GetV1DashboardByDashboardIdDataWithResponse Get dashboard data
+//
+// Runs every widget on the dashboard and returns each one's series, exactly as the dashboard shows them:
+// over the dashboard's saved window and with its filters applied. Pass `from` (and optionally `to`) to
+// read a different window, and `timezone` to align buckets to a zone.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/dashboard/{dashboardId}/data (the `GetV1DashboardByDashboardIdData` operationId).
+func (c *ClientWithResponses) GetV1DashboardByDashboardIdDataWithResponse(ctx context.Context, dashboardId string, params *GetV1DashboardByDashboardIdDataParams, reqEditors ...RequestEditorFn) (*GetV1DashboardByDashboardIdDataResponse, error) {
+	rsp, err := c.GetV1DashboardByDashboardIdData(ctx, dashboardId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1DashboardByDashboardIdDataResponse(rsp)
+}
+
+// PostV1DashboardByDashboardIdWidgetWithBodyWithResponse Add a widget
+//
+// Adds a widget to the top of a dashboard. Its name must be unique on the dashboard.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/dashboard/{dashboardId}/widget (the `PostV1DashboardByDashboardIdWidget` operationId).
+func (c *ClientWithResponses) PostV1DashboardByDashboardIdWidgetWithBodyWithResponse(ctx context.Context, dashboardId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1DashboardByDashboardIdWidgetResponse, error) {
+	rsp, err := c.PostV1DashboardByDashboardIdWidgetWithBody(ctx, dashboardId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1DashboardByDashboardIdWidgetResponse(rsp)
+}
+
+// PostV1DashboardByDashboardIdWidgetWithResponse Add a widget
+//
+// Adds a widget to the top of a dashboard. Its name must be unique on the dashboard.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/dashboard/{dashboardId}/widget (the `PostV1DashboardByDashboardIdWidget` operationId).
+func (c *ClientWithResponses) PostV1DashboardByDashboardIdWidgetWithResponse(ctx context.Context, dashboardId openapi_types.UUID, body PostV1DashboardByDashboardIdWidgetJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1DashboardByDashboardIdWidgetResponse, error) {
+	rsp, err := c.PostV1DashboardByDashboardIdWidget(ctx, dashboardId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1DashboardByDashboardIdWidgetResponse(rsp)
+}
+
+// DeleteV1DashboardByDashboardIdWidgetByWidgetIdWithResponse Remove a widget
+//
+// Removes a widget from a dashboard.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/dashboard/{dashboardId}/widget/{widgetId} (the `DeleteV1DashboardByDashboardIdWidgetByWidgetId` operationId).
+func (c *ClientWithResponses) DeleteV1DashboardByDashboardIdWidgetByWidgetIdWithResponse(ctx context.Context, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse, error) {
+	rsp, err := c.DeleteV1DashboardByDashboardIdWidgetByWidgetId(ctx, dashboardId, widgetId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse(rsp)
+}
+
+// PutV1DashboardByDashboardIdWidgetByWidgetIdWithBodyWithResponse Replace a widget
+//
+// Replaces a widget's definition. It keeps its id and its place on the dashboard.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/dashboard/{dashboardId}/widget/{widgetId} (the `PutV1DashboardByDashboardIdWidgetByWidgetId` operationId).
+func (c *ClientWithResponses) PutV1DashboardByDashboardIdWidgetByWidgetIdWithBodyWithResponse(ctx context.Context, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1DashboardByDashboardIdWidgetByWidgetIdResponse, error) {
+	rsp, err := c.PutV1DashboardByDashboardIdWidgetByWidgetIdWithBody(ctx, dashboardId, widgetId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1DashboardByDashboardIdWidgetByWidgetIdResponse(rsp)
+}
+
+// PutV1DashboardByDashboardIdWidgetByWidgetIdWithResponse Replace a widget
+//
+// Replaces a widget's definition. It keeps its id and its place on the dashboard.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/dashboard/{dashboardId}/widget/{widgetId} (the `PutV1DashboardByDashboardIdWidgetByWidgetId` operationId).
+func (c *ClientWithResponses) PutV1DashboardByDashboardIdWidgetByWidgetIdWithResponse(ctx context.Context, dashboardId openapi_types.UUID, widgetId openapi_types.UUID, body PutV1DashboardByDashboardIdWidgetByWidgetIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1DashboardByDashboardIdWidgetByWidgetIdResponse, error) {
+	rsp, err := c.PutV1DashboardByDashboardIdWidgetByWidgetId(ctx, dashboardId, widgetId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1DashboardByDashboardIdWidgetByWidgetIdResponse(rsp)
+}
+
+// GetV1DashboardByDashboardIdWidgetByWidgetIdDataWithResponse Get widget data
+//
+// Runs one widget and returns its series, as it reads on its dashboard (the dashboard's window and filters). Accepts the same `from` / `to` / `timezone` overrides as GET /v1/dashboard/{dashboardId}/data.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/dashboard/{dashboardId}/widget/{widgetId}/data (the `GetV1DashboardByDashboardIdWidgetByWidgetIdData` operationId).
+func (c *ClientWithResponses) GetV1DashboardByDashboardIdWidgetByWidgetIdDataWithResponse(ctx context.Context, dashboardId string, widgetId string, params *GetV1DashboardByDashboardIdWidgetByWidgetIdDataParams, reqEditors ...RequestEditorFn) (*GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse, error) {
+	rsp, err := c.GetV1DashboardByDashboardIdWidgetByWidgetIdData(ctx, dashboardId, widgetId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse(rsp)
 }
 
 // GetV1HttpRequestDefinitionWithResponse List HTTP request definitions
@@ -70355,6 +84290,21 @@ func (c *ClientWithResponses) PostV1SimulationPlanJobByJobIdCancelWithResponse(c
 	return ParsePostV1SimulationPlanJobByJobIdCancelResponse(rsp)
 }
 
+// GetV1SimulationPlanJobByJobIdCostWithResponse Get simulation run cost
+//
+// The billable spend for one simulation run (run plan job), split by cost type, with the spend of each simulated call in it. Safe to call while the run is in progress: totals reflect the costs recorded so far. Amounts are billable spend only, in exact micro-dollars (`*UsdMicros`) and dollars (`*Usd`, for display). Requires an API key with the `billing:read` permission.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/simulation/plan/job/{jobId}/cost (the `GetV1SimulationPlanJobByJobIdCost` operationId).
+func (c *ClientWithResponses) GetV1SimulationPlanJobByJobIdCostWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1SimulationPlanJobByJobIdCostResponse, error) {
+	rsp, err := c.GetV1SimulationPlanJobByJobIdCost(ctx, jobId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1SimulationPlanJobByJobIdCostResponse(rsp)
+}
+
 // PostV1SimulationPlanJobByJobIdDebriefWithBodyWithResponse Generate simulation run debrief
 //
 // Request the written debrief for a settled run: executive summary, failure themes and recommendations.
@@ -70846,7 +84796,7 @@ func (c *ClientWithResponses) PostV1SimulationToolMockWithResponse(ctx context.C
 
 // GetV1UsageWithResponse Get usage & cost
 //
-// Report billable usage and cost for the organization over a time window, broken down by project (highest spend first). Pass `from`/`to` as ISO 8601 timestamps; optionally pass `projectId` to scope the report to one project. Amounts are billable spend only (what we absorb is never included). Authenticated by an organization API key with the `usage:read` permission.
+// Report billable usage and cost for the organization over a time window, broken down by project (highest spend first). Pass `from`/`to` as ISO 8601 timestamps; optionally pass `projectId` to scope the report to one project. Amounts are billable spend only (what we absorb is never included). Authenticated by either an organization API key with the `usage:read` permission (any project in the organization), or a project API key with the `billing:read` permission (that key's own project only; any other `projectId` is a 403).
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -72151,6 +86101,134 @@ func ParseGetV1AgentByAgentIdPromptsByPromptIdVersionsResponse(rsp *http.Respons
 			return nil, err
 		}
 		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1AnalyticsQueryResponse parses an HTTP response from a PostV1AnalyticsQueryWithResponse call
+func ParsePostV1AnalyticsQueryResponse(rsp *http.Response) (*PostV1AnalyticsQueryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1AnalyticsQueryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data One series per measure (or per breakdown value / comparison group). `value` is the aggregate over the whole window; `buckets` hold the per-interval values.
+			Data AnalyticsResult `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1AnalyticsSchemaResponse parses an HTTP response from a GetV1AnalyticsSchemaWithResponse call
+func ParseGetV1AnalyticsSchemaResponse(rsp *http.Response) (*GetV1AnalyticsSchemaResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1AnalyticsSchemaResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data What can be queried in this project: metrics (by slug), measure types, filters, breakdowns.
+			Data AnalyticsSchema `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse
@@ -73506,6 +87584,69 @@ func ParseGetV1CallByCallIdResponse(rsp *http.Response) (*GetV1CallByCallIdRespo
 				// Example: 2024-01-15T10:31:00Z
 				UpdatedAt *string `json:"updatedAt,omitempty"`
 			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1CallByCallIdCostResponse parses an HTTP response from a GetV1CallByCallIdCostWithResponse call
+func ParseGetV1CallByCallIdCostResponse(rsp *http.Response) (*GetV1CallByCallIdCostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1CallByCallIdCostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data CallCost `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -75554,6 +89695,727 @@ func ParsePutV1CustomerFlowByFlowIdHappyPathResponse(rsp *http.Response) (*PutV1
 		var dest struct {
 			// Data One way of running a customer flow.
 			Data FlowVariant `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1DashboardResponse parses an HTTP response from a GetV1DashboardWithResponse call
+func ParseGetV1DashboardResponse(rsp *http.Response) (*GetV1DashboardResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1DashboardResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []DashboardSummary `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1DashboardResponse parses an HTTP response from a PostV1DashboardWithResponse call
+func ParsePostV1DashboardResponse(rsp *http.Response) (*PostV1DashboardResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1DashboardResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			Data Dashboard `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1DashboardByDashboardIdResponse parses an HTTP response from a DeleteV1DashboardByDashboardIdWithResponse call
+func ParseDeleteV1DashboardByDashboardIdResponse(rsp *http.Response) (*DeleteV1DashboardByDashboardIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1DashboardByDashboardIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				Deleted DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeleted `json:"deleted"`
+				Id      openapi_types.UUID                                           `json:"id"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1DashboardByDashboardIdResponse parses an HTTP response from a GetV1DashboardByDashboardIdWithResponse call
+func ParseGetV1DashboardByDashboardIdResponse(rsp *http.Response) (*GetV1DashboardByDashboardIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1DashboardByDashboardIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data Dashboard `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePutV1DashboardByDashboardIdResponse parses an HTTP response from a PutV1DashboardByDashboardIdWithResponse call
+func ParsePutV1DashboardByDashboardIdResponse(rsp *http.Response) (*PutV1DashboardByDashboardIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PutV1DashboardByDashboardIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data Dashboard `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1DashboardByDashboardIdDataResponse parses an HTTP response from a GetV1DashboardByDashboardIdDataWithResponse call
+func ParseGetV1DashboardByDashboardIdDataResponse(rsp *http.Response) (*GetV1DashboardByDashboardIdDataResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1DashboardByDashboardIdDataResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data Every widget's series over the window, top to bottom. A widget that fails on its own (say its metric was deleted) carries `error` and no series; the others still return.
+			Data DashboardData `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1DashboardByDashboardIdWidgetResponse parses an HTTP response from a PostV1DashboardByDashboardIdWidgetWithResponse call
+func ParsePostV1DashboardByDashboardIdWidgetResponse(rsp *http.Response) (*PostV1DashboardByDashboardIdWidgetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1DashboardByDashboardIdWidgetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			Data DashboardWidget `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse parses an HTTP response from a DeleteV1DashboardByDashboardIdWidgetByWidgetIdWithResponse call
+func ParseDeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse(rsp *http.Response) (*DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1DashboardByDashboardIdWidgetByWidgetIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				Deleted DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeleted `json:"deleted"`
+				Id      openapi_types.UUID                                                           `json:"id"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePutV1DashboardByDashboardIdWidgetByWidgetIdResponse parses an HTTP response from a PutV1DashboardByDashboardIdWidgetByWidgetIdWithResponse call
+func ParsePutV1DashboardByDashboardIdWidgetByWidgetIdResponse(rsp *http.Response) (*PutV1DashboardByDashboardIdWidgetByWidgetIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PutV1DashboardByDashboardIdWidgetByWidgetIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data DashboardWidget `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse parses an HTTP response from a GetV1DashboardByDashboardIdWidgetByWidgetIdDataWithResponse call
+func ParseGetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse(rsp *http.Response) (*GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1DashboardByDashboardIdWidgetByWidgetIdDataResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data DashboardWidgetData `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -80648,6 +95510,69 @@ func ParsePostV1SimulationPlanJobByJobIdCancelResponse(rsp *http.Response) (*Pos
 			return nil, err
 		}
 		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1SimulationPlanJobByJobIdCostResponse parses an HTTP response from a GetV1SimulationPlanJobByJobIdCostWithResponse call
+func ParseGetV1SimulationPlanJobByJobIdCostResponse(rsp *http.Response) (*GetV1SimulationPlanJobByJobIdCostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1SimulationPlanJobByJobIdCostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data SimulationRunCost `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest ErrorResponse

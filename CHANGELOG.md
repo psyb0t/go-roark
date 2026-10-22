@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.2.0, 2026-10-22
+
+- Breaking: the filter `Value` field is now optional and a pointer. It changed to `*AnalyticsQuery_Filters_Value` and similar `*..._Value` types in the `Filters` and `ComparisonGroups` fields of `AnalyticsQuery`, `Dashboard`, `DashboardInput`, `DashboardWidget`, `DashboardWidgetInput` and `UpdateDashboardInput`, with the JSON tag `value,omitempty`. `DashboardFilterConfig.Value` is now `*DashboardFilterConfig_Value`. Code that sets or reads these values must take addresses and check for nil.
+- Breaking: the anonymous struct types of `Measures` in `AnalyticsQuery`, `DashboardWidget` and `DashboardWidgetInput`, and of `Widgets` in `Dashboard`, `DashboardInput` and `UpdateDashboardInput`, changed because they embed the filter and measure types above. Composite literals of these types must be updated.
+- Added call deletion: `DeleteV1CallByCallId`, `PostV1CallBatchDelete` and `PostV1CallBatchDeleteWithBody`, with `WithResponse` methods, request builders, `ParseDeleteV1CallByCallIdResponse`, `ParsePostV1CallBatchDeleteResponse`, `PostV1CallBatchDeleteJSONBody` and `PostV1CallBatchDeleteJSONRequestBody`.
+- Added `PostV1MetricCollectionJobsByJobIdCancel` with its `WithResponse` method, request builder and `ParsePostV1MetricCollectionJobsByJobIdCancelResponse`.
+- `GetV1CallParams` has a new `Properties` query field, and `GetV1CallResponse` has `JSON400`.
+- Added the filter operators `ISSET` and `ISNOTSET` to every filter, measure and pass operator enum, for example `AnalyticsQueryFiltersOperatorISSET`, `DashboardFilterConfigOperatorISNOTSET` and `AnalyticsSchemaOperatorsISSET`.
+- `ClientInterface` and `ClientWithResponsesInterface` gained the matching methods. Code that implements these interfaces, such as test mocks, must add them.
+
 ## v0.1.2, 2026-10-21
 
 - Added dashboard endpoints: `GetV1Dashboard`, `PostV1Dashboard`, `GetV1DashboardByDashboardId`, `PutV1DashboardByDashboardId`, `DeleteV1DashboardByDashboardId` and `GetV1DashboardByDashboardIdData`.

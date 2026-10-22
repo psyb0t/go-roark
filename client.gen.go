@@ -526,6 +526,8 @@ const (
 	AnalyticsQueryComparisonGroupsFiltersOperatorEQUALS               AnalyticsQueryComparisonGroupsFiltersOperator = "EQUALS"
 	AnalyticsQueryComparisonGroupsFiltersOperatorGREATERTHAN          AnalyticsQueryComparisonGroupsFiltersOperator = "GREATER_THAN"
 	AnalyticsQueryComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO AnalyticsQueryComparisonGroupsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	AnalyticsQueryComparisonGroupsFiltersOperatorISNOTSET             AnalyticsQueryComparisonGroupsFiltersOperator = "IS_NOT_SET"
+	AnalyticsQueryComparisonGroupsFiltersOperatorISSET                AnalyticsQueryComparisonGroupsFiltersOperator = "IS_SET"
 	AnalyticsQueryComparisonGroupsFiltersOperatorLESSTHAN             AnalyticsQueryComparisonGroupsFiltersOperator = "LESS_THAN"
 	AnalyticsQueryComparisonGroupsFiltersOperatorLESSTHANOREQUALTO    AnalyticsQueryComparisonGroupsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	AnalyticsQueryComparisonGroupsFiltersOperatorNOTEQUALS            AnalyticsQueryComparisonGroupsFiltersOperator = "NOT_EQUALS"
@@ -542,6 +544,10 @@ func (e AnalyticsQueryComparisonGroupsFiltersOperator) Valid() bool {
 	case AnalyticsQueryComparisonGroupsFiltersOperatorGREATERTHAN:
 		return true
 	case AnalyticsQueryComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersOperatorISNOTSET:
+		return true
+	case AnalyticsQueryComparisonGroupsFiltersOperatorISSET:
 		return true
 	case AnalyticsQueryComparisonGroupsFiltersOperatorLESSTHAN:
 		return true
@@ -613,6 +619,8 @@ const (
 	AnalyticsQueryFiltersOperatorEQUALS               AnalyticsQueryFiltersOperator = "EQUALS"
 	AnalyticsQueryFiltersOperatorGREATERTHAN          AnalyticsQueryFiltersOperator = "GREATER_THAN"
 	AnalyticsQueryFiltersOperatorGREATERTHANOREQUALTO AnalyticsQueryFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	AnalyticsQueryFiltersOperatorISNOTSET             AnalyticsQueryFiltersOperator = "IS_NOT_SET"
+	AnalyticsQueryFiltersOperatorISSET                AnalyticsQueryFiltersOperator = "IS_SET"
 	AnalyticsQueryFiltersOperatorLESSTHAN             AnalyticsQueryFiltersOperator = "LESS_THAN"
 	AnalyticsQueryFiltersOperatorLESSTHANOREQUALTO    AnalyticsQueryFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	AnalyticsQueryFiltersOperatorNOTEQUALS            AnalyticsQueryFiltersOperator = "NOT_EQUALS"
@@ -629,6 +637,10 @@ func (e AnalyticsQueryFiltersOperator) Valid() bool {
 	case AnalyticsQueryFiltersOperatorGREATERTHAN:
 		return true
 	case AnalyticsQueryFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case AnalyticsQueryFiltersOperatorISNOTSET:
+		return true
+	case AnalyticsQueryFiltersOperatorISSET:
 		return true
 	case AnalyticsQueryFiltersOperatorLESSTHAN:
 		return true
@@ -832,6 +844,8 @@ const (
 	AnalyticsQueryMeasuresFiltersOperatorEQUALS               AnalyticsQueryMeasuresFiltersOperator = "EQUALS"
 	AnalyticsQueryMeasuresFiltersOperatorGREATERTHAN          AnalyticsQueryMeasuresFiltersOperator = "GREATER_THAN"
 	AnalyticsQueryMeasuresFiltersOperatorGREATERTHANOREQUALTO AnalyticsQueryMeasuresFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	AnalyticsQueryMeasuresFiltersOperatorISNOTSET             AnalyticsQueryMeasuresFiltersOperator = "IS_NOT_SET"
+	AnalyticsQueryMeasuresFiltersOperatorISSET                AnalyticsQueryMeasuresFiltersOperator = "IS_SET"
 	AnalyticsQueryMeasuresFiltersOperatorLESSTHAN             AnalyticsQueryMeasuresFiltersOperator = "LESS_THAN"
 	AnalyticsQueryMeasuresFiltersOperatorLESSTHANOREQUALTO    AnalyticsQueryMeasuresFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	AnalyticsQueryMeasuresFiltersOperatorNOTEQUALS            AnalyticsQueryMeasuresFiltersOperator = "NOT_EQUALS"
@@ -848,6 +862,10 @@ func (e AnalyticsQueryMeasuresFiltersOperator) Valid() bool {
 	case AnalyticsQueryMeasuresFiltersOperatorGREATERTHAN:
 		return true
 	case AnalyticsQueryMeasuresFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case AnalyticsQueryMeasuresFiltersOperatorISNOTSET:
+		return true
+	case AnalyticsQueryMeasuresFiltersOperatorISSET:
 		return true
 	case AnalyticsQueryMeasuresFiltersOperatorLESSTHAN:
 		return true
@@ -937,6 +955,8 @@ const (
 	AnalyticsQueryMeasuresPassOperatorEQUALS               AnalyticsQueryMeasuresPassOperator = "EQUALS"
 	AnalyticsQueryMeasuresPassOperatorGREATERTHAN          AnalyticsQueryMeasuresPassOperator = "GREATER_THAN"
 	AnalyticsQueryMeasuresPassOperatorGREATERTHANOREQUALTO AnalyticsQueryMeasuresPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	AnalyticsQueryMeasuresPassOperatorISNOTSET             AnalyticsQueryMeasuresPassOperator = "IS_NOT_SET"
+	AnalyticsQueryMeasuresPassOperatorISSET                AnalyticsQueryMeasuresPassOperator = "IS_SET"
 	AnalyticsQueryMeasuresPassOperatorLESSTHAN             AnalyticsQueryMeasuresPassOperator = "LESS_THAN"
 	AnalyticsQueryMeasuresPassOperatorLESSTHANOREQUALTO    AnalyticsQueryMeasuresPassOperator = "LESS_THAN_OR_EQUAL_TO"
 	AnalyticsQueryMeasuresPassOperatorNOTEQUALS            AnalyticsQueryMeasuresPassOperator = "NOT_EQUALS"
@@ -953,6 +973,10 @@ func (e AnalyticsQueryMeasuresPassOperator) Valid() bool {
 	case AnalyticsQueryMeasuresPassOperatorGREATERTHAN:
 		return true
 	case AnalyticsQueryMeasuresPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case AnalyticsQueryMeasuresPassOperatorISNOTSET:
+		return true
+	case AnalyticsQueryMeasuresPassOperatorISSET:
 		return true
 	case AnalyticsQueryMeasuresPassOperatorLESSTHAN:
 		return true
@@ -1429,6 +1453,8 @@ const (
 	AnalyticsSchemaOperatorsEQUALS               AnalyticsSchemaOperators = "EQUALS"
 	AnalyticsSchemaOperatorsGREATERTHAN          AnalyticsSchemaOperators = "GREATER_THAN"
 	AnalyticsSchemaOperatorsGREATERTHANOREQUALTO AnalyticsSchemaOperators = "GREATER_THAN_OR_EQUAL_TO"
+	AnalyticsSchemaOperatorsISNOTSET             AnalyticsSchemaOperators = "IS_NOT_SET"
+	AnalyticsSchemaOperatorsISSET                AnalyticsSchemaOperators = "IS_SET"
 	AnalyticsSchemaOperatorsLESSTHAN             AnalyticsSchemaOperators = "LESS_THAN"
 	AnalyticsSchemaOperatorsLESSTHANOREQUALTO    AnalyticsSchemaOperators = "LESS_THAN_OR_EQUAL_TO"
 	AnalyticsSchemaOperatorsNOTEQUALS            AnalyticsSchemaOperators = "NOT_EQUALS"
@@ -1445,6 +1471,10 @@ func (e AnalyticsSchemaOperators) Valid() bool {
 	case AnalyticsSchemaOperatorsGREATERTHAN:
 		return true
 	case AnalyticsSchemaOperatorsGREATERTHANOREQUALTO:
+		return true
+	case AnalyticsSchemaOperatorsISNOTSET:
+		return true
+	case AnalyticsSchemaOperatorsISSET:
 		return true
 	case AnalyticsSchemaOperatorsLESSTHAN:
 		return true
@@ -3523,6 +3553,8 @@ const (
 	DashboardFiltersOperatorEQUALS               DashboardFiltersOperator = "EQUALS"
 	DashboardFiltersOperatorGREATERTHAN          DashboardFiltersOperator = "GREATER_THAN"
 	DashboardFiltersOperatorGREATERTHANOREQUALTO DashboardFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardFiltersOperatorISNOTSET             DashboardFiltersOperator = "IS_NOT_SET"
+	DashboardFiltersOperatorISSET                DashboardFiltersOperator = "IS_SET"
 	DashboardFiltersOperatorLESSTHAN             DashboardFiltersOperator = "LESS_THAN"
 	DashboardFiltersOperatorLESSTHANOREQUALTO    DashboardFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardFiltersOperatorNOTEQUALS            DashboardFiltersOperator = "NOT_EQUALS"
@@ -3539,6 +3571,10 @@ func (e DashboardFiltersOperator) Valid() bool {
 	case DashboardFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardFiltersOperatorISNOTSET:
+		return true
+	case DashboardFiltersOperatorISSET:
 		return true
 	case DashboardFiltersOperatorLESSTHAN:
 		return true
@@ -3757,6 +3793,8 @@ const (
 	DashboardWidgetsComparisonGroupsFiltersOperatorEQUALS               DashboardWidgetsComparisonGroupsFiltersOperator = "EQUALS"
 	DashboardWidgetsComparisonGroupsFiltersOperatorGREATERTHAN          DashboardWidgetsComparisonGroupsFiltersOperator = "GREATER_THAN"
 	DashboardWidgetsComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetsComparisonGroupsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetsComparisonGroupsFiltersOperatorISNOTSET             DashboardWidgetsComparisonGroupsFiltersOperator = "IS_NOT_SET"
+	DashboardWidgetsComparisonGroupsFiltersOperatorISSET                DashboardWidgetsComparisonGroupsFiltersOperator = "IS_SET"
 	DashboardWidgetsComparisonGroupsFiltersOperatorLESSTHAN             DashboardWidgetsComparisonGroupsFiltersOperator = "LESS_THAN"
 	DashboardWidgetsComparisonGroupsFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetsComparisonGroupsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardWidgetsComparisonGroupsFiltersOperatorNOTEQUALS            DashboardWidgetsComparisonGroupsFiltersOperator = "NOT_EQUALS"
@@ -3773,6 +3811,10 @@ func (e DashboardWidgetsComparisonGroupsFiltersOperator) Valid() bool {
 	case DashboardWidgetsComparisonGroupsFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardWidgetsComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersOperatorISNOTSET:
+		return true
+	case DashboardWidgetsComparisonGroupsFiltersOperatorISSET:
 		return true
 	case DashboardWidgetsComparisonGroupsFiltersOperatorLESSTHAN:
 		return true
@@ -3871,6 +3913,8 @@ const (
 	DashboardWidgetsFiltersOperatorEQUALS               DashboardWidgetsFiltersOperator = "EQUALS"
 	DashboardWidgetsFiltersOperatorGREATERTHAN          DashboardWidgetsFiltersOperator = "GREATER_THAN"
 	DashboardWidgetsFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetsFiltersOperatorISNOTSET             DashboardWidgetsFiltersOperator = "IS_NOT_SET"
+	DashboardWidgetsFiltersOperatorISSET                DashboardWidgetsFiltersOperator = "IS_SET"
 	DashboardWidgetsFiltersOperatorLESSTHAN             DashboardWidgetsFiltersOperator = "LESS_THAN"
 	DashboardWidgetsFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardWidgetsFiltersOperatorNOTEQUALS            DashboardWidgetsFiltersOperator = "NOT_EQUALS"
@@ -3887,6 +3931,10 @@ func (e DashboardWidgetsFiltersOperator) Valid() bool {
 	case DashboardWidgetsFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardWidgetsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetsFiltersOperatorISNOTSET:
+		return true
+	case DashboardWidgetsFiltersOperatorISSET:
 		return true
 	case DashboardWidgetsFiltersOperatorLESSTHAN:
 		return true
@@ -4090,6 +4138,8 @@ const (
 	DashboardWidgetsMeasuresFiltersOperatorEQUALS               DashboardWidgetsMeasuresFiltersOperator = "EQUALS"
 	DashboardWidgetsMeasuresFiltersOperatorGREATERTHAN          DashboardWidgetsMeasuresFiltersOperator = "GREATER_THAN"
 	DashboardWidgetsMeasuresFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetsMeasuresFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetsMeasuresFiltersOperatorISNOTSET             DashboardWidgetsMeasuresFiltersOperator = "IS_NOT_SET"
+	DashboardWidgetsMeasuresFiltersOperatorISSET                DashboardWidgetsMeasuresFiltersOperator = "IS_SET"
 	DashboardWidgetsMeasuresFiltersOperatorLESSTHAN             DashboardWidgetsMeasuresFiltersOperator = "LESS_THAN"
 	DashboardWidgetsMeasuresFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetsMeasuresFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardWidgetsMeasuresFiltersOperatorNOTEQUALS            DashboardWidgetsMeasuresFiltersOperator = "NOT_EQUALS"
@@ -4106,6 +4156,10 @@ func (e DashboardWidgetsMeasuresFiltersOperator) Valid() bool {
 	case DashboardWidgetsMeasuresFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardWidgetsMeasuresFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetsMeasuresFiltersOperatorISNOTSET:
+		return true
+	case DashboardWidgetsMeasuresFiltersOperatorISSET:
 		return true
 	case DashboardWidgetsMeasuresFiltersOperatorLESSTHAN:
 		return true
@@ -4195,6 +4249,8 @@ const (
 	DashboardWidgetsMeasuresPassOperatorEQUALS               DashboardWidgetsMeasuresPassOperator = "EQUALS"
 	DashboardWidgetsMeasuresPassOperatorGREATERTHAN          DashboardWidgetsMeasuresPassOperator = "GREATER_THAN"
 	DashboardWidgetsMeasuresPassOperatorGREATERTHANOREQUALTO DashboardWidgetsMeasuresPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetsMeasuresPassOperatorISNOTSET             DashboardWidgetsMeasuresPassOperator = "IS_NOT_SET"
+	DashboardWidgetsMeasuresPassOperatorISSET                DashboardWidgetsMeasuresPassOperator = "IS_SET"
 	DashboardWidgetsMeasuresPassOperatorLESSTHAN             DashboardWidgetsMeasuresPassOperator = "LESS_THAN"
 	DashboardWidgetsMeasuresPassOperatorLESSTHANOREQUALTO    DashboardWidgetsMeasuresPassOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardWidgetsMeasuresPassOperatorNOTEQUALS            DashboardWidgetsMeasuresPassOperator = "NOT_EQUALS"
@@ -4211,6 +4267,10 @@ func (e DashboardWidgetsMeasuresPassOperator) Valid() bool {
 	case DashboardWidgetsMeasuresPassOperatorGREATERTHAN:
 		return true
 	case DashboardWidgetsMeasuresPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetsMeasuresPassOperatorISNOTSET:
+		return true
+	case DashboardWidgetsMeasuresPassOperatorISSET:
 		return true
 	case DashboardWidgetsMeasuresPassOperatorLESSTHAN:
 		return true
@@ -4372,6 +4432,8 @@ const (
 	DashboardFilterConfigOperatorEQUALS               DashboardFilterConfigOperator = "EQUALS"
 	DashboardFilterConfigOperatorGREATERTHAN          DashboardFilterConfigOperator = "GREATER_THAN"
 	DashboardFilterConfigOperatorGREATERTHANOREQUALTO DashboardFilterConfigOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardFilterConfigOperatorISNOTSET             DashboardFilterConfigOperator = "IS_NOT_SET"
+	DashboardFilterConfigOperatorISSET                DashboardFilterConfigOperator = "IS_SET"
 	DashboardFilterConfigOperatorLESSTHAN             DashboardFilterConfigOperator = "LESS_THAN"
 	DashboardFilterConfigOperatorLESSTHANOREQUALTO    DashboardFilterConfigOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardFilterConfigOperatorNOTEQUALS            DashboardFilterConfigOperator = "NOT_EQUALS"
@@ -4388,6 +4450,10 @@ func (e DashboardFilterConfigOperator) Valid() bool {
 	case DashboardFilterConfigOperatorGREATERTHAN:
 		return true
 	case DashboardFilterConfigOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardFilterConfigOperatorISNOTSET:
+		return true
+	case DashboardFilterConfigOperatorISSET:
 		return true
 	case DashboardFilterConfigOperatorLESSTHAN:
 		return true
@@ -4438,6 +4504,8 @@ const (
 	DashboardInputFiltersOperatorEQUALS               DashboardInputFiltersOperator = "EQUALS"
 	DashboardInputFiltersOperatorGREATERTHAN          DashboardInputFiltersOperator = "GREATER_THAN"
 	DashboardInputFiltersOperatorGREATERTHANOREQUALTO DashboardInputFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardInputFiltersOperatorISNOTSET             DashboardInputFiltersOperator = "IS_NOT_SET"
+	DashboardInputFiltersOperatorISSET                DashboardInputFiltersOperator = "IS_SET"
 	DashboardInputFiltersOperatorLESSTHAN             DashboardInputFiltersOperator = "LESS_THAN"
 	DashboardInputFiltersOperatorLESSTHANOREQUALTO    DashboardInputFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardInputFiltersOperatorNOTEQUALS            DashboardInputFiltersOperator = "NOT_EQUALS"
@@ -4454,6 +4522,10 @@ func (e DashboardInputFiltersOperator) Valid() bool {
 	case DashboardInputFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardInputFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardInputFiltersOperatorISNOTSET:
+		return true
+	case DashboardInputFiltersOperatorISSET:
 		return true
 	case DashboardInputFiltersOperatorLESSTHAN:
 		return true
@@ -4672,6 +4744,8 @@ const (
 	DashboardInputWidgetsComparisonGroupsFiltersOperatorEQUALS               DashboardInputWidgetsComparisonGroupsFiltersOperator = "EQUALS"
 	DashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHAN          DashboardInputWidgetsComparisonGroupsFiltersOperator = "GREATER_THAN"
 	DashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO DashboardInputWidgetsComparisonGroupsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardInputWidgetsComparisonGroupsFiltersOperatorISNOTSET             DashboardInputWidgetsComparisonGroupsFiltersOperator = "IS_NOT_SET"
+	DashboardInputWidgetsComparisonGroupsFiltersOperatorISSET                DashboardInputWidgetsComparisonGroupsFiltersOperator = "IS_SET"
 	DashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHAN             DashboardInputWidgetsComparisonGroupsFiltersOperator = "LESS_THAN"
 	DashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHANOREQUALTO    DashboardInputWidgetsComparisonGroupsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardInputWidgetsComparisonGroupsFiltersOperatorNOTEQUALS            DashboardInputWidgetsComparisonGroupsFiltersOperator = "NOT_EQUALS"
@@ -4688,6 +4762,10 @@ func (e DashboardInputWidgetsComparisonGroupsFiltersOperator) Valid() bool {
 	case DashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersOperatorISNOTSET:
+		return true
+	case DashboardInputWidgetsComparisonGroupsFiltersOperatorISSET:
 		return true
 	case DashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHAN:
 		return true
@@ -4786,6 +4864,8 @@ const (
 	DashboardInputWidgetsFiltersOperatorEQUALS               DashboardInputWidgetsFiltersOperator = "EQUALS"
 	DashboardInputWidgetsFiltersOperatorGREATERTHAN          DashboardInputWidgetsFiltersOperator = "GREATER_THAN"
 	DashboardInputWidgetsFiltersOperatorGREATERTHANOREQUALTO DashboardInputWidgetsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardInputWidgetsFiltersOperatorISNOTSET             DashboardInputWidgetsFiltersOperator = "IS_NOT_SET"
+	DashboardInputWidgetsFiltersOperatorISSET                DashboardInputWidgetsFiltersOperator = "IS_SET"
 	DashboardInputWidgetsFiltersOperatorLESSTHAN             DashboardInputWidgetsFiltersOperator = "LESS_THAN"
 	DashboardInputWidgetsFiltersOperatorLESSTHANOREQUALTO    DashboardInputWidgetsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardInputWidgetsFiltersOperatorNOTEQUALS            DashboardInputWidgetsFiltersOperator = "NOT_EQUALS"
@@ -4802,6 +4882,10 @@ func (e DashboardInputWidgetsFiltersOperator) Valid() bool {
 	case DashboardInputWidgetsFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardInputWidgetsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardInputWidgetsFiltersOperatorISNOTSET:
+		return true
+	case DashboardInputWidgetsFiltersOperatorISSET:
 		return true
 	case DashboardInputWidgetsFiltersOperatorLESSTHAN:
 		return true
@@ -5005,6 +5089,8 @@ const (
 	DashboardInputWidgetsMeasuresFiltersOperatorEQUALS               DashboardInputWidgetsMeasuresFiltersOperator = "EQUALS"
 	DashboardInputWidgetsMeasuresFiltersOperatorGREATERTHAN          DashboardInputWidgetsMeasuresFiltersOperator = "GREATER_THAN"
 	DashboardInputWidgetsMeasuresFiltersOperatorGREATERTHANOREQUALTO DashboardInputWidgetsMeasuresFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardInputWidgetsMeasuresFiltersOperatorISNOTSET             DashboardInputWidgetsMeasuresFiltersOperator = "IS_NOT_SET"
+	DashboardInputWidgetsMeasuresFiltersOperatorISSET                DashboardInputWidgetsMeasuresFiltersOperator = "IS_SET"
 	DashboardInputWidgetsMeasuresFiltersOperatorLESSTHAN             DashboardInputWidgetsMeasuresFiltersOperator = "LESS_THAN"
 	DashboardInputWidgetsMeasuresFiltersOperatorLESSTHANOREQUALTO    DashboardInputWidgetsMeasuresFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardInputWidgetsMeasuresFiltersOperatorNOTEQUALS            DashboardInputWidgetsMeasuresFiltersOperator = "NOT_EQUALS"
@@ -5021,6 +5107,10 @@ func (e DashboardInputWidgetsMeasuresFiltersOperator) Valid() bool {
 	case DashboardInputWidgetsMeasuresFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardInputWidgetsMeasuresFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersOperatorISNOTSET:
+		return true
+	case DashboardInputWidgetsMeasuresFiltersOperatorISSET:
 		return true
 	case DashboardInputWidgetsMeasuresFiltersOperatorLESSTHAN:
 		return true
@@ -5110,6 +5200,8 @@ const (
 	DashboardInputWidgetsMeasuresPassOperatorEQUALS               DashboardInputWidgetsMeasuresPassOperator = "EQUALS"
 	DashboardInputWidgetsMeasuresPassOperatorGREATERTHAN          DashboardInputWidgetsMeasuresPassOperator = "GREATER_THAN"
 	DashboardInputWidgetsMeasuresPassOperatorGREATERTHANOREQUALTO DashboardInputWidgetsMeasuresPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardInputWidgetsMeasuresPassOperatorISNOTSET             DashboardInputWidgetsMeasuresPassOperator = "IS_NOT_SET"
+	DashboardInputWidgetsMeasuresPassOperatorISSET                DashboardInputWidgetsMeasuresPassOperator = "IS_SET"
 	DashboardInputWidgetsMeasuresPassOperatorLESSTHAN             DashboardInputWidgetsMeasuresPassOperator = "LESS_THAN"
 	DashboardInputWidgetsMeasuresPassOperatorLESSTHANOREQUALTO    DashboardInputWidgetsMeasuresPassOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardInputWidgetsMeasuresPassOperatorNOTEQUALS            DashboardInputWidgetsMeasuresPassOperator = "NOT_EQUALS"
@@ -5126,6 +5218,10 @@ func (e DashboardInputWidgetsMeasuresPassOperator) Valid() bool {
 	case DashboardInputWidgetsMeasuresPassOperatorGREATERTHAN:
 		return true
 	case DashboardInputWidgetsMeasuresPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardInputWidgetsMeasuresPassOperatorISNOTSET:
+		return true
+	case DashboardInputWidgetsMeasuresPassOperatorISSET:
 		return true
 	case DashboardInputWidgetsMeasuresPassOperatorLESSTHAN:
 		return true
@@ -5692,6 +5788,8 @@ const (
 	DashboardWidgetComparisonGroupsFiltersOperatorEQUALS               DashboardWidgetComparisonGroupsFiltersOperator = "EQUALS"
 	DashboardWidgetComparisonGroupsFiltersOperatorGREATERTHAN          DashboardWidgetComparisonGroupsFiltersOperator = "GREATER_THAN"
 	DashboardWidgetComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetComparisonGroupsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetComparisonGroupsFiltersOperatorISNOTSET             DashboardWidgetComparisonGroupsFiltersOperator = "IS_NOT_SET"
+	DashboardWidgetComparisonGroupsFiltersOperatorISSET                DashboardWidgetComparisonGroupsFiltersOperator = "IS_SET"
 	DashboardWidgetComparisonGroupsFiltersOperatorLESSTHAN             DashboardWidgetComparisonGroupsFiltersOperator = "LESS_THAN"
 	DashboardWidgetComparisonGroupsFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetComparisonGroupsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardWidgetComparisonGroupsFiltersOperatorNOTEQUALS            DashboardWidgetComparisonGroupsFiltersOperator = "NOT_EQUALS"
@@ -5708,6 +5806,10 @@ func (e DashboardWidgetComparisonGroupsFiltersOperator) Valid() bool {
 	case DashboardWidgetComparisonGroupsFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardWidgetComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersOperatorISNOTSET:
+		return true
+	case DashboardWidgetComparisonGroupsFiltersOperatorISSET:
 		return true
 	case DashboardWidgetComparisonGroupsFiltersOperatorLESSTHAN:
 		return true
@@ -5806,6 +5908,8 @@ const (
 	DashboardWidgetFiltersOperatorEQUALS               DashboardWidgetFiltersOperator = "EQUALS"
 	DashboardWidgetFiltersOperatorGREATERTHAN          DashboardWidgetFiltersOperator = "GREATER_THAN"
 	DashboardWidgetFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetFiltersOperatorISNOTSET             DashboardWidgetFiltersOperator = "IS_NOT_SET"
+	DashboardWidgetFiltersOperatorISSET                DashboardWidgetFiltersOperator = "IS_SET"
 	DashboardWidgetFiltersOperatorLESSTHAN             DashboardWidgetFiltersOperator = "LESS_THAN"
 	DashboardWidgetFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardWidgetFiltersOperatorNOTEQUALS            DashboardWidgetFiltersOperator = "NOT_EQUALS"
@@ -5822,6 +5926,10 @@ func (e DashboardWidgetFiltersOperator) Valid() bool {
 	case DashboardWidgetFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardWidgetFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetFiltersOperatorISNOTSET:
+		return true
+	case DashboardWidgetFiltersOperatorISSET:
 		return true
 	case DashboardWidgetFiltersOperatorLESSTHAN:
 		return true
@@ -6025,6 +6133,8 @@ const (
 	DashboardWidgetMeasuresFiltersOperatorEQUALS               DashboardWidgetMeasuresFiltersOperator = "EQUALS"
 	DashboardWidgetMeasuresFiltersOperatorGREATERTHAN          DashboardWidgetMeasuresFiltersOperator = "GREATER_THAN"
 	DashboardWidgetMeasuresFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetMeasuresFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetMeasuresFiltersOperatorISNOTSET             DashboardWidgetMeasuresFiltersOperator = "IS_NOT_SET"
+	DashboardWidgetMeasuresFiltersOperatorISSET                DashboardWidgetMeasuresFiltersOperator = "IS_SET"
 	DashboardWidgetMeasuresFiltersOperatorLESSTHAN             DashboardWidgetMeasuresFiltersOperator = "LESS_THAN"
 	DashboardWidgetMeasuresFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetMeasuresFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardWidgetMeasuresFiltersOperatorNOTEQUALS            DashboardWidgetMeasuresFiltersOperator = "NOT_EQUALS"
@@ -6041,6 +6151,10 @@ func (e DashboardWidgetMeasuresFiltersOperator) Valid() bool {
 	case DashboardWidgetMeasuresFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardWidgetMeasuresFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetMeasuresFiltersOperatorISNOTSET:
+		return true
+	case DashboardWidgetMeasuresFiltersOperatorISSET:
 		return true
 	case DashboardWidgetMeasuresFiltersOperatorLESSTHAN:
 		return true
@@ -6130,6 +6244,8 @@ const (
 	DashboardWidgetMeasuresPassOperatorEQUALS               DashboardWidgetMeasuresPassOperator = "EQUALS"
 	DashboardWidgetMeasuresPassOperatorGREATERTHAN          DashboardWidgetMeasuresPassOperator = "GREATER_THAN"
 	DashboardWidgetMeasuresPassOperatorGREATERTHANOREQUALTO DashboardWidgetMeasuresPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetMeasuresPassOperatorISNOTSET             DashboardWidgetMeasuresPassOperator = "IS_NOT_SET"
+	DashboardWidgetMeasuresPassOperatorISSET                DashboardWidgetMeasuresPassOperator = "IS_SET"
 	DashboardWidgetMeasuresPassOperatorLESSTHAN             DashboardWidgetMeasuresPassOperator = "LESS_THAN"
 	DashboardWidgetMeasuresPassOperatorLESSTHANOREQUALTO    DashboardWidgetMeasuresPassOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardWidgetMeasuresPassOperatorNOTEQUALS            DashboardWidgetMeasuresPassOperator = "NOT_EQUALS"
@@ -6146,6 +6262,10 @@ func (e DashboardWidgetMeasuresPassOperator) Valid() bool {
 	case DashboardWidgetMeasuresPassOperatorGREATERTHAN:
 		return true
 	case DashboardWidgetMeasuresPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetMeasuresPassOperatorISNOTSET:
+		return true
+	case DashboardWidgetMeasuresPassOperatorISSET:
 		return true
 	case DashboardWidgetMeasuresPassOperatorLESSTHAN:
 		return true
@@ -6481,6 +6601,8 @@ const (
 	DashboardWidgetInputComparisonGroupsFiltersOperatorEQUALS               DashboardWidgetInputComparisonGroupsFiltersOperator = "EQUALS"
 	DashboardWidgetInputComparisonGroupsFiltersOperatorGREATERTHAN          DashboardWidgetInputComparisonGroupsFiltersOperator = "GREATER_THAN"
 	DashboardWidgetInputComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetInputComparisonGroupsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetInputComparisonGroupsFiltersOperatorISNOTSET             DashboardWidgetInputComparisonGroupsFiltersOperator = "IS_NOT_SET"
+	DashboardWidgetInputComparisonGroupsFiltersOperatorISSET                DashboardWidgetInputComparisonGroupsFiltersOperator = "IS_SET"
 	DashboardWidgetInputComparisonGroupsFiltersOperatorLESSTHAN             DashboardWidgetInputComparisonGroupsFiltersOperator = "LESS_THAN"
 	DashboardWidgetInputComparisonGroupsFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetInputComparisonGroupsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardWidgetInputComparisonGroupsFiltersOperatorNOTEQUALS            DashboardWidgetInputComparisonGroupsFiltersOperator = "NOT_EQUALS"
@@ -6497,6 +6619,10 @@ func (e DashboardWidgetInputComparisonGroupsFiltersOperator) Valid() bool {
 	case DashboardWidgetInputComparisonGroupsFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardWidgetInputComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersOperatorISNOTSET:
+		return true
+	case DashboardWidgetInputComparisonGroupsFiltersOperatorISSET:
 		return true
 	case DashboardWidgetInputComparisonGroupsFiltersOperatorLESSTHAN:
 		return true
@@ -6595,6 +6721,8 @@ const (
 	DashboardWidgetInputFiltersOperatorEQUALS               DashboardWidgetInputFiltersOperator = "EQUALS"
 	DashboardWidgetInputFiltersOperatorGREATERTHAN          DashboardWidgetInputFiltersOperator = "GREATER_THAN"
 	DashboardWidgetInputFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetInputFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetInputFiltersOperatorISNOTSET             DashboardWidgetInputFiltersOperator = "IS_NOT_SET"
+	DashboardWidgetInputFiltersOperatorISSET                DashboardWidgetInputFiltersOperator = "IS_SET"
 	DashboardWidgetInputFiltersOperatorLESSTHAN             DashboardWidgetInputFiltersOperator = "LESS_THAN"
 	DashboardWidgetInputFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetInputFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardWidgetInputFiltersOperatorNOTEQUALS            DashboardWidgetInputFiltersOperator = "NOT_EQUALS"
@@ -6611,6 +6739,10 @@ func (e DashboardWidgetInputFiltersOperator) Valid() bool {
 	case DashboardWidgetInputFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardWidgetInputFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetInputFiltersOperatorISNOTSET:
+		return true
+	case DashboardWidgetInputFiltersOperatorISSET:
 		return true
 	case DashboardWidgetInputFiltersOperatorLESSTHAN:
 		return true
@@ -6814,6 +6946,8 @@ const (
 	DashboardWidgetInputMeasuresFiltersOperatorEQUALS               DashboardWidgetInputMeasuresFiltersOperator = "EQUALS"
 	DashboardWidgetInputMeasuresFiltersOperatorGREATERTHAN          DashboardWidgetInputMeasuresFiltersOperator = "GREATER_THAN"
 	DashboardWidgetInputMeasuresFiltersOperatorGREATERTHANOREQUALTO DashboardWidgetInputMeasuresFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetInputMeasuresFiltersOperatorISNOTSET             DashboardWidgetInputMeasuresFiltersOperator = "IS_NOT_SET"
+	DashboardWidgetInputMeasuresFiltersOperatorISSET                DashboardWidgetInputMeasuresFiltersOperator = "IS_SET"
 	DashboardWidgetInputMeasuresFiltersOperatorLESSTHAN             DashboardWidgetInputMeasuresFiltersOperator = "LESS_THAN"
 	DashboardWidgetInputMeasuresFiltersOperatorLESSTHANOREQUALTO    DashboardWidgetInputMeasuresFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardWidgetInputMeasuresFiltersOperatorNOTEQUALS            DashboardWidgetInputMeasuresFiltersOperator = "NOT_EQUALS"
@@ -6830,6 +6964,10 @@ func (e DashboardWidgetInputMeasuresFiltersOperator) Valid() bool {
 	case DashboardWidgetInputMeasuresFiltersOperatorGREATERTHAN:
 		return true
 	case DashboardWidgetInputMeasuresFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetInputMeasuresFiltersOperatorISNOTSET:
+		return true
+	case DashboardWidgetInputMeasuresFiltersOperatorISSET:
 		return true
 	case DashboardWidgetInputMeasuresFiltersOperatorLESSTHAN:
 		return true
@@ -6919,6 +7057,8 @@ const (
 	DashboardWidgetInputMeasuresPassOperatorEQUALS               DashboardWidgetInputMeasuresPassOperator = "EQUALS"
 	DashboardWidgetInputMeasuresPassOperatorGREATERTHAN          DashboardWidgetInputMeasuresPassOperator = "GREATER_THAN"
 	DashboardWidgetInputMeasuresPassOperatorGREATERTHANOREQUALTO DashboardWidgetInputMeasuresPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	DashboardWidgetInputMeasuresPassOperatorISNOTSET             DashboardWidgetInputMeasuresPassOperator = "IS_NOT_SET"
+	DashboardWidgetInputMeasuresPassOperatorISSET                DashboardWidgetInputMeasuresPassOperator = "IS_SET"
 	DashboardWidgetInputMeasuresPassOperatorLESSTHAN             DashboardWidgetInputMeasuresPassOperator = "LESS_THAN"
 	DashboardWidgetInputMeasuresPassOperatorLESSTHANOREQUALTO    DashboardWidgetInputMeasuresPassOperator = "LESS_THAN_OR_EQUAL_TO"
 	DashboardWidgetInputMeasuresPassOperatorNOTEQUALS            DashboardWidgetInputMeasuresPassOperator = "NOT_EQUALS"
@@ -6935,6 +7075,10 @@ func (e DashboardWidgetInputMeasuresPassOperator) Valid() bool {
 	case DashboardWidgetInputMeasuresPassOperatorGREATERTHAN:
 		return true
 	case DashboardWidgetInputMeasuresPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case DashboardWidgetInputMeasuresPassOperatorISNOTSET:
+		return true
+	case DashboardWidgetInputMeasuresPassOperatorISSET:
 		return true
 	case DashboardWidgetInputMeasuresPassOperatorLESSTHAN:
 		return true
@@ -15646,6 +15790,8 @@ const (
 	UpdateDashboardInputFiltersOperatorEQUALS               UpdateDashboardInputFiltersOperator = "EQUALS"
 	UpdateDashboardInputFiltersOperatorGREATERTHAN          UpdateDashboardInputFiltersOperator = "GREATER_THAN"
 	UpdateDashboardInputFiltersOperatorGREATERTHANOREQUALTO UpdateDashboardInputFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputFiltersOperatorISNOTSET             UpdateDashboardInputFiltersOperator = "IS_NOT_SET"
+	UpdateDashboardInputFiltersOperatorISSET                UpdateDashboardInputFiltersOperator = "IS_SET"
 	UpdateDashboardInputFiltersOperatorLESSTHAN             UpdateDashboardInputFiltersOperator = "LESS_THAN"
 	UpdateDashboardInputFiltersOperatorLESSTHANOREQUALTO    UpdateDashboardInputFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	UpdateDashboardInputFiltersOperatorNOTEQUALS            UpdateDashboardInputFiltersOperator = "NOT_EQUALS"
@@ -15662,6 +15808,10 @@ func (e UpdateDashboardInputFiltersOperator) Valid() bool {
 	case UpdateDashboardInputFiltersOperatorGREATERTHAN:
 		return true
 	case UpdateDashboardInputFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputFiltersOperatorISNOTSET:
+		return true
+	case UpdateDashboardInputFiltersOperatorISSET:
 		return true
 	case UpdateDashboardInputFiltersOperatorLESSTHAN:
 		return true
@@ -15880,6 +16030,8 @@ const (
 	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorEQUALS               UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "EQUALS"
 	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHAN          UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "GREATER_THAN"
 	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorISNOTSET             UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "IS_NOT_SET"
+	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorISSET                UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "IS_SET"
 	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHAN             UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "LESS_THAN"
 	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHANOREQUALTO    UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorNOTEQUALS            UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator = "NOT_EQUALS"
@@ -15896,6 +16048,10 @@ func (e UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator) Valid() bool
 	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHAN:
 		return true
 	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorISNOTSET:
+		return true
+	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorISSET:
 		return true
 	case UpdateDashboardInputWidgetsComparisonGroupsFiltersOperatorLESSTHAN:
 		return true
@@ -15994,6 +16150,8 @@ const (
 	UpdateDashboardInputWidgetsFiltersOperatorEQUALS               UpdateDashboardInputWidgetsFiltersOperator = "EQUALS"
 	UpdateDashboardInputWidgetsFiltersOperatorGREATERTHAN          UpdateDashboardInputWidgetsFiltersOperator = "GREATER_THAN"
 	UpdateDashboardInputWidgetsFiltersOperatorGREATERTHANOREQUALTO UpdateDashboardInputWidgetsFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputWidgetsFiltersOperatorISNOTSET             UpdateDashboardInputWidgetsFiltersOperator = "IS_NOT_SET"
+	UpdateDashboardInputWidgetsFiltersOperatorISSET                UpdateDashboardInputWidgetsFiltersOperator = "IS_SET"
 	UpdateDashboardInputWidgetsFiltersOperatorLESSTHAN             UpdateDashboardInputWidgetsFiltersOperator = "LESS_THAN"
 	UpdateDashboardInputWidgetsFiltersOperatorLESSTHANOREQUALTO    UpdateDashboardInputWidgetsFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	UpdateDashboardInputWidgetsFiltersOperatorNOTEQUALS            UpdateDashboardInputWidgetsFiltersOperator = "NOT_EQUALS"
@@ -16010,6 +16168,10 @@ func (e UpdateDashboardInputWidgetsFiltersOperator) Valid() bool {
 	case UpdateDashboardInputWidgetsFiltersOperatorGREATERTHAN:
 		return true
 	case UpdateDashboardInputWidgetsFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputWidgetsFiltersOperatorISNOTSET:
+		return true
+	case UpdateDashboardInputWidgetsFiltersOperatorISSET:
 		return true
 	case UpdateDashboardInputWidgetsFiltersOperatorLESSTHAN:
 		return true
@@ -16213,6 +16375,8 @@ const (
 	UpdateDashboardInputWidgetsMeasuresFiltersOperatorEQUALS               UpdateDashboardInputWidgetsMeasuresFiltersOperator = "EQUALS"
 	UpdateDashboardInputWidgetsMeasuresFiltersOperatorGREATERTHAN          UpdateDashboardInputWidgetsMeasuresFiltersOperator = "GREATER_THAN"
 	UpdateDashboardInputWidgetsMeasuresFiltersOperatorGREATERTHANOREQUALTO UpdateDashboardInputWidgetsMeasuresFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputWidgetsMeasuresFiltersOperatorISNOTSET             UpdateDashboardInputWidgetsMeasuresFiltersOperator = "IS_NOT_SET"
+	UpdateDashboardInputWidgetsMeasuresFiltersOperatorISSET                UpdateDashboardInputWidgetsMeasuresFiltersOperator = "IS_SET"
 	UpdateDashboardInputWidgetsMeasuresFiltersOperatorLESSTHAN             UpdateDashboardInputWidgetsMeasuresFiltersOperator = "LESS_THAN"
 	UpdateDashboardInputWidgetsMeasuresFiltersOperatorLESSTHANOREQUALTO    UpdateDashboardInputWidgetsMeasuresFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
 	UpdateDashboardInputWidgetsMeasuresFiltersOperatorNOTEQUALS            UpdateDashboardInputWidgetsMeasuresFiltersOperator = "NOT_EQUALS"
@@ -16229,6 +16393,10 @@ func (e UpdateDashboardInputWidgetsMeasuresFiltersOperator) Valid() bool {
 	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorGREATERTHAN:
 		return true
 	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorISNOTSET:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorISSET:
 		return true
 	case UpdateDashboardInputWidgetsMeasuresFiltersOperatorLESSTHAN:
 		return true
@@ -16318,6 +16486,8 @@ const (
 	UpdateDashboardInputWidgetsMeasuresPassOperatorEQUALS               UpdateDashboardInputWidgetsMeasuresPassOperator = "EQUALS"
 	UpdateDashboardInputWidgetsMeasuresPassOperatorGREATERTHAN          UpdateDashboardInputWidgetsMeasuresPassOperator = "GREATER_THAN"
 	UpdateDashboardInputWidgetsMeasuresPassOperatorGREATERTHANOREQUALTO UpdateDashboardInputWidgetsMeasuresPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	UpdateDashboardInputWidgetsMeasuresPassOperatorISNOTSET             UpdateDashboardInputWidgetsMeasuresPassOperator = "IS_NOT_SET"
+	UpdateDashboardInputWidgetsMeasuresPassOperatorISSET                UpdateDashboardInputWidgetsMeasuresPassOperator = "IS_SET"
 	UpdateDashboardInputWidgetsMeasuresPassOperatorLESSTHAN             UpdateDashboardInputWidgetsMeasuresPassOperator = "LESS_THAN"
 	UpdateDashboardInputWidgetsMeasuresPassOperatorLESSTHANOREQUALTO    UpdateDashboardInputWidgetsMeasuresPassOperator = "LESS_THAN_OR_EQUAL_TO"
 	UpdateDashboardInputWidgetsMeasuresPassOperatorNOTEQUALS            UpdateDashboardInputWidgetsMeasuresPassOperator = "NOT_EQUALS"
@@ -16334,6 +16504,10 @@ func (e UpdateDashboardInputWidgetsMeasuresPassOperator) Valid() bool {
 	case UpdateDashboardInputWidgetsMeasuresPassOperatorGREATERTHAN:
 		return true
 	case UpdateDashboardInputWidgetsMeasuresPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresPassOperatorISNOTSET:
+		return true
+	case UpdateDashboardInputWidgetsMeasuresPassOperatorISSET:
 		return true
 	case UpdateDashboardInputWidgetsMeasuresPassOperatorLESSTHAN:
 		return true
@@ -17788,6 +17962,21 @@ func (e PostV1Call200JSONResponseBodyDataStatus) Valid() bool {
 	case PostV1Call200JSONResponseBodyDataStatusINPROGRESS:
 		return true
 	case PostV1Call200JSONResponseBodyDataStatusRINGING:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DeleteV1CallByCallId200JSONResponseBodyDataDeleted.
+const (
+	DeleteV1CallByCallId200JSONResponseBodyDataDeletedTrue DeleteV1CallByCallId200JSONResponseBodyDataDeleted = true
+)
+
+// Valid indicates whether the value is a known member of the DeleteV1CallByCallId200JSONResponseBodyDataDeleted enum.
+func (e DeleteV1CallByCallId200JSONResponseBodyDataDeleted) Valid() bool {
+	switch e {
+	case DeleteV1CallByCallId200JSONResponseBodyDataDeletedTrue:
 		return true
 	default:
 		return false
@@ -22523,7 +22712,7 @@ type AnalyticsQuery struct {
 	ComparisonGroups *[]struct {
 		Color   *AnalyticsQueryComparisonGroupsColor `json:"color,omitempty"`
 		Filters []struct {
-			// Operator Defaults to EQUALS.
+			// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 			Operator *AnalyticsQueryComparisonGroupsFiltersOperator `json:"operator,omitempty"`
 
 			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -22532,8 +22721,8 @@ type AnalyticsQuery struct {
 			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 			Type AnalyticsQueryComparisonGroupsFiltersType `json:"type"`
 
-			// Value The value to compare against (an agent id, "call" / "chat", a property value).
-			Value AnalyticsQuery_ComparisonGroups_Filters_Value `json:"value"`
+			// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+			Value *AnalyticsQuery_ComparisonGroups_Filters_Value `json:"value,omitempty"`
 		} `json:"filters"`
 
 		// Name The series label; unique within the query.
@@ -22545,7 +22734,7 @@ type AnalyticsQuery struct {
 
 	// Filters Applied to every measure, on top of each measure's own filters.
 	Filters *[]struct {
-		// Operator Defaults to EQUALS.
+		// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 		Operator *AnalyticsQueryFiltersOperator `json:"operator,omitempty"`
 
 		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -22554,8 +22743,8 @@ type AnalyticsQuery struct {
 		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 		Type AnalyticsQueryFiltersType `json:"type"`
 
-		// Value The value to compare against (an agent id, "call" / "chat", a property value).
-		Value AnalyticsQuery_Filters_Value `json:"value"`
+		// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+		Value *AnalyticsQuery_Filters_Value `json:"value,omitempty"`
 	} `json:"filters,omitempty"`
 
 	// IncludeBuckets Set false to return only the window totals.
@@ -22584,7 +22773,7 @@ type AnalyticsQuery struct {
 
 		// Filters Filters for this measure only, on top of the query's filters.
 		Filters *[]struct {
-			// Operator Defaults to EQUALS.
+			// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 			Operator *AnalyticsQueryMeasuresFiltersOperator `json:"operator,omitempty"`
 
 			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -22593,8 +22782,8 @@ type AnalyticsQuery struct {
 			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 			Type AnalyticsQueryMeasuresFiltersType `json:"type"`
 
-			// Value The value to compare against (an agent id, "call" / "chat", a property value).
-			Value AnalyticsQuery_Measures_Filters_Value `json:"value"`
+			// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+			Value *AnalyticsQuery_Measures_Filters_Value `json:"value,omitempty"`
 		} `json:"filters,omitempty"`
 
 		// IsBaseline Mark one measure as the baseline: every series also reports its value as a percentage of it.
@@ -22630,7 +22819,7 @@ type AnalyticsQuery struct {
 // AnalyticsQueryComparisonGroupsColor defines model for AnalyticsQuery.ComparisonGroups.Color.
 type AnalyticsQueryComparisonGroupsColor string
 
-// AnalyticsQueryComparisonGroupsFiltersOperator Defaults to EQUALS.
+// AnalyticsQueryComparisonGroupsFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type AnalyticsQueryComparisonGroupsFiltersOperator string
 
 // AnalyticsQueryComparisonGroupsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -22645,7 +22834,7 @@ type AnalyticsQueryComparisonGroupsFiltersValue1 = float64
 // AnalyticsQueryComparisonGroupsFiltersValue2 defines model for AnalyticsQuery.ComparisonGroups.Filters.Value.2.
 type AnalyticsQueryComparisonGroupsFiltersValue2 = bool
 
-// AnalyticsQuery_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// AnalyticsQuery_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type AnalyticsQuery_ComparisonGroups_Filters_Value struct {
 	union json.RawMessage
 }
@@ -22653,7 +22842,7 @@ type AnalyticsQuery_ComparisonGroups_Filters_Value struct {
 // AnalyticsQueryComparisonMode PREVIOUS_PERIOD adds the preceding window of the same length to every series.
 type AnalyticsQueryComparisonMode string
 
-// AnalyticsQueryFiltersOperator Defaults to EQUALS.
+// AnalyticsQueryFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type AnalyticsQueryFiltersOperator string
 
 // AnalyticsQueryFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -22668,7 +22857,7 @@ type AnalyticsQueryFiltersValue1 = float64
 // AnalyticsQueryFiltersValue2 defines model for AnalyticsQuery.Filters.Value.2.
 type AnalyticsQueryFiltersValue2 = bool
 
-// AnalyticsQuery_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// AnalyticsQuery_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type AnalyticsQuery_Filters_Value struct {
 	union json.RawMessage
 }
@@ -22688,7 +22877,7 @@ type AnalyticsQueryMeasuresColor string
 // AnalyticsQueryMeasuresDistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
 type AnalyticsQueryMeasuresDistinctBy string
 
-// AnalyticsQueryMeasuresFiltersOperator Defaults to EQUALS.
+// AnalyticsQueryMeasuresFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type AnalyticsQueryMeasuresFiltersOperator string
 
 // AnalyticsQueryMeasuresFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -22703,7 +22892,7 @@ type AnalyticsQueryMeasuresFiltersValue1 = float64
 // AnalyticsQueryMeasuresFiltersValue2 defines model for AnalyticsQuery.Measures.Filters.Value.2.
 type AnalyticsQueryMeasuresFiltersValue2 = bool
 
-// AnalyticsQuery_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// AnalyticsQuery_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type AnalyticsQuery_Measures_Filters_Value struct {
 	union json.RawMessage
 }
@@ -25203,7 +25392,7 @@ type Dashboard struct {
 	CreatedAt     string  `json:"createdAt"`
 	Description   *string `json:"description"`
 	Filters       []struct {
-		// Operator Defaults to EQUALS.
+		// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 		Operator *DashboardFiltersOperator `json:"operator,omitempty"`
 
 		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -25212,8 +25401,8 @@ type Dashboard struct {
 		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 		Type DashboardFiltersType `json:"type"`
 
-		// Value The value to compare against (an agent id, "call" / "chat", a property value).
-		Value Dashboard_Filters_Value `json:"value"`
+		// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+		Value *Dashboard_Filters_Value `json:"value,omitempty"`
 	} `json:"filters"`
 	Id        openapi_types.UUID `json:"id"`
 	IsDefault bool               `json:"isDefault"`
@@ -25227,7 +25416,7 @@ type Dashboard struct {
 		ComparisonGroups *[]struct {
 			Color   *DashboardWidgetsComparisonGroupsColor `json:"color,omitempty"`
 			Filters []struct {
-				// Operator Defaults to EQUALS.
+				// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 				Operator *DashboardWidgetsComparisonGroupsFiltersOperator `json:"operator,omitempty"`
 
 				// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -25236,8 +25425,8 @@ type Dashboard struct {
 				// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 				Type DashboardWidgetsComparisonGroupsFiltersType `json:"type"`
 
-				// Value The value to compare against (an agent id, "call" / "chat", a property value).
-				Value Dashboard_Widgets_ComparisonGroups_Filters_Value `json:"value"`
+				// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+				Value *Dashboard_Widgets_ComparisonGroups_Filters_Value `json:"value,omitempty"`
 			} `json:"filters"`
 
 			// Name The series label; unique within the query.
@@ -25253,7 +25442,7 @@ type Dashboard struct {
 
 		// Filters Applied to every measure, on top of each measure's own filters.
 		Filters *[]struct {
-			// Operator Defaults to EQUALS.
+			// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 			Operator *DashboardWidgetsFiltersOperator `json:"operator,omitempty"`
 
 			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -25262,8 +25451,8 @@ type Dashboard struct {
 			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 			Type DashboardWidgetsFiltersType `json:"type"`
 
-			// Value The value to compare against (an agent id, "call" / "chat", a property value).
-			Value Dashboard_Widgets_Filters_Value `json:"value"`
+			// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+			Value *Dashboard_Widgets_Filters_Value `json:"value,omitempty"`
 		} `json:"filters,omitempty"`
 		Id openapi_types.UUID `json:"id"`
 
@@ -25290,7 +25479,7 @@ type Dashboard struct {
 
 			// Filters Filters for this measure only, on top of the query's filters.
 			Filters *[]struct {
-				// Operator Defaults to EQUALS.
+				// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 				Operator *DashboardWidgetsMeasuresFiltersOperator `json:"operator,omitempty"`
 
 				// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -25299,8 +25488,8 @@ type Dashboard struct {
 				// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 				Type DashboardWidgetsMeasuresFiltersType `json:"type"`
 
-				// Value The value to compare against (an agent id, "call" / "chat", a property value).
-				Value Dashboard_Widgets_Measures_Filters_Value `json:"value"`
+				// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+				Value *Dashboard_Widgets_Measures_Filters_Value `json:"value,omitempty"`
 			} `json:"filters,omitempty"`
 
 			// IsBaseline Mark one measure as the baseline: every series also reports its value as a percentage of it.
@@ -25334,7 +25523,7 @@ type Dashboard struct {
 	} `json:"widgets"`
 }
 
-// DashboardFiltersOperator Defaults to EQUALS.
+// DashboardFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardFiltersOperator string
 
 // DashboardFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -25349,7 +25538,7 @@ type DashboardFiltersValue1 = float64
 // DashboardFiltersValue2 defines model for Dashboard.Filters.Value.2.
 type DashboardFiltersValue2 = bool
 
-// Dashboard_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// Dashboard_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type Dashboard_Filters_Value struct {
 	union json.RawMessage
 }
@@ -25406,7 +25595,7 @@ type Dashboard_TimeRange struct {
 // DashboardWidgetsComparisonGroupsColor defines model for Dashboard.Widgets.ComparisonGroups.Color.
 type DashboardWidgetsComparisonGroupsColor string
 
-// DashboardWidgetsComparisonGroupsFiltersOperator Defaults to EQUALS.
+// DashboardWidgetsComparisonGroupsFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardWidgetsComparisonGroupsFiltersOperator string
 
 // DashboardWidgetsComparisonGroupsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -25421,7 +25610,7 @@ type DashboardWidgetsComparisonGroupsFiltersValue1 = float64
 // DashboardWidgetsComparisonGroupsFiltersValue2 defines model for Dashboard.Widgets.ComparisonGroups.Filters.Value.2.
 type DashboardWidgetsComparisonGroupsFiltersValue2 = bool
 
-// Dashboard_Widgets_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// Dashboard_Widgets_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type Dashboard_Widgets_ComparisonGroups_Filters_Value struct {
 	union json.RawMessage
 }
@@ -25432,7 +25621,7 @@ type DashboardWidgetsComparisonMode string
 // DashboardWidgetsDisplay Chart type. Defaults to LINE.
 type DashboardWidgetsDisplay string
 
-// DashboardWidgetsFiltersOperator Defaults to EQUALS.
+// DashboardWidgetsFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardWidgetsFiltersOperator string
 
 // DashboardWidgetsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -25447,7 +25636,7 @@ type DashboardWidgetsFiltersValue1 = float64
 // DashboardWidgetsFiltersValue2 defines model for Dashboard.Widgets.Filters.Value.2.
 type DashboardWidgetsFiltersValue2 = bool
 
-// Dashboard_Widgets_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// Dashboard_Widgets_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type Dashboard_Widgets_Filters_Value struct {
 	union json.RawMessage
 }
@@ -25467,7 +25656,7 @@ type DashboardWidgetsMeasuresColor string
 // DashboardWidgetsMeasuresDistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
 type DashboardWidgetsMeasuresDistinctBy string
 
-// DashboardWidgetsMeasuresFiltersOperator Defaults to EQUALS.
+// DashboardWidgetsMeasuresFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardWidgetsMeasuresFiltersOperator string
 
 // DashboardWidgetsMeasuresFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -25482,7 +25671,7 @@ type DashboardWidgetsMeasuresFiltersValue1 = float64
 // DashboardWidgetsMeasuresFiltersValue2 defines model for Dashboard.Widgets.Measures.Filters.Value.2.
 type DashboardWidgetsMeasuresFiltersValue2 = bool
 
-// Dashboard_Widgets_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// Dashboard_Widgets_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type Dashboard_Widgets_Measures_Filters_Value struct {
 	union json.RawMessage
 }
@@ -25579,7 +25768,7 @@ type DashboardFilterConfig struct {
 	Operator *DashboardFilterConfigOperator `json:"operator,omitempty"`
 	Property *string                        `json:"property,omitempty"`
 	Type     DashboardFilterConfigType      `json:"type"`
-	Value    DashboardFilterConfig_Value    `json:"value"`
+	Value    *DashboardFilterConfig_Value   `json:"value,omitempty"`
 }
 
 // DashboardFilterConfigOperator defines model for DashboardFilterConfig.Operator.
@@ -25608,7 +25797,7 @@ type DashboardFilterConfig_Value struct {
 type DashboardInput struct {
 	Description *string `json:"description,omitempty"`
 	Filters     *[]struct {
-		// Operator Defaults to EQUALS.
+		// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 		Operator *DashboardInputFiltersOperator `json:"operator,omitempty"`
 
 		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -25617,8 +25806,8 @@ type DashboardInput struct {
 		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 		Type DashboardInputFiltersType `json:"type"`
 
-		// Value The value to compare against (an agent id, "call" / "chat", a property value).
-		Value DashboardInput_Filters_Value `json:"value"`
+		// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+		Value *DashboardInput_Filters_Value `json:"value,omitempty"`
 	} `json:"filters,omitempty"`
 	IsDefault *bool  `json:"isDefault,omitempty"`
 	Name      string `json:"name"`
@@ -25630,7 +25819,7 @@ type DashboardInput struct {
 		ComparisonGroups *[]struct {
 			Color   *DashboardInputWidgetsComparisonGroupsColor `json:"color,omitempty"`
 			Filters []struct {
-				// Operator Defaults to EQUALS.
+				// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 				Operator *DashboardInputWidgetsComparisonGroupsFiltersOperator `json:"operator,omitempty"`
 
 				// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -25639,8 +25828,8 @@ type DashboardInput struct {
 				// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 				Type DashboardInputWidgetsComparisonGroupsFiltersType `json:"type"`
 
-				// Value The value to compare against (an agent id, "call" / "chat", a property value).
-				Value DashboardInput_Widgets_ComparisonGroups_Filters_Value `json:"value"`
+				// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+				Value *DashboardInput_Widgets_ComparisonGroups_Filters_Value `json:"value,omitempty"`
 			} `json:"filters"`
 
 			// Name The series label; unique within the query.
@@ -25656,7 +25845,7 @@ type DashboardInput struct {
 
 		// Filters Applied to every measure, on top of each measure's own filters.
 		Filters *[]struct {
-			// Operator Defaults to EQUALS.
+			// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 			Operator *DashboardInputWidgetsFiltersOperator `json:"operator,omitempty"`
 
 			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -25665,8 +25854,8 @@ type DashboardInput struct {
 			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 			Type DashboardInputWidgetsFiltersType `json:"type"`
 
-			// Value The value to compare against (an agent id, "call" / "chat", a property value).
-			Value DashboardInput_Widgets_Filters_Value `json:"value"`
+			// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+			Value *DashboardInput_Widgets_Filters_Value `json:"value,omitempty"`
 		} `json:"filters,omitempty"`
 
 		// Interval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
@@ -25692,7 +25881,7 @@ type DashboardInput struct {
 
 			// Filters Filters for this measure only, on top of the query's filters.
 			Filters *[]struct {
-				// Operator Defaults to EQUALS.
+				// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 				Operator *DashboardInputWidgetsMeasuresFiltersOperator `json:"operator,omitempty"`
 
 				// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -25701,8 +25890,8 @@ type DashboardInput struct {
 				// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 				Type DashboardInputWidgetsMeasuresFiltersType `json:"type"`
 
-				// Value The value to compare against (an agent id, "call" / "chat", a property value).
-				Value DashboardInput_Widgets_Measures_Filters_Value `json:"value"`
+				// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+				Value *DashboardInput_Widgets_Measures_Filters_Value `json:"value,omitempty"`
 			} `json:"filters,omitempty"`
 
 			// IsBaseline Mark one measure as the baseline: every series also reports its value as a percentage of it.
@@ -25736,7 +25925,7 @@ type DashboardInput struct {
 	} `json:"widgets,omitempty"`
 }
 
-// DashboardInputFiltersOperator Defaults to EQUALS.
+// DashboardInputFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardInputFiltersOperator string
 
 // DashboardInputFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -25751,7 +25940,7 @@ type DashboardInputFiltersValue1 = float64
 // DashboardInputFiltersValue2 defines model for DashboardInput.Filters.Value.2.
 type DashboardInputFiltersValue2 = bool
 
-// DashboardInput_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// DashboardInput_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type DashboardInput_Filters_Value struct {
 	union json.RawMessage
 }
@@ -25808,7 +25997,7 @@ type DashboardInput_TimeRange struct {
 // DashboardInputWidgetsComparisonGroupsColor defines model for DashboardInput.Widgets.ComparisonGroups.Color.
 type DashboardInputWidgetsComparisonGroupsColor string
 
-// DashboardInputWidgetsComparisonGroupsFiltersOperator Defaults to EQUALS.
+// DashboardInputWidgetsComparisonGroupsFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardInputWidgetsComparisonGroupsFiltersOperator string
 
 // DashboardInputWidgetsComparisonGroupsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -25823,7 +26012,7 @@ type DashboardInputWidgetsComparisonGroupsFiltersValue1 = float64
 // DashboardInputWidgetsComparisonGroupsFiltersValue2 defines model for DashboardInput.Widgets.ComparisonGroups.Filters.Value.2.
 type DashboardInputWidgetsComparisonGroupsFiltersValue2 = bool
 
-// DashboardInput_Widgets_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// DashboardInput_Widgets_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type DashboardInput_Widgets_ComparisonGroups_Filters_Value struct {
 	union json.RawMessage
 }
@@ -25834,7 +26023,7 @@ type DashboardInputWidgetsComparisonMode string
 // DashboardInputWidgetsDisplay Chart type. Defaults to LINE.
 type DashboardInputWidgetsDisplay string
 
-// DashboardInputWidgetsFiltersOperator Defaults to EQUALS.
+// DashboardInputWidgetsFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardInputWidgetsFiltersOperator string
 
 // DashboardInputWidgetsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -25849,7 +26038,7 @@ type DashboardInputWidgetsFiltersValue1 = float64
 // DashboardInputWidgetsFiltersValue2 defines model for DashboardInput.Widgets.Filters.Value.2.
 type DashboardInputWidgetsFiltersValue2 = bool
 
-// DashboardInput_Widgets_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// DashboardInput_Widgets_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type DashboardInput_Widgets_Filters_Value struct {
 	union json.RawMessage
 }
@@ -25869,7 +26058,7 @@ type DashboardInputWidgetsMeasuresColor string
 // DashboardInputWidgetsMeasuresDistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
 type DashboardInputWidgetsMeasuresDistinctBy string
 
-// DashboardInputWidgetsMeasuresFiltersOperator Defaults to EQUALS.
+// DashboardInputWidgetsMeasuresFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardInputWidgetsMeasuresFiltersOperator string
 
 // DashboardInputWidgetsMeasuresFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -25884,7 +26073,7 @@ type DashboardInputWidgetsMeasuresFiltersValue1 = float64
 // DashboardInputWidgetsMeasuresFiltersValue2 defines model for DashboardInput.Widgets.Measures.Filters.Value.2.
 type DashboardInputWidgetsMeasuresFiltersValue2 = bool
 
-// DashboardInput_Widgets_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// DashboardInput_Widgets_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type DashboardInput_Widgets_Measures_Filters_Value struct {
 	union json.RawMessage
 }
@@ -26089,7 +26278,7 @@ type DashboardWidget struct {
 	ComparisonGroups *[]struct {
 		Color   *DashboardWidgetComparisonGroupsColor `json:"color,omitempty"`
 		Filters []struct {
-			// Operator Defaults to EQUALS.
+			// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 			Operator *DashboardWidgetComparisonGroupsFiltersOperator `json:"operator,omitempty"`
 
 			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -26098,8 +26287,8 @@ type DashboardWidget struct {
 			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 			Type DashboardWidgetComparisonGroupsFiltersType `json:"type"`
 
-			// Value The value to compare against (an agent id, "call" / "chat", a property value).
-			Value DashboardWidget_ComparisonGroups_Filters_Value `json:"value"`
+			// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+			Value *DashboardWidget_ComparisonGroups_Filters_Value `json:"value,omitempty"`
 		} `json:"filters"`
 
 		// Name The series label; unique within the query.
@@ -26115,7 +26304,7 @@ type DashboardWidget struct {
 
 	// Filters Applied to every measure, on top of each measure's own filters.
 	Filters *[]struct {
-		// Operator Defaults to EQUALS.
+		// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 		Operator *DashboardWidgetFiltersOperator `json:"operator,omitempty"`
 
 		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -26124,8 +26313,8 @@ type DashboardWidget struct {
 		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 		Type DashboardWidgetFiltersType `json:"type"`
 
-		// Value The value to compare against (an agent id, "call" / "chat", a property value).
-		Value DashboardWidget_Filters_Value `json:"value"`
+		// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+		Value *DashboardWidget_Filters_Value `json:"value,omitempty"`
 	} `json:"filters,omitempty"`
 	Id openapi_types.UUID `json:"id"`
 
@@ -26152,7 +26341,7 @@ type DashboardWidget struct {
 
 		// Filters Filters for this measure only, on top of the query's filters.
 		Filters *[]struct {
-			// Operator Defaults to EQUALS.
+			// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 			Operator *DashboardWidgetMeasuresFiltersOperator `json:"operator,omitempty"`
 
 			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -26161,8 +26350,8 @@ type DashboardWidget struct {
 			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 			Type DashboardWidgetMeasuresFiltersType `json:"type"`
 
-			// Value The value to compare against (an agent id, "call" / "chat", a property value).
-			Value DashboardWidget_Measures_Filters_Value `json:"value"`
+			// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+			Value *DashboardWidget_Measures_Filters_Value `json:"value,omitempty"`
 		} `json:"filters,omitempty"`
 
 		// IsBaseline Mark one measure as the baseline: every series also reports its value as a percentage of it.
@@ -26198,7 +26387,7 @@ type DashboardWidget struct {
 // DashboardWidgetComparisonGroupsColor defines model for DashboardWidget.ComparisonGroups.Color.
 type DashboardWidgetComparisonGroupsColor string
 
-// DashboardWidgetComparisonGroupsFiltersOperator Defaults to EQUALS.
+// DashboardWidgetComparisonGroupsFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardWidgetComparisonGroupsFiltersOperator string
 
 // DashboardWidgetComparisonGroupsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -26213,7 +26402,7 @@ type DashboardWidgetComparisonGroupsFiltersValue1 = float64
 // DashboardWidgetComparisonGroupsFiltersValue2 defines model for DashboardWidget.ComparisonGroups.Filters.Value.2.
 type DashboardWidgetComparisonGroupsFiltersValue2 = bool
 
-// DashboardWidget_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// DashboardWidget_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type DashboardWidget_ComparisonGroups_Filters_Value struct {
 	union json.RawMessage
 }
@@ -26224,7 +26413,7 @@ type DashboardWidgetComparisonMode string
 // DashboardWidgetDisplay Chart type. Defaults to LINE.
 type DashboardWidgetDisplay string
 
-// DashboardWidgetFiltersOperator Defaults to EQUALS.
+// DashboardWidgetFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardWidgetFiltersOperator string
 
 // DashboardWidgetFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -26239,7 +26428,7 @@ type DashboardWidgetFiltersValue1 = float64
 // DashboardWidgetFiltersValue2 defines model for DashboardWidget.Filters.Value.2.
 type DashboardWidgetFiltersValue2 = bool
 
-// DashboardWidget_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// DashboardWidget_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type DashboardWidget_Filters_Value struct {
 	union json.RawMessage
 }
@@ -26259,7 +26448,7 @@ type DashboardWidgetMeasuresColor string
 // DashboardWidgetMeasuresDistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
 type DashboardWidgetMeasuresDistinctBy string
 
-// DashboardWidgetMeasuresFiltersOperator Defaults to EQUALS.
+// DashboardWidgetMeasuresFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardWidgetMeasuresFiltersOperator string
 
 // DashboardWidgetMeasuresFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -26274,7 +26463,7 @@ type DashboardWidgetMeasuresFiltersValue1 = float64
 // DashboardWidgetMeasuresFiltersValue2 defines model for DashboardWidget.Measures.Filters.Value.2.
 type DashboardWidgetMeasuresFiltersValue2 = bool
 
-// DashboardWidget_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// DashboardWidget_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type DashboardWidget_Measures_Filters_Value struct {
 	union json.RawMessage
 }
@@ -26388,7 +26577,7 @@ type DashboardWidgetInput struct {
 	ComparisonGroups *[]struct {
 		Color   *DashboardWidgetInputComparisonGroupsColor `json:"color,omitempty"`
 		Filters []struct {
-			// Operator Defaults to EQUALS.
+			// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 			Operator *DashboardWidgetInputComparisonGroupsFiltersOperator `json:"operator,omitempty"`
 
 			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -26397,8 +26586,8 @@ type DashboardWidgetInput struct {
 			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 			Type DashboardWidgetInputComparisonGroupsFiltersType `json:"type"`
 
-			// Value The value to compare against (an agent id, "call" / "chat", a property value).
-			Value DashboardWidgetInput_ComparisonGroups_Filters_Value `json:"value"`
+			// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+			Value *DashboardWidgetInput_ComparisonGroups_Filters_Value `json:"value,omitempty"`
 		} `json:"filters"`
 
 		// Name The series label; unique within the query.
@@ -26414,7 +26603,7 @@ type DashboardWidgetInput struct {
 
 	// Filters Applied to every measure, on top of each measure's own filters.
 	Filters *[]struct {
-		// Operator Defaults to EQUALS.
+		// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 		Operator *DashboardWidgetInputFiltersOperator `json:"operator,omitempty"`
 
 		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -26423,8 +26612,8 @@ type DashboardWidgetInput struct {
 		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 		Type DashboardWidgetInputFiltersType `json:"type"`
 
-		// Value The value to compare against (an agent id, "call" / "chat", a property value).
-		Value DashboardWidgetInput_Filters_Value `json:"value"`
+		// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+		Value *DashboardWidgetInput_Filters_Value `json:"value,omitempty"`
 	} `json:"filters,omitempty"`
 
 	// Interval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
@@ -26450,7 +26639,7 @@ type DashboardWidgetInput struct {
 
 		// Filters Filters for this measure only, on top of the query's filters.
 		Filters *[]struct {
-			// Operator Defaults to EQUALS.
+			// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 			Operator *DashboardWidgetInputMeasuresFiltersOperator `json:"operator,omitempty"`
 
 			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -26459,8 +26648,8 @@ type DashboardWidgetInput struct {
 			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 			Type DashboardWidgetInputMeasuresFiltersType `json:"type"`
 
-			// Value The value to compare against (an agent id, "call" / "chat", a property value).
-			Value DashboardWidgetInput_Measures_Filters_Value `json:"value"`
+			// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+			Value *DashboardWidgetInput_Measures_Filters_Value `json:"value,omitempty"`
 		} `json:"filters,omitempty"`
 
 		// IsBaseline Mark one measure as the baseline: every series also reports its value as a percentage of it.
@@ -26496,7 +26685,7 @@ type DashboardWidgetInput struct {
 // DashboardWidgetInputComparisonGroupsColor defines model for DashboardWidgetInput.ComparisonGroups.Color.
 type DashboardWidgetInputComparisonGroupsColor string
 
-// DashboardWidgetInputComparisonGroupsFiltersOperator Defaults to EQUALS.
+// DashboardWidgetInputComparisonGroupsFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardWidgetInputComparisonGroupsFiltersOperator string
 
 // DashboardWidgetInputComparisonGroupsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -26511,7 +26700,7 @@ type DashboardWidgetInputComparisonGroupsFiltersValue1 = float64
 // DashboardWidgetInputComparisonGroupsFiltersValue2 defines model for DashboardWidgetInput.ComparisonGroups.Filters.Value.2.
 type DashboardWidgetInputComparisonGroupsFiltersValue2 = bool
 
-// DashboardWidgetInput_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// DashboardWidgetInput_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type DashboardWidgetInput_ComparisonGroups_Filters_Value struct {
 	union json.RawMessage
 }
@@ -26522,7 +26711,7 @@ type DashboardWidgetInputComparisonMode string
 // DashboardWidgetInputDisplay Chart type. Defaults to LINE.
 type DashboardWidgetInputDisplay string
 
-// DashboardWidgetInputFiltersOperator Defaults to EQUALS.
+// DashboardWidgetInputFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardWidgetInputFiltersOperator string
 
 // DashboardWidgetInputFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -26537,7 +26726,7 @@ type DashboardWidgetInputFiltersValue1 = float64
 // DashboardWidgetInputFiltersValue2 defines model for DashboardWidgetInput.Filters.Value.2.
 type DashboardWidgetInputFiltersValue2 = bool
 
-// DashboardWidgetInput_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// DashboardWidgetInput_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type DashboardWidgetInput_Filters_Value struct {
 	union json.RawMessage
 }
@@ -26557,7 +26746,7 @@ type DashboardWidgetInputMeasuresColor string
 // DashboardWidgetInputMeasuresDistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
 type DashboardWidgetInputMeasuresDistinctBy string
 
-// DashboardWidgetInputMeasuresFiltersOperator Defaults to EQUALS.
+// DashboardWidgetInputMeasuresFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type DashboardWidgetInputMeasuresFiltersOperator string
 
 // DashboardWidgetInputMeasuresFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -26572,7 +26761,7 @@ type DashboardWidgetInputMeasuresFiltersValue1 = float64
 // DashboardWidgetInputMeasuresFiltersValue2 defines model for DashboardWidgetInput.Measures.Filters.Value.2.
 type DashboardWidgetInputMeasuresFiltersValue2 = bool
 
-// DashboardWidgetInput_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// DashboardWidgetInput_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type DashboardWidgetInput_Measures_Filters_Value struct {
 	union json.RawMessage
 }
@@ -29222,16 +29411,16 @@ type MetricCollectionJobResponse struct {
 	// CompletedAt When the job completed
 	CompletedAt *string `json:"completedAt"`
 
-	// CompletedItems Number of successfully completed items
+	// CompletedItems Number of items that finished without failing: a value was written, or the metric did not apply to the conversation
 	CompletedItems int `json:"completedItems"`
 
 	// CreatedAt When the job was created
 	CreatedAt string `json:"createdAt"`
 
-	// ErrorMessage Error message if the job failed
+	// ErrorMessage Why the job failed or, on a COMPLETED job with failedItems above 0, why those items failed
 	ErrorMessage *string `json:"errorMessage"`
 
-	// FailedItems Number of failed items
+	// FailedItems Number of items that could not be computed, for example because an artifact the metric reads (such as diarization) failed to generate
 	FailedItems int `json:"failedItems"`
 
 	// Id Unique identifier of the metric collection job
@@ -33483,7 +33672,7 @@ type UpdateCustomerFlowInputScriptAdherence string
 type UpdateDashboardInput struct {
 	Description *string `json:"description,omitempty"`
 	Filters     *[]struct {
-		// Operator Defaults to EQUALS.
+		// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 		Operator *UpdateDashboardInputFiltersOperator `json:"operator,omitempty"`
 
 		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -33492,8 +33681,8 @@ type UpdateDashboardInput struct {
 		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 		Type UpdateDashboardInputFiltersType `json:"type"`
 
-		// Value The value to compare against (an agent id, "call" / "chat", a property value).
-		Value UpdateDashboardInput_Filters_Value `json:"value"`
+		// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+		Value *UpdateDashboardInput_Filters_Value `json:"value,omitempty"`
 	} `json:"filters,omitempty"`
 	IsDefault *bool   `json:"isDefault,omitempty"`
 	Name      *string `json:"name,omitempty"`
@@ -33505,7 +33694,7 @@ type UpdateDashboardInput struct {
 		ComparisonGroups *[]struct {
 			Color   *UpdateDashboardInputWidgetsComparisonGroupsColor `json:"color,omitempty"`
 			Filters []struct {
-				// Operator Defaults to EQUALS.
+				// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 				Operator *UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator `json:"operator,omitempty"`
 
 				// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -33514,8 +33703,8 @@ type UpdateDashboardInput struct {
 				// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 				Type UpdateDashboardInputWidgetsComparisonGroupsFiltersType `json:"type"`
 
-				// Value The value to compare against (an agent id, "call" / "chat", a property value).
-				Value UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value `json:"value"`
+				// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+				Value *UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value `json:"value,omitempty"`
 			} `json:"filters"`
 
 			// Name The series label; unique within the query.
@@ -33531,7 +33720,7 @@ type UpdateDashboardInput struct {
 
 		// Filters Applied to every measure, on top of each measure's own filters.
 		Filters *[]struct {
-			// Operator Defaults to EQUALS.
+			// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 			Operator *UpdateDashboardInputWidgetsFiltersOperator `json:"operator,omitempty"`
 
 			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -33540,8 +33729,8 @@ type UpdateDashboardInput struct {
 			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 			Type UpdateDashboardInputWidgetsFiltersType `json:"type"`
 
-			// Value The value to compare against (an agent id, "call" / "chat", a property value).
-			Value UpdateDashboardInput_Widgets_Filters_Value `json:"value"`
+			// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+			Value *UpdateDashboardInput_Widgets_Filters_Value `json:"value,omitempty"`
 		} `json:"filters,omitempty"`
 
 		// Interval Bucket size. Defaults from the window's length and steps coarser when the window would exceed 500 buckets.
@@ -33567,7 +33756,7 @@ type UpdateDashboardInput struct {
 
 			// Filters Filters for this measure only, on top of the query's filters.
 			Filters *[]struct {
-				// Operator Defaults to EQUALS.
+				// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 				Operator *UpdateDashboardInputWidgetsMeasuresFiltersOperator `json:"operator,omitempty"`
 
 				// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
@@ -33576,8 +33765,8 @@ type UpdateDashboardInput struct {
 				// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
 				Type UpdateDashboardInputWidgetsMeasuresFiltersType `json:"type"`
 
-				// Value The value to compare against (an agent id, "call" / "chat", a property value).
-				Value UpdateDashboardInput_Widgets_Measures_Filters_Value `json:"value"`
+				// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+				Value *UpdateDashboardInput_Widgets_Measures_Filters_Value `json:"value,omitempty"`
 			} `json:"filters,omitempty"`
 
 			// IsBaseline Mark one measure as the baseline: every series also reports its value as a percentage of it.
@@ -33611,7 +33800,7 @@ type UpdateDashboardInput struct {
 	} `json:"widgets,omitempty"`
 }
 
-// UpdateDashboardInputFiltersOperator Defaults to EQUALS.
+// UpdateDashboardInputFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type UpdateDashboardInputFiltersOperator string
 
 // UpdateDashboardInputFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -33626,7 +33815,7 @@ type UpdateDashboardInputFiltersValue1 = float64
 // UpdateDashboardInputFiltersValue2 defines model for UpdateDashboardInput.Filters.Value.2.
 type UpdateDashboardInputFiltersValue2 = bool
 
-// UpdateDashboardInput_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// UpdateDashboardInput_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type UpdateDashboardInput_Filters_Value struct {
 	union json.RawMessage
 }
@@ -33683,7 +33872,7 @@ type UpdateDashboardInput_TimeRange struct {
 // UpdateDashboardInputWidgetsComparisonGroupsColor defines model for UpdateDashboardInput.Widgets.ComparisonGroups.Color.
 type UpdateDashboardInputWidgetsComparisonGroupsColor string
 
-// UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator Defaults to EQUALS.
+// UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type UpdateDashboardInputWidgetsComparisonGroupsFiltersOperator string
 
 // UpdateDashboardInputWidgetsComparisonGroupsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -33698,7 +33887,7 @@ type UpdateDashboardInputWidgetsComparisonGroupsFiltersValue1 = float64
 // UpdateDashboardInputWidgetsComparisonGroupsFiltersValue2 defines model for UpdateDashboardInput.Widgets.ComparisonGroups.Filters.Value.2.
 type UpdateDashboardInputWidgetsComparisonGroupsFiltersValue2 = bool
 
-// UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type UpdateDashboardInput_Widgets_ComparisonGroups_Filters_Value struct {
 	union json.RawMessage
 }
@@ -33709,7 +33898,7 @@ type UpdateDashboardInputWidgetsComparisonMode string
 // UpdateDashboardInputWidgetsDisplay Chart type. Defaults to LINE.
 type UpdateDashboardInputWidgetsDisplay string
 
-// UpdateDashboardInputWidgetsFiltersOperator Defaults to EQUALS.
+// UpdateDashboardInputWidgetsFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type UpdateDashboardInputWidgetsFiltersOperator string
 
 // UpdateDashboardInputWidgetsFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -33724,7 +33913,7 @@ type UpdateDashboardInputWidgetsFiltersValue1 = float64
 // UpdateDashboardInputWidgetsFiltersValue2 defines model for UpdateDashboardInput.Widgets.Filters.Value.2.
 type UpdateDashboardInputWidgetsFiltersValue2 = bool
 
-// UpdateDashboardInput_Widgets_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// UpdateDashboardInput_Widgets_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type UpdateDashboardInput_Widgets_Filters_Value struct {
 	union json.RawMessage
 }
@@ -33744,7 +33933,7 @@ type UpdateDashboardInputWidgetsMeasuresColor string
 // UpdateDashboardInputWidgetsMeasuresDistinctBy CALL (default for metrics) folds each conversation to one value first, so a long call does not outweigh a short one. NONE aggregates every value.
 type UpdateDashboardInputWidgetsMeasuresDistinctBy string
 
-// UpdateDashboardInputWidgetsMeasuresFiltersOperator Defaults to EQUALS.
+// UpdateDashboardInputWidgetsMeasuresFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
 type UpdateDashboardInputWidgetsMeasuresFiltersOperator string
 
 // UpdateDashboardInputWidgetsMeasuresFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
@@ -33759,7 +33948,7 @@ type UpdateDashboardInputWidgetsMeasuresFiltersValue1 = float64
 // UpdateDashboardInputWidgetsMeasuresFiltersValue2 defines model for UpdateDashboardInput.Widgets.Measures.Filters.Value.2.
 type UpdateDashboardInputWidgetsMeasuresFiltersValue2 = bool
 
-// UpdateDashboardInput_Widgets_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value).
+// UpdateDashboardInput_Widgets_Measures_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
 type UpdateDashboardInput_Widgets_Measures_Filters_Value struct {
 	union json.RawMessage
 }
@@ -34707,6 +34896,10 @@ type GetV1CallParams struct {
 	SimulationRunPlanIds    *string                           `form:"simulationRunPlanIds,omitempty" json:"simulationRunPlanIds,omitempty"`
 	CountedInResults        *GetV1CallParamsCountedInResults  `form:"countedInResults,omitempty" json:"countedInResults,omitempty"`
 	ExcludeHiddenRuns       *GetV1CallParamsExcludeHiddenRuns `form:"excludeHiddenRuns,omitempty" json:"excludeHiddenRuns,omitempty"`
+	Properties              *map[string]struct {
+		// Exists true: the property is set. false: the property is missing.
+		Exists *bool `json:"exists,omitempty"`
+	} `json:"properties,omitempty"`
 }
 
 // GetV1CallParamsSortBy defines parameters for GetV1Call.
@@ -34741,6 +34934,17 @@ type PostV1Call200JSONResponseBodyDataCallDirection string
 
 // PostV1Call200JSONResponseBodyDataStatus defines parameters for PostV1Call.
 type PostV1Call200JSONResponseBodyDataStatus string
+
+// PostV1CallBatchDeleteJSONBody defines parameters for PostV1CallBatchDelete.
+type PostV1CallBatchDeleteJSONBody struct {
+	// CallIds IDs of the calls to delete, at most 100. Repeated IDs are counted once.
+	//
+	// Example: ["550e8400-e29b-41d4-a716-446655440000","660e8400-e29b-41d4-a716-446655440001"]
+	CallIds []openapi_types.UUID `json:"callIds"`
+}
+
+// DeleteV1CallByCallId200JSONResponseBodyDataDeleted defines parameters for DeleteV1CallByCallId.
+type DeleteV1CallByCallId200JSONResponseBodyDataDeleted bool
 
 // GetV1CallByCallId200JSONResponseBodyDataCallDirection defines parameters for GetV1CallByCallId.
 type GetV1CallByCallId200JSONResponseBodyDataCallDirection string
@@ -36325,6 +36529,9 @@ type PostV1AutoimproveJobByJobIdGuidanceJSONRequestBody = AutoimproveTextInput
 
 // PostV1CallJSONRequestBody defines body for PostV1Call for application/json ContentType.
 type PostV1CallJSONRequestBody = CallCreate
+
+// PostV1CallBatchDeleteJSONRequestBody defines body for PostV1CallBatchDelete for application/json ContentType.
+type PostV1CallBatchDeleteJSONRequestBody PostV1CallBatchDeleteJSONBody
 
 // PatchV1CallByCallIdPropertiesJSONRequestBody defines body for PatchV1CallByCallIdProperties for application/json ContentType.
 type PatchV1CallByCallIdPropertiesJSONRequestBody = UpdateCallPropertiesRequest
@@ -47147,6 +47354,31 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/call (the `PostV1Call` operationId).
 	PostV1Call(ctx context.Context, body PostV1CallJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// PostV1CallBatchDeleteWithBody Delete calls in batch
+	//
+	// Deletes up to 100 calls by ID in one request. Each deleted call, its metrics and its analysis are hidden from every read, and any analysis still running on it is cancelled. IDs that do not exist in this project, or were already deleted, are returned in notFoundCallIds and left untouched. The request succeeds even when none of the calls are found. IDs are returned lowercase, each once.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/call/batch-delete (the `PostV1CallBatchDelete` operationId).
+	PostV1CallBatchDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1CallBatchDelete Delete calls in batch
+	//
+	// Deletes up to 100 calls by ID in one request. Each deleted call, its metrics and its analysis are hidden from every read, and any analysis still running on it is cancelled. IDs that do not exist in this project, or were already deleted, are returned in notFoundCallIds and left untouched. The request succeeds even when none of the calls are found. IDs are returned lowercase, each once.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/call/batch-delete (the `PostV1CallBatchDelete` operationId).
+	PostV1CallBatchDelete(ctx context.Context, body PostV1CallBatchDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1CallByCallId Delete a call
+	//
+	// Deletes a call by its ID. The call, its metrics and its analysis are hidden from every read, and any analysis still running on it is cancelled. Returns 404 when the call does not exist in this project or was already deleted.
+	//
+	// Corresponds with DELETE /v1/call/{callId} (the `DeleteV1CallByCallId` operationId).
+	DeleteV1CallByCallId(ctx context.Context, callId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetV1CallByCallId Get a call by ID
 	//
 	// Retrieve an existing call by its unique identifier.
@@ -47827,6 +48059,17 @@ type ClientInterface interface {
 	//
 	// Corresponds with GET /v1/metric/collection-jobs/{jobId} (the `GetV1MetricCollectionJobsByJobId` operationId).
 	GetV1MetricCollectionJobsByJobId(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1MetricCollectionJobsByJobIdCancel Cancel a metric collection job
+	//
+	// Stops a metric collection job that has not finished. No further conversations are processed and the job ends in CANCELED.
+	//
+	// Items the job had not reached are marked SKIPPED. Metric values already produced are kept, and items that were mid-computation when the cancel arrived may still complete. Only the items that completed are billed.
+	//
+	// Safe to call more than once: a job that has already finished (COMPLETED, FAILED, or CANCELED) is returned unchanged.
+	//
+	// Corresponds with POST /v1/metric/collection-jobs/{jobId}/cancel (the `PostV1MetricCollectionJobsByJobIdCancel` operationId).
+	PostV1MetricCollectionJobsByJobIdCancel(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1MetricCollectionJobsByJobIdMetricValues Get metric values produced by a metric collection job
 	//
@@ -49860,6 +50103,61 @@ func (c *Client) PostV1Call(ctx context.Context, body PostV1CallJSONRequestBody,
 	return c.Client.Do(req)
 }
 
+// PostV1CallBatchDeleteWithBody Delete calls in batch
+//
+// Deletes up to 100 calls by ID in one request. Each deleted call, its metrics and its analysis are hidden from every read, and any analysis still running on it is cancelled. IDs that do not exist in this project, or were already deleted, are returned in notFoundCallIds and left untouched. The request succeeds even when none of the calls are found. IDs are returned lowercase, each once.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/call/batch-delete (the `PostV1CallBatchDelete` operationId).
+func (c *Client) PostV1CallBatchDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1CallBatchDeleteRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1CallBatchDelete Delete calls in batch
+//
+// Deletes up to 100 calls by ID in one request. Each deleted call, its metrics and its analysis are hidden from every read, and any analysis still running on it is cancelled. IDs that do not exist in this project, or were already deleted, are returned in notFoundCallIds and left untouched. The request succeeds even when none of the calls are found. IDs are returned lowercase, each once.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/call/batch-delete (the `PostV1CallBatchDelete` operationId).
+func (c *Client) PostV1CallBatchDelete(ctx context.Context, body PostV1CallBatchDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1CallBatchDeleteRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1CallByCallId Delete a call
+//
+// Deletes a call by its ID. The call, its metrics and its analysis are hidden from every read, and any analysis still running on it is cancelled. Returns 404 when the call does not exist in this project or was already deleted.
+//
+// Corresponds with DELETE /v1/call/{callId} (the `DeleteV1CallByCallId` operationId).
+func (c *Client) DeleteV1CallByCallId(ctx context.Context, callId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1CallByCallIdRequest(c.Server, callId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GetV1CallByCallId Get a call by ID
 //
 // Retrieve an existing call by its unique identifier.
@@ -51301,6 +51599,27 @@ func (c *Client) PostV1MetricCollectionJobs(ctx context.Context, body PostV1Metr
 // Corresponds with GET /v1/metric/collection-jobs/{jobId} (the `GetV1MetricCollectionJobsByJobId` operationId).
 func (c *Client) GetV1MetricCollectionJobsByJobId(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetV1MetricCollectionJobsByJobIdRequest(c.Server, jobId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1MetricCollectionJobsByJobIdCancel Cancel a metric collection job
+//
+// Stops a metric collection job that has not finished. No further conversations are processed and the job ends in CANCELED.
+//
+// Items the job had not reached are marked SKIPPED. Metric values already produced are kept, and items that were mid-computation when the cancel arrived may still complete. Only the items that completed are billed.
+//
+// Safe to call more than once: a job that has already finished (COMPLETED, FAILED, or CANCELED) is returned unchanged.
+//
+// Corresponds with POST /v1/metric/collection-jobs/{jobId}/cancel (the `PostV1MetricCollectionJobsByJobIdCancel` operationId).
+func (c *Client) PostV1MetricCollectionJobsByJobIdCancel(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1MetricCollectionJobsByJobIdCancelRequest(c.Server, jobId)
 	if err != nil {
 		return nil, err
 	}
@@ -55372,6 +55691,18 @@ func NewGetV1CallRequest(server string, params *GetV1CallParams) (*http.Request,
 
 		}
 
+		if params.Properties != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("deepObject", true, "properties", *params.Properties, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "object", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -55422,6 +55753,80 @@ func NewPostV1CallRequestWithBody(server string, contentType string, body io.Rea
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPostV1CallBatchDeleteRequest calls the generic PostV1CallBatchDelete builder with application/json body
+func NewPostV1CallBatchDeleteRequest(server string, body PostV1CallBatchDeleteJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1CallBatchDeleteRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1CallBatchDeleteRequestWithBody constructs an http.Request for the PostV1CallBatchDelete method, with any body, and a specified content type
+func NewPostV1CallBatchDeleteRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/call/batch-delete")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1CallByCallIdRequest constructs an http.Request for the DeleteV1CallByCallId method
+func NewDeleteV1CallByCallIdRequest(server string, callId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "callId", callId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/call/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -58080,6 +58485,40 @@ func NewGetV1MetricCollectionJobsByJobIdRequest(server string, jobId openapi_typ
 	}
 
 	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1MetricCollectionJobsByJobIdCancelRequest constructs an http.Request for the PostV1MetricCollectionJobsByJobIdCancel method
+func NewPostV1MetricCollectionJobsByJobIdCancelRequest(server string, jobId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/metric/collection-jobs/%s/cancel", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -62326,6 +62765,33 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/call (the `PostV1Call` operationId).
 	PostV1CallWithResponse(ctx context.Context, body PostV1CallJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1CallResponse, error)
 
+	// PostV1CallBatchDeleteWithBodyWithResponse Delete calls in batch
+	//
+	// Deletes up to 100 calls by ID in one request. Each deleted call, its metrics and its analysis are hidden from every read, and any analysis still running on it is cancelled. IDs that do not exist in this project, or were already deleted, are returned in notFoundCallIds and left untouched. The request succeeds even when none of the calls are found. IDs are returned lowercase, each once.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/call/batch-delete (the `PostV1CallBatchDelete` operationId).
+	PostV1CallBatchDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1CallBatchDeleteResponse, error)
+
+	// PostV1CallBatchDeleteWithResponse Delete calls in batch
+	//
+	// Deletes up to 100 calls by ID in one request. Each deleted call, its metrics and its analysis are hidden from every read, and any analysis still running on it is cancelled. IDs that do not exist in this project, or were already deleted, are returned in notFoundCallIds and left untouched. The request succeeds even when none of the calls are found. IDs are returned lowercase, each once.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/call/batch-delete (the `PostV1CallBatchDelete` operationId).
+	PostV1CallBatchDeleteWithResponse(ctx context.Context, body PostV1CallBatchDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1CallBatchDeleteResponse, error)
+
+	// DeleteV1CallByCallIdWithResponse Delete a call
+	//
+	// Deletes a call by its ID. The call, its metrics and its analysis are hidden from every read, and any analysis still running on it is cancelled. Returns 404 when the call does not exist in this project or was already deleted.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/call/{callId} (the `DeleteV1CallByCallId` operationId).
+	DeleteV1CallByCallIdWithResponse(ctx context.Context, callId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1CallByCallIdResponse, error)
+
 	// GetV1CallByCallIdWithResponse Get a call by ID
 	//
 	// Retrieve an existing call by its unique identifier.
@@ -63068,6 +63534,19 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with GET /v1/metric/collection-jobs/{jobId} (the `GetV1MetricCollectionJobsByJobId` operationId).
 	GetV1MetricCollectionJobsByJobIdWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1MetricCollectionJobsByJobIdResponse, error)
+
+	// PostV1MetricCollectionJobsByJobIdCancelWithResponse Cancel a metric collection job
+	//
+	// Stops a metric collection job that has not finished. No further conversations are processed and the job ends in CANCELED.
+	//
+	// Items the job had not reached are marked SKIPPED. Metric values already produced are kept, and items that were mid-computation when the cancel arrived may still complete. Only the items that completed are billed.
+	//
+	// Safe to call more than once: a job that has already finished (COMPLETED, FAILED, or CANCELED) is returned unchanged.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/metric/collection-jobs/{jobId}/cancel (the `PostV1MetricCollectionJobsByJobIdCancel` operationId).
+	PostV1MetricCollectionJobsByJobIdCancelWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*PostV1MetricCollectionJobsByJobIdCancelResponse, error)
 
 	// GetV1MetricCollectionJobsByJobIdMetricValuesWithResponse Get metric values produced by a metric collection job
 	//
@@ -67417,6 +67896,8 @@ type GetV1CallResponse struct {
 			Total float64 `json:"total"`
 		} `json:"pagination"`
 	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
 	// JSON500 the response for an HTTP 500 `application/json` response
@@ -67553,6 +68034,11 @@ func (r GetV1CallResponse) GetJSON200() *struct {
 	} `json:"pagination"`
 } {
 	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetV1CallResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
 }
 
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
@@ -67749,6 +68235,205 @@ func (r PostV1CallResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r PostV1CallResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1CallBatchDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			// DeletedCallIds Calls this request deleted
+			//
+			// Example: ["550e8400-e29b-41d4-a716-446655440000"]
+			DeletedCallIds []openapi_types.UUID `json:"deletedCallIds"`
+
+			// NotFoundCallIds Requested calls that were not deleted because they do not exist in this project or were already deleted
+			//
+			// Example: ["660e8400-e29b-41d4-a716-446655440001"]
+			NotFoundCallIds []openapi_types.UUID `json:"notFoundCallIds"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1CallBatchDeleteResponse) GetJSON200() *struct {
+	Data struct {
+		// DeletedCallIds Calls this request deleted
+		//
+		// Example: ["550e8400-e29b-41d4-a716-446655440000"]
+		DeletedCallIds []openapi_types.UUID `json:"deletedCallIds"`
+
+		// NotFoundCallIds Requested calls that were not deleted because they do not exist in this project or were already deleted
+		//
+		// Example: ["660e8400-e29b-41d4-a716-446655440001"]
+		NotFoundCallIds []openapi_types.UUID `json:"notFoundCallIds"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1CallBatchDeleteResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1CallBatchDeleteResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1CallBatchDeleteResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PostV1CallBatchDeleteResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1CallBatchDeleteResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1CallBatchDeleteResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1CallBatchDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1CallBatchDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1CallBatchDeleteResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1CallByCallIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			// Deleted Always true when the call was deleted
+			Deleted DeleteV1CallByCallId200JSONResponseBodyDataDeleted `json:"deleted"`
+
+			// Id ID of the deleted call
+			Id openapi_types.UUID `json:"id"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1CallByCallIdResponse) GetJSON200() *struct {
+	Data struct {
+		// Deleted Always true when the call was deleted
+		Deleted DeleteV1CallByCallId200JSONResponseBodyDataDeleted `json:"deleted"`
+
+		// Id ID of the deleted call
+		Id openapi_types.UUID `json:"id"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r DeleteV1CallByCallIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1CallByCallIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r DeleteV1CallByCallIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1CallByCallIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r DeleteV1CallByCallIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1CallByCallIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1CallByCallIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1CallByCallIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1CallByCallIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1CallByCallIdResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -73449,6 +74134,88 @@ func (r GetV1MetricCollectionJobsByJobIdResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetV1MetricCollectionJobsByJobIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1MetricCollectionJobsByJobIdCancelResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data A metric collection job that processes metrics for calls or chats
+		Data MetricCollectionJobResponse `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1MetricCollectionJobsByJobIdCancelResponse) GetJSON200() *struct {
+	// Data A metric collection job that processes metrics for calls or chats
+	Data MetricCollectionJobResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1MetricCollectionJobsByJobIdCancelResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1MetricCollectionJobsByJobIdCancelResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1MetricCollectionJobsByJobIdCancelResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PostV1MetricCollectionJobsByJobIdCancelResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1MetricCollectionJobsByJobIdCancelResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1MetricCollectionJobsByJobIdCancelResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1MetricCollectionJobsByJobIdCancelResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1MetricCollectionJobsByJobIdCancelResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1MetricCollectionJobsByJobIdCancelResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -81849,6 +82616,51 @@ func (c *ClientWithResponses) PostV1CallWithResponse(ctx context.Context, body P
 	return ParsePostV1CallResponse(rsp)
 }
 
+// PostV1CallBatchDeleteWithBodyWithResponse Delete calls in batch
+//
+// Deletes up to 100 calls by ID in one request. Each deleted call, its metrics and its analysis are hidden from every read, and any analysis still running on it is cancelled. IDs that do not exist in this project, or were already deleted, are returned in notFoundCallIds and left untouched. The request succeeds even when none of the calls are found. IDs are returned lowercase, each once.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/call/batch-delete (the `PostV1CallBatchDelete` operationId).
+func (c *ClientWithResponses) PostV1CallBatchDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1CallBatchDeleteResponse, error) {
+	rsp, err := c.PostV1CallBatchDeleteWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1CallBatchDeleteResponse(rsp)
+}
+
+// PostV1CallBatchDeleteWithResponse Delete calls in batch
+//
+// Deletes up to 100 calls by ID in one request. Each deleted call, its metrics and its analysis are hidden from every read, and any analysis still running on it is cancelled. IDs that do not exist in this project, or were already deleted, are returned in notFoundCallIds and left untouched. The request succeeds even when none of the calls are found. IDs are returned lowercase, each once.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/call/batch-delete (the `PostV1CallBatchDelete` operationId).
+func (c *ClientWithResponses) PostV1CallBatchDeleteWithResponse(ctx context.Context, body PostV1CallBatchDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1CallBatchDeleteResponse, error) {
+	rsp, err := c.PostV1CallBatchDelete(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1CallBatchDeleteResponse(rsp)
+}
+
+// DeleteV1CallByCallIdWithResponse Delete a call
+//
+// Deletes a call by its ID. The call, its metrics and its analysis are hidden from every read, and any analysis still running on it is cancelled. Returns 404 when the call does not exist in this project or was already deleted.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/call/{callId} (the `DeleteV1CallByCallId` operationId).
+func (c *ClientWithResponses) DeleteV1CallByCallIdWithResponse(ctx context.Context, callId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1CallByCallIdResponse, error) {
+	rsp, err := c.DeleteV1CallByCallId(ctx, callId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1CallByCallIdResponse(rsp)
+}
+
 // GetV1CallByCallIdWithResponse Get a call by ID
 //
 // Retrieve an existing call by its unique identifier.
@@ -83052,6 +83864,25 @@ func (c *ClientWithResponses) GetV1MetricCollectionJobsByJobIdWithResponse(ctx c
 		return nil, err
 	}
 	return ParseGetV1MetricCollectionJobsByJobIdResponse(rsp)
+}
+
+// PostV1MetricCollectionJobsByJobIdCancelWithResponse Cancel a metric collection job
+//
+// Stops a metric collection job that has not finished. No further conversations are processed and the job ends in CANCELED.
+//
+// Items the job had not reached are marked SKIPPED. Metric values already produced are kept, and items that were mid-computation when the cancel arrived may still complete. Only the items that completed are billed.
+//
+// Safe to call more than once: a job that has already finished (COMPLETED, FAILED, or CANCELED) is returned unchanged.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/metric/collection-jobs/{jobId}/cancel (the `PostV1MetricCollectionJobsByJobIdCancel` operationId).
+func (c *ClientWithResponses) PostV1MetricCollectionJobsByJobIdCancelWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*PostV1MetricCollectionJobsByJobIdCancelResponse, error) {
+	rsp, err := c.PostV1MetricCollectionJobsByJobIdCancel(ctx, jobId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1MetricCollectionJobsByJobIdCancelResponse(rsp)
 }
 
 // GetV1MetricCollectionJobsByJobIdMetricValuesWithResponse Get metric values produced by a metric collection job
@@ -87325,6 +88156,13 @@ func ParseGetV1CallResponse(rsp *http.Response) (*GetV1CallResponse, error) {
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest ErrorResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -87431,6 +88269,155 @@ func ParsePostV1CallResponse(rsp *http.Response) (*PostV1CallResponse, error) {
 			return nil, err
 		}
 		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1CallBatchDeleteResponse parses an HTTP response from a PostV1CallBatchDeleteWithResponse call
+func ParsePostV1CallBatchDeleteResponse(rsp *http.Response) (*PostV1CallBatchDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1CallBatchDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				// DeletedCallIds Calls this request deleted
+				//
+				// Example: ["550e8400-e29b-41d4-a716-446655440000"]
+				DeletedCallIds []openapi_types.UUID `json:"deletedCallIds"`
+
+				// NotFoundCallIds Requested calls that were not deleted because they do not exist in this project or were already deleted
+				//
+				// Example: ["660e8400-e29b-41d4-a716-446655440001"]
+				NotFoundCallIds []openapi_types.UUID `json:"notFoundCallIds"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1CallByCallIdResponse parses an HTTP response from a DeleteV1CallByCallIdWithResponse call
+func ParseDeleteV1CallByCallIdResponse(rsp *http.Response) (*DeleteV1CallByCallIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1CallByCallIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				// Deleted Always true when the call was deleted
+				Deleted DeleteV1CallByCallId200JSONResponseBodyDataDeleted `json:"deleted"`
+
+				// Id ID of the deleted call
+				Id openapi_types.UUID `json:"id"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
 		var dest ErrorResponse
@@ -91495,6 +92482,70 @@ func ParseGetV1MetricCollectionJobsByJobIdResponse(rsp *http.Response) (*GetV1Me
 			return nil, err
 		}
 		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1MetricCollectionJobsByJobIdCancelResponse parses an HTTP response from a PostV1MetricCollectionJobsByJobIdCancelWithResponse call
+func ParsePostV1MetricCollectionJobsByJobIdCancelResponse(rsp *http.Response) (*PostV1MetricCollectionJobsByJobIdCancelResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1MetricCollectionJobsByJobIdCancelResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data A metric collection job that processes metrics for calls or chats
+			Data MetricCollectionJobResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest ErrorResponse

@@ -48334,7 +48334,7 @@ type ClientInterface interface {
 
 	// DeleteV1OrgProjectByProjectId Delete a project
 	//
-	// Soft-delete a project. The last project in an organization cannot be deleted (409).
+	// Soft-delete a project and pause its active schedules. Returns 409 when the project is the last one in the organization, has an active agent connection, or has a simulation running.
 	//
 	// Corresponds with DELETE /v1/org/project/{projectId} (the `DeleteV1OrgProjectByProjectId` operationId).
 	DeleteV1OrgProjectByProjectId(ctx context.Context, projectId string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -52173,7 +52173,7 @@ func (c *Client) PostV1OrgProject(ctx context.Context, body PostV1OrgProjectJSON
 
 // DeleteV1OrgProjectByProjectId Delete a project
 //
-// Soft-delete a project. The last project in an organization cannot be deleted (409).
+// Soft-delete a project and pause its active schedules. Returns 409 when the project is the last one in the organization, has an active agent connection, or has a simulation running.
 //
 // Corresponds with DELETE /v1/org/project/{projectId} (the `DeleteV1OrgProjectByProjectId` operationId).
 func (c *Client) DeleteV1OrgProjectByProjectId(ctx context.Context, projectId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -63835,7 +63835,7 @@ type ClientWithResponsesInterface interface {
 
 	// DeleteV1OrgProjectByProjectIdWithResponse Delete a project
 	//
-	// Soft-delete a project. The last project in an organization cannot be deleted (409).
+	// Soft-delete a project and pause its active schedules. Returns 409 when the project is the last one in the organization, has an active agent connection, or has a simulation running.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -84340,7 +84340,7 @@ func (c *ClientWithResponses) PostV1OrgProjectWithResponse(ctx context.Context, 
 
 // DeleteV1OrgProjectByProjectIdWithResponse Delete a project
 //
-// Soft-delete a project. The last project in an organization cannot be deleted (409).
+// Soft-delete a project and pause its active schedules. Returns 409 when the project is the last one in the organization, has an active agent connection, or has a simulation running.
 //
 // Returns a wrapper object for the known response body format(s).
 //

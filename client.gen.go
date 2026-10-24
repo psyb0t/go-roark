@@ -15700,6 +15700,48 @@ func (e ToolConfigParameters) Valid() bool {
 	}
 }
 
+// Defines values for ToolHandlerMethod.
+const (
+	ToolHandlerMethodDELETE ToolHandlerMethod = "DELETE"
+	ToolHandlerMethodGET    ToolHandlerMethod = "GET"
+	ToolHandlerMethodPATCH  ToolHandlerMethod = "PATCH"
+	ToolHandlerMethodPOST   ToolHandlerMethod = "POST"
+	ToolHandlerMethodPUT    ToolHandlerMethod = "PUT"
+)
+
+// Valid indicates whether the value is a known member of the ToolHandlerMethod enum.
+func (e ToolHandlerMethod) Valid() bool {
+	switch e {
+	case ToolHandlerMethodDELETE:
+		return true
+	case ToolHandlerMethodGET:
+		return true
+	case ToolHandlerMethodPATCH:
+		return true
+	case ToolHandlerMethodPOST:
+		return true
+	case ToolHandlerMethodPUT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ToolHandlerType.
+const (
+	ToolHandlerTypeHttp ToolHandlerType = "http"
+)
+
+// Valid indicates whether the value is a known member of the ToolHandlerType enum.
+func (e ToolHandlerType) Valid() bool {
+	switch e {
+	case ToolHandlerTypeHttp:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for TranscriptEntryAgentRole.
 const (
 	TranscriptEntryAgentRoleAGENT TranscriptEntryAgentRole = "AGENT"
@@ -33525,6 +33567,7 @@ type ToolConfig struct {
 	Agent              *string                          `json:"agent,omitempty"`
 	Description        *string                          `json:"description,omitempty"`
 	ExpectedResult     *string                          `json:"expectedResult,omitempty"`
+	Handler            *ToolHandler                     `json:"handler,omitempty"`
 	InvocationCriteria *string                          `json:"invocationCriteria,omitempty"`
 	Kind               ToolConfigKind                   `json:"kind"`
 	Name               string                           `json:"name"`
@@ -33536,6 +33579,19 @@ type ToolConfigKind string
 
 // ToolConfigParameters defines model for ToolConfig.Parameters.
 type ToolConfigParameters string
+
+// ToolHandler defines model for ToolHandler.
+type ToolHandler struct {
+	Method *ToolHandlerMethod `json:"method,omitempty"`
+	Type   ToolHandlerType    `json:"type"`
+	Url    string             `json:"url"`
+}
+
+// ToolHandlerMethod defines model for ToolHandler.Method.
+type ToolHandlerMethod string
+
+// ToolHandlerType defines model for ToolHandler.Type.
+type ToolHandlerType string
 
 // TranscriptEntryAgent defines model for TranscriptEntryAgent.
 type TranscriptEntryAgent struct {

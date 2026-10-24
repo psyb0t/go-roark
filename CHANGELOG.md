@@ -2,6 +2,12 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.2.2, 2026-10-24
+
+- Added the `ToolHandler` type, which describes an HTTP handler for a tool, with `Type` (`ToolHandlerType`, only `ToolHandlerTypeHttp`), `Url` and an optional `Method` (`ToolHandlerMethod`).
+- Added `ToolHandlerMethod` with the values `ToolHandlerMethodGET`, `ToolHandlerMethodPOST`, `ToolHandlerMethodPUT`, `ToolHandlerMethodPATCH` and `ToolHandlerMethodDELETE`. `ToolHandlerMethod` and `ToolHandlerType` have `Valid` methods.
+- `ToolConfig` has a new optional `Handler` field of type `*ToolHandler`.
+
 ## v0.2.1, 2026-10-23
 
 - Documentation only. The doc comments of `DeleteV1OrgProjectByProjectId` and `DeleteV1OrgProjectByProjectIdWithResponse`, on `Client`, `ClientWithResponses` and both interfaces, now say that deleting a project also pauses its active schedules, and that the API returns 409 when the project is the last one in the organization, has an active agent connection, or has a simulation running.

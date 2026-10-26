@@ -1932,6 +1932,7 @@ const (
 	CallCostLineSourceINTERNALLLM    CallCostLineSource = "INTERNAL_LLM"
 	CallCostLineSourceINTERNALSTT    CallCostLineSource = "INTERNAL_STT"
 	CallCostLineSourceMETRIC         CallCostLineSource = "METRIC"
+	CallCostLineSourcePHONENUMBER    CallCostLineSource = "PHONE_NUMBER"
 	CallCostLineSourceSIMLLM         CallCostLineSource = "SIM_LLM"
 	CallCostLineSourceSIMPLATFORMFEE CallCostLineSource = "SIM_PLATFORM_FEE"
 	CallCostLineSourceSIMSTT         CallCostLineSource = "SIM_STT"
@@ -1948,6 +1949,8 @@ func (e CallCostLineSource) Valid() bool {
 	case CallCostLineSourceINTERNALSTT:
 		return true
 	case CallCostLineSourceMETRIC:
+		return true
+	case CallCostLineSourcePHONENUMBER:
 		return true
 	case CallCostLineSourceSIMLLM:
 		return true
@@ -2709,6 +2712,7 @@ const (
 	CostBreakdownItemSourceINTERNALLLM    CostBreakdownItemSource = "INTERNAL_LLM"
 	CostBreakdownItemSourceINTERNALSTT    CostBreakdownItemSource = "INTERNAL_STT"
 	CostBreakdownItemSourceMETRIC         CostBreakdownItemSource = "METRIC"
+	CostBreakdownItemSourcePHONENUMBER    CostBreakdownItemSource = "PHONE_NUMBER"
 	CostBreakdownItemSourceSIMLLM         CostBreakdownItemSource = "SIM_LLM"
 	CostBreakdownItemSourceSIMPLATFORMFEE CostBreakdownItemSource = "SIM_PLATFORM_FEE"
 	CostBreakdownItemSourceSIMSTT         CostBreakdownItemSource = "SIM_STT"
@@ -2725,6 +2729,8 @@ func (e CostBreakdownItemSource) Valid() bool {
 	case CostBreakdownItemSourceINTERNALSTT:
 		return true
 	case CostBreakdownItemSourceMETRIC:
+		return true
+	case CostBreakdownItemSourcePHONENUMBER:
 		return true
 	case CostBreakdownItemSourceSIMLLM:
 		return true
@@ -8461,6 +8467,195 @@ func (e HttpRequestDefinitionResponseScope) Valid() bool {
 	}
 }
 
+// Defines values for HttpRequestMetricConfigMethod.
+const (
+	HttpRequestMetricConfigMethodGET  HttpRequestMetricConfigMethod = "GET"
+	HttpRequestMetricConfigMethodPOST HttpRequestMetricConfigMethod = "POST"
+)
+
+// Valid indicates whether the value is a known member of the HttpRequestMetricConfigMethod enum.
+func (e HttpRequestMetricConfigMethod) Valid() bool {
+	switch e {
+	case HttpRequestMetricConfigMethodGET:
+		return true
+	case HttpRequestMetricConfigMethodPOST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HttpRequestMetricDetailsMethod.
+const (
+	HttpRequestMetricDetailsMethodGET  HttpRequestMetricDetailsMethod = "GET"
+	HttpRequestMetricDetailsMethodPOST HttpRequestMetricDetailsMethod = "POST"
+)
+
+// Valid indicates whether the value is a known member of the HttpRequestMetricDetailsMethod enum.
+func (e HttpRequestMetricDetailsMethod) Valid() bool {
+	switch e {
+	case HttpRequestMetricDetailsMethodGET:
+		return true
+	case HttpRequestMetricDetailsMethodPOST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HttpRequestMetricInputCalculationType.
+const (
+	HttpRequestMetricInputCalculationTypeHTTPREQUEST HttpRequestMetricInputCalculationType = "HTTP_REQUEST"
+)
+
+// Valid indicates whether the value is a known member of the HttpRequestMetricInputCalculationType enum.
+func (e HttpRequestMetricInputCalculationType) Valid() bool {
+	switch e {
+	case HttpRequestMetricInputCalculationTypeHTTPREQUEST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HttpRequestMetricInputHttpRequestMethod.
+const (
+	HttpRequestMetricInputHttpRequestMethodGET  HttpRequestMetricInputHttpRequestMethod = "GET"
+	HttpRequestMetricInputHttpRequestMethodPOST HttpRequestMetricInputHttpRequestMethod = "POST"
+)
+
+// Valid indicates whether the value is a known member of the HttpRequestMetricInputHttpRequestMethod enum.
+func (e HttpRequestMetricInputHttpRequestMethod) Valid() bool {
+	switch e {
+	case HttpRequestMetricInputHttpRequestMethodGET:
+		return true
+	case HttpRequestMetricInputHttpRequestMethodPOST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HttpRequestMetricPayloadVersion.
+const (
+	HttpRequestMetricPayloadVersionN10 HttpRequestMetricPayloadVersion = "1.0"
+)
+
+// Valid indicates whether the value is a known member of the HttpRequestMetricPayloadVersion enum.
+func (e HttpRequestMetricPayloadVersion) Valid() bool {
+	switch e {
+	case HttpRequestMetricPayloadVersionN10:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HttpRequestMetricResponseCalculationType.
+const (
+	HttpRequestMetricResponseCalculationTypeHTTPREQUEST HttpRequestMetricResponseCalculationType = "HTTP_REQUEST"
+)
+
+// Valid indicates whether the value is a known member of the HttpRequestMetricResponseCalculationType enum.
+func (e HttpRequestMetricResponseCalculationType) Valid() bool {
+	switch e {
+	case HttpRequestMetricResponseCalculationTypeHTTPREQUEST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HttpRequestMetricResponseScope.
+const (
+	HttpRequestMetricResponseScopeGLOBAL         HttpRequestMetricResponseScope = "GLOBAL"
+	HttpRequestMetricResponseScopePERPARTICIPANT HttpRequestMetricResponseScope = "PER_PARTICIPANT"
+)
+
+// Valid indicates whether the value is a known member of the HttpRequestMetricResponseScope enum.
+func (e HttpRequestMetricResponseScope) Valid() bool {
+	switch e {
+	case HttpRequestMetricResponseScopeGLOBAL:
+		return true
+	case HttpRequestMetricResponseScopePERPARTICIPANT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HttpRequestMetricResponseSupportedContexts.
+const (
+	HttpRequestMetricResponseSupportedContextsCALL    HttpRequestMetricResponseSupportedContexts = "CALL"
+	HttpRequestMetricResponseSupportedContextsSEGMENT HttpRequestMetricResponseSupportedContexts = "SEGMENT"
+	HttpRequestMetricResponseSupportedContextsTURN    HttpRequestMetricResponseSupportedContexts = "TURN"
+)
+
+// Valid indicates whether the value is a known member of the HttpRequestMetricResponseSupportedContexts enum.
+func (e HttpRequestMetricResponseSupportedContexts) Valid() bool {
+	switch e {
+	case HttpRequestMetricResponseSupportedContextsCALL:
+		return true
+	case HttpRequestMetricResponseSupportedContextsSEGMENT:
+		return true
+	case HttpRequestMetricResponseSupportedContextsTURN:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HttpRequestMetricResponseSupportedConversationSources.
+const (
+	HttpRequestMetricResponseSupportedConversationSourcesLIVE      HttpRequestMetricResponseSupportedConversationSources = "LIVE"
+	HttpRequestMetricResponseSupportedConversationSourcesSIMULATED HttpRequestMetricResponseSupportedConversationSources = "SIMULATED"
+)
+
+// Valid indicates whether the value is a known member of the HttpRequestMetricResponseSupportedConversationSources enum.
+func (e HttpRequestMetricResponseSupportedConversationSources) Valid() bool {
+	switch e {
+	case HttpRequestMetricResponseSupportedConversationSourcesLIVE:
+		return true
+	case HttpRequestMetricResponseSupportedConversationSourcesSIMULATED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HttpRequestMetricResponseType.
+const (
+	HttpRequestMetricResponseTypeBOOLEAN        HttpRequestMetricResponseType = "BOOLEAN"
+	HttpRequestMetricResponseTypeCLASSIFICATION HttpRequestMetricResponseType = "CLASSIFICATION"
+	HttpRequestMetricResponseTypeCOUNT          HttpRequestMetricResponseType = "COUNT"
+	HttpRequestMetricResponseTypeNUMERIC        HttpRequestMetricResponseType = "NUMERIC"
+	HttpRequestMetricResponseTypeOFFSET         HttpRequestMetricResponseType = "OFFSET"
+	HttpRequestMetricResponseTypeSCALE          HttpRequestMetricResponseType = "SCALE"
+	HttpRequestMetricResponseTypeTEXT           HttpRequestMetricResponseType = "TEXT"
+)
+
+// Valid indicates whether the value is a known member of the HttpRequestMetricResponseType enum.
+func (e HttpRequestMetricResponseType) Valid() bool {
+	switch e {
+	case HttpRequestMetricResponseTypeBOOLEAN:
+		return true
+	case HttpRequestMetricResponseTypeCLASSIFICATION:
+		return true
+	case HttpRequestMetricResponseTypeCOUNT:
+		return true
+	case HttpRequestMetricResponseTypeNUMERIC:
+		return true
+	case HttpRequestMetricResponseTypeOFFSET:
+		return true
+	case HttpRequestMetricResponseTypeSCALE:
+		return true
+	case HttpRequestMetricResponseTypeTEXT:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ImprovCustomerFlowSource.
 const (
 	ImprovCustomerFlowSourceCUSTOM ImprovCustomerFlowSource = "CUSTOM"
@@ -11791,6 +11986,51 @@ func (e PersonaConfigUnderstoodLanguages) Valid() bool {
 	}
 }
 
+// Defines values for PhoneNumberAllowanceResponseBlockedReason.
+const (
+	PhoneNumberAllowanceResponseBlockedReasonINSUFFICIENTCREDITS   PhoneNumberAllowanceResponseBlockedReason = "INSUFFICIENT_CREDITS"
+	PhoneNumberAllowanceResponseBlockedReasonPAYMENTMETHODREQUIRED PhoneNumberAllowanceResponseBlockedReason = "PAYMENT_METHOD_REQUIRED"
+	PhoneNumberAllowanceResponseBlockedReasonPLANLIMITREACHED      PhoneNumberAllowanceResponseBlockedReason = "PLAN_LIMIT_REACHED"
+	PhoneNumberAllowanceResponseBlockedReasonSPENDCAPREACHED       PhoneNumberAllowanceResponseBlockedReason = "SPEND_CAP_REACHED"
+)
+
+// Valid indicates whether the value is a known member of the PhoneNumberAllowanceResponseBlockedReason enum.
+func (e PhoneNumberAllowanceResponseBlockedReason) Valid() bool {
+	switch e {
+	case PhoneNumberAllowanceResponseBlockedReasonINSUFFICIENTCREDITS:
+		return true
+	case PhoneNumberAllowanceResponseBlockedReasonPAYMENTMETHODREQUIRED:
+		return true
+	case PhoneNumberAllowanceResponseBlockedReasonPLANLIMITREACHED:
+		return true
+	case PhoneNumberAllowanceResponseBlockedReasonSPENDCAPREACHED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PhoneNumberAllowanceResponsePlan.
+const (
+	PhoneNumberAllowanceResponsePlanENTERPRISE PhoneNumberAllowanceResponsePlan = "ENTERPRISE"
+	PhoneNumberAllowanceResponsePlanPAYG       PhoneNumberAllowanceResponsePlan = "PAYG"
+	PhoneNumberAllowanceResponsePlanTEAM       PhoneNumberAllowanceResponsePlan = "TEAM"
+)
+
+// Valid indicates whether the value is a known member of the PhoneNumberAllowanceResponsePlan enum.
+func (e PhoneNumberAllowanceResponsePlan) Valid() bool {
+	switch e {
+	case PhoneNumberAllowanceResponsePlanENTERPRISE:
+		return true
+	case PhoneNumberAllowanceResponsePlanPAYG:
+		return true
+	case PhoneNumberAllowanceResponsePlanTEAM:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ProjectConfigCategory.
 const (
 	ProjectConfigCategoryAUTOMOTIVE  ProjectConfigCategory = "AUTOMOTIVE"
@@ -12148,6 +12388,21 @@ func (e QaSimulationPlanConfigTemplate) Valid() bool {
 	}
 }
 
+// Defines values for ReleasePhoneNumberResponseReleased.
+const (
+	ReleasePhoneNumberResponseReleasedTrue ReleasePhoneNumberResponseReleased = true
+)
+
+// Valid indicates whether the value is a known member of the ReleasePhoneNumberResponseReleased enum.
+func (e ReleasePhoneNumberResponseReleased) Valid() bool {
+	switch e {
+	case ReleasePhoneNumberResponseReleasedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ResolveManagedConfigResponseChannel.
 const (
 	ResolveManagedConfigResponseChannelProduction ResolveManagedConfigResponseChannel = "production"
@@ -12373,6 +12628,21 @@ const (
 func (e RunSimulationFromConfigVariables1HappyPath) Valid() bool {
 	switch e {
 	case RunSimulationFromConfigVariables1HappyPathTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RunSimulationFromConfigKeyVariables1HappyPath.
+const (
+	RunSimulationFromConfigKeyVariables1HappyPathTrue RunSimulationFromConfigKeyVariables1HappyPath = true
+)
+
+// Valid indicates whether the value is a known member of the RunSimulationFromConfigKeyVariables1HappyPath enum.
+func (e RunSimulationFromConfigKeyVariables1HappyPath) Valid() bool {
+	switch e {
+	case RunSimulationFromConfigKeyVariables1HappyPathTrue:
 		return true
 	default:
 		return false
@@ -16941,6 +17211,7 @@ const (
 	UsageCostTypeSourceINTERNALLLM    UsageCostTypeSource = "INTERNAL_LLM"
 	UsageCostTypeSourceINTERNALSTT    UsageCostTypeSource = "INTERNAL_STT"
 	UsageCostTypeSourceMETRIC         UsageCostTypeSource = "METRIC"
+	UsageCostTypeSourcePHONENUMBER    UsageCostTypeSource = "PHONE_NUMBER"
 	UsageCostTypeSourceSIMLLM         UsageCostTypeSource = "SIM_LLM"
 	UsageCostTypeSourceSIMPLATFORMFEE UsageCostTypeSource = "SIM_PLATFORM_FEE"
 	UsageCostTypeSourceSIMSTT         UsageCostTypeSource = "SIM_STT"
@@ -16957,6 +17228,8 @@ func (e UsageCostTypeSource) Valid() bool {
 	case UsageCostTypeSourceINTERNALSTT:
 		return true
 	case UsageCostTypeSourceMETRIC:
+		return true
+	case UsageCostTypeSourcePHONENUMBER:
 		return true
 	case UsageCostTypeSourceSIMLLM:
 		return true
@@ -23323,6 +23596,20 @@ type AutoimproveTextInput struct {
 	Text string `json:"text"`
 }
 
+// AvailablePhoneNumberResponse A number the carrier has for sale
+type AvailablePhoneNumberResponse struct {
+	// E164 The number in E.164 format
+	//
+	// Example: +14155550123
+	E164 string `json:"e164"`
+
+	// Locality Locality the carrier lists, e.g. a city
+	Locality *string `json:"locality"`
+
+	// Region Region the carrier lists, e.g. a state code
+	Region *string `json:"region"`
+}
+
 // BenchmarkGeneration One published sweep of a target, current or superseded — an entry in its history
 type BenchmarkGeneration struct {
 	// IsCurrent Whether this is the generation the other endpoints return.
@@ -24836,6 +25123,28 @@ type CreateOrgProjectInputCategory string
 // CreateOrgProjectInputDataStorageRegion Defaults to US_EAST_1
 type CreateOrgProjectInputDataStorageRegion string
 
+// CreatePhoneNumberInput Input for buying a phone number
+type CreatePhoneNumberInput struct {
+	// AgentId The agent to assign the number to
+	AgentId *openapi_types.UUID `json:"agentId,omitempty"`
+
+	// E164 The number to buy, in E.164 format, from a search result
+	//
+	// Example: +14155550123
+	E164 string `json:"e164"`
+
+	// ExpectFree Whether you expect this number to be free (from the allowance). The purchase is refused with 409 if that has changed since you checked.
+	ExpectFree *bool `json:"expectFree,omitempty"`
+
+	// ExpectMonthlyRentMicros The monthly rent you expect for a paid number, in micros (from the allowance). The purchase is refused with 409 if that has changed since you checked.
+	//
+	// Example: 2000000
+	ExpectMonthlyRentMicros *int `json:"expectMonthlyRentMicros,omitempty"`
+
+	// Name A label for the number
+	Name *string `json:"name,omitempty"`
+}
+
 // CreateRunPlanFromConfig Describe a run plan: what to call, who calls it, and what to measure.
 //
 // Example: {"agentEndpoints":[{"id":"7c9e6679-7425-40de-944b-e07fc1f90ae7"}],"comparisonBaseline":"NONE","comparisonProperty":"BACKGROUND_NOISE","comparisonValues":["NONE","CITY","TRAIN"],"direction":"OUTBOUND","flows":[{"happyPath":true,"id":"550e8400-e29b-41d4-a716-446655440000"}],"iterationCount":5,"maxSimulationDurationSeconds":300,"metrics":[{"slug":"call_outcome"}],"name":"Background noise sweep"}
@@ -25018,6 +25327,11 @@ type CreateRunPlanFromConfig struct {
 	// Example: 90
 	NoResponseRetryBackoffSeconds *int `json:"noResponseRetryBackoffSeconds,omitempty"`
 
+	// Notifications Where each run's report announces itself once it is ready.
+	//
+	// Example: {"email":{"enabled":true,"recipients":[]},"slack":[{"channelId":"C07ABCDEF12","channelName":"qa-reports"}]}
+	Notifications *SimulationPlanNotificationsInput `json:"notifications,omitempty"`
+
 	// Personas Personas to include in this run plan. Required with `scenarios`; ignored with `flows`, where each variant carries its own persona.
 	Personas *[]struct {
 		Id openapi_types.UUID `json:"id"`
@@ -25193,6 +25507,11 @@ type CreateRunPlanFromTemplate struct {
 	//
 	// Example: 90
 	NoResponseRetryBackoffSeconds *int `json:"noResponseRetryBackoffSeconds,omitempty"`
+
+	// Notifications Where each run's report announces itself once it is ready.
+	//
+	// Example: {"email":{"enabled":true,"recipients":[]},"slack":[{"channelId":"C07ABCDEF12","channelName":"qa-reports"}]}
+	Notifications *SimulationPlanNotificationsInput `json:"notifications,omitempty"`
 
 	// PersonaId For `question-answer-check`: the persona that asks the questions.
 	PersonaId *openapi_types.UUID `json:"personaId,omitempty"`
@@ -27334,7 +27653,7 @@ type FormulaMetricResponse struct {
 	// SupportedConversationSources Which kinds of conversation this metric can be scored on. `null` means both. `["LIVE"]` marks a metric that can only be scored from your own recording of a real call, and `["SIMULATED"]` one that only applies to simulations.
 	SupportedConversationSources *[]FormulaMetricResponseSupportedConversationSources `json:"supportedConversationSources"`
 
-	// SupportsVariants Whether you can create a variant of this metric with POST /v1/metric/definitions/{idOrSlug}/variants. False for threshold metrics (their configuration comes from the metric they derive from), for provider-computed metrics whose calculation lives in the collector rather than an editable prompt, and for metrics in a package that manages its own variants. Most of Roark’s own metrics are false, so read this rather than discovering it from a 403.
+	// SupportsVariants Whether you can create a variant of this metric with POST /v1/metric/definitions/{idOrSlug}/variants. False for threshold metrics (their configuration comes from the metric they derive from), for HTTP request metrics (their configuration is the request, edited on the metric), for provider-computed metrics whose calculation lives in the collector rather than an editable prompt, and for metrics in a package that manages its own variants. Most of Roark’s own metrics are false, so read this rather than discovering it from a 403.
 	SupportsVariants bool `json:"supportsVariants"`
 
 	// Type Type of value this metric produces
@@ -27877,6 +28196,275 @@ type HttpRequestDefinitionResponse_ParsedBody struct {
 
 // HttpRequestDefinitionResponseScope Scope of the HTTP request definition
 type HttpRequestDefinitionResponseScope string
+
+// HttpRequestMetricConfig defines model for HttpRequestMetricConfig.
+type HttpRequestMetricConfig struct {
+	// Body A JSON template with {{path}} placeholders into the request payload, such as {"cardId": "{{call.properties.cardId}}"}. Omit or pass null to send the default payload.
+	Body *string `json:"body,omitempty"`
+
+	// Headers Request headers, for example your own Authorization header. Values may contain placeholders.
+	//
+	// Example: {"Authorization":"Bearer sk_live_..."}
+	Headers *map[string]string `json:"headers,omitempty"`
+
+	// Method GET or POST (default POST). A GET request has no body.
+	Method *HttpRequestMetricConfigMethod `json:"method,omitempty"`
+
+	// Url Public http(s) URL. May contain {{path}} placeholders into the request payload, which are URL-encoded.
+	//
+	// Example: https://api.example.com/roark/checks/pin-changed
+	Url string `json:"url"`
+}
+
+// HttpRequestMetricConfigMethod GET or POST (default POST). A GET request has no body.
+type HttpRequestMetricConfigMethod string
+
+// HttpRequestMetricDetails defines model for HttpRequestMetricDetails.
+type HttpRequestMetricDetails struct {
+	// Body The JSON body template, or null when the default payload is sent
+	Body *string `json:"body"`
+
+	// Headers Request headers as key-value pairs
+	Headers map[string]string              `json:"headers"`
+	Method  HttpRequestMetricDetailsMethod `json:"method"`
+
+	// Url The URL the request is sent to, placeholders included
+	Url string `json:"url"`
+}
+
+// HttpRequestMetricDetailsMethod defines model for HttpRequestMetricDetails.Method.
+type HttpRequestMetricDetailsMethod string
+
+// HttpRequestMetricInput defines model for HttpRequestMetricInput.
+type HttpRequestMetricInput struct {
+	// AnalysisPackageId ID of the analysis package to add this metric to. Optional: when omitted, the metric is added to a default "Custom Metrics" package for your project (created automatically the first time).
+	AnalysisPackageId *openapi_types.UUID `json:"analysisPackageId,omitempty"`
+
+	// BooleanFalseLabel What a failed check is called (default: Fail)
+	BooleanFalseLabel *string `json:"booleanFalseLabel,omitempty"`
+
+	// BooleanTrueLabel What a passed check is called (default: Pass)
+	BooleanTrueLabel *string `json:"booleanTrueLabel,omitempty"`
+
+	// CalculationType BOOLEAN metric answered by your own endpoint. Roark sends a request about each call, live or simulated, and your endpoint answers {"passed": true | false, "reason": "..."}.
+	CalculationType HttpRequestMetricInputCalculationType `json:"calculationType"`
+
+	// HttpRequest The request to send. With no body, Roark POSTs the default payload: { version, requestId, metric, call, simulation }.
+	HttpRequest struct {
+		// Body A JSON template with {{path}} placeholders into the request payload, such as {"cardId": "{{call.properties.cardId}}"}. Omit or pass null to send the default payload.
+		Body *string `json:"body,omitempty"`
+
+		// Headers Request headers, for example your own Authorization header. Values may contain placeholders.
+		//
+		// Example: {"Authorization":"Bearer sk_live_..."}
+		Headers *map[string]string `json:"headers,omitempty"`
+
+		// Method GET or POST (default POST). A GET request has no body.
+		Method *HttpRequestMetricInputHttpRequestMethod `json:"method,omitempty"`
+
+		// Url Public http(s) URL. May contain {{path}} placeholders into the request payload, which are URL-encoded.
+		//
+		// Example: https://api.example.com/roark/checks/pin-changed
+		Url string `json:"url"`
+	} `json:"httpRequest"`
+
+	// MetricId Alias of `slug` accepted for backwards compatibility. Use `slug` for new integrations.
+	//
+	// Example: customer_satisfaction
+	MetricId *string `json:"metricId,omitempty"`
+
+	// Name Name of the metric
+	//
+	// Example: Customer Satisfaction
+	Name string `json:"name"`
+
+	// Slug Stable slug for the metric. Auto-generated from name if omitted.
+	//
+	// Example: customer_satisfaction
+	Slug *string `json:"slug,omitempty"`
+}
+
+// HttpRequestMetricInputCalculationType BOOLEAN metric answered by your own endpoint. Roark sends a request about each call, live or simulated, and your endpoint answers {"passed": true | false, "reason": "..."}.
+type HttpRequestMetricInputCalculationType string
+
+// HttpRequestMetricInputHttpRequestMethod GET or POST (default POST). A GET request has no body.
+type HttpRequestMetricInputHttpRequestMethod string
+
+// HttpRequestMetricPayload defines model for HttpRequestMetricPayload.
+type HttpRequestMetricPayload struct {
+	Call struct {
+		Agents []struct {
+			// Endpoint The endpoint the call reached the agent on, when known
+			Endpoint *struct {
+				Environment     string             `json:"environment"`
+				Id              openapi_types.UUID `json:"id"`
+				PhoneNumberE164 *string            `json:"phoneNumberE164"`
+			} `json:"endpoint"`
+
+			// Id Roark agent id
+			Id openapi_types.UUID `json:"id"`
+		} `json:"agents"`
+
+		// CallDirection INBOUND or OUTBOUND
+		//
+		// Example: INBOUND
+		CallDirection string `json:"callDirection"`
+		Customers     []struct {
+			Label           *string `json:"label"`
+			PhoneNumberE164 *string `json:"phoneNumberE164"`
+		} `json:"customers"`
+		DurationMs  *float64   `json:"durationMs"`
+		EndedAt     *time.Time `json:"endedAt"`
+		EndedStatus *string    `json:"endedStatus"`
+
+		// ExternalId Your correlation id, if you sent one with the call
+		ExternalId *string            `json:"externalId"`
+		Id         openapi_types.UUID `json:"id"`
+		ProjectId  openapi_types.UUID `json:"projectId"`
+
+		// Properties The custom properties on the call
+		//
+		// Example: {"cardId":"card_123"}
+		Properties map[string]string `json:"properties"`
+
+		// StartedAt Example: 2026-10-26T14:00:02.000Z
+		StartedAt time.Time `json:"startedAt"`
+	} `json:"call"`
+	Metric struct {
+		Id   openapi_types.UUID `json:"id"`
+		Name string             `json:"name"`
+	} `json:"metric"`
+
+	// RequestId Unique per request. Quote it when reporting a problem.
+	RequestId openapi_types.UUID `json:"requestId"`
+
+	// Simulation Set when the call is a Roark simulation, null on a live call
+	Simulation *struct {
+		Flow *struct {
+			Id    openapi_types.UUID `json:"id"`
+			Title string             `json:"title"`
+		} `json:"flow"`
+		JobId openapi_types.UUID `json:"jobId"`
+
+		// Persona The persona the simulated caller played
+		Persona      map[string]string   `json:"persona"`
+		RunPlanJobId *openapi_types.UUID `json:"runPlanJobId"`
+
+		// TestCase The test case of the flow this call ran. isDefault is true for the happy path.
+		TestCase *struct {
+			Id        openapi_types.UUID `json:"id"`
+			IsDefault bool               `json:"isDefault"`
+			Title     string             `json:"title"`
+		} `json:"testCase"`
+
+		// Variables The run variables this simulation ran with
+		//
+		// Example: {"cardNumber":"4111111111111111","newPin":"4821"}
+		Variables map[string]string `json:"variables"`
+	} `json:"simulation"`
+
+	// Version Payload schema version
+	Version HttpRequestMetricPayloadVersion `json:"version"`
+}
+
+// HttpRequestMetricPayloadVersion Payload schema version
+type HttpRequestMetricPayloadVersion string
+
+// HttpRequestMetricResponse defines model for HttpRequestMetricResponse.
+type HttpRequestMetricResponse struct {
+	// BooleanFalseLabel What a failed check is called
+	BooleanFalseLabel *string `json:"booleanFalseLabel"`
+
+	// BooleanTrueLabel What a passed check is called
+	BooleanTrueLabel *string `json:"booleanTrueLabel"`
+
+	// CalculationType BOOLEAN metric answered by your own endpoint: Roark sends a request about each call and records the {"passed", "reason"} it answers with.
+	CalculationType HttpRequestMetricResponseCalculationType `json:"calculationType"`
+
+	// Description Description of what the metric measures
+	Description string `json:"description"`
+
+	// EvidenceSource For a Roark count or rate summed from the per-turn verdicts of a sibling metric (for example `incorrect_barge_in_yield_count` over `barge_in_yield_appropriateness`): where the reasoning and transcript positions live. The count value itself carries neither. `null` for a metric that is its own evidence.
+	EvidenceSource *struct {
+		// CountsWhen The per-turn value this metric tallies. `false` for an "incorrect" count over an appropriateness metric, `true` for a count of a boolean event.
+		CountsWhen bool `json:"countsWhen"`
+
+		// MetricId Slug of the metric whose per-turn values are the evidence behind this count or rate
+		MetricId string `json:"metricId"`
+	} `json:"evidenceSource"`
+
+	// HttpRequest The request this metric sends.
+	HttpRequest *HttpRequestMetricDetails `json:"httpRequest"`
+
+	// Id Unique identifier for the metric definition
+	Id openapi_types.UUID `json:"id"`
+
+	// MetricId Alias of `slug` retained for backwards compatibility. Same value as `slug`.
+	MetricId string `json:"metricId"`
+
+	// Name Name of the metric
+	Name string `json:"name"`
+
+	// RequiresLiveConversation True when this metric can only be scored from a live recording (`supportedConversationSources` is `["LIVE"]`). Selecting one of these on a simulation run forces live enrichment: the run waits for your recording and, if none arrives, the metric produces no value. Check this before a run rather than discovering the wait afterwards.
+	RequiresLiveConversation bool `json:"requiresLiveConversation"`
+
+	// Scope Whether metric is global or per-participant
+	Scope HttpRequestMetricResponseScope `json:"scope"`
+
+	// Slug Stable metric slug (e.g. "call_reason", "customer_satisfaction")
+	Slug string `json:"slug"`
+
+	// SupportedContexts Which levels this metric can produce values at
+	SupportedContexts []HttpRequestMetricResponseSupportedContexts `json:"supportedContexts"`
+
+	// SupportedConversationSources Which kinds of conversation this metric can be scored on. `null` means both. `["LIVE"]` marks a metric that can only be scored from your own recording of a real call, and `["SIMULATED"]` one that only applies to simulations.
+	SupportedConversationSources *[]HttpRequestMetricResponseSupportedConversationSources `json:"supportedConversationSources"`
+
+	// SupportsVariants Whether you can create a variant of this metric with POST /v1/metric/definitions/{idOrSlug}/variants. False for threshold metrics (their configuration comes from the metric they derive from), for HTTP request metrics (their configuration is the request, edited on the metric), for provider-computed metrics whose calculation lives in the collector rather than an editable prompt, and for metrics in a package that manages its own variants. Most of Roark’s own metrics are false, so read this rather than discovering it from a 403.
+	SupportsVariants bool `json:"supportsVariants"`
+
+	// Type Type of value this metric produces
+	Type HttpRequestMetricResponseType `json:"type"`
+
+	// Unit Unit information if applicable
+	Unit *struct {
+		// Name Name of the unit
+		Name string `json:"name"`
+
+		// Symbol Symbol for the unit
+		Symbol *string `json:"symbol"`
+	} `json:"unit,omitempty"`
+
+	// VariantId The resolved variant this response reflects (org-scoped Default if the org has customized it, otherwise the system Default). Pass this as sourceVariantId when building a derived metric off this one to pin the exact config.
+	VariantId openapi_types.UUID `json:"variantId"`
+
+	// VersionId The variant's current version. Immutable snapshot of the config — editing the metric produces a new versionId. Use it to detect config changes.
+	VersionId openapi_types.UUID `json:"versionId"`
+}
+
+// HttpRequestMetricResponseCalculationType BOOLEAN metric answered by your own endpoint: Roark sends a request about each call and records the {"passed", "reason"} it answers with.
+type HttpRequestMetricResponseCalculationType string
+
+// HttpRequestMetricResponseScope Whether metric is global or per-participant
+type HttpRequestMetricResponseScope string
+
+// HttpRequestMetricResponseSupportedContexts defines model for HttpRequestMetricResponse.SupportedContexts.
+type HttpRequestMetricResponseSupportedContexts string
+
+// HttpRequestMetricResponseSupportedConversationSources defines model for HttpRequestMetricResponse.SupportedConversationSources.
+type HttpRequestMetricResponseSupportedConversationSources string
+
+// HttpRequestMetricResponseType Type of value this metric produces
+type HttpRequestMetricResponseType string
+
+// HttpRequestMetricVerdict defines model for HttpRequestMetricVerdict.
+type HttpRequestMetricVerdict struct {
+	// Passed Whether the call did what it should
+	Passed bool `json:"passed"`
+
+	// Reason Shown next to the result in Roark. Longer than 1000 characters is cut.
+	Reason *string `json:"reason,omitempty"`
+}
 
 // ImprovCustomerFlow A flow whose conversation is not written out: each variant gives the simulated customer a brief and lets it improvise.
 type ImprovCustomerFlow struct {
@@ -28813,7 +29401,7 @@ type LlmJudgeMetricResponse struct {
 	// SupportedConversationSources Which kinds of conversation this metric can be scored on. `null` means both. `["LIVE"]` marks a metric that can only be scored from your own recording of a real call, and `["SIMULATED"]` one that only applies to simulations.
 	SupportedConversationSources *[]LlmJudgeMetricResponseSupportedConversationSources `json:"supportedConversationSources"`
 
-	// SupportsVariants Whether you can create a variant of this metric with POST /v1/metric/definitions/{idOrSlug}/variants. False for threshold metrics (their configuration comes from the metric they derive from), for provider-computed metrics whose calculation lives in the collector rather than an editable prompt, and for metrics in a package that manages its own variants. Most of Roark’s own metrics are false, so read this rather than discovering it from a 403.
+	// SupportsVariants Whether you can create a variant of this metric with POST /v1/metric/definitions/{idOrSlug}/variants. False for threshold metrics (their configuration comes from the metric they derive from), for HTTP request metrics (their configuration is the request, edited on the metric), for provider-computed metrics whose calculation lives in the collector rather than an editable prompt, and for metrics in a package that manages its own variants. Most of Roark’s own metrics are false, so read this rather than discovering it from a 403.
 	SupportsVariants bool `json:"supportsVariants"`
 
 	// Type Type of value this metric produces
@@ -29901,7 +30489,7 @@ type PatternMetricResponse struct {
 	// SupportedConversationSources Which kinds of conversation this metric can be scored on. `null` means both. `["LIVE"]` marks a metric that can only be scored from your own recording of a real call, and `["SIMULATED"]` one that only applies to simulations.
 	SupportedConversationSources *[]PatternMetricResponseSupportedConversationSources `json:"supportedConversationSources"`
 
-	// SupportsVariants Whether you can create a variant of this metric with POST /v1/metric/definitions/{idOrSlug}/variants. False for threshold metrics (their configuration comes from the metric they derive from), for provider-computed metrics whose calculation lives in the collector rather than an editable prompt, and for metrics in a package that manages its own variants. Most of Roark’s own metrics are false, so read this rather than discovering it from a 403.
+	// SupportsVariants Whether you can create a variant of this metric with POST /v1/metric/definitions/{idOrSlug}/variants. False for threshold metrics (their configuration comes from the metric they derive from), for HTTP request metrics (their configuration is the request, edited on the metric), for provider-computed metrics whose calculation lives in the collector rather than an editable prompt, and for metrics in a package that manages its own variants. Most of Roark’s own metrics are false, so read this rather than discovering it from a 403.
 	SupportsVariants bool `json:"supportsVariants"`
 
 	// Type Type of value this metric produces
@@ -30015,6 +30603,74 @@ type PersonaConfigSpeechPace string
 
 // PersonaConfigUnderstoodLanguages defines model for PersonaConfig.UnderstoodLanguages.
 type PersonaConfigUnderstoodLanguages string
+
+// PhoneNumberAllowanceResponse How many numbers the organization gets for free and whether it may buy the next one
+type PhoneNumberAllowanceResponse struct {
+	// BlockedReason Why a purchase would be refused; null when canPurchase is true
+	BlockedReason *PhoneNumberAllowanceResponseBlockedReason `json:"blockedReason"`
+
+	// CanPurchase Whether a purchase would be admitted right now
+	CanPurchase bool `json:"canPurchase"`
+
+	// FreeLimit Numbers included at no charge
+	FreeLimit int `json:"freeLimit"`
+
+	// IsOverridden True when the free allowance comes from a per-organization override
+	IsOverridden bool `json:"isOverridden"`
+
+	// MonthlyRentMicros What one paid number costs a month, in micro-dollars
+	MonthlyRentMicros int `json:"monthlyRentMicros"`
+
+	// NextIsFree Whether the next number would be free
+	NextIsFree bool `json:"nextIsFree"`
+
+	// PaidCount How many of those sit outside the free allowance
+	PaidCount int `json:"paidCount"`
+
+	// Plan The billing plan the allowance comes from
+	Plan PhoneNumberAllowanceResponsePlan `json:"plan"`
+
+	// Used Numbers the organization holds right now
+	Used int `json:"used"`
+}
+
+// PhoneNumberAllowanceResponseBlockedReason Why a purchase would be refused; null when canPurchase is true
+type PhoneNumberAllowanceResponseBlockedReason string
+
+// PhoneNumberAllowanceResponsePlan The billing plan the allowance comes from
+type PhoneNumberAllowanceResponsePlan string
+
+// PhoneNumberResponse A phone number the project owns
+type PhoneNumberResponse struct {
+	// AgentId The agent the number is assigned to, if any
+	AgentId *openapi_types.UUID `json:"agentId"`
+
+	// E164 The number in E.164 format
+	//
+	// Example: +14155550123
+	E164 string `json:"e164"`
+
+	// Id Phone number ID
+	Id openapi_types.UUID `json:"id"`
+
+	// IsFree Whether the number sits inside the plan free allowance right now
+	IsFree bool `json:"isFree"`
+
+	// LocalityCode ISO 3166-2 code of the region the number is from, when the carrier gave one
+	LocalityCode *string `json:"localityCode"`
+
+	// MonthlyRentMicros What a month of this number costs in micro-dollars; 0 while it is free
+	MonthlyRentMicros int `json:"monthlyRentMicros"`
+
+	// Name Label the project gave the number
+	Name *string `json:"name"`
+
+	// PurchasedAt When the number was bought (ISO 8601)
+	PurchasedAt string `json:"purchasedAt"`
+
+	// RentNextChargeAt When the next month of rent is due (ISO 8601)
+	RentNextChargeAt string `json:"rentNextChargeAt"`
+}
 
 // PolicyMetricSettings The metric's per-collector setting. A metric takes at most one field, and which one depends on the metric: verifiedProperties for Property Verification, excludedPhrases for voice consistency, voicemailScript for voicemail, screeningBrief for call screening, toolDefinitionIds for tool invocation, knowledgeBaseDocumentIds for knowledge grounding. A field the metric doesn't take is rejected with a 400.
 type PolicyMetricSettings struct {
@@ -30225,7 +30881,7 @@ type ProviderMetricResponse struct {
 	// SupportedConversationSources Which kinds of conversation this metric can be scored on. `null` means both. `["LIVE"]` marks a metric that can only be scored from your own recording of a real call, and `["SIMULATED"]` one that only applies to simulations.
 	SupportedConversationSources *[]ProviderMetricResponseSupportedConversationSources `json:"supportedConversationSources"`
 
-	// SupportsVariants Whether you can create a variant of this metric with POST /v1/metric/definitions/{idOrSlug}/variants. False for threshold metrics (their configuration comes from the metric they derive from), for provider-computed metrics whose calculation lives in the collector rather than an editable prompt, and for metrics in a package that manages its own variants. Most of Roark’s own metrics are false, so read this rather than discovering it from a 403.
+	// SupportsVariants Whether you can create a variant of this metric with POST /v1/metric/definitions/{idOrSlug}/variants. False for threshold metrics (their configuration comes from the metric they derive from), for HTTP request metrics (their configuration is the request, edited on the metric), for provider-computed metrics whose calculation lives in the collector rather than an editable prompt, and for metrics in a package that manages its own variants. Most of Roark’s own metrics are false, so read this rather than discovering it from a 403.
 	SupportsVariants bool `json:"supportsVariants"`
 
 	// Type Type of value this metric produces
@@ -30283,6 +30939,7 @@ type QaSimulationPlanConfig struct {
 	Metrics                       *[]string                            `json:"metrics,omitempty"`
 	Name                          string                               `json:"name"`
 	NoResponseRetryBackoffSeconds *int                                 `json:"noResponseRetryBackoffSeconds,omitempty"`
+	Notify                        *SimulationNotifyConfig              `json:"notify,omitempty"`
 	Persona                       string                               `json:"persona"`
 	Questions                     []SimulationPlanQaQuestion           `json:"questions"`
 	Schedule                      *SimulationPlanScheduleConfig        `json:"schedule,omitempty"`
@@ -30301,6 +30958,18 @@ type QaSimulationPlanConfigKind string
 
 // QaSimulationPlanConfigTemplate defines model for QaSimulationPlanConfig.Template.
 type QaSimulationPlanConfigTemplate string
+
+// ReleasePhoneNumberResponse Confirmation that a phone number was released
+type ReleasePhoneNumberResponse struct {
+	// Id Phone number ID
+	Id openapi_types.UUID `json:"id"`
+
+	// Released Always true; the number is gone and rent has stopped
+	Released ReleasePhoneNumberResponseReleased `json:"released"`
+}
+
+// ReleasePhoneNumberResponseReleased Always true; the number is gone and rent has stopped
+type ReleasePhoneNumberResponseReleased bool
 
 // ReplaceFlowStepsInput defines model for ReplaceFlowStepsInput.
 type ReplaceFlowStepsInput struct {
@@ -30594,6 +31263,18 @@ type RunPlanResponse struct {
 	// NoResponseRetryBackoffSeconds Seconds a retry waits before it dials (30-600). Only used when `maxNoResponseRetries` is above 0.
 	NoResponseRetryBackoffSeconds int `json:"noResponseRetryBackoffSeconds"`
 
+	// Notifications Where each run's report announces itself once it is ready. Email off and no Slack channels means the plan sends none.
+	Notifications struct {
+		Email struct {
+			Enabled    bool     `json:"enabled"`
+			Recipients []string `json:"recipients"`
+		} `json:"email"`
+		Slack []struct {
+			ChannelId   string `json:"channelId"`
+			ChannelName string `json:"channelName"`
+		} `json:"slack"`
+	} `json:"notifications"`
+
 	// Personas Personas included in this run plan. Only meaningful alongside `scenarios`.
 	Personas []struct {
 		Id openapi_types.UUID `json:"id"`
@@ -30736,6 +31417,102 @@ type RunSimulationFromConfigVariables2 = []struct {
 // place of `flowId`. That form is deprecated alongside scenarios themselves, and still accepted so runs
 // against those plans keep working.
 type RunSimulationFromConfig_Variables struct {
+	union json.RawMessage
+}
+
+// RunSimulationFromConfigKey Run a config-managed plan by its config name, with no id lookup.
+//
+// Example: {"planConfigKey":"simulationPlan/nightly-screener-suite"}
+type RunSimulationFromConfigKey struct {
+	// PlanConfigKey The config key of a plan to run, as applied from config as code (`simulationPlan/<name>`). Runs a config-managed plan by name, with no id lookup. Unique per project.
+	//
+	// Example: simulationPlan/nightly-screener-suite
+	PlanConfigKey string `json:"planConfigKey"`
+
+	// Variables Values for the {{variables}} the run resolves, overriding whatever the plan has pinned.
+	//
+	// An object applies them to the whole run:
+	//
+	//   { "orderNumber": "12345", "tier": "gold" }
+	//
+	// An array applies them per flow, or to just its happy path or one of its edge cases, when a single
+	// set will not do. Each entry carries what it applies to:
+	//
+	//   [
+	//     { "flowId": "550e8400-...", "variables": { "orderNumber": "12345" } },
+	//     { "flowId": "550e8400-...", "happyPath": true, "variables": { "orderNumber": "55555" } },
+	//     { "flowId": "550e8400-...", "edgeCaseId": "7a3d2e1f-...", "variables": { "orderNumber": "67890" } }
+	//   ]
+	//
+	// An entry that narrows to neither covers everything that flow resolves. A flow this plan does not
+	// attach, or an edge case that does not belong to the flow, is rejected rather than ignored.
+	//
+	// A plan built on scenarios rather than customer flows targets them the same way, with `scenarioId` in
+	// place of `flowId`. That form is deprecated alongside scenarios themselves, and still accepted so runs
+	// against those plans keep working.
+	Variables *RunSimulationFromConfigKey_Variables `json:"variables,omitempty"`
+}
+
+// RunSimulationFromConfigKeyVariables0 Global format: key-value pairs that apply to ALL scenarios in the plan
+//
+// Example: {"environment":"staging","orderNumber":"12345"}
+type RunSimulationFromConfigKeyVariables0 map[string]string
+
+// RunSimulationFromConfigKeyVariables1 Values scoped to the flows this plan runs
+//
+// Example: [{"flowId":"550e8400-e29b-41d4-a716-446655440000","variables":{"orderNumber":"12345"}},{"flowId":"550e8400-e29b-41d4-a716-446655440000","happyPath":true,"variables":{"orderNumber":"55555"}},{"edgeCaseId":"7a3d2e1f-c4b5-6a89-0d1e-2f3a4b5c6d7e","flowId":"550e8400-e29b-41d4-a716-446655440000","variables":{"orderNumber":"67890"}}]
+type RunSimulationFromConfigKeyVariables1 = []struct {
+	// EdgeCaseId Narrow to one edge case of that flow.
+	EdgeCaseId *openapi_types.UUID `json:"edgeCaseId,omitempty"`
+
+	// FlowId A customer flow this plan runs.
+	FlowId openapi_types.UUID `json:"flowId"`
+
+	// HappyPath Narrow to the flow's happy path.
+	HappyPath *RunSimulationFromConfigKeyVariables1HappyPath `json:"happyPath,omitempty"`
+
+	// Variables The values to apply.
+	Variables map[string]string `json:"variables"`
+}
+
+// RunSimulationFromConfigKeyVariables1HappyPath Narrow to the flow's happy path.
+type RunSimulationFromConfigKeyVariables1HappyPath bool
+
+// RunSimulationFromConfigKeyVariables2 Deprecated, for plans built on scenarios. Plans built on customer flows target them with `flowId` instead.
+//
+// Example: [{"scenarioId":"550e8400-e29b-41d4-a716-446655440000","variables":{"orderNumber":"12345"}},{"scenarioId":"7a3d2e1f-c4b5-6a89-0d1e-2f3a4b5c6d7e","variables":{"orderNumber":"67890"}}]
+//
+// Deprecated: this type has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+type RunSimulationFromConfigKeyVariables2 = []struct {
+	// ScenarioId ID of the scenario to apply variables to
+	ScenarioId openapi_types.UUID `json:"scenarioId"`
+
+	// Variables Key-value pairs for this scenario
+	Variables map[string]string `json:"variables"`
+}
+
+// RunSimulationFromConfigKey_Variables Values for the {{variables}} the run resolves, overriding whatever the plan has pinned.
+//
+// An object applies them to the whole run:
+//
+//	{ "orderNumber": "12345", "tier": "gold" }
+//
+// An array applies them per flow, or to just its happy path or one of its edge cases, when a single
+// set will not do. Each entry carries what it applies to:
+//
+//	[
+//	  { "flowId": "550e8400-...", "variables": { "orderNumber": "12345" } },
+//	  { "flowId": "550e8400-...", "happyPath": true, "variables": { "orderNumber": "55555" } },
+//	  { "flowId": "550e8400-...", "edgeCaseId": "7a3d2e1f-...", "variables": { "orderNumber": "67890" } }
+//	]
+//
+// An entry that narrows to neither covers everything that flow resolves. A flow this plan does not
+// attach, or an edge case that does not belong to the flow, is rejected rather than ignored.
+//
+// A plan built on scenarios rather than customer flows targets them the same way, with `scenarioId` in
+// place of `flowId`. That form is deprecated alongside scenarios themselves, and still accepted so runs
+// against those plans keep working.
+type RunSimulationFromConfigKey_Variables struct {
 	union json.RawMessage
 }
 
@@ -31520,7 +32297,7 @@ type SimulationGroupConfig struct {
 	Description *string                       `json:"description,omitempty"`
 	Kind        SimulationGroupConfigKind     `json:"kind"`
 	Name        string                        `json:"name"`
-	Notify      *SimulationGroupNotifyConfig  `json:"notify,omitempty"`
+	Notify      *SimulationNotifyConfig       `json:"notify,omitempty"`
 	Plans       []string                      `json:"plans"`
 	Schedule    *SimulationPlanScheduleConfig `json:"schedule,omitempty"`
 }
@@ -31533,7 +32310,7 @@ type SimulationGroupConfigKind string
 // Example: {"email":{"enabled":true,"recipients":[]},"slack":[{"channelId":"C07ABCDEF12","channelName":"qa-reports"}]}
 type SimulationGroupNotificationsInput struct {
 	Email *struct {
-		// Enabled Whether the group report of each run is emailed when it is ready.
+		// Enabled Whether each run's group report is emailed when it is ready.
 		Enabled bool `json:"enabled"`
 
 		// Recipients Addresses to email (at most 50), Roark users or not: the email attaches the report PDF. Empty emails every member of the project.
@@ -31554,23 +32331,6 @@ type SimulationGroupNotificationsInput struct {
 		// Example: qa-reports
 		ChannelName string `json:"channelName"`
 	} `json:"slack,omitempty"`
-}
-
-// SimulationGroupNotifyConfig defines model for SimulationGroupNotifyConfig.
-type SimulationGroupNotifyConfig struct {
-	Email *SimulationGroupNotifyConfig_Email `json:"email,omitempty"`
-	Slack *[]AlertSlackChannel               `json:"slack,omitempty"`
-}
-
-// SimulationGroupNotifyConfigEmail0 defines model for SimulationGroupNotifyConfig.Email.0.
-type SimulationGroupNotifyConfigEmail0 = bool
-
-// SimulationGroupNotifyConfigEmail1 defines model for SimulationGroupNotifyConfig.Email.1.
-type SimulationGroupNotifyConfigEmail1 = []openapi_types.Email
-
-// SimulationGroupNotifyConfig_Email defines model for SimulationGroupNotifyConfig.Email.
-type SimulationGroupNotifyConfig_Email struct {
-	union json.RawMessage
 }
 
 // SimulationJobBackgroundNoise The background noise the call actually ran with. `persona.backgroundNoise` is only what the persona was set to; a flow’s environment overrides it, and on a background-noise sweep every arm’s persona says NONE while the arms differ here. Filter by arm on this field.
@@ -31985,6 +32745,23 @@ type SimulationJobStartedWebhookEvent string
 // Example: 1.0
 type SimulationJobStartedWebhookVersion string
 
+// SimulationNotifyConfig defines model for SimulationNotifyConfig.
+type SimulationNotifyConfig struct {
+	Email *SimulationNotifyConfig_Email `json:"email,omitempty"`
+	Slack *[]AlertSlackChannel          `json:"slack,omitempty"`
+}
+
+// SimulationNotifyConfigEmail0 defines model for SimulationNotifyConfig.Email.0.
+type SimulationNotifyConfigEmail0 = bool
+
+// SimulationNotifyConfigEmail1 defines model for SimulationNotifyConfig.Email.1.
+type SimulationNotifyConfigEmail1 = []openapi_types.Email
+
+// SimulationNotifyConfig_Email defines model for SimulationNotifyConfig.Email.
+type SimulationNotifyConfig_Email struct {
+	union json.RawMessage
+}
+
 // SimulationPlanAgentEndpointConfig defines model for SimulationPlanAgentEndpointConfig.
 type SimulationPlanAgentEndpointConfig struct {
 	Agent     string                                      `json:"agent"`
@@ -32015,6 +32792,7 @@ type SimulationPlanConfig struct {
 	Metrics                       []string                            `json:"metrics"`
 	Name                          string                              `json:"name"`
 	NoResponseRetryBackoffSeconds *int                                `json:"noResponseRetryBackoffSeconds,omitempty"`
+	Notify                        *SimulationNotifyConfig             `json:"notify,omitempty"`
 	Schedule                      *SimulationPlanScheduleConfig       `json:"schedule,omitempty"`
 	SilenceTimeoutSeconds         *int                                `json:"silenceTimeoutSeconds,omitempty"`
 	Template                      *SimulationPlanConfigTemplate       `json:"template,omitempty"`
@@ -32039,6 +32817,34 @@ type SimulationPlanFlowConfig struct {
 	HappyPath       *bool     `json:"happyPath,omitempty"`
 	PersonaOverride *string   `json:"personaOverride,omitempty"`
 	System          *string   `json:"system,omitempty"`
+}
+
+// SimulationPlanNotificationsInput Where each run's report announces itself once it is ready.
+//
+// Example: {"email":{"enabled":true,"recipients":[]},"slack":[{"channelId":"C07ABCDEF12","channelName":"qa-reports"}]}
+type SimulationPlanNotificationsInput struct {
+	Email *struct {
+		// Enabled Whether each run's report is emailed when it is ready.
+		Enabled bool `json:"enabled"`
+
+		// Recipients Addresses to email (at most 50), Roark users or not: the email attaches the report PDF. Empty emails every member of the project.
+		//
+		// Example: ["qa-lead@example.com"]
+		Recipients *[]openapi_types.Email `json:"recipients,omitempty"`
+	} `json:"email,omitempty"`
+
+	// Slack Channels in the project's connected Slack workspace to post the report to (at most 10). Slack must be connected to the project first.
+	Slack *[]struct {
+		// ChannelId The Slack channel id
+		//
+		// Example: C07ABCDEF12
+		ChannelId string `json:"channelId"`
+
+		// ChannelName The channel name, shown in Roark
+		//
+		// Example: qa-reports
+		ChannelName string `json:"channelName"`
+	} `json:"slack,omitempty"`
 }
 
 // SimulationPlanQaQuestion defines model for SimulationPlanQaQuestion.
@@ -33524,7 +34330,7 @@ type ThresholdMetricResponse struct {
 	// SupportedConversationSources Which kinds of conversation this metric can be scored on. `null` means both. `["LIVE"]` marks a metric that can only be scored from your own recording of a real call, and `["SIMULATED"]` one that only applies to simulations.
 	SupportedConversationSources *[]ThresholdMetricResponseSupportedConversationSources `json:"supportedConversationSources"`
 
-	// SupportsVariants Whether you can create a variant of this metric with POST /v1/metric/definitions/{idOrSlug}/variants. False for threshold metrics (their configuration comes from the metric they derive from), for provider-computed metrics whose calculation lives in the collector rather than an editable prompt, and for metrics in a package that manages its own variants. Most of Roark’s own metrics are false, so read this rather than discovering it from a 403.
+	// SupportsVariants Whether you can create a variant of this metric with POST /v1/metric/definitions/{idOrSlug}/variants. False for threshold metrics (their configuration comes from the metric they derive from), for HTTP request metrics (their configuration is the request, edited on the metric), for provider-computed metrics whose calculation lives in the collector rather than an editable prompt, and for metrics in a package that manages its own variants. Most of Roark’s own metrics are false, so read this rather than discovering it from a 403.
 	SupportsVariants bool                    `json:"supportsVariants"`
 	Threshold        *ThresholdMetricDetails `json:"threshold,omitempty"`
 
@@ -34134,7 +34940,8 @@ type UpdateMetricDefinitionInput struct {
 	} `json:"classificationOptions,omitempty"`
 
 	// Formula New formula expression (FORMULA only). Pass `sources` alongside if the referenced metrics change.
-	Formula *string `json:"formula,omitempty"`
+	Formula     *string                  `json:"formula,omitempty"`
+	HttpRequest *HttpRequestMetricConfig `json:"httpRequest,omitempty"`
 
 	// LlmPrompt New LLM prompt (only for LLM_JUDGE metrics whose prompt is editable)
 	LlmPrompt *string `json:"llmPrompt,omitempty"`
@@ -34300,6 +35107,15 @@ type UpdateOrgProjectMemberInput struct {
 // UpdateOrgProjectMemberInputRole defines model for UpdateOrgProjectMemberInput.Role.
 type UpdateOrgProjectMemberInputRole string
 
+// UpdatePhoneNumberInput Input for relabelling or reassigning a phone number
+type UpdatePhoneNumberInput struct {
+	// AgentId Agent to assign the number to; null unassigns, omit to leave it alone
+	AgentId *openapi_types.UUID `json:"agentId,omitempty"`
+
+	// Name New label; null clears it, omit to leave it alone
+	Name *string `json:"name,omitempty"`
+}
+
 // UpdateRunPlanInput Input for updating an existing simulation run plan
 type UpdateRunPlanInput struct {
 	// AgentEndpoints Agent endpoints to include in this run plan
@@ -34394,6 +35210,9 @@ type UpdateRunPlanInput struct {
 
 	// NoResponseRetryBackoffSeconds Seconds a retry waits before it dials (30-600). Only used when `maxNoResponseRetries` is above 0.
 	NoResponseRetryBackoffSeconds *int `json:"noResponseRetryBackoffSeconds,omitempty"`
+
+	// Notifications Replaces where each run's report is sent, as a whole. `null` turns notifications off. Omitted keeps them. A run whose report already went out is not sent again.
+	Notifications *SimulationPlanNotificationsInput `json:"notifications,omitempty"`
 
 	// Personas Personas to include in this run plan
 	Personas *[]struct {
@@ -36449,6 +37268,18 @@ type PutV1PersonaByPersonaId200JSONResponseBodyDataSpeechPace string
 // PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages defines parameters for PutV1PersonaByPersonaId.
 type PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages string
 
+// GetV1PhoneNumberParams defines parameters for GetV1PhoneNumber.
+type GetV1PhoneNumberParams struct {
+	AgentId *openapi_types.UUID `form:"agentId,omitempty" json:"agentId,omitempty"`
+}
+
+// GetV1PhoneNumberAvailableParams defines parameters for GetV1PhoneNumberAvailable.
+type GetV1PhoneNumberAvailableParams struct {
+	AreaCode *string `form:"areaCode,omitempty" json:"areaCode,omitempty"`
+	Contains *string `form:"contains,omitempty" json:"contains,omitempty"`
+	Limit    *int    `form:"limit,omitempty" json:"limit,omitempty"`
+}
+
 // GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState defines parameters for GetV1PublicProspectSimReportByToken.
 type GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState string
 
@@ -36700,6 +37531,12 @@ type PostV1PersonaJSONRequestBody PostV1PersonaJSONBody
 // PutV1PersonaByPersonaIdJSONRequestBody defines body for PutV1PersonaByPersonaId for application/json ContentType.
 type PutV1PersonaByPersonaIdJSONRequestBody PutV1PersonaByPersonaIdJSONBody
 
+// PostV1PhoneNumberJSONRequestBody defines body for PostV1PhoneNumber for application/json ContentType.
+type PostV1PhoneNumberJSONRequestBody = CreatePhoneNumberInput
+
+// PutV1PhoneNumberByPhoneNumberIdJSONRequestBody defines body for PutV1PhoneNumberByPhoneNumberId for application/json ContentType.
+type PutV1PhoneNumberByPhoneNumberIdJSONRequestBody = UpdatePhoneNumberInput
+
 // PostV1PublicProspectSimRunJSONRequestBody defines body for PostV1PublicProspectSimRun for application/json ContentType.
 type PostV1PublicProspectSimRunJSONRequestBody PostV1PublicProspectSimRunJSONBody
 
@@ -36746,6 +37583,9 @@ type PostV1SimulationToolMockJSONRequestBody = SimulationToolMockRequest
 
 // PostV1WebhookJSONRequestBody defines body for PostV1Webhook for application/json ContentType.
 type PostV1WebhookJSONRequestBody = CreateWebhookInput
+
+// HttpRequestMetricCheckJSONRequestBody defines body for HttpRequestMetricCheck for application/json ContentType.
+type HttpRequestMetricCheckJSONRequestBody = HttpRequestMetricPayload
 
 // WebhookEventJSONRequestBody defines body for WebhookEvent for application/json ContentType.
 type WebhookEventJSONRequestBody WebhookEventJSONBody
@@ -39288,6 +40128,40 @@ func (t *CreateMetricDefinitionInput) MergePatternMetricInput(v PatternMetricInp
 	return err
 }
 
+// AsHttpRequestMetricInput returns the union data inside the CreateMetricDefinitionInput as a HttpRequestMetricInput
+func (t CreateMetricDefinitionInput) AsHttpRequestMetricInput() (HttpRequestMetricInput, error) {
+	var body HttpRequestMetricInput
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromHttpRequestMetricInput overwrites any union data inside the CreateMetricDefinitionInput as the provided HttpRequestMetricInput
+func (t *CreateMetricDefinitionInput) FromHttpRequestMetricInput(v HttpRequestMetricInput) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	b, err = runtime.JSONMerge(b, []byte(`{"calculationType":"HTTP_REQUEST"}`))
+	t.union = b
+	return err
+}
+
+// MergeHttpRequestMetricInput performs a merge with any union data inside the CreateMetricDefinitionInput, using the provided HttpRequestMetricInput
+func (t *CreateMetricDefinitionInput) MergeHttpRequestMetricInput(v HttpRequestMetricInput) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	b, err = runtime.JSONMerge(b, []byte(`{"calculationType":"HTTP_REQUEST"}`))
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t CreateMetricDefinitionInput) Discriminator() (string, error) {
 	var discriminator struct {
 		Discriminator string `json:"calculationType"`
@@ -39304,6 +40178,8 @@ func (t CreateMetricDefinitionInput) ValueByDiscriminator() (interface{}, error)
 	switch discriminator {
 	case "FORMULA":
 		return t.AsFormulaMetricInput()
+	case "HTTP_REQUEST":
+		return t.AsHttpRequestMetricInput()
 	case "LLM_JUDGE":
 		return t.AsPromptMetricInput()
 	case "PATTERN":
@@ -39425,6 +40301,40 @@ func (t *CreateMetricDefinitionResponse) MergePatternMetricResponse(v PatternMet
 	return err
 }
 
+// AsHttpRequestMetricResponse returns the union data inside the CreateMetricDefinitionResponse as a HttpRequestMetricResponse
+func (t CreateMetricDefinitionResponse) AsHttpRequestMetricResponse() (HttpRequestMetricResponse, error) {
+	var body HttpRequestMetricResponse
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromHttpRequestMetricResponse overwrites any union data inside the CreateMetricDefinitionResponse as the provided HttpRequestMetricResponse
+func (t *CreateMetricDefinitionResponse) FromHttpRequestMetricResponse(v HttpRequestMetricResponse) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	b, err = runtime.JSONMerge(b, []byte(`{"calculationType":"HTTP_REQUEST"}`))
+	t.union = b
+	return err
+}
+
+// MergeHttpRequestMetricResponse performs a merge with any union data inside the CreateMetricDefinitionResponse, using the provided HttpRequestMetricResponse
+func (t *CreateMetricDefinitionResponse) MergeHttpRequestMetricResponse(v HttpRequestMetricResponse) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	b, err = runtime.JSONMerge(b, []byte(`{"calculationType":"HTTP_REQUEST"}`))
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t CreateMetricDefinitionResponse) Discriminator() (string, error) {
 	var discriminator struct {
 		Discriminator string `json:"calculationType"`
@@ -39441,6 +40351,8 @@ func (t CreateMetricDefinitionResponse) ValueByDiscriminator() (interface{}, err
 	switch discriminator {
 	case "FORMULA":
 		return t.AsFormulaMetricResponse()
+	case "HTTP_REQUEST":
+		return t.AsHttpRequestMetricResponse()
 	case "LLM_JUDGE":
 		return t.AsLlmJudgeMetricResponse()
 	case "PATTERN":
@@ -43137,6 +44049,40 @@ func (t *MetricDefinitionResponse) MergePatternMetricResponse(v PatternMetricRes
 	return err
 }
 
+// AsHttpRequestMetricResponse returns the union data inside the MetricDefinitionResponse as a HttpRequestMetricResponse
+func (t MetricDefinitionResponse) AsHttpRequestMetricResponse() (HttpRequestMetricResponse, error) {
+	var body HttpRequestMetricResponse
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromHttpRequestMetricResponse overwrites any union data inside the MetricDefinitionResponse as the provided HttpRequestMetricResponse
+func (t *MetricDefinitionResponse) FromHttpRequestMetricResponse(v HttpRequestMetricResponse) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	b, err = runtime.JSONMerge(b, []byte(`{"calculationType":"HTTP_REQUEST"}`))
+	t.union = b
+	return err
+}
+
+// MergeHttpRequestMetricResponse performs a merge with any union data inside the MetricDefinitionResponse, using the provided HttpRequestMetricResponse
+func (t *MetricDefinitionResponse) MergeHttpRequestMetricResponse(v HttpRequestMetricResponse) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	b, err = runtime.JSONMerge(b, []byte(`{"calculationType":"HTTP_REQUEST"}`))
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t MetricDefinitionResponse) Discriminator() (string, error) {
 	var discriminator struct {
 		Discriminator string `json:"calculationType"`
@@ -43153,6 +44099,8 @@ func (t MetricDefinitionResponse) ValueByDiscriminator() (interface{}, error) {
 	switch discriminator {
 	case "FORMULA":
 		return t.AsFormulaMetricResponse()
+	case "HTTP_REQUEST":
+		return t.AsHttpRequestMetricResponse()
 	case "LLM_JUDGE":
 		return t.AsLlmJudgeMetricResponse()
 	case "PATTERN":
@@ -43674,6 +44622,94 @@ func (t *RunSimulationFromConfig_Variables) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsRunSimulationFromConfigKeyVariables0 returns the union data inside the RunSimulationFromConfigKey_Variables as a RunSimulationFromConfigKeyVariables0
+func (t RunSimulationFromConfigKey_Variables) AsRunSimulationFromConfigKeyVariables0() (RunSimulationFromConfigKeyVariables0, error) {
+	var body RunSimulationFromConfigKeyVariables0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRunSimulationFromConfigKeyVariables0 overwrites any union data inside the RunSimulationFromConfigKey_Variables as the provided RunSimulationFromConfigKeyVariables0
+func (t *RunSimulationFromConfigKey_Variables) FromRunSimulationFromConfigKeyVariables0(v RunSimulationFromConfigKeyVariables0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRunSimulationFromConfigKeyVariables0 performs a merge with any union data inside the RunSimulationFromConfigKey_Variables, using the provided RunSimulationFromConfigKeyVariables0
+func (t *RunSimulationFromConfigKey_Variables) MergeRunSimulationFromConfigKeyVariables0(v RunSimulationFromConfigKeyVariables0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsRunSimulationFromConfigKeyVariables1 returns the union data inside the RunSimulationFromConfigKey_Variables as a RunSimulationFromConfigKeyVariables1
+func (t RunSimulationFromConfigKey_Variables) AsRunSimulationFromConfigKeyVariables1() (RunSimulationFromConfigKeyVariables1, error) {
+	var body RunSimulationFromConfigKeyVariables1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRunSimulationFromConfigKeyVariables1 overwrites any union data inside the RunSimulationFromConfigKey_Variables as the provided RunSimulationFromConfigKeyVariables1
+func (t *RunSimulationFromConfigKey_Variables) FromRunSimulationFromConfigKeyVariables1(v RunSimulationFromConfigKeyVariables1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRunSimulationFromConfigKeyVariables1 performs a merge with any union data inside the RunSimulationFromConfigKey_Variables, using the provided RunSimulationFromConfigKeyVariables1
+func (t *RunSimulationFromConfigKey_Variables) MergeRunSimulationFromConfigKeyVariables1(v RunSimulationFromConfigKeyVariables1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsRunSimulationFromConfigKeyVariables2 returns the union data inside the RunSimulationFromConfigKey_Variables as a RunSimulationFromConfigKeyVariables2
+func (t RunSimulationFromConfigKey_Variables) AsRunSimulationFromConfigKeyVariables2() (RunSimulationFromConfigKeyVariables2, error) {
+	var body RunSimulationFromConfigKeyVariables2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRunSimulationFromConfigKeyVariables2 overwrites any union data inside the RunSimulationFromConfigKey_Variables as the provided RunSimulationFromConfigKeyVariables2
+func (t *RunSimulationFromConfigKey_Variables) FromRunSimulationFromConfigKeyVariables2(v RunSimulationFromConfigKeyVariables2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRunSimulationFromConfigKeyVariables2 performs a merge with any union data inside the RunSimulationFromConfigKey_Variables, using the provided RunSimulationFromConfigKeyVariables2
+func (t *RunSimulationFromConfigKey_Variables) MergeRunSimulationFromConfigKeyVariables2(v RunSimulationFromConfigKeyVariables2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t RunSimulationFromConfigKey_Variables) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *RunSimulationFromConfigKey_Variables) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsRunSimulationFromPlanIdVariables0 returns the union data inside the RunSimulationFromPlanId_Variables as a RunSimulationFromPlanIdVariables0
 func (t RunSimulationFromPlanId_Variables) AsRunSimulationFromPlanIdVariables0() (RunSimulationFromPlanIdVariables0, error) {
 	var body RunSimulationFromPlanIdVariables0
@@ -43938,6 +44974,32 @@ func (t *RunSimulationInput) MergeRunSimulationFromPlanId(v RunSimulationFromPla
 	return err
 }
 
+// AsRunSimulationFromConfigKey returns the union data inside the RunSimulationInput as a RunSimulationFromConfigKey
+func (t RunSimulationInput) AsRunSimulationFromConfigKey() (RunSimulationFromConfigKey, error) {
+	var body RunSimulationFromConfigKey
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromRunSimulationFromConfigKey overwrites any union data inside the RunSimulationInput as the provided RunSimulationFromConfigKey
+func (t *RunSimulationInput) FromRunSimulationFromConfigKey(v RunSimulationFromConfigKey) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeRunSimulationFromConfigKey performs a merge with any union data inside the RunSimulationInput, using the provided RunSimulationFromConfigKey
+func (t *RunSimulationInput) MergeRunSimulationFromConfigKey(v RunSimulationFromConfigKey) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsRunSimulationFromTemplate returns the union data inside the RunSimulationInput as a RunSimulationFromTemplate
 func (t RunSimulationInput) AsRunSimulationFromTemplate() (RunSimulationFromTemplate, error) {
 	var body RunSimulationFromTemplate
@@ -44062,22 +45124,22 @@ func (t *RunSimulationPlanBody_Variables) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsSimulationGroupNotifyConfigEmail0 returns the union data inside the SimulationGroupNotifyConfig_Email as a SimulationGroupNotifyConfigEmail0
-func (t SimulationGroupNotifyConfig_Email) AsSimulationGroupNotifyConfigEmail0() (SimulationGroupNotifyConfigEmail0, error) {
-	var body SimulationGroupNotifyConfigEmail0
+// AsSimulationNotifyConfigEmail0 returns the union data inside the SimulationNotifyConfig_Email as a SimulationNotifyConfigEmail0
+func (t SimulationNotifyConfig_Email) AsSimulationNotifyConfigEmail0() (SimulationNotifyConfigEmail0, error) {
+	var body SimulationNotifyConfigEmail0
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromSimulationGroupNotifyConfigEmail0 overwrites any union data inside the SimulationGroupNotifyConfig_Email as the provided SimulationGroupNotifyConfigEmail0
-func (t *SimulationGroupNotifyConfig_Email) FromSimulationGroupNotifyConfigEmail0(v SimulationGroupNotifyConfigEmail0) error {
+// FromSimulationNotifyConfigEmail0 overwrites any union data inside the SimulationNotifyConfig_Email as the provided SimulationNotifyConfigEmail0
+func (t *SimulationNotifyConfig_Email) FromSimulationNotifyConfigEmail0(v SimulationNotifyConfigEmail0) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeSimulationGroupNotifyConfigEmail0 performs a merge with any union data inside the SimulationGroupNotifyConfig_Email, using the provided SimulationGroupNotifyConfigEmail0
-func (t *SimulationGroupNotifyConfig_Email) MergeSimulationGroupNotifyConfigEmail0(v SimulationGroupNotifyConfigEmail0) error {
+// MergeSimulationNotifyConfigEmail0 performs a merge with any union data inside the SimulationNotifyConfig_Email, using the provided SimulationNotifyConfigEmail0
+func (t *SimulationNotifyConfig_Email) MergeSimulationNotifyConfigEmail0(v SimulationNotifyConfigEmail0) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -44088,22 +45150,22 @@ func (t *SimulationGroupNotifyConfig_Email) MergeSimulationGroupNotifyConfigEmai
 	return err
 }
 
-// AsSimulationGroupNotifyConfigEmail1 returns the union data inside the SimulationGroupNotifyConfig_Email as a SimulationGroupNotifyConfigEmail1
-func (t SimulationGroupNotifyConfig_Email) AsSimulationGroupNotifyConfigEmail1() (SimulationGroupNotifyConfigEmail1, error) {
-	var body SimulationGroupNotifyConfigEmail1
+// AsSimulationNotifyConfigEmail1 returns the union data inside the SimulationNotifyConfig_Email as a SimulationNotifyConfigEmail1
+func (t SimulationNotifyConfig_Email) AsSimulationNotifyConfigEmail1() (SimulationNotifyConfigEmail1, error) {
+	var body SimulationNotifyConfigEmail1
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromSimulationGroupNotifyConfigEmail1 overwrites any union data inside the SimulationGroupNotifyConfig_Email as the provided SimulationGroupNotifyConfigEmail1
-func (t *SimulationGroupNotifyConfig_Email) FromSimulationGroupNotifyConfigEmail1(v SimulationGroupNotifyConfigEmail1) error {
+// FromSimulationNotifyConfigEmail1 overwrites any union data inside the SimulationNotifyConfig_Email as the provided SimulationNotifyConfigEmail1
+func (t *SimulationNotifyConfig_Email) FromSimulationNotifyConfigEmail1(v SimulationNotifyConfigEmail1) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeSimulationGroupNotifyConfigEmail1 performs a merge with any union data inside the SimulationGroupNotifyConfig_Email, using the provided SimulationGroupNotifyConfigEmail1
-func (t *SimulationGroupNotifyConfig_Email) MergeSimulationGroupNotifyConfigEmail1(v SimulationGroupNotifyConfigEmail1) error {
+// MergeSimulationNotifyConfigEmail1 performs a merge with any union data inside the SimulationNotifyConfig_Email, using the provided SimulationNotifyConfigEmail1
+func (t *SimulationNotifyConfig_Email) MergeSimulationNotifyConfigEmail1(v SimulationNotifyConfigEmail1) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -44114,12 +45176,12 @@ func (t *SimulationGroupNotifyConfig_Email) MergeSimulationGroupNotifyConfigEmai
 	return err
 }
 
-func (t SimulationGroupNotifyConfig_Email) MarshalJSON() ([]byte, error) {
+func (t SimulationNotifyConfig_Email) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *SimulationGroupNotifyConfig_Email) UnmarshalJSON(b []byte) error {
+func (t *SimulationNotifyConfig_Email) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -45358,6 +46420,40 @@ func (t *UpdateMetricDefinitionResponse) MergeThresholdMetricResponse(v Threshol
 	return err
 }
 
+// AsHttpRequestMetricResponse returns the union data inside the UpdateMetricDefinitionResponse as a HttpRequestMetricResponse
+func (t UpdateMetricDefinitionResponse) AsHttpRequestMetricResponse() (HttpRequestMetricResponse, error) {
+	var body HttpRequestMetricResponse
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromHttpRequestMetricResponse overwrites any union data inside the UpdateMetricDefinitionResponse as the provided HttpRequestMetricResponse
+func (t *UpdateMetricDefinitionResponse) FromHttpRequestMetricResponse(v HttpRequestMetricResponse) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	b, err = runtime.JSONMerge(b, []byte(`{"calculationType":"HTTP_REQUEST"}`))
+	t.union = b
+	return err
+}
+
+// MergeHttpRequestMetricResponse performs a merge with any union data inside the UpdateMetricDefinitionResponse, using the provided HttpRequestMetricResponse
+func (t *UpdateMetricDefinitionResponse) MergeHttpRequestMetricResponse(v HttpRequestMetricResponse) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	b, err = runtime.JSONMerge(b, []byte(`{"calculationType":"HTTP_REQUEST"}`))
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t UpdateMetricDefinitionResponse) Discriminator() (string, error) {
 	var discriminator struct {
 		Discriminator string `json:"calculationType"`
@@ -45374,6 +46470,8 @@ func (t UpdateMetricDefinitionResponse) ValueByDiscriminator() (interface{}, err
 	switch discriminator {
 	case "FORMULA":
 		return t.AsFormulaMetricResponse()
+	case "HTTP_REQUEST":
+		return t.AsHttpRequestMetricResponse()
 	case "LLM_JUDGE":
 		return t.AsLlmJudgeMetricResponse()
 	case "PATTERN":
@@ -48558,6 +49656,70 @@ type ClientInterface interface {
 	//
 	// Corresponds with PUT /v1/persona/{personaId} (the `PutV1PersonaByPersonaId` operationId).
 	PutV1PersonaByPersonaId(ctx context.Context, personaId string, body PutV1PersonaByPersonaIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1PhoneNumber List phone numbers
+	//
+	// Returns the phone numbers the project owns, oldest first, with the agent each is assigned to.
+	//
+	// Corresponds with GET /v1/phone-number (the `GetV1PhoneNumber` operationId).
+	GetV1PhoneNumber(ctx context.Context, params *GetV1PhoneNumberParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1PhoneNumberWithBody Buy a phone number
+	//
+	// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/phone-number (the `PostV1PhoneNumber` operationId).
+	PostV1PhoneNumberWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1PhoneNumber Buy a phone number
+	//
+	// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/phone-number (the `PostV1PhoneNumber` operationId).
+	PostV1PhoneNumber(ctx context.Context, body PostV1PhoneNumberJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1PhoneNumberAllowance Get the phone number allowance
+	//
+	// Returns how many numbers the organization gets for free, how many it holds, what a paid number costs a month, and whether a purchase would be admitted right now.
+	//
+	// Corresponds with GET /v1/phone-number/allowance (the `GetV1PhoneNumberAllowance` operationId).
+	GetV1PhoneNumberAllowance(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1PhoneNumberAvailable Search available phone numbers
+	//
+	// Returns US numbers the carrier has for sale, narrowed by area code or by digits the number must contain. Buy one with POST /v1/phone-number.
+	//
+	// Corresponds with GET /v1/phone-number/available (the `GetV1PhoneNumberAvailable` operationId).
+	GetV1PhoneNumberAvailable(ctx context.Context, params *GetV1PhoneNumberAvailableParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1PhoneNumberByPhoneNumberId Release a phone number
+	//
+	// Gives the number back to the carrier. This cannot be undone: rent stops today and nothing is refunded.
+	//
+	// Corresponds with DELETE /v1/phone-number/{phoneNumberId} (the `DeleteV1PhoneNumberByPhoneNumberId` operationId).
+	DeleteV1PhoneNumberByPhoneNumberId(ctx context.Context, phoneNumberId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1PhoneNumberByPhoneNumberIdWithBody Update a phone number
+	//
+	// Relabels a number or changes which agent it is assigned to. A field left out is untouched; null clears it.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/phone-number/{phoneNumberId} (the `PutV1PhoneNumberByPhoneNumberId` operationId).
+	PutV1PhoneNumberByPhoneNumberIdWithBody(ctx context.Context, phoneNumberId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1PhoneNumberByPhoneNumberId Update a phone number
+	//
+	// Relabels a number or changes which agent it is assigned to. A field left out is untouched; null clears it.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /v1/phone-number/{phoneNumberId} (the `PutV1PhoneNumberByPhoneNumberId` operationId).
+	PutV1PhoneNumberByPhoneNumberId(ctx context.Context, phoneNumberId openapi_types.UUID, body PutV1PhoneNumberByPhoneNumberIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1Projects List projects available to this credential
 	//
@@ -52598,6 +53760,150 @@ func (c *Client) PutV1PersonaByPersonaIdWithBody(ctx context.Context, personaId 
 // Corresponds with PUT /v1/persona/{personaId} (the `PutV1PersonaByPersonaId` operationId).
 func (c *Client) PutV1PersonaByPersonaId(ctx context.Context, personaId string, body PutV1PersonaByPersonaIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPutV1PersonaByPersonaIdRequest(c.Server, personaId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1PhoneNumber List phone numbers
+//
+// Returns the phone numbers the project owns, oldest first, with the agent each is assigned to.
+//
+// Corresponds with GET /v1/phone-number (the `GetV1PhoneNumber` operationId).
+func (c *Client) GetV1PhoneNumber(ctx context.Context, params *GetV1PhoneNumberParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1PhoneNumberRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1PhoneNumberWithBody Buy a phone number
+//
+// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/phone-number (the `PostV1PhoneNumber` operationId).
+func (c *Client) PostV1PhoneNumberWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1PhoneNumberRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1PhoneNumber Buy a phone number
+//
+// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/phone-number (the `PostV1PhoneNumber` operationId).
+func (c *Client) PostV1PhoneNumber(ctx context.Context, body PostV1PhoneNumberJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1PhoneNumberRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1PhoneNumberAllowance Get the phone number allowance
+//
+// Returns how many numbers the organization gets for free, how many it holds, what a paid number costs a month, and whether a purchase would be admitted right now.
+//
+// Corresponds with GET /v1/phone-number/allowance (the `GetV1PhoneNumberAllowance` operationId).
+func (c *Client) GetV1PhoneNumberAllowance(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1PhoneNumberAllowanceRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1PhoneNumberAvailable Search available phone numbers
+//
+// Returns US numbers the carrier has for sale, narrowed by area code or by digits the number must contain. Buy one with POST /v1/phone-number.
+//
+// Corresponds with GET /v1/phone-number/available (the `GetV1PhoneNumberAvailable` operationId).
+func (c *Client) GetV1PhoneNumberAvailable(ctx context.Context, params *GetV1PhoneNumberAvailableParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1PhoneNumberAvailableRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1PhoneNumberByPhoneNumberId Release a phone number
+//
+// Gives the number back to the carrier. This cannot be undone: rent stops today and nothing is refunded.
+//
+// Corresponds with DELETE /v1/phone-number/{phoneNumberId} (the `DeleteV1PhoneNumberByPhoneNumberId` operationId).
+func (c *Client) DeleteV1PhoneNumberByPhoneNumberId(ctx context.Context, phoneNumberId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1PhoneNumberByPhoneNumberIdRequest(c.Server, phoneNumberId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1PhoneNumberByPhoneNumberIdWithBody Update a phone number
+//
+// Relabels a number or changes which agent it is assigned to. A field left out is untouched; null clears it.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/phone-number/{phoneNumberId} (the `PutV1PhoneNumberByPhoneNumberId` operationId).
+func (c *Client) PutV1PhoneNumberByPhoneNumberIdWithBody(ctx context.Context, phoneNumberId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1PhoneNumberByPhoneNumberIdRequestWithBody(c.Server, phoneNumberId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1PhoneNumberByPhoneNumberId Update a phone number
+//
+// Relabels a number or changes which agent it is assigned to. A field left out is untouched; null clears it.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/phone-number/{phoneNumberId} (the `PutV1PhoneNumberByPhoneNumberId` operationId).
+func (c *Client) PutV1PhoneNumberByPhoneNumberId(ctx context.Context, phoneNumberId openapi_types.UUID, body PutV1PhoneNumberByPhoneNumberIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1PhoneNumberByPhoneNumberIdRequest(c.Server, phoneNumberId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -60147,6 +61453,286 @@ func NewPutV1PersonaByPersonaIdRequestWithBody(server string, personaId string, 
 	return req, nil
 }
 
+// NewGetV1PhoneNumberRequest constructs an http.Request for the GetV1PhoneNumber method
+func NewGetV1PhoneNumberRequest(server string, params *GetV1PhoneNumberParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/phone-number")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.AgentId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "agentId", *params.AgentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1PhoneNumberRequest calls the generic PostV1PhoneNumber builder with application/json body
+func NewPostV1PhoneNumberRequest(server string, body PostV1PhoneNumberJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1PhoneNumberRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1PhoneNumberRequestWithBody constructs an http.Request for the PostV1PhoneNumber method, with any body, and a specified content type
+func NewPostV1PhoneNumberRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/phone-number")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetV1PhoneNumberAllowanceRequest constructs an http.Request for the GetV1PhoneNumberAllowance method
+func NewGetV1PhoneNumberAllowanceRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/phone-number/allowance")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1PhoneNumberAvailableRequest constructs an http.Request for the GetV1PhoneNumberAvailable method
+func NewGetV1PhoneNumberAvailableRequest(server string, params *GetV1PhoneNumberAvailableParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/phone-number/available")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.AreaCode != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "areaCode", *params.AreaCode, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Contains != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "contains", *params.Contains, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewDeleteV1PhoneNumberByPhoneNumberIdRequest constructs an http.Request for the DeleteV1PhoneNumberByPhoneNumberId method
+func NewDeleteV1PhoneNumberByPhoneNumberIdRequest(server string, phoneNumberId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "phoneNumberId", phoneNumberId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/phone-number/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPutV1PhoneNumberByPhoneNumberIdRequest calls the generic PutV1PhoneNumberByPhoneNumberId builder with application/json body
+func NewPutV1PhoneNumberByPhoneNumberIdRequest(server string, phoneNumberId openapi_types.UUID, body PutV1PhoneNumberByPhoneNumberIdJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPutV1PhoneNumberByPhoneNumberIdRequestWithBody(server, phoneNumberId, "application/json", bodyReader)
+}
+
+// NewPutV1PhoneNumberByPhoneNumberIdRequestWithBody constructs an http.Request for the PutV1PhoneNumberByPhoneNumberId method, with any body, and a specified content type
+func NewPutV1PhoneNumberByPhoneNumberIdRequestWithBody(server string, phoneNumberId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "phoneNumberId", phoneNumberId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/phone-number/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGetV1ProjectsRequest constructs an http.Request for the GetV1Projects method
 func NewGetV1ProjectsRequest(server string) (*http.Request, error) {
 	var err error
@@ -64077,6 +65663,78 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PUT /v1/persona/{personaId} (the `PutV1PersonaByPersonaId` operationId).
 	PutV1PersonaByPersonaIdWithResponse(ctx context.Context, personaId string, body PutV1PersonaByPersonaIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1PersonaByPersonaIdResponse, error)
+
+	// GetV1PhoneNumberWithResponse List phone numbers
+	//
+	// Returns the phone numbers the project owns, oldest first, with the agent each is assigned to.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/phone-number (the `GetV1PhoneNumber` operationId).
+	GetV1PhoneNumberWithResponse(ctx context.Context, params *GetV1PhoneNumberParams, reqEditors ...RequestEditorFn) (*GetV1PhoneNumberResponse, error)
+
+	// PostV1PhoneNumberWithBodyWithResponse Buy a phone number
+	//
+	// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/phone-number (the `PostV1PhoneNumber` operationId).
+	PostV1PhoneNumberWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1PhoneNumberResponse, error)
+
+	// PostV1PhoneNumberWithResponse Buy a phone number
+	//
+	// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/phone-number (the `PostV1PhoneNumber` operationId).
+	PostV1PhoneNumberWithResponse(ctx context.Context, body PostV1PhoneNumberJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1PhoneNumberResponse, error)
+
+	// GetV1PhoneNumberAllowanceWithResponse Get the phone number allowance
+	//
+	// Returns how many numbers the organization gets for free, how many it holds, what a paid number costs a month, and whether a purchase would be admitted right now.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/phone-number/allowance (the `GetV1PhoneNumberAllowance` operationId).
+	GetV1PhoneNumberAllowanceWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1PhoneNumberAllowanceResponse, error)
+
+	// GetV1PhoneNumberAvailableWithResponse Search available phone numbers
+	//
+	// Returns US numbers the carrier has for sale, narrowed by area code or by digits the number must contain. Buy one with POST /v1/phone-number.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/phone-number/available (the `GetV1PhoneNumberAvailable` operationId).
+	GetV1PhoneNumberAvailableWithResponse(ctx context.Context, params *GetV1PhoneNumberAvailableParams, reqEditors ...RequestEditorFn) (*GetV1PhoneNumberAvailableResponse, error)
+
+	// DeleteV1PhoneNumberByPhoneNumberIdWithResponse Release a phone number
+	//
+	// Gives the number back to the carrier. This cannot be undone: rent stops today and nothing is refunded.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/phone-number/{phoneNumberId} (the `DeleteV1PhoneNumberByPhoneNumberId` operationId).
+	DeleteV1PhoneNumberByPhoneNumberIdWithResponse(ctx context.Context, phoneNumberId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1PhoneNumberByPhoneNumberIdResponse, error)
+
+	// PutV1PhoneNumberByPhoneNumberIdWithBodyWithResponse Update a phone number
+	//
+	// Relabels a number or changes which agent it is assigned to. A field left out is untouched; null clears it.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/phone-number/{phoneNumberId} (the `PutV1PhoneNumberByPhoneNumberId` operationId).
+	PutV1PhoneNumberByPhoneNumberIdWithBodyWithResponse(ctx context.Context, phoneNumberId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1PhoneNumberByPhoneNumberIdResponse, error)
+
+	// PutV1PhoneNumberByPhoneNumberIdWithResponse Update a phone number
+	//
+	// Relabels a number or changes which agent it is assigned to. A field left out is untouched; null clears it.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/phone-number/{phoneNumberId} (the `PutV1PhoneNumberByPhoneNumberId` operationId).
+	PutV1PhoneNumberByPhoneNumberIdWithResponse(ctx context.Context, phoneNumberId openapi_types.UUID, body PutV1PhoneNumberByPhoneNumberIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1PhoneNumberByPhoneNumberIdResponse, error)
 
 	// GetV1ProjectsWithResponse List projects available to this credential
 	//
@@ -77813,6 +79471,480 @@ func (r PutV1PersonaByPersonaIdResponse) ContentType() string {
 	return ""
 }
 
+type GetV1PhoneNumberResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data []PhoneNumberResponse `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1PhoneNumberResponse) GetJSON200() *struct {
+	Data []PhoneNumberResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetV1PhoneNumberResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1PhoneNumberResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1PhoneNumberResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1PhoneNumberResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1PhoneNumberResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1PhoneNumberResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1PhoneNumberResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1PhoneNumberResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1PhoneNumberResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		// Data A phone number the project owns
+		Data PhoneNumberResponse `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON402 the response for an HTTP 402 `application/json` response
+	JSON402 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1PhoneNumberResponse) GetJSON201() *struct {
+	// Data A phone number the project owns
+	Data PhoneNumberResponse `json:"data"`
+} {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1PhoneNumberResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1PhoneNumberResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON402 returns the response for an HTTP 402 `application/json` response
+func (r PostV1PhoneNumberResponse) GetJSON402() *ErrorResponse {
+	return r.JSON402
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1PhoneNumberResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1PhoneNumberResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1PhoneNumberResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1PhoneNumberResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1PhoneNumberResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1PhoneNumberResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1PhoneNumberResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1PhoneNumberResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1PhoneNumberAllowanceResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data How many numbers the organization gets for free and whether it may buy the next one
+		Data PhoneNumberAllowanceResponse `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1PhoneNumberAllowanceResponse) GetJSON200() *struct {
+	// Data How many numbers the organization gets for free and whether it may buy the next one
+	Data PhoneNumberAllowanceResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1PhoneNumberAllowanceResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1PhoneNumberAllowanceResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1PhoneNumberAllowanceResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1PhoneNumberAllowanceResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1PhoneNumberAllowanceResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1PhoneNumberAllowanceResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1PhoneNumberAllowanceResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1PhoneNumberAvailableResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data []AvailablePhoneNumberResponse `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1PhoneNumberAvailableResponse) GetJSON200() *struct {
+	Data []AvailablePhoneNumberResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetV1PhoneNumberAvailableResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1PhoneNumberAvailableResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1PhoneNumberAvailableResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1PhoneNumberAvailableResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1PhoneNumberAvailableResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1PhoneNumberAvailableResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1PhoneNumberAvailableResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1PhoneNumberAvailableResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1PhoneNumberByPhoneNumberIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data Confirmation that a phone number was released
+		Data ReleasePhoneNumberResponse `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1PhoneNumberByPhoneNumberIdResponse) GetJSON200() *struct {
+	// Data Confirmation that a phone number was released
+	Data ReleasePhoneNumberResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r DeleteV1PhoneNumberByPhoneNumberIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1PhoneNumberByPhoneNumberIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r DeleteV1PhoneNumberByPhoneNumberIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1PhoneNumberByPhoneNumberIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1PhoneNumberByPhoneNumberIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1PhoneNumberByPhoneNumberIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1PhoneNumberByPhoneNumberIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1PhoneNumberByPhoneNumberIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1PhoneNumberByPhoneNumberIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutV1PhoneNumberByPhoneNumberIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data A phone number the project owns
+		Data PhoneNumberResponse `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutV1PhoneNumberByPhoneNumberIdResponse) GetJSON200() *struct {
+	// Data A phone number the project owns
+	Data PhoneNumberResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PutV1PhoneNumberByPhoneNumberIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PutV1PhoneNumberByPhoneNumberIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PutV1PhoneNumberByPhoneNumberIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PutV1PhoneNumberByPhoneNumberIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PutV1PhoneNumberByPhoneNumberIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PutV1PhoneNumberByPhoneNumberIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutV1PhoneNumberByPhoneNumberIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutV1PhoneNumberByPhoneNumberIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutV1PhoneNumberByPhoneNumberIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GetV1ProjectsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -84707,6 +86839,126 @@ func (c *ClientWithResponses) PutV1PersonaByPersonaIdWithResponse(ctx context.Co
 		return nil, err
 	}
 	return ParsePutV1PersonaByPersonaIdResponse(rsp)
+}
+
+// GetV1PhoneNumberWithResponse List phone numbers
+//
+// Returns the phone numbers the project owns, oldest first, with the agent each is assigned to.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/phone-number (the `GetV1PhoneNumber` operationId).
+func (c *ClientWithResponses) GetV1PhoneNumberWithResponse(ctx context.Context, params *GetV1PhoneNumberParams, reqEditors ...RequestEditorFn) (*GetV1PhoneNumberResponse, error) {
+	rsp, err := c.GetV1PhoneNumber(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1PhoneNumberResponse(rsp)
+}
+
+// PostV1PhoneNumberWithBodyWithResponse Buy a phone number
+//
+// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/phone-number (the `PostV1PhoneNumber` operationId).
+func (c *ClientWithResponses) PostV1PhoneNumberWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1PhoneNumberResponse, error) {
+	rsp, err := c.PostV1PhoneNumberWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1PhoneNumberResponse(rsp)
+}
+
+// PostV1PhoneNumberWithResponse Buy a phone number
+//
+// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/phone-number (the `PostV1PhoneNumber` operationId).
+func (c *ClientWithResponses) PostV1PhoneNumberWithResponse(ctx context.Context, body PostV1PhoneNumberJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1PhoneNumberResponse, error) {
+	rsp, err := c.PostV1PhoneNumber(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1PhoneNumberResponse(rsp)
+}
+
+// GetV1PhoneNumberAllowanceWithResponse Get the phone number allowance
+//
+// Returns how many numbers the organization gets for free, how many it holds, what a paid number costs a month, and whether a purchase would be admitted right now.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/phone-number/allowance (the `GetV1PhoneNumberAllowance` operationId).
+func (c *ClientWithResponses) GetV1PhoneNumberAllowanceWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1PhoneNumberAllowanceResponse, error) {
+	rsp, err := c.GetV1PhoneNumberAllowance(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1PhoneNumberAllowanceResponse(rsp)
+}
+
+// GetV1PhoneNumberAvailableWithResponse Search available phone numbers
+//
+// Returns US numbers the carrier has for sale, narrowed by area code or by digits the number must contain. Buy one with POST /v1/phone-number.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/phone-number/available (the `GetV1PhoneNumberAvailable` operationId).
+func (c *ClientWithResponses) GetV1PhoneNumberAvailableWithResponse(ctx context.Context, params *GetV1PhoneNumberAvailableParams, reqEditors ...RequestEditorFn) (*GetV1PhoneNumberAvailableResponse, error) {
+	rsp, err := c.GetV1PhoneNumberAvailable(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1PhoneNumberAvailableResponse(rsp)
+}
+
+// DeleteV1PhoneNumberByPhoneNumberIdWithResponse Release a phone number
+//
+// Gives the number back to the carrier. This cannot be undone: rent stops today and nothing is refunded.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/phone-number/{phoneNumberId} (the `DeleteV1PhoneNumberByPhoneNumberId` operationId).
+func (c *ClientWithResponses) DeleteV1PhoneNumberByPhoneNumberIdWithResponse(ctx context.Context, phoneNumberId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1PhoneNumberByPhoneNumberIdResponse, error) {
+	rsp, err := c.DeleteV1PhoneNumberByPhoneNumberId(ctx, phoneNumberId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1PhoneNumberByPhoneNumberIdResponse(rsp)
+}
+
+// PutV1PhoneNumberByPhoneNumberIdWithBodyWithResponse Update a phone number
+//
+// Relabels a number or changes which agent it is assigned to. A field left out is untouched; null clears it.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/phone-number/{phoneNumberId} (the `PutV1PhoneNumberByPhoneNumberId` operationId).
+func (c *ClientWithResponses) PutV1PhoneNumberByPhoneNumberIdWithBodyWithResponse(ctx context.Context, phoneNumberId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1PhoneNumberByPhoneNumberIdResponse, error) {
+	rsp, err := c.PutV1PhoneNumberByPhoneNumberIdWithBody(ctx, phoneNumberId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1PhoneNumberByPhoneNumberIdResponse(rsp)
+}
+
+// PutV1PhoneNumberByPhoneNumberIdWithResponse Update a phone number
+//
+// Relabels a number or changes which agent it is assigned to. A field left out is untouched; null clears it.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/phone-number/{phoneNumberId} (the `PutV1PhoneNumberByPhoneNumberId` operationId).
+func (c *ClientWithResponses) PutV1PhoneNumberByPhoneNumberIdWithResponse(ctx context.Context, phoneNumberId openapi_types.UUID, body PutV1PhoneNumberByPhoneNumberIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1PhoneNumberByPhoneNumberIdResponse, error) {
+	rsp, err := c.PutV1PhoneNumberByPhoneNumberId(ctx, phoneNumberId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1PhoneNumberByPhoneNumberIdResponse(rsp)
 }
 
 // GetV1ProjectsWithResponse List projects available to this credential
@@ -95170,6 +97422,374 @@ func ParsePutV1PersonaByPersonaIdResponse(rsp *http.Response) (*PutV1PersonaByPe
 	return response, nil
 }
 
+// ParseGetV1PhoneNumberResponse parses an HTTP response from a GetV1PhoneNumberWithResponse call
+func ParseGetV1PhoneNumberResponse(rsp *http.Response) (*GetV1PhoneNumberResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1PhoneNumberResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []PhoneNumberResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1PhoneNumberResponse parses an HTTP response from a PostV1PhoneNumberWithResponse call
+func ParsePostV1PhoneNumberResponse(rsp *http.Response) (*PostV1PhoneNumberResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1PhoneNumberResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Data A phone number the project owns
+			Data PhoneNumberResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 402:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON402 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1PhoneNumberAllowanceResponse parses an HTTP response from a GetV1PhoneNumberAllowanceWithResponse call
+func ParseGetV1PhoneNumberAllowanceResponse(rsp *http.Response) (*GetV1PhoneNumberAllowanceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1PhoneNumberAllowanceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data How many numbers the organization gets for free and whether it may buy the next one
+			Data PhoneNumberAllowanceResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1PhoneNumberAvailableResponse parses an HTTP response from a GetV1PhoneNumberAvailableWithResponse call
+func ParseGetV1PhoneNumberAvailableResponse(rsp *http.Response) (*GetV1PhoneNumberAvailableResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1PhoneNumberAvailableResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []AvailablePhoneNumberResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1PhoneNumberByPhoneNumberIdResponse parses an HTTP response from a DeleteV1PhoneNumberByPhoneNumberIdWithResponse call
+func ParseDeleteV1PhoneNumberByPhoneNumberIdResponse(rsp *http.Response) (*DeleteV1PhoneNumberByPhoneNumberIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1PhoneNumberByPhoneNumberIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data Confirmation that a phone number was released
+			Data ReleasePhoneNumberResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePutV1PhoneNumberByPhoneNumberIdResponse parses an HTTP response from a PutV1PhoneNumberByPhoneNumberIdWithResponse call
+func ParsePutV1PhoneNumberByPhoneNumberIdResponse(rsp *http.Response) (*PutV1PhoneNumberByPhoneNumberIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PutV1PhoneNumberByPhoneNumberIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data A phone number the project owns
+			Data PhoneNumberResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseGetV1ProjectsResponse parses an HTTP response from a GetV1ProjectsWithResponse call
 func ParseGetV1ProjectsResponse(rsp *http.Response) (*GetV1ProjectsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -98369,10 +100989,39 @@ func (p *WebhookInitiator) applyWebhookEditors(ctx context.Context, req *http.Re
 
 // WebhookInitiatorInterface is the interface specification for the webhook initiator.
 type WebhookInitiatorInterface interface {
+	// HttpRequestMetricCheckWithBody fires the HttpRequestMetric webhook with any body
+	HttpRequestMetricCheckWithBody(ctx context.Context, targetURL string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	HttpRequestMetricCheck(ctx context.Context, targetURL string, body HttpRequestMetricCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// WebhookEventWithBody fires the Webhook webhook with any body
 	WebhookEventWithBody(ctx context.Context, targetURL string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	WebhookEvent(ctx context.Context, targetURL string, body WebhookEventJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+}
+
+func (p *WebhookInitiator) HttpRequestMetricCheckWithBody(ctx context.Context, targetURL string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewHttpRequestMetricCheckWebhookRequestWithBody(targetURL, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := p.applyWebhookEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return p.Client.Do(req)
+}
+
+func (p *WebhookInitiator) HttpRequestMetricCheck(ctx context.Context, targetURL string, body HttpRequestMetricCheckJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewHttpRequestMetricCheckWebhookRequest(targetURL, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := p.applyWebhookEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return p.Client.Do(req)
 }
 
 func (p *WebhookInitiator) WebhookEventWithBody(ctx context.Context, targetURL string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -98397,6 +101046,37 @@ func (p *WebhookInitiator) WebhookEvent(ctx context.Context, targetURL string, b
 		return nil, err
 	}
 	return p.Client.Do(req)
+}
+
+// NewHttpRequestMetricCheckWebhookRequest builds a application/json POST request for the HttpRequestMetric webhook
+func NewHttpRequestMetricCheckWebhookRequest(targetURL string, body HttpRequestMetricCheckJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewHttpRequestMetricCheckWebhookRequestWithBody(targetURL, "application/json", bodyReader)
+}
+
+// NewHttpRequestMetricCheckWebhookRequestWithBody builds a POST request for the HttpRequestMetric webhook with any body
+func NewHttpRequestMetricCheckWebhookRequestWithBody(targetURL string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+	_ = err
+
+	reqURL, err := url.Parse(targetURL)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, reqURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
 }
 
 // NewWebhookEventWebhookRequest builds a application/json POST request for the Webhook webhook

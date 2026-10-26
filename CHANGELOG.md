@@ -2,6 +2,18 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.3.0, 2026-10-26
+
+- Breaking: `SimulationGroupNotifyConfig` is replaced by `SimulationNotifyConfig`, and the `Notify` field changed to `*SimulationNotifyConfig` on `SimulationGroupConfig`. The email types are renamed the same way: `SimulationNotifyConfig_Email`, `SimulationNotifyConfigEmail0` and `SimulationNotifyConfigEmail1`, with the matching `As`, `From` and `Merge` methods. Code that names the old types or methods must change to the new names.
+- Added `Notify` (`*SimulationNotifyConfig`) to `SimulationPlanConfig` and `QaSimulationPlanConfig`.
+- Added `Notifications` to `CreateRunPlanFromConfig`, `CreateRunPlanFromTemplate`, `UpdateRunPlanInput` and `RunPlanResponse`, using the new `SimulationPlanNotificationsInput` type.
+- Added phone number endpoints: `GetV1PhoneNumber`, `PostV1PhoneNumber`, `PutV1PhoneNumberByPhoneNumberId`, `DeleteV1PhoneNumberByPhoneNumberId`, `GetV1PhoneNumberAllowance` and `GetV1PhoneNumberAvailable`. Each has `Client` methods, `WithBody` variants where the request has a body, `WithResponse` methods, request builders and `Parse...Response` functions. New types include `CreatePhoneNumberInput`, `UpdatePhoneNumberInput`, `PhoneNumberResponse`, `PhoneNumberAllowanceResponse`, `AvailablePhoneNumberResponse` and `ReleasePhoneNumberResponse`.
+- Added the `PHONE_NUMBER` source value: `CallCostLineSourcePHONENUMBER`, `CostBreakdownItemSourcePHONENUMBER` and `UsageCostTypeSourcePHONENUMBER`.
+- Added HTTP request metrics: `HttpRequestMetricInput`, `HttpRequestMetricResponse`, `HttpRequestMetricConfig`, `HttpRequestMetricDetails`, `HttpRequestMetricPayload` and `HttpRequestMetricVerdict`, with their enums. `CreateMetricDefinitionInput`, `CreateMetricDefinitionResponse`, `MetricDefinitionResponse` and `UpdateMetricDefinitionResponse` have `As`, `From` and `Merge` methods for them, and `UpdateMetricDefinitionInput` has an `HttpRequest` field.
+- Added the `HttpRequestMetricCheck` and `HttpRequestMetricCheckWithBody` webhook methods on `WebhookInitiator`, with `NewHttpRequestMetricCheckWebhookRequest` and `HttpRequestMetricCheckJSONRequestBody`.
+- Added `RunSimulationFromConfigKey` as an option of `RunSimulationInput`, with `AsRunSimulationFromConfigKey`, `FromRunSimulationFromConfigKey` and `MergeRunSimulationFromConfigKey`.
+- `ClientInterface`, `ClientWithResponsesInterface` and `WebhookInitiatorInterface` gained the matching methods. Code that implements these interfaces, such as test mocks, must add them.
+
 ## v0.2.2, 2026-10-24
 
 - Added the `ToolHandler` type, which describes an HTTP handler for a tool, with `Type` (`ToolHandlerType`, only `ToolHandlerTypeHttp`), `Url` and an optional `Method` (`ToolHandlerMethod`).

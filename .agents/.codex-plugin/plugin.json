@@ -1,6 +1,6 @@
 {
   "name": "go-roark",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Unofficial Go client for the Roark API: voice AI agents, calls, chats, simulations, metrics and monitoring, generated from the spec Roark publishes.",
   "author": {
     "name": "psyb0t",

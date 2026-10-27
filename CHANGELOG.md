@@ -2,6 +2,10 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.3.1, 2026-10-27
+
+- The development image is based on Debian (`golang:1.26.10-trixie`) instead of Alpine. Alpine keeps only the latest build of each package, so the exact pins broke the image build whenever a package was updated. System packages now come from the snapshot.debian.org date the base image was built from, which keeps them fixed for a given base image digest. jq 1.8.2, shellcheck 0.11.0 and shfmt 3.13.1 keep their versions, and Semgrep runs in its own virtual environment.
+
 ## v0.3.0, 2026-10-26
 
 - Breaking: `SimulationGroupNotifyConfig` is replaced by `SimulationNotifyConfig`, and the `Notify` field changed to `*SimulationNotifyConfig` on `SimulationGroupConfig`. The email types are renamed the same way: `SimulationNotifyConfig_Email`, `SimulationNotifyConfigEmail0` and `SimulationNotifyConfigEmail1`, with the matching `As`, `From` and `Merge` methods. Code that names the old types or methods must change to the new names.

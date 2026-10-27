@@ -12,7 +12,7 @@ The patch converts OpenAPI 3.1 schema features to OpenAPI 3.0.3: nullable type a
 
 ## Stack
 
-- Go 1.26.9.
+- Go 1.26.10.
 - oapi-codegen, pinned as a `tool` dependency in `go.mod`.
 - Runtime: `github.com/oapi-codegen/runtime`.
 

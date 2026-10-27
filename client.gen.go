@@ -1489,6 +1489,54 @@ func (e AnalyticsSchemaOperators) Valid() bool {
 	}
 }
 
+// Defines values for ApiCheckMetricConfigCalculationType.
+const (
+	ApiCheckMetricConfigCalculationTypeHTTPREQUEST ApiCheckMetricConfigCalculationType = "HTTP_REQUEST"
+)
+
+// Valid indicates whether the value is a known member of the ApiCheckMetricConfigCalculationType enum.
+func (e ApiCheckMetricConfigCalculationType) Valid() bool {
+	switch e {
+	case ApiCheckMetricConfigCalculationTypeHTTPREQUEST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ApiCheckMetricConfigKind.
+const (
+	ApiCheckMetricConfigKindMetric ApiCheckMetricConfigKind = "metric"
+)
+
+// Valid indicates whether the value is a known member of the ApiCheckMetricConfigKind enum.
+func (e ApiCheckMetricConfigKind) Valid() bool {
+	switch e {
+	case ApiCheckMetricConfigKindMetric:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ApiCheckRequestConfigMethod.
+const (
+	ApiCheckRequestConfigMethodGET  ApiCheckRequestConfigMethod = "GET"
+	ApiCheckRequestConfigMethodPOST ApiCheckRequestConfigMethod = "POST"
+)
+
+// Valid indicates whether the value is a known member of the ApiCheckRequestConfigMethod enum.
+func (e ApiCheckRequestConfigMethod) Valid() bool {
+	switch e {
+	case ApiCheckRequestConfigMethodGET:
+		return true
+	case ApiCheckRequestConfigMethodPOST:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AppendToolInvocationsRequestToolInvocationsParameters0Type.
 const (
 	AppendToolInvocationsRequestToolInvocationsParameters0TypeBoolean AppendToolInvocationsRequestToolInvocationsParameters0Type = "boolean"
@@ -10600,6 +10648,21 @@ func (e MetricCollectionJobResponseTriggeredBy) Valid() bool {
 	case MetricCollectionJobResponseTriggeredByUSERAPI:
 		return true
 	case MetricCollectionJobResponseTriggeredByUSERMANUAL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for MetricConfigCalculationType.
+const (
+	MetricConfigCalculationTypeLLMJUDGE MetricConfigCalculationType = "LLM_JUDGE"
+)
+
+// Valid indicates whether the value is a known member of the MetricConfigCalculationType enum.
+func (e MetricConfigCalculationType) Valid() bool {
+	switch e {
+	case MetricConfigCalculationTypeLLMJUDGE:
 		return true
 	default:
 		return false
@@ -23388,6 +23451,34 @@ type AnalyticsSchemaMetricsDefaultAggregation string
 // AnalyticsSchemaOperators defines model for AnalyticsSchema.Operators.
 type AnalyticsSchemaOperators string
 
+// ApiCheckMetricConfig defines model for ApiCheckMetricConfig.
+type ApiCheckMetricConfig struct {
+	CalculationType ApiCheckMetricConfigCalculationType `json:"calculationType"`
+	DisplayName     *string                             `json:"displayName,omitempty"`
+	FalseLabel      *string                             `json:"falseLabel,omitempty"`
+	HttpRequest     ApiCheckRequestConfig               `json:"httpRequest"`
+	Kind            ApiCheckMetricConfigKind            `json:"kind"`
+	Name            string                              `json:"name"`
+	TrueLabel       *string                             `json:"trueLabel,omitempty"`
+}
+
+// ApiCheckMetricConfigCalculationType defines model for ApiCheckMetricConfig.CalculationType.
+type ApiCheckMetricConfigCalculationType string
+
+// ApiCheckMetricConfigKind defines model for ApiCheckMetricConfig.Kind.
+type ApiCheckMetricConfigKind string
+
+// ApiCheckRequestConfig defines model for ApiCheckRequestConfig.
+type ApiCheckRequestConfig struct {
+	Body    *string                      `json:"body,omitempty"`
+	Headers *map[string]string           `json:"headers,omitempty"`
+	Method  *ApiCheckRequestConfigMethod `json:"method,omitempty"`
+	Url     string                       `json:"url"`
+}
+
+// ApiCheckRequestConfigMethod defines model for ApiCheckRequestConfig.Method.
+type ApiCheckRequestConfigMethod string
+
 // AppendToolInvocationsRequest Attach tool invocations to an existing call, optionally (re)scoring metrics over them.
 type AppendToolInvocationsRequest struct {
 	// Metrics Optional. Metric definitions to (re)score on this call after the tool invocations are attached, e.g. the Tool Invocation Analysis metrics. Triggers a metric collection job (billed, credit-gated) and requires the 'metric:create' permission. Omit to attach tools without scoring. Max 20.
@@ -30083,13 +30174,14 @@ type MetricCollectionJobResponseTriggeredBy string
 
 // MetricConfig defines model for MetricConfig.
 type MetricConfig struct {
-	Contexts      *[]MetricConfigContexts `json:"contexts,omitempty"`
-	DisplayName   *string                 `json:"displayName,omitempty"`
-	FalseLabel    *string                 `json:"falseLabel,omitempty"`
-	Kind          MetricConfigKind        `json:"kind"`
-	MaxSelections *int                    `json:"maxSelections,omitempty"`
-	Name          string                  `json:"name"`
-	Options       *[]struct {
+	CalculationType *MetricConfigCalculationType `json:"calculationType,omitempty"`
+	Contexts        *[]MetricConfigContexts      `json:"contexts,omitempty"`
+	DisplayName     *string                      `json:"displayName,omitempty"`
+	FalseLabel      *string                      `json:"falseLabel,omitempty"`
+	Kind            MetricConfigKind             `json:"kind"`
+	MaxSelections   *int                         `json:"maxSelections,omitempty"`
+	Name            string                       `json:"name"`
+	Options         *[]struct {
 		Description  *string `json:"description,omitempty"`
 		DisplayOrder int     `json:"displayOrder"`
 		Label        string  `json:"label"`
@@ -30110,6 +30202,9 @@ type MetricConfig struct {
 	TrueLabel *string            `json:"trueLabel,omitempty"`
 	Type      MetricConfigType   `json:"type"`
 }
+
+// MetricConfigCalculationType defines model for MetricConfig.CalculationType.
+type MetricConfigCalculationType string
 
 // MetricConfigContexts defines model for MetricConfig.Contexts.
 type MetricConfigContexts string
@@ -35679,7 +35774,16 @@ type PostV1AgentBuildJSONBody struct {
 	// Name Name of the agent
 	Name string `json:"name"`
 
-	// Voice Optional voice label for the hosted agent
+	// Tts Optional provider voice the hosted agent speaks with
+	Tts *struct {
+		// Provider Text-to-speech provider, for example ELEVENLABS. Not checked against a known list.
+		Provider string `json:"provider"`
+
+		// VoiceId The provider's id for the voice
+		VoiceId string `json:"voiceId"`
+	} `json:"tts,omitempty"`
+
+	// Voice Optional display name of the agent's voice. The authored prompt matches its delivery to it.
 	Voice *string `json:"voice,omitempty"`
 }
 
@@ -39563,6 +39667,32 @@ func (t *ConfigBundleResources0) FromMetricConfig(v MetricConfig) error {
 
 // MergeMetricConfig performs a merge with any union data inside the ConfigBundleResources0, using the provided MetricConfig
 func (t *ConfigBundleResources0) MergeMetricConfig(v MetricConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsApiCheckMetricConfig returns the union data inside the ConfigBundleResources0 as a ApiCheckMetricConfig
+func (t ConfigBundleResources0) AsApiCheckMetricConfig() (ApiCheckMetricConfig, error) {
+	var body ApiCheckMetricConfig
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromApiCheckMetricConfig overwrites any union data inside the ConfigBundleResources0 as the provided ApiCheckMetricConfig
+func (t *ConfigBundleResources0) FromApiCheckMetricConfig(v ApiCheckMetricConfig) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeApiCheckMetricConfig performs a merge with any union data inside the ConfigBundleResources0, using the provided ApiCheckMetricConfig
+func (t *ConfigBundleResources0) MergeApiCheckMetricConfig(v ApiCheckMetricConfig) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -44296,6 +44426,32 @@ func (t *ProjectConfig_Resources_Item) FromMetricConfig(v MetricConfig) error {
 
 // MergeMetricConfig performs a merge with any union data inside the ProjectConfig_Resources_Item, using the provided MetricConfig
 func (t *ProjectConfig_Resources_Item) MergeMetricConfig(v MetricConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsApiCheckMetricConfig returns the union data inside the ProjectConfig_Resources_Item as a ApiCheckMetricConfig
+func (t ProjectConfig_Resources_Item) AsApiCheckMetricConfig() (ApiCheckMetricConfig, error) {
+	var body ApiCheckMetricConfig
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromApiCheckMetricConfig overwrites any union data inside the ProjectConfig_Resources_Item as the provided ApiCheckMetricConfig
+func (t *ProjectConfig_Resources_Item) FromApiCheckMetricConfig(v ApiCheckMetricConfig) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeApiCheckMetricConfig performs a merge with any union data inside the ProjectConfig_Resources_Item, using the provided ApiCheckMetricConfig
+func (t *ProjectConfig_Resources_Item) MergeApiCheckMetricConfig(v ApiCheckMetricConfig) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err

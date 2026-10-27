@@ -2,6 +2,14 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.3.2, 2026-10-27
+
+- Added the `ApiCheckMetricConfig` type for HTTP request metrics in config bundles and projects, with `ApiCheckMetricConfigCalculationType` (`ApiCheckMetricConfigCalculationTypeHTTPREQUEST`) and `ApiCheckMetricConfigKind` (`ApiCheckMetricConfigKindMetric`). Both enums have `Valid` methods.
+- Added the `ApiCheckRequestConfig` type with `Url`, `Method`, `Headers` and `Body`, and `ApiCheckRequestConfigMethod` with `ApiCheckRequestConfigMethodGET` and `ApiCheckRequestConfigMethodPOST`.
+- `ConfigBundleResources0` and `ProjectConfig_Resources_Item` gained `AsApiCheckMetricConfig`, `FromApiCheckMetricConfig` and `MergeApiCheckMetricConfig`.
+- Added an optional `CalculationType` field (`*MetricConfigCalculationType`) to `MetricConfig`, with the value `MetricConfigCalculationTypeLLMJUDGE`.
+- Added an optional `Tts` field to `PostV1AgentBuildJSONBody` and `PostV1AgentBuildJSONRequestBody`, holding the text-to-speech `Provider` and `VoiceId`. The `Voice` field comment now describes a display name.
+
 ## v0.3.1, 2026-10-27
 
 - The development image is based on Debian (`golang:1.26.10-trixie`) instead of Alpine. Alpine keeps only the latest build of each package, so the exact pins broke the image build whenever a package was updated. System packages now come from the snapshot.debian.org date the base image was built from, which keeps them fixed for a given base image digest. jq 1.8.2, shellcheck 0.11.0 and shfmt 3.13.1 keep their versions, and Semgrep runs in its own virtual environment.

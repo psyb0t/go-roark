@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.4.0, 2026-10-28
+
+- Added agent draft and version endpoints. New `Client` and `ClientWithResponses` methods: `GetV1AgentByAgentIdDraft`, `PostV1AgentByAgentIdDraft`, `PatchV1AgentByAgentIdDraft`, `DeleteV1AgentByAgentIdDraft`, `PostV1AgentByAgentIdDraftPublish`, `GetV1AgentByAgentIdVersions`, `GetV1AgentByAgentIdVersionsByVersionId` and `PostV1AgentByAgentIdVersionsByVersionIdRestore`, each with `WithBody` and `WithResponse` variants where the client has them.
+- Added the request types `CreateAgentDraftInput`, `UpdateAgentDraftInput`, `PublishAgentDraftInput` and `RestoreAgentVersionInput`, and the response types `AgentVersionResponse`, `ListAgentVersionsResponse`, `AgentVersionHandoff`, `AgentVersionIssue`, `AgentVersionSubAgent` and `AgentVersionTool`, with their enum types and constants. `GetV1AgentByAgentIdVersionsParams` holds the list query parameters.
+- Added the same eight methods to `ClientInterface` and `ClientWithResponsesInterface`. Custom implementations or mocks of these interfaces must add them.
+- Added `PhoneNumberAutoPickInput` with `PhoneNumberAutoPickInputCountry` and `PhoneNumberAutoPickInputNumberType`, `CreatePhoneNumberInputCountry`, and the `Country` and `NumberType` query parameters on `GetV1PhoneNumberAvailableParams`.
+- Changed `CreatePhoneNumberInput.E164` from `string` to `*string`. Callers that set it must pass a pointer.
+- Changed `PostV1AgentBuildJSONBody.Tts` and `PostV1AgentBuildJSONRequestBody.Tts` so `Provider` is the new `PostV1AgentBuildJSONBodyTtsProvider` enum instead of `string`. Callers that assign a plain string variable must convert it.
+- Added an optional `AgentVersionId` field to each agent in the call responses `GetV1CallResponse.JSON200`, `GetV1CallByCallIdResponse.JSON200` and `PostV1CallResponse.JSON200`.
+
 ## v0.3.3, 2026-10-28
 
 - Updated Semgrep in the development image to 1.182.1 and refreshed its locked dependencies. certifi 2026.10.23 drops the emSign root CAs whose intermediate keys were compromised (GHSA-6q48-6c7w-9gw2).

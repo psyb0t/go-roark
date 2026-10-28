@@ -247,6 +247,312 @@ func (e AgentPromptResponseSource) Valid() bool {
 	}
 }
 
+// Defines values for AgentVersionHandoffHistory.
+const (
+	AgentVersionHandoffHistoryNONE   AgentVersionHandoffHistory = "NONE"
+	AgentVersionHandoffHistorySHARED AgentVersionHandoffHistory = "SHARED"
+)
+
+// Valid indicates whether the value is a known member of the AgentVersionHandoffHistory enum.
+func (e AgentVersionHandoffHistory) Valid() bool {
+	switch e {
+	case AgentVersionHandoffHistoryNONE:
+		return true
+	case AgentVersionHandoffHistorySHARED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentVersionResponseBackgroundNoise.
+const (
+	AgentVersionResponseBackgroundNoiseAIRPORT         AgentVersionResponseBackgroundNoise = "AIRPORT"
+	AgentVersionResponseBackgroundNoiseCHILDRENPLAYING AgentVersionResponseBackgroundNoise = "CHILDREN_PLAYING"
+	AgentVersionResponseBackgroundNoiseCITY            AgentVersionResponseBackgroundNoise = "CITY"
+	AgentVersionResponseBackgroundNoiseCOFFEESHOP      AgentVersionResponseBackgroundNoise = "COFFEE_SHOP"
+	AgentVersionResponseBackgroundNoiseCONSTRUCTION    AgentVersionResponseBackgroundNoise = "CONSTRUCTION"
+	AgentVersionResponseBackgroundNoiseCRYINGBABY      AgentVersionResponseBackgroundNoise = "CRYING_BABY"
+	AgentVersionResponseBackgroundNoiseDRIVING         AgentVersionResponseBackgroundNoise = "DRIVING"
+	AgentVersionResponseBackgroundNoiseLIBRARY         AgentVersionResponseBackgroundNoise = "LIBRARY"
+	AgentVersionResponseBackgroundNoiseNONE            AgentVersionResponseBackgroundNoise = "NONE"
+	AgentVersionResponseBackgroundNoiseOFFICE          AgentVersionResponseBackgroundNoise = "OFFICE"
+	AgentVersionResponseBackgroundNoiseTHUNDERSTORM    AgentVersionResponseBackgroundNoise = "THUNDERSTORM"
+	AgentVersionResponseBackgroundNoiseTRAIN           AgentVersionResponseBackgroundNoise = "TRAIN"
+)
+
+// Valid indicates whether the value is a known member of the AgentVersionResponseBackgroundNoise enum.
+func (e AgentVersionResponseBackgroundNoise) Valid() bool {
+	switch e {
+	case AgentVersionResponseBackgroundNoiseAIRPORT:
+		return true
+	case AgentVersionResponseBackgroundNoiseCHILDRENPLAYING:
+		return true
+	case AgentVersionResponseBackgroundNoiseCITY:
+		return true
+	case AgentVersionResponseBackgroundNoiseCOFFEESHOP:
+		return true
+	case AgentVersionResponseBackgroundNoiseCONSTRUCTION:
+		return true
+	case AgentVersionResponseBackgroundNoiseCRYINGBABY:
+		return true
+	case AgentVersionResponseBackgroundNoiseDRIVING:
+		return true
+	case AgentVersionResponseBackgroundNoiseLIBRARY:
+		return true
+	case AgentVersionResponseBackgroundNoiseNONE:
+		return true
+	case AgentVersionResponseBackgroundNoiseOFFICE:
+		return true
+	case AgentVersionResponseBackgroundNoiseTHUNDERSTORM:
+		return true
+	case AgentVersionResponseBackgroundNoiseTRAIN:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentVersionResponseCreatedByType.
+const (
+	AgentVersionResponseCreatedByTypeAPI         AgentVersionResponseCreatedByType = "API"
+	AgentVersionResponseCreatedByTypeAUTOIMPROVE AgentVersionResponseCreatedByType = "AUTOIMPROVE"
+	AgentVersionResponseCreatedByTypeCONFIG      AgentVersionResponseCreatedByType = "CONFIG"
+	AgentVersionResponseCreatedByTypeINTEGRATION AgentVersionResponseCreatedByType = "INTEGRATION"
+	AgentVersionResponseCreatedByTypeSYSTEM      AgentVersionResponseCreatedByType = "SYSTEM"
+	AgentVersionResponseCreatedByTypeUSER        AgentVersionResponseCreatedByType = "USER"
+)
+
+// Valid indicates whether the value is a known member of the AgentVersionResponseCreatedByType enum.
+func (e AgentVersionResponseCreatedByType) Valid() bool {
+	switch e {
+	case AgentVersionResponseCreatedByTypeAPI:
+		return true
+	case AgentVersionResponseCreatedByTypeAUTOIMPROVE:
+		return true
+	case AgentVersionResponseCreatedByTypeCONFIG:
+		return true
+	case AgentVersionResponseCreatedByTypeINTEGRATION:
+		return true
+	case AgentVersionResponseCreatedByTypeSYSTEM:
+		return true
+	case AgentVersionResponseCreatedByTypeUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentVersionResponseFirstMessageMode.
+const (
+	AgentVersionResponseFirstMessageModePLAYAUDIO     AgentVersionResponseFirstMessageMode = "PLAY_AUDIO"
+	AgentVersionResponseFirstMessageModeSPEAKTEXT     AgentVersionResponseFirstMessageMode = "SPEAK_TEXT"
+	AgentVersionResponseFirstMessageModeWAITFORCALLER AgentVersionResponseFirstMessageMode = "WAIT_FOR_CALLER"
+)
+
+// Valid indicates whether the value is a known member of the AgentVersionResponseFirstMessageMode enum.
+func (e AgentVersionResponseFirstMessageMode) Valid() bool {
+	switch e {
+	case AgentVersionResponseFirstMessageModePLAYAUDIO:
+		return true
+	case AgentVersionResponseFirstMessageModeSPEAKTEXT:
+		return true
+	case AgentVersionResponseFirstMessageModeWAITFORCALLER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentVersionResponseInterruptionMode.
+const (
+	AgentVersionResponseInterruptionModeALLOW AgentVersionResponseInterruptionMode = "ALLOW"
+	AgentVersionResponseInterruptionModeBLOCK AgentVersionResponseInterruptionMode = "BLOCK"
+)
+
+// Valid indicates whether the value is a known member of the AgentVersionResponseInterruptionMode enum.
+func (e AgentVersionResponseInterruptionMode) Valid() bool {
+	switch e {
+	case AgentVersionResponseInterruptionModeALLOW:
+		return true
+	case AgentVersionResponseInterruptionModeBLOCK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentVersionResponseLlmProvider.
+const (
+	AgentVersionResponseLlmProviderANTHROPIC  AgentVersionResponseLlmProvider = "ANTHROPIC"
+	AgentVersionResponseLlmProviderAWS        AgentVersionResponseLlmProvider = "AWS"
+	AgentVersionResponseLlmProviderELEVENLABS AgentVersionResponseLlmProvider = "ELEVENLABS"
+	AgentVersionResponseLlmProviderGOOGLE     AgentVersionResponseLlmProvider = "GOOGLE"
+	AgentVersionResponseLlmProviderOPENAI     AgentVersionResponseLlmProvider = "OPENAI"
+	AgentVersionResponseLlmProviderULTRAVOX   AgentVersionResponseLlmProvider = "ULTRAVOX"
+	AgentVersionResponseLlmProviderXAI        AgentVersionResponseLlmProvider = "XAI"
+)
+
+// Valid indicates whether the value is a known member of the AgentVersionResponseLlmProvider enum.
+func (e AgentVersionResponseLlmProvider) Valid() bool {
+	switch e {
+	case AgentVersionResponseLlmProviderANTHROPIC:
+		return true
+	case AgentVersionResponseLlmProviderAWS:
+		return true
+	case AgentVersionResponseLlmProviderELEVENLABS:
+		return true
+	case AgentVersionResponseLlmProviderGOOGLE:
+		return true
+	case AgentVersionResponseLlmProviderOPENAI:
+		return true
+	case AgentVersionResponseLlmProviderULTRAVOX:
+		return true
+	case AgentVersionResponseLlmProviderXAI:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentVersionResponseModalities.
+const (
+	AgentVersionResponseModalitiesCall AgentVersionResponseModalities = "call"
+	AgentVersionResponseModalitiesChat AgentVersionResponseModalities = "chat"
+)
+
+// Valid indicates whether the value is a known member of the AgentVersionResponseModalities enum.
+func (e AgentVersionResponseModalities) Valid() bool {
+	switch e {
+	case AgentVersionResponseModalitiesCall:
+		return true
+	case AgentVersionResponseModalitiesChat:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentVersionResponsePublishedByType.
+const (
+	AgentVersionResponsePublishedByTypeAPI         AgentVersionResponsePublishedByType = "API"
+	AgentVersionResponsePublishedByTypeAUTOIMPROVE AgentVersionResponsePublishedByType = "AUTOIMPROVE"
+	AgentVersionResponsePublishedByTypeCONFIG      AgentVersionResponsePublishedByType = "CONFIG"
+	AgentVersionResponsePublishedByTypeINTEGRATION AgentVersionResponsePublishedByType = "INTEGRATION"
+	AgentVersionResponsePublishedByTypeSYSTEM      AgentVersionResponsePublishedByType = "SYSTEM"
+	AgentVersionResponsePublishedByTypeUSER        AgentVersionResponsePublishedByType = "USER"
+)
+
+// Valid indicates whether the value is a known member of the AgentVersionResponsePublishedByType enum.
+func (e AgentVersionResponsePublishedByType) Valid() bool {
+	switch e {
+	case AgentVersionResponsePublishedByTypeAPI:
+		return true
+	case AgentVersionResponsePublishedByTypeAUTOIMPROVE:
+		return true
+	case AgentVersionResponsePublishedByTypeCONFIG:
+		return true
+	case AgentVersionResponsePublishedByTypeINTEGRATION:
+		return true
+	case AgentVersionResponsePublishedByTypeSYSTEM:
+		return true
+	case AgentVersionResponsePublishedByTypeUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentVersionResponseStatus.
+const (
+	AgentVersionResponseStatusDISCARDED AgentVersionResponseStatus = "DISCARDED"
+	AgentVersionResponseStatusDRAFT     AgentVersionResponseStatus = "DRAFT"
+	AgentVersionResponseStatusPUBLISHED AgentVersionResponseStatus = "PUBLISHED"
+)
+
+// Valid indicates whether the value is a known member of the AgentVersionResponseStatus enum.
+func (e AgentVersionResponseStatus) Valid() bool {
+	switch e {
+	case AgentVersionResponseStatusDISCARDED:
+		return true
+	case AgentVersionResponseStatusDRAFT:
+		return true
+	case AgentVersionResponseStatusPUBLISHED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentVersionResponseSttProvider.
+const (
+	AgentVersionResponseSttProviderASSEMBLYAI    AgentVersionResponseSttProvider = "ASSEMBLYAI"
+	AgentVersionResponseSttProviderDEEPGRAM      AgentVersionResponseSttProvider = "DEEPGRAM"
+	AgentVersionResponseSttProviderELEVENLABS    AgentVersionResponseSttProvider = "ELEVENLABS"
+	AgentVersionResponseSttProviderOPENAIWHISPER AgentVersionResponseSttProvider = "OPENAI_WHISPER"
+	AgentVersionResponseSttProviderSPEECHMATICS  AgentVersionResponseSttProvider = "SPEECHMATICS"
+)
+
+// Valid indicates whether the value is a known member of the AgentVersionResponseSttProvider enum.
+func (e AgentVersionResponseSttProvider) Valid() bool {
+	switch e {
+	case AgentVersionResponseSttProviderASSEMBLYAI:
+		return true
+	case AgentVersionResponseSttProviderDEEPGRAM:
+		return true
+	case AgentVersionResponseSttProviderELEVENLABS:
+		return true
+	case AgentVersionResponseSttProviderOPENAIWHISPER:
+		return true
+	case AgentVersionResponseSttProviderSPEECHMATICS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentVersionResponseSttTurnDetection.
+const (
+	AgentVersionResponseSttTurnDetectionPipeline AgentVersionResponseSttTurnDetection = "pipeline"
+	AgentVersionResponseSttTurnDetectionProvider AgentVersionResponseSttTurnDetection = "provider"
+)
+
+// Valid indicates whether the value is a known member of the AgentVersionResponseSttTurnDetection enum.
+func (e AgentVersionResponseSttTurnDetection) Valid() bool {
+	switch e {
+	case AgentVersionResponseSttTurnDetectionPipeline:
+		return true
+	case AgentVersionResponseSttTurnDetectionProvider:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentVersionSubAgentTtsProvider.
+const (
+	AgentVersionSubAgentTtsProviderCARTESIA   AgentVersionSubAgentTtsProvider = "CARTESIA"
+	AgentVersionSubAgentTtsProviderELEVENLABS AgentVersionSubAgentTtsProvider = "ELEVENLABS"
+	AgentVersionSubAgentTtsProviderOPENAI     AgentVersionSubAgentTtsProvider = "OPENAI"
+	AgentVersionSubAgentTtsProviderRIME       AgentVersionSubAgentTtsProvider = "RIME"
+)
+
+// Valid indicates whether the value is a known member of the AgentVersionSubAgentTtsProvider enum.
+func (e AgentVersionSubAgentTtsProvider) Valid() bool {
+	switch e {
+	case AgentVersionSubAgentTtsProviderCARTESIA:
+		return true
+	case AgentVersionSubAgentTtsProviderELEVENLABS:
+		return true
+	case AgentVersionSubAgentTtsProviderOPENAI:
+		return true
+	case AgentVersionSubAgentTtsProviderRIME:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AlertConfigKind.
 const (
 	AlertConfigKindAlert AlertConfigKind = "alert"
@@ -3187,6 +3493,24 @@ func (e CreateOrgProjectInputDataStorageRegion) Valid() bool {
 	}
 }
 
+// Defines values for CreatePhoneNumberInputCountry.
+const (
+	CreatePhoneNumberInputCountryCA CreatePhoneNumberInputCountry = "CA"
+	CreatePhoneNumberInputCountryUS CreatePhoneNumberInputCountry = "US"
+)
+
+// Valid indicates whether the value is a known member of the CreatePhoneNumberInputCountry enum.
+func (e CreatePhoneNumberInputCountry) Valid() bool {
+	switch e {
+	case CreatePhoneNumberInputCountryCA:
+		return true
+	case CreatePhoneNumberInputCountryUS:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CreateRunPlanFromConfigComparisonProperty.
 const (
 	CreateRunPlanFromConfigComparisonPropertyACCENT                CreateRunPlanFromConfigComparisonProperty = "ACCENT"
@@ -4529,6 +4853,7 @@ const (
 	DashboardFilterConfigTypeCALLPROPERTY   DashboardFilterConfigType = "CALL_PROPERTY"
 	DashboardFilterConfigTypeDATASET        DashboardFilterConfigType = "DATASET"
 	DashboardFilterConfigTypeMETRICPROPERTY DashboardFilterConfigType = "METRIC_PROPERTY"
+	DashboardFilterConfigTypeMETRICVALUE    DashboardFilterConfigType = "METRIC_VALUE"
 	DashboardFilterConfigTypeMODALITY       DashboardFilterConfigType = "MODALITY"
 )
 
@@ -4544,6 +4869,8 @@ func (e DashboardFilterConfigType) Valid() bool {
 	case DashboardFilterConfigTypeDATASET:
 		return true
 	case DashboardFilterConfigTypeMETRICPROPERTY:
+		return true
+	case DashboardFilterConfigTypeMETRICVALUE:
 		return true
 	case DashboardFilterConfigTypeMODALITY:
 		return true
@@ -12094,6 +12421,42 @@ func (e PhoneNumberAllowanceResponsePlan) Valid() bool {
 	}
 }
 
+// Defines values for PhoneNumberAutoPickInputCountry.
+const (
+	PhoneNumberAutoPickInputCountryCA PhoneNumberAutoPickInputCountry = "CA"
+	PhoneNumberAutoPickInputCountryUS PhoneNumberAutoPickInputCountry = "US"
+)
+
+// Valid indicates whether the value is a known member of the PhoneNumberAutoPickInputCountry enum.
+func (e PhoneNumberAutoPickInputCountry) Valid() bool {
+	switch e {
+	case PhoneNumberAutoPickInputCountryCA:
+		return true
+	case PhoneNumberAutoPickInputCountryUS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PhoneNumberAutoPickInputNumberType.
+const (
+	PhoneNumberAutoPickInputNumberTypeLOCAL    PhoneNumberAutoPickInputNumberType = "LOCAL"
+	PhoneNumberAutoPickInputNumberTypeTOLLFREE PhoneNumberAutoPickInputNumberType = "TOLL_FREE"
+)
+
+// Valid indicates whether the value is a known member of the PhoneNumberAutoPickInputNumberType enum.
+func (e PhoneNumberAutoPickInputNumberType) Valid() bool {
+	switch e {
+	case PhoneNumberAutoPickInputNumberTypeLOCAL:
+		return true
+	case PhoneNumberAutoPickInputNumberTypeTOLLFREE:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ProjectConfigCategory.
 const (
 	ProjectConfigCategoryAUTOMOTIVE  ProjectConfigCategory = "AUTOMOTIVE"
@@ -16105,6 +16468,261 @@ func (e TranscriptEntryCustomerRole) Valid() bool {
 	}
 }
 
+// Defines values for UpdateAgentDraftInputSettingsBackgroundNoise.
+const (
+	UpdateAgentDraftInputSettingsBackgroundNoiseAIRPORT         UpdateAgentDraftInputSettingsBackgroundNoise = "AIRPORT"
+	UpdateAgentDraftInputSettingsBackgroundNoiseCHILDRENPLAYING UpdateAgentDraftInputSettingsBackgroundNoise = "CHILDREN_PLAYING"
+	UpdateAgentDraftInputSettingsBackgroundNoiseCITY            UpdateAgentDraftInputSettingsBackgroundNoise = "CITY"
+	UpdateAgentDraftInputSettingsBackgroundNoiseCOFFEESHOP      UpdateAgentDraftInputSettingsBackgroundNoise = "COFFEE_SHOP"
+	UpdateAgentDraftInputSettingsBackgroundNoiseCONSTRUCTION    UpdateAgentDraftInputSettingsBackgroundNoise = "CONSTRUCTION"
+	UpdateAgentDraftInputSettingsBackgroundNoiseCRYINGBABY      UpdateAgentDraftInputSettingsBackgroundNoise = "CRYING_BABY"
+	UpdateAgentDraftInputSettingsBackgroundNoiseDRIVING         UpdateAgentDraftInputSettingsBackgroundNoise = "DRIVING"
+	UpdateAgentDraftInputSettingsBackgroundNoiseLIBRARY         UpdateAgentDraftInputSettingsBackgroundNoise = "LIBRARY"
+	UpdateAgentDraftInputSettingsBackgroundNoiseNONE            UpdateAgentDraftInputSettingsBackgroundNoise = "NONE"
+	UpdateAgentDraftInputSettingsBackgroundNoiseOFFICE          UpdateAgentDraftInputSettingsBackgroundNoise = "OFFICE"
+	UpdateAgentDraftInputSettingsBackgroundNoiseTHUNDERSTORM    UpdateAgentDraftInputSettingsBackgroundNoise = "THUNDERSTORM"
+	UpdateAgentDraftInputSettingsBackgroundNoiseTRAIN           UpdateAgentDraftInputSettingsBackgroundNoise = "TRAIN"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsBackgroundNoise enum.
+func (e UpdateAgentDraftInputSettingsBackgroundNoise) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsBackgroundNoiseAIRPORT:
+		return true
+	case UpdateAgentDraftInputSettingsBackgroundNoiseCHILDRENPLAYING:
+		return true
+	case UpdateAgentDraftInputSettingsBackgroundNoiseCITY:
+		return true
+	case UpdateAgentDraftInputSettingsBackgroundNoiseCOFFEESHOP:
+		return true
+	case UpdateAgentDraftInputSettingsBackgroundNoiseCONSTRUCTION:
+		return true
+	case UpdateAgentDraftInputSettingsBackgroundNoiseCRYINGBABY:
+		return true
+	case UpdateAgentDraftInputSettingsBackgroundNoiseDRIVING:
+		return true
+	case UpdateAgentDraftInputSettingsBackgroundNoiseLIBRARY:
+		return true
+	case UpdateAgentDraftInputSettingsBackgroundNoiseNONE:
+		return true
+	case UpdateAgentDraftInputSettingsBackgroundNoiseOFFICE:
+		return true
+	case UpdateAgentDraftInputSettingsBackgroundNoiseTHUNDERSTORM:
+		return true
+	case UpdateAgentDraftInputSettingsBackgroundNoiseTRAIN:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsFirstMessageMode.
+const (
+	UpdateAgentDraftInputSettingsFirstMessageModePLAYAUDIO     UpdateAgentDraftInputSettingsFirstMessageMode = "PLAY_AUDIO"
+	UpdateAgentDraftInputSettingsFirstMessageModeSPEAKTEXT     UpdateAgentDraftInputSettingsFirstMessageMode = "SPEAK_TEXT"
+	UpdateAgentDraftInputSettingsFirstMessageModeWAITFORCALLER UpdateAgentDraftInputSettingsFirstMessageMode = "WAIT_FOR_CALLER"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsFirstMessageMode enum.
+func (e UpdateAgentDraftInputSettingsFirstMessageMode) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsFirstMessageModePLAYAUDIO:
+		return true
+	case UpdateAgentDraftInputSettingsFirstMessageModeSPEAKTEXT:
+		return true
+	case UpdateAgentDraftInputSettingsFirstMessageModeWAITFORCALLER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsInterruptionMode.
+const (
+	UpdateAgentDraftInputSettingsInterruptionModeALLOW UpdateAgentDraftInputSettingsInterruptionMode = "ALLOW"
+	UpdateAgentDraftInputSettingsInterruptionModeBLOCK UpdateAgentDraftInputSettingsInterruptionMode = "BLOCK"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsInterruptionMode enum.
+func (e UpdateAgentDraftInputSettingsInterruptionMode) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsInterruptionModeALLOW:
+		return true
+	case UpdateAgentDraftInputSettingsInterruptionModeBLOCK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsLlmProvider.
+const (
+	UpdateAgentDraftInputSettingsLlmProviderANTHROPIC  UpdateAgentDraftInputSettingsLlmProvider = "ANTHROPIC"
+	UpdateAgentDraftInputSettingsLlmProviderAWS        UpdateAgentDraftInputSettingsLlmProvider = "AWS"
+	UpdateAgentDraftInputSettingsLlmProviderELEVENLABS UpdateAgentDraftInputSettingsLlmProvider = "ELEVENLABS"
+	UpdateAgentDraftInputSettingsLlmProviderGOOGLE     UpdateAgentDraftInputSettingsLlmProvider = "GOOGLE"
+	UpdateAgentDraftInputSettingsLlmProviderOPENAI     UpdateAgentDraftInputSettingsLlmProvider = "OPENAI"
+	UpdateAgentDraftInputSettingsLlmProviderULTRAVOX   UpdateAgentDraftInputSettingsLlmProvider = "ULTRAVOX"
+	UpdateAgentDraftInputSettingsLlmProviderXAI        UpdateAgentDraftInputSettingsLlmProvider = "XAI"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsLlmProvider enum.
+func (e UpdateAgentDraftInputSettingsLlmProvider) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsLlmProviderANTHROPIC:
+		return true
+	case UpdateAgentDraftInputSettingsLlmProviderAWS:
+		return true
+	case UpdateAgentDraftInputSettingsLlmProviderELEVENLABS:
+		return true
+	case UpdateAgentDraftInputSettingsLlmProviderGOOGLE:
+		return true
+	case UpdateAgentDraftInputSettingsLlmProviderOPENAI:
+		return true
+	case UpdateAgentDraftInputSettingsLlmProviderULTRAVOX:
+		return true
+	case UpdateAgentDraftInputSettingsLlmProviderXAI:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsModalities.
+const (
+	UpdateAgentDraftInputSettingsModalitiesCall UpdateAgentDraftInputSettingsModalities = "call"
+	UpdateAgentDraftInputSettingsModalitiesChat UpdateAgentDraftInputSettingsModalities = "chat"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsModalities enum.
+func (e UpdateAgentDraftInputSettingsModalities) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsModalitiesCall:
+		return true
+	case UpdateAgentDraftInputSettingsModalitiesChat:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsSttProvider.
+const (
+	UpdateAgentDraftInputSettingsSttProviderASSEMBLYAI    UpdateAgentDraftInputSettingsSttProvider = "ASSEMBLYAI"
+	UpdateAgentDraftInputSettingsSttProviderDEEPGRAM      UpdateAgentDraftInputSettingsSttProvider = "DEEPGRAM"
+	UpdateAgentDraftInputSettingsSttProviderELEVENLABS    UpdateAgentDraftInputSettingsSttProvider = "ELEVENLABS"
+	UpdateAgentDraftInputSettingsSttProviderOPENAIWHISPER UpdateAgentDraftInputSettingsSttProvider = "OPENAI_WHISPER"
+	UpdateAgentDraftInputSettingsSttProviderSPEECHMATICS  UpdateAgentDraftInputSettingsSttProvider = "SPEECHMATICS"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSttProvider enum.
+func (e UpdateAgentDraftInputSettingsSttProvider) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsSttProviderASSEMBLYAI:
+		return true
+	case UpdateAgentDraftInputSettingsSttProviderDEEPGRAM:
+		return true
+	case UpdateAgentDraftInputSettingsSttProviderELEVENLABS:
+		return true
+	case UpdateAgentDraftInputSettingsSttProviderOPENAIWHISPER:
+		return true
+	case UpdateAgentDraftInputSettingsSttProviderSPEECHMATICS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsSttTurnDetection.
+const (
+	UpdateAgentDraftInputSettingsSttTurnDetectionPipeline UpdateAgentDraftInputSettingsSttTurnDetection = "pipeline"
+	UpdateAgentDraftInputSettingsSttTurnDetectionProvider UpdateAgentDraftInputSettingsSttTurnDetection = "provider"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSttTurnDetection enum.
+func (e UpdateAgentDraftInputSettingsSttTurnDetection) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsSttTurnDetectionPipeline:
+		return true
+	case UpdateAgentDraftInputSettingsSttTurnDetectionProvider:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsSubAgentsHandoffsHistory.
+const (
+	UpdateAgentDraftInputSettingsSubAgentsHandoffsHistoryNONE   UpdateAgentDraftInputSettingsSubAgentsHandoffsHistory = "NONE"
+	UpdateAgentDraftInputSettingsSubAgentsHandoffsHistorySHARED UpdateAgentDraftInputSettingsSubAgentsHandoffsHistory = "SHARED"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsHandoffsHistory enum.
+func (e UpdateAgentDraftInputSettingsSubAgentsHandoffsHistory) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsSubAgentsHandoffsHistoryNONE:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsHandoffsHistorySHARED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0.
+const (
+	UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0Main UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0 = "main"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0 enum.
+func (e UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0Main:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsSubAgentsKey0.
+const (
+	UpdateAgentDraftInputSettingsSubAgentsKey0Main UpdateAgentDraftInputSettingsSubAgentsKey0 = "main"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsKey0 enum.
+func (e UpdateAgentDraftInputSettingsSubAgentsKey0) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsSubAgentsKey0Main:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsSubAgentsTtsProvider.
+const (
+	UpdateAgentDraftInputSettingsSubAgentsTtsProviderCARTESIA   UpdateAgentDraftInputSettingsSubAgentsTtsProvider = "CARTESIA"
+	UpdateAgentDraftInputSettingsSubAgentsTtsProviderELEVENLABS UpdateAgentDraftInputSettingsSubAgentsTtsProvider = "ELEVENLABS"
+	UpdateAgentDraftInputSettingsSubAgentsTtsProviderOPENAI     UpdateAgentDraftInputSettingsSubAgentsTtsProvider = "OPENAI"
+	UpdateAgentDraftInputSettingsSubAgentsTtsProviderRIME       UpdateAgentDraftInputSettingsSubAgentsTtsProvider = "RIME"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsTtsProvider enum.
+func (e UpdateAgentDraftInputSettingsSubAgentsTtsProvider) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsSubAgentsTtsProviderCARTESIA:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsTtsProviderELEVENLABS:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsTtsProviderOPENAI:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsTtsProviderRIME:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateAgentEndpointInputOutboundDialType.
 const (
 	UpdateAgentEndpointInputOutboundDialTypeHTTPREQUEST UpdateAgentEndpointInputOutboundDialType = "HTTP_REQUEST"
@@ -17986,6 +18604,30 @@ func (e WriteManagedConfigRequestChannel) Valid() bool {
 	case WriteManagedConfigRequestChannelProduction:
 		return true
 	case WriteManagedConfigRequestChannelStaging:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1AgentBuildJSONBodyTtsProvider.
+const (
+	PostV1AgentBuildJSONBodyTtsProviderCARTESIA   PostV1AgentBuildJSONBodyTtsProvider = "CARTESIA"
+	PostV1AgentBuildJSONBodyTtsProviderELEVENLABS PostV1AgentBuildJSONBodyTtsProvider = "ELEVENLABS"
+	PostV1AgentBuildJSONBodyTtsProviderOPENAI     PostV1AgentBuildJSONBodyTtsProvider = "OPENAI"
+	PostV1AgentBuildJSONBodyTtsProviderRIME       PostV1AgentBuildJSONBodyTtsProvider = "RIME"
+)
+
+// Valid indicates whether the value is a known member of the PostV1AgentBuildJSONBodyTtsProvider enum.
+func (e PostV1AgentBuildJSONBodyTtsProvider) Valid() bool {
+	switch e {
+	case PostV1AgentBuildJSONBodyTtsProviderCARTESIA:
+		return true
+	case PostV1AgentBuildJSONBodyTtsProviderELEVENLABS:
+		return true
+	case PostV1AgentBuildJSONBodyTtsProviderOPENAI:
+		return true
+	case PostV1AgentBuildJSONBodyTtsProviderRIME:
 		return true
 	default:
 		return false
@@ -22735,6 +23377,42 @@ func (e PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages) Valid
 	}
 }
 
+// Defines values for GetV1PhoneNumberAvailableParamsCountry.
+const (
+	GetV1PhoneNumberAvailableParamsCountryCA GetV1PhoneNumberAvailableParamsCountry = "CA"
+	GetV1PhoneNumberAvailableParamsCountryUS GetV1PhoneNumberAvailableParamsCountry = "US"
+)
+
+// Valid indicates whether the value is a known member of the GetV1PhoneNumberAvailableParamsCountry enum.
+func (e GetV1PhoneNumberAvailableParamsCountry) Valid() bool {
+	switch e {
+	case GetV1PhoneNumberAvailableParamsCountryCA:
+		return true
+	case GetV1PhoneNumberAvailableParamsCountryUS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1PhoneNumberAvailableParamsNumberType.
+const (
+	GetV1PhoneNumberAvailableParamsNumberTypeLOCAL    GetV1PhoneNumberAvailableParamsNumberType = "LOCAL"
+	GetV1PhoneNumberAvailableParamsNumberTypeTOLLFREE GetV1PhoneNumberAvailableParamsNumberType = "TOLL_FREE"
+)
+
+// Valid indicates whether the value is a known member of the GetV1PhoneNumberAvailableParamsNumberType enum.
+func (e GetV1PhoneNumberAvailableParamsNumberType) Valid() bool {
+	switch e {
+	case GetV1PhoneNumberAvailableParamsNumberTypeLOCAL:
+		return true
+	case GetV1PhoneNumberAvailableParamsNumberTypeTOLLFREE:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState.
 const (
 	GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsStateCompleted  GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState = "completed"
@@ -22994,6 +23672,210 @@ type AgentPromptVersionResponse struct {
 
 	// VersionNumber Version number: 1-based and increasing.
 	VersionNumber int `json:"versionNumber"`
+}
+
+// AgentVersionHandoff defines model for AgentVersionHandoff.
+type AgentVersionHandoff struct {
+	// Description When to hand off, in the words the model is given.
+	Description string `json:"description"`
+
+	// History SHARED: the new speaker hears the conversation so far. NONE: it starts fresh.
+	History AgentVersionHandoffHistory `json:"history"`
+
+	// Note Added to the new speaker's prompt at the handoff, such as a warm-transfer brief.
+	Note *string `json:"note"`
+
+	// Once At most once per call.
+	Once bool `json:"once"`
+
+	// To The key of the sub-agent that takes over; `main` for the main agent.
+	To string `json:"to"`
+}
+
+// AgentVersionHandoffHistory SHARED: the new speaker hears the conversation so far. NONE: it starts fresh.
+type AgentVersionHandoffHistory string
+
+// AgentVersionIssue Something that stops a version from running.
+type AgentVersionIssue struct {
+	// Field The setting the issue is about.
+	Field   string `json:"field"`
+	Message string `json:"message"`
+}
+
+// AgentVersionResponse One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+type AgentVersionResponse struct {
+	AgentId openapi_types.UUID `json:"agentId"`
+
+	// BackgroundNoise A background preset.
+	BackgroundNoise *AgentVersionResponseBackgroundNoise `json:"backgroundNoise"`
+
+	// BackgroundNoiseUrl A custom background recording, instead of a preset.
+	BackgroundNoiseUrl *string `json:"backgroundNoiseUrl"`
+
+	// BackgroundNoiseVolume 0 to 1.
+	BackgroundNoiseVolume *float64 `json:"backgroundNoiseVolume"`
+
+	// BaseVersionId The published version a draft started from.
+	BaseVersionId                *openapi_types.UUID `json:"baseVersionId"`
+	CallMaxDurationSeconds       *int                `json:"callMaxDurationSeconds"`
+	CallSilenceTimeoutSeconds    *int                `json:"callSilenceTimeoutSeconds"`
+	ChatInactivityTimeoutSeconds *int                `json:"chatInactivityTimeoutSeconds"`
+	ChatMaxDurationSeconds       *int                `json:"chatMaxDurationSeconds"`
+
+	// CreatedAt ISO 8601.
+	CreatedAt             string                            `json:"createdAt"`
+	CreatedById           *openapi_types.UUID               `json:"createdById"`
+	CreatedByType         AgentVersionResponseCreatedByType `json:"createdByType"`
+	EndCallGoodbyeMessage *string                           `json:"endCallGoodbyeMessage"`
+
+	// EndDetectionPhrases Phrases that end the call when the caller says them, matched anywhere in what they say.
+	EndDetectionPhrases []string `json:"endDetectionPhrases"`
+
+	// EndDetectionReasons When the agent may decide to end the call itself.
+	EndDetectionReasons []string `json:"endDetectionReasons"`
+
+	// FirstMessage What the agent says first, with firstMessageMode SPEAK_TEXT.
+	FirstMessage *string `json:"firstMessage"`
+
+	// FirstMessageAudioUrl The audio a call opens with, with firstMessageMode PLAY_AUDIO.
+	FirstMessageAudioUrl *string                               `json:"firstMessageAudioUrl"`
+	FirstMessageMode     *AgentVersionResponseFirstMessageMode `json:"firstMessageMode"`
+	Id                   openapi_types.UUID                    `json:"id"`
+	IdleMaxCount         *int                                  `json:"idleMaxCount"`
+	IdleMessages         []string                              `json:"idleMessages"`
+	IdleTimeoutSeconds   *int                                  `json:"idleTimeoutSeconds"`
+	InterruptionMode     *AgentVersionResponseInterruptionMode `json:"interruptionMode"`
+
+	// Issues Why this version cannot run; empty when it can be published. Returned when reading one version.
+	Issues *[]AgentVersionIssue `json:"issues,omitempty"`
+
+	// Language ISO 639-1, e.g. en.
+	Language *string `json:"language"`
+
+	// LlmBackendModel OpenAI Live models only: the text model they delegate to.
+	LlmBackendModel *string `json:"llmBackendModel"`
+	LlmMaxTokens    *int    `json:"llmMaxTokens"`
+
+	// LlmModel Any model id the provider accepts. One model serves every speaker.
+	LlmModel    *string                          `json:"llmModel"`
+	LlmProvider *AgentVersionResponseLlmProvider `json:"llmProvider"`
+
+	// LlmTemperature 0 to 2.
+	LlmTemperature *float64 `json:"llmTemperature"`
+
+	// LlmVoice Speech-to-speech models only: the model's own voice.
+	LlmVoice *string `json:"llmVoice"`
+
+	// Modalities Whether the agent takes calls, chats, or both.
+	Modalities []AgentVersionResponseModalities `json:"modalities"`
+
+	// PublishedAt ISO 8601.
+	PublishedAt     *string                              `json:"publishedAt"`
+	PublishedById   *openapi_types.UUID                  `json:"publishedById"`
+	PublishedByType *AgentVersionResponsePublishedByType `json:"publishedByType"`
+
+	// RestoredFromVersionId Set when this version restores an older one.
+	RestoredFromVersionId *openapi_types.UUID `json:"restoredFromVersionId"`
+
+	// Revision Increases with every edit to a draft. Send it back as expectedRevision when you publish.
+	Revision int `json:"revision"`
+
+	// Status DRAFT while being edited, PUBLISHED once it has been live.
+	Status           AgentVersionResponseStatus `json:"status"`
+	SttEndpointingMs *int                       `json:"sttEndpointingMs"`
+
+	// SttKeyterms Words and phrases the transcriber should listen for.
+	SttKeyterms      []string                              `json:"sttKeyterms"`
+	SttModel         *string                               `json:"sttModel"`
+	SttProvider      *AgentVersionResponseSttProvider      `json:"sttProvider"`
+	SttSmartFormat   *bool                                 `json:"sttSmartFormat"`
+	SttTurnDetection *AgentVersionResponseSttTurnDetection `json:"sttTurnDetection"`
+
+	// SubAgents The main agent (key `main`) first, then the sub-agents it can hand the call to.
+	SubAgents []AgentVersionSubAgent `json:"subAgents"`
+
+	// Summary What changed, written on publish.
+	Summary *string `json:"summary"`
+
+	// UpdatedAt ISO 8601.
+	UpdatedAt    string   `json:"updatedAt"`
+	VadStartSecs *float64 `json:"vadStartSecs"`
+	VadStopSecs  *float64 `json:"vadStopSecs"`
+
+	// VersionNumber v1, v2, ... assigned on publish; null on a draft.
+	VersionNumber *int `json:"versionNumber"`
+}
+
+// AgentVersionResponseBackgroundNoise A background preset.
+type AgentVersionResponseBackgroundNoise string
+
+// AgentVersionResponseCreatedByType defines model for AgentVersionResponse.CreatedByType.
+type AgentVersionResponseCreatedByType string
+
+// AgentVersionResponseFirstMessageMode defines model for AgentVersionResponse.FirstMessageMode.
+type AgentVersionResponseFirstMessageMode string
+
+// AgentVersionResponseInterruptionMode defines model for AgentVersionResponse.InterruptionMode.
+type AgentVersionResponseInterruptionMode string
+
+// AgentVersionResponseLlmProvider defines model for AgentVersionResponse.LlmProvider.
+type AgentVersionResponseLlmProvider string
+
+// AgentVersionResponseModalities defines model for AgentVersionResponse.Modalities.
+type AgentVersionResponseModalities string
+
+// AgentVersionResponsePublishedByType defines model for AgentVersionResponse.PublishedByType.
+type AgentVersionResponsePublishedByType string
+
+// AgentVersionResponseStatus DRAFT while being edited, PUBLISHED once it has been live.
+type AgentVersionResponseStatus string
+
+// AgentVersionResponseSttProvider defines model for AgentVersionResponse.SttProvider.
+type AgentVersionResponseSttProvider string
+
+// AgentVersionResponseSttTurnDetection defines model for AgentVersionResponse.SttTurnDetection.
+type AgentVersionResponseSttTurnDetection string
+
+// AgentVersionSubAgent A speaker in the conversation. On a sub-agent, null voice settings use the main agent's.
+type AgentVersionSubAgent struct {
+	Handoffs []AgentVersionHandoff `json:"handoffs"`
+
+	// IsInitial The call opens as this sub-agent instead of the main agent.
+	IsInitial bool `json:"isInitial"`
+
+	// Key `main` for the main agent; otherwise letters, digits, `_` or `-`.
+	Key string `json:"key"`
+
+	// Name How the agent refers to this speaker.
+	Name *string `json:"name"`
+
+	// SystemPrompt The speaker's prompt.
+	SystemPrompt *string                          `json:"systemPrompt"`
+	Tools        []AgentVersionTool               `json:"tools"`
+	TtsModel     *string                          `json:"ttsModel"`
+	TtsProvider  *AgentVersionSubAgentTtsProvider `json:"ttsProvider"`
+
+	// TtsSimilarityBoost 0 to 1, ElevenLabs.
+	TtsSimilarityBoost *float64 `json:"ttsSimilarityBoost"`
+
+	// TtsSpeed 0.5 to 2.
+	TtsSpeed *float64 `json:"ttsSpeed"`
+
+	// TtsStability 0 to 1, ElevenLabs.
+	TtsStability *float64 `json:"ttsStability"`
+
+	// TtsVoiceId Any voice id the provider accepts, including your own voices.
+	TtsVoiceId *string `json:"ttsVoiceId"`
+}
+
+// AgentVersionSubAgentTtsProvider defines model for AgentVersionSubAgent.TtsProvider.
+type AgentVersionSubAgentTtsProvider string
+
+// AgentVersionTool defines model for AgentVersionTool.
+type AgentVersionTool struct {
+	// PinnedVersion The tool version the agent runs; null runs the tool's latest declared version.
+	PinnedVersion    *int               `json:"pinnedVersion"`
+	ToolDefinitionId openapi_types.UUID `json:"toolDefinitionId"`
 }
 
 // AlertActions defines model for AlertActions.
@@ -23689,6 +24571,9 @@ type AutoimproveTextInput struct {
 
 // AvailablePhoneNumberResponse A number the carrier has for sale
 type AvailablePhoneNumberResponse struct {
+	// BestEffort True when the area code asked for had no numbers and the carrier offered this nearby one instead
+	BestEffort bool `json:"bestEffort"`
+
 	// E164 The number in E.164 format
 	//
 	// Example: +14155550123
@@ -24816,6 +25701,12 @@ type CostBreakdownItemSource string
 // CostBreakdownItemSurface SIMULATION or POST_CALL.
 type CostBreakdownItemSurface string
 
+// CreateAgentDraftInput defines model for CreateAgentDraftInput.
+type CreateAgentDraftInput struct {
+	// FromVersionId Start from this published version instead of the live one.
+	FromVersionId *openapi_types.UUID `json:"fromVersionId,omitempty"`
+}
+
 // CreateAgentEndpointInput Input for creating an agent endpoint
 type CreateAgentEndpointInput struct {
 	// AgentId Agent ID to associate this endpoint with
@@ -25219,10 +26110,18 @@ type CreatePhoneNumberInput struct {
 	// AgentId The agent to assign the number to
 	AgentId *openapi_types.UUID `json:"agentId,omitempty"`
 
-	// E164 The number to buy, in E.164 format, from a search result
+	// AutoPick What the number Roark picks should look like. Roark buys the first matching number the carrier will sell, preferring the area code and falling back to a nearby one.
+	AutoPick *PhoneNumberAutoPickInput `json:"autoPick,omitempty"`
+
+	// Country The country of the number given by e164 (default: US). An auto-picked number uses autoPick.country.
+	//
+	// Example: US
+	Country *CreatePhoneNumberInputCountry `json:"country,omitempty"`
+
+	// E164 The number to buy, in E.164 format, from a search result. Give this or autoPick.
 	//
 	// Example: +14155550123
-	E164 string `json:"e164"`
+	E164 *string `json:"e164,omitempty"`
 
 	// ExpectFree Whether you expect this number to be free (from the allowance). The purchase is refused with 409 if that has changed since you checked.
 	ExpectFree *bool `json:"expectFree,omitempty"`
@@ -25235,6 +26134,11 @@ type CreatePhoneNumberInput struct {
 	// Name A label for the number
 	Name *string `json:"name,omitempty"`
 }
+
+// CreatePhoneNumberInputCountry The country of the number given by e164 (default: US). An auto-picked number uses autoPick.country.
+//
+// Example: US
+type CreatePhoneNumberInputCountry string
 
 // CreateRunPlanFromConfig Describe a run plan: what to call, who calls it, and what to measure.
 //
@@ -29386,6 +30290,21 @@ type IssueResolvedWebhookEvent string
 // Example: 1.0
 type IssueResolvedWebhookVersion string
 
+// ListAgentVersionsResponse defines model for ListAgentVersionsResponse.
+type ListAgentVersionsResponse struct {
+	Data       []AgentVersionResponse `json:"data"`
+	Pagination struct {
+		// HasMore Whether there are more items to fetch
+		HasMore bool `json:"hasMore"`
+
+		// NextCursor Cursor for the next page of items
+		NextCursor *string `json:"nextCursor"`
+
+		// Total Total number of items
+		Total float64 `json:"total"`
+	} `json:"pagination"`
+}
+
 // ListMetricDefinitionsResponse Cursor-paginated metric definitions available in the project
 type ListMetricDefinitionsResponse struct {
 	Data       []MetricDefinitionResponse `json:"data"`
@@ -30735,6 +31654,39 @@ type PhoneNumberAllowanceResponseBlockedReason string
 // PhoneNumberAllowanceResponsePlan The billing plan the allowance comes from
 type PhoneNumberAllowanceResponsePlan string
 
+// PhoneNumberAutoPickInput What the number Roark picks should look like. Roark buys the first matching number the carrier will sell, preferring the area code and falling back to a nearby one.
+type PhoneNumberAutoPickInput struct {
+	// AreaCode Three-digit area code, or a toll-free prefix such as 800. When it has no numbers, nearby ones are returned instead, flagged bestEffort.
+	//
+	// Example: 415
+	AreaCode *string `json:"areaCode,omitempty"`
+
+	// Contains Digits or letters the number must contain (1 to 7, * matches any digit)
+	//
+	// Example: 555
+	Contains *string `json:"contains,omitempty"`
+
+	// Country ISO 3166-1 alpha-2 country of the number: US or CA
+	//
+	// Example: US
+	Country *PhoneNumberAutoPickInputCountry `json:"country,omitempty"`
+
+	// NumberType LOCAL for a number in an area code, TOLL_FREE for one from the shared US and Canada toll-free pool
+	//
+	// Example: LOCAL
+	NumberType *PhoneNumberAutoPickInputNumberType `json:"numberType,omitempty"`
+}
+
+// PhoneNumberAutoPickInputCountry ISO 3166-1 alpha-2 country of the number: US or CA
+//
+// Example: US
+type PhoneNumberAutoPickInputCountry string
+
+// PhoneNumberAutoPickInputNumberType LOCAL for a number in an area code, TOLL_FREE for one from the shared US and Canada toll-free pool
+//
+// Example: LOCAL
+type PhoneNumberAutoPickInputNumberType string
+
 // PhoneNumberResponse A phone number the project owns
 type PhoneNumberResponse struct {
 	// AgentId The agent the number is assigned to, if any
@@ -31013,6 +31965,15 @@ type ProviderMetricResponseSupportedConversationSources string
 // ProviderMetricResponseType Type of value this metric produces
 type ProviderMetricResponseType string
 
+// PublishAgentDraftInput defines model for PublishAgentDraftInput.
+type PublishAgentDraftInput struct {
+	// ExpectedRevision The draft revision you reviewed.
+	ExpectedRevision int `json:"expectedRevision"`
+
+	// Summary What changed.
+	Summary *string `json:"summary,omitempty"`
+}
+
 // QaSimulationPlanConfig defines model for QaSimulationPlanConfig.
 type QaSimulationPlanConfig struct {
 	AgentEndpoints                []SimulationPlanAgentEndpointConfig  `json:"agentEndpoints"`
@@ -31129,6 +32090,13 @@ type ResolveManagedConfigResponse struct {
 
 // ResolveManagedConfigResponseChannel Which channel this session resolved to.
 type ResolveManagedConfigResponseChannel string
+
+// RestoreAgentVersionInput defines model for RestoreAgentVersionInput.
+type RestoreAgentVersionInput struct {
+	// ExpectedLiveVersionId The live version when you decided to restore. When sent, the restore is refused with 409 if another version went live since.
+	ExpectedLiveVersionId *openapi_types.UUID `json:"expectedLiveVersionId,omitempty"`
+	Summary               *string             `json:"summary,omitempty"`
+}
 
 // RetellCallUploadCreate Retell call upload payload
 //
@@ -34536,6 +35504,121 @@ type TranscriptEntryCustomer struct {
 // TranscriptEntryCustomerRole defines model for TranscriptEntryCustomer.Role.
 type TranscriptEntryCustomerRole string
 
+// UpdateAgentDraftInput defines model for UpdateAgentDraftInput.
+type UpdateAgentDraftInput struct {
+	// ExpectedRevision The draft's revision when you read it. When sent, the edit is refused if the draft changed since; when omitted, it applies on top of the latest edit.
+	ExpectedRevision *int `json:"expectedRevision,omitempty"`
+
+	// Settings The settings to change. Omitted settings stay as they are; null clears one to the runtime default. subAgents replaces every speaker and must include `main`.
+	Settings struct {
+		BackgroundNoise              *UpdateAgentDraftInputSettingsBackgroundNoise  `json:"backgroundNoise,omitempty"`
+		BackgroundNoiseUrl           *string                                        `json:"backgroundNoiseUrl,omitempty"`
+		BackgroundNoiseVolume        *float64                                       `json:"backgroundNoiseVolume,omitempty"`
+		CallMaxDurationSeconds       *int                                           `json:"callMaxDurationSeconds,omitempty"`
+		CallSilenceTimeoutSeconds    *int                                           `json:"callSilenceTimeoutSeconds,omitempty"`
+		ChatInactivityTimeoutSeconds *int                                           `json:"chatInactivityTimeoutSeconds,omitempty"`
+		ChatMaxDurationSeconds       *int                                           `json:"chatMaxDurationSeconds,omitempty"`
+		EndCallGoodbyeMessage        *string                                        `json:"endCallGoodbyeMessage,omitempty"`
+		EndDetectionPhrases          *[]string                                      `json:"endDetectionPhrases,omitempty"`
+		EndDetectionReasons          *[]string                                      `json:"endDetectionReasons,omitempty"`
+		FirstMessage                 *string                                        `json:"firstMessage,omitempty"`
+		FirstMessageAudioUrl         *string                                        `json:"firstMessageAudioUrl,omitempty"`
+		FirstMessageMode             *UpdateAgentDraftInputSettingsFirstMessageMode `json:"firstMessageMode,omitempty"`
+		IdleMaxCount                 *int                                           `json:"idleMaxCount,omitempty"`
+		IdleMessages                 *[]string                                      `json:"idleMessages,omitempty"`
+		IdleTimeoutSeconds           *int                                           `json:"idleTimeoutSeconds,omitempty"`
+		InterruptionMode             *UpdateAgentDraftInputSettingsInterruptionMode `json:"interruptionMode,omitempty"`
+		Language                     *string                                        `json:"language,omitempty"`
+		LlmBackendModel              *string                                        `json:"llmBackendModel,omitempty"`
+		LlmMaxTokens                 *int                                           `json:"llmMaxTokens,omitempty"`
+		LlmModel                     *string                                        `json:"llmModel,omitempty"`
+		LlmProvider                  *UpdateAgentDraftInputSettingsLlmProvider      `json:"llmProvider,omitempty"`
+		LlmTemperature               *float64                                       `json:"llmTemperature,omitempty"`
+		LlmVoice                     *string                                        `json:"llmVoice,omitempty"`
+		Modalities                   *[]UpdateAgentDraftInputSettingsModalities     `json:"modalities,omitempty"`
+		SttEndpointingMs             *int                                           `json:"sttEndpointingMs,omitempty"`
+		SttKeyterms                  *[]string                                      `json:"sttKeyterms,omitempty"`
+		SttModel                     *string                                        `json:"sttModel,omitempty"`
+		SttProvider                  *UpdateAgentDraftInputSettingsSttProvider      `json:"sttProvider,omitempty"`
+		SttSmartFormat               *bool                                          `json:"sttSmartFormat,omitempty"`
+		SttTurnDetection             *UpdateAgentDraftInputSettingsSttTurnDetection `json:"sttTurnDetection,omitempty"`
+		SubAgents                    *[]struct {
+			Handoffs []struct {
+				Description string                                                `json:"description"`
+				History     UpdateAgentDraftInputSettingsSubAgentsHandoffsHistory `json:"history"`
+				Note        *string                                               `json:"note"`
+				Once        bool                                                  `json:"once"`
+				To          UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To  `json:"to"`
+			} `json:"handoffs"`
+			IsInitial    bool                                         `json:"isInitial"`
+			Key          UpdateAgentDraftInput_Settings_SubAgents_Key `json:"key"`
+			Name         *string                                      `json:"name"`
+			SystemPrompt *string                                      `json:"systemPrompt"`
+			Tools        []struct {
+				PinnedVersion    *int               `json:"pinnedVersion"`
+				ToolDefinitionId openapi_types.UUID `json:"toolDefinitionId"`
+			} `json:"tools"`
+			TtsModel           *string                                            `json:"ttsModel"`
+			TtsProvider        *UpdateAgentDraftInputSettingsSubAgentsTtsProvider `json:"ttsProvider"`
+			TtsSimilarityBoost *float64                                           `json:"ttsSimilarityBoost"`
+			TtsSpeed           *float64                                           `json:"ttsSpeed"`
+			TtsStability       *float64                                           `json:"ttsStability"`
+			TtsVoiceId         *string                                            `json:"ttsVoiceId"`
+		} `json:"subAgents,omitempty"`
+		VadStartSecs *float64 `json:"vadStartSecs,omitempty"`
+		VadStopSecs  *float64 `json:"vadStopSecs,omitempty"`
+	} `json:"settings"`
+}
+
+// UpdateAgentDraftInputSettingsBackgroundNoise defines model for UpdateAgentDraftInput.Settings.BackgroundNoise.
+type UpdateAgentDraftInputSettingsBackgroundNoise string
+
+// UpdateAgentDraftInputSettingsFirstMessageMode defines model for UpdateAgentDraftInput.Settings.FirstMessageMode.
+type UpdateAgentDraftInputSettingsFirstMessageMode string
+
+// UpdateAgentDraftInputSettingsInterruptionMode defines model for UpdateAgentDraftInput.Settings.InterruptionMode.
+type UpdateAgentDraftInputSettingsInterruptionMode string
+
+// UpdateAgentDraftInputSettingsLlmProvider defines model for UpdateAgentDraftInput.Settings.LlmProvider.
+type UpdateAgentDraftInputSettingsLlmProvider string
+
+// UpdateAgentDraftInputSettingsModalities defines model for UpdateAgentDraftInput.Settings.Modalities.
+type UpdateAgentDraftInputSettingsModalities string
+
+// UpdateAgentDraftInputSettingsSttProvider defines model for UpdateAgentDraftInput.Settings.SttProvider.
+type UpdateAgentDraftInputSettingsSttProvider string
+
+// UpdateAgentDraftInputSettingsSttTurnDetection defines model for UpdateAgentDraftInput.Settings.SttTurnDetection.
+type UpdateAgentDraftInputSettingsSttTurnDetection string
+
+// UpdateAgentDraftInputSettingsSubAgentsHandoffsHistory defines model for UpdateAgentDraftInput.Settings.SubAgents.Handoffs.History.
+type UpdateAgentDraftInputSettingsSubAgentsHandoffsHistory string
+
+// UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0 defines model for UpdateAgentDraftInput.Settings.SubAgents.Handoffs.To.0.
+type UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0 string
+
+// UpdateAgentDraftInputSettingsSubAgentsHandoffsTo1 defines model for UpdateAgentDraftInput.Settings.SubAgents.Handoffs.To.1.
+type UpdateAgentDraftInputSettingsSubAgentsHandoffsTo1 = string
+
+// UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To defines model for UpdateAgentDraftInput.Settings.SubAgents.Handoffs.To.
+type UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To struct {
+	union json.RawMessage
+}
+
+// UpdateAgentDraftInputSettingsSubAgentsKey0 defines model for UpdateAgentDraftInput.Settings.SubAgents.Key.0.
+type UpdateAgentDraftInputSettingsSubAgentsKey0 string
+
+// UpdateAgentDraftInputSettingsSubAgentsKey1 defines model for UpdateAgentDraftInput.Settings.SubAgents.Key.1.
+type UpdateAgentDraftInputSettingsSubAgentsKey1 = string
+
+// UpdateAgentDraftInput_Settings_SubAgents_Key defines model for UpdateAgentDraftInput.Settings.SubAgents.Key.
+type UpdateAgentDraftInput_Settings_SubAgents_Key struct {
+	union json.RawMessage
+}
+
+// UpdateAgentDraftInputSettingsSubAgentsTtsProvider defines model for UpdateAgentDraftInput.Settings.SubAgents.TtsProvider.
+type UpdateAgentDraftInputSettingsSubAgentsTtsProvider string
+
 // UpdateAgentEndpointInput Input for updating an agent endpoint
 type UpdateAgentEndpointInput struct {
 	// Environment Environment name
@@ -35776,8 +36859,8 @@ type PostV1AgentBuildJSONBody struct {
 
 	// Tts Optional provider voice the hosted agent speaks with
 	Tts *struct {
-		// Provider Text-to-speech provider, for example ELEVENLABS. Not checked against a known list.
-		Provider string `json:"provider"`
+		// Provider Text-to-speech provider, for example ELEVENLABS
+		Provider PostV1AgentBuildJSONBodyTtsProvider `json:"provider"`
 
 		// VoiceId The provider's id for the voice
 		VoiceId string `json:"voiceId"`
@@ -35786,6 +36869,9 @@ type PostV1AgentBuildJSONBody struct {
 	// Voice Optional display name of the agent's voice. The authored prompt matches its delivery to it.
 	Voice *string `json:"voice,omitempty"`
 }
+
+// PostV1AgentBuildJSONBodyTtsProvider defines parameters for PostV1AgentBuild.
+type PostV1AgentBuildJSONBodyTtsProvider string
 
 // GetV1AgentEndpointParams defines parameters for GetV1AgentEndpoint.
 type GetV1AgentEndpointParams struct {
@@ -35805,6 +36891,12 @@ type PutV1AgentByAgentIdJSONBody struct {
 
 	// Name Name of the agent
 	Name *string `json:"name,omitempty"`
+}
+
+// GetV1AgentByAgentIdVersionsParams defines parameters for GetV1AgentByAgentIdVersions.
+type GetV1AgentByAgentIdVersionsParams struct {
+	Limit *int                `form:"limit,omitempty" json:"limit,omitempty"`
+	After *openapi_types.UUID `form:"after,omitempty" json:"after,omitempty"`
 }
 
 // PostV1AutoimproveJobByJobIdAnswer200JSONResponseBodyDataAccepted defines parameters for PostV1AutoimproveJobByJobIdAnswer.
@@ -37379,10 +38471,18 @@ type GetV1PhoneNumberParams struct {
 
 // GetV1PhoneNumberAvailableParams defines parameters for GetV1PhoneNumberAvailable.
 type GetV1PhoneNumberAvailableParams struct {
-	AreaCode *string `form:"areaCode,omitempty" json:"areaCode,omitempty"`
-	Contains *string `form:"contains,omitempty" json:"contains,omitempty"`
-	Limit    *int    `form:"limit,omitempty" json:"limit,omitempty"`
+	Country    *GetV1PhoneNumberAvailableParamsCountry    `form:"country,omitempty" json:"country,omitempty"`
+	NumberType *GetV1PhoneNumberAvailableParamsNumberType `form:"numberType,omitempty" json:"numberType,omitempty"`
+	AreaCode   *string                                    `form:"areaCode,omitempty" json:"areaCode,omitempty"`
+	Contains   *string                                    `form:"contains,omitempty" json:"contains,omitempty"`
+	Limit      *int                                       `form:"limit,omitempty" json:"limit,omitempty"`
 }
+
+// GetV1PhoneNumberAvailableParamsCountry defines parameters for GetV1PhoneNumberAvailable.
+type GetV1PhoneNumberAvailableParamsCountry string
+
+// GetV1PhoneNumberAvailableParamsNumberType defines parameters for GetV1PhoneNumberAvailable.
+type GetV1PhoneNumberAvailableParamsNumberType string
 
 // GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState defines parameters for GetV1PublicProspectSimReportByToken.
 type GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState string
@@ -37503,8 +38603,20 @@ type PutV1AgentEndpointByEndpointIdJSONRequestBody = UpdateAgentEndpointInput
 // PutV1AgentByAgentIdJSONRequestBody defines body for PutV1AgentByAgentId for application/json ContentType.
 type PutV1AgentByAgentIdJSONRequestBody PutV1AgentByAgentIdJSONBody
 
+// PatchV1AgentByAgentIdDraftJSONRequestBody defines body for PatchV1AgentByAgentIdDraft for application/json ContentType.
+type PatchV1AgentByAgentIdDraftJSONRequestBody = UpdateAgentDraftInput
+
+// PostV1AgentByAgentIdDraftJSONRequestBody defines body for PostV1AgentByAgentIdDraft for application/json ContentType.
+type PostV1AgentByAgentIdDraftJSONRequestBody = CreateAgentDraftInput
+
+// PostV1AgentByAgentIdDraftPublishJSONRequestBody defines body for PostV1AgentByAgentIdDraftPublish for application/json ContentType.
+type PostV1AgentByAgentIdDraftPublishJSONRequestBody = PublishAgentDraftInput
+
 // PutV1AgentByAgentIdPromptsJSONRequestBody defines body for PutV1AgentByAgentIdPrompts for application/json ContentType.
 type PutV1AgentByAgentIdPromptsJSONRequestBody = SetAgentPromptInput
+
+// PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody defines body for PostV1AgentByAgentIdVersionsByVersionIdRestore for application/json ContentType.
+type PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody = RestoreAgentVersionInput
 
 // PostV1AnalyticsQueryJSONRequestBody defines body for PostV1AnalyticsQuery for application/json ContentType.
 type PostV1AnalyticsQueryJSONRequestBody = AnalyticsQuery
@@ -45736,6 +46848,130 @@ func (t *SimulationRunPlanJobVerdictFailure) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsUpdateAgentDraftInputSettingsSubAgentsHandoffsTo0 returns the union data inside the UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To as a UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0
+func (t UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To) AsUpdateAgentDraftInputSettingsSubAgentsHandoffsTo0() (UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0, error) {
+	var body UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateAgentDraftInputSettingsSubAgentsHandoffsTo0 overwrites any union data inside the UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To as the provided UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0
+func (t *UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To) FromUpdateAgentDraftInputSettingsSubAgentsHandoffsTo0(v UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateAgentDraftInputSettingsSubAgentsHandoffsTo0 performs a merge with any union data inside the UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To, using the provided UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0
+func (t *UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To) MergeUpdateAgentDraftInputSettingsSubAgentsHandoffsTo0(v UpdateAgentDraftInputSettingsSubAgentsHandoffsTo0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateAgentDraftInputSettingsSubAgentsHandoffsTo1 returns the union data inside the UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To as a UpdateAgentDraftInputSettingsSubAgentsHandoffsTo1
+func (t UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To) AsUpdateAgentDraftInputSettingsSubAgentsHandoffsTo1() (UpdateAgentDraftInputSettingsSubAgentsHandoffsTo1, error) {
+	var body UpdateAgentDraftInputSettingsSubAgentsHandoffsTo1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateAgentDraftInputSettingsSubAgentsHandoffsTo1 overwrites any union data inside the UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To as the provided UpdateAgentDraftInputSettingsSubAgentsHandoffsTo1
+func (t *UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To) FromUpdateAgentDraftInputSettingsSubAgentsHandoffsTo1(v UpdateAgentDraftInputSettingsSubAgentsHandoffsTo1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateAgentDraftInputSettingsSubAgentsHandoffsTo1 performs a merge with any union data inside the UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To, using the provided UpdateAgentDraftInputSettingsSubAgentsHandoffsTo1
+func (t *UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To) MergeUpdateAgentDraftInputSettingsSubAgentsHandoffsTo1(v UpdateAgentDraftInputSettingsSubAgentsHandoffsTo1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateAgentDraftInputSettingsSubAgentsKey0 returns the union data inside the UpdateAgentDraftInput_Settings_SubAgents_Key as a UpdateAgentDraftInputSettingsSubAgentsKey0
+func (t UpdateAgentDraftInput_Settings_SubAgents_Key) AsUpdateAgentDraftInputSettingsSubAgentsKey0() (UpdateAgentDraftInputSettingsSubAgentsKey0, error) {
+	var body UpdateAgentDraftInputSettingsSubAgentsKey0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateAgentDraftInputSettingsSubAgentsKey0 overwrites any union data inside the UpdateAgentDraftInput_Settings_SubAgents_Key as the provided UpdateAgentDraftInputSettingsSubAgentsKey0
+func (t *UpdateAgentDraftInput_Settings_SubAgents_Key) FromUpdateAgentDraftInputSettingsSubAgentsKey0(v UpdateAgentDraftInputSettingsSubAgentsKey0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateAgentDraftInputSettingsSubAgentsKey0 performs a merge with any union data inside the UpdateAgentDraftInput_Settings_SubAgents_Key, using the provided UpdateAgentDraftInputSettingsSubAgentsKey0
+func (t *UpdateAgentDraftInput_Settings_SubAgents_Key) MergeUpdateAgentDraftInputSettingsSubAgentsKey0(v UpdateAgentDraftInputSettingsSubAgentsKey0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateAgentDraftInputSettingsSubAgentsKey1 returns the union data inside the UpdateAgentDraftInput_Settings_SubAgents_Key as a UpdateAgentDraftInputSettingsSubAgentsKey1
+func (t UpdateAgentDraftInput_Settings_SubAgents_Key) AsUpdateAgentDraftInputSettingsSubAgentsKey1() (UpdateAgentDraftInputSettingsSubAgentsKey1, error) {
+	var body UpdateAgentDraftInputSettingsSubAgentsKey1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateAgentDraftInputSettingsSubAgentsKey1 overwrites any union data inside the UpdateAgentDraftInput_Settings_SubAgents_Key as the provided UpdateAgentDraftInputSettingsSubAgentsKey1
+func (t *UpdateAgentDraftInput_Settings_SubAgents_Key) FromUpdateAgentDraftInputSettingsSubAgentsKey1(v UpdateAgentDraftInputSettingsSubAgentsKey1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateAgentDraftInputSettingsSubAgentsKey1 performs a merge with any union data inside the UpdateAgentDraftInput_Settings_SubAgents_Key, using the provided UpdateAgentDraftInputSettingsSubAgentsKey1
+func (t *UpdateAgentDraftInput_Settings_SubAgents_Key) MergeUpdateAgentDraftInputSettingsSubAgentsKey1(v UpdateAgentDraftInputSettingsSubAgentsKey1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateAgentDraftInput_Settings_SubAgents_Key) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateAgentDraftInput_Settings_SubAgents_Key) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsUpdateCallPropertiesRequestProperties0 returns the union data inside the UpdateCallPropertiesRequest_Properties_AdditionalProperties as a UpdateCallPropertiesRequestProperties0
 func (t UpdateCallPropertiesRequest_Properties_AdditionalProperties) AsUpdateCallPropertiesRequestProperties0() (UpdateCallPropertiesRequestProperties0, error) {
 	var body UpdateCallPropertiesRequestProperties0
@@ -48406,6 +49642,74 @@ type ClientInterface interface {
 	// Corresponds with PUT /v1/agent/{agentId} (the `PutV1AgentByAgentId` operationId).
 	PutV1AgentByAgentId(ctx context.Context, agentId string, body PutV1AgentByAgentIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// DeleteV1AgentByAgentIdDraft Discard the draft
+	//
+	// Throws the open draft away and returns it. The live version is unchanged.
+	//
+	// Corresponds with DELETE /v1/agent/{agentId}/draft (the `DeleteV1AgentByAgentIdDraft` operationId).
+	DeleteV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1AgentByAgentIdDraft Get an agent's draft
+	//
+	// The agent's open draft, with the issues that would stop it from being published.
+	//
+	// Corresponds with GET /v1/agent/{agentId}/draft (the `GetV1AgentByAgentIdDraft` operationId).
+	GetV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchV1AgentByAgentIdDraftWithBody Edit the draft
+	//
+	// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
+	PatchV1AgentByAgentIdDraftWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchV1AgentByAgentIdDraft Edit the draft
+	//
+	// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
+	PatchV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, body PatchV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1AgentByAgentIdDraftWithBody Start a draft
+	//
+	// Opens the agent's one shared draft, a copy of the live version or of an older published version. Fails with 409 when a draft is already open.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/agent/{agentId}/draft (the `PostV1AgentByAgentIdDraft` operationId).
+	PostV1AgentByAgentIdDraftWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1AgentByAgentIdDraft Start a draft
+	//
+	// Opens the agent's one shared draft, a copy of the live version or of an older published version. Fails with 409 when a draft is already open.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/agent/{agentId}/draft (the `PostV1AgentByAgentIdDraft` operationId).
+	PostV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1AgentByAgentIdDraftPublishWithBody Publish the draft
+	//
+	// Makes the draft the live version, numbered v1, v2, ... Fails with 409 if the draft was edited after expectedRevision, if another version was published since the draft started, or if it changes nothing; with 400 and the issues if the version cannot run.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/agent/{agentId}/draft/publish (the `PostV1AgentByAgentIdDraftPublish` operationId).
+	PostV1AgentByAgentIdDraftPublishWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1AgentByAgentIdDraftPublish Publish the draft
+	//
+	// Makes the draft the live version, numbered v1, v2, ... Fails with 409 if the draft was edited after expectedRevision, if another version was published since the draft started, or if it changes nothing; with 400 and the issues if the version cannot run.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/agent/{agentId}/draft/publish (the `PostV1AgentByAgentIdDraftPublish` operationId).
+	PostV1AgentByAgentIdDraftPublish(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftPublishJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetV1AgentByAgentIdPrompts List an agent's prompts
 	//
 	// Returns the agent's prompt lineages. Each lineage is an independent version history, labelled by its `source` (USER, API, CONFIG, or a provider integration). `prompt` is the current content.
@@ -48437,6 +49741,38 @@ type ClientInterface interface {
 	//
 	// Corresponds with GET /v1/agent/{agentId}/prompts/{promptId}/versions (the `GetV1AgentByAgentIdPromptsByPromptIdVersions` operationId).
 	GetV1AgentByAgentIdPromptsByPromptIdVersions(ctx context.Context, agentId openapi_types.UUID, promptId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1AgentByAgentIdVersions List an agent's versions
+	//
+	// The open draft first, if there is one, then published versions newest first. Paginated: pass `pagination.nextCursor` as `after` for the next page.
+	//
+	// Corresponds with GET /v1/agent/{agentId}/versions (the `GetV1AgentByAgentIdVersions` operationId).
+	GetV1AgentByAgentIdVersions(ctx context.Context, agentId string, params *GetV1AgentByAgentIdVersionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1AgentByAgentIdVersionsByVersionId Get an agent version
+	//
+	// One version with every setting, plus the issues that stop it from running, if any.
+	//
+	// Corresponds with GET /v1/agent/{agentId}/versions/{versionId} (the `GetV1AgentByAgentIdVersionsByVersionId` operationId).
+	GetV1AgentByAgentIdVersionsByVersionId(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBody Restore an agent version
+	//
+	// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
+	PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBody(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1AgentByAgentIdVersionsByVersionIdRestore Restore an agent version
+	//
+	// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
+	PostV1AgentByAgentIdVersionsByVersionIdRestore(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// PostV1AnalyticsQueryWithBody Run an analytics query
 	//
@@ -49822,7 +51158,7 @@ type ClientInterface interface {
 
 	// PostV1PhoneNumberWithBody Buy a phone number
 	//
-	// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+	// Buys a number from the carrier for this project: the one named by e164, or one Roark picks to match autoPick (trying the next match if the carrier has just sold one). Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -49831,7 +51167,7 @@ type ClientInterface interface {
 
 	// PostV1PhoneNumber Buy a phone number
 	//
-	// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+	// Buys a number from the carrier for this project: the one named by e164, or one Roark picks to match autoPick (trying the next match if the carrier has just sold one). Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -49847,7 +51183,7 @@ type ClientInterface interface {
 
 	// GetV1PhoneNumberAvailable Search available phone numbers
 	//
-	// Returns US numbers the carrier has for sale, narrowed by area code or by digits the number must contain. Buy one with POST /v1/phone-number.
+	// Returns US or Canadian numbers the carrier has for sale, local or toll-free, narrowed by area code or by digits the number must contain. When an area code has no numbers, nearby ones are returned flagged bestEffort; an empty list means nothing matched. Buy one with POST /v1/phone-number, or let Roark pick with autoPick.
 	//
 	// Corresponds with GET /v1/phone-number/available (the `GetV1PhoneNumberAvailable` operationId).
 	GetV1PhoneNumberAvailable(ctx context.Context, params *GetV1PhoneNumberAvailableParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -50949,6 +52285,154 @@ func (c *Client) PutV1AgentByAgentId(ctx context.Context, agentId string, body P
 	return c.Client.Do(req)
 }
 
+// DeleteV1AgentByAgentIdDraft Discard the draft
+//
+// Throws the open draft away and returns it. The live version is unchanged.
+//
+// Corresponds with DELETE /v1/agent/{agentId}/draft (the `DeleteV1AgentByAgentIdDraft` operationId).
+func (c *Client) DeleteV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1AgentByAgentIdDraftRequest(c.Server, agentId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1AgentByAgentIdDraft Get an agent's draft
+//
+// The agent's open draft, with the issues that would stop it from being published.
+//
+// Corresponds with GET /v1/agent/{agentId}/draft (the `GetV1AgentByAgentIdDraft` operationId).
+func (c *Client) GetV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1AgentByAgentIdDraftRequest(c.Server, agentId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchV1AgentByAgentIdDraftWithBody Edit the draft
+//
+// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
+func (c *Client) PatchV1AgentByAgentIdDraftWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchV1AgentByAgentIdDraftRequestWithBody(c.Server, agentId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchV1AgentByAgentIdDraft Edit the draft
+//
+// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
+func (c *Client) PatchV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, body PatchV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchV1AgentByAgentIdDraftRequest(c.Server, agentId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1AgentByAgentIdDraftWithBody Start a draft
+//
+// Opens the agent's one shared draft, a copy of the live version or of an older published version. Fails with 409 when a draft is already open.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/agent/{agentId}/draft (the `PostV1AgentByAgentIdDraft` operationId).
+func (c *Client) PostV1AgentByAgentIdDraftWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AgentByAgentIdDraftRequestWithBody(c.Server, agentId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1AgentByAgentIdDraft Start a draft
+//
+// Opens the agent's one shared draft, a copy of the live version or of an older published version. Fails with 409 when a draft is already open.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/agent/{agentId}/draft (the `PostV1AgentByAgentIdDraft` operationId).
+func (c *Client) PostV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AgentByAgentIdDraftRequest(c.Server, agentId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1AgentByAgentIdDraftPublishWithBody Publish the draft
+//
+// Makes the draft the live version, numbered v1, v2, ... Fails with 409 if the draft was edited after expectedRevision, if another version was published since the draft started, or if it changes nothing; with 400 and the issues if the version cannot run.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/agent/{agentId}/draft/publish (the `PostV1AgentByAgentIdDraftPublish` operationId).
+func (c *Client) PostV1AgentByAgentIdDraftPublishWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AgentByAgentIdDraftPublishRequestWithBody(c.Server, agentId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1AgentByAgentIdDraftPublish Publish the draft
+//
+// Makes the draft the live version, numbered v1, v2, ... Fails with 409 if the draft was edited after expectedRevision, if another version was published since the draft started, or if it changes nothing; with 400 and the issues if the version cannot run.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/agent/{agentId}/draft/publish (the `PostV1AgentByAgentIdDraftPublish` operationId).
+func (c *Client) PostV1AgentByAgentIdDraftPublish(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftPublishJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AgentByAgentIdDraftPublishRequest(c.Server, agentId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GetV1AgentByAgentIdPrompts List an agent's prompts
 //
 // Returns the agent's prompt lineages. Each lineage is an independent version history, labelled by its `source` (USER, API, CONFIG, or a provider integration). `prompt` is the current content.
@@ -51011,6 +52495,78 @@ func (c *Client) PutV1AgentByAgentIdPrompts(ctx context.Context, agentId openapi
 // Corresponds with GET /v1/agent/{agentId}/prompts/{promptId}/versions (the `GetV1AgentByAgentIdPromptsByPromptIdVersions` operationId).
 func (c *Client) GetV1AgentByAgentIdPromptsByPromptIdVersions(ctx context.Context, agentId openapi_types.UUID, promptId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetV1AgentByAgentIdPromptsByPromptIdVersionsRequest(c.Server, agentId, promptId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1AgentByAgentIdVersions List an agent's versions
+//
+// The open draft first, if there is one, then published versions newest first. Paginated: pass `pagination.nextCursor` as `after` for the next page.
+//
+// Corresponds with GET /v1/agent/{agentId}/versions (the `GetV1AgentByAgentIdVersions` operationId).
+func (c *Client) GetV1AgentByAgentIdVersions(ctx context.Context, agentId string, params *GetV1AgentByAgentIdVersionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1AgentByAgentIdVersionsRequest(c.Server, agentId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1AgentByAgentIdVersionsByVersionId Get an agent version
+//
+// One version with every setting, plus the issues that stop it from running, if any.
+//
+// Corresponds with GET /v1/agent/{agentId}/versions/{versionId} (the `GetV1AgentByAgentIdVersionsByVersionId` operationId).
+func (c *Client) GetV1AgentByAgentIdVersionsByVersionId(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1AgentByAgentIdVersionsByVersionIdRequest(c.Server, agentId, versionId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBody Restore an agent version
+//
+// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
+func (c *Client) PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBody(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequestWithBody(c.Server, agentId, versionId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1AgentByAgentIdVersionsByVersionIdRestore Restore an agent version
+//
+// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
+func (c *Client) PostV1AgentByAgentIdVersionsByVersionIdRestore(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequest(c.Server, agentId, versionId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -53945,7 +55501,7 @@ func (c *Client) GetV1PhoneNumber(ctx context.Context, params *GetV1PhoneNumberP
 
 // PostV1PhoneNumberWithBody Buy a phone number
 //
-// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+// Buys a number from the carrier for this project: the one named by e164, or one Roark picks to match autoPick (trying the next match if the carrier has just sold one). Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
 //
 // Takes any type of body and a specified content type.
 //
@@ -53964,7 +55520,7 @@ func (c *Client) PostV1PhoneNumberWithBody(ctx context.Context, contentType stri
 
 // PostV1PhoneNumber Buy a phone number
 //
-// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+// Buys a number from the carrier for this project: the one named by e164, or one Roark picks to match autoPick (trying the next match if the carrier has just sold one). Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -54000,7 +55556,7 @@ func (c *Client) GetV1PhoneNumberAllowance(ctx context.Context, reqEditors ...Re
 
 // GetV1PhoneNumberAvailable Search available phone numbers
 //
-// Returns US numbers the carrier has for sale, narrowed by area code or by digits the number must contain. Buy one with POST /v1/phone-number.
+// Returns US or Canadian numbers the carrier has for sale, local or toll-free, narrowed by area code or by digits the number must contain. When an area code has no numbers, nearby ones are returned flagged bestEffort; an empty list means nothing matched. Buy one with POST /v1/phone-number, or let Roark pick with autoPick.
 //
 // Corresponds with GET /v1/phone-number/available (the `GetV1PhoneNumberAvailable` operationId).
 func (c *Client) GetV1PhoneNumberAvailable(ctx context.Context, params *GetV1PhoneNumberAvailableParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -56049,6 +57605,215 @@ func NewPutV1AgentByAgentIdRequestWithBody(server string, agentId string, conten
 	return req, nil
 }
 
+// NewDeleteV1AgentByAgentIdDraftRequest constructs an http.Request for the DeleteV1AgentByAgentIdDraft method
+func NewDeleteV1AgentByAgentIdDraftRequest(server string, agentId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/agent/%s/draft", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1AgentByAgentIdDraftRequest constructs an http.Request for the GetV1AgentByAgentIdDraft method
+func NewGetV1AgentByAgentIdDraftRequest(server string, agentId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/agent/%s/draft", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPatchV1AgentByAgentIdDraftRequest calls the generic PatchV1AgentByAgentIdDraft builder with application/json body
+func NewPatchV1AgentByAgentIdDraftRequest(server string, agentId openapi_types.UUID, body PatchV1AgentByAgentIdDraftJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPatchV1AgentByAgentIdDraftRequestWithBody(server, agentId, "application/json", bodyReader)
+}
+
+// NewPatchV1AgentByAgentIdDraftRequestWithBody constructs an http.Request for the PatchV1AgentByAgentIdDraft method, with any body, and a specified content type
+func NewPatchV1AgentByAgentIdDraftRequestWithBody(server string, agentId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/agent/%s/draft", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPostV1AgentByAgentIdDraftRequest calls the generic PostV1AgentByAgentIdDraft builder with application/json body
+func NewPostV1AgentByAgentIdDraftRequest(server string, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1AgentByAgentIdDraftRequestWithBody(server, agentId, "application/json", bodyReader)
+}
+
+// NewPostV1AgentByAgentIdDraftRequestWithBody constructs an http.Request for the PostV1AgentByAgentIdDraft method, with any body, and a specified content type
+func NewPostV1AgentByAgentIdDraftRequestWithBody(server string, agentId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/agent/%s/draft", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPostV1AgentByAgentIdDraftPublishRequest calls the generic PostV1AgentByAgentIdDraftPublish builder with application/json body
+func NewPostV1AgentByAgentIdDraftPublishRequest(server string, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftPublishJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1AgentByAgentIdDraftPublishRequestWithBody(server, agentId, "application/json", bodyReader)
+}
+
+// NewPostV1AgentByAgentIdDraftPublishRequestWithBody constructs an http.Request for the PostV1AgentByAgentIdDraftPublish method, with any body, and a specified content type
+func NewPostV1AgentByAgentIdDraftPublishRequestWithBody(server string, agentId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/agent/%s/draft/publish", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGetV1AgentByAgentIdPromptsRequest constructs an http.Request for the GetV1AgentByAgentIdPrompts method
 func NewGetV1AgentByAgentIdPromptsRequest(server string, agentId openapi_types.UUID) (*http.Request, error) {
 	var err error
@@ -56167,6 +57932,174 @@ func NewGetV1AgentByAgentIdPromptsByPromptIdVersionsRequest(server string, agent
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewGetV1AgentByAgentIdVersionsRequest constructs an http.Request for the GetV1AgentByAgentIdVersions method
+func NewGetV1AgentByAgentIdVersionsRequest(server string, agentId string, params *GetV1AgentByAgentIdVersionsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/agent/%s/versions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.After != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "after", *params.After, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1AgentByAgentIdVersionsByVersionIdRequest constructs an http.Request for the GetV1AgentByAgentIdVersionsByVersionId method
+func NewGetV1AgentByAgentIdVersionsByVersionIdRequest(server string, agentId openapi_types.UUID, versionId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "versionId", versionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/agent/%s/versions/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequest calls the generic PostV1AgentByAgentIdVersionsByVersionIdRestore builder with application/json body
+func NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequest(server string, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequestWithBody(server, agentId, versionId, "application/json", bodyReader)
+}
+
+// NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequestWithBody constructs an http.Request for the PostV1AgentByAgentIdVersionsByVersionIdRestore method, with any body, and a specified content type
+func NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequestWithBody(server string, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "versionId", versionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/agent/%s/versions/%s/restore", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -61758,6 +63691,30 @@ func NewGetV1PhoneNumberAvailableRequest(server string, params *GetV1PhoneNumber
 		// per the OpenAPI spec (e.g. "color=blue,black,brown").
 		var rawQueryFragments []string
 
+		if params.Country != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "country", *params.Country, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.NumberType != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "numberType", *params.NumberType, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.AreaCode != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "areaCode", *params.AreaCode, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -64275,6 +66232,78 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PUT /v1/agent/{agentId} (the `PutV1AgentByAgentId` operationId).
 	PutV1AgentByAgentIdWithResponse(ctx context.Context, agentId string, body PutV1AgentByAgentIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1AgentByAgentIdResponse, error)
 
+	// DeleteV1AgentByAgentIdDraftWithResponse Discard the draft
+	//
+	// Throws the open draft away and returns it. The live version is unchanged.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/agent/{agentId}/draft (the `DeleteV1AgentByAgentIdDraft` operationId).
+	DeleteV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1AgentByAgentIdDraftResponse, error)
+
+	// GetV1AgentByAgentIdDraftWithResponse Get an agent's draft
+	//
+	// The agent's open draft, with the issues that would stop it from being published.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/agent/{agentId}/draft (the `GetV1AgentByAgentIdDraft` operationId).
+	GetV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdDraftResponse, error)
+
+	// PatchV1AgentByAgentIdDraftWithBodyWithResponse Edit the draft
+	//
+	// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
+	PatchV1AgentByAgentIdDraftWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1AgentByAgentIdDraftResponse, error)
+
+	// PatchV1AgentByAgentIdDraftWithResponse Edit the draft
+	//
+	// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
+	PatchV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, body PatchV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1AgentByAgentIdDraftResponse, error)
+
+	// PostV1AgentByAgentIdDraftWithBodyWithResponse Start a draft
+	//
+	// Opens the agent's one shared draft, a copy of the live version or of an older published version. Fails with 409 when a draft is already open.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/agent/{agentId}/draft (the `PostV1AgentByAgentIdDraft` operationId).
+	PostV1AgentByAgentIdDraftWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdDraftResponse, error)
+
+	// PostV1AgentByAgentIdDraftWithResponse Start a draft
+	//
+	// Opens the agent's one shared draft, a copy of the live version or of an older published version. Fails with 409 when a draft is already open.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/agent/{agentId}/draft (the `PostV1AgentByAgentIdDraft` operationId).
+	PostV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdDraftResponse, error)
+
+	// PostV1AgentByAgentIdDraftPublishWithBodyWithResponse Publish the draft
+	//
+	// Makes the draft the live version, numbered v1, v2, ... Fails with 409 if the draft was edited after expectedRevision, if another version was published since the draft started, or if it changes nothing; with 400 and the issues if the version cannot run.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/agent/{agentId}/draft/publish (the `PostV1AgentByAgentIdDraftPublish` operationId).
+	PostV1AgentByAgentIdDraftPublishWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdDraftPublishResponse, error)
+
+	// PostV1AgentByAgentIdDraftPublishWithResponse Publish the draft
+	//
+	// Makes the draft the live version, numbered v1, v2, ... Fails with 409 if the draft was edited after expectedRevision, if another version was published since the draft started, or if it changes nothing; with 400 and the issues if the version cannot run.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/agent/{agentId}/draft/publish (the `PostV1AgentByAgentIdDraftPublish` operationId).
+	PostV1AgentByAgentIdDraftPublishWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftPublishJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdDraftPublishResponse, error)
+
 	// GetV1AgentByAgentIdPromptsWithResponse List an agent's prompts
 	//
 	// Returns the agent's prompt lineages. Each lineage is an independent version history, labelled by its `source` (USER, API, CONFIG, or a provider integration). `prompt` is the current content.
@@ -64310,6 +66339,42 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with GET /v1/agent/{agentId}/prompts/{promptId}/versions (the `GetV1AgentByAgentIdPromptsByPromptIdVersions` operationId).
 	GetV1AgentByAgentIdPromptsByPromptIdVersionsWithResponse(ctx context.Context, agentId openapi_types.UUID, promptId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdPromptsByPromptIdVersionsResponse, error)
+
+	// GetV1AgentByAgentIdVersionsWithResponse List an agent's versions
+	//
+	// The open draft first, if there is one, then published versions newest first. Paginated: pass `pagination.nextCursor` as `after` for the next page.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/agent/{agentId}/versions (the `GetV1AgentByAgentIdVersions` operationId).
+	GetV1AgentByAgentIdVersionsWithResponse(ctx context.Context, agentId string, params *GetV1AgentByAgentIdVersionsParams, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdVersionsResponse, error)
+
+	// GetV1AgentByAgentIdVersionsByVersionIdWithResponse Get an agent version
+	//
+	// One version with every setting, plus the issues that stop it from running, if any.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/agent/{agentId}/versions/{versionId} (the `GetV1AgentByAgentIdVersionsByVersionId` operationId).
+	GetV1AgentByAgentIdVersionsByVersionIdWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdVersionsByVersionIdResponse, error)
+
+	// PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBodyWithResponse Restore an agent version
+	//
+	// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
+	PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse, error)
+
+	// PostV1AgentByAgentIdVersionsByVersionIdRestoreWithResponse Restore an agent version
+	//
+	// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
+	PostV1AgentByAgentIdVersionsByVersionIdRestoreWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse, error)
 
 	// PostV1AnalyticsQueryWithBodyWithResponse Run an analytics query
 	//
@@ -65831,7 +67896,7 @@ type ClientWithResponsesInterface interface {
 
 	// PostV1PhoneNumberWithBodyWithResponse Buy a phone number
 	//
-	// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+	// Buys a number from the carrier for this project: the one named by e164, or one Roark picks to match autoPick (trying the next match if the carrier has just sold one). Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -65840,7 +67905,7 @@ type ClientWithResponsesInterface interface {
 
 	// PostV1PhoneNumberWithResponse Buy a phone number
 	//
-	// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+	// Buys a number from the carrier for this project: the one named by e164, or one Roark picks to match autoPick (trying the next match if the carrier has just sold one). Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -65858,7 +67923,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetV1PhoneNumberAvailableWithResponse Search available phone numbers
 	//
-	// Returns US numbers the carrier has for sale, narrowed by area code or by digits the number must contain. Buy one with POST /v1/phone-number.
+	// Returns US or Canadian numbers the carrier has for sale, local or toll-free, narrowed by area code or by digits the number must contain. When an area code has no numbers, nearby ones are returned flagged bestEffort; an empty list means nothing matched. Buy one with POST /v1/phone-number, or let Roark pick with autoPick.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -68082,6 +70147,423 @@ func (r PutV1AgentByAgentIdResponse) ContentType() string {
 	return ""
 }
 
+type DeleteV1AgentByAgentIdDraftResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+		Data AgentVersionResponse `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1AgentByAgentIdDraftResponse) GetJSON200() *struct {
+	// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+	Data AgentVersionResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1AgentByAgentIdDraftResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r DeleteV1AgentByAgentIdDraftResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1AgentByAgentIdDraftResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1AgentByAgentIdDraftResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1AgentByAgentIdDraftResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1AgentByAgentIdDraftResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1AgentByAgentIdDraftResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1AgentByAgentIdDraftResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1AgentByAgentIdDraftResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+		Data AgentVersionResponse `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1AgentByAgentIdDraftResponse) GetJSON200() *struct {
+	// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+	Data AgentVersionResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1AgentByAgentIdDraftResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1AgentByAgentIdDraftResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1AgentByAgentIdDraftResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1AgentByAgentIdDraftResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1AgentByAgentIdDraftResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1AgentByAgentIdDraftResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1AgentByAgentIdDraftResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1AgentByAgentIdDraftResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PatchV1AgentByAgentIdDraftResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+		Data AgentVersionResponse `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PatchV1AgentByAgentIdDraftResponse) GetJSON200() *struct {
+	// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+	Data AgentVersionResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PatchV1AgentByAgentIdDraftResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PatchV1AgentByAgentIdDraftResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PatchV1AgentByAgentIdDraftResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PatchV1AgentByAgentIdDraftResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PatchV1AgentByAgentIdDraftResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PatchV1AgentByAgentIdDraftResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PatchV1AgentByAgentIdDraftResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PatchV1AgentByAgentIdDraftResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PatchV1AgentByAgentIdDraftResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PatchV1AgentByAgentIdDraftResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1AgentByAgentIdDraftResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+		Data AgentVersionResponse `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1AgentByAgentIdDraftResponse) GetJSON201() *struct {
+	// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+	Data AgentVersionResponse `json:"data"`
+} {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1AgentByAgentIdDraftResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1AgentByAgentIdDraftResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1AgentByAgentIdDraftResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1AgentByAgentIdDraftResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1AgentByAgentIdDraftResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1AgentByAgentIdDraftResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1AgentByAgentIdDraftResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1AgentByAgentIdDraftResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1AgentByAgentIdDraftResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1AgentByAgentIdDraftResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1AgentByAgentIdDraftPublishResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+		Data AgentVersionResponse `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1AgentByAgentIdDraftPublishResponse) GetJSON200() *struct {
+	// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+	Data AgentVersionResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1AgentByAgentIdDraftPublishResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1AgentByAgentIdDraftPublishResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1AgentByAgentIdDraftPublishResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1AgentByAgentIdDraftPublishResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1AgentByAgentIdDraftPublishResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1AgentByAgentIdDraftPublishResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1AgentByAgentIdDraftPublishResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1AgentByAgentIdDraftPublishResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1AgentByAgentIdDraftPublishResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1AgentByAgentIdDraftPublishResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GetV1AgentByAgentIdPromptsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -68266,6 +70748,239 @@ func (r GetV1AgentByAgentIdPromptsByPromptIdVersionsResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetV1AgentByAgentIdPromptsByPromptIdVersionsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1AgentByAgentIdVersionsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ListAgentVersionsResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1AgentByAgentIdVersionsResponse) GetJSON200() *ListAgentVersionsResponse {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1AgentByAgentIdVersionsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1AgentByAgentIdVersionsResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1AgentByAgentIdVersionsResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1AgentByAgentIdVersionsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1AgentByAgentIdVersionsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1AgentByAgentIdVersionsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1AgentByAgentIdVersionsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1AgentByAgentIdVersionsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1AgentByAgentIdVersionsByVersionIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+		Data AgentVersionResponse `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1AgentByAgentIdVersionsByVersionIdResponse) GetJSON200() *struct {
+	// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+	Data AgentVersionResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1AgentByAgentIdVersionsByVersionIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1AgentByAgentIdVersionsByVersionIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1AgentByAgentIdVersionsByVersionIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1AgentByAgentIdVersionsByVersionIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1AgentByAgentIdVersionsByVersionIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1AgentByAgentIdVersionsByVersionIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1AgentByAgentIdVersionsByVersionIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1AgentByAgentIdVersionsByVersionIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+		Data AgentVersionResponse `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON201() *struct {
+	// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+	Data AgentVersionResponse `json:"data"`
+} {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -69644,7 +72359,9 @@ type GetV1CallResponse struct {
 			//
 			// Example: [{"endpoint":{"environment":"Production","id":"550e8400-e29b-41d4-a716-446655440000","phoneNumberE164":"+1234567890"},"id":"550e8400-e29b-41d4-a716-446655440000"}]
 			Agents *[]struct {
-				Endpoint *struct {
+				// AgentVersionId For an agent hosted on Roark, the version of it that handled the call
+				AgentVersionId *openapi_types.UUID `json:"agentVersionId,omitempty"`
+				Endpoint       *struct {
 					Environment     string             `json:"environment"`
 					Id              openapi_types.UUID `json:"id"`
 					PhoneNumberE164 *string            `json:"phoneNumberE164,omitempty"`
@@ -69781,7 +72498,9 @@ func (r GetV1CallResponse) GetJSON200() *struct {
 		//
 		// Example: [{"endpoint":{"environment":"Production","id":"550e8400-e29b-41d4-a716-446655440000","phoneNumberE164":"+1234567890"},"id":"550e8400-e29b-41d4-a716-446655440000"}]
 		Agents *[]struct {
-			Endpoint *struct {
+			// AgentVersionId For an agent hosted on Roark, the version of it that handled the call
+			AgentVersionId *openapi_types.UUID `json:"agentVersionId,omitempty"`
+			Endpoint       *struct {
 				Environment     string             `json:"environment"`
 				Id              openapi_types.UUID `json:"id"`
 				PhoneNumberE164 *string            `json:"phoneNumberE164,omitempty"`
@@ -69958,7 +72677,9 @@ type PostV1CallResponse struct {
 		// Data Response after creating a call
 		Data struct {
 			Agents *[]struct {
-				Endpoint *struct {
+				// AgentVersionId For an agent hosted on Roark, the version of it that handled the call
+				AgentVersionId *openapi_types.UUID `json:"agentVersionId,omitempty"`
+				Endpoint       *struct {
 					Environment     string             `json:"environment"`
 					Id              openapi_types.UUID `json:"id"`
 					PhoneNumberE164 *string            `json:"phoneNumberE164,omitempty"`
@@ -70013,7 +72734,9 @@ func (r PostV1CallResponse) GetJSON200() *struct {
 	// Data Response after creating a call
 	Data struct {
 		Agents *[]struct {
-			Endpoint *struct {
+			// AgentVersionId For an agent hosted on Roark, the version of it that handled the call
+			AgentVersionId *openapi_types.UUID `json:"agentVersionId,omitempty"`
+			Endpoint       *struct {
 				Environment     string             `json:"environment"`
 				Id              openapi_types.UUID `json:"id"`
 				PhoneNumberE164 *string            `json:"phoneNumberE164,omitempty"`
@@ -70321,7 +73044,9 @@ type GetV1CallByCallIdResponse struct {
 			//
 			// Example: [{"endpoint":{"environment":"Production","id":"550e8400-e29b-41d4-a716-446655440000","phoneNumberE164":"+1234567890"},"id":"550e8400-e29b-41d4-a716-446655440000"}]
 			Agents *[]struct {
-				Endpoint *struct {
+				// AgentVersionId For an agent hosted on Roark, the version of it that handled the call
+				AgentVersionId *openapi_types.UUID `json:"agentVersionId,omitempty"`
+				Endpoint       *struct {
 					Environment     string             `json:"environment"`
 					Id              openapi_types.UUID `json:"id"`
 					PhoneNumberE164 *string            `json:"phoneNumberE164,omitempty"`
@@ -70453,7 +73178,9 @@ func (r GetV1CallByCallIdResponse) GetJSON200() *struct {
 		//
 		// Example: [{"endpoint":{"environment":"Production","id":"550e8400-e29b-41d4-a716-446655440000","phoneNumberE164":"+1234567890"},"id":"550e8400-e29b-41d4-a716-446655440000"}]
 		Agents *[]struct {
-			Endpoint *struct {
+			// AgentVersionId For an agent hosted on Roark, the version of it that handled the call
+			AgentVersionId *openapi_types.UUID `json:"agentVersionId,omitempty"`
+			Endpoint       *struct {
 				Environment     string             `json:"environment"`
 				Id              openapi_types.UUID `json:"id"`
 				PhoneNumberE164 *string            `json:"phoneNumberE164,omitempty"`
@@ -84510,6 +87237,126 @@ func (c *ClientWithResponses) PutV1AgentByAgentIdWithResponse(ctx context.Contex
 	return ParsePutV1AgentByAgentIdResponse(rsp)
 }
 
+// DeleteV1AgentByAgentIdDraftWithResponse Discard the draft
+//
+// Throws the open draft away and returns it. The live version is unchanged.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/agent/{agentId}/draft (the `DeleteV1AgentByAgentIdDraft` operationId).
+func (c *ClientWithResponses) DeleteV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1AgentByAgentIdDraftResponse, error) {
+	rsp, err := c.DeleteV1AgentByAgentIdDraft(ctx, agentId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1AgentByAgentIdDraftResponse(rsp)
+}
+
+// GetV1AgentByAgentIdDraftWithResponse Get an agent's draft
+//
+// The agent's open draft, with the issues that would stop it from being published.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/agent/{agentId}/draft (the `GetV1AgentByAgentIdDraft` operationId).
+func (c *ClientWithResponses) GetV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdDraftResponse, error) {
+	rsp, err := c.GetV1AgentByAgentIdDraft(ctx, agentId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1AgentByAgentIdDraftResponse(rsp)
+}
+
+// PatchV1AgentByAgentIdDraftWithBodyWithResponse Edit the draft
+//
+// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
+func (c *ClientWithResponses) PatchV1AgentByAgentIdDraftWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1AgentByAgentIdDraftResponse, error) {
+	rsp, err := c.PatchV1AgentByAgentIdDraftWithBody(ctx, agentId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchV1AgentByAgentIdDraftResponse(rsp)
+}
+
+// PatchV1AgentByAgentIdDraftWithResponse Edit the draft
+//
+// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
+func (c *ClientWithResponses) PatchV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, body PatchV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1AgentByAgentIdDraftResponse, error) {
+	rsp, err := c.PatchV1AgentByAgentIdDraft(ctx, agentId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchV1AgentByAgentIdDraftResponse(rsp)
+}
+
+// PostV1AgentByAgentIdDraftWithBodyWithResponse Start a draft
+//
+// Opens the agent's one shared draft, a copy of the live version or of an older published version. Fails with 409 when a draft is already open.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/agent/{agentId}/draft (the `PostV1AgentByAgentIdDraft` operationId).
+func (c *ClientWithResponses) PostV1AgentByAgentIdDraftWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdDraftResponse, error) {
+	rsp, err := c.PostV1AgentByAgentIdDraftWithBody(ctx, agentId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1AgentByAgentIdDraftResponse(rsp)
+}
+
+// PostV1AgentByAgentIdDraftWithResponse Start a draft
+//
+// Opens the agent's one shared draft, a copy of the live version or of an older published version. Fails with 409 when a draft is already open.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/agent/{agentId}/draft (the `PostV1AgentByAgentIdDraft` operationId).
+func (c *ClientWithResponses) PostV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdDraftResponse, error) {
+	rsp, err := c.PostV1AgentByAgentIdDraft(ctx, agentId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1AgentByAgentIdDraftResponse(rsp)
+}
+
+// PostV1AgentByAgentIdDraftPublishWithBodyWithResponse Publish the draft
+//
+// Makes the draft the live version, numbered v1, v2, ... Fails with 409 if the draft was edited after expectedRevision, if another version was published since the draft started, or if it changes nothing; with 400 and the issues if the version cannot run.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/agent/{agentId}/draft/publish (the `PostV1AgentByAgentIdDraftPublish` operationId).
+func (c *ClientWithResponses) PostV1AgentByAgentIdDraftPublishWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdDraftPublishResponse, error) {
+	rsp, err := c.PostV1AgentByAgentIdDraftPublishWithBody(ctx, agentId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1AgentByAgentIdDraftPublishResponse(rsp)
+}
+
+// PostV1AgentByAgentIdDraftPublishWithResponse Publish the draft
+//
+// Makes the draft the live version, numbered v1, v2, ... Fails with 409 if the draft was edited after expectedRevision, if another version was published since the draft started, or if it changes nothing; with 400 and the issues if the version cannot run.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/agent/{agentId}/draft/publish (the `PostV1AgentByAgentIdDraftPublish` operationId).
+func (c *ClientWithResponses) PostV1AgentByAgentIdDraftPublishWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftPublishJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdDraftPublishResponse, error) {
+	rsp, err := c.PostV1AgentByAgentIdDraftPublish(ctx, agentId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1AgentByAgentIdDraftPublishResponse(rsp)
+}
+
 // GetV1AgentByAgentIdPromptsWithResponse List an agent's prompts
 //
 // Returns the agent's prompt lineages. Each lineage is an independent version history, labelled by its `source` (USER, API, CONFIG, or a provider integration). `prompt` is the current content.
@@ -84568,6 +87415,66 @@ func (c *ClientWithResponses) GetV1AgentByAgentIdPromptsByPromptIdVersionsWithRe
 		return nil, err
 	}
 	return ParseGetV1AgentByAgentIdPromptsByPromptIdVersionsResponse(rsp)
+}
+
+// GetV1AgentByAgentIdVersionsWithResponse List an agent's versions
+//
+// The open draft first, if there is one, then published versions newest first. Paginated: pass `pagination.nextCursor` as `after` for the next page.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/agent/{agentId}/versions (the `GetV1AgentByAgentIdVersions` operationId).
+func (c *ClientWithResponses) GetV1AgentByAgentIdVersionsWithResponse(ctx context.Context, agentId string, params *GetV1AgentByAgentIdVersionsParams, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdVersionsResponse, error) {
+	rsp, err := c.GetV1AgentByAgentIdVersions(ctx, agentId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1AgentByAgentIdVersionsResponse(rsp)
+}
+
+// GetV1AgentByAgentIdVersionsByVersionIdWithResponse Get an agent version
+//
+// One version with every setting, plus the issues that stop it from running, if any.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/agent/{agentId}/versions/{versionId} (the `GetV1AgentByAgentIdVersionsByVersionId` operationId).
+func (c *ClientWithResponses) GetV1AgentByAgentIdVersionsByVersionIdWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdVersionsByVersionIdResponse, error) {
+	rsp, err := c.GetV1AgentByAgentIdVersionsByVersionId(ctx, agentId, versionId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1AgentByAgentIdVersionsByVersionIdResponse(rsp)
+}
+
+// PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBodyWithResponse Restore an agent version
+//
+// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
+func (c *ClientWithResponses) PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse, error) {
+	rsp, err := c.PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBody(ctx, agentId, versionId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1AgentByAgentIdVersionsByVersionIdRestoreResponse(rsp)
+}
+
+// PostV1AgentByAgentIdVersionsByVersionIdRestoreWithResponse Restore an agent version
+//
+// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
+func (c *ClientWithResponses) PostV1AgentByAgentIdVersionsByVersionIdRestoreWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse, error) {
+	rsp, err := c.PostV1AgentByAgentIdVersionsByVersionIdRestore(ctx, agentId, versionId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1AgentByAgentIdVersionsByVersionIdRestoreResponse(rsp)
 }
 
 // PostV1AnalyticsQueryWithBodyWithResponse Run an analytics query
@@ -87014,7 +89921,7 @@ func (c *ClientWithResponses) GetV1PhoneNumberWithResponse(ctx context.Context, 
 
 // PostV1PhoneNumberWithBodyWithResponse Buy a phone number
 //
-// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+// Buys a number from the carrier for this project: the one named by e164, or one Roark picks to match autoPick (trying the next match if the carrier has just sold one). Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -87029,7 +89936,7 @@ func (c *ClientWithResponses) PostV1PhoneNumberWithBodyWithResponse(ctx context.
 
 // PostV1PhoneNumberWithResponse Buy a phone number
 //
-// Buys a number from the carrier for this project. Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
+// Buys a number from the carrier for this project: the one named by e164, or one Roark picks to match autoPick (trying the next match if the carrier has just sold one). Free inside the plan allowance; past it, the first month of rent is charged now and monthly after that.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -87059,7 +89966,7 @@ func (c *ClientWithResponses) GetV1PhoneNumberAllowanceWithResponse(ctx context.
 
 // GetV1PhoneNumberAvailableWithResponse Search available phone numbers
 //
-// Returns US numbers the carrier has for sale, narrowed by area code or by digits the number must contain. Buy one with POST /v1/phone-number.
+// Returns US or Canadian numbers the carrier has for sale, local or toll-free, narrowed by area code or by digits the number must contain. When an area code has no numbers, nearby ones are returned flagged bestEffort; an empty list means nothing matched. Buy one with POST /v1/phone-number, or let Roark pick with autoPick.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -89266,6 +92173,333 @@ func ParsePutV1AgentByAgentIdResponse(rsp *http.Response) (*PutV1AgentByAgentIdR
 	return response, nil
 }
 
+// ParseDeleteV1AgentByAgentIdDraftResponse parses an HTTP response from a DeleteV1AgentByAgentIdDraftWithResponse call
+func ParseDeleteV1AgentByAgentIdDraftResponse(rsp *http.Response) (*DeleteV1AgentByAgentIdDraftResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1AgentByAgentIdDraftResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+			Data AgentVersionResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1AgentByAgentIdDraftResponse parses an HTTP response from a GetV1AgentByAgentIdDraftWithResponse call
+func ParseGetV1AgentByAgentIdDraftResponse(rsp *http.Response) (*GetV1AgentByAgentIdDraftResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1AgentByAgentIdDraftResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+			Data AgentVersionResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePatchV1AgentByAgentIdDraftResponse parses an HTTP response from a PatchV1AgentByAgentIdDraftWithResponse call
+func ParsePatchV1AgentByAgentIdDraftResponse(rsp *http.Response) (*PatchV1AgentByAgentIdDraftResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PatchV1AgentByAgentIdDraftResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+			Data AgentVersionResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1AgentByAgentIdDraftResponse parses an HTTP response from a PostV1AgentByAgentIdDraftWithResponse call
+func ParsePostV1AgentByAgentIdDraftResponse(rsp *http.Response) (*PostV1AgentByAgentIdDraftResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1AgentByAgentIdDraftResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+			Data AgentVersionResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1AgentByAgentIdDraftPublishResponse parses an HTTP response from a PostV1AgentByAgentIdDraftPublishWithResponse call
+func ParsePostV1AgentByAgentIdDraftPublishResponse(rsp *http.Response) (*PostV1AgentByAgentIdDraftPublishResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1AgentByAgentIdDraftPublishResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+			Data AgentVersionResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseGetV1AgentByAgentIdPromptsResponse parses an HTTP response from a GetV1AgentByAgentIdPromptsWithResponse call
 func ParseGetV1AgentByAgentIdPromptsResponse(rsp *http.Response) (*GetV1AgentByAgentIdPromptsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -89396,6 +92630,188 @@ func ParseGetV1AgentByAgentIdPromptsByPromptIdVersionsResponse(rsp *http.Respons
 			return nil, err
 		}
 		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1AgentByAgentIdVersionsResponse parses an HTTP response from a GetV1AgentByAgentIdVersionsWithResponse call
+func ParseGetV1AgentByAgentIdVersionsResponse(rsp *http.Response) (*GetV1AgentByAgentIdVersionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1AgentByAgentIdVersionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ListAgentVersionsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1AgentByAgentIdVersionsByVersionIdResponse parses an HTTP response from a GetV1AgentByAgentIdVersionsByVersionIdWithResponse call
+func ParseGetV1AgentByAgentIdVersionsByVersionIdResponse(rsp *http.Response) (*GetV1AgentByAgentIdVersionsByVersionIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1AgentByAgentIdVersionsByVersionIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+			Data AgentVersionResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1AgentByAgentIdVersionsByVersionIdRestoreResponse parses an HTTP response from a PostV1AgentByAgentIdVersionsByVersionIdRestoreWithResponse call
+func ParsePostV1AgentByAgentIdVersionsByVersionIdRestoreResponse(rsp *http.Response) (*PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+			Data AgentVersionResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse
@@ -90493,7 +93909,9 @@ func ParseGetV1CallResponse(rsp *http.Response) (*GetV1CallResponse, error) {
 				//
 				// Example: [{"endpoint":{"environment":"Production","id":"550e8400-e29b-41d4-a716-446655440000","phoneNumberE164":"+1234567890"},"id":"550e8400-e29b-41d4-a716-446655440000"}]
 				Agents *[]struct {
-					Endpoint *struct {
+					// AgentVersionId For an agent hosted on Roark, the version of it that handled the call
+					AgentVersionId *openapi_types.UUID `json:"agentVersionId,omitempty"`
+					Endpoint       *struct {
 						Environment     string             `json:"environment"`
 						Id              openapi_types.UUID `json:"id"`
 						PhoneNumberE164 *string            `json:"phoneNumberE164,omitempty"`
@@ -90665,7 +94083,9 @@ func ParsePostV1CallResponse(rsp *http.Response) (*PostV1CallResponse, error) {
 			// Data Response after creating a call
 			Data struct {
 				Agents *[]struct {
-					Endpoint *struct {
+					// AgentVersionId For an agent hosted on Roark, the version of it that handled the call
+					AgentVersionId *openapi_types.UUID `json:"agentVersionId,omitempty"`
+					Endpoint       *struct {
 						Environment     string             `json:"environment"`
 						Id              openapi_types.UUID `json:"id"`
 						PhoneNumberE164 *string            `json:"phoneNumberE164,omitempty"`
@@ -90924,7 +94344,9 @@ func ParseGetV1CallByCallIdResponse(rsp *http.Response) (*GetV1CallByCallIdRespo
 				//
 				// Example: [{"endpoint":{"environment":"Production","id":"550e8400-e29b-41d4-a716-446655440000","phoneNumberE164":"+1234567890"},"id":"550e8400-e29b-41d4-a716-446655440000"}]
 				Agents *[]struct {
-					Endpoint *struct {
+					// AgentVersionId For an agent hosted on Roark, the version of it that handled the call
+					AgentVersionId *openapi_types.UUID `json:"agentVersionId,omitempty"`
+					Endpoint       *struct {
 						Environment     string             `json:"environment"`
 						Id              openapi_types.UUID `json:"id"`
 						PhoneNumberE164 *string            `json:"phoneNumberE164,omitempty"`

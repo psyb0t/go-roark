@@ -2,6 +2,14 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.5.0, 2026-10-29
+
+- Breaking: the draft edit endpoint changed from PATCH to PUT. `PatchV1AgentByAgentIdDraft`, `PatchV1AgentByAgentIdDraftWithBody`, their `ClientWithResponses` variants `PatchV1AgentByAgentIdDraftWithResponse` and `PatchV1AgentByAgentIdDraftWithBodyWithResponse`, `PatchV1AgentByAgentIdDraftJSONRequestBody`, `PatchV1AgentByAgentIdDraftResponse`, `NewPatchV1AgentByAgentIdDraftRequest`, `NewPatchV1AgentByAgentIdDraftRequestWithBody` and `ParsePatchV1AgentByAgentIdDraftResponse` are removed. Use the new `PutV1AgentByAgentIdDraft` family: `PutV1AgentByAgentIdDraft`, `PutV1AgentByAgentIdDraftWithBody`, `PutV1AgentByAgentIdDraftWithResponse`, `PutV1AgentByAgentIdDraftWithBodyWithResponse`, `PutV1AgentByAgentIdDraftJSONRequestBody`, `PutV1AgentByAgentIdDraftResponse`, `NewPutV1AgentByAgentIdDraftRequest`, `NewPutV1AgentByAgentIdDraftRequestWithBody` and `ParsePutV1AgentByAgentIdDraftResponse`.
+- Breaking: restoring an agent version is now a rollback. The `PostV1AgentByAgentIdVersionsByVersionIdRestore` methods, `RestoreAgentVersionInput`, the matching request builders, `ParsePostV1AgentByAgentIdVersionsByVersionIdRestoreResponse`, `PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody` and `PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse` are removed. The replacements are `PostV1AgentByAgentIdVersionsByVersionIdRollback` and its `WithBody`, `WithResponse` and `WithBodyWithResponse` variants, `RollbackAgentVersionInput` (with an `expectedLiveVersionId` option that makes the API return 409 if another version went live), `PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody`, `PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse`, the request builders and `ParsePostV1AgentByAgentIdVersionsByVersionIdRollbackResponse`.
+- Breaking: `AgentVersionResponse.RestoredFromVersionId` is renamed to `RolledBackFromVersionId`, with the JSON name `rolledBackFromVersionId`.
+- `ClientInterface` and `ClientWithResponsesInterface` dropped the Patch draft and Restore methods and gained the Put draft and Rollback methods. Custom implementations or mocks of these interfaces must be updated.
+- Updated the doc comments of the draft methods: the draft is shared per agent, `PostV1AgentByAgentIdDraft` returns 409 when a draft is already open, and the draft edit accepts `expectedRevision` to fail with 409 on a concurrent edit.
+
 ## v0.4.0, 2026-10-28
 
 - Added agent draft and version endpoints. New `Client` and `ClientWithResponses` methods: `GetV1AgentByAgentIdDraft`, `PostV1AgentByAgentIdDraft`, `PatchV1AgentByAgentIdDraft`, `DeleteV1AgentByAgentIdDraft`, `PostV1AgentByAgentIdDraftPublish`, `GetV1AgentByAgentIdVersions`, `GetV1AgentByAgentIdVersionsByVersionId` and `PostV1AgentByAgentIdVersionsByVersionIdRestore`, each with `WithBody` and `WithResponse` variants where the client has them.

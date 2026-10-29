@@ -23774,11 +23774,11 @@ type AgentVersionResponse struct {
 	PublishedById   *openapi_types.UUID                  `json:"publishedById"`
 	PublishedByType *AgentVersionResponsePublishedByType `json:"publishedByType"`
 
-	// RestoredFromVersionId Set when this version restores an older one.
-	RestoredFromVersionId *openapi_types.UUID `json:"restoredFromVersionId"`
-
 	// Revision Increases with every edit to a draft. Send it back as expectedRevision when you publish.
 	Revision int `json:"revision"`
+
+	// RolledBackFromVersionId Set when this version rolls the agent back to an older one.
+	RolledBackFromVersionId *openapi_types.UUID `json:"rolledBackFromVersionId"`
 
 	// Status DRAFT while being edited, PUBLISHED once it has been live.
 	Status           AgentVersionResponseStatus `json:"status"`
@@ -32091,13 +32091,6 @@ type ResolveManagedConfigResponse struct {
 // ResolveManagedConfigResponseChannel Which channel this session resolved to.
 type ResolveManagedConfigResponseChannel string
 
-// RestoreAgentVersionInput defines model for RestoreAgentVersionInput.
-type RestoreAgentVersionInput struct {
-	// ExpectedLiveVersionId The live version when you decided to restore. When sent, the restore is refused with 409 if another version went live since.
-	ExpectedLiveVersionId *openapi_types.UUID `json:"expectedLiveVersionId,omitempty"`
-	Summary               *string             `json:"summary,omitempty"`
-}
-
 // RetellCallUploadCreate Retell call upload payload
 //
 // Example: {"properties":{"business_id":"customer-business-id","business_name":"customer-business-name"},"retellCallEndedPayload":{"call":{"agent_id":"oBeDLoLOeuAbiuaMFXRtDOLriTJ5tSxD","call_id":"Jabr9TXYYJHfvl6Syypi88rdAHYHmcq6","call_type":"web_call","direction":"inbound","disconnection_reason":"agent_hangup","duration_ms":120000,"end_timestamp":"1703302407333","from_number":"+1234567890","recording_url":"https://retell.ai/recordings/call-123456.mp3","start_timestamp":"1703302407333","to_number":"+0987654321","transcript_object":[{"content":"Hello, thank you for calling!","role":"agent","words":[{"end":1,"start":0.7,"word":"Hello"}]},{"content":"Hi, I have a question about my account.","role":"user","words":[{"end":2.7,"start":2.5,"word":"Hi"}]}],"transcript_with_tool_calls":[{"arguments":"{ key: \"value\" }","name":"function_name","role":"tool_call_result","tool_call_id":"call-id-123"}]},"event":"call_ended"}}
@@ -32116,6 +32109,13 @@ type RetellCallUploadCreate struct {
 type RetellCallUploadResponse struct {
 	// CallId ID of the uploaded call
 	CallId string `json:"callId"`
+}
+
+// RollbackAgentVersionInput defines model for RollbackAgentVersionInput.
+type RollbackAgentVersionInput struct {
+	// ExpectedLiveVersionId The live version when you decided to roll back. When sent, the rollback is refused with 409 if another version went live since.
+	ExpectedLiveVersionId *openapi_types.UUID `json:"expectedLiveVersionId,omitempty"`
+	Summary               *string             `json:"summary,omitempty"`
 }
 
 // RunPlanEdgeCaseSelection defines model for RunPlanEdgeCaseSelection.
@@ -38603,11 +38603,11 @@ type PutV1AgentEndpointByEndpointIdJSONRequestBody = UpdateAgentEndpointInput
 // PutV1AgentByAgentIdJSONRequestBody defines body for PutV1AgentByAgentId for application/json ContentType.
 type PutV1AgentByAgentIdJSONRequestBody PutV1AgentByAgentIdJSONBody
 
-// PatchV1AgentByAgentIdDraftJSONRequestBody defines body for PatchV1AgentByAgentIdDraft for application/json ContentType.
-type PatchV1AgentByAgentIdDraftJSONRequestBody = UpdateAgentDraftInput
-
 // PostV1AgentByAgentIdDraftJSONRequestBody defines body for PostV1AgentByAgentIdDraft for application/json ContentType.
 type PostV1AgentByAgentIdDraftJSONRequestBody = CreateAgentDraftInput
+
+// PutV1AgentByAgentIdDraftJSONRequestBody defines body for PutV1AgentByAgentIdDraft for application/json ContentType.
+type PutV1AgentByAgentIdDraftJSONRequestBody = UpdateAgentDraftInput
 
 // PostV1AgentByAgentIdDraftPublishJSONRequestBody defines body for PostV1AgentByAgentIdDraftPublish for application/json ContentType.
 type PostV1AgentByAgentIdDraftPublishJSONRequestBody = PublishAgentDraftInput
@@ -38615,8 +38615,8 @@ type PostV1AgentByAgentIdDraftPublishJSONRequestBody = PublishAgentDraftInput
 // PutV1AgentByAgentIdPromptsJSONRequestBody defines body for PutV1AgentByAgentIdPrompts for application/json ContentType.
 type PutV1AgentByAgentIdPromptsJSONRequestBody = SetAgentPromptInput
 
-// PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody defines body for PostV1AgentByAgentIdVersionsByVersionIdRestore for application/json ContentType.
-type PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody = RestoreAgentVersionInput
+// PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody defines body for PostV1AgentByAgentIdVersionsByVersionIdRollback for application/json ContentType.
+type PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody = RollbackAgentVersionInput
 
 // PostV1AnalyticsQueryJSONRequestBody defines body for PostV1AnalyticsQuery for application/json ContentType.
 type PostV1AnalyticsQueryJSONRequestBody = AnalyticsQuery
@@ -49656,24 +49656,6 @@ type ClientInterface interface {
 	// Corresponds with GET /v1/agent/{agentId}/draft (the `GetV1AgentByAgentIdDraft` operationId).
 	GetV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// PatchV1AgentByAgentIdDraftWithBody Edit the draft
-	//
-	// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
-	PatchV1AgentByAgentIdDraftWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchV1AgentByAgentIdDraft Edit the draft
-	//
-	// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
-	PatchV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, body PatchV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
 	// PostV1AgentByAgentIdDraftWithBody Start a draft
 	//
 	// Opens the agent's one shared draft, a copy of the live version or of an older published version. Fails with 409 when a draft is already open.
@@ -49691,6 +49673,24 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/agent/{agentId}/draft (the `PostV1AgentByAgentIdDraft` operationId).
 	PostV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1AgentByAgentIdDraftWithBody Edit the draft
+	//
+	// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/agent/{agentId}/draft (the `PutV1AgentByAgentIdDraft` operationId).
+	PutV1AgentByAgentIdDraftWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1AgentByAgentIdDraft Edit the draft
+	//
+	// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /v1/agent/{agentId}/draft (the `PutV1AgentByAgentIdDraft` operationId).
+	PutV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, body PutV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// PostV1AgentByAgentIdDraftPublishWithBody Publish the draft
 	//
@@ -49756,23 +49756,23 @@ type ClientInterface interface {
 	// Corresponds with GET /v1/agent/{agentId}/versions/{versionId} (the `GetV1AgentByAgentIdVersionsByVersionId` operationId).
 	GetV1AgentByAgentIdVersionsByVersionId(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBody Restore an agent version
+	// PostV1AgentByAgentIdVersionsByVersionIdRollbackWithBody Roll an agent back to a version
 	//
-	// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+	// Publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
 	//
 	// Takes any type of body and a specified content type.
 	//
-	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
-	PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBody(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
+	PostV1AgentByAgentIdVersionsByVersionIdRollbackWithBody(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// PostV1AgentByAgentIdVersionsByVersionIdRestore Restore an agent version
+	// PostV1AgentByAgentIdVersionsByVersionIdRollback Roll an agent back to a version
 	//
-	// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+	// Publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
 	//
 	// Takes a body of the `application/json` content type.
 	//
-	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
-	PostV1AgentByAgentIdVersionsByVersionIdRestore(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
+	PostV1AgentByAgentIdVersionsByVersionIdRollback(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// PostV1AnalyticsQueryWithBody Run an analytics query
 	//
@@ -52319,44 +52319,6 @@ func (c *Client) GetV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_t
 	return c.Client.Do(req)
 }
 
-// PatchV1AgentByAgentIdDraftWithBody Edit the draft
-//
-// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
-func (c *Client) PatchV1AgentByAgentIdDraftWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPatchV1AgentByAgentIdDraftRequestWithBody(c.Server, agentId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PatchV1AgentByAgentIdDraft Edit the draft
-//
-// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
-func (c *Client) PatchV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, body PatchV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPatchV1AgentByAgentIdDraftRequest(c.Server, agentId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
 // PostV1AgentByAgentIdDraftWithBody Start a draft
 //
 // Opens the agent's one shared draft, a copy of the live version or of an older published version. Fails with 409 when a draft is already open.
@@ -52385,6 +52347,44 @@ func (c *Client) PostV1AgentByAgentIdDraftWithBody(ctx context.Context, agentId 
 // Corresponds with POST /v1/agent/{agentId}/draft (the `PostV1AgentByAgentIdDraft` operationId).
 func (c *Client) PostV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPostV1AgentByAgentIdDraftRequest(c.Server, agentId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1AgentByAgentIdDraftWithBody Edit the draft
+//
+// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/agent/{agentId}/draft (the `PutV1AgentByAgentIdDraft` operationId).
+func (c *Client) PutV1AgentByAgentIdDraftWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1AgentByAgentIdDraftRequestWithBody(c.Server, agentId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1AgentByAgentIdDraft Edit the draft
+//
+// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/agent/{agentId}/draft (the `PutV1AgentByAgentIdDraft` operationId).
+func (c *Client) PutV1AgentByAgentIdDraft(ctx context.Context, agentId openapi_types.UUID, body PutV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1AgentByAgentIdDraftRequest(c.Server, agentId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -52539,15 +52539,15 @@ func (c *Client) GetV1AgentByAgentIdVersionsByVersionId(ctx context.Context, age
 	return c.Client.Do(req)
 }
 
-// PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBody Restore an agent version
+// PostV1AgentByAgentIdVersionsByVersionIdRollbackWithBody Roll an agent back to a version
 //
-// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+// Publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
 //
 // Takes any type of body and a specified content type.
 //
-// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
-func (c *Client) PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBody(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequestWithBody(c.Server, agentId, versionId, contentType, body)
+// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
+func (c *Client) PostV1AgentByAgentIdVersionsByVersionIdRollbackWithBody(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AgentByAgentIdVersionsByVersionIdRollbackRequestWithBody(c.Server, agentId, versionId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -52558,15 +52558,15 @@ func (c *Client) PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBody(ctx cont
 	return c.Client.Do(req)
 }
 
-// PostV1AgentByAgentIdVersionsByVersionIdRestore Restore an agent version
+// PostV1AgentByAgentIdVersionsByVersionIdRollback Roll an agent back to a version
 //
-// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+// Publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
 //
 // Takes a body of the `application/json` content type.
 //
-// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
-func (c *Client) PostV1AgentByAgentIdVersionsByVersionIdRestore(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequest(c.Server, agentId, versionId, body)
+// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
+func (c *Client) PostV1AgentByAgentIdVersionsByVersionIdRollback(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AgentByAgentIdVersionsByVersionIdRollbackRequest(c.Server, agentId, versionId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -57673,53 +57673,6 @@ func NewGetV1AgentByAgentIdDraftRequest(server string, agentId openapi_types.UUI
 	return req, nil
 }
 
-// NewPatchV1AgentByAgentIdDraftRequest calls the generic PatchV1AgentByAgentIdDraft builder with application/json body
-func NewPatchV1AgentByAgentIdDraftRequest(server string, agentId openapi_types.UUID, body PatchV1AgentByAgentIdDraftJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewPatchV1AgentByAgentIdDraftRequestWithBody(server, agentId, "application/json", bodyReader)
-}
-
-// NewPatchV1AgentByAgentIdDraftRequestWithBody constructs an http.Request for the PatchV1AgentByAgentIdDraft method, with any body, and a specified content type
-func NewPatchV1AgentByAgentIdDraftRequestWithBody(server string, agentId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/agent/%s/draft", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
 // NewPostV1AgentByAgentIdDraftRequest calls the generic PostV1AgentByAgentIdDraft builder with application/json body
 func NewPostV1AgentByAgentIdDraftRequest(server string, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -57758,6 +57711,53 @@ func NewPostV1AgentByAgentIdDraftRequestWithBody(server string, agentId openapi_
 	}
 
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPutV1AgentByAgentIdDraftRequest calls the generic PutV1AgentByAgentIdDraft builder with application/json body
+func NewPutV1AgentByAgentIdDraftRequest(server string, agentId openapi_types.UUID, body PutV1AgentByAgentIdDraftJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPutV1AgentByAgentIdDraftRequestWithBody(server, agentId, "application/json", bodyReader)
+}
+
+// NewPutV1AgentByAgentIdDraftRequestWithBody constructs an http.Request for the PutV1AgentByAgentIdDraft method, with any body, and a specified content type
+func NewPutV1AgentByAgentIdDraftRequestWithBody(server string, agentId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/agent/%s/draft", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
@@ -58050,19 +58050,19 @@ func NewGetV1AgentByAgentIdVersionsByVersionIdRequest(server string, agentId ope
 	return req, nil
 }
 
-// NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequest calls the generic PostV1AgentByAgentIdVersionsByVersionIdRestore builder with application/json body
-func NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequest(server string, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody) (*http.Request, error) {
+// NewPostV1AgentByAgentIdVersionsByVersionIdRollbackRequest calls the generic PostV1AgentByAgentIdVersionsByVersionIdRollback builder with application/json body
+func NewPostV1AgentByAgentIdVersionsByVersionIdRollbackRequest(server string, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequestWithBody(server, agentId, versionId, "application/json", bodyReader)
+	return NewPostV1AgentByAgentIdVersionsByVersionIdRollbackRequestWithBody(server, agentId, versionId, "application/json", bodyReader)
 }
 
-// NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequestWithBody constructs an http.Request for the PostV1AgentByAgentIdVersionsByVersionIdRestore method, with any body, and a specified content type
-func NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequestWithBody(server string, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+// NewPostV1AgentByAgentIdVersionsByVersionIdRollbackRequestWithBody constructs an http.Request for the PostV1AgentByAgentIdVersionsByVersionIdRollback method, with any body, and a specified content type
+func NewPostV1AgentByAgentIdVersionsByVersionIdRollbackRequestWithBody(server string, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -58084,7 +58084,7 @@ func NewPostV1AgentByAgentIdVersionsByVersionIdRestoreRequestWithBody(server str
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/v1/agent/%s/versions/%s/restore", pathParam0, pathParam1)
+	operationPath := fmt.Sprintf("/v1/agent/%s/versions/%s/rollback", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -66250,24 +66250,6 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /v1/agent/{agentId}/draft (the `GetV1AgentByAgentIdDraft` operationId).
 	GetV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdDraftResponse, error)
 
-	// PatchV1AgentByAgentIdDraftWithBodyWithResponse Edit the draft
-	//
-	// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
-	PatchV1AgentByAgentIdDraftWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1AgentByAgentIdDraftResponse, error)
-
-	// PatchV1AgentByAgentIdDraftWithResponse Edit the draft
-	//
-	// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
-	PatchV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, body PatchV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1AgentByAgentIdDraftResponse, error)
-
 	// PostV1AgentByAgentIdDraftWithBodyWithResponse Start a draft
 	//
 	// Opens the agent's one shared draft, a copy of the live version or of an older published version. Fails with 409 when a draft is already open.
@@ -66285,6 +66267,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/agent/{agentId}/draft (the `PostV1AgentByAgentIdDraft` operationId).
 	PostV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdDraftResponse, error)
+
+	// PutV1AgentByAgentIdDraftWithBodyWithResponse Edit the draft
+	//
+	// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/agent/{agentId}/draft (the `PutV1AgentByAgentIdDraft` operationId).
+	PutV1AgentByAgentIdDraftWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1AgentByAgentIdDraftResponse, error)
+
+	// PutV1AgentByAgentIdDraftWithResponse Edit the draft
+	//
+	// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/agent/{agentId}/draft (the `PutV1AgentByAgentIdDraft` operationId).
+	PutV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, body PutV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1AgentByAgentIdDraftResponse, error)
 
 	// PostV1AgentByAgentIdDraftPublishWithBodyWithResponse Publish the draft
 	//
@@ -66358,23 +66358,23 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /v1/agent/{agentId}/versions/{versionId} (the `GetV1AgentByAgentIdVersionsByVersionId` operationId).
 	GetV1AgentByAgentIdVersionsByVersionIdWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdVersionsByVersionIdResponse, error)
 
-	// PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBodyWithResponse Restore an agent version
+	// PostV1AgentByAgentIdVersionsByVersionIdRollbackWithBodyWithResponse Roll an agent back to a version
 	//
-	// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+	// Publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
-	PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse, error)
+	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
+	PostV1AgentByAgentIdVersionsByVersionIdRollbackWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse, error)
 
-	// PostV1AgentByAgentIdVersionsByVersionIdRestoreWithResponse Restore an agent version
+	// PostV1AgentByAgentIdVersionsByVersionIdRollbackWithResponse Roll an agent back to a version
 	//
-	// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+	// Publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
-	PostV1AgentByAgentIdVersionsByVersionIdRestoreWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse, error)
+	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
+	PostV1AgentByAgentIdVersionsByVersionIdRollbackWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse, error)
 
 	// PostV1AnalyticsQueryWithBodyWithResponse Run an analytics query
 	//
@@ -70297,95 +70297,6 @@ func (r GetV1AgentByAgentIdDraftResponse) ContentType() string {
 	return ""
 }
 
-type PatchV1AgentByAgentIdDraftResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
-		Data AgentVersionResponse `json:"data"`
-	}
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ErrorResponse
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r PatchV1AgentByAgentIdDraftResponse) GetJSON200() *struct {
-	// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
-	Data AgentVersionResponse `json:"data"`
-} {
-	return r.JSON200
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r PatchV1AgentByAgentIdDraftResponse) GetJSON400() *ErrorResponse {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r PatchV1AgentByAgentIdDraftResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r PatchV1AgentByAgentIdDraftResponse) GetJSON403() *ErrorResponse {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r PatchV1AgentByAgentIdDraftResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r PatchV1AgentByAgentIdDraftResponse) GetJSON409() *ErrorResponse {
-	return r.JSON409
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r PatchV1AgentByAgentIdDraftResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r PatchV1AgentByAgentIdDraftResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PatchV1AgentByAgentIdDraftResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PatchV1AgentByAgentIdDraftResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PatchV1AgentByAgentIdDraftResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
 type PostV1AgentByAgentIdDraftResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -70469,6 +70380,95 @@ func (r PostV1AgentByAgentIdDraftResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r PostV1AgentByAgentIdDraftResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutV1AgentByAgentIdDraftResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+		Data AgentVersionResponse `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutV1AgentByAgentIdDraftResponse) GetJSON200() *struct {
+	// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
+	Data AgentVersionResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PutV1AgentByAgentIdDraftResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PutV1AgentByAgentIdDraftResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PutV1AgentByAgentIdDraftResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PutV1AgentByAgentIdDraftResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PutV1AgentByAgentIdDraftResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PutV1AgentByAgentIdDraftResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PutV1AgentByAgentIdDraftResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutV1AgentByAgentIdDraftResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutV1AgentByAgentIdDraftResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutV1AgentByAgentIdDraftResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -70898,7 +70898,7 @@ func (r GetV1AgentByAgentIdVersionsByVersionIdResponse) ContentType() string {
 	return ""
 }
 
-type PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse struct {
+type PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// JSON201 the response for an HTTP 201 `application/json` response
@@ -70921,7 +70921,7 @@ type PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse struct {
 }
 
 // GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON201() *struct {
+func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) GetJSON201() *struct {
 	// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
 	Data AgentVersionResponse `json:"data"`
 } {
@@ -70929,42 +70929,42 @@ func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON201() *st
 }
 
 // GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON400() *ErrorResponse {
+func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) GetJSON400() *ErrorResponse {
 	return r.JSON400
 }
 
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON401() *ErrorResponse {
+func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) GetJSON401() *ErrorResponse {
 	return r.JSON401
 }
 
 // GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON403() *ErrorResponse {
+func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) GetJSON403() *ErrorResponse {
 	return r.JSON403
 }
 
 // GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON404() *ErrorResponse {
+func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) GetJSON404() *ErrorResponse {
 	return r.JSON404
 }
 
 // GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON409() *ErrorResponse {
+func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) GetJSON409() *ErrorResponse {
 	return r.JSON409
 }
 
 // GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetJSON500() *ErrorResponse {
+func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) GetJSON500() *ErrorResponse {
 	return r.JSON500
 }
 
 // GetBody returns the raw response body bytes
-func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) GetBody() []byte {
+func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) GetBody() []byte {
 	return r.Body
 }
 
 // Status returns HTTPResponse.Status
-func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) Status() string {
+func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -70972,7 +70972,7 @@ func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) Status() string 
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) StatusCode() int {
+func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -70980,7 +70980,7 @@ func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) StatusCode() int
 }
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse) ContentType() string {
+func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -87267,36 +87267,6 @@ func (c *ClientWithResponses) GetV1AgentByAgentIdDraftWithResponse(ctx context.C
 	return ParseGetV1AgentByAgentIdDraftResponse(rsp)
 }
 
-// PatchV1AgentByAgentIdDraftWithBodyWithResponse Edit the draft
-//
-// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
-func (c *ClientWithResponses) PatchV1AgentByAgentIdDraftWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1AgentByAgentIdDraftResponse, error) {
-	rsp, err := c.PatchV1AgentByAgentIdDraftWithBody(ctx, agentId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePatchV1AgentByAgentIdDraftResponse(rsp)
-}
-
-// PatchV1AgentByAgentIdDraftWithResponse Edit the draft
-//
-// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v1/agent/{agentId}/draft (the `PatchV1AgentByAgentIdDraft` operationId).
-func (c *ClientWithResponses) PatchV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, body PatchV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1AgentByAgentIdDraftResponse, error) {
-	rsp, err := c.PatchV1AgentByAgentIdDraft(ctx, agentId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePatchV1AgentByAgentIdDraftResponse(rsp)
-}
-
 // PostV1AgentByAgentIdDraftWithBodyWithResponse Start a draft
 //
 // Opens the agent's one shared draft, a copy of the live version or of an older published version. Fails with 409 when a draft is already open.
@@ -87325,6 +87295,36 @@ func (c *ClientWithResponses) PostV1AgentByAgentIdDraftWithResponse(ctx context.
 		return nil, err
 	}
 	return ParsePostV1AgentByAgentIdDraftResponse(rsp)
+}
+
+// PutV1AgentByAgentIdDraftWithBodyWithResponse Edit the draft
+//
+// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/agent/{agentId}/draft (the `PutV1AgentByAgentIdDraft` operationId).
+func (c *ClientWithResponses) PutV1AgentByAgentIdDraftWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1AgentByAgentIdDraftResponse, error) {
+	rsp, err := c.PutV1AgentByAgentIdDraftWithBody(ctx, agentId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1AgentByAgentIdDraftResponse(rsp)
+}
+
+// PutV1AgentByAgentIdDraftWithResponse Edit the draft
+//
+// Changes settings on the draft. Omitted settings stay as they are. Pass the revision you read as expectedRevision to fail with 409 if anyone edited the draft since, instead of applying on top of their edit.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/agent/{agentId}/draft (the `PutV1AgentByAgentIdDraft` operationId).
+func (c *ClientWithResponses) PutV1AgentByAgentIdDraftWithResponse(ctx context.Context, agentId openapi_types.UUID, body PutV1AgentByAgentIdDraftJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1AgentByAgentIdDraftResponse, error) {
+	rsp, err := c.PutV1AgentByAgentIdDraft(ctx, agentId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1AgentByAgentIdDraftResponse(rsp)
 }
 
 // PostV1AgentByAgentIdDraftPublishWithBodyWithResponse Publish the draft
@@ -87447,34 +87447,34 @@ func (c *ClientWithResponses) GetV1AgentByAgentIdVersionsByVersionIdWithResponse
 	return ParseGetV1AgentByAgentIdVersionsByVersionIdResponse(rsp)
 }
 
-// PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBodyWithResponse Restore an agent version
+// PostV1AgentByAgentIdVersionsByVersionIdRollbackWithBodyWithResponse Roll an agent back to a version
 //
-// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+// Publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
-// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
-func (c *ClientWithResponses) PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse, error) {
-	rsp, err := c.PostV1AgentByAgentIdVersionsByVersionIdRestoreWithBody(ctx, agentId, versionId, contentType, body, reqEditors...)
+// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
+func (c *ClientWithResponses) PostV1AgentByAgentIdVersionsByVersionIdRollbackWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse, error) {
+	rsp, err := c.PostV1AgentByAgentIdVersionsByVersionIdRollbackWithBody(ctx, agentId, versionId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParsePostV1AgentByAgentIdVersionsByVersionIdRestoreResponse(rsp)
+	return ParsePostV1AgentByAgentIdVersionsByVersionIdRollbackResponse(rsp)
 }
 
-// PostV1AgentByAgentIdVersionsByVersionIdRestoreWithResponse Restore an agent version
+// PostV1AgentByAgentIdVersionsByVersionIdRollbackWithResponse Roll an agent back to a version
 //
-// Roll back: publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
+// Publishes a new version, numbered after the latest, with this version's settings and makes it live. History stays append-only. An open draft started before this is kept but can no longer be published (409 `agent_draft_base_changed`); discard it or start a new one. Pass `expectedLiveVersionId` to be refused (409 `agent_live_version_changed`) if another version went live since you read it.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
-// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/restore (the `PostV1AgentByAgentIdVersionsByVersionIdRestore` operationId).
-func (c *ClientWithResponses) PostV1AgentByAgentIdVersionsByVersionIdRestoreWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRestoreJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse, error) {
-	rsp, err := c.PostV1AgentByAgentIdVersionsByVersionIdRestore(ctx, agentId, versionId, body, reqEditors...)
+// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
+func (c *ClientWithResponses) PostV1AgentByAgentIdVersionsByVersionIdRollbackWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse, error) {
+	rsp, err := c.PostV1AgentByAgentIdVersionsByVersionIdRollback(ctx, agentId, versionId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParsePostV1AgentByAgentIdVersionsByVersionIdRestoreResponse(rsp)
+	return ParsePostV1AgentByAgentIdVersionsByVersionIdRollbackResponse(rsp)
 }
 
 // PostV1AnalyticsQueryWithBodyWithResponse Run an analytics query
@@ -92287,21 +92287,21 @@ func ParseGetV1AgentByAgentIdDraftResponse(rsp *http.Response) (*GetV1AgentByAge
 	return response, nil
 }
 
-// ParsePatchV1AgentByAgentIdDraftResponse parses an HTTP response from a PatchV1AgentByAgentIdDraftWithResponse call
-func ParsePatchV1AgentByAgentIdDraftResponse(rsp *http.Response) (*PatchV1AgentByAgentIdDraftResponse, error) {
+// ParsePostV1AgentByAgentIdDraftResponse parses an HTTP response from a PostV1AgentByAgentIdDraftWithResponse call
+func ParsePostV1AgentByAgentIdDraftResponse(rsp *http.Response) (*PostV1AgentByAgentIdDraftResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &PatchV1AgentByAgentIdDraftResponse{
+	response := &PostV1AgentByAgentIdDraftResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
 			Data AgentVersionResponse `json:"data"`
@@ -92309,7 +92309,7 @@ func ParsePatchV1AgentByAgentIdDraftResponse(rsp *http.Response) (*PatchV1AgentB
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest ErrorResponse
@@ -92358,21 +92358,21 @@ func ParsePatchV1AgentByAgentIdDraftResponse(rsp *http.Response) (*PatchV1AgentB
 	return response, nil
 }
 
-// ParsePostV1AgentByAgentIdDraftResponse parses an HTTP response from a PostV1AgentByAgentIdDraftWithResponse call
-func ParsePostV1AgentByAgentIdDraftResponse(rsp *http.Response) (*PostV1AgentByAgentIdDraftResponse, error) {
+// ParsePutV1AgentByAgentIdDraftResponse parses an HTTP response from a PutV1AgentByAgentIdDraftWithResponse call
+func ParsePutV1AgentByAgentIdDraftResponse(rsp *http.Response) (*PutV1AgentByAgentIdDraftResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &PostV1AgentByAgentIdDraftResponse{
+	response := &PutV1AgentByAgentIdDraftResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
 			Data AgentVersionResponse `json:"data"`
@@ -92380,7 +92380,7 @@ func ParsePostV1AgentByAgentIdDraftResponse(rsp *http.Response) (*PostV1AgentByA
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON201 = &dest
+		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest ErrorResponse
@@ -92754,15 +92754,15 @@ func ParseGetV1AgentByAgentIdVersionsByVersionIdResponse(rsp *http.Response) (*G
 	return response, nil
 }
 
-// ParsePostV1AgentByAgentIdVersionsByVersionIdRestoreResponse parses an HTTP response from a PostV1AgentByAgentIdVersionsByVersionIdRestoreWithResponse call
-func ParsePostV1AgentByAgentIdVersionsByVersionIdRestoreResponse(rsp *http.Response) (*PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse, error) {
+// ParsePostV1AgentByAgentIdVersionsByVersionIdRollbackResponse parses an HTTP response from a PostV1AgentByAgentIdVersionsByVersionIdRollbackWithResponse call
+func ParsePostV1AgentByAgentIdVersionsByVersionIdRollbackResponse(rsp *http.Response) (*PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &PostV1AgentByAgentIdVersionsByVersionIdRestoreResponse{
+	response := &PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}

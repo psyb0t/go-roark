@@ -2,6 +2,14 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.6.0, 2026-10-30
+
+- Breaking: model settings moved from flat fields into per-sub-agent model configs. `UpdateAgentDraftInput.Settings` no longer has `LlmBackendModel`, `LlmMaxTokens`, `LlmModel`, `LlmProvider`, `LlmTemperature`, `LlmVoice`, `SttEndpointingMs`, `SttKeyterms`, `SttModel`, `SttProvider`, `SttSmartFormat` or `SttTurnDetection`. Each entry in `Settings.SubAgents` lost `TtsModel`, `TtsProvider`, `TtsSimilarityBoost`, `TtsSpeed`, `TtsStability` and `TtsVoiceId`, and gained a required `ModelConfigs` field of `[]UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item`.
+- Each model config item is either `UpdateAgentDraftInputSettingsSubAgentsModelConfigs0` (type `CASCADE`, with LLM, STT and TTS settings) or `UpdateAgentDraftInputSettingsSubAgentsModelConfigs1` (type `SPEECH_TO_SPEECH`), with their provider, type and turn detection enums.
+- Breaking: `AgentVersionResponse` no longer has the `Llm*` and `Stt*` fields (`LlmModel`, `LlmProvider`, `LlmTemperature`, `SttModel`, `SttProvider`, `SttTurnDetection` and the rest). `AgentVersionSubAgent` no longer has the `Tts*` fields. Read these values from the new `AgentVersionSubAgent.ModelConfigs` field.
+- Removed the enum types `AgentVersionResponseLlmProvider`, `AgentVersionResponseSttProvider`, `AgentVersionResponseSttTurnDetection`, `AgentVersionSubAgentTtsProvider`, `UpdateAgentDraftInputSettingsLlmProvider`, `UpdateAgentDraftInputSettingsSttProvider`, `UpdateAgentDraftInputSettingsSttTurnDetection` and `UpdateAgentDraftInputSettingsSubAgentsTtsProvider`, with all their constants.
+- Added the shared config types `AgentModelConfig`, `AgentCascadeModelConfig`, `AgentSpeechToSpeechModelConfig`, `AgentLlmConfig`, `AgentSttConfig`, `AgentTtsConfig` and `AgentSpeechToSpeechConfig`, with their provider, type and turn detection enums such as `AgentLlmConfigProvider` and `AgentTtsConfigProvider`.
+
 ## v0.5.0, 2026-10-29
 
 - Breaking: the draft edit endpoint changed from PATCH to PUT. `PatchV1AgentByAgentIdDraft`, `PatchV1AgentByAgentIdDraftWithBody`, their `ClientWithResponses` variants `PatchV1AgentByAgentIdDraftWithResponse` and `PatchV1AgentByAgentIdDraftWithBodyWithResponse`, `PatchV1AgentByAgentIdDraftJSONRequestBody`, `PatchV1AgentByAgentIdDraftResponse`, `NewPatchV1AgentByAgentIdDraftRequest`, `NewPatchV1AgentByAgentIdDraftRequestWithBody` and `ParsePatchV1AgentByAgentIdDraftResponse` are removed. Use the new `PutV1AgentByAgentIdDraft` family: `PutV1AgentByAgentIdDraft`, `PutV1AgentByAgentIdDraftWithBody`, `PutV1AgentByAgentIdDraftWithResponse`, `PutV1AgentByAgentIdDraftWithBodyWithResponse`, `PutV1AgentByAgentIdDraftJSONRequestBody`, `PutV1AgentByAgentIdDraftResponse`, `NewPutV1AgentByAgentIdDraftRequest`, `NewPutV1AgentByAgentIdDraftRequestWithBody` and `ParsePutV1AgentByAgentIdDraftResponse`.

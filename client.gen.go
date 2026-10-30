@@ -19,6 +19,21 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// Defines values for AgentCascadeModelConfigType.
+const (
+	AgentCascadeModelConfigTypeCASCADE AgentCascadeModelConfigType = "CASCADE"
+)
+
+// Valid indicates whether the value is a known member of the AgentCascadeModelConfigType enum.
+func (e AgentCascadeModelConfigType) Valid() bool {
+	switch e {
+	case AgentCascadeModelConfigTypeCASCADE:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AgentConfigEndpointsDirection.
 const (
 	AgentConfigEndpointsDirectionINCOMING            AgentConfigEndpointsDirection = "INCOMING"
@@ -202,6 +217,39 @@ func (e AgentEndpointResponseType) Valid() bool {
 	}
 }
 
+// Defines values for AgentLlmConfigProvider.
+const (
+	AgentLlmConfigProviderANTHROPIC  AgentLlmConfigProvider = "ANTHROPIC"
+	AgentLlmConfigProviderAWS        AgentLlmConfigProvider = "AWS"
+	AgentLlmConfigProviderELEVENLABS AgentLlmConfigProvider = "ELEVENLABS"
+	AgentLlmConfigProviderGOOGLE     AgentLlmConfigProvider = "GOOGLE"
+	AgentLlmConfigProviderOPENAI     AgentLlmConfigProvider = "OPENAI"
+	AgentLlmConfigProviderULTRAVOX   AgentLlmConfigProvider = "ULTRAVOX"
+	AgentLlmConfigProviderXAI        AgentLlmConfigProvider = "XAI"
+)
+
+// Valid indicates whether the value is a known member of the AgentLlmConfigProvider enum.
+func (e AgentLlmConfigProvider) Valid() bool {
+	switch e {
+	case AgentLlmConfigProviderANTHROPIC:
+		return true
+	case AgentLlmConfigProviderAWS:
+		return true
+	case AgentLlmConfigProviderELEVENLABS:
+		return true
+	case AgentLlmConfigProviderGOOGLE:
+		return true
+	case AgentLlmConfigProviderOPENAI:
+		return true
+	case AgentLlmConfigProviderULTRAVOX:
+		return true
+	case AgentLlmConfigProviderXAI:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AgentPromptResponseSource.
 const (
 	AgentPromptResponseSourceAPI                          AgentPromptResponseSource = "API"
@@ -241,6 +289,123 @@ func (e AgentPromptResponseSource) Valid() bool {
 	case AgentPromptResponseSourceUSER:
 		return true
 	case AgentPromptResponseSourceVAPIINTEGRATION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpeechToSpeechConfigProvider.
+const (
+	AgentSpeechToSpeechConfigProviderANTHROPIC  AgentSpeechToSpeechConfigProvider = "ANTHROPIC"
+	AgentSpeechToSpeechConfigProviderAWS        AgentSpeechToSpeechConfigProvider = "AWS"
+	AgentSpeechToSpeechConfigProviderELEVENLABS AgentSpeechToSpeechConfigProvider = "ELEVENLABS"
+	AgentSpeechToSpeechConfigProviderGOOGLE     AgentSpeechToSpeechConfigProvider = "GOOGLE"
+	AgentSpeechToSpeechConfigProviderOPENAI     AgentSpeechToSpeechConfigProvider = "OPENAI"
+	AgentSpeechToSpeechConfigProviderULTRAVOX   AgentSpeechToSpeechConfigProvider = "ULTRAVOX"
+	AgentSpeechToSpeechConfigProviderXAI        AgentSpeechToSpeechConfigProvider = "XAI"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpeechToSpeechConfigProvider enum.
+func (e AgentSpeechToSpeechConfigProvider) Valid() bool {
+	switch e {
+	case AgentSpeechToSpeechConfigProviderANTHROPIC:
+		return true
+	case AgentSpeechToSpeechConfigProviderAWS:
+		return true
+	case AgentSpeechToSpeechConfigProviderELEVENLABS:
+		return true
+	case AgentSpeechToSpeechConfigProviderGOOGLE:
+		return true
+	case AgentSpeechToSpeechConfigProviderOPENAI:
+		return true
+	case AgentSpeechToSpeechConfigProviderULTRAVOX:
+		return true
+	case AgentSpeechToSpeechConfigProviderXAI:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpeechToSpeechModelConfigType.
+const (
+	AgentSpeechToSpeechModelConfigTypeSPEECHTOSPEECH AgentSpeechToSpeechModelConfigType = "SPEECH_TO_SPEECH"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpeechToSpeechModelConfigType enum.
+func (e AgentSpeechToSpeechModelConfigType) Valid() bool {
+	switch e {
+	case AgentSpeechToSpeechModelConfigTypeSPEECHTOSPEECH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSttConfigProvider.
+const (
+	AgentSttConfigProviderASSEMBLYAI    AgentSttConfigProvider = "ASSEMBLYAI"
+	AgentSttConfigProviderDEEPGRAM      AgentSttConfigProvider = "DEEPGRAM"
+	AgentSttConfigProviderELEVENLABS    AgentSttConfigProvider = "ELEVENLABS"
+	AgentSttConfigProviderOPENAIWHISPER AgentSttConfigProvider = "OPENAI_WHISPER"
+	AgentSttConfigProviderSPEECHMATICS  AgentSttConfigProvider = "SPEECHMATICS"
+)
+
+// Valid indicates whether the value is a known member of the AgentSttConfigProvider enum.
+func (e AgentSttConfigProvider) Valid() bool {
+	switch e {
+	case AgentSttConfigProviderASSEMBLYAI:
+		return true
+	case AgentSttConfigProviderDEEPGRAM:
+		return true
+	case AgentSttConfigProviderELEVENLABS:
+		return true
+	case AgentSttConfigProviderOPENAIWHISPER:
+		return true
+	case AgentSttConfigProviderSPEECHMATICS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSttConfigTurnDetection.
+const (
+	AgentSttConfigTurnDetectionPipeline AgentSttConfigTurnDetection = "pipeline"
+	AgentSttConfigTurnDetectionProvider AgentSttConfigTurnDetection = "provider"
+)
+
+// Valid indicates whether the value is a known member of the AgentSttConfigTurnDetection enum.
+func (e AgentSttConfigTurnDetection) Valid() bool {
+	switch e {
+	case AgentSttConfigTurnDetectionPipeline:
+		return true
+	case AgentSttConfigTurnDetectionProvider:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentTtsConfigProvider.
+const (
+	AgentTtsConfigProviderCARTESIA   AgentTtsConfigProvider = "CARTESIA"
+	AgentTtsConfigProviderELEVENLABS AgentTtsConfigProvider = "ELEVENLABS"
+	AgentTtsConfigProviderOPENAI     AgentTtsConfigProvider = "OPENAI"
+	AgentTtsConfigProviderRIME       AgentTtsConfigProvider = "RIME"
+)
+
+// Valid indicates whether the value is a known member of the AgentTtsConfigProvider enum.
+func (e AgentTtsConfigProvider) Valid() bool {
+	switch e {
+	case AgentTtsConfigProviderCARTESIA:
+		return true
+	case AgentTtsConfigProviderELEVENLABS:
+		return true
+	case AgentTtsConfigProviderOPENAI:
+		return true
+	case AgentTtsConfigProviderRIME:
 		return true
 	default:
 		return false
@@ -382,39 +547,6 @@ func (e AgentVersionResponseInterruptionMode) Valid() bool {
 	}
 }
 
-// Defines values for AgentVersionResponseLlmProvider.
-const (
-	AgentVersionResponseLlmProviderANTHROPIC  AgentVersionResponseLlmProvider = "ANTHROPIC"
-	AgentVersionResponseLlmProviderAWS        AgentVersionResponseLlmProvider = "AWS"
-	AgentVersionResponseLlmProviderELEVENLABS AgentVersionResponseLlmProvider = "ELEVENLABS"
-	AgentVersionResponseLlmProviderGOOGLE     AgentVersionResponseLlmProvider = "GOOGLE"
-	AgentVersionResponseLlmProviderOPENAI     AgentVersionResponseLlmProvider = "OPENAI"
-	AgentVersionResponseLlmProviderULTRAVOX   AgentVersionResponseLlmProvider = "ULTRAVOX"
-	AgentVersionResponseLlmProviderXAI        AgentVersionResponseLlmProvider = "XAI"
-)
-
-// Valid indicates whether the value is a known member of the AgentVersionResponseLlmProvider enum.
-func (e AgentVersionResponseLlmProvider) Valid() bool {
-	switch e {
-	case AgentVersionResponseLlmProviderANTHROPIC:
-		return true
-	case AgentVersionResponseLlmProviderAWS:
-		return true
-	case AgentVersionResponseLlmProviderELEVENLABS:
-		return true
-	case AgentVersionResponseLlmProviderGOOGLE:
-		return true
-	case AgentVersionResponseLlmProviderOPENAI:
-		return true
-	case AgentVersionResponseLlmProviderULTRAVOX:
-		return true
-	case AgentVersionResponseLlmProviderXAI:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for AgentVersionResponseModalities.
 const (
 	AgentVersionResponseModalitiesCall AgentVersionResponseModalities = "call"
@@ -478,75 +610,6 @@ func (e AgentVersionResponseStatus) Valid() bool {
 	case AgentVersionResponseStatusDRAFT:
 		return true
 	case AgentVersionResponseStatusPUBLISHED:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentVersionResponseSttProvider.
-const (
-	AgentVersionResponseSttProviderASSEMBLYAI    AgentVersionResponseSttProvider = "ASSEMBLYAI"
-	AgentVersionResponseSttProviderDEEPGRAM      AgentVersionResponseSttProvider = "DEEPGRAM"
-	AgentVersionResponseSttProviderELEVENLABS    AgentVersionResponseSttProvider = "ELEVENLABS"
-	AgentVersionResponseSttProviderOPENAIWHISPER AgentVersionResponseSttProvider = "OPENAI_WHISPER"
-	AgentVersionResponseSttProviderSPEECHMATICS  AgentVersionResponseSttProvider = "SPEECHMATICS"
-)
-
-// Valid indicates whether the value is a known member of the AgentVersionResponseSttProvider enum.
-func (e AgentVersionResponseSttProvider) Valid() bool {
-	switch e {
-	case AgentVersionResponseSttProviderASSEMBLYAI:
-		return true
-	case AgentVersionResponseSttProviderDEEPGRAM:
-		return true
-	case AgentVersionResponseSttProviderELEVENLABS:
-		return true
-	case AgentVersionResponseSttProviderOPENAIWHISPER:
-		return true
-	case AgentVersionResponseSttProviderSPEECHMATICS:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentVersionResponseSttTurnDetection.
-const (
-	AgentVersionResponseSttTurnDetectionPipeline AgentVersionResponseSttTurnDetection = "pipeline"
-	AgentVersionResponseSttTurnDetectionProvider AgentVersionResponseSttTurnDetection = "provider"
-)
-
-// Valid indicates whether the value is a known member of the AgentVersionResponseSttTurnDetection enum.
-func (e AgentVersionResponseSttTurnDetection) Valid() bool {
-	switch e {
-	case AgentVersionResponseSttTurnDetectionPipeline:
-		return true
-	case AgentVersionResponseSttTurnDetectionProvider:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentVersionSubAgentTtsProvider.
-const (
-	AgentVersionSubAgentTtsProviderCARTESIA   AgentVersionSubAgentTtsProvider = "CARTESIA"
-	AgentVersionSubAgentTtsProviderELEVENLABS AgentVersionSubAgentTtsProvider = "ELEVENLABS"
-	AgentVersionSubAgentTtsProviderOPENAI     AgentVersionSubAgentTtsProvider = "OPENAI"
-	AgentVersionSubAgentTtsProviderRIME       AgentVersionSubAgentTtsProvider = "RIME"
-)
-
-// Valid indicates whether the value is a known member of the AgentVersionSubAgentTtsProvider enum.
-func (e AgentVersionSubAgentTtsProvider) Valid() bool {
-	switch e {
-	case AgentVersionSubAgentTtsProviderCARTESIA:
-		return true
-	case AgentVersionSubAgentTtsProviderELEVENLABS:
-		return true
-	case AgentVersionSubAgentTtsProviderOPENAI:
-		return true
-	case AgentVersionSubAgentTtsProviderRIME:
 		return true
 	default:
 		return false
@@ -16555,39 +16618,6 @@ func (e UpdateAgentDraftInputSettingsInterruptionMode) Valid() bool {
 	}
 }
 
-// Defines values for UpdateAgentDraftInputSettingsLlmProvider.
-const (
-	UpdateAgentDraftInputSettingsLlmProviderANTHROPIC  UpdateAgentDraftInputSettingsLlmProvider = "ANTHROPIC"
-	UpdateAgentDraftInputSettingsLlmProviderAWS        UpdateAgentDraftInputSettingsLlmProvider = "AWS"
-	UpdateAgentDraftInputSettingsLlmProviderELEVENLABS UpdateAgentDraftInputSettingsLlmProvider = "ELEVENLABS"
-	UpdateAgentDraftInputSettingsLlmProviderGOOGLE     UpdateAgentDraftInputSettingsLlmProvider = "GOOGLE"
-	UpdateAgentDraftInputSettingsLlmProviderOPENAI     UpdateAgentDraftInputSettingsLlmProvider = "OPENAI"
-	UpdateAgentDraftInputSettingsLlmProviderULTRAVOX   UpdateAgentDraftInputSettingsLlmProvider = "ULTRAVOX"
-	UpdateAgentDraftInputSettingsLlmProviderXAI        UpdateAgentDraftInputSettingsLlmProvider = "XAI"
-)
-
-// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsLlmProvider enum.
-func (e UpdateAgentDraftInputSettingsLlmProvider) Valid() bool {
-	switch e {
-	case UpdateAgentDraftInputSettingsLlmProviderANTHROPIC:
-		return true
-	case UpdateAgentDraftInputSettingsLlmProviderAWS:
-		return true
-	case UpdateAgentDraftInputSettingsLlmProviderELEVENLABS:
-		return true
-	case UpdateAgentDraftInputSettingsLlmProviderGOOGLE:
-		return true
-	case UpdateAgentDraftInputSettingsLlmProviderOPENAI:
-		return true
-	case UpdateAgentDraftInputSettingsLlmProviderULTRAVOX:
-		return true
-	case UpdateAgentDraftInputSettingsLlmProviderXAI:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for UpdateAgentDraftInputSettingsModalities.
 const (
 	UpdateAgentDraftInputSettingsModalitiesCall UpdateAgentDraftInputSettingsModalities = "call"
@@ -16600,51 +16630,6 @@ func (e UpdateAgentDraftInputSettingsModalities) Valid() bool {
 	case UpdateAgentDraftInputSettingsModalitiesCall:
 		return true
 	case UpdateAgentDraftInputSettingsModalitiesChat:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateAgentDraftInputSettingsSttProvider.
-const (
-	UpdateAgentDraftInputSettingsSttProviderASSEMBLYAI    UpdateAgentDraftInputSettingsSttProvider = "ASSEMBLYAI"
-	UpdateAgentDraftInputSettingsSttProviderDEEPGRAM      UpdateAgentDraftInputSettingsSttProvider = "DEEPGRAM"
-	UpdateAgentDraftInputSettingsSttProviderELEVENLABS    UpdateAgentDraftInputSettingsSttProvider = "ELEVENLABS"
-	UpdateAgentDraftInputSettingsSttProviderOPENAIWHISPER UpdateAgentDraftInputSettingsSttProvider = "OPENAI_WHISPER"
-	UpdateAgentDraftInputSettingsSttProviderSPEECHMATICS  UpdateAgentDraftInputSettingsSttProvider = "SPEECHMATICS"
-)
-
-// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSttProvider enum.
-func (e UpdateAgentDraftInputSettingsSttProvider) Valid() bool {
-	switch e {
-	case UpdateAgentDraftInputSettingsSttProviderASSEMBLYAI:
-		return true
-	case UpdateAgentDraftInputSettingsSttProviderDEEPGRAM:
-		return true
-	case UpdateAgentDraftInputSettingsSttProviderELEVENLABS:
-		return true
-	case UpdateAgentDraftInputSettingsSttProviderOPENAIWHISPER:
-		return true
-	case UpdateAgentDraftInputSettingsSttProviderSPEECHMATICS:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for UpdateAgentDraftInputSettingsSttTurnDetection.
-const (
-	UpdateAgentDraftInputSettingsSttTurnDetectionPipeline UpdateAgentDraftInputSettingsSttTurnDetection = "pipeline"
-	UpdateAgentDraftInputSettingsSttTurnDetectionProvider UpdateAgentDraftInputSettingsSttTurnDetection = "provider"
-)
-
-// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSttTurnDetection enum.
-func (e UpdateAgentDraftInputSettingsSttTurnDetection) Valid() bool {
-	switch e {
-	case UpdateAgentDraftInputSettingsSttTurnDetectionPipeline:
-		return true
-	case UpdateAgentDraftInputSettingsSttTurnDetectionProvider:
 		return true
 	default:
 		return false
@@ -16699,24 +16684,165 @@ func (e UpdateAgentDraftInputSettingsSubAgentsKey0) Valid() bool {
 	}
 }
 
-// Defines values for UpdateAgentDraftInputSettingsSubAgentsTtsProvider.
+// Defines values for UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider.
 const (
-	UpdateAgentDraftInputSettingsSubAgentsTtsProviderCARTESIA   UpdateAgentDraftInputSettingsSubAgentsTtsProvider = "CARTESIA"
-	UpdateAgentDraftInputSettingsSubAgentsTtsProviderELEVENLABS UpdateAgentDraftInputSettingsSubAgentsTtsProvider = "ELEVENLABS"
-	UpdateAgentDraftInputSettingsSubAgentsTtsProviderOPENAI     UpdateAgentDraftInputSettingsSubAgentsTtsProvider = "OPENAI"
-	UpdateAgentDraftInputSettingsSubAgentsTtsProviderRIME       UpdateAgentDraftInputSettingsSubAgentsTtsProvider = "RIME"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderANTHROPIC  UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "ANTHROPIC"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderAWS        UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "AWS"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderELEVENLABS UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "ELEVENLABS"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderGOOGLE     UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "GOOGLE"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderOPENAI     UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "OPENAI"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderULTRAVOX   UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "ULTRAVOX"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderXAI        UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "XAI"
 )
 
-// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsTtsProvider enum.
-func (e UpdateAgentDraftInputSettingsSubAgentsTtsProvider) Valid() bool {
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider enum.
+func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider) Valid() bool {
 	switch e {
-	case UpdateAgentDraftInputSettingsSubAgentsTtsProviderCARTESIA:
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderANTHROPIC:
 		return true
-	case UpdateAgentDraftInputSettingsSubAgentsTtsProviderELEVENLABS:
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderAWS:
 		return true
-	case UpdateAgentDraftInputSettingsSubAgentsTtsProviderOPENAI:
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderELEVENLABS:
 		return true
-	case UpdateAgentDraftInputSettingsSubAgentsTtsProviderRIME:
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderGOOGLE:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderOPENAI:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderULTRAVOX:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderXAI:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider.
+const (
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderASSEMBLYAI    UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "ASSEMBLYAI"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderDEEPGRAM      UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "DEEPGRAM"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderELEVENLABS    UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "ELEVENLABS"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderOPENAIWHISPER UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "OPENAI_WHISPER"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderSPEECHMATICS  UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "SPEECHMATICS"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider enum.
+func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderASSEMBLYAI:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderDEEPGRAM:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderELEVENLABS:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderOPENAIWHISPER:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderSPEECHMATICS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetection.
+const (
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetectionPipeline UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetection = "pipeline"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetectionProvider UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetection = "provider"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetection enum.
+func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetection) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetectionPipeline:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetectionProvider:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider.
+const (
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderCARTESIA   UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "CARTESIA"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderELEVENLABS UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "ELEVENLABS"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderOPENAI     UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "OPENAI"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderRIME       UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "RIME"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider enum.
+func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderCARTESIA:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderELEVENLABS:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderOPENAI:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderRIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsSubAgentsModelConfigs0Type.
+const (
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TypeCASCADE UpdateAgentDraftInputSettingsSubAgentsModelConfigs0Type = "CASCADE"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsModelConfigs0Type enum.
+func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs0Type) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TypeCASCADE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider.
+const (
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderANTHROPIC  UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "ANTHROPIC"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderAWS        UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "AWS"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderELEVENLABS UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "ELEVENLABS"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderGOOGLE     UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "GOOGLE"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderOPENAI     UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "OPENAI"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderULTRAVOX   UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "ULTRAVOX"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderXAI        UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "XAI"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider enum.
+func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderANTHROPIC:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderAWS:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderELEVENLABS:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderGOOGLE:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderOPENAI:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderULTRAVOX:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderXAI:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateAgentDraftInputSettingsSubAgentsModelConfigs1Type.
+const (
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1TypeSPEECHTOSPEECH UpdateAgentDraftInputSettingsSubAgentsModelConfigs1Type = "SPEECH_TO_SPEECH"
+)
+
+// Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsModelConfigs1Type enum.
+func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs1Type) Valid() bool {
+	switch e {
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1TypeSPEECHTOSPEECH:
 		return true
 	default:
 		return false
@@ -23509,6 +23635,22 @@ func (e GetV1SimulationPlanJobsParamsStatus) Valid() bool {
 // AddFlowEdgeCaseInput defines model for AddFlowEdgeCaseInput.
 type AddFlowEdgeCaseInput = FlowEdgeCaseInput
 
+// AgentCascadeModelConfig A transcriber, a text model and a voice. A component that fails during a call moves to its next entry; the others stay.
+type AgentCascadeModelConfig struct {
+	// Llm One to three text models, in the order a call tries them.
+	Llm []AgentLlmConfig `json:"llm"`
+
+	// Stt One to three transcribers, in the order a call tries them.
+	Stt []AgentSttConfig `json:"stt"`
+
+	// Tts One to three voices, in the order a call tries them.
+	Tts  []AgentTtsConfig            `json:"tts"`
+	Type AgentCascadeModelConfigType `json:"type"`
+}
+
+// AgentCascadeModelConfigType defines model for AgentCascadeModelConfig.Type.
+type AgentCascadeModelConfigType string
+
 // AgentConfig defines model for AgentConfig.
 type AgentConfig struct {
 	CustomId    *string `json:"customId,omitempty"`
@@ -23641,6 +23783,26 @@ type AgentIdentificationByRoarkId struct {
 	RoarkId openapi_types.UUID `json:"roarkId"`
 }
 
+// AgentLlmConfig A text model. Null settings use the default.
+type AgentLlmConfig struct {
+	MaxTokens *int `json:"maxTokens"`
+
+	// Model Any text model id the provider accepts.
+	Model    string                 `json:"model"`
+	Provider AgentLlmConfigProvider `json:"provider"`
+
+	// Temperature 0 to 2.
+	Temperature *float64 `json:"temperature"`
+}
+
+// AgentLlmConfigProvider defines model for AgentLlmConfig.Provider.
+type AgentLlmConfigProvider string
+
+// AgentModelConfig A model setup a speaker runs on. The call moves to the next config once this one has nothing left to try. A field of the other type is refused.
+type AgentModelConfig struct {
+	union json.RawMessage
+}
+
 // AgentPromptResponse A prompt lineage on an agent.
 type AgentPromptResponse struct {
 	// CreatedAt When this prompt lineage was first created (ISO 8601).
@@ -23673,6 +23835,79 @@ type AgentPromptVersionResponse struct {
 	// VersionNumber Version number: 1-based and increasing.
 	VersionNumber int `json:"versionNumber"`
 }
+
+// AgentSpeechToSpeechConfig A model that hears the caller and speaks with its own voice. Null settings use the default.
+type AgentSpeechToSpeechConfig struct {
+	// BackendModel OpenAI Live models only: the text model they delegate to.
+	BackendModel    *string `json:"backendModel"`
+	MaxOutputTokens *int    `json:"maxOutputTokens"`
+
+	// Model Any speech-to-speech model id the provider accepts.
+	Model    string                            `json:"model"`
+	Provider AgentSpeechToSpeechConfigProvider `json:"provider"`
+
+	// Temperature 0 to 2.
+	Temperature *float64 `json:"temperature"`
+
+	// Voice The model's own voice.
+	Voice *string `json:"voice"`
+}
+
+// AgentSpeechToSpeechConfigProvider defines model for AgentSpeechToSpeechConfig.Provider.
+type AgentSpeechToSpeechConfigProvider string
+
+// AgentSpeechToSpeechModelConfig One model that hears the caller and speaks with its own voice.
+type AgentSpeechToSpeechModelConfig struct {
+	// SpeechToSpeech A model that hears the caller and speaks with its own voice. Null settings use the default.
+	SpeechToSpeech AgentSpeechToSpeechConfig          `json:"speechToSpeech"`
+	Type           AgentSpeechToSpeechModelConfigType `json:"type"`
+}
+
+// AgentSpeechToSpeechModelConfigType defines model for AgentSpeechToSpeechModelConfig.Type.
+type AgentSpeechToSpeechModelConfigType string
+
+// AgentSttConfig A transcriber. Null settings use the default.
+type AgentSttConfig struct {
+	// EndpointingMs How long the transcriber waits before it ends a turn.
+	EndpointingMs *int `json:"endpointingMs"`
+
+	// Keyterms Words and phrases the transcriber should listen for.
+	Keyterms []string `json:"keyterms"`
+
+	// Model Any transcriber model id the provider accepts.
+	Model         string                       `json:"model"`
+	Provider      AgentSttConfigProvider       `json:"provider"`
+	SmartFormat   *bool                        `json:"smartFormat"`
+	TurnDetection *AgentSttConfigTurnDetection `json:"turnDetection"`
+}
+
+// AgentSttConfigProvider defines model for AgentSttConfig.Provider.
+type AgentSttConfigProvider string
+
+// AgentSttConfigTurnDetection defines model for AgentSttConfig.TurnDetection.
+type AgentSttConfigTurnDetection string
+
+// AgentTtsConfig A voice. Null settings use the default.
+type AgentTtsConfig struct {
+	// Model Any voice model id the provider accepts.
+	Model    string                 `json:"model"`
+	Provider AgentTtsConfigProvider `json:"provider"`
+
+	// SimilarityBoost 0 to 1, ElevenLabs.
+	SimilarityBoost *float64 `json:"similarityBoost"`
+
+	// Speed 0.5 to 2.
+	Speed *float64 `json:"speed"`
+
+	// Stability 0 to 1, ElevenLabs.
+	Stability *float64 `json:"stability"`
+
+	// VoiceId Any voice id the provider accepts, including your own voices.
+	VoiceId string `json:"voiceId"`
+}
+
+// AgentTtsConfigProvider defines model for AgentTtsConfig.Provider.
+type AgentTtsConfigProvider string
 
 // AgentVersionHandoff defines model for AgentVersionHandoff.
 type AgentVersionHandoff struct {
@@ -23752,20 +23987,6 @@ type AgentVersionResponse struct {
 	// Language ISO 639-1, e.g. en.
 	Language *string `json:"language"`
 
-	// LlmBackendModel OpenAI Live models only: the text model they delegate to.
-	LlmBackendModel *string `json:"llmBackendModel"`
-	LlmMaxTokens    *int    `json:"llmMaxTokens"`
-
-	// LlmModel Any model id the provider accepts. One model serves every speaker.
-	LlmModel    *string                          `json:"llmModel"`
-	LlmProvider *AgentVersionResponseLlmProvider `json:"llmProvider"`
-
-	// LlmTemperature 0 to 2.
-	LlmTemperature *float64 `json:"llmTemperature"`
-
-	// LlmVoice Speech-to-speech models only: the model's own voice.
-	LlmVoice *string `json:"llmVoice"`
-
 	// Modalities Whether the agent takes calls, chats, or both.
 	Modalities []AgentVersionResponseModalities `json:"modalities"`
 
@@ -23781,15 +24002,7 @@ type AgentVersionResponse struct {
 	RolledBackFromVersionId *openapi_types.UUID `json:"rolledBackFromVersionId"`
 
 	// Status DRAFT while being edited, PUBLISHED once it has been live.
-	Status           AgentVersionResponseStatus `json:"status"`
-	SttEndpointingMs *int                       `json:"sttEndpointingMs"`
-
-	// SttKeyterms Words and phrases the transcriber should listen for.
-	SttKeyterms      []string                              `json:"sttKeyterms"`
-	SttModel         *string                               `json:"sttModel"`
-	SttProvider      *AgentVersionResponseSttProvider      `json:"sttProvider"`
-	SttSmartFormat   *bool                                 `json:"sttSmartFormat"`
-	SttTurnDetection *AgentVersionResponseSttTurnDetection `json:"sttTurnDetection"`
+	Status AgentVersionResponseStatus `json:"status"`
 
 	// SubAgents The main agent (key `main`) first, then the sub-agents it can hand the call to.
 	SubAgents []AgentVersionSubAgent `json:"subAgents"`
@@ -23818,9 +24031,6 @@ type AgentVersionResponseFirstMessageMode string
 // AgentVersionResponseInterruptionMode defines model for AgentVersionResponse.InterruptionMode.
 type AgentVersionResponseInterruptionMode string
 
-// AgentVersionResponseLlmProvider defines model for AgentVersionResponse.LlmProvider.
-type AgentVersionResponseLlmProvider string
-
 // AgentVersionResponseModalities defines model for AgentVersionResponse.Modalities.
 type AgentVersionResponseModalities string
 
@@ -23830,13 +24040,7 @@ type AgentVersionResponsePublishedByType string
 // AgentVersionResponseStatus DRAFT while being edited, PUBLISHED once it has been live.
 type AgentVersionResponseStatus string
 
-// AgentVersionResponseSttProvider defines model for AgentVersionResponse.SttProvider.
-type AgentVersionResponseSttProvider string
-
-// AgentVersionResponseSttTurnDetection defines model for AgentVersionResponse.SttTurnDetection.
-type AgentVersionResponseSttTurnDetection string
-
-// AgentVersionSubAgent A speaker in the conversation. On a sub-agent, null voice settings use the main agent's.
+// AgentVersionSubAgent A speaker in the conversation. A sub-agent without model configs runs on the main agent's.
 type AgentVersionSubAgent struct {
 	Handoffs []AgentVersionHandoff `json:"handoffs"`
 
@@ -23846,30 +24050,16 @@ type AgentVersionSubAgent struct {
 	// Key `main` for the main agent; otherwise letters, digits, `_` or `-`.
 	Key string `json:"key"`
 
+	// ModelConfigs Up to three, in the order a call tries them. Empty on a sub-agent: it runs on the main agent's. The main agent needs one.
+	ModelConfigs []AgentModelConfig `json:"modelConfigs"`
+
 	// Name How the agent refers to this speaker.
 	Name *string `json:"name"`
 
 	// SystemPrompt The speaker's prompt.
-	SystemPrompt *string                          `json:"systemPrompt"`
-	Tools        []AgentVersionTool               `json:"tools"`
-	TtsModel     *string                          `json:"ttsModel"`
-	TtsProvider  *AgentVersionSubAgentTtsProvider `json:"ttsProvider"`
-
-	// TtsSimilarityBoost 0 to 1, ElevenLabs.
-	TtsSimilarityBoost *float64 `json:"ttsSimilarityBoost"`
-
-	// TtsSpeed 0.5 to 2.
-	TtsSpeed *float64 `json:"ttsSpeed"`
-
-	// TtsStability 0 to 1, ElevenLabs.
-	TtsStability *float64 `json:"ttsStability"`
-
-	// TtsVoiceId Any voice id the provider accepts, including your own voices.
-	TtsVoiceId *string `json:"ttsVoiceId"`
+	SystemPrompt *string            `json:"systemPrompt"`
+	Tools        []AgentVersionTool `json:"tools"`
 }
-
-// AgentVersionSubAgentTtsProvider defines model for AgentVersionSubAgent.TtsProvider.
-type AgentVersionSubAgentTtsProvider string
 
 // AgentVersionTool defines model for AgentVersionTool.
 type AgentVersionTool struct {
@@ -35509,7 +35699,7 @@ type UpdateAgentDraftInput struct {
 	// ExpectedRevision The draft's revision when you read it. When sent, the edit is refused if the draft changed since; when omitted, it applies on top of the latest edit.
 	ExpectedRevision *int `json:"expectedRevision,omitempty"`
 
-	// Settings The settings to change. Omitted settings stay as they are; null clears one to the runtime default. subAgents replaces every speaker and must include `main`.
+	// Settings The settings to change. Omitted settings stay as they are; null clears one to the runtime default. subAgents replaces every speaker, model configs included, and must include `main`; in a model config, omitted fields use the runtime default.
 	Settings struct {
 		BackgroundNoise              *UpdateAgentDraftInputSettingsBackgroundNoise  `json:"backgroundNoise,omitempty"`
 		BackgroundNoiseUrl           *string                                        `json:"backgroundNoiseUrl,omitempty"`
@@ -35529,19 +35719,7 @@ type UpdateAgentDraftInput struct {
 		IdleTimeoutSeconds           *int                                           `json:"idleTimeoutSeconds,omitempty"`
 		InterruptionMode             *UpdateAgentDraftInputSettingsInterruptionMode `json:"interruptionMode,omitempty"`
 		Language                     *string                                        `json:"language,omitempty"`
-		LlmBackendModel              *string                                        `json:"llmBackendModel,omitempty"`
-		LlmMaxTokens                 *int                                           `json:"llmMaxTokens,omitempty"`
-		LlmModel                     *string                                        `json:"llmModel,omitempty"`
-		LlmProvider                  *UpdateAgentDraftInputSettingsLlmProvider      `json:"llmProvider,omitempty"`
-		LlmTemperature               *float64                                       `json:"llmTemperature,omitempty"`
-		LlmVoice                     *string                                        `json:"llmVoice,omitempty"`
 		Modalities                   *[]UpdateAgentDraftInputSettingsModalities     `json:"modalities,omitempty"`
-		SttEndpointingMs             *int                                           `json:"sttEndpointingMs,omitempty"`
-		SttKeyterms                  *[]string                                      `json:"sttKeyterms,omitempty"`
-		SttModel                     *string                                        `json:"sttModel,omitempty"`
-		SttProvider                  *UpdateAgentDraftInputSettingsSttProvider      `json:"sttProvider,omitempty"`
-		SttSmartFormat               *bool                                          `json:"sttSmartFormat,omitempty"`
-		SttTurnDetection             *UpdateAgentDraftInputSettingsSttTurnDetection `json:"sttTurnDetection,omitempty"`
 		SubAgents                    *[]struct {
 			Handoffs []struct {
 				Description string                                                `json:"description"`
@@ -35550,20 +35728,15 @@ type UpdateAgentDraftInput struct {
 				Once        bool                                                  `json:"once"`
 				To          UpdateAgentDraftInput_Settings_SubAgents_Handoffs_To  `json:"to"`
 			} `json:"handoffs"`
-			IsInitial    bool                                         `json:"isInitial"`
-			Key          UpdateAgentDraftInput_Settings_SubAgents_Key `json:"key"`
-			Name         *string                                      `json:"name"`
-			SystemPrompt *string                                      `json:"systemPrompt"`
+			IsInitial    bool                                                         `json:"isInitial"`
+			Key          UpdateAgentDraftInput_Settings_SubAgents_Key                 `json:"key"`
+			ModelConfigs []UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item `json:"modelConfigs"`
+			Name         *string                                                      `json:"name"`
+			SystemPrompt *string                                                      `json:"systemPrompt"`
 			Tools        []struct {
 				PinnedVersion    *int               `json:"pinnedVersion"`
 				ToolDefinitionId openapi_types.UUID `json:"toolDefinitionId"`
 			} `json:"tools"`
-			TtsModel           *string                                            `json:"ttsModel"`
-			TtsProvider        *UpdateAgentDraftInputSettingsSubAgentsTtsProvider `json:"ttsProvider"`
-			TtsSimilarityBoost *float64                                           `json:"ttsSimilarityBoost"`
-			TtsSpeed           *float64                                           `json:"ttsSpeed"`
-			TtsStability       *float64                                           `json:"ttsStability"`
-			TtsVoiceId         *string                                            `json:"ttsVoiceId"`
 		} `json:"subAgents,omitempty"`
 		VadStartSecs *float64 `json:"vadStartSecs,omitempty"`
 		VadStopSecs  *float64 `json:"vadStopSecs,omitempty"`
@@ -35579,17 +35752,8 @@ type UpdateAgentDraftInputSettingsFirstMessageMode string
 // UpdateAgentDraftInputSettingsInterruptionMode defines model for UpdateAgentDraftInput.Settings.InterruptionMode.
 type UpdateAgentDraftInputSettingsInterruptionMode string
 
-// UpdateAgentDraftInputSettingsLlmProvider defines model for UpdateAgentDraftInput.Settings.LlmProvider.
-type UpdateAgentDraftInputSettingsLlmProvider string
-
 // UpdateAgentDraftInputSettingsModalities defines model for UpdateAgentDraftInput.Settings.Modalities.
 type UpdateAgentDraftInputSettingsModalities string
-
-// UpdateAgentDraftInputSettingsSttProvider defines model for UpdateAgentDraftInput.Settings.SttProvider.
-type UpdateAgentDraftInputSettingsSttProvider string
-
-// UpdateAgentDraftInputSettingsSttTurnDetection defines model for UpdateAgentDraftInput.Settings.SttTurnDetection.
-type UpdateAgentDraftInputSettingsSttTurnDetection string
 
 // UpdateAgentDraftInputSettingsSubAgentsHandoffsHistory defines model for UpdateAgentDraftInput.Settings.SubAgents.Handoffs.History.
 type UpdateAgentDraftInputSettingsSubAgentsHandoffsHistory string
@@ -35616,8 +35780,71 @@ type UpdateAgentDraftInput_Settings_SubAgents_Key struct {
 	union json.RawMessage
 }
 
-// UpdateAgentDraftInputSettingsSubAgentsTtsProvider defines model for UpdateAgentDraftInput.Settings.SubAgents.TtsProvider.
-type UpdateAgentDraftInputSettingsSubAgentsTtsProvider string
+// UpdateAgentDraftInputSettingsSubAgentsModelConfigs0 defines model for UpdateAgentDraftInput.Settings.SubAgents.ModelConfigs.0.
+type UpdateAgentDraftInputSettingsSubAgentsModelConfigs0 struct {
+	Llm []struct {
+		MaxTokens   *int                                                           `json:"maxTokens,omitempty"`
+		Model       string                                                         `json:"model"`
+		Provider    UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider `json:"provider"`
+		Temperature *float64                                                       `json:"temperature,omitempty"`
+	} `json:"llm"`
+	Stt []struct {
+		EndpointingMs *int                                                                 `json:"endpointingMs,omitempty"`
+		Keyterms      *[]string                                                            `json:"keyterms,omitempty"`
+		Model         string                                                               `json:"model"`
+		Provider      UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider       `json:"provider"`
+		SmartFormat   *bool                                                                `json:"smartFormat,omitempty"`
+		TurnDetection *UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetection `json:"turnDetection,omitempty"`
+	} `json:"stt"`
+	Tts []struct {
+		Model           string                                                         `json:"model"`
+		Provider        UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider `json:"provider"`
+		SimilarityBoost *float64                                                       `json:"similarityBoost,omitempty"`
+		Speed           *float64                                                       `json:"speed,omitempty"`
+		Stability       *float64                                                       `json:"stability,omitempty"`
+		VoiceId         string                                                         `json:"voiceId"`
+	} `json:"tts"`
+	Type UpdateAgentDraftInputSettingsSubAgentsModelConfigs0Type `json:"type"`
+}
+
+// UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider defines model for UpdateAgentDraftInput.Settings.SubAgents.ModelConfigs.0.Llm.Provider.
+type UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider string
+
+// UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider defines model for UpdateAgentDraftInput.Settings.SubAgents.ModelConfigs.0.Stt.Provider.
+type UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider string
+
+// UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetection defines model for UpdateAgentDraftInput.Settings.SubAgents.ModelConfigs.0.Stt.TurnDetection.
+type UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetection string
+
+// UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider defines model for UpdateAgentDraftInput.Settings.SubAgents.ModelConfigs.0.Tts.Provider.
+type UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider string
+
+// UpdateAgentDraftInputSettingsSubAgentsModelConfigs0Type defines model for UpdateAgentDraftInput.Settings.SubAgents.ModelConfigs.0.Type.
+type UpdateAgentDraftInputSettingsSubAgentsModelConfigs0Type string
+
+// UpdateAgentDraftInputSettingsSubAgentsModelConfigs1 defines model for UpdateAgentDraftInput.Settings.SubAgents.ModelConfigs.1.
+type UpdateAgentDraftInputSettingsSubAgentsModelConfigs1 struct {
+	SpeechToSpeech struct {
+		BackendModel    *string                                                                   `json:"backendModel,omitempty"`
+		MaxOutputTokens *int                                                                      `json:"maxOutputTokens,omitempty"`
+		Model           string                                                                    `json:"model"`
+		Provider        UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider `json:"provider"`
+		Temperature     *float64                                                                  `json:"temperature,omitempty"`
+		Voice           *string                                                                   `json:"voice,omitempty"`
+	} `json:"speechToSpeech"`
+	Type UpdateAgentDraftInputSettingsSubAgentsModelConfigs1Type `json:"type"`
+}
+
+// UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider defines model for UpdateAgentDraftInput.Settings.SubAgents.ModelConfigs.1.SpeechToSpeech.Provider.
+type UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider string
+
+// UpdateAgentDraftInputSettingsSubAgentsModelConfigs1Type defines model for UpdateAgentDraftInput.Settings.SubAgents.ModelConfigs.1.Type.
+type UpdateAgentDraftInputSettingsSubAgentsModelConfigs1Type string
+
+// UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item defines model for UpdateAgentDraftInput.Settings.SubAgents.modelConfigs.Item.
+type UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item struct {
+	union json.RawMessage
+}
 
 // UpdateAgentEndpointInput Input for updating an agent endpoint
 type UpdateAgentEndpointInput struct {
@@ -38805,6 +39032,107 @@ type HttpRequestMetricCheckJSONRequestBody = HttpRequestMetricPayload
 
 // WebhookEventJSONRequestBody defines body for WebhookEvent for application/json ContentType.
 type WebhookEventJSONRequestBody WebhookEventJSONBody
+
+// AsAgentCascadeModelConfig returns the union data inside the AgentModelConfig as a AgentCascadeModelConfig
+func (t AgentModelConfig) AsAgentCascadeModelConfig() (AgentCascadeModelConfig, error) {
+	var body AgentCascadeModelConfig
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentCascadeModelConfig overwrites any union data inside the AgentModelConfig as the provided AgentCascadeModelConfig
+func (t *AgentModelConfig) FromAgentCascadeModelConfig(v AgentCascadeModelConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	b, err = runtime.JSONMerge(b, []byte(`{"type":"CASCADE"}`))
+	t.union = b
+	return err
+}
+
+// MergeAgentCascadeModelConfig performs a merge with any union data inside the AgentModelConfig, using the provided AgentCascadeModelConfig
+func (t *AgentModelConfig) MergeAgentCascadeModelConfig(v AgentCascadeModelConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	b, err = runtime.JSONMerge(b, []byte(`{"type":"CASCADE"}`))
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpeechToSpeechModelConfig returns the union data inside the AgentModelConfig as a AgentSpeechToSpeechModelConfig
+func (t AgentModelConfig) AsAgentSpeechToSpeechModelConfig() (AgentSpeechToSpeechModelConfig, error) {
+	var body AgentSpeechToSpeechModelConfig
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpeechToSpeechModelConfig overwrites any union data inside the AgentModelConfig as the provided AgentSpeechToSpeechModelConfig
+func (t *AgentModelConfig) FromAgentSpeechToSpeechModelConfig(v AgentSpeechToSpeechModelConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	b, err = runtime.JSONMerge(b, []byte(`{"type":"SPEECH_TO_SPEECH"}`))
+	t.union = b
+	return err
+}
+
+// MergeAgentSpeechToSpeechModelConfig performs a merge with any union data inside the AgentModelConfig, using the provided AgentSpeechToSpeechModelConfig
+func (t *AgentModelConfig) MergeAgentSpeechToSpeechModelConfig(v AgentSpeechToSpeechModelConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	b, err = runtime.JSONMerge(b, []byte(`{"type":"SPEECH_TO_SPEECH"}`))
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AgentModelConfig) Discriminator() (string, error) {
+	var discriminator struct {
+		Discriminator string `json:"type"`
+	}
+	err := json.Unmarshal(t.union, &discriminator)
+	return discriminator.Discriminator, err
+}
+
+func (t AgentModelConfig) ValueByDiscriminator() (interface{}, error) {
+	discriminator, err := t.Discriminator()
+	if err != nil {
+		return nil, err
+	}
+	switch discriminator {
+	case "CASCADE":
+		return t.AsAgentCascadeModelConfig()
+	case "SPEECH_TO_SPEECH":
+		return t.AsAgentSpeechToSpeechModelConfig()
+	default:
+		return nil, errors.New("unknown discriminator value: " + discriminator)
+	}
+}
+
+func (t AgentModelConfig) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AgentModelConfig) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
 
 // AsAlertThresholdTrigger returns the union data inside the AlertConfig_Trigger as a AlertThresholdTrigger
 func (t AlertConfig_Trigger) AsAlertThresholdTrigger() (AlertThresholdTrigger, error) {
@@ -46968,6 +47296,68 @@ func (t UpdateAgentDraftInput_Settings_SubAgents_Key) MarshalJSON() ([]byte, err
 }
 
 func (t *UpdateAgentDraftInput_Settings_SubAgents_Key) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateAgentDraftInputSettingsSubAgentsModelConfigs0 returns the union data inside the UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item as a UpdateAgentDraftInputSettingsSubAgentsModelConfigs0
+func (t UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item) AsUpdateAgentDraftInputSettingsSubAgentsModelConfigs0() (UpdateAgentDraftInputSettingsSubAgentsModelConfigs0, error) {
+	var body UpdateAgentDraftInputSettingsSubAgentsModelConfigs0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateAgentDraftInputSettingsSubAgentsModelConfigs0 overwrites any union data inside the UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item as the provided UpdateAgentDraftInputSettingsSubAgentsModelConfigs0
+func (t *UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item) FromUpdateAgentDraftInputSettingsSubAgentsModelConfigs0(v UpdateAgentDraftInputSettingsSubAgentsModelConfigs0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateAgentDraftInputSettingsSubAgentsModelConfigs0 performs a merge with any union data inside the UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item, using the provided UpdateAgentDraftInputSettingsSubAgentsModelConfigs0
+func (t *UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item) MergeUpdateAgentDraftInputSettingsSubAgentsModelConfigs0(v UpdateAgentDraftInputSettingsSubAgentsModelConfigs0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateAgentDraftInputSettingsSubAgentsModelConfigs1 returns the union data inside the UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item as a UpdateAgentDraftInputSettingsSubAgentsModelConfigs1
+func (t UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item) AsUpdateAgentDraftInputSettingsSubAgentsModelConfigs1() (UpdateAgentDraftInputSettingsSubAgentsModelConfigs1, error) {
+	var body UpdateAgentDraftInputSettingsSubAgentsModelConfigs1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateAgentDraftInputSettingsSubAgentsModelConfigs1 overwrites any union data inside the UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item as the provided UpdateAgentDraftInputSettingsSubAgentsModelConfigs1
+func (t *UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item) FromUpdateAgentDraftInputSettingsSubAgentsModelConfigs1(v UpdateAgentDraftInputSettingsSubAgentsModelConfigs1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateAgentDraftInputSettingsSubAgentsModelConfigs1 performs a merge with any union data inside the UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item, using the provided UpdateAgentDraftInputSettingsSubAgentsModelConfigs1
+func (t *UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item) MergeUpdateAgentDraftInputSettingsSubAgentsModelConfigs1(v UpdateAgentDraftInputSettingsSubAgentsModelConfigs1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }

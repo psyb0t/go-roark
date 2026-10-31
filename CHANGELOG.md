@@ -2,6 +2,15 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.7.0, 2026-10-31
+
+- Breaking: the anonymous struct type of `PostV1AgentBuildJSONBody.Tts` and `PostV1AgentBuildJSONRequestBody.Tts` gained an optional `Model` field (`*string`). Composite literals of this struct type must be updated. Code that sets `Provider` and `VoiceId` by field still compiles.
+- Added optional `Llm` and `Stt` fields to `PostV1AgentBuildJSONBody` and `PostV1AgentBuildJSONRequestBody`, with the enum types `PostV1AgentBuildJSONBodyLlmProvider` (for example `PostV1AgentBuildJSONBodyLlmProviderANTHROPIC`) and `PostV1AgentBuildJSONBodySttProvider` (for example `PostV1AgentBuildJSONBodySttProviderDEEPGRAM`).
+- Added `JSON403` and `GetJSON403` to `PostV1AgentBuildResponse`, holding an `ErrorResponse`.
+- Added the `ThresholdMetricConfig` type for threshold metrics in config bundles and projects, with `ThresholdMetricConfig_Value` and the value types `ThresholdMetricConfigValue0`, `ThresholdMetricConfigValue1` and `ThresholdMetricConfigValue2`.
+- Added the enums `ThresholdMetricConfigAggregationMode`, `ThresholdMetricConfigCalculationType`, `ThresholdMetricConfigKind`, `ThresholdMetricConfigOperator` and `ThresholdMetricConfigSourceParticipantRole`, with their constants and `Valid` methods.
+- `ConfigBundleResources0` and `ProjectConfig_Resources_Item` gained `AsThresholdMetricConfig`, `FromThresholdMetricConfig` and `MergeThresholdMetricConfig`.
+
 ## v0.6.0, 2026-10-30
 
 - Breaking: model settings moved from flat fields into per-sub-agent model configs. `UpdateAgentDraftInput.Settings` no longer has `LlmBackendModel`, `LlmMaxTokens`, `LlmModel`, `LlmProvider`, `LlmTemperature`, `LlmVoice`, `SttEndpointingMs`, `SttKeyterms`, `SttModel`, `SttProvider`, `SttSmartFormat` or `SttTurnDetection`. Each entry in `Settings.SubAgents` lost `TtsModel`, `TtsProvider`, `TtsSimilarityBoost`, `TtsSpeed`, `TtsStability` and `TtsVoiceId`, and gained a required `ModelConfigs` field of `[]UpdateAgentDraftInput_Settings_SubAgents_ModelConfigs_Item`.

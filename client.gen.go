@@ -16225,6 +16225,123 @@ func (e SimulationToolMockResponseSource) Valid() bool {
 	}
 }
 
+// Defines values for ThresholdMetricConfigAggregationMode.
+const (
+	ThresholdMetricConfigAggregationModeAVERAGE ThresholdMetricConfigAggregationMode = "AVERAGE"
+	ThresholdMetricConfigAggregationModeCOUNT   ThresholdMetricConfigAggregationMode = "COUNT"
+	ThresholdMetricConfigAggregationModeEACH    ThresholdMetricConfigAggregationMode = "EACH"
+	ThresholdMetricConfigAggregationModeMAX     ThresholdMetricConfigAggregationMode = "MAX"
+	ThresholdMetricConfigAggregationModeMEDIAN  ThresholdMetricConfigAggregationMode = "MEDIAN"
+	ThresholdMetricConfigAggregationModeMIN     ThresholdMetricConfigAggregationMode = "MIN"
+	ThresholdMetricConfigAggregationModeP95     ThresholdMetricConfigAggregationMode = "P95"
+	ThresholdMetricConfigAggregationModeP99     ThresholdMetricConfigAggregationMode = "P99"
+	ThresholdMetricConfigAggregationModeSUM     ThresholdMetricConfigAggregationMode = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the ThresholdMetricConfigAggregationMode enum.
+func (e ThresholdMetricConfigAggregationMode) Valid() bool {
+	switch e {
+	case ThresholdMetricConfigAggregationModeAVERAGE:
+		return true
+	case ThresholdMetricConfigAggregationModeCOUNT:
+		return true
+	case ThresholdMetricConfigAggregationModeEACH:
+		return true
+	case ThresholdMetricConfigAggregationModeMAX:
+		return true
+	case ThresholdMetricConfigAggregationModeMEDIAN:
+		return true
+	case ThresholdMetricConfigAggregationModeMIN:
+		return true
+	case ThresholdMetricConfigAggregationModeP95:
+		return true
+	case ThresholdMetricConfigAggregationModeP99:
+		return true
+	case ThresholdMetricConfigAggregationModeSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ThresholdMetricConfigCalculationType.
+const (
+	ThresholdMetricConfigCalculationTypeTHRESHOLD ThresholdMetricConfigCalculationType = "THRESHOLD"
+)
+
+// Valid indicates whether the value is a known member of the ThresholdMetricConfigCalculationType enum.
+func (e ThresholdMetricConfigCalculationType) Valid() bool {
+	switch e {
+	case ThresholdMetricConfigCalculationTypeTHRESHOLD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ThresholdMetricConfigKind.
+const (
+	ThresholdMetricConfigKindMetric ThresholdMetricConfigKind = "metric"
+)
+
+// Valid indicates whether the value is a known member of the ThresholdMetricConfigKind enum.
+func (e ThresholdMetricConfigKind) Valid() bool {
+	switch e {
+	case ThresholdMetricConfigKindMetric:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ThresholdMetricConfigOperator.
+const (
+	ThresholdMetricConfigOperatorEQUALS              ThresholdMetricConfigOperator = "EQUALS"
+	ThresholdMetricConfigOperatorGREATERTHAN         ThresholdMetricConfigOperator = "GREATER_THAN"
+	ThresholdMetricConfigOperatorGREATERTHANOREQUALS ThresholdMetricConfigOperator = "GREATER_THAN_OR_EQUALS"
+	ThresholdMetricConfigOperatorLESSTHAN            ThresholdMetricConfigOperator = "LESS_THAN"
+	ThresholdMetricConfigOperatorLESSTHANOREQUALS    ThresholdMetricConfigOperator = "LESS_THAN_OR_EQUALS"
+	ThresholdMetricConfigOperatorNOTEQUALS           ThresholdMetricConfigOperator = "NOT_EQUALS"
+)
+
+// Valid indicates whether the value is a known member of the ThresholdMetricConfigOperator enum.
+func (e ThresholdMetricConfigOperator) Valid() bool {
+	switch e {
+	case ThresholdMetricConfigOperatorEQUALS:
+		return true
+	case ThresholdMetricConfigOperatorGREATERTHAN:
+		return true
+	case ThresholdMetricConfigOperatorGREATERTHANOREQUALS:
+		return true
+	case ThresholdMetricConfigOperatorLESSTHAN:
+		return true
+	case ThresholdMetricConfigOperatorLESSTHANOREQUALS:
+		return true
+	case ThresholdMetricConfigOperatorNOTEQUALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ThresholdMetricConfigSourceParticipantRole.
+const (
+	ThresholdMetricConfigSourceParticipantRoleAGENT    ThresholdMetricConfigSourceParticipantRole = "AGENT"
+	ThresholdMetricConfigSourceParticipantRoleCUSTOMER ThresholdMetricConfigSourceParticipantRole = "CUSTOMER"
+)
+
+// Valid indicates whether the value is a known member of the ThresholdMetricConfigSourceParticipantRole enum.
+func (e ThresholdMetricConfigSourceParticipantRole) Valid() bool {
+	switch e {
+	case ThresholdMetricConfigSourceParticipantRoleAGENT:
+		return true
+	case ThresholdMetricConfigSourceParticipantRoleCUSTOMER:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ThresholdMetricDetailsAggregationMode.
 const (
 	ThresholdMetricDetailsAggregationModeAVERAGE ThresholdMetricDetailsAggregationMode = "AVERAGE"
@@ -18730,6 +18847,66 @@ func (e WriteManagedConfigRequestChannel) Valid() bool {
 	case WriteManagedConfigRequestChannelProduction:
 		return true
 	case WriteManagedConfigRequestChannelStaging:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1AgentBuildJSONBodyLlmProvider.
+const (
+	PostV1AgentBuildJSONBodyLlmProviderANTHROPIC  PostV1AgentBuildJSONBodyLlmProvider = "ANTHROPIC"
+	PostV1AgentBuildJSONBodyLlmProviderAWS        PostV1AgentBuildJSONBodyLlmProvider = "AWS"
+	PostV1AgentBuildJSONBodyLlmProviderELEVENLABS PostV1AgentBuildJSONBodyLlmProvider = "ELEVENLABS"
+	PostV1AgentBuildJSONBodyLlmProviderGOOGLE     PostV1AgentBuildJSONBodyLlmProvider = "GOOGLE"
+	PostV1AgentBuildJSONBodyLlmProviderOPENAI     PostV1AgentBuildJSONBodyLlmProvider = "OPENAI"
+	PostV1AgentBuildJSONBodyLlmProviderULTRAVOX   PostV1AgentBuildJSONBodyLlmProvider = "ULTRAVOX"
+	PostV1AgentBuildJSONBodyLlmProviderXAI        PostV1AgentBuildJSONBodyLlmProvider = "XAI"
+)
+
+// Valid indicates whether the value is a known member of the PostV1AgentBuildJSONBodyLlmProvider enum.
+func (e PostV1AgentBuildJSONBodyLlmProvider) Valid() bool {
+	switch e {
+	case PostV1AgentBuildJSONBodyLlmProviderANTHROPIC:
+		return true
+	case PostV1AgentBuildJSONBodyLlmProviderAWS:
+		return true
+	case PostV1AgentBuildJSONBodyLlmProviderELEVENLABS:
+		return true
+	case PostV1AgentBuildJSONBodyLlmProviderGOOGLE:
+		return true
+	case PostV1AgentBuildJSONBodyLlmProviderOPENAI:
+		return true
+	case PostV1AgentBuildJSONBodyLlmProviderULTRAVOX:
+		return true
+	case PostV1AgentBuildJSONBodyLlmProviderXAI:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1AgentBuildJSONBodySttProvider.
+const (
+	PostV1AgentBuildJSONBodySttProviderASSEMBLYAI    PostV1AgentBuildJSONBodySttProvider = "ASSEMBLYAI"
+	PostV1AgentBuildJSONBodySttProviderDEEPGRAM      PostV1AgentBuildJSONBodySttProvider = "DEEPGRAM"
+	PostV1AgentBuildJSONBodySttProviderELEVENLABS    PostV1AgentBuildJSONBodySttProvider = "ELEVENLABS"
+	PostV1AgentBuildJSONBodySttProviderOPENAIWHISPER PostV1AgentBuildJSONBodySttProvider = "OPENAI_WHISPER"
+	PostV1AgentBuildJSONBodySttProviderSPEECHMATICS  PostV1AgentBuildJSONBodySttProvider = "SPEECHMATICS"
+)
+
+// Valid indicates whether the value is a known member of the PostV1AgentBuildJSONBodySttProvider enum.
+func (e PostV1AgentBuildJSONBodySttProvider) Valid() bool {
+	switch e {
+	case PostV1AgentBuildJSONBodySttProviderASSEMBLYAI:
+		return true
+	case PostV1AgentBuildJSONBodySttProviderDEEPGRAM:
+		return true
+	case PostV1AgentBuildJSONBodySttProviderELEVENLABS:
+		return true
+	case PostV1AgentBuildJSONBodySttProviderOPENAIWHISPER:
+		return true
+	case PostV1AgentBuildJSONBodySttProviderSPEECHMATICS:
 		return true
 	default:
 		return false
@@ -35522,6 +35699,51 @@ type SimulationToolMockResponse struct {
 // SimulationToolMockResponseSource GENERATED = the scenario-aware model answered; FIXTURE = a pinned deterministic response you configured answered.
 type SimulationToolMockResponseSource string
 
+// ThresholdMetricConfig defines model for ThresholdMetricConfig.
+type ThresholdMetricConfig struct {
+	AggregationMode       *ThresholdMetricConfigAggregationMode       `json:"aggregationMode,omitempty"`
+	CalculationType       ThresholdMetricConfigCalculationType        `json:"calculationType"`
+	CountThreshold        *int                                        `json:"countThreshold,omitempty"`
+	FalseLabel            *string                                     `json:"falseLabel,omitempty"`
+	Kind                  ThresholdMetricConfigKind                   `json:"kind"`
+	Name                  string                                      `json:"name"`
+	Operator              ThresholdMetricConfigOperator               `json:"operator"`
+	SourceMetric          string                                      `json:"sourceMetric"`
+	SourceParticipantRole *ThresholdMetricConfigSourceParticipantRole `json:"sourceParticipantRole,omitempty"`
+	SourceVariant         *string                                     `json:"sourceVariant,omitempty"`
+	TrueLabel             *string                                     `json:"trueLabel,omitempty"`
+	Value                 ThresholdMetricConfig_Value                 `json:"value"`
+}
+
+// ThresholdMetricConfigAggregationMode defines model for ThresholdMetricConfig.AggregationMode.
+type ThresholdMetricConfigAggregationMode string
+
+// ThresholdMetricConfigCalculationType defines model for ThresholdMetricConfig.CalculationType.
+type ThresholdMetricConfigCalculationType string
+
+// ThresholdMetricConfigKind defines model for ThresholdMetricConfig.Kind.
+type ThresholdMetricConfigKind string
+
+// ThresholdMetricConfigOperator defines model for ThresholdMetricConfig.Operator.
+type ThresholdMetricConfigOperator string
+
+// ThresholdMetricConfigSourceParticipantRole defines model for ThresholdMetricConfig.SourceParticipantRole.
+type ThresholdMetricConfigSourceParticipantRole string
+
+// ThresholdMetricConfigValue0 defines model for ThresholdMetricConfig.Value.0.
+type ThresholdMetricConfigValue0 = string
+
+// ThresholdMetricConfigValue1 defines model for ThresholdMetricConfig.Value.1.
+type ThresholdMetricConfigValue1 = float64
+
+// ThresholdMetricConfigValue2 defines model for ThresholdMetricConfig.Value.2.
+type ThresholdMetricConfigValue2 = bool
+
+// ThresholdMetricConfig_Value defines model for ThresholdMetricConfig.Value.
+type ThresholdMetricConfig_Value struct {
+	union json.RawMessage
+}
+
 // ThresholdMetricDetails defines model for ThresholdMetricDetails.
 type ThresholdMetricDetails struct {
 	AggregationMode          ThresholdMetricDetailsAggregationMode        `json:"aggregationMode"`
@@ -37081,11 +37303,32 @@ type PostV1AgentBuildJSONBody struct {
 	// JobDescription One-line description of what the agent should do. Roark authors the system prompt from this.
 	JobDescription string `json:"jobDescription"`
 
+	// Llm Optional text model the hosted agent thinks with. Roark's default when omitted
+	Llm *struct {
+		// Model The provider's model id, for example gpt-4.1
+		Model string `json:"model"`
+
+		// Provider Text model provider, for example OPENAI
+		Provider PostV1AgentBuildJSONBodyLlmProvider `json:"provider"`
+	} `json:"llm,omitempty"`
+
 	// Name Name of the agent
 	Name string `json:"name"`
 
+	// Stt Optional transcriber the hosted agent hears with. Roark's default when omitted
+	Stt *struct {
+		// Model The provider's model id, for example nova-3
+		Model string `json:"model"`
+
+		// Provider Speech-to-text provider, for example DEEPGRAM
+		Provider PostV1AgentBuildJSONBodySttProvider `json:"provider"`
+	} `json:"stt,omitempty"`
+
 	// Tts Optional provider voice the hosted agent speaks with
 	Tts *struct {
+		// Model The provider's voice model, for example eleven_flash_v2_5. Its current one when omitted
+		Model *string `json:"model,omitempty"`
+
 		// Provider Text-to-speech provider, for example ELEVENLABS
 		Provider PostV1AgentBuildJSONBodyTtsProvider `json:"provider"`
 
@@ -37096,6 +37339,12 @@ type PostV1AgentBuildJSONBody struct {
 	// Voice Optional display name of the agent's voice. The authored prompt matches its delivery to it.
 	Voice *string `json:"voice,omitempty"`
 }
+
+// PostV1AgentBuildJSONBodyLlmProvider defines parameters for PostV1AgentBuild.
+type PostV1AgentBuildJSONBodyLlmProvider string
+
+// PostV1AgentBuildJSONBodySttProvider defines parameters for PostV1AgentBuild.
+type PostV1AgentBuildJSONBodySttProvider string
 
 // PostV1AgentBuildJSONBodyTtsProvider defines parameters for PostV1AgentBuild.
 type PostV1AgentBuildJSONBodyTtsProvider string
@@ -41133,6 +41382,32 @@ func (t *ConfigBundleResources0) FromApiCheckMetricConfig(v ApiCheckMetricConfig
 
 // MergeApiCheckMetricConfig performs a merge with any union data inside the ConfigBundleResources0, using the provided ApiCheckMetricConfig
 func (t *ConfigBundleResources0) MergeApiCheckMetricConfig(v ApiCheckMetricConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsThresholdMetricConfig returns the union data inside the ConfigBundleResources0 as a ThresholdMetricConfig
+func (t ConfigBundleResources0) AsThresholdMetricConfig() (ThresholdMetricConfig, error) {
+	var body ThresholdMetricConfig
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromThresholdMetricConfig overwrites any union data inside the ConfigBundleResources0 as the provided ThresholdMetricConfig
+func (t *ConfigBundleResources0) FromThresholdMetricConfig(v ThresholdMetricConfig) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeThresholdMetricConfig performs a merge with any union data inside the ConfigBundleResources0, using the provided ThresholdMetricConfig
+func (t *ConfigBundleResources0) MergeThresholdMetricConfig(v ThresholdMetricConfig) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -45902,6 +46177,32 @@ func (t *ProjectConfig_Resources_Item) MergeApiCheckMetricConfig(v ApiCheckMetri
 	return err
 }
 
+// AsThresholdMetricConfig returns the union data inside the ProjectConfig_Resources_Item as a ThresholdMetricConfig
+func (t ProjectConfig_Resources_Item) AsThresholdMetricConfig() (ThresholdMetricConfig, error) {
+	var body ThresholdMetricConfig
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromThresholdMetricConfig overwrites any union data inside the ProjectConfig_Resources_Item as the provided ThresholdMetricConfig
+func (t *ProjectConfig_Resources_Item) FromThresholdMetricConfig(v ThresholdMetricConfig) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeThresholdMetricConfig performs a merge with any union data inside the ProjectConfig_Resources_Item, using the provided ThresholdMetricConfig
+func (t *ProjectConfig_Resources_Item) MergeThresholdMetricConfig(v ThresholdMetricConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 // AsSimulationPlanConfig returns the union data inside the ProjectConfig_Resources_Item as a SimulationPlanConfig
 func (t ProjectConfig_Resources_Item) AsSimulationPlanConfig() (SimulationPlanConfig, error) {
 	var body SimulationPlanConfig
@@ -47172,6 +47473,94 @@ func (t SimulationRunPlanJobVerdictFailure) MarshalJSON() ([]byte, error) {
 }
 
 func (t *SimulationRunPlanJobVerdictFailure) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsThresholdMetricConfigValue0 returns the union data inside the ThresholdMetricConfig_Value as a ThresholdMetricConfigValue0
+func (t ThresholdMetricConfig_Value) AsThresholdMetricConfigValue0() (ThresholdMetricConfigValue0, error) {
+	var body ThresholdMetricConfigValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromThresholdMetricConfigValue0 overwrites any union data inside the ThresholdMetricConfig_Value as the provided ThresholdMetricConfigValue0
+func (t *ThresholdMetricConfig_Value) FromThresholdMetricConfigValue0(v ThresholdMetricConfigValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeThresholdMetricConfigValue0 performs a merge with any union data inside the ThresholdMetricConfig_Value, using the provided ThresholdMetricConfigValue0
+func (t *ThresholdMetricConfig_Value) MergeThresholdMetricConfigValue0(v ThresholdMetricConfigValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsThresholdMetricConfigValue1 returns the union data inside the ThresholdMetricConfig_Value as a ThresholdMetricConfigValue1
+func (t ThresholdMetricConfig_Value) AsThresholdMetricConfigValue1() (ThresholdMetricConfigValue1, error) {
+	var body ThresholdMetricConfigValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromThresholdMetricConfigValue1 overwrites any union data inside the ThresholdMetricConfig_Value as the provided ThresholdMetricConfigValue1
+func (t *ThresholdMetricConfig_Value) FromThresholdMetricConfigValue1(v ThresholdMetricConfigValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeThresholdMetricConfigValue1 performs a merge with any union data inside the ThresholdMetricConfig_Value, using the provided ThresholdMetricConfigValue1
+func (t *ThresholdMetricConfig_Value) MergeThresholdMetricConfigValue1(v ThresholdMetricConfigValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsThresholdMetricConfigValue2 returns the union data inside the ThresholdMetricConfig_Value as a ThresholdMetricConfigValue2
+func (t ThresholdMetricConfig_Value) AsThresholdMetricConfigValue2() (ThresholdMetricConfigValue2, error) {
+	var body ThresholdMetricConfigValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromThresholdMetricConfigValue2 overwrites any union data inside the ThresholdMetricConfig_Value as the provided ThresholdMetricConfigValue2
+func (t *ThresholdMetricConfig_Value) FromThresholdMetricConfigValue2(v ThresholdMetricConfigValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeThresholdMetricConfigValue2 performs a merge with any union data inside the ThresholdMetricConfig_Value, using the provided ThresholdMetricConfigValue2
+func (t *ThresholdMetricConfig_Value) MergeThresholdMetricConfigValue2(v ThresholdMetricConfigValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ThresholdMetricConfig_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ThresholdMetricConfig_Value) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -69871,6 +70260,8 @@ type PostV1AgentBuildResponse struct {
 	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
 	// JSON500 the response for an HTTP 500 `application/json` response
 	JSON500 *ErrorResponse
 }
@@ -69908,6 +70299,11 @@ func (r PostV1AgentBuildResponse) GetJSON400() *ErrorResponse {
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
 func (r PostV1AgentBuildResponse) GetJSON401() *ErrorResponse {
 	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1AgentBuildResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
 }
 
 // GetJSON500 returns the response for an HTTP 500 `application/json` response
@@ -92131,6 +92527,13 @@ func ParsePostV1AgentBuildResponse(rsp *http.Response) (*PostV1AgentBuildRespons
 			return nil, err
 		}
 		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse

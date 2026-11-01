@@ -37438,12 +37438,16 @@ type GetV1CallParams struct {
 	SortDirection           *GetV1CallParamsSortDirection     `form:"sortDirection,omitempty" json:"sortDirection,omitempty"`
 	Status                  *GetV1CallParamsStatus            `form:"status,omitempty" json:"status,omitempty"`
 	SearchText              *string                           `form:"searchText,omitempty" json:"searchText,omitempty"`
+	AgentId                 *string                           `form:"agentId,omitempty" json:"agentId,omitempty"`
 	SimulationRunPlanJobId  *openapi_types.UUID               `form:"simulationRunPlanJobId,omitempty" json:"simulationRunPlanJobId,omitempty"`
 	SimulationRunPlanJobIds *string                           `form:"simulationRunPlanJobIds,omitempty" json:"simulationRunPlanJobIds,omitempty"`
 	SimulationRunPlanIds    *string                           `form:"simulationRunPlanIds,omitempty" json:"simulationRunPlanIds,omitempty"`
 	CountedInResults        *GetV1CallParamsCountedInResults  `form:"countedInResults,omitempty" json:"countedInResults,omitempty"`
 	ExcludeHiddenRuns       *GetV1CallParamsExcludeHiddenRuns `form:"excludeHiddenRuns,omitempty" json:"excludeHiddenRuns,omitempty"`
 	Properties              *map[string]struct {
+		// Eq Case-insensitive exact match. For agent_name and agent_id this matches any agent on the call. For any other name it matches the stored property value.
+		Eq *string `json:"eq,omitempty"`
+
 		// Exists true: the property is set. false: the property is missing.
 		Exists *bool `json:"exists,omitempty"`
 	} `json:"properties,omitempty"`
@@ -50756,7 +50760,7 @@ type ClientInterface interface {
 
 	// GetV1Call List calls
 	//
-	// Returns a paginated list of calls for the authenticated project.
+	// Returns a paginated list of calls for the authenticated project. Pass agentId to keep calls for specific agents, or properties[agent_name][eq] when you only have the agent name. sortBy and sortDirection apply together with those filters.
 	//
 	// Corresponds with GET /v1/call (the `GetV1Call` operationId).
 	GetV1Call(ctx context.Context, params *GetV1CallParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -53759,7 +53763,7 @@ func (c *Client) GetV1BenchmarkTargetByTargetKeyScoreSample(ctx context.Context,
 
 // GetV1Call List calls
 //
-// Returns a paginated list of calls for the authenticated project.
+// Returns a paginated list of calls for the authenticated project. Pass agentId to keep calls for specific agents, or properties[agent_name][eq] when you only have the agent name. sortBy and sortDirection apply together with those filters.
 //
 // Corresponds with GET /v1/call (the `GetV1Call` operationId).
 func (c *Client) GetV1Call(ctx context.Context, params *GetV1CallParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -59852,6 +59856,18 @@ func NewGetV1CallRequest(server string, params *GetV1CallParams) (*http.Request,
 		if params.SearchText != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "searchText", *params.SearchText, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.AgentId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "agentId", *params.AgentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -67382,7 +67398,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetV1CallWithResponse List calls
 	//
-	// Returns a paginated list of calls for the authenticated project.
+	// Returns a paginated list of calls for the authenticated project. Pass agentId to keep calls for specific agents, or properties[agent_name][eq] when you only have the agent name. sortBy and sortDirection apply together with those filters.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -88610,7 +88626,7 @@ func (c *ClientWithResponses) GetV1BenchmarkTargetByTargetKeyScoreSampleWithResp
 
 // GetV1CallWithResponse List calls
 //
-// Returns a paginated list of calls for the authenticated project.
+// Returns a paginated list of calls for the authenticated project. Pass agentId to keep calls for specific agents, or properties[agent_name][eq] when you only have the agent name. sortBy and sortDirection apply together with those filters.
 //
 // Returns a wrapper object for the known response body format(s).
 //

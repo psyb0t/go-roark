@@ -2,6 +2,12 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.8.0, 2026-11-01
+
+- Breaking: the anonymous struct type of the `GetV1CallParams.Properties` map values gained an optional `Eq` field (`*string`), a case-insensitive exact match. Composite literals of this struct type must be updated. Code that sets `Exists` by field still compiles.
+- Added an optional `AgentId` field (`*string`) to `GetV1CallParams`. `NewGetV1CallRequest` sends it as the `agentId` query parameter, so `GetV1Call` and `GetV1CallWithResponse` can filter calls by agent.
+- Updated the doc comments of `GetV1Call` and `GetV1CallWithResponse`, on `Client`, `ClientWithResponses` and both interfaces. They describe the `agentId` filter, the `properties[agent_name][eq]` filter, and that `sortBy` and `sortDirection` apply together with them.
+
 ## v0.7.0, 2026-10-31
 
 - Breaking: the anonymous struct type of `PostV1AgentBuildJSONBody.Tts` and `PostV1AgentBuildJSONRequestBody.Tts` gained an optional `Model` field (`*string`). Composite literals of this struct type must be updated. Code that sets `Provider` and `VoiceId` by field still compiles.

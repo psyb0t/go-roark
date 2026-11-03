@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.8.1, 2026-11-03
+
+- Added calendar connection endpoints: `GetV1CalendarConnection`, `GetV1CalendarConnectionByConnectionId`, `PostV1CalendarConnection`, `PatchV1CalendarConnectionByConnectionId`, `DeleteV1CalendarConnectionByConnectionId` and `PostV1CalendarConnectionByConnectionIdCheck`. Each has `WithBody` and `WithResponse` variants where the client has them, plus request builders and response types. `GetV1CalendarConnectionParams` holds the list filters, including `GetV1CalendarConnectionParamsProvider` (`CALCOM`, `CALENDLY`, `GOOGLE`).
+- Added live report endpoints: `GetV1LiveReport`, `GetV1LiveReportByReportId`, `PostV1LiveReport`, `PatchV1LiveReportByReportId`, `DeleteV1LiveReportByReportId`, `PostV1LiveReportByReportIdGenerate`, `GetV1LiveReportByReportIdDocument` and `GetV1LiveReportByReportIdDocumentByDocumentId`, with their `WithBody` and `WithResponse` variants.
+- Added the live report types `LiveReport`, `LiveReportInput`, `LiveReportDocument`, `LiveReportConfig`, `LiveReportFilterConfig` and `GenerateLiveReportInput`, with enums for cadence (`DAILY`, `WEEKLY`, `MONTHLY`), status, filter operators, filter types, target aggregation and chart display.
+- `ConfigBundleResources0` and `ProjectConfig_Resources_Item` gained `FromLiveReportConfig` and `MergeLiveReportConfig`, and `ConfigBundleResources0` gained `AsLiveReportConfig`. Added `ConfigApplyChangeKindLiveReport` and `ConfigDiffChangeKindLiveReport`.
+- Added tool endpoints: `GetV1Tool`, `GetV1ToolByToolId`, `PostV1Tool`, `PutV1ToolByToolId` and `DeleteV1ToolByToolId`, with their `WithBody` and `WithResponse` variants. New types include `ToolBody`, `ToolInput`, `ToolListResponse`, `ToolDeleteResponse` and `GetV1ToolParams` (with `GetV1ToolParamsIncludeBuiltIn`).
+- Added the `DELETE` method value to `HttpRequestDefinitionCreateResponseMethodDELETE` and `HttpRequestDefinitionResponseMethodDELETE`.
+- Added a `Required` field to `AppendToolInvocationsRequestToolInvocationsParameters0`, `CallCreateToolInvocationsParameters0` and `ChatCreateToolInvocationsParameters0`.
+- `ClientInterface` and `ClientWithResponsesInterface` gained the matching methods. Code that implements these interfaces, such as test mocks, must add them.
+
 ## v0.8.0, 2026-11-01
 
 - Breaking: the anonymous struct type of the `GetV1CallParams.Properties` map values gained an optional `Eq` field (`*string`), a case-insensitive exact match. Composite literals of this struct type must be updated. Code that sets `Exists` by field still compiles.

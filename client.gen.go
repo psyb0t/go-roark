@@ -2871,6 +2871,7 @@ const (
 	ConfigApplyChangeKindDashboard             ConfigApplyChangeKind = "dashboard"
 	ConfigApplyChangeKindFlow                  ConfigApplyChangeKind = "flow"
 	ConfigApplyChangeKindHttpRequestDefinition ConfigApplyChangeKind = "httpRequestDefinition"
+	ConfigApplyChangeKindLiveReport            ConfigApplyChangeKind = "liveReport"
 	ConfigApplyChangeKindMember                ConfigApplyChangeKind = "member"
 	ConfigApplyChangeKindMetric                ConfigApplyChangeKind = "metric"
 	ConfigApplyChangeKindPersona               ConfigApplyChangeKind = "persona"
@@ -2894,6 +2895,8 @@ func (e ConfigApplyChangeKind) Valid() bool {
 	case ConfigApplyChangeKindFlow:
 		return true
 	case ConfigApplyChangeKindHttpRequestDefinition:
+		return true
+	case ConfigApplyChangeKindLiveReport:
 		return true
 	case ConfigApplyChangeKindMember:
 		return true
@@ -2967,6 +2970,7 @@ const (
 	ConfigDiffChangeKindDashboard             ConfigDiffChangeKind = "dashboard"
 	ConfigDiffChangeKindFlow                  ConfigDiffChangeKind = "flow"
 	ConfigDiffChangeKindHttpRequestDefinition ConfigDiffChangeKind = "httpRequestDefinition"
+	ConfigDiffChangeKindLiveReport            ConfigDiffChangeKind = "liveReport"
 	ConfigDiffChangeKindMember                ConfigDiffChangeKind = "member"
 	ConfigDiffChangeKindMetric                ConfigDiffChangeKind = "metric"
 	ConfigDiffChangeKindPersona               ConfigDiffChangeKind = "persona"
@@ -2990,6 +2994,8 @@ func (e ConfigDiffChangeKind) Valid() bool {
 	case ConfigDiffChangeKindFlow:
 		return true
 	case ConfigDiffChangeKindHttpRequestDefinition:
+		return true
+	case ConfigDiffChangeKindLiveReport:
 		return true
 	case ConfigDiffChangeKindMember:
 		return true
@@ -8829,15 +8835,18 @@ func (e HttpRequestDefinitionConfigMethod) Valid() bool {
 
 // Defines values for HttpRequestDefinitionCreateResponseMethod.
 const (
-	HttpRequestDefinitionCreateResponseMethodGET   HttpRequestDefinitionCreateResponseMethod = "GET"
-	HttpRequestDefinitionCreateResponseMethodPATCH HttpRequestDefinitionCreateResponseMethod = "PATCH"
-	HttpRequestDefinitionCreateResponseMethodPOST  HttpRequestDefinitionCreateResponseMethod = "POST"
-	HttpRequestDefinitionCreateResponseMethodPUT   HttpRequestDefinitionCreateResponseMethod = "PUT"
+	HttpRequestDefinitionCreateResponseMethodDELETE HttpRequestDefinitionCreateResponseMethod = "DELETE"
+	HttpRequestDefinitionCreateResponseMethodGET    HttpRequestDefinitionCreateResponseMethod = "GET"
+	HttpRequestDefinitionCreateResponseMethodPATCH  HttpRequestDefinitionCreateResponseMethod = "PATCH"
+	HttpRequestDefinitionCreateResponseMethodPOST   HttpRequestDefinitionCreateResponseMethod = "POST"
+	HttpRequestDefinitionCreateResponseMethodPUT    HttpRequestDefinitionCreateResponseMethod = "PUT"
 )
 
 // Valid indicates whether the value is a known member of the HttpRequestDefinitionCreateResponseMethod enum.
 func (e HttpRequestDefinitionCreateResponseMethod) Valid() bool {
 	switch e {
+	case HttpRequestDefinitionCreateResponseMethodDELETE:
+		return true
 	case HttpRequestDefinitionCreateResponseMethodGET:
 		return true
 	case HttpRequestDefinitionCreateResponseMethodPATCH:
@@ -8868,15 +8877,18 @@ func (e HttpRequestDefinitionCreateResponseScope) Valid() bool {
 
 // Defines values for HttpRequestDefinitionResponseMethod.
 const (
-	HttpRequestDefinitionResponseMethodGET   HttpRequestDefinitionResponseMethod = "GET"
-	HttpRequestDefinitionResponseMethodPATCH HttpRequestDefinitionResponseMethod = "PATCH"
-	HttpRequestDefinitionResponseMethodPOST  HttpRequestDefinitionResponseMethod = "POST"
-	HttpRequestDefinitionResponseMethodPUT   HttpRequestDefinitionResponseMethod = "PUT"
+	HttpRequestDefinitionResponseMethodDELETE HttpRequestDefinitionResponseMethod = "DELETE"
+	HttpRequestDefinitionResponseMethodGET    HttpRequestDefinitionResponseMethod = "GET"
+	HttpRequestDefinitionResponseMethodPATCH  HttpRequestDefinitionResponseMethod = "PATCH"
+	HttpRequestDefinitionResponseMethodPOST   HttpRequestDefinitionResponseMethod = "POST"
+	HttpRequestDefinitionResponseMethodPUT    HttpRequestDefinitionResponseMethod = "PUT"
 )
 
 // Valid indicates whether the value is a known member of the HttpRequestDefinitionResponseMethod enum.
 func (e HttpRequestDefinitionResponseMethod) Valid() bool {
 	switch e {
+	case HttpRequestDefinitionResponseMethodDELETE:
+		return true
 	case HttpRequestDefinitionResponseMethodGET:
 		return true
 	case HttpRequestDefinitionResponseMethodPATCH:
@@ -10552,6 +10564,1347 @@ const (
 func (e IssueResolvedWebhookVersion) Valid() bool {
 	switch e {
 	case IssueResolvedWebhookVersionN10:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportCadence.
+const (
+	LiveReportCadenceDAILY   LiveReportCadence = "DAILY"
+	LiveReportCadenceMONTHLY LiveReportCadence = "MONTHLY"
+	LiveReportCadenceWEEKLY  LiveReportCadence = "WEEKLY"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportCadence enum.
+func (e LiveReportCadence) Valid() bool {
+	switch e {
+	case LiveReportCadenceDAILY:
+		return true
+	case LiveReportCadenceMONTHLY:
+		return true
+	case LiveReportCadenceWEEKLY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportFiltersOperator.
+const (
+	LiveReportFiltersOperatorCONTAINS             LiveReportFiltersOperator = "CONTAINS"
+	LiveReportFiltersOperatorEQUALS               LiveReportFiltersOperator = "EQUALS"
+	LiveReportFiltersOperatorGREATERTHAN          LiveReportFiltersOperator = "GREATER_THAN"
+	LiveReportFiltersOperatorGREATERTHANOREQUALTO LiveReportFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	LiveReportFiltersOperatorISNOTSET             LiveReportFiltersOperator = "IS_NOT_SET"
+	LiveReportFiltersOperatorISSET                LiveReportFiltersOperator = "IS_SET"
+	LiveReportFiltersOperatorLESSTHAN             LiveReportFiltersOperator = "LESS_THAN"
+	LiveReportFiltersOperatorLESSTHANOREQUALTO    LiveReportFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	LiveReportFiltersOperatorNOTEQUALS            LiveReportFiltersOperator = "NOT_EQUALS"
+	LiveReportFiltersOperatorSTARTSWITH           LiveReportFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportFiltersOperator enum.
+func (e LiveReportFiltersOperator) Valid() bool {
+	switch e {
+	case LiveReportFiltersOperatorCONTAINS:
+		return true
+	case LiveReportFiltersOperatorEQUALS:
+		return true
+	case LiveReportFiltersOperatorGREATERTHAN:
+		return true
+	case LiveReportFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case LiveReportFiltersOperatorISNOTSET:
+		return true
+	case LiveReportFiltersOperatorISSET:
+		return true
+	case LiveReportFiltersOperatorLESSTHAN:
+		return true
+	case LiveReportFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case LiveReportFiltersOperatorNOTEQUALS:
+		return true
+	case LiveReportFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportFiltersType.
+const (
+	LiveReportFiltersTypeAGENTPROPERTY  LiveReportFiltersType = "AGENT_PROPERTY"
+	LiveReportFiltersTypeCALLID         LiveReportFiltersType = "CALL_ID"
+	LiveReportFiltersTypeCALLPROPERTY   LiveReportFiltersType = "CALL_PROPERTY"
+	LiveReportFiltersTypeDATASET        LiveReportFiltersType = "DATASET"
+	LiveReportFiltersTypeMETRICPROPERTY LiveReportFiltersType = "METRIC_PROPERTY"
+	LiveReportFiltersTypeMETRICVALUE    LiveReportFiltersType = "METRIC_VALUE"
+	LiveReportFiltersTypeMODALITY       LiveReportFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportFiltersType enum.
+func (e LiveReportFiltersType) Valid() bool {
+	switch e {
+	case LiveReportFiltersTypeAGENTPROPERTY:
+		return true
+	case LiveReportFiltersTypeCALLID:
+		return true
+	case LiveReportFiltersTypeCALLPROPERTY:
+		return true
+	case LiveReportFiltersTypeDATASET:
+		return true
+	case LiveReportFiltersTypeMETRICPROPERTY:
+		return true
+	case LiveReportFiltersTypeMETRICVALUE:
+		return true
+	case LiveReportFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportStatus.
+const (
+	LiveReportStatusACTIVE LiveReportStatus = "ACTIVE"
+	LiveReportStatusPAUSED LiveReportStatus = "PAUSED"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportStatus enum.
+func (e LiveReportStatus) Valid() bool {
+	switch e {
+	case LiveReportStatusACTIVE:
+		return true
+	case LiveReportStatusPAUSED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportTargetsAggregation.
+const (
+	LiveReportTargetsAggregationAVG        LiveReportTargetsAggregation = "AVG"
+	LiveReportTargetsAggregationMAX        LiveReportTargetsAggregation = "MAX"
+	LiveReportTargetsAggregationMEDIAN     LiveReportTargetsAggregation = "MEDIAN"
+	LiveReportTargetsAggregationMIN        LiveReportTargetsAggregation = "MIN"
+	LiveReportTargetsAggregationPASSRATE   LiveReportTargetsAggregation = "PASS_RATE"
+	LiveReportTargetsAggregationPERCENTILE LiveReportTargetsAggregation = "PERCENTILE"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportTargetsAggregation enum.
+func (e LiveReportTargetsAggregation) Valid() bool {
+	switch e {
+	case LiveReportTargetsAggregationAVG:
+		return true
+	case LiveReportTargetsAggregationMAX:
+		return true
+	case LiveReportTargetsAggregationMEDIAN:
+		return true
+	case LiveReportTargetsAggregationMIN:
+		return true
+	case LiveReportTargetsAggregationPASSRATE:
+		return true
+	case LiveReportTargetsAggregationPERCENTILE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportTargetsComparator.
+const (
+	LiveReportTargetsComparatorATLEAST LiveReportTargetsComparator = "AT_LEAST"
+	LiveReportTargetsComparatorATMOST  LiveReportTargetsComparator = "AT_MOST"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportTargetsComparator enum.
+func (e LiveReportTargetsComparator) Valid() bool {
+	switch e {
+	case LiveReportTargetsComparatorATLEAST:
+		return true
+	case LiveReportTargetsComparatorATMOST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportTargetsPassOperator.
+const (
+	LiveReportTargetsPassOperatorEQUALS               LiveReportTargetsPassOperator = "EQUALS"
+	LiveReportTargetsPassOperatorGREATERTHAN          LiveReportTargetsPassOperator = "GREATER_THAN"
+	LiveReportTargetsPassOperatorGREATERTHANOREQUALTO LiveReportTargetsPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	LiveReportTargetsPassOperatorLESSTHAN             LiveReportTargetsPassOperator = "LESS_THAN"
+	LiveReportTargetsPassOperatorLESSTHANOREQUALTO    LiveReportTargetsPassOperator = "LESS_THAN_OR_EQUAL_TO"
+	LiveReportTargetsPassOperatorNOTEQUALS            LiveReportTargetsPassOperator = "NOT_EQUALS"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportTargetsPassOperator enum.
+func (e LiveReportTargetsPassOperator) Valid() bool {
+	switch e {
+	case LiveReportTargetsPassOperatorEQUALS:
+		return true
+	case LiveReportTargetsPassOperatorGREATERTHAN:
+		return true
+	case LiveReportTargetsPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case LiveReportTargetsPassOperatorLESSTHAN:
+		return true
+	case LiveReportTargetsPassOperatorLESSTHANOREQUALTO:
+		return true
+	case LiveReportTargetsPassOperatorNOTEQUALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportConfigCadence.
+const (
+	LiveReportConfigCadenceDAILY   LiveReportConfigCadence = "DAILY"
+	LiveReportConfigCadenceMONTHLY LiveReportConfigCadence = "MONTHLY"
+	LiveReportConfigCadenceWEEKLY  LiveReportConfigCadence = "WEEKLY"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportConfigCadence enum.
+func (e LiveReportConfigCadence) Valid() bool {
+	switch e {
+	case LiveReportConfigCadenceDAILY:
+		return true
+	case LiveReportConfigCadenceMONTHLY:
+		return true
+	case LiveReportConfigCadenceWEEKLY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportConfigKind.
+const (
+	LiveReportConfigKindLiveReport LiveReportConfigKind = "liveReport"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportConfigKind enum.
+func (e LiveReportConfigKind) Valid() bool {
+	switch e {
+	case LiveReportConfigKindLiveReport:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentCadence.
+const (
+	LiveReportDocumentCadenceDAILY   LiveReportDocumentCadence = "DAILY"
+	LiveReportDocumentCadenceMONTHLY LiveReportDocumentCadence = "MONTHLY"
+	LiveReportDocumentCadenceWEEKLY  LiveReportDocumentCadence = "WEEKLY"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentCadence enum.
+func (e LiveReportDocumentCadence) Valid() bool {
+	switch e {
+	case LiveReportDocumentCadenceDAILY:
+		return true
+	case LiveReportDocumentCadenceMONTHLY:
+		return true
+	case LiveReportDocumentCadenceWEEKLY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDefinitionFiltersOperator.
+const (
+	LiveReportDocumentDefinitionFiltersOperatorCONTAINS             LiveReportDocumentDefinitionFiltersOperator = "CONTAINS"
+	LiveReportDocumentDefinitionFiltersOperatorEQUALS               LiveReportDocumentDefinitionFiltersOperator = "EQUALS"
+	LiveReportDocumentDefinitionFiltersOperatorGREATERTHAN          LiveReportDocumentDefinitionFiltersOperator = "GREATER_THAN"
+	LiveReportDocumentDefinitionFiltersOperatorGREATERTHANOREQUALTO LiveReportDocumentDefinitionFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	LiveReportDocumentDefinitionFiltersOperatorISNOTSET             LiveReportDocumentDefinitionFiltersOperator = "IS_NOT_SET"
+	LiveReportDocumentDefinitionFiltersOperatorISSET                LiveReportDocumentDefinitionFiltersOperator = "IS_SET"
+	LiveReportDocumentDefinitionFiltersOperatorLESSTHAN             LiveReportDocumentDefinitionFiltersOperator = "LESS_THAN"
+	LiveReportDocumentDefinitionFiltersOperatorLESSTHANOREQUALTO    LiveReportDocumentDefinitionFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	LiveReportDocumentDefinitionFiltersOperatorNOTEQUALS            LiveReportDocumentDefinitionFiltersOperator = "NOT_EQUALS"
+	LiveReportDocumentDefinitionFiltersOperatorSTARTSWITH           LiveReportDocumentDefinitionFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDefinitionFiltersOperator enum.
+func (e LiveReportDocumentDefinitionFiltersOperator) Valid() bool {
+	switch e {
+	case LiveReportDocumentDefinitionFiltersOperatorCONTAINS:
+		return true
+	case LiveReportDocumentDefinitionFiltersOperatorEQUALS:
+		return true
+	case LiveReportDocumentDefinitionFiltersOperatorGREATERTHAN:
+		return true
+	case LiveReportDocumentDefinitionFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case LiveReportDocumentDefinitionFiltersOperatorISNOTSET:
+		return true
+	case LiveReportDocumentDefinitionFiltersOperatorISSET:
+		return true
+	case LiveReportDocumentDefinitionFiltersOperatorLESSTHAN:
+		return true
+	case LiveReportDocumentDefinitionFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case LiveReportDocumentDefinitionFiltersOperatorNOTEQUALS:
+		return true
+	case LiveReportDocumentDefinitionFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDefinitionFiltersType.
+const (
+	LiveReportDocumentDefinitionFiltersTypeAGENTPROPERTY  LiveReportDocumentDefinitionFiltersType = "AGENT_PROPERTY"
+	LiveReportDocumentDefinitionFiltersTypeCALLID         LiveReportDocumentDefinitionFiltersType = "CALL_ID"
+	LiveReportDocumentDefinitionFiltersTypeCALLPROPERTY   LiveReportDocumentDefinitionFiltersType = "CALL_PROPERTY"
+	LiveReportDocumentDefinitionFiltersTypeDATASET        LiveReportDocumentDefinitionFiltersType = "DATASET"
+	LiveReportDocumentDefinitionFiltersTypeMETRICPROPERTY LiveReportDocumentDefinitionFiltersType = "METRIC_PROPERTY"
+	LiveReportDocumentDefinitionFiltersTypeMETRICVALUE    LiveReportDocumentDefinitionFiltersType = "METRIC_VALUE"
+	LiveReportDocumentDefinitionFiltersTypeMODALITY       LiveReportDocumentDefinitionFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDefinitionFiltersType enum.
+func (e LiveReportDocumentDefinitionFiltersType) Valid() bool {
+	switch e {
+	case LiveReportDocumentDefinitionFiltersTypeAGENTPROPERTY:
+		return true
+	case LiveReportDocumentDefinitionFiltersTypeCALLID:
+		return true
+	case LiveReportDocumentDefinitionFiltersTypeCALLPROPERTY:
+		return true
+	case LiveReportDocumentDefinitionFiltersTypeDATASET:
+		return true
+	case LiveReportDocumentDefinitionFiltersTypeMETRICPROPERTY:
+		return true
+	case LiveReportDocumentDefinitionFiltersTypeMETRICVALUE:
+		return true
+	case LiveReportDocumentDefinitionFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDefinitionTargetsAggregation.
+const (
+	LiveReportDocumentDefinitionTargetsAggregationAVG        LiveReportDocumentDefinitionTargetsAggregation = "AVG"
+	LiveReportDocumentDefinitionTargetsAggregationMAX        LiveReportDocumentDefinitionTargetsAggregation = "MAX"
+	LiveReportDocumentDefinitionTargetsAggregationMEDIAN     LiveReportDocumentDefinitionTargetsAggregation = "MEDIAN"
+	LiveReportDocumentDefinitionTargetsAggregationMIN        LiveReportDocumentDefinitionTargetsAggregation = "MIN"
+	LiveReportDocumentDefinitionTargetsAggregationPASSRATE   LiveReportDocumentDefinitionTargetsAggregation = "PASS_RATE"
+	LiveReportDocumentDefinitionTargetsAggregationPERCENTILE LiveReportDocumentDefinitionTargetsAggregation = "PERCENTILE"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDefinitionTargetsAggregation enum.
+func (e LiveReportDocumentDefinitionTargetsAggregation) Valid() bool {
+	switch e {
+	case LiveReportDocumentDefinitionTargetsAggregationAVG:
+		return true
+	case LiveReportDocumentDefinitionTargetsAggregationMAX:
+		return true
+	case LiveReportDocumentDefinitionTargetsAggregationMEDIAN:
+		return true
+	case LiveReportDocumentDefinitionTargetsAggregationMIN:
+		return true
+	case LiveReportDocumentDefinitionTargetsAggregationPASSRATE:
+		return true
+	case LiveReportDocumentDefinitionTargetsAggregationPERCENTILE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDefinitionTargetsComparator.
+const (
+	LiveReportDocumentDefinitionTargetsComparatorATLEAST LiveReportDocumentDefinitionTargetsComparator = "AT_LEAST"
+	LiveReportDocumentDefinitionTargetsComparatorATMOST  LiveReportDocumentDefinitionTargetsComparator = "AT_MOST"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDefinitionTargetsComparator enum.
+func (e LiveReportDocumentDefinitionTargetsComparator) Valid() bool {
+	switch e {
+	case LiveReportDocumentDefinitionTargetsComparatorATLEAST:
+		return true
+	case LiveReportDocumentDefinitionTargetsComparatorATMOST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDefinitionTargetsPassOperator.
+const (
+	LiveReportDocumentDefinitionTargetsPassOperatorEQUALS               LiveReportDocumentDefinitionTargetsPassOperator = "EQUALS"
+	LiveReportDocumentDefinitionTargetsPassOperatorGREATERTHAN          LiveReportDocumentDefinitionTargetsPassOperator = "GREATER_THAN"
+	LiveReportDocumentDefinitionTargetsPassOperatorGREATERTHANOREQUALTO LiveReportDocumentDefinitionTargetsPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	LiveReportDocumentDefinitionTargetsPassOperatorLESSTHAN             LiveReportDocumentDefinitionTargetsPassOperator = "LESS_THAN"
+	LiveReportDocumentDefinitionTargetsPassOperatorLESSTHANOREQUALTO    LiveReportDocumentDefinitionTargetsPassOperator = "LESS_THAN_OR_EQUAL_TO"
+	LiveReportDocumentDefinitionTargetsPassOperatorNOTEQUALS            LiveReportDocumentDefinitionTargetsPassOperator = "NOT_EQUALS"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDefinitionTargetsPassOperator enum.
+func (e LiveReportDocumentDefinitionTargetsPassOperator) Valid() bool {
+	switch e {
+	case LiveReportDocumentDefinitionTargetsPassOperatorEQUALS:
+		return true
+	case LiveReportDocumentDefinitionTargetsPassOperatorGREATERTHAN:
+		return true
+	case LiveReportDocumentDefinitionTargetsPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case LiveReportDocumentDefinitionTargetsPassOperatorLESSTHAN:
+		return true
+	case LiveReportDocumentDefinitionTargetsPassOperatorLESSTHANOREQUALTO:
+		return true
+	case LiveReportDocumentDefinitionTargetsPassOperatorNOTEQUALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentAgentsTargetsStatus.
+const (
+	LiveReportDocumentDocumentAgentsTargetsStatusMET    LiveReportDocumentDocumentAgentsTargetsStatus = "MET"
+	LiveReportDocumentDocumentAgentsTargetsStatusMISSED LiveReportDocumentDocumentAgentsTargetsStatus = "MISSED"
+	LiveReportDocumentDocumentAgentsTargetsStatusNODATA LiveReportDocumentDocumentAgentsTargetsStatus = "NO_DATA"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentAgentsTargetsStatus enum.
+func (e LiveReportDocumentDocumentAgentsTargetsStatus) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentAgentsTargetsStatusMET:
+		return true
+	case LiveReportDocumentDocumentAgentsTargetsStatusMISSED:
+		return true
+	case LiveReportDocumentDocumentAgentsTargetsStatusNODATA:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentChartsDisplay.
+const (
+	LiveReportDocumentDocumentChartsDisplayLINE       LiveReportDocumentDocumentChartsDisplay = "LINE"
+	LiveReportDocumentDocumentChartsDisplayNUMBER     LiveReportDocumentDocumentChartsDisplay = "NUMBER"
+	LiveReportDocumentDocumentChartsDisplayRADAR      LiveReportDocumentDocumentChartsDisplay = "RADAR"
+	LiveReportDocumentDocumentChartsDisplaySTACKEDBAR LiveReportDocumentDocumentChartsDisplay = "STACKED_BAR"
+	LiveReportDocumentDocumentChartsDisplayTABLE      LiveReportDocumentDocumentChartsDisplay = "TABLE"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentChartsDisplay enum.
+func (e LiveReportDocumentDocumentChartsDisplay) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentChartsDisplayLINE:
+		return true
+	case LiveReportDocumentDocumentChartsDisplayNUMBER:
+		return true
+	case LiveReportDocumentDocumentChartsDisplayRADAR:
+		return true
+	case LiveReportDocumentDocumentChartsDisplaySTACKEDBAR:
+		return true
+	case LiveReportDocumentDocumentChartsDisplayTABLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentChartsInterval.
+const (
+	LiveReportDocumentDocumentChartsIntervalDAY   LiveReportDocumentDocumentChartsInterval = "DAY"
+	LiveReportDocumentDocumentChartsIntervalHOUR  LiveReportDocumentDocumentChartsInterval = "HOUR"
+	LiveReportDocumentDocumentChartsIntervalMONTH LiveReportDocumentDocumentChartsInterval = "MONTH"
+	LiveReportDocumentDocumentChartsIntervalWEEK  LiveReportDocumentDocumentChartsInterval = "WEEK"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentChartsInterval enum.
+func (e LiveReportDocumentDocumentChartsInterval) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentChartsIntervalDAY:
+		return true
+	case LiveReportDocumentDocumentChartsIntervalHOUR:
+		return true
+	case LiveReportDocumentDocumentChartsIntervalMONTH:
+		return true
+	case LiveReportDocumentDocumentChartsIntervalWEEK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentChartsSeriesAggregation.
+const (
+	LiveReportDocumentDocumentChartsSeriesAggregationAVG        LiveReportDocumentDocumentChartsSeriesAggregation = "AVG"
+	LiveReportDocumentDocumentChartsSeriesAggregationCOUNT      LiveReportDocumentDocumentChartsSeriesAggregation = "COUNT"
+	LiveReportDocumentDocumentChartsSeriesAggregationMAX        LiveReportDocumentDocumentChartsSeriesAggregation = "MAX"
+	LiveReportDocumentDocumentChartsSeriesAggregationMEDIAN     LiveReportDocumentDocumentChartsSeriesAggregation = "MEDIAN"
+	LiveReportDocumentDocumentChartsSeriesAggregationMIN        LiveReportDocumentDocumentChartsSeriesAggregation = "MIN"
+	LiveReportDocumentDocumentChartsSeriesAggregationPASSRATE   LiveReportDocumentDocumentChartsSeriesAggregation = "PASS_RATE"
+	LiveReportDocumentDocumentChartsSeriesAggregationPERCENTILE LiveReportDocumentDocumentChartsSeriesAggregation = "PERCENTILE"
+	LiveReportDocumentDocumentChartsSeriesAggregationSUM        LiveReportDocumentDocumentChartsSeriesAggregation = "SUM"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentChartsSeriesAggregation enum.
+func (e LiveReportDocumentDocumentChartsSeriesAggregation) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentChartsSeriesAggregationAVG:
+		return true
+	case LiveReportDocumentDocumentChartsSeriesAggregationCOUNT:
+		return true
+	case LiveReportDocumentDocumentChartsSeriesAggregationMAX:
+		return true
+	case LiveReportDocumentDocumentChartsSeriesAggregationMEDIAN:
+		return true
+	case LiveReportDocumentDocumentChartsSeriesAggregationMIN:
+		return true
+	case LiveReportDocumentDocumentChartsSeriesAggregationPASSRATE:
+		return true
+	case LiveReportDocumentDocumentChartsSeriesAggregationPERCENTILE:
+		return true
+	case LiveReportDocumentDocumentChartsSeriesAggregationSUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentChartsSeriesType.
+const (
+	LiveReportDocumentDocumentChartsSeriesTypeCONVERSATION LiveReportDocumentDocumentChartsSeriesType = "CONVERSATION"
+	LiveReportDocumentDocumentChartsSeriesTypeMETRIC       LiveReportDocumentDocumentChartsSeriesType = "METRIC"
+	LiveReportDocumentDocumentChartsSeriesTypeUPTIME       LiveReportDocumentDocumentChartsSeriesType = "UPTIME"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentChartsSeriesType enum.
+func (e LiveReportDocumentDocumentChartsSeriesType) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentChartsSeriesTypeCONVERSATION:
+		return true
+	case LiveReportDocumentDocumentChartsSeriesTypeMETRIC:
+		return true
+	case LiveReportDocumentDocumentChartsSeriesTypeUPTIME:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentHeadlineCadence.
+const (
+	LiveReportDocumentDocumentHeadlineCadenceDAILY   LiveReportDocumentDocumentHeadlineCadence = "DAILY"
+	LiveReportDocumentDocumentHeadlineCadenceMONTHLY LiveReportDocumentDocumentHeadlineCadence = "MONTHLY"
+	LiveReportDocumentDocumentHeadlineCadenceWEEKLY  LiveReportDocumentDocumentHeadlineCadence = "WEEKLY"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentHeadlineCadence enum.
+func (e LiveReportDocumentDocumentHeadlineCadence) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentHeadlineCadenceDAILY:
+		return true
+	case LiveReportDocumentDocumentHeadlineCadenceMONTHLY:
+		return true
+	case LiveReportDocumentDocumentHeadlineCadenceWEEKLY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentHeadlineStatTilesDeltaDirection.
+const (
+	LiveReportDocumentDocumentHeadlineStatTilesDeltaDirectionNEGATIVE LiveReportDocumentDocumentHeadlineStatTilesDeltaDirection = "NEGATIVE"
+	LiveReportDocumentDocumentHeadlineStatTilesDeltaDirectionNEUTRAL  LiveReportDocumentDocumentHeadlineStatTilesDeltaDirection = "NEUTRAL"
+	LiveReportDocumentDocumentHeadlineStatTilesDeltaDirectionPOSITIVE LiveReportDocumentDocumentHeadlineStatTilesDeltaDirection = "POSITIVE"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentHeadlineStatTilesDeltaDirection enum.
+func (e LiveReportDocumentDocumentHeadlineStatTilesDeltaDirection) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentHeadlineStatTilesDeltaDirectionNEGATIVE:
+		return true
+	case LiveReportDocumentDocumentHeadlineStatTilesDeltaDirectionNEUTRAL:
+		return true
+	case LiveReportDocumentDocumentHeadlineStatTilesDeltaDirectionPOSITIVE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentHeadlineVerdict.
+const (
+	LiveReportDocumentDocumentHeadlineVerdictNODATA    LiveReportDocumentDocumentHeadlineVerdict = "NO_DATA"
+	LiveReportDocumentDocumentHeadlineVerdictNOTARGETS LiveReportDocumentDocumentHeadlineVerdict = "NO_TARGETS"
+	LiveReportDocumentDocumentHeadlineVerdictOFFTARGET LiveReportDocumentDocumentHeadlineVerdict = "OFF_TARGET"
+	LiveReportDocumentDocumentHeadlineVerdictONTARGET  LiveReportDocumentDocumentHeadlineVerdict = "ON_TARGET"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentHeadlineVerdict enum.
+func (e LiveReportDocumentDocumentHeadlineVerdict) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentHeadlineVerdictNODATA:
+		return true
+	case LiveReportDocumentDocumentHeadlineVerdictNOTARGETS:
+		return true
+	case LiveReportDocumentDocumentHeadlineVerdictOFFTARGET:
+		return true
+	case LiveReportDocumentDocumentHeadlineVerdictONTARGET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentRecommendationsChannel.
+const (
+	LiveReportDocumentDocumentRecommendationsChannelEXTERNAL    LiveReportDocumentDocumentRecommendationsChannel = "EXTERNAL"
+	LiveReportDocumentDocumentRecommendationsChannelINFRA       LiveReportDocumentDocumentRecommendationsChannel = "INFRA"
+	LiveReportDocumentDocumentRecommendationsChannelLLMMODEL    LiveReportDocumentDocumentRecommendationsChannel = "LLM_MODEL"
+	LiveReportDocumentDocumentRecommendationsChannelPROMPT      LiveReportDocumentDocumentRecommendationsChannel = "PROMPT"
+	LiveReportDocumentDocumentRecommendationsChannelSPEECHMODEL LiveReportDocumentDocumentRecommendationsChannel = "SPEECH_MODEL"
+	LiveReportDocumentDocumentRecommendationsChannelSTT         LiveReportDocumentDocumentRecommendationsChannel = "STT"
+	LiveReportDocumentDocumentRecommendationsChannelVOICECONFIG LiveReportDocumentDocumentRecommendationsChannel = "VOICE_CONFIG"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentRecommendationsChannel enum.
+func (e LiveReportDocumentDocumentRecommendationsChannel) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentRecommendationsChannelEXTERNAL:
+		return true
+	case LiveReportDocumentDocumentRecommendationsChannelINFRA:
+		return true
+	case LiveReportDocumentDocumentRecommendationsChannelLLMMODEL:
+		return true
+	case LiveReportDocumentDocumentRecommendationsChannelPROMPT:
+		return true
+	case LiveReportDocumentDocumentRecommendationsChannelSPEECHMODEL:
+		return true
+	case LiveReportDocumentDocumentRecommendationsChannelSTT:
+		return true
+	case LiveReportDocumentDocumentRecommendationsChannelVOICECONFIG:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentRecommendationsSeverity.
+const (
+	LiveReportDocumentDocumentRecommendationsSeverityHIGH   LiveReportDocumentDocumentRecommendationsSeverity = "HIGH"
+	LiveReportDocumentDocumentRecommendationsSeverityLOW    LiveReportDocumentDocumentRecommendationsSeverity = "LOW"
+	LiveReportDocumentDocumentRecommendationsSeverityMEDIUM LiveReportDocumentDocumentRecommendationsSeverity = "MEDIUM"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentRecommendationsSeverity enum.
+func (e LiveReportDocumentDocumentRecommendationsSeverity) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentRecommendationsSeverityHIGH:
+		return true
+	case LiveReportDocumentDocumentRecommendationsSeverityLOW:
+		return true
+	case LiveReportDocumentDocumentRecommendationsSeverityMEDIUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentRecommendationsSource.
+const (
+	LiveReportDocumentDocumentRecommendationsSourceDEBRIEF         LiveReportDocumentDocumentRecommendationsSource = "DEBRIEF"
+	LiveReportDocumentDocumentRecommendationsSourcePROMPTOPTIMIZER LiveReportDocumentDocumentRecommendationsSource = "PROMPT_OPTIMIZER"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentRecommendationsSource enum.
+func (e LiveReportDocumentDocumentRecommendationsSource) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentRecommendationsSourceDEBRIEF:
+		return true
+	case LiveReportDocumentDocumentRecommendationsSourcePROMPTOPTIMIZER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentTargetsAggregation.
+const (
+	LiveReportDocumentDocumentTargetsAggregationAVG        LiveReportDocumentDocumentTargetsAggregation = "AVG"
+	LiveReportDocumentDocumentTargetsAggregationMAX        LiveReportDocumentDocumentTargetsAggregation = "MAX"
+	LiveReportDocumentDocumentTargetsAggregationMEDIAN     LiveReportDocumentDocumentTargetsAggregation = "MEDIAN"
+	LiveReportDocumentDocumentTargetsAggregationMIN        LiveReportDocumentDocumentTargetsAggregation = "MIN"
+	LiveReportDocumentDocumentTargetsAggregationPASSRATE   LiveReportDocumentDocumentTargetsAggregation = "PASS_RATE"
+	LiveReportDocumentDocumentTargetsAggregationPERCENTILE LiveReportDocumentDocumentTargetsAggregation = "PERCENTILE"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentTargetsAggregation enum.
+func (e LiveReportDocumentDocumentTargetsAggregation) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentTargetsAggregationAVG:
+		return true
+	case LiveReportDocumentDocumentTargetsAggregationMAX:
+		return true
+	case LiveReportDocumentDocumentTargetsAggregationMEDIAN:
+		return true
+	case LiveReportDocumentDocumentTargetsAggregationMIN:
+		return true
+	case LiveReportDocumentDocumentTargetsAggregationPASSRATE:
+		return true
+	case LiveReportDocumentDocumentTargetsAggregationPERCENTILE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentTargetsComparator.
+const (
+	LiveReportDocumentDocumentTargetsComparatorATLEAST LiveReportDocumentDocumentTargetsComparator = "AT_LEAST"
+	LiveReportDocumentDocumentTargetsComparatorATMOST  LiveReportDocumentDocumentTargetsComparator = "AT_MOST"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentTargetsComparator enum.
+func (e LiveReportDocumentDocumentTargetsComparator) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentTargetsComparatorATLEAST:
+		return true
+	case LiveReportDocumentDocumentTargetsComparatorATMOST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentTargetsDeltaDirection.
+const (
+	LiveReportDocumentDocumentTargetsDeltaDirectionNEGATIVE LiveReportDocumentDocumentTargetsDeltaDirection = "NEGATIVE"
+	LiveReportDocumentDocumentTargetsDeltaDirectionNEUTRAL  LiveReportDocumentDocumentTargetsDeltaDirection = "NEUTRAL"
+	LiveReportDocumentDocumentTargetsDeltaDirectionPOSITIVE LiveReportDocumentDocumentTargetsDeltaDirection = "POSITIVE"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentTargetsDeltaDirection enum.
+func (e LiveReportDocumentDocumentTargetsDeltaDirection) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentTargetsDeltaDirectionNEGATIVE:
+		return true
+	case LiveReportDocumentDocumentTargetsDeltaDirectionNEUTRAL:
+		return true
+	case LiveReportDocumentDocumentTargetsDeltaDirectionPOSITIVE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentTargetsLifecycle.
+const (
+	LiveReportDocumentDocumentTargetsLifecycleHOLDING     LiveReportDocumentDocumentTargetsLifecycle = "HOLDING"
+	LiveReportDocumentDocumentTargetsLifecycleNEWMISS     LiveReportDocumentDocumentTargetsLifecycle = "NEW_MISS"
+	LiveReportDocumentDocumentTargetsLifecycleRECOVERED   LiveReportDocumentDocumentTargetsLifecycle = "RECOVERED"
+	LiveReportDocumentDocumentTargetsLifecycleSTILLMISSED LiveReportDocumentDocumentTargetsLifecycle = "STILL_MISSED"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentTargetsLifecycle enum.
+func (e LiveReportDocumentDocumentTargetsLifecycle) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentTargetsLifecycleHOLDING:
+		return true
+	case LiveReportDocumentDocumentTargetsLifecycleNEWMISS:
+		return true
+	case LiveReportDocumentDocumentTargetsLifecycleRECOVERED:
+		return true
+	case LiveReportDocumentDocumentTargetsLifecycleSTILLMISSED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentTargetsStatus.
+const (
+	LiveReportDocumentDocumentTargetsStatusMET    LiveReportDocumentDocumentTargetsStatus = "MET"
+	LiveReportDocumentDocumentTargetsStatusMISSED LiveReportDocumentDocumentTargetsStatus = "MISSED"
+	LiveReportDocumentDocumentTargetsStatusNODATA LiveReportDocumentDocumentTargetsStatus = "NO_DATA"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentTargetsStatus enum.
+func (e LiveReportDocumentDocumentTargetsStatus) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentTargetsStatusMET:
+		return true
+	case LiveReportDocumentDocumentTargetsStatusMISSED:
+		return true
+	case LiveReportDocumentDocumentTargetsStatusNODATA:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentTargetsUnit.
+const (
+	LiveReportDocumentDocumentTargetsUnitPERCENT LiveReportDocumentDocumentTargetsUnit = "PERCENT"
+	LiveReportDocumentDocumentTargetsUnitVALUE   LiveReportDocumentDocumentTargetsUnit = "VALUE"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentTargetsUnit enum.
+func (e LiveReportDocumentDocumentTargetsUnit) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentTargetsUnitPERCENT:
+		return true
+	case LiveReportDocumentDocumentTargetsUnitVALUE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentThemesExcerptsTurnsRole.
+const (
+	LiveReportDocumentDocumentThemesExcerptsTurnsRoleAGENT             LiveReportDocumentDocumentThemesExcerptsTurnsRole = "AGENT"
+	LiveReportDocumentDocumentThemesExcerptsTurnsRoleBACKGROUNDSPEAKER LiveReportDocumentDocumentThemesExcerptsTurnsRole = "BACKGROUND_SPEAKER"
+	LiveReportDocumentDocumentThemesExcerptsTurnsRoleCUSTOMER          LiveReportDocumentDocumentThemesExcerptsTurnsRole = "CUSTOMER"
+	LiveReportDocumentDocumentThemesExcerptsTurnsRoleSIMULATEDCUSTOMER LiveReportDocumentDocumentThemesExcerptsTurnsRole = "SIMULATED_CUSTOMER"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentThemesExcerptsTurnsRole enum.
+func (e LiveReportDocumentDocumentThemesExcerptsTurnsRole) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentThemesExcerptsTurnsRoleAGENT:
+		return true
+	case LiveReportDocumentDocumentThemesExcerptsTurnsRoleBACKGROUNDSPEAKER:
+		return true
+	case LiveReportDocumentDocumentThemesExcerptsTurnsRoleCUSTOMER:
+		return true
+	case LiveReportDocumentDocumentThemesExcerptsTurnsRoleSIMULATEDCUSTOMER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentThemesImpact.
+const (
+	LiveReportDocumentDocumentThemesImpactCRITICAL LiveReportDocumentDocumentThemesImpact = "CRITICAL"
+	LiveReportDocumentDocumentThemesImpactHIGH     LiveReportDocumentDocumentThemesImpact = "HIGH"
+	LiveReportDocumentDocumentThemesImpactLOW      LiveReportDocumentDocumentThemesImpact = "LOW"
+	LiveReportDocumentDocumentThemesImpactMEDIUM   LiveReportDocumentDocumentThemesImpact = "MEDIUM"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentThemesImpact enum.
+func (e LiveReportDocumentDocumentThemesImpact) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentThemesImpactCRITICAL:
+		return true
+	case LiveReportDocumentDocumentThemesImpactHIGH:
+		return true
+	case LiveReportDocumentDocumentThemesImpactLOW:
+		return true
+	case LiveReportDocumentDocumentThemesImpactMEDIUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentThemesLifecycle.
+const (
+	LiveReportDocumentDocumentThemesLifecycleFIXED      LiveReportDocumentDocumentThemesLifecycle = "FIXED"
+	LiveReportDocumentDocumentThemesLifecycleIMPROVING  LiveReportDocumentDocumentThemesLifecycle = "IMPROVING"
+	LiveReportDocumentDocumentThemesLifecycleNEW        LiveReportDocumentDocumentThemesLifecycle = "NEW"
+	LiveReportDocumentDocumentThemesLifecyclePERSISTENT LiveReportDocumentDocumentThemesLifecycle = "PERSISTENT"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentThemesLifecycle enum.
+func (e LiveReportDocumentDocumentThemesLifecycle) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentThemesLifecycleFIXED:
+		return true
+	case LiveReportDocumentDocumentThemesLifecycleIMPROVING:
+		return true
+	case LiveReportDocumentDocumentThemesLifecycleNEW:
+		return true
+	case LiveReportDocumentDocumentThemesLifecyclePERSISTENT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentThemesPrevalence.
+const (
+	LiveReportDocumentDocumentThemesPrevalenceISOLATED   LiveReportDocumentDocumentThemesPrevalence = "ISOLATED"
+	LiveReportDocumentDocumentThemesPrevalenceRECURRING  LiveReportDocumentDocumentThemesPrevalence = "RECURRING"
+	LiveReportDocumentDocumentThemesPrevalenceWIDESPREAD LiveReportDocumentDocumentThemesPrevalence = "WIDESPREAD"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentThemesPrevalence enum.
+func (e LiveReportDocumentDocumentThemesPrevalence) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentThemesPrevalenceISOLATED:
+		return true
+	case LiveReportDocumentDocumentThemesPrevalenceRECURRING:
+		return true
+	case LiveReportDocumentDocumentThemesPrevalenceWIDESPREAD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentThemesRootCauseChannel.
+const (
+	LiveReportDocumentDocumentThemesRootCauseChannelEXTERNAL    LiveReportDocumentDocumentThemesRootCauseChannel = "EXTERNAL"
+	LiveReportDocumentDocumentThemesRootCauseChannelINFRA       LiveReportDocumentDocumentThemesRootCauseChannel = "INFRA"
+	LiveReportDocumentDocumentThemesRootCauseChannelLLMMODEL    LiveReportDocumentDocumentThemesRootCauseChannel = "LLM_MODEL"
+	LiveReportDocumentDocumentThemesRootCauseChannelPROMPT      LiveReportDocumentDocumentThemesRootCauseChannel = "PROMPT"
+	LiveReportDocumentDocumentThemesRootCauseChannelSPEECHMODEL LiveReportDocumentDocumentThemesRootCauseChannel = "SPEECH_MODEL"
+	LiveReportDocumentDocumentThemesRootCauseChannelSTT         LiveReportDocumentDocumentThemesRootCauseChannel = "STT"
+	LiveReportDocumentDocumentThemesRootCauseChannelVOICECONFIG LiveReportDocumentDocumentThemesRootCauseChannel = "VOICE_CONFIG"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentThemesRootCauseChannel enum.
+func (e LiveReportDocumentDocumentThemesRootCauseChannel) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentThemesRootCauseChannelEXTERNAL:
+		return true
+	case LiveReportDocumentDocumentThemesRootCauseChannelINFRA:
+		return true
+	case LiveReportDocumentDocumentThemesRootCauseChannelLLMMODEL:
+		return true
+	case LiveReportDocumentDocumentThemesRootCauseChannelPROMPT:
+		return true
+	case LiveReportDocumentDocumentThemesRootCauseChannelSPEECHMODEL:
+		return true
+	case LiveReportDocumentDocumentThemesRootCauseChannelSTT:
+		return true
+	case LiveReportDocumentDocumentThemesRootCauseChannelVOICECONFIG:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentThemesSeverity.
+const (
+	LiveReportDocumentDocumentThemesSeverityHIGH   LiveReportDocumentDocumentThemesSeverity = "HIGH"
+	LiveReportDocumentDocumentThemesSeverityLOW    LiveReportDocumentDocumentThemesSeverity = "LOW"
+	LiveReportDocumentDocumentThemesSeverityMEDIUM LiveReportDocumentDocumentThemesSeverity = "MEDIUM"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentThemesSeverity enum.
+func (e LiveReportDocumentDocumentThemesSeverity) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentThemesSeverityHIGH:
+		return true
+	case LiveReportDocumentDocumentThemesSeverityLOW:
+		return true
+	case LiveReportDocumentDocumentThemesSeverityMEDIUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentDocumentVersion.
+const (
+	LiveReportDocumentDocumentVersionN1 LiveReportDocumentDocumentVersion = 1
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentDocumentVersion enum.
+func (e LiveReportDocumentDocumentVersion) Valid() bool {
+	switch e {
+	case LiveReportDocumentDocumentVersionN1:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentStatus.
+const (
+	LiveReportDocumentStatusFAILED     LiveReportDocumentStatus = "FAILED"
+	LiveReportDocumentStatusGENERATING LiveReportDocumentStatus = "GENERATING"
+	LiveReportDocumentStatusPENDING    LiveReportDocumentStatus = "PENDING"
+	LiveReportDocumentStatusREADY      LiveReportDocumentStatus = "READY"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentStatus enum.
+func (e LiveReportDocumentStatus) Valid() bool {
+	switch e {
+	case LiveReportDocumentStatusFAILED:
+		return true
+	case LiveReportDocumentStatusGENERATING:
+		return true
+	case LiveReportDocumentStatusPENDING:
+		return true
+	case LiveReportDocumentStatusREADY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportDocumentTrigger.
+const (
+	LiveReportDocumentTriggerMANUAL    LiveReportDocumentTrigger = "MANUAL"
+	LiveReportDocumentTriggerSCHEDULED LiveReportDocumentTrigger = "SCHEDULED"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportDocumentTrigger enum.
+func (e LiveReportDocumentTrigger) Valid() bool {
+	switch e {
+	case LiveReportDocumentTriggerMANUAL:
+		return true
+	case LiveReportDocumentTriggerSCHEDULED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportFilterConfigOperator.
+const (
+	LiveReportFilterConfigOperatorCONTAINS             LiveReportFilterConfigOperator = "CONTAINS"
+	LiveReportFilterConfigOperatorEQUALS               LiveReportFilterConfigOperator = "EQUALS"
+	LiveReportFilterConfigOperatorGREATERTHAN          LiveReportFilterConfigOperator = "GREATER_THAN"
+	LiveReportFilterConfigOperatorGREATERTHANOREQUALTO LiveReportFilterConfigOperator = "GREATER_THAN_OR_EQUAL_TO"
+	LiveReportFilterConfigOperatorISNOTSET             LiveReportFilterConfigOperator = "IS_NOT_SET"
+	LiveReportFilterConfigOperatorISSET                LiveReportFilterConfigOperator = "IS_SET"
+	LiveReportFilterConfigOperatorLESSTHAN             LiveReportFilterConfigOperator = "LESS_THAN"
+	LiveReportFilterConfigOperatorLESSTHANOREQUALTO    LiveReportFilterConfigOperator = "LESS_THAN_OR_EQUAL_TO"
+	LiveReportFilterConfigOperatorNOTEQUALS            LiveReportFilterConfigOperator = "NOT_EQUALS"
+	LiveReportFilterConfigOperatorSTARTSWITH           LiveReportFilterConfigOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportFilterConfigOperator enum.
+func (e LiveReportFilterConfigOperator) Valid() bool {
+	switch e {
+	case LiveReportFilterConfigOperatorCONTAINS:
+		return true
+	case LiveReportFilterConfigOperatorEQUALS:
+		return true
+	case LiveReportFilterConfigOperatorGREATERTHAN:
+		return true
+	case LiveReportFilterConfigOperatorGREATERTHANOREQUALTO:
+		return true
+	case LiveReportFilterConfigOperatorISNOTSET:
+		return true
+	case LiveReportFilterConfigOperatorISSET:
+		return true
+	case LiveReportFilterConfigOperatorLESSTHAN:
+		return true
+	case LiveReportFilterConfigOperatorLESSTHANOREQUALTO:
+		return true
+	case LiveReportFilterConfigOperatorNOTEQUALS:
+		return true
+	case LiveReportFilterConfigOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportFilterConfigType.
+const (
+	LiveReportFilterConfigTypeCALLPROPERTY LiveReportFilterConfigType = "CALL_PROPERTY"
+	LiveReportFilterConfigTypeDATASET      LiveReportFilterConfigType = "DATASET"
+	LiveReportFilterConfigTypeMETRICVALUE  LiveReportFilterConfigType = "METRIC_VALUE"
+	LiveReportFilterConfigTypeMODALITY     LiveReportFilterConfigType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportFilterConfigType enum.
+func (e LiveReportFilterConfigType) Valid() bool {
+	switch e {
+	case LiveReportFilterConfigTypeCALLPROPERTY:
+		return true
+	case LiveReportFilterConfigTypeDATASET:
+		return true
+	case LiveReportFilterConfigTypeMETRICVALUE:
+		return true
+	case LiveReportFilterConfigTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportInputCadence.
+const (
+	LiveReportInputCadenceDAILY   LiveReportInputCadence = "DAILY"
+	LiveReportInputCadenceMONTHLY LiveReportInputCadence = "MONTHLY"
+	LiveReportInputCadenceWEEKLY  LiveReportInputCadence = "WEEKLY"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportInputCadence enum.
+func (e LiveReportInputCadence) Valid() bool {
+	switch e {
+	case LiveReportInputCadenceDAILY:
+		return true
+	case LiveReportInputCadenceMONTHLY:
+		return true
+	case LiveReportInputCadenceWEEKLY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportInputFiltersOperator.
+const (
+	LiveReportInputFiltersOperatorCONTAINS             LiveReportInputFiltersOperator = "CONTAINS"
+	LiveReportInputFiltersOperatorEQUALS               LiveReportInputFiltersOperator = "EQUALS"
+	LiveReportInputFiltersOperatorGREATERTHAN          LiveReportInputFiltersOperator = "GREATER_THAN"
+	LiveReportInputFiltersOperatorGREATERTHANOREQUALTO LiveReportInputFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	LiveReportInputFiltersOperatorISNOTSET             LiveReportInputFiltersOperator = "IS_NOT_SET"
+	LiveReportInputFiltersOperatorISSET                LiveReportInputFiltersOperator = "IS_SET"
+	LiveReportInputFiltersOperatorLESSTHAN             LiveReportInputFiltersOperator = "LESS_THAN"
+	LiveReportInputFiltersOperatorLESSTHANOREQUALTO    LiveReportInputFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	LiveReportInputFiltersOperatorNOTEQUALS            LiveReportInputFiltersOperator = "NOT_EQUALS"
+	LiveReportInputFiltersOperatorSTARTSWITH           LiveReportInputFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportInputFiltersOperator enum.
+func (e LiveReportInputFiltersOperator) Valid() bool {
+	switch e {
+	case LiveReportInputFiltersOperatorCONTAINS:
+		return true
+	case LiveReportInputFiltersOperatorEQUALS:
+		return true
+	case LiveReportInputFiltersOperatorGREATERTHAN:
+		return true
+	case LiveReportInputFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case LiveReportInputFiltersOperatorISNOTSET:
+		return true
+	case LiveReportInputFiltersOperatorISSET:
+		return true
+	case LiveReportInputFiltersOperatorLESSTHAN:
+		return true
+	case LiveReportInputFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case LiveReportInputFiltersOperatorNOTEQUALS:
+		return true
+	case LiveReportInputFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportInputFiltersType.
+const (
+	LiveReportInputFiltersTypeAGENTPROPERTY  LiveReportInputFiltersType = "AGENT_PROPERTY"
+	LiveReportInputFiltersTypeCALLID         LiveReportInputFiltersType = "CALL_ID"
+	LiveReportInputFiltersTypeCALLPROPERTY   LiveReportInputFiltersType = "CALL_PROPERTY"
+	LiveReportInputFiltersTypeDATASET        LiveReportInputFiltersType = "DATASET"
+	LiveReportInputFiltersTypeMETRICPROPERTY LiveReportInputFiltersType = "METRIC_PROPERTY"
+	LiveReportInputFiltersTypeMETRICVALUE    LiveReportInputFiltersType = "METRIC_VALUE"
+	LiveReportInputFiltersTypeMODALITY       LiveReportInputFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportInputFiltersType enum.
+func (e LiveReportInputFiltersType) Valid() bool {
+	switch e {
+	case LiveReportInputFiltersTypeAGENTPROPERTY:
+		return true
+	case LiveReportInputFiltersTypeCALLID:
+		return true
+	case LiveReportInputFiltersTypeCALLPROPERTY:
+		return true
+	case LiveReportInputFiltersTypeDATASET:
+		return true
+	case LiveReportInputFiltersTypeMETRICPROPERTY:
+		return true
+	case LiveReportInputFiltersTypeMETRICVALUE:
+		return true
+	case LiveReportInputFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportInputStatus.
+const (
+	LiveReportInputStatusACTIVE LiveReportInputStatus = "ACTIVE"
+	LiveReportInputStatusPAUSED LiveReportInputStatus = "PAUSED"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportInputStatus enum.
+func (e LiveReportInputStatus) Valid() bool {
+	switch e {
+	case LiveReportInputStatusACTIVE:
+		return true
+	case LiveReportInputStatusPAUSED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportInputTargetsAggregation.
+const (
+	LiveReportInputTargetsAggregationAVG        LiveReportInputTargetsAggregation = "AVG"
+	LiveReportInputTargetsAggregationMAX        LiveReportInputTargetsAggregation = "MAX"
+	LiveReportInputTargetsAggregationMEDIAN     LiveReportInputTargetsAggregation = "MEDIAN"
+	LiveReportInputTargetsAggregationMIN        LiveReportInputTargetsAggregation = "MIN"
+	LiveReportInputTargetsAggregationPASSRATE   LiveReportInputTargetsAggregation = "PASS_RATE"
+	LiveReportInputTargetsAggregationPERCENTILE LiveReportInputTargetsAggregation = "PERCENTILE"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportInputTargetsAggregation enum.
+func (e LiveReportInputTargetsAggregation) Valid() bool {
+	switch e {
+	case LiveReportInputTargetsAggregationAVG:
+		return true
+	case LiveReportInputTargetsAggregationMAX:
+		return true
+	case LiveReportInputTargetsAggregationMEDIAN:
+		return true
+	case LiveReportInputTargetsAggregationMIN:
+		return true
+	case LiveReportInputTargetsAggregationPASSRATE:
+		return true
+	case LiveReportInputTargetsAggregationPERCENTILE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportInputTargetsComparator.
+const (
+	LiveReportInputTargetsComparatorATLEAST LiveReportInputTargetsComparator = "AT_LEAST"
+	LiveReportInputTargetsComparatorATMOST  LiveReportInputTargetsComparator = "AT_MOST"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportInputTargetsComparator enum.
+func (e LiveReportInputTargetsComparator) Valid() bool {
+	switch e {
+	case LiveReportInputTargetsComparatorATLEAST:
+		return true
+	case LiveReportInputTargetsComparatorATMOST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportInputTargetsPassOperator.
+const (
+	LiveReportInputTargetsPassOperatorEQUALS               LiveReportInputTargetsPassOperator = "EQUALS"
+	LiveReportInputTargetsPassOperatorGREATERTHAN          LiveReportInputTargetsPassOperator = "GREATER_THAN"
+	LiveReportInputTargetsPassOperatorGREATERTHANOREQUALTO LiveReportInputTargetsPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	LiveReportInputTargetsPassOperatorLESSTHAN             LiveReportInputTargetsPassOperator = "LESS_THAN"
+	LiveReportInputTargetsPassOperatorLESSTHANOREQUALTO    LiveReportInputTargetsPassOperator = "LESS_THAN_OR_EQUAL_TO"
+	LiveReportInputTargetsPassOperatorNOTEQUALS            LiveReportInputTargetsPassOperator = "NOT_EQUALS"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportInputTargetsPassOperator enum.
+func (e LiveReportInputTargetsPassOperator) Valid() bool {
+	switch e {
+	case LiveReportInputTargetsPassOperatorEQUALS:
+		return true
+	case LiveReportInputTargetsPassOperatorGREATERTHAN:
+		return true
+	case LiveReportInputTargetsPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case LiveReportInputTargetsPassOperatorLESSTHAN:
+		return true
+	case LiveReportInputTargetsPassOperatorLESSTHANOREQUALTO:
+		return true
+	case LiveReportInputTargetsPassOperatorNOTEQUALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportTargetConfigAggregation.
+const (
+	LiveReportTargetConfigAggregationAVG        LiveReportTargetConfigAggregation = "AVG"
+	LiveReportTargetConfigAggregationMAX        LiveReportTargetConfigAggregation = "MAX"
+	LiveReportTargetConfigAggregationMEDIAN     LiveReportTargetConfigAggregation = "MEDIAN"
+	LiveReportTargetConfigAggregationMIN        LiveReportTargetConfigAggregation = "MIN"
+	LiveReportTargetConfigAggregationPASSRATE   LiveReportTargetConfigAggregation = "PASS_RATE"
+	LiveReportTargetConfigAggregationPERCENTILE LiveReportTargetConfigAggregation = "PERCENTILE"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportTargetConfigAggregation enum.
+func (e LiveReportTargetConfigAggregation) Valid() bool {
+	switch e {
+	case LiveReportTargetConfigAggregationAVG:
+		return true
+	case LiveReportTargetConfigAggregationMAX:
+		return true
+	case LiveReportTargetConfigAggregationMEDIAN:
+		return true
+	case LiveReportTargetConfigAggregationMIN:
+		return true
+	case LiveReportTargetConfigAggregationPASSRATE:
+		return true
+	case LiveReportTargetConfigAggregationPERCENTILE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportTargetConfigComparator.
+const (
+	LiveReportTargetConfigComparatorATLEAST LiveReportTargetConfigComparator = "AT_LEAST"
+	LiveReportTargetConfigComparatorATMOST  LiveReportTargetConfigComparator = "AT_MOST"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportTargetConfigComparator enum.
+func (e LiveReportTargetConfigComparator) Valid() bool {
+	switch e {
+	case LiveReportTargetConfigComparatorATLEAST:
+		return true
+	case LiveReportTargetConfigComparatorATMOST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LiveReportTargetConfigPassOperator.
+const (
+	LiveReportTargetConfigPassOperatorEQUALS               LiveReportTargetConfigPassOperator = "EQUALS"
+	LiveReportTargetConfigPassOperatorGREATERTHAN          LiveReportTargetConfigPassOperator = "GREATER_THAN"
+	LiveReportTargetConfigPassOperatorGREATERTHANOREQUALTO LiveReportTargetConfigPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	LiveReportTargetConfigPassOperatorLESSTHAN             LiveReportTargetConfigPassOperator = "LESS_THAN"
+	LiveReportTargetConfigPassOperatorLESSTHANOREQUALTO    LiveReportTargetConfigPassOperator = "LESS_THAN_OR_EQUAL_TO"
+	LiveReportTargetConfigPassOperatorNOTEQUALS            LiveReportTargetConfigPassOperator = "NOT_EQUALS"
+)
+
+// Valid indicates whether the value is a known member of the LiveReportTargetConfigPassOperator enum.
+func (e LiveReportTargetConfigPassOperator) Valid() bool {
+	switch e {
+	case LiveReportTargetConfigPassOperatorEQUALS:
+		return true
+	case LiveReportTargetConfigPassOperatorGREATERTHAN:
+		return true
+	case LiveReportTargetConfigPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case LiveReportTargetConfigPassOperatorLESSTHAN:
+		return true
+	case LiveReportTargetConfigPassOperatorLESSTHANOREQUALTO:
+		return true
+	case LiveReportTargetConfigPassOperatorNOTEQUALS:
 		return true
 	default:
 		return false
@@ -16540,6 +17893,54 @@ func (e ThresholdMetricResponseType) Valid() bool {
 	}
 }
 
+// Defines values for ToolBodyInputsType.
+const (
+	ToolBodyInputsTypeBoolean ToolBodyInputsType = "boolean"
+	ToolBodyInputsTypeNumber  ToolBodyInputsType = "number"
+	ToolBodyInputsTypeString  ToolBodyInputsType = "string"
+)
+
+// Valid indicates whether the value is a known member of the ToolBodyInputsType enum.
+func (e ToolBodyInputsType) Valid() bool {
+	switch e {
+	case ToolBodyInputsTypeBoolean:
+		return true
+	case ToolBodyInputsTypeNumber:
+		return true
+	case ToolBodyInputsTypeString:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ToolBodyRuntimeRequestMethod.
+const (
+	ToolBodyRuntimeRequestMethodDELETE ToolBodyRuntimeRequestMethod = "DELETE"
+	ToolBodyRuntimeRequestMethodGET    ToolBodyRuntimeRequestMethod = "GET"
+	ToolBodyRuntimeRequestMethodPATCH  ToolBodyRuntimeRequestMethod = "PATCH"
+	ToolBodyRuntimeRequestMethodPOST   ToolBodyRuntimeRequestMethod = "POST"
+	ToolBodyRuntimeRequestMethodPUT    ToolBodyRuntimeRequestMethod = "PUT"
+)
+
+// Valid indicates whether the value is a known member of the ToolBodyRuntimeRequestMethod enum.
+func (e ToolBodyRuntimeRequestMethod) Valid() bool {
+	switch e {
+	case ToolBodyRuntimeRequestMethodDELETE:
+		return true
+	case ToolBodyRuntimeRequestMethodGET:
+		return true
+	case ToolBodyRuntimeRequestMethodPATCH:
+		return true
+	case ToolBodyRuntimeRequestMethodPOST:
+		return true
+	case ToolBodyRuntimeRequestMethodPUT:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ToolConfigKind.
 const (
 	ToolConfigKindTool ToolConfigKind = "tool"
@@ -16570,6 +17971,21 @@ func (e ToolConfigParameters) Valid() bool {
 	case ToolConfigParametersNumber:
 		return true
 	case ToolConfigParametersString:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ToolDeleteResponseDataDeleted.
+const (
+	ToolDeleteResponseDataDeletedTrue ToolDeleteResponseDataDeleted = true
+)
+
+// Valid indicates whether the value is a known member of the ToolDeleteResponseDataDeleted enum.
+func (e ToolDeleteResponseDataDeleted) Valid() bool {
+	switch e {
+	case ToolDeleteResponseDataDeletedTrue:
 		return true
 	default:
 		return false
@@ -16612,6 +18028,72 @@ const (
 func (e ToolHandlerType) Valid() bool {
 	switch e {
 	case ToolHandlerTypeHttp:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ToolInputType.
+const (
+	ToolInputTypeBoolean ToolInputType = "boolean"
+	ToolInputTypeNumber  ToolInputType = "number"
+	ToolInputTypeString  ToolInputType = "string"
+)
+
+// Valid indicates whether the value is a known member of the ToolInputType enum.
+func (e ToolInputType) Valid() bool {
+	switch e {
+	case ToolInputTypeBoolean:
+		return true
+	case ToolInputTypeNumber:
+		return true
+	case ToolInputTypeString:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ToolRequestMethod.
+const (
+	ToolRequestMethodDELETE ToolRequestMethod = "DELETE"
+	ToolRequestMethodGET    ToolRequestMethod = "GET"
+	ToolRequestMethodPATCH  ToolRequestMethod = "PATCH"
+	ToolRequestMethodPOST   ToolRequestMethod = "POST"
+	ToolRequestMethodPUT    ToolRequestMethod = "PUT"
+)
+
+// Valid indicates whether the value is a known member of the ToolRequestMethod enum.
+func (e ToolRequestMethod) Valid() bool {
+	switch e {
+	case ToolRequestMethodDELETE:
+		return true
+	case ToolRequestMethodGET:
+		return true
+	case ToolRequestMethodPATCH:
+		return true
+	case ToolRequestMethodPOST:
+		return true
+	case ToolRequestMethodPUT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ToolResponseSource.
+const (
+	ToolResponseSourceCUSTOM ToolResponseSource = "CUSTOM"
+	ToolResponseSourceSYSTEM ToolResponseSource = "SYSTEM"
+)
+
+// Valid indicates whether the value is a known member of the ToolResponseSource enum.
+func (e ToolResponseSource) Valid() bool {
+	switch e {
+	case ToolResponseSourceCUSTOM:
+		return true
+	case ToolResponseSourceSYSTEM:
 		return true
 	default:
 		return false
@@ -17875,6 +19357,198 @@ func (e UpdateHttpRequestDefinitionInputMethod) Valid() bool {
 	}
 }
 
+// Defines values for UpdateLiveReportInputCadence.
+const (
+	UpdateLiveReportInputCadenceDAILY   UpdateLiveReportInputCadence = "DAILY"
+	UpdateLiveReportInputCadenceMONTHLY UpdateLiveReportInputCadence = "MONTHLY"
+	UpdateLiveReportInputCadenceWEEKLY  UpdateLiveReportInputCadence = "WEEKLY"
+)
+
+// Valid indicates whether the value is a known member of the UpdateLiveReportInputCadence enum.
+func (e UpdateLiveReportInputCadence) Valid() bool {
+	switch e {
+	case UpdateLiveReportInputCadenceDAILY:
+		return true
+	case UpdateLiveReportInputCadenceMONTHLY:
+		return true
+	case UpdateLiveReportInputCadenceWEEKLY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateLiveReportInputFiltersOperator.
+const (
+	UpdateLiveReportInputFiltersOperatorCONTAINS             UpdateLiveReportInputFiltersOperator = "CONTAINS"
+	UpdateLiveReportInputFiltersOperatorEQUALS               UpdateLiveReportInputFiltersOperator = "EQUALS"
+	UpdateLiveReportInputFiltersOperatorGREATERTHAN          UpdateLiveReportInputFiltersOperator = "GREATER_THAN"
+	UpdateLiveReportInputFiltersOperatorGREATERTHANOREQUALTO UpdateLiveReportInputFiltersOperator = "GREATER_THAN_OR_EQUAL_TO"
+	UpdateLiveReportInputFiltersOperatorISNOTSET             UpdateLiveReportInputFiltersOperator = "IS_NOT_SET"
+	UpdateLiveReportInputFiltersOperatorISSET                UpdateLiveReportInputFiltersOperator = "IS_SET"
+	UpdateLiveReportInputFiltersOperatorLESSTHAN             UpdateLiveReportInputFiltersOperator = "LESS_THAN"
+	UpdateLiveReportInputFiltersOperatorLESSTHANOREQUALTO    UpdateLiveReportInputFiltersOperator = "LESS_THAN_OR_EQUAL_TO"
+	UpdateLiveReportInputFiltersOperatorNOTEQUALS            UpdateLiveReportInputFiltersOperator = "NOT_EQUALS"
+	UpdateLiveReportInputFiltersOperatorSTARTSWITH           UpdateLiveReportInputFiltersOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the UpdateLiveReportInputFiltersOperator enum.
+func (e UpdateLiveReportInputFiltersOperator) Valid() bool {
+	switch e {
+	case UpdateLiveReportInputFiltersOperatorCONTAINS:
+		return true
+	case UpdateLiveReportInputFiltersOperatorEQUALS:
+		return true
+	case UpdateLiveReportInputFiltersOperatorGREATERTHAN:
+		return true
+	case UpdateLiveReportInputFiltersOperatorGREATERTHANOREQUALTO:
+		return true
+	case UpdateLiveReportInputFiltersOperatorISNOTSET:
+		return true
+	case UpdateLiveReportInputFiltersOperatorISSET:
+		return true
+	case UpdateLiveReportInputFiltersOperatorLESSTHAN:
+		return true
+	case UpdateLiveReportInputFiltersOperatorLESSTHANOREQUALTO:
+		return true
+	case UpdateLiveReportInputFiltersOperatorNOTEQUALS:
+		return true
+	case UpdateLiveReportInputFiltersOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateLiveReportInputFiltersType.
+const (
+	UpdateLiveReportInputFiltersTypeAGENTPROPERTY  UpdateLiveReportInputFiltersType = "AGENT_PROPERTY"
+	UpdateLiveReportInputFiltersTypeCALLID         UpdateLiveReportInputFiltersType = "CALL_ID"
+	UpdateLiveReportInputFiltersTypeCALLPROPERTY   UpdateLiveReportInputFiltersType = "CALL_PROPERTY"
+	UpdateLiveReportInputFiltersTypeDATASET        UpdateLiveReportInputFiltersType = "DATASET"
+	UpdateLiveReportInputFiltersTypeMETRICPROPERTY UpdateLiveReportInputFiltersType = "METRIC_PROPERTY"
+	UpdateLiveReportInputFiltersTypeMETRICVALUE    UpdateLiveReportInputFiltersType = "METRIC_VALUE"
+	UpdateLiveReportInputFiltersTypeMODALITY       UpdateLiveReportInputFiltersType = "MODALITY"
+)
+
+// Valid indicates whether the value is a known member of the UpdateLiveReportInputFiltersType enum.
+func (e UpdateLiveReportInputFiltersType) Valid() bool {
+	switch e {
+	case UpdateLiveReportInputFiltersTypeAGENTPROPERTY:
+		return true
+	case UpdateLiveReportInputFiltersTypeCALLID:
+		return true
+	case UpdateLiveReportInputFiltersTypeCALLPROPERTY:
+		return true
+	case UpdateLiveReportInputFiltersTypeDATASET:
+		return true
+	case UpdateLiveReportInputFiltersTypeMETRICPROPERTY:
+		return true
+	case UpdateLiveReportInputFiltersTypeMETRICVALUE:
+		return true
+	case UpdateLiveReportInputFiltersTypeMODALITY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateLiveReportInputStatus.
+const (
+	UpdateLiveReportInputStatusACTIVE UpdateLiveReportInputStatus = "ACTIVE"
+	UpdateLiveReportInputStatusPAUSED UpdateLiveReportInputStatus = "PAUSED"
+)
+
+// Valid indicates whether the value is a known member of the UpdateLiveReportInputStatus enum.
+func (e UpdateLiveReportInputStatus) Valid() bool {
+	switch e {
+	case UpdateLiveReportInputStatusACTIVE:
+		return true
+	case UpdateLiveReportInputStatusPAUSED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateLiveReportInputTargetsAggregation.
+const (
+	UpdateLiveReportInputTargetsAggregationAVG        UpdateLiveReportInputTargetsAggregation = "AVG"
+	UpdateLiveReportInputTargetsAggregationMAX        UpdateLiveReportInputTargetsAggregation = "MAX"
+	UpdateLiveReportInputTargetsAggregationMEDIAN     UpdateLiveReportInputTargetsAggregation = "MEDIAN"
+	UpdateLiveReportInputTargetsAggregationMIN        UpdateLiveReportInputTargetsAggregation = "MIN"
+	UpdateLiveReportInputTargetsAggregationPASSRATE   UpdateLiveReportInputTargetsAggregation = "PASS_RATE"
+	UpdateLiveReportInputTargetsAggregationPERCENTILE UpdateLiveReportInputTargetsAggregation = "PERCENTILE"
+)
+
+// Valid indicates whether the value is a known member of the UpdateLiveReportInputTargetsAggregation enum.
+func (e UpdateLiveReportInputTargetsAggregation) Valid() bool {
+	switch e {
+	case UpdateLiveReportInputTargetsAggregationAVG:
+		return true
+	case UpdateLiveReportInputTargetsAggregationMAX:
+		return true
+	case UpdateLiveReportInputTargetsAggregationMEDIAN:
+		return true
+	case UpdateLiveReportInputTargetsAggregationMIN:
+		return true
+	case UpdateLiveReportInputTargetsAggregationPASSRATE:
+		return true
+	case UpdateLiveReportInputTargetsAggregationPERCENTILE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateLiveReportInputTargetsComparator.
+const (
+	UpdateLiveReportInputTargetsComparatorATLEAST UpdateLiveReportInputTargetsComparator = "AT_LEAST"
+	UpdateLiveReportInputTargetsComparatorATMOST  UpdateLiveReportInputTargetsComparator = "AT_MOST"
+)
+
+// Valid indicates whether the value is a known member of the UpdateLiveReportInputTargetsComparator enum.
+func (e UpdateLiveReportInputTargetsComparator) Valid() bool {
+	switch e {
+	case UpdateLiveReportInputTargetsComparatorATLEAST:
+		return true
+	case UpdateLiveReportInputTargetsComparatorATMOST:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for UpdateLiveReportInputTargetsPassOperator.
+const (
+	UpdateLiveReportInputTargetsPassOperatorEQUALS               UpdateLiveReportInputTargetsPassOperator = "EQUALS"
+	UpdateLiveReportInputTargetsPassOperatorGREATERTHAN          UpdateLiveReportInputTargetsPassOperator = "GREATER_THAN"
+	UpdateLiveReportInputTargetsPassOperatorGREATERTHANOREQUALTO UpdateLiveReportInputTargetsPassOperator = "GREATER_THAN_OR_EQUAL_TO"
+	UpdateLiveReportInputTargetsPassOperatorLESSTHAN             UpdateLiveReportInputTargetsPassOperator = "LESS_THAN"
+	UpdateLiveReportInputTargetsPassOperatorLESSTHANOREQUALTO    UpdateLiveReportInputTargetsPassOperator = "LESS_THAN_OR_EQUAL_TO"
+	UpdateLiveReportInputTargetsPassOperatorNOTEQUALS            UpdateLiveReportInputTargetsPassOperator = "NOT_EQUALS"
+)
+
+// Valid indicates whether the value is a known member of the UpdateLiveReportInputTargetsPassOperator enum.
+func (e UpdateLiveReportInputTargetsPassOperator) Valid() bool {
+	switch e {
+	case UpdateLiveReportInputTargetsPassOperatorEQUALS:
+		return true
+	case UpdateLiveReportInputTargetsPassOperatorGREATERTHAN:
+		return true
+	case UpdateLiveReportInputTargetsPassOperatorGREATERTHANOREQUALTO:
+		return true
+	case UpdateLiveReportInputTargetsPassOperatorLESSTHAN:
+		return true
+	case UpdateLiveReportInputTargetsPassOperatorLESSTHANOREQUALTO:
+		return true
+	case UpdateLiveReportInputTargetsPassOperatorNOTEQUALS:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateMetricDefinitionInputSupportedContexts.
 const (
 	UpdateMetricDefinitionInputSupportedContextsCALL    UpdateMetricDefinitionInputSupportedContexts = "CALL"
@@ -19009,6 +20683,603 @@ func (e GetV1BenchmarkLeaderboardParamsOrder) Valid() bool {
 	case GetV1BenchmarkLeaderboardParamsOrderAsc:
 		return true
 	case GetV1BenchmarkLeaderboardParamsOrderDesc:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnectionParamsProvider.
+const (
+	GetV1CalendarConnectionParamsProviderCALCOM   GetV1CalendarConnectionParamsProvider = "CAL_COM"
+	GetV1CalendarConnectionParamsProviderCALENDLY GetV1CalendarConnectionParamsProvider = "CALENDLY"
+	GetV1CalendarConnectionParamsProviderGOOGLE   GetV1CalendarConnectionParamsProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnectionParamsProvider enum.
+func (e GetV1CalendarConnectionParamsProvider) Valid() bool {
+	switch e {
+	case GetV1CalendarConnectionParamsProviderCALCOM:
+		return true
+	case GetV1CalendarConnectionParamsProviderCALENDLY:
+		return true
+	case GetV1CalendarConnectionParamsProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth.
+const (
+	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuthAPIKEY GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
+	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuthOAUTH  GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth enum.
+func (e GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
+	switch e {
+	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuthAPIKEY:
+		return true
+	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuthOAUTH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations.
+const (
+	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsBOOK              GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations = "BOOK"
+	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsCANCEL            GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
+	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
+	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
+	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
+	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations enum.
+func (e GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
+	switch e {
+	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsBOOK:
+		return true
+	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsCANCEL:
+		return true
+	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
+		return true
+	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
+		return true
+	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
+		return true
+	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold.
+const (
+	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHoldNONE        GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
+	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold enum.
+func (e GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
+	switch e {
+	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHoldNONE:
+		return true
+	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnection200JSONResponseBodyDataProvider.
+const (
+	GetV1CalendarConnection200JSONResponseBodyDataProviderCALCOM   GetV1CalendarConnection200JSONResponseBodyDataProvider = "CAL_COM"
+	GetV1CalendarConnection200JSONResponseBodyDataProviderCALENDLY GetV1CalendarConnection200JSONResponseBodyDataProvider = "CALENDLY"
+	GetV1CalendarConnection200JSONResponseBodyDataProviderGOOGLE   GetV1CalendarConnection200JSONResponseBodyDataProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnection200JSONResponseBodyDataProvider enum.
+func (e GetV1CalendarConnection200JSONResponseBodyDataProvider) Valid() bool {
+	switch e {
+	case GetV1CalendarConnection200JSONResponseBodyDataProviderCALCOM:
+		return true
+	case GetV1CalendarConnection200JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case GetV1CalendarConnection200JSONResponseBodyDataProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnection200JSONResponseBodyDataStatus.
+const (
+	GetV1CalendarConnection200JSONResponseBodyDataStatusACTIVE             GetV1CalendarConnection200JSONResponseBodyDataStatus = "ACTIVE"
+	GetV1CalendarConnection200JSONResponseBodyDataStatusERROR              GetV1CalendarConnection200JSONResponseBodyDataStatus = "ERROR"
+	GetV1CalendarConnection200JSONResponseBodyDataStatusINVALIDCREDENTIALS GetV1CalendarConnection200JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnection200JSONResponseBodyDataStatus enum.
+func (e GetV1CalendarConnection200JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case GetV1CalendarConnection200JSONResponseBodyDataStatusACTIVE:
+		return true
+	case GetV1CalendarConnection200JSONResponseBodyDataStatusERROR:
+		return true
+	case GetV1CalendarConnection200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CalendarConnectionJSONBodyProvider.
+const (
+	PostV1CalendarConnectionJSONBodyProviderCALCOM   PostV1CalendarConnectionJSONBodyProvider = "CAL_COM"
+	PostV1CalendarConnectionJSONBodyProviderCALENDLY PostV1CalendarConnectionJSONBodyProvider = "CALENDLY"
+	PostV1CalendarConnectionJSONBodyProviderGOOGLE   PostV1CalendarConnectionJSONBodyProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CalendarConnectionJSONBodyProvider enum.
+func (e PostV1CalendarConnectionJSONBodyProvider) Valid() bool {
+	switch e {
+	case PostV1CalendarConnectionJSONBodyProviderCALCOM:
+		return true
+	case PostV1CalendarConnectionJSONBodyProviderCALENDLY:
+		return true
+	case PostV1CalendarConnectionJSONBodyProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth.
+const (
+	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuthAPIKEY PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
+	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuthOAUTH  PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth enum.
+func (e PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
+	switch e {
+	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuthAPIKEY:
+		return true
+	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuthOAUTH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations.
+const (
+	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsBOOK              PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations = "BOOK"
+	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsCANCEL            PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
+	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
+	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
+	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
+	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations enum.
+func (e PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
+	switch e {
+	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsBOOK:
+		return true
+	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsCANCEL:
+		return true
+	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
+		return true
+	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
+		return true
+	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
+		return true
+	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold.
+const (
+	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHoldNONE        PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
+	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold enum.
+func (e PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
+	switch e {
+	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHoldNONE:
+		return true
+	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CalendarConnection201JSONResponseBodyDataProvider.
+const (
+	PostV1CalendarConnection201JSONResponseBodyDataProviderCALCOM   PostV1CalendarConnection201JSONResponseBodyDataProvider = "CAL_COM"
+	PostV1CalendarConnection201JSONResponseBodyDataProviderCALENDLY PostV1CalendarConnection201JSONResponseBodyDataProvider = "CALENDLY"
+	PostV1CalendarConnection201JSONResponseBodyDataProviderGOOGLE   PostV1CalendarConnection201JSONResponseBodyDataProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CalendarConnection201JSONResponseBodyDataProvider enum.
+func (e PostV1CalendarConnection201JSONResponseBodyDataProvider) Valid() bool {
+	switch e {
+	case PostV1CalendarConnection201JSONResponseBodyDataProviderCALCOM:
+		return true
+	case PostV1CalendarConnection201JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case PostV1CalendarConnection201JSONResponseBodyDataProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CalendarConnection201JSONResponseBodyDataStatus.
+const (
+	PostV1CalendarConnection201JSONResponseBodyDataStatusACTIVE             PostV1CalendarConnection201JSONResponseBodyDataStatus = "ACTIVE"
+	PostV1CalendarConnection201JSONResponseBodyDataStatusERROR              PostV1CalendarConnection201JSONResponseBodyDataStatus = "ERROR"
+	PostV1CalendarConnection201JSONResponseBodyDataStatusINVALIDCREDENTIALS PostV1CalendarConnection201JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CalendarConnection201JSONResponseBodyDataStatus enum.
+func (e PostV1CalendarConnection201JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case PostV1CalendarConnection201JSONResponseBodyDataStatusACTIVE:
+		return true
+	case PostV1CalendarConnection201JSONResponseBodyDataStatusERROR:
+		return true
+	case PostV1CalendarConnection201JSONResponseBodyDataStatusINVALIDCREDENTIALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted.
+const (
+	DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeletedTrue DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted = true
+)
+
+// Valid indicates whether the value is a known member of the DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted enum.
+func (e DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted) Valid() bool {
+	switch e {
+	case DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeletedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth.
+const (
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthAPIKEY GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthOAUTH  GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth enum.
+func (e GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
+	switch e {
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthAPIKEY:
+		return true
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthOAUTH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations.
+const (
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsBOOK              GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "BOOK"
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCANCEL            GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations enum.
+func (e GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
+	switch e {
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsBOOK:
+		return true
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCANCEL:
+		return true
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
+		return true
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
+		return true
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
+		return true
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold.
+const (
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldNONE        GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold enum.
+func (e GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
+	switch e {
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldNONE:
+		return true
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider.
+const (
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALCOM   GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider = "CAL_COM"
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALENDLY GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider = "CALENDLY"
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderGOOGLE   GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider enum.
+func (e GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider) Valid() bool {
+	switch e {
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALCOM:
+		return true
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus.
+const (
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusACTIVE             GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus = "ACTIVE"
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusERROR              GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus = "ERROR"
+	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusINVALIDCREDENTIALS GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus enum.
+func (e GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusACTIVE:
+		return true
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusERROR:
+		return true
+	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth.
+const (
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthAPIKEY PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthOAUTH  PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth enum.
+func (e PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
+	switch e {
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthAPIKEY:
+		return true
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthOAUTH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations.
+const (
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsBOOK              PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "BOOK"
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCANCEL            PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations enum.
+func (e PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
+	switch e {
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsBOOK:
+		return true
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCANCEL:
+		return true
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
+		return true
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
+		return true
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
+		return true
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold.
+const (
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldNONE        PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold enum.
+func (e PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
+	switch e {
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldNONE:
+		return true
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider.
+const (
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALCOM   PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider = "CAL_COM"
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALENDLY PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider = "CALENDLY"
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderGOOGLE   PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider enum.
+func (e PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider) Valid() bool {
+	switch e {
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALCOM:
+		return true
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus.
+const (
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusACTIVE             PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus = "ACTIVE"
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusERROR              PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus = "ERROR"
+	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusINVALIDCREDENTIALS PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus enum.
+func (e PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusACTIVE:
+		return true
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusERROR:
+		return true
+	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth.
+const (
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuthAPIKEY PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuthOAUTH  PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth enum.
+func (e PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
+	switch e {
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuthAPIKEY:
+		return true
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuthOAUTH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations.
+const (
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsBOOK              PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "BOOK"
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsCANCEL            PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations enum.
+func (e PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
+	switch e {
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsBOOK:
+		return true
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsCANCEL:
+		return true
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
+		return true
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
+		return true
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
+		return true
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold.
+const (
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHoldNONE        PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold enum.
+func (e PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
+	switch e {
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHoldNONE:
+		return true
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider.
+const (
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProviderCALCOM   PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider = "CAL_COM"
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProviderCALENDLY PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider = "CALENDLY"
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProviderGOOGLE   PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider enum.
+func (e PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider) Valid() bool {
+	switch e {
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProviderCALCOM:
+		return true
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus.
+const (
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusACTIVE             PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus = "ACTIVE"
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusERROR              PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus = "ERROR"
+	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusINVALIDCREDENTIALS PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus enum.
+func (e PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusACTIVE:
+		return true
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusERROR:
+		return true
+	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
 		return true
 	default:
 		return false
@@ -20485,6 +22756,21 @@ func (e GetV1KnowledgeBaseById200JSONResponseBodyDataStatus) Valid() bool {
 	case GetV1KnowledgeBaseById200JSONResponseBodyDataStatusPROCESSING:
 		return true
 	case GetV1KnowledgeBaseById200JSONResponseBodyDataStatusREADY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DeleteV1LiveReportByReportId200JSONResponseBodyDataDeleted.
+const (
+	DeleteV1LiveReportByReportId200JSONResponseBodyDataDeletedTrue DeleteV1LiveReportByReportId200JSONResponseBodyDataDeleted = true
+)
+
+// Valid indicates whether the value is a known member of the DeleteV1LiveReportByReportId200JSONResponseBodyDataDeleted enum.
+func (e DeleteV1LiveReportByReportId200JSONResponseBodyDataDeleted) Valid() bool {
+	switch e {
+	case DeleteV1LiveReportByReportId200JSONResponseBodyDataDeletedTrue:
 		return true
 	default:
 		return false
@@ -23809,6 +26095,24 @@ func (e GetV1SimulationPlanJobsParamsStatus) Valid() bool {
 	}
 }
 
+// Defines values for GetV1ToolParamsIncludeBuiltIn.
+const (
+	GetV1ToolParamsIncludeBuiltInFalse GetV1ToolParamsIncludeBuiltIn = "false"
+	GetV1ToolParamsIncludeBuiltInTrue  GetV1ToolParamsIncludeBuiltIn = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetV1ToolParamsIncludeBuiltIn enum.
+func (e GetV1ToolParamsIncludeBuiltIn) Valid() bool {
+	switch e {
+	case GetV1ToolParamsIncludeBuiltInFalse:
+		return true
+	case GetV1ToolParamsIncludeBuiltInTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // AddFlowEdgeCaseInput defines model for AddFlowEdgeCaseInput.
 type AddFlowEdgeCaseInput = FlowEdgeCaseInput
 
@@ -24769,6 +27073,7 @@ type AppendToolInvocationsRequest struct {
 // AppendToolInvocationsRequestToolInvocationsParameters0 defines model for AppendToolInvocationsRequest.ToolInvocations.Parameters.0.
 type AppendToolInvocationsRequestToolInvocationsParameters0 struct {
 	Description *string                                                     `json:"description,omitempty"`
+	Required    *bool                                                       `json:"required,omitempty"`
 	Type        *AppendToolInvocationsRequestToolInvocationsParameters0Type `json:"type,omitempty"`
 	Value       interface{}                                                 `json:"value,omitempty"`
 }
@@ -25428,6 +27733,7 @@ type CallCreateInterfaceType string
 // CallCreateToolInvocationsParameters0 defines model for CallCreate.ToolInvocations.Parameters.0.
 type CallCreateToolInvocationsParameters0 struct {
 	Description *string                                   `json:"description,omitempty"`
+	Required    *bool                                     `json:"required,omitempty"`
 	Type        *CallCreateToolInvocationsParameters0Type `json:"type,omitempty"`
 	Value       interface{}                               `json:"value,omitempty"`
 }
@@ -25755,6 +28061,7 @@ type ChatCreate_Messages_Item struct {
 // ChatCreateToolInvocationsParameters0 defines model for ChatCreate.ToolInvocations.Parameters.0.
 type ChatCreateToolInvocationsParameters0 struct {
 	Description *string                                   `json:"description,omitempty"`
+	Required    *bool                                     `json:"required,omitempty"`
 	Type        *ChatCreateToolInvocationsParameters0Type `json:"type,omitempty"`
 	Value       interface{}                               `json:"value,omitempty"`
 }
@@ -29052,6 +31359,15 @@ type FormulaMetricResponseSupportedConversationSources string
 // FormulaMetricResponseType Type of value this metric produces
 type FormulaMetricResponseType string
 
+// GenerateLiveReportInput Example: {}
+type GenerateLiveReportInput struct {
+	// PeriodEnd ISO 8601 end (exclusive) of a custom window. Requires periodStart.
+	PeriodEnd *time.Time `json:"periodEnd,omitempty"`
+
+	// PeriodStart ISO 8601 start of a custom window. Omit both for the latest closed period.
+	PeriodStart *time.Time `json:"periodStart,omitempty"`
+}
+
 // GenerateSimulationRunDebriefInput defines model for GenerateSimulationRunDebriefInput.
 type GenerateSimulationRunDebriefInput struct {
 	// Regenerate Generate a new debrief even when a ready one exists. Without it, an existing ready or in-progress debrief is returned as-is.
@@ -30726,6 +33042,722 @@ type ListSimulationRunGroupsResponse struct {
 		// Total Total run groups in the project, ignoring this page.
 		Total int `json:"total"`
 	} `json:"pagination"`
+}
+
+// LiveReport defines model for LiveReport.
+type LiveReport struct {
+	AgentId   *openapi_types.UUID `json:"agentId"`
+	Cadence   LiveReportCadence   `json:"cadence"`
+	ConfigKey *string             `json:"configKey"`
+
+	// ConfigManaged Managed by config as code: read-only here (edits return 409).
+	ConfigManaged bool                `json:"configManaged"`
+	CreatedAt     string              `json:"createdAt"`
+	DashboardId   *openapi_types.UUID `json:"dashboardId"`
+	DeliveryHour  int                 `json:"deliveryHour"`
+	Description   *string             `json:"description"`
+	Filters       []struct {
+		// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
+		Operator *LiveReportFiltersOperator `json:"operator,omitempty"`
+
+		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+		Property *string `json:"property,omitempty"`
+
+		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+		Type LiveReportFiltersType `json:"type"`
+
+		// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+		Value *LiveReport_Filters_Value `json:"value,omitempty"`
+	} `json:"filters"`
+	Id                        openapi_types.UUID `json:"id"`
+	IncludeTranscriptExcerpts bool               `json:"includeTranscriptExcerpts"`
+	Name                      string             `json:"name"`
+
+	// NextDeliveryAt When the next scheduled report is written. Null while the report is paused.
+	NextDeliveryAt *string `json:"nextDeliveryAt"`
+	Notifications  struct {
+		Email struct {
+			Enabled    bool                  `json:"enabled"`
+			Recipients []openapi_types.Email `json:"recipients"`
+		} `json:"email"`
+		FromConfig *bool `json:"fromConfig,omitempty"`
+		Slack      []struct {
+			ChannelId            string             `json:"channelId"`
+			ChannelName          string             `json:"channelName"`
+			NotificationConfigId openapi_types.UUID `json:"notificationConfigId"`
+		} `json:"slack"`
+	} `json:"notifications"`
+	ProjectId openapi_types.UUID `json:"projectId"`
+	Status    LiveReportStatus   `json:"status"`
+	Targets   []struct {
+		// Aggregation Defaults to PASS_RATE for thresholds and booleans, AVG for anything numeric.
+		Aggregation *LiveReportTargetsAggregation `json:"aggregation,omitempty"`
+
+		// Comparator AT_LEAST (default for PASS_RATE) or AT_MOST (default for every other aggregation).
+		Comparator *LiveReportTargetsComparator `json:"comparator,omitempty"`
+
+		// Label Shown instead of the metric's name.
+		Label *string `json:"label,omitempty"`
+
+		// Metric The metric's slug (e.g. `task_completion`) or id.
+		Metric string `json:"metric"`
+
+		// PassOperator PASS_RATE on a metric that isn't a threshold: the per-call condition a call passes on.
+		PassOperator *LiveReportTargetsPassOperator `json:"passOperator,omitempty"`
+		PassValue    *LiveReport_Targets_PassValue  `json:"passValue,omitempty"`
+
+		// Percentile Required with PERCENTILE, e.g. 95.
+		Percentile *int `json:"percentile,omitempty"`
+
+		// Value The bar, in display units. A PASS_RATE bar is a percentage, 0-100.
+		Value float64 `json:"value"`
+	} `json:"targets"`
+	Timezone  string `json:"timezone"`
+	UpdatedAt string `json:"updatedAt"`
+}
+
+// LiveReportCadence defines model for LiveReport.Cadence.
+type LiveReportCadence string
+
+// LiveReportFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
+type LiveReportFiltersOperator string
+
+// LiveReportFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type LiveReportFiltersType string
+
+// LiveReportFiltersValue0 defines model for LiveReport.Filters.Value.0.
+type LiveReportFiltersValue0 = string
+
+// LiveReportFiltersValue1 defines model for LiveReport.Filters.Value.1.
+type LiveReportFiltersValue1 = float64
+
+// LiveReportFiltersValue2 defines model for LiveReport.Filters.Value.2.
+type LiveReportFiltersValue2 = bool
+
+// LiveReport_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+type LiveReport_Filters_Value struct {
+	union json.RawMessage
+}
+
+// LiveReportStatus defines model for LiveReport.Status.
+type LiveReportStatus string
+
+// LiveReportTargetsAggregation Defaults to PASS_RATE for thresholds and booleans, AVG for anything numeric.
+type LiveReportTargetsAggregation string
+
+// LiveReportTargetsComparator AT_LEAST (default for PASS_RATE) or AT_MOST (default for every other aggregation).
+type LiveReportTargetsComparator string
+
+// LiveReportTargetsPassOperator PASS_RATE on a metric that isn't a threshold: the per-call condition a call passes on.
+type LiveReportTargetsPassOperator string
+
+// LiveReportTargetsPassValue0 defines model for LiveReport.Targets.PassValue.0.
+type LiveReportTargetsPassValue0 = string
+
+// LiveReportTargetsPassValue1 defines model for LiveReport.Targets.PassValue.1.
+type LiveReportTargetsPassValue1 = float64
+
+// LiveReportTargetsPassValue2 defines model for LiveReport.Targets.PassValue.2.
+type LiveReportTargetsPassValue2 = bool
+
+// LiveReport_Targets_PassValue defines model for LiveReport.Targets.PassValue.
+type LiveReport_Targets_PassValue struct {
+	union json.RawMessage
+}
+
+// LiveReportConfig defines model for LiveReportConfig.
+type LiveReportConfig struct {
+	Agent                     *string                   `json:"agent,omitempty"`
+	Cadence                   *LiveReportConfigCadence  `json:"cadence,omitempty"`
+	Dashboard                 *string                   `json:"dashboard,omitempty"`
+	DeliveryHour              *int                      `json:"deliveryHour,omitempty"`
+	Description               *string                   `json:"description,omitempty"`
+	DisplayName               *string                   `json:"displayName,omitempty"`
+	Enabled                   *bool                     `json:"enabled,omitempty"`
+	Filters                   *[]LiveReportFilterConfig `json:"filters,omitempty"`
+	IncludeTranscriptExcerpts *bool                     `json:"includeTranscriptExcerpts,omitempty"`
+	Kind                      LiveReportConfigKind      `json:"kind"`
+	Name                      string                    `json:"name"`
+	Notify                    *SimulationNotifyConfig   `json:"notify,omitempty"`
+	Targets                   *[]LiveReportTargetConfig `json:"targets,omitempty"`
+	Timezone                  *string                   `json:"timezone,omitempty"`
+}
+
+// LiveReportConfigCadence defines model for LiveReportConfig.Cadence.
+type LiveReportConfigCadence string
+
+// LiveReportConfigKind defines model for LiveReportConfig.Kind.
+type LiveReportConfigKind string
+
+// LiveReportDocument One written report over one period. `document` is null until `status` is READY; every number in it comes from the analytics engine (the same reads GET /v1/dashboard/{dashboardId}/data makes over the same window and filters).
+type LiveReportDocument struct {
+	AnnouncedAt *string                    `json:"announcedAt"`
+	Cadence     *LiveReportDocumentCadence `json:"cadence"`
+	CompletedAt *string                    `json:"completedAt"`
+	CreatedAt   string                     `json:"createdAt"`
+	Definition  struct {
+		AgentId     *openapi_types.UUID `json:"agentId"`
+		AgentName   *string             `json:"agentName"`
+		DashboardId *openapi_types.UUID `json:"dashboardId"`
+		Description *string             `json:"description"`
+		Filters     []struct {
+			// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
+			Operator *LiveReportDocumentDefinitionFiltersOperator `json:"operator,omitempty"`
+
+			// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+			Property *string `json:"property,omitempty"`
+
+			// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+			Type LiveReportDocumentDefinitionFiltersType `json:"type"`
+
+			// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+			Value *LiveReportDocument_Definition_Filters_Value `json:"value,omitempty"`
+		} `json:"filters"`
+		IncludeTranscriptExcerpts bool   `json:"includeTranscriptExcerpts"`
+		Name                      string `json:"name"`
+		Targets                   []struct {
+			// Aggregation Defaults to PASS_RATE for thresholds and booleans, AVG for anything numeric.
+			Aggregation *LiveReportDocumentDefinitionTargetsAggregation `json:"aggregation,omitempty"`
+
+			// Comparator AT_LEAST (default for PASS_RATE) or AT_MOST (default for every other aggregation).
+			Comparator *LiveReportDocumentDefinitionTargetsComparator `json:"comparator,omitempty"`
+
+			// Label Shown instead of the metric's name.
+			Label *string `json:"label,omitempty"`
+
+			// Metric The metric's slug (e.g. `task_completion`) or id.
+			Metric string `json:"metric"`
+
+			// PassOperator PASS_RATE on a metric that isn't a threshold: the per-call condition a call passes on.
+			PassOperator *LiveReportDocumentDefinitionTargetsPassOperator `json:"passOperator,omitempty"`
+			PassValue    *LiveReportDocument_Definition_Targets_PassValue `json:"passValue,omitempty"`
+
+			// Percentile Required with PERCENTILE, e.g. 95.
+			Percentile *int `json:"percentile,omitempty"`
+
+			// Value The bar, in display units. A PASS_RATE bar is a percentage, 0-100.
+			Value float64 `json:"value"`
+		} `json:"targets"`
+	} `json:"definition"`
+	Document *struct {
+		Agents []struct {
+			AgentId           string  `json:"agentId"`
+			AgentName         string  `json:"agentName"`
+			ConversationCount int     `json:"conversationCount"`
+			SharePct          float64 `json:"sharePct"`
+			Targets           []struct {
+				Actual      *float64                                      `json:"actual"`
+				ActualLabel *string                                       `json:"actualLabel"`
+				Key         string                                        `json:"key"`
+				Status      LiveReportDocumentDocumentAgentsTargetsStatus `json:"status"`
+			} `json:"targets"`
+		} `json:"agents"`
+		Appendix struct {
+			Methodology string   `json:"methodology"`
+			Notes       []string `json:"notes"`
+		} `json:"appendix"`
+		Charts []struct {
+			Blocked       bool                                     `json:"blocked"`
+			Description   *string                                  `json:"description"`
+			Display       LiveReportDocumentDocumentChartsDisplay  `json:"display"`
+			Error         *string                                  `json:"error"`
+			Interval      LiveReportDocumentDocumentChartsInterval `json:"interval"`
+			Name          string                                   `json:"name"`
+			OmittedSeries int                                      `json:"omittedSeries"`
+			Series        []struct {
+				Aggregation    LiveReportDocumentDocumentChartsSeriesAggregation `json:"aggregation"`
+				BreakdownValue *string                                           `json:"breakdownValue"`
+				Buckets        []struct {
+					ComparisonDate       *string  `json:"comparisonDate,omitempty"`
+					ComparisonValue      *float64 `json:"comparisonValue,omitempty"`
+					Date                 string   `json:"date"`
+					Passed               *float64 `json:"passed,omitempty"`
+					PercentageOfBaseline *float64 `json:"percentageOfBaseline,omitempty"`
+					SampleSize           *float64 `json:"sampleSize,omitempty"`
+					Value                float64  `json:"value"`
+				} `json:"buckets"`
+				ComparisonGroup      *string                                    `json:"comparisonGroup"`
+				ComparisonValue      *float64                                   `json:"comparisonValue"`
+				MeasureIndex         int                                        `json:"measureIndex"`
+				Metric               *string                                    `json:"metric"`
+				PercentageOfBaseline *float64                                   `json:"percentageOfBaseline"`
+				SampleSize           *float64                                   `json:"sampleSize"`
+				Type                 LiveReportDocumentDocumentChartsSeriesType `json:"type"`
+				Value                float64                                    `json:"value"`
+			} `json:"series"`
+		} `json:"charts"`
+		Checks []struct {
+			CheckName           string   `json:"checkName"`
+			Comparable          bool     `json:"comparable"`
+			DeltaPts            *float64 `json:"deltaPts"`
+			EvaluatedCount      int      `json:"evaluatedCount"`
+			FailedCount         int      `json:"failedCount"`
+			IsTarget            bool     `json:"isTarget"`
+			MetricDefinitionId  string   `json:"metricDefinitionId"`
+			MetricSlug          string   `json:"metricSlug"`
+			PassRatePct         *float64 `json:"passRatePct"`
+			PreviousPassRatePct *float64 `json:"previousPassRatePct"`
+		} `json:"checks"`
+		Evidence struct {
+			FailingConversationCount int  `json:"failingConversationCount"`
+			FailingCountIsLowerBound bool `json:"failingCountIsLowerBound"`
+			ReadConversationCount    int  `json:"readConversationCount"`
+			Sampled                  bool `json:"sampled"`
+		} `json:"evidence"`
+		ExecutiveSummary struct {
+			KeyFindings []struct {
+				Body  string `json:"body"`
+				Calls *[]struct {
+					CallId         *string `json:"callId"`
+					ConversationId string  `json:"conversationId"`
+					CueMs          *int    `json:"cueMs"`
+					PersonaName    *string `json:"personaName"`
+				} `json:"calls,omitempty"`
+				Title string `json:"title"`
+			} `json:"keyFindings"`
+			Paragraphs []string `json:"paragraphs"`
+			Sections   *[]struct {
+				Body    string  `json:"body"`
+				Heading *string `json:"heading"`
+			} `json:"sections,omitempty"`
+		} `json:"executiveSummary"`
+		GeneratedAtIso string `json:"generatedAtIso"`
+		Headline       struct {
+			AgentName      *string                                    `json:"agentName"`
+			Cadence        *LiveReportDocumentDocumentHeadlineCadence `json:"cadence"`
+			PeriodEndIso   string                                     `json:"periodEndIso"`
+			PeriodLabel    string                                     `json:"periodLabel"`
+			PeriodStartIso string                                     `json:"periodStartIso"`
+			ReportName     string                                     `json:"reportName"`
+			StatTiles      []struct {
+				DeltaDirection *LiveReportDocumentDocumentHeadlineStatTilesDeltaDirection `json:"deltaDirection"`
+				Label          string                                                     `json:"label"`
+				Sub            *string                                                    `json:"sub"`
+				Value          string                                                     `json:"value"`
+			} `json:"statTiles"`
+			Timezone     string                                    `json:"timezone"`
+			Verdict      LiveReportDocumentDocumentHeadlineVerdict `json:"verdict"`
+			VerdictProse string                                    `json:"verdictProse"`
+		} `json:"headline"`
+		LiveReportId    *string `json:"liveReportId"`
+		Model           string  `json:"model"`
+		Recommendations []struct {
+			AfterText                   *string                                            `json:"afterText"`
+			BeforeText                  *string                                            `json:"beforeText"`
+			Body                        string                                             `json:"body"`
+			Channel                     *LiveReportDocumentDocumentRecommendationsChannel  `json:"channel"`
+			Order                       int                                                `json:"order"`
+			PromptOptimizationFindingId *string                                            `json:"promptOptimizationFindingId"`
+			Severity                    *LiveReportDocumentDocumentRecommendationsSeverity `json:"severity"`
+			Source                      LiveReportDocumentDocumentRecommendationsSource    `json:"source"`
+			ThemeSlugs                  []string                                           `json:"themeSlugs"`
+			Title                       string                                             `json:"title"`
+		} `json:"recommendations"`
+		Targets []struct {
+			Actual                   *float64                                         `json:"actual"`
+			ActualLabel              *string                                          `json:"actualLabel"`
+			Aggregation              LiveReportDocumentDocumentTargetsAggregation     `json:"aggregation"`
+			Comparator               LiveReportDocumentDocumentTargetsComparator      `json:"comparator"`
+			DeltaDirection           *LiveReportDocumentDocumentTargetsDeltaDirection `json:"deltaDirection"`
+			DeltaLabel               *string                                          `json:"deltaLabel"`
+			Error                    *string                                          `json:"error"`
+			FailingConversationCount *int                                             `json:"failingConversationCount"`
+			Key                      string                                           `json:"key"`
+			Label                    string                                           `json:"label"`
+			Lifecycle                *LiveReportDocumentDocumentTargetsLifecycle      `json:"lifecycle"`
+			MetricDefinitionId       *string                                          `json:"metricDefinitionId"`
+			MetricName               string                                           `json:"metricName"`
+			MetricSlug               string                                           `json:"metricSlug"`
+			Percentile               *int                                             `json:"percentile"`
+			Previous                 *float64                                         `json:"previous"`
+			PreviousLabel            *string                                          `json:"previousLabel"`
+			SampleSize               int                                              `json:"sampleSize"`
+			Series                   []struct {
+				Date       string   `json:"date"`
+				SampleSize *int     `json:"sampleSize"`
+				Value      *float64 `json:"value"`
+			} `json:"series"`
+			Status      LiveReportDocumentDocumentTargetsStatus `json:"status"`
+			TargetLabel string                                  `json:"targetLabel"`
+			TargetValue float64                                 `json:"targetValue"`
+			Unit        LiveReportDocumentDocumentTargetsUnit   `json:"unit"`
+		} `json:"targets"`
+		Themes []struct {
+			AffectedConversationCount int      `json:"affectedConversationCount"`
+			Analysis                  string   `json:"analysis"`
+			CheckNames                []string `json:"checkNames"`
+			CollectorQuote            *struct {
+				ConversationId string `json:"conversationId"`
+				MetricName     string `json:"metricName"`
+				Quote          string `json:"quote"`
+			} `json:"collectorQuote"`
+			EstimatedAffectedConversationCount *int `json:"estimatedAffectedConversationCount"`
+			Excerpts                           []struct {
+				CallId         *string `json:"callId"`
+				Caption        *string `json:"caption"`
+				ConversationId string  `json:"conversationId"`
+				PersonaName    *string `json:"personaName"`
+				ScenarioName   *string `json:"scenarioName"`
+				Turns          []struct {
+					FlagNote *string                                           `json:"flagNote"`
+					Flagged  bool                                              `json:"flagged"`
+					OffsetMs *int                                              `json:"offsetMs"`
+					Role     LiveReportDocumentDocumentThemesExcerptsTurnsRole `json:"role"`
+					Text     string                                            `json:"text"`
+				} `json:"turns"`
+			} `json:"excerpts"`
+			FlaggedForImpact bool                                    `json:"flaggedForImpact"`
+			Impact           *LiveReportDocumentDocumentThemesImpact `json:"impact"`
+			ImpactReason     *string                                 `json:"impactReason"`
+			Issue            *struct {
+				FirstSeenAtIso *string `json:"firstSeenAtIso"`
+				Id             string  `json:"id"`
+				Status         string  `json:"status"`
+				Title          string  `json:"title"`
+			} `json:"issue"`
+			Lifecycle   *LiveReportDocumentDocumentThemesLifecycle `json:"lifecycle"`
+			MemberCalls *[]struct {
+				CallId         *string `json:"callId"`
+				ConversationId string  `json:"conversationId"`
+				CueMs          *int    `json:"cueMs"`
+				PersonaName    *string `json:"personaName"`
+			} `json:"memberCalls,omitempty"`
+			MemberConversationIds  []string                                          `json:"memberConversationIds"`
+			MetricDefinitionIds    []string                                          `json:"metricDefinitionIds"`
+			Prevalence             *LiveReportDocumentDocumentThemesPrevalence       `json:"prevalence"`
+			RootCauseChannel       *LiveReportDocumentDocumentThemesRootCauseChannel `json:"rootCauseChannel"`
+			Severity               LiveReportDocumentDocumentThemesSeverity          `json:"severity"`
+			Slug                   string                                            `json:"slug"`
+			Title                  string                                            `json:"title"`
+			TotalConversationCount int                                               `json:"totalConversationCount"`
+		} `json:"themes"`
+		Version LiveReportDocumentDocumentVersion `json:"version"`
+		Volume  struct {
+			ConversationCount int      `json:"conversationCount"`
+			DeltaPct          *float64 `json:"deltaPct"`
+			Endings           []struct {
+				Count    int     `json:"count"`
+				Label    string  `json:"label"`
+				SharePct float64 `json:"sharePct"`
+				Value    string  `json:"value"`
+			} `json:"endings"`
+			PreviousConversationCount *int `json:"previousConversationCount"`
+			Series                    []struct {
+				Date       string   `json:"date"`
+				SampleSize *int     `json:"sampleSize"`
+				Value      *float64 `json:"value"`
+			} `json:"series"`
+		} `json:"volume"`
+	} `json:"document"`
+	ErrorMessage *string                   `json:"errorMessage"`
+	Id           openapi_types.UUID        `json:"id"`
+	LiveReportId *openapi_types.UUID       `json:"liveReportId"`
+	PeriodEnd    string                    `json:"periodEnd"`
+	PeriodStart  string                    `json:"periodStart"`
+	ProjectId    openapi_types.UUID        `json:"projectId"`
+	Status       LiveReportDocumentStatus  `json:"status"`
+	Timezone     string                    `json:"timezone"`
+	Trigger      LiveReportDocumentTrigger `json:"trigger"`
+}
+
+// LiveReportDocumentCadence defines model for LiveReportDocument.Cadence.
+type LiveReportDocumentCadence string
+
+// LiveReportDocumentDefinitionFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
+type LiveReportDocumentDefinitionFiltersOperator string
+
+// LiveReportDocumentDefinitionFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type LiveReportDocumentDefinitionFiltersType string
+
+// LiveReportDocumentDefinitionFiltersValue0 defines model for LiveReportDocument.Definition.Filters.Value.0.
+type LiveReportDocumentDefinitionFiltersValue0 = string
+
+// LiveReportDocumentDefinitionFiltersValue1 defines model for LiveReportDocument.Definition.Filters.Value.1.
+type LiveReportDocumentDefinitionFiltersValue1 = float64
+
+// LiveReportDocumentDefinitionFiltersValue2 defines model for LiveReportDocument.Definition.Filters.Value.2.
+type LiveReportDocumentDefinitionFiltersValue2 = bool
+
+// LiveReportDocument_Definition_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+type LiveReportDocument_Definition_Filters_Value struct {
+	union json.RawMessage
+}
+
+// LiveReportDocumentDefinitionTargetsAggregation Defaults to PASS_RATE for thresholds and booleans, AVG for anything numeric.
+type LiveReportDocumentDefinitionTargetsAggregation string
+
+// LiveReportDocumentDefinitionTargetsComparator AT_LEAST (default for PASS_RATE) or AT_MOST (default for every other aggregation).
+type LiveReportDocumentDefinitionTargetsComparator string
+
+// LiveReportDocumentDefinitionTargetsPassOperator PASS_RATE on a metric that isn't a threshold: the per-call condition a call passes on.
+type LiveReportDocumentDefinitionTargetsPassOperator string
+
+// LiveReportDocumentDefinitionTargetsPassValue0 defines model for LiveReportDocument.Definition.Targets.PassValue.0.
+type LiveReportDocumentDefinitionTargetsPassValue0 = string
+
+// LiveReportDocumentDefinitionTargetsPassValue1 defines model for LiveReportDocument.Definition.Targets.PassValue.1.
+type LiveReportDocumentDefinitionTargetsPassValue1 = float64
+
+// LiveReportDocumentDefinitionTargetsPassValue2 defines model for LiveReportDocument.Definition.Targets.PassValue.2.
+type LiveReportDocumentDefinitionTargetsPassValue2 = bool
+
+// LiveReportDocument_Definition_Targets_PassValue defines model for LiveReportDocument.Definition.Targets.PassValue.
+type LiveReportDocument_Definition_Targets_PassValue struct {
+	union json.RawMessage
+}
+
+// LiveReportDocumentDocumentAgentsTargetsStatus defines model for LiveReportDocument.Document.Agents.Targets.Status.
+type LiveReportDocumentDocumentAgentsTargetsStatus string
+
+// LiveReportDocumentDocumentChartsDisplay defines model for LiveReportDocument.Document.Charts.Display.
+type LiveReportDocumentDocumentChartsDisplay string
+
+// LiveReportDocumentDocumentChartsInterval defines model for LiveReportDocument.Document.Charts.Interval.
+type LiveReportDocumentDocumentChartsInterval string
+
+// LiveReportDocumentDocumentChartsSeriesAggregation defines model for LiveReportDocument.Document.Charts.Series.Aggregation.
+type LiveReportDocumentDocumentChartsSeriesAggregation string
+
+// LiveReportDocumentDocumentChartsSeriesType defines model for LiveReportDocument.Document.Charts.Series.Type.
+type LiveReportDocumentDocumentChartsSeriesType string
+
+// LiveReportDocumentDocumentHeadlineCadence defines model for LiveReportDocument.Document.Headline.Cadence.
+type LiveReportDocumentDocumentHeadlineCadence string
+
+// LiveReportDocumentDocumentHeadlineStatTilesDeltaDirection defines model for LiveReportDocument.Document.Headline.StatTiles.DeltaDirection.
+type LiveReportDocumentDocumentHeadlineStatTilesDeltaDirection string
+
+// LiveReportDocumentDocumentHeadlineVerdict defines model for LiveReportDocument.Document.Headline.Verdict.
+type LiveReportDocumentDocumentHeadlineVerdict string
+
+// LiveReportDocumentDocumentRecommendationsChannel defines model for LiveReportDocument.Document.Recommendations.Channel.
+type LiveReportDocumentDocumentRecommendationsChannel string
+
+// LiveReportDocumentDocumentRecommendationsSeverity defines model for LiveReportDocument.Document.Recommendations.Severity.
+type LiveReportDocumentDocumentRecommendationsSeverity string
+
+// LiveReportDocumentDocumentRecommendationsSource defines model for LiveReportDocument.Document.Recommendations.Source.
+type LiveReportDocumentDocumentRecommendationsSource string
+
+// LiveReportDocumentDocumentTargetsAggregation defines model for LiveReportDocument.Document.Targets.Aggregation.
+type LiveReportDocumentDocumentTargetsAggregation string
+
+// LiveReportDocumentDocumentTargetsComparator defines model for LiveReportDocument.Document.Targets.Comparator.
+type LiveReportDocumentDocumentTargetsComparator string
+
+// LiveReportDocumentDocumentTargetsDeltaDirection defines model for LiveReportDocument.Document.Targets.DeltaDirection.
+type LiveReportDocumentDocumentTargetsDeltaDirection string
+
+// LiveReportDocumentDocumentTargetsLifecycle defines model for LiveReportDocument.Document.Targets.Lifecycle.
+type LiveReportDocumentDocumentTargetsLifecycle string
+
+// LiveReportDocumentDocumentTargetsStatus defines model for LiveReportDocument.Document.Targets.Status.
+type LiveReportDocumentDocumentTargetsStatus string
+
+// LiveReportDocumentDocumentTargetsUnit defines model for LiveReportDocument.Document.Targets.Unit.
+type LiveReportDocumentDocumentTargetsUnit string
+
+// LiveReportDocumentDocumentThemesExcerptsTurnsRole defines model for LiveReportDocument.Document.Themes.Excerpts.Turns.Role.
+type LiveReportDocumentDocumentThemesExcerptsTurnsRole string
+
+// LiveReportDocumentDocumentThemesImpact defines model for LiveReportDocument.Document.Themes.Impact.
+type LiveReportDocumentDocumentThemesImpact string
+
+// LiveReportDocumentDocumentThemesLifecycle defines model for LiveReportDocument.Document.Themes.Lifecycle.
+type LiveReportDocumentDocumentThemesLifecycle string
+
+// LiveReportDocumentDocumentThemesPrevalence defines model for LiveReportDocument.Document.Themes.Prevalence.
+type LiveReportDocumentDocumentThemesPrevalence string
+
+// LiveReportDocumentDocumentThemesRootCauseChannel defines model for LiveReportDocument.Document.Themes.RootCauseChannel.
+type LiveReportDocumentDocumentThemesRootCauseChannel string
+
+// LiveReportDocumentDocumentThemesSeverity defines model for LiveReportDocument.Document.Themes.Severity.
+type LiveReportDocumentDocumentThemesSeverity string
+
+// LiveReportDocumentDocumentVersion defines model for LiveReportDocument.Document.Version.
+type LiveReportDocumentDocumentVersion float64
+
+// LiveReportDocumentStatus defines model for LiveReportDocument.Status.
+type LiveReportDocumentStatus string
+
+// LiveReportDocumentTrigger defines model for LiveReportDocument.Trigger.
+type LiveReportDocumentTrigger string
+
+// LiveReportFilterConfig defines model for LiveReportFilterConfig.
+type LiveReportFilterConfig struct {
+	Operator *LiveReportFilterConfigOperator `json:"operator,omitempty"`
+	Property *string                         `json:"property,omitempty"`
+	Type     LiveReportFilterConfigType      `json:"type"`
+	Value    *LiveReportFilterConfig_Value   `json:"value,omitempty"`
+}
+
+// LiveReportFilterConfigOperator defines model for LiveReportFilterConfig.Operator.
+type LiveReportFilterConfigOperator string
+
+// LiveReportFilterConfigType defines model for LiveReportFilterConfig.Type.
+type LiveReportFilterConfigType string
+
+// LiveReportFilterConfigValue0 defines model for LiveReportFilterConfig.Value.0.
+type LiveReportFilterConfigValue0 = string
+
+// LiveReportFilterConfigValue1 defines model for LiveReportFilterConfig.Value.1.
+type LiveReportFilterConfigValue1 = float64
+
+// LiveReportFilterConfigValue2 defines model for LiveReportFilterConfig.Value.2.
+type LiveReportFilterConfigValue2 = bool
+
+// LiveReportFilterConfig_Value defines model for LiveReportFilterConfig.Value.
+type LiveReportFilterConfig_Value struct {
+	union json.RawMessage
+}
+
+// LiveReportInput A report on the project's live calls: which calls (one agent or all, plus conversation filters in the analytics vocabulary), the targets the period is held to, how often it is written, and who receives it.
+//
+// Example: {"agentId":"0b1c2d3e-4f50-4a6b-8c7d-9e0f1a2b3c4d","cadence":"WEEKLY","deliveryHour":9,"filters":[{"operator":"EQUALS","property":"region","type":"CALL_PROPERTY","value":"EU"}],"generateNow":true,"includeTranscriptExcerpts":true,"name":"Front desk weekly","notifications":{"email":{"enabled":true,"recipients":[]},"slack":[]},"targets":[{"metric":"task_completion_check","value":85},{"aggregation":"AVG","comparator":"AT_MOST","metric":"customer_frustration","value":2}],"timezone":"Europe/London"}
+type LiveReportInput struct {
+	AgentId      *openapi_types.UUID     `json:"agentId,omitempty"`
+	Cadence      *LiveReportInputCadence `json:"cadence,omitempty"`
+	DashboardId  *openapi_types.UUID     `json:"dashboardId,omitempty"`
+	DeliveryHour *int                    `json:"deliveryHour,omitempty"`
+	Description  *string                 `json:"description,omitempty"`
+	Filters      *[]struct {
+		// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
+		Operator *LiveReportInputFiltersOperator `json:"operator,omitempty"`
+
+		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+		Property *string `json:"property,omitempty"`
+
+		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+		Type LiveReportInputFiltersType `json:"type"`
+
+		// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+		Value *LiveReportInput_Filters_Value `json:"value,omitempty"`
+	} `json:"filters,omitempty"`
+
+	// GenerateNow Write the report for the latest closed period right away. Default true.
+	GenerateNow               *bool  `json:"generateNow,omitempty"`
+	IncludeTranscriptExcerpts *bool  `json:"includeTranscriptExcerpts,omitempty"`
+	Name                      string `json:"name"`
+	Notifications             *struct {
+		Email struct {
+			Enabled    bool                  `json:"enabled"`
+			Recipients []openapi_types.Email `json:"recipients"`
+		} `json:"email"`
+		Slack []struct {
+			ChannelId   string `json:"channelId"`
+			ChannelName string `json:"channelName"`
+		} `json:"slack"`
+	} `json:"notifications,omitempty"`
+	Status  *LiveReportInputStatus `json:"status,omitempty"`
+	Targets *[]struct {
+		// Aggregation Defaults to PASS_RATE for thresholds and booleans, AVG for anything numeric.
+		Aggregation *LiveReportInputTargetsAggregation `json:"aggregation,omitempty"`
+
+		// Comparator AT_LEAST (default for PASS_RATE) or AT_MOST (default for every other aggregation).
+		Comparator *LiveReportInputTargetsComparator `json:"comparator,omitempty"`
+
+		// Label Shown instead of the metric's name.
+		Label *string `json:"label,omitempty"`
+
+		// Metric The metric's slug (e.g. `task_completion`) or id.
+		Metric string `json:"metric"`
+
+		// PassOperator PASS_RATE on a metric that isn't a threshold: the per-call condition a call passes on.
+		PassOperator *LiveReportInputTargetsPassOperator `json:"passOperator,omitempty"`
+		PassValue    *LiveReportInput_Targets_PassValue  `json:"passValue,omitempty"`
+
+		// Percentile Required with PERCENTILE, e.g. 95.
+		Percentile *int `json:"percentile,omitempty"`
+
+		// Value The bar, in display units. A PASS_RATE bar is a percentage, 0-100.
+		Value float64 `json:"value"`
+	} `json:"targets,omitempty"`
+	Timezone *string `json:"timezone,omitempty"`
+}
+
+// LiveReportInputCadence defines model for LiveReportInput.Cadence.
+type LiveReportInputCadence string
+
+// LiveReportInputFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
+type LiveReportInputFiltersOperator string
+
+// LiveReportInputFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type LiveReportInputFiltersType string
+
+// LiveReportInputFiltersValue0 defines model for LiveReportInput.Filters.Value.0.
+type LiveReportInputFiltersValue0 = string
+
+// LiveReportInputFiltersValue1 defines model for LiveReportInput.Filters.Value.1.
+type LiveReportInputFiltersValue1 = float64
+
+// LiveReportInputFiltersValue2 defines model for LiveReportInput.Filters.Value.2.
+type LiveReportInputFiltersValue2 = bool
+
+// LiveReportInput_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+type LiveReportInput_Filters_Value struct {
+	union json.RawMessage
+}
+
+// LiveReportInputStatus defines model for LiveReportInput.Status.
+type LiveReportInputStatus string
+
+// LiveReportInputTargetsAggregation Defaults to PASS_RATE for thresholds and booleans, AVG for anything numeric.
+type LiveReportInputTargetsAggregation string
+
+// LiveReportInputTargetsComparator AT_LEAST (default for PASS_RATE) or AT_MOST (default for every other aggregation).
+type LiveReportInputTargetsComparator string
+
+// LiveReportInputTargetsPassOperator PASS_RATE on a metric that isn't a threshold: the per-call condition a call passes on.
+type LiveReportInputTargetsPassOperator string
+
+// LiveReportInputTargetsPassValue0 defines model for LiveReportInput.Targets.PassValue.0.
+type LiveReportInputTargetsPassValue0 = string
+
+// LiveReportInputTargetsPassValue1 defines model for LiveReportInput.Targets.PassValue.1.
+type LiveReportInputTargetsPassValue1 = float64
+
+// LiveReportInputTargetsPassValue2 defines model for LiveReportInput.Targets.PassValue.2.
+type LiveReportInputTargetsPassValue2 = bool
+
+// LiveReportInput_Targets_PassValue defines model for LiveReportInput.Targets.PassValue.
+type LiveReportInput_Targets_PassValue struct {
+	union json.RawMessage
+}
+
+// LiveReportTargetConfig defines model for LiveReportTargetConfig.
+type LiveReportTargetConfig struct {
+	Aggregation  *LiveReportTargetConfigAggregation  `json:"aggregation,omitempty"`
+	Comparator   *LiveReportTargetConfigComparator   `json:"comparator,omitempty"`
+	Label        *string                             `json:"label,omitempty"`
+	Metric       string                              `json:"metric"`
+	PassOperator *LiveReportTargetConfigPassOperator `json:"passOperator,omitempty"`
+	PassValue    *LiveReportTargetConfig_PassValue   `json:"passValue,omitempty"`
+	Percentile   *int                                `json:"percentile,omitempty"`
+	Value        float64                             `json:"value"`
+}
+
+// LiveReportTargetConfigAggregation defines model for LiveReportTargetConfig.Aggregation.
+type LiveReportTargetConfigAggregation string
+
+// LiveReportTargetConfigComparator defines model for LiveReportTargetConfig.Comparator.
+type LiveReportTargetConfigComparator string
+
+// LiveReportTargetConfigPassOperator defines model for LiveReportTargetConfig.PassOperator.
+type LiveReportTargetConfigPassOperator string
+
+// LiveReportTargetConfigPassValue0 defines model for LiveReportTargetConfig.PassValue.0.
+type LiveReportTargetConfigPassValue0 = string
+
+// LiveReportTargetConfigPassValue1 defines model for LiveReportTargetConfig.PassValue.1.
+type LiveReportTargetConfigPassValue1 = float64
+
+// LiveReportTargetConfigPassValue2 defines model for LiveReportTargetConfig.PassValue.2.
+type LiveReportTargetConfigPassValue2 = bool
+
+// LiveReportTargetConfig_PassValue defines model for LiveReportTargetConfig.PassValue.
+type LiveReportTargetConfig_PassValue struct {
+	union json.RawMessage
 }
 
 // LlmJudgeMetricResponse defines model for LlmJudgeMetricResponse.
@@ -35843,16 +38875,74 @@ type ThresholdMetricResponseSupportedConversationSources string
 // ThresholdMetricResponseType Type of value this metric produces
 type ThresholdMetricResponseType string
 
+// ToolBody defines model for ToolBody.
+type ToolBody struct {
+	AgentId *openapi_types.UUID `json:"agentId,omitempty"`
+
+	// Description When the agent should use the tool
+	Description    string  `json:"description"`
+	ExpectedResult *string `json:"expectedResult,omitempty"`
+	Inputs         *[]struct {
+		Description *string `json:"description,omitempty"`
+
+		// Name Example: date
+		Name     string             `json:"name"`
+		Required *bool              `json:"required,omitempty"`
+		Type     ToolBodyInputsType `json:"type"`
+	} `json:"inputs,omitempty"`
+	InvocationCriteria *string `json:"invocationCriteria,omitempty"`
+
+	// Name Example: book_appointment
+	Name string `json:"name"`
+
+	// Runtime Omit or null for a tool that is only graded
+	Runtime *struct {
+		ChangesData *bool `json:"changesData,omitempty"`
+		Messages    *struct {
+			Before  *string `json:"before,omitempty"`
+			Failure *string `json:"failure,omitempty"`
+			Slow    *string `json:"slow,omitempty"`
+		} `json:"messages,omitempty"`
+		Request struct {
+			Body    *string `json:"body,omitempty"`
+			Headers *[]struct {
+				// Name Example: X-Api-Version
+				Name string `json:"name"`
+
+				// Value Example: 2026-10-01
+				Value string `json:"value"`
+			} `json:"headers,omitempty"`
+			Method    *ToolBodyRuntimeRequestMethod `json:"method,omitempty"`
+			TimeoutMs *int                          `json:"timeoutMs,omitempty"`
+			Url       string                        `json:"url"`
+		} `json:"request"`
+		ResponseFields *[]string `json:"responseFields,omitempty"`
+	} `json:"runtime,omitempty"`
+}
+
+// ToolBodyInputsType defines model for ToolBody.Inputs.Type.
+type ToolBodyInputsType string
+
+// ToolBodyRuntimeRequestMethod defines model for ToolBody.Runtime.Request.Method.
+type ToolBodyRuntimeRequestMethod string
+
 // ToolConfig defines model for ToolConfig.
 type ToolConfig struct {
-	Agent              *string                          `json:"agent,omitempty"`
-	Description        *string                          `json:"description,omitempty"`
-	ExpectedResult     *string                          `json:"expectedResult,omitempty"`
-	Handler            *ToolHandler                     `json:"handler,omitempty"`
-	InvocationCriteria *string                          `json:"invocationCriteria,omitempty"`
-	Kind               ToolConfigKind                   `json:"kind"`
-	Name               string                           `json:"name"`
-	Parameters         *map[string]ToolConfigParameters `json:"parameters,omitempty"`
+	Agent              *string        `json:"agent,omitempty"`
+	ChangesData        *bool          `json:"changesData,omitempty"`
+	Description        *string        `json:"description,omitempty"`
+	ExpectedResult     *string        `json:"expectedResult,omitempty"`
+	Handler            *ToolHandler   `json:"handler,omitempty"`
+	InvocationCriteria *string        `json:"invocationCriteria,omitempty"`
+	Kind               ToolConfigKind `json:"kind"`
+	Messages           *struct {
+		Before  *string `json:"before,omitempty"`
+		Failure *string `json:"failure,omitempty"`
+		Slow    *string `json:"slow,omitempty"`
+	} `json:"messages,omitempty"`
+	Name           string                           `json:"name"`
+	Parameters     *map[string]ToolConfigParameters `json:"parameters,omitempty"`
+	ResponseFields *[]string                        `json:"responseFields,omitempty"`
 }
 
 // ToolConfigKind defines model for ToolConfig.Kind.
@@ -35861,11 +38951,25 @@ type ToolConfigKind string
 // ToolConfigParameters defines model for ToolConfig.Parameters.
 type ToolConfigParameters string
 
+// ToolDeleteResponse defines model for ToolDeleteResponse.
+type ToolDeleteResponse struct {
+	Data struct {
+		Deleted ToolDeleteResponseDataDeleted `json:"deleted"`
+		Id      openapi_types.UUID            `json:"id"`
+	} `json:"data"`
+}
+
+// ToolDeleteResponseDataDeleted defines model for ToolDeleteResponse.Data.Deleted.
+type ToolDeleteResponseDataDeleted bool
+
 // ToolHandler defines model for ToolHandler.
 type ToolHandler struct {
-	Method *ToolHandlerMethod `json:"method,omitempty"`
-	Type   ToolHandlerType    `json:"type"`
-	Url    string             `json:"url"`
+	Body      *string            `json:"body,omitempty"`
+	Headers   *map[string]string `json:"headers,omitempty"`
+	Method    *ToolHandlerMethod `json:"method,omitempty"`
+	TimeoutMs *int               `json:"timeoutMs,omitempty"`
+	Type      ToolHandlerType    `json:"type"`
+	Url       string             `json:"url"`
 }
 
 // ToolHandlerMethod defines model for ToolHandler.Method.
@@ -35873,6 +38977,121 @@ type ToolHandlerMethod string
 
 // ToolHandlerType defines model for ToolHandler.Type.
 type ToolHandlerType string
+
+// ToolInput defines model for ToolInput.
+type ToolInput struct {
+	// Description What the input is, so the agent fills it in right
+	//
+	// Example: ISO date
+	Description *string `json:"description"`
+
+	// Name The input name, as the agent passes it
+	//
+	// Example: date
+	Name string `json:"name"`
+
+	// Required The agent must pass it
+	Required bool `json:"required"`
+
+	// Type string, number or boolean
+	Type ToolInputType `json:"type"`
+}
+
+// ToolInputType string, number or boolean
+type ToolInputType string
+
+// ToolListResponse defines model for ToolListResponse.
+type ToolListResponse struct {
+	Data []ToolResponse `json:"data"`
+}
+
+// ToolMessages defines model for ToolMessages.
+type ToolMessages struct {
+	// Before Said as the request goes out
+	Before *string `json:"before"`
+
+	// Failure Given to the agent to say when the request fails
+	Failure *string `json:"failure"`
+
+	// Slow Said once if the request is slow
+	Slow *string `json:"slow"`
+}
+
+// ToolRequest defines model for ToolRequest.
+type ToolRequest struct {
+	// Body JSON body template. Null sends the inputs as the body (POST, PUT, PATCH) or the query (GET, DELETE).
+	Body    *string `json:"body"`
+	Headers []struct {
+		// Name Example: X-Api-Version
+		Name string `json:"name"`
+
+		// Value Example: 2026-10-01
+		Value string `json:"value"`
+	} `json:"headers"`
+	Method ToolRequestMethod `json:"method"`
+
+	// TimeoutMs How long the agent waits, 1000 to 30000 ms
+	TimeoutMs *int `json:"timeoutMs"`
+
+	// Url https URL. Placeholders {{args.<input>}} and {{conversation.*}} (id, direction, modality, agentNumber, customerNumber, startedAt) may appear in the path and query.
+	//
+	// Example: https://api.example.com/bookings
+	Url string `json:"url"`
+}
+
+// ToolRequestMethod defines model for ToolRequest.Method.
+type ToolRequestMethod string
+
+// ToolResponse defines model for ToolResponse.
+type ToolResponse struct {
+	// AgentId The agent the tool is scoped to; null for the project
+	AgentId     *openapi_types.UUID `json:"agentId"`
+	CreatedAt   string              `json:"createdAt"`
+	Description *string             `json:"description"`
+
+	// ExpectedResult How it should handle the result, for grading
+	ExpectedResult *string            `json:"expectedResult"`
+	Id             openapi_types.UUID `json:"id"`
+	Inputs         []ToolInput        `json:"inputs"`
+
+	// InvocationCriteria When the agent should call it, for grading
+	InvocationCriteria *string `json:"invocationCriteria"`
+
+	// Name Example: book_appointment
+	Name string `json:"name"`
+
+	// Runtime Null for a tool that is only graded
+	Runtime *ToolRuntime `json:"runtime"`
+
+	// Source SYSTEM for a built-in tool every project can attach
+	Source ToolResponseSource `json:"source"`
+
+	// SystemKey The stable key of a built-in tool, such as dtmf
+	SystemKey *string `json:"systemKey"`
+	UpdatedAt string  `json:"updatedAt"`
+
+	// Version The latest version; null before any is declared
+	Version *int `json:"version"`
+}
+
+// ToolResponseSource SYSTEM for a built-in tool every project can attach
+type ToolResponseSource string
+
+// ToolRuntime What a hosted agent sends and says when it calls the tool
+type ToolRuntime struct {
+	// ChangesData The tool books, cancels or sends something: its call is not abandoned when the caller interrupts, and each request carries an Idempotency-Key.
+	ChangesData bool         `json:"changesData"`
+	Messages    ToolMessages `json:"messages"`
+	Request     ToolRequest  `json:"request"`
+
+	// ResponseFields Dot paths into the JSON response the agent is given. Null gives it the whole response.
+	ResponseFields *[]string `json:"responseFields"`
+}
+
+// ToolSingleResponse defines model for ToolSingleResponse.
+type ToolSingleResponse struct {
+	Data ToolResponse `json:"data"`
+}
 
 // TranscriptEntryAgent defines model for TranscriptEntryAgent.
 type TranscriptEntryAgent struct {
@@ -36544,6 +39763,116 @@ type UpdateHttpRequestDefinitionInput_Body struct {
 
 // UpdateHttpRequestDefinitionInputMethod HTTP method: POST, PUT, PATCH, or GET
 type UpdateHttpRequestDefinitionInputMethod string
+
+// UpdateLiveReportInput Omitted fields keep their current value. Reports already written keep what they covered.
+//
+// Example: {"status":"PAUSED"}
+type UpdateLiveReportInput struct {
+	AgentId      *openapi_types.UUID           `json:"agentId,omitempty"`
+	Cadence      *UpdateLiveReportInputCadence `json:"cadence,omitempty"`
+	DashboardId  *openapi_types.UUID           `json:"dashboardId,omitempty"`
+	DeliveryHour *int                          `json:"deliveryHour,omitempty"`
+	Description  *string                       `json:"description,omitempty"`
+	Filters      *[]struct {
+		// Operator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
+		Operator *UpdateLiveReportInputFiltersOperator `json:"operator,omitempty"`
+
+		// Property The property to compare. Required for CALL_PROPERTY and METRIC_PROPERTY; may be omitted for AGENT_PROPERTY, DATASET, MODALITY and CALL_ID.
+		Property *string `json:"property,omitempty"`
+
+		// Type What the filter narrows on. GET /v1/analytics/schema lists each type.
+		Type UpdateLiveReportInputFiltersType `json:"type"`
+
+		// Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+		Value *UpdateLiveReportInput_Filters_Value `json:"value,omitempty"`
+	} `json:"filters,omitempty"`
+	IncludeTranscriptExcerpts *bool   `json:"includeTranscriptExcerpts,omitempty"`
+	Name                      *string `json:"name,omitempty"`
+	Notifications             *struct {
+		Email struct {
+			Enabled    bool                  `json:"enabled"`
+			Recipients []openapi_types.Email `json:"recipients"`
+		} `json:"email"`
+		Slack []struct {
+			ChannelId   string `json:"channelId"`
+			ChannelName string `json:"channelName"`
+		} `json:"slack"`
+	} `json:"notifications,omitempty"`
+	Status  *UpdateLiveReportInputStatus `json:"status,omitempty"`
+	Targets *[]struct {
+		// Aggregation Defaults to PASS_RATE for thresholds and booleans, AVG for anything numeric.
+		Aggregation *UpdateLiveReportInputTargetsAggregation `json:"aggregation,omitempty"`
+
+		// Comparator AT_LEAST (default for PASS_RATE) or AT_MOST (default for every other aggregation).
+		Comparator *UpdateLiveReportInputTargetsComparator `json:"comparator,omitempty"`
+
+		// Label Shown instead of the metric's name.
+		Label *string `json:"label,omitempty"`
+
+		// Metric The metric's slug (e.g. `task_completion`) or id.
+		Metric string `json:"metric"`
+
+		// PassOperator PASS_RATE on a metric that isn't a threshold: the per-call condition a call passes on.
+		PassOperator *UpdateLiveReportInputTargetsPassOperator `json:"passOperator,omitempty"`
+		PassValue    *UpdateLiveReportInput_Targets_PassValue  `json:"passValue,omitempty"`
+
+		// Percentile Required with PERCENTILE, e.g. 95.
+		Percentile *int `json:"percentile,omitempty"`
+
+		// Value The bar, in display units. A PASS_RATE bar is a percentage, 0-100.
+		Value float64 `json:"value"`
+	} `json:"targets,omitempty"`
+	Timezone *string `json:"timezone,omitempty"`
+}
+
+// UpdateLiveReportInputCadence defines model for UpdateLiveReportInput.Cadence.
+type UpdateLiveReportInputCadence string
+
+// UpdateLiveReportInputFiltersOperator Defaults to EQUALS. IS_SET / IS_NOT_SET (CALL_PROPERTY only) keep conversations where the property is set, whatever the value, or missing (never sent, sent as null, or removed); they take no value.
+type UpdateLiveReportInputFiltersOperator string
+
+// UpdateLiveReportInputFiltersType What the filter narrows on. GET /v1/analytics/schema lists each type.
+type UpdateLiveReportInputFiltersType string
+
+// UpdateLiveReportInputFiltersValue0 defines model for UpdateLiveReportInput.Filters.Value.0.
+type UpdateLiveReportInputFiltersValue0 = string
+
+// UpdateLiveReportInputFiltersValue1 defines model for UpdateLiveReportInput.Filters.Value.1.
+type UpdateLiveReportInputFiltersValue1 = float64
+
+// UpdateLiveReportInputFiltersValue2 defines model for UpdateLiveReportInput.Filters.Value.2.
+type UpdateLiveReportInputFiltersValue2 = bool
+
+// UpdateLiveReportInput_Filters_Value The value to compare against (an agent id, "call" / "chat", a property value). Required except with IS_SET / IS_NOT_SET.
+type UpdateLiveReportInput_Filters_Value struct {
+	union json.RawMessage
+}
+
+// UpdateLiveReportInputStatus defines model for UpdateLiveReportInput.Status.
+type UpdateLiveReportInputStatus string
+
+// UpdateLiveReportInputTargetsAggregation Defaults to PASS_RATE for thresholds and booleans, AVG for anything numeric.
+type UpdateLiveReportInputTargetsAggregation string
+
+// UpdateLiveReportInputTargetsComparator AT_LEAST (default for PASS_RATE) or AT_MOST (default for every other aggregation).
+type UpdateLiveReportInputTargetsComparator string
+
+// UpdateLiveReportInputTargetsPassOperator PASS_RATE on a metric that isn't a threshold: the per-call condition a call passes on.
+type UpdateLiveReportInputTargetsPassOperator string
+
+// UpdateLiveReportInputTargetsPassValue0 defines model for UpdateLiveReportInput.Targets.PassValue.0.
+type UpdateLiveReportInputTargetsPassValue0 = string
+
+// UpdateLiveReportInputTargetsPassValue1 defines model for UpdateLiveReportInput.Targets.PassValue.1.
+type UpdateLiveReportInputTargetsPassValue1 = float64
+
+// UpdateLiveReportInputTargetsPassValue2 defines model for UpdateLiveReportInput.Targets.PassValue.2.
+type UpdateLiveReportInputTargetsPassValue2 = bool
+
+// UpdateLiveReportInput_Targets_PassValue defines model for UpdateLiveReportInput.Targets.PassValue.
+type UpdateLiveReportInput_Targets_PassValue struct {
+	union json.RawMessage
+}
 
 // UpdateMetricDefinitionInput Editable subset of a metric definition. Every update creates a new immutable version. Immutable fields (slug, scope, outputType, calcType, …) are rejected with a 400.
 type UpdateMetricDefinitionInput struct {
@@ -37429,6 +40758,122 @@ type GetV1BenchmarkTargetByTargetKeyScoreSampleParams struct {
 	Limit        *int    `form:"limit,omitempty" json:"limit,omitempty"`
 	Offset       *int    `form:"offset,omitempty" json:"offset,omitempty"`
 }
+
+// GetV1CalendarConnectionParams defines parameters for GetV1CalendarConnection.
+type GetV1CalendarConnectionParams struct {
+	Provider *GetV1CalendarConnectionParamsProvider `form:"provider,omitempty" json:"provider,omitempty"`
+}
+
+// GetV1CalendarConnectionParamsProvider defines parameters for GetV1CalendarConnection.
+type GetV1CalendarConnectionParamsProvider string
+
+// GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth defines parameters for GetV1CalendarConnection.
+type GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth string
+
+// GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations defines parameters for GetV1CalendarConnection.
+type GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations string
+
+// GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold defines parameters for GetV1CalendarConnection.
+type GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold string
+
+// GetV1CalendarConnection200JSONResponseBodyDataProvider defines parameters for GetV1CalendarConnection.
+type GetV1CalendarConnection200JSONResponseBodyDataProvider string
+
+// GetV1CalendarConnection200JSONResponseBodyDataStatus defines parameters for GetV1CalendarConnection.
+type GetV1CalendarConnection200JSONResponseBodyDataStatus string
+
+// PostV1CalendarConnectionJSONBody defines parameters for PostV1CalendarConnection.
+type PostV1CalendarConnectionJSONBody struct {
+	// ApiKey For CAL_COM: a Cal.com API key (starts with `cal_`). It is verified against Cal.com before anything is stored, so an invalid key is a 400 and no connection is created. Stored encrypted and never returned.
+	ApiKey string `json:"apiKey"`
+
+	// Label Customer-facing name for this account, unique within the project. Required.
+	Label string `json:"label"`
+
+	// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+	Provider PostV1CalendarConnectionJSONBodyProvider `json:"provider"`
+
+	// Timezone The named IANA timezone to offer slots in, for example `America/Los_Angeles`. Omit to adopt the provider account’s own timezone. A fixed offset such as `-08:00` is rejected: it does not observe DST.
+	Timezone *string `json:"timezone,omitempty"`
+}
+
+// PostV1CalendarConnectionJSONBodyProvider defines parameters for PostV1CalendarConnection.
+type PostV1CalendarConnectionJSONBodyProvider string
+
+// PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth defines parameters for PostV1CalendarConnection.
+type PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth string
+
+// PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations defines parameters for PostV1CalendarConnection.
+type PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations string
+
+// PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold defines parameters for PostV1CalendarConnection.
+type PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold string
+
+// PostV1CalendarConnection201JSONResponseBodyDataProvider defines parameters for PostV1CalendarConnection.
+type PostV1CalendarConnection201JSONResponseBodyDataProvider string
+
+// PostV1CalendarConnection201JSONResponseBodyDataStatus defines parameters for PostV1CalendarConnection.
+type PostV1CalendarConnection201JSONResponseBodyDataStatus string
+
+// DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted defines parameters for DeleteV1CalendarConnectionByConnectionId.
+type DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted bool
+
+// GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth defines parameters for GetV1CalendarConnectionByConnectionId.
+type GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth string
+
+// GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations defines parameters for GetV1CalendarConnectionByConnectionId.
+type GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations string
+
+// GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold defines parameters for GetV1CalendarConnectionByConnectionId.
+type GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold string
+
+// GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider defines parameters for GetV1CalendarConnectionByConnectionId.
+type GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider string
+
+// GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus defines parameters for GetV1CalendarConnectionByConnectionId.
+type GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus string
+
+// PatchV1CalendarConnectionByConnectionIdJSONBody defines parameters for PatchV1CalendarConnectionByConnectionId.
+type PatchV1CalendarConnectionByConnectionIdJSONBody struct {
+	// ApiKey Rotate the credential. The new key is verified before it is stored, and a verified key returns the connection to ACTIVE, which is how a connection recovers from INVALID_CREDENTIALS.
+	ApiKey *string `json:"apiKey,omitempty"`
+
+	// Label Rename the connection.
+	Label *string `json:"label,omitempty"`
+
+	// Timezone Change the named IANA timezone slots are offered in.
+	Timezone *string `json:"timezone,omitempty"`
+}
+
+// PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth defines parameters for PatchV1CalendarConnectionByConnectionId.
+type PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth string
+
+// PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations defines parameters for PatchV1CalendarConnectionByConnectionId.
+type PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations string
+
+// PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold defines parameters for PatchV1CalendarConnectionByConnectionId.
+type PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold string
+
+// PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider defines parameters for PatchV1CalendarConnectionByConnectionId.
+type PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider string
+
+// PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus defines parameters for PatchV1CalendarConnectionByConnectionId.
+type PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus string
+
+// PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth defines parameters for PostV1CalendarConnectionByConnectionIdCheck.
+type PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth string
+
+// PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations defines parameters for PostV1CalendarConnectionByConnectionIdCheck.
+type PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations string
+
+// PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold defines parameters for PostV1CalendarConnectionByConnectionIdCheck.
+type PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold string
+
+// PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider defines parameters for PostV1CalendarConnectionByConnectionIdCheck.
+type PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider string
+
+// PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus defines parameters for PostV1CalendarConnectionByConnectionIdCheck.
+type PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus string
 
 // GetV1CallParams defines parameters for GetV1Call.
 type GetV1CallParams struct {
@@ -38449,6 +41894,21 @@ type GetV1KnowledgeBaseById200JSONResponseBodyDataSourceType string
 // GetV1KnowledgeBaseById200JSONResponseBodyDataStatus defines parameters for GetV1KnowledgeBaseById.
 type GetV1KnowledgeBaseById200JSONResponseBodyDataStatus string
 
+// GetV1LiveReportParams defines parameters for GetV1LiveReport.
+type GetV1LiveReportParams struct {
+	Limit  *int `form:"limit,omitempty" json:"limit,omitempty"`
+	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
+// DeleteV1LiveReportByReportId200JSONResponseBodyDataDeleted defines parameters for DeleteV1LiveReportByReportId.
+type DeleteV1LiveReportByReportId200JSONResponseBodyDataDeleted bool
+
+// GetV1LiveReportByReportIdDocumentParams defines parameters for GetV1LiveReportByReportIdDocument.
+type GetV1LiveReportByReportIdDocumentParams struct {
+	Limit  *int `form:"limit,omitempty" json:"limit,omitempty"`
+	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
 // GetV1MeApiKeysParams defines parameters for GetV1MeApiKeys.
 type GetV1MeApiKeysParams struct {
 	Status *GetV1MeApiKeysParamsStatus `form:"status,omitempty" json:"status,omitempty"`
@@ -39044,6 +42504,15 @@ type GetV1SimulationToolFixtureParams struct {
 	ToolName *string `form:"toolName,omitempty" json:"toolName,omitempty"`
 }
 
+// GetV1ToolParams defines parameters for GetV1Tool.
+type GetV1ToolParams struct {
+	AgentId        *openapi_types.UUID            `form:"agentId,omitempty" json:"agentId,omitempty"`
+	IncludeBuiltIn *GetV1ToolParamsIncludeBuiltIn `form:"includeBuiltIn,omitempty" json:"includeBuiltIn,omitempty"`
+}
+
+// GetV1ToolParamsIncludeBuiltIn defines parameters for GetV1Tool.
+type GetV1ToolParamsIncludeBuiltIn string
+
 // GetV1UsageParams defines parameters for GetV1Usage.
 type GetV1UsageParams struct {
 	From      time.Time           `form:"from" json:"from"`
@@ -39109,6 +42578,12 @@ type PostV1AutoimproveJobByJobIdAnswerJSONRequestBody = AutoimproveTextInput
 
 // PostV1AutoimproveJobByJobIdGuidanceJSONRequestBody defines body for PostV1AutoimproveJobByJobIdGuidance for application/json ContentType.
 type PostV1AutoimproveJobByJobIdGuidanceJSONRequestBody = AutoimproveTextInput
+
+// PostV1CalendarConnectionJSONRequestBody defines body for PostV1CalendarConnection for application/json ContentType.
+type PostV1CalendarConnectionJSONRequestBody PostV1CalendarConnectionJSONBody
+
+// PatchV1CalendarConnectionByConnectionIdJSONRequestBody defines body for PatchV1CalendarConnectionByConnectionId for application/json ContentType.
+type PatchV1CalendarConnectionByConnectionIdJSONRequestBody PatchV1CalendarConnectionByConnectionIdJSONBody
 
 // PostV1CallJSONRequestBody defines body for PostV1Call for application/json ContentType.
 type PostV1CallJSONRequestBody = CallCreate
@@ -39178,6 +42653,15 @@ type PostV1IssueJSONRequestBody = CreateIssueInput
 
 // PostV1KnowledgeBaseJSONRequestBody defines body for PostV1KnowledgeBase for application/json ContentType.
 type PostV1KnowledgeBaseJSONRequestBody PostV1KnowledgeBaseJSONBody
+
+// PostV1LiveReportJSONRequestBody defines body for PostV1LiveReport for application/json ContentType.
+type PostV1LiveReportJSONRequestBody = LiveReportInput
+
+// PatchV1LiveReportByReportIdJSONRequestBody defines body for PatchV1LiveReportByReportId for application/json ContentType.
+type PatchV1LiveReportByReportIdJSONRequestBody = UpdateLiveReportInput
+
+// PostV1LiveReportByReportIdGenerateJSONRequestBody defines body for PostV1LiveReportByReportIdGenerate for application/json ContentType.
+type PostV1LiveReportByReportIdGenerateJSONRequestBody = GenerateLiveReportInput
 
 // PostV1MeApiKeysJSONRequestBody defines body for PostV1MeApiKeys for application/json ContentType.
 type PostV1MeApiKeysJSONRequestBody = CreateMyApiKeyInput
@@ -39276,6 +42760,12 @@ type PutV1SimulationToolFixtureByFixtureIdJSONRequestBody = UpdateSimulationTool
 
 // PostV1SimulationToolMockJSONRequestBody defines body for PostV1SimulationToolMock for application/json ContentType.
 type PostV1SimulationToolMockJSONRequestBody = SimulationToolMockRequest
+
+// PostV1ToolJSONRequestBody defines body for PostV1Tool for application/json ContentType.
+type PostV1ToolJSONRequestBody = ToolBody
+
+// PutV1ToolByToolIdJSONRequestBody defines body for PutV1ToolByToolId for application/json ContentType.
+type PutV1ToolByToolIdJSONRequestBody = ToolBody
 
 // PostV1WebhookJSONRequestBody defines body for PostV1Webhook for application/json ContentType.
 type PostV1WebhookJSONRequestBody = CreateWebhookInput
@@ -41568,6 +45058,32 @@ func (t *ConfigBundleResources0) FromDashboardConfig(v DashboardConfig) error {
 
 // MergeDashboardConfig performs a merge with any union data inside the ConfigBundleResources0, using the provided DashboardConfig
 func (t *ConfigBundleResources0) MergeDashboardConfig(v DashboardConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportConfig returns the union data inside the ConfigBundleResources0 as a LiveReportConfig
+func (t ConfigBundleResources0) AsLiveReportConfig() (LiveReportConfig, error) {
+	var body LiveReportConfig
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportConfig overwrites any union data inside the ConfigBundleResources0 as the provided LiveReportConfig
+func (t *ConfigBundleResources0) FromLiveReportConfig(v LiveReportConfig) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportConfig performs a merge with any union data inside the ConfigBundleResources0, using the provided LiveReportConfig
+func (t *ConfigBundleResources0) MergeLiveReportConfig(v LiveReportConfig) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -45490,6 +49006,710 @@ func (t *InlineRunPlanConfig_ComparisonValues_Item) UnmarshalJSON(b []byte) erro
 	return err
 }
 
+// AsLiveReportFiltersValue0 returns the union data inside the LiveReport_Filters_Value as a LiveReportFiltersValue0
+func (t LiveReport_Filters_Value) AsLiveReportFiltersValue0() (LiveReportFiltersValue0, error) {
+	var body LiveReportFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportFiltersValue0 overwrites any union data inside the LiveReport_Filters_Value as the provided LiveReportFiltersValue0
+func (t *LiveReport_Filters_Value) FromLiveReportFiltersValue0(v LiveReportFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportFiltersValue0 performs a merge with any union data inside the LiveReport_Filters_Value, using the provided LiveReportFiltersValue0
+func (t *LiveReport_Filters_Value) MergeLiveReportFiltersValue0(v LiveReportFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportFiltersValue1 returns the union data inside the LiveReport_Filters_Value as a LiveReportFiltersValue1
+func (t LiveReport_Filters_Value) AsLiveReportFiltersValue1() (LiveReportFiltersValue1, error) {
+	var body LiveReportFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportFiltersValue1 overwrites any union data inside the LiveReport_Filters_Value as the provided LiveReportFiltersValue1
+func (t *LiveReport_Filters_Value) FromLiveReportFiltersValue1(v LiveReportFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportFiltersValue1 performs a merge with any union data inside the LiveReport_Filters_Value, using the provided LiveReportFiltersValue1
+func (t *LiveReport_Filters_Value) MergeLiveReportFiltersValue1(v LiveReportFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportFiltersValue2 returns the union data inside the LiveReport_Filters_Value as a LiveReportFiltersValue2
+func (t LiveReport_Filters_Value) AsLiveReportFiltersValue2() (LiveReportFiltersValue2, error) {
+	var body LiveReportFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportFiltersValue2 overwrites any union data inside the LiveReport_Filters_Value as the provided LiveReportFiltersValue2
+func (t *LiveReport_Filters_Value) FromLiveReportFiltersValue2(v LiveReportFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportFiltersValue2 performs a merge with any union data inside the LiveReport_Filters_Value, using the provided LiveReportFiltersValue2
+func (t *LiveReport_Filters_Value) MergeLiveReportFiltersValue2(v LiveReportFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t LiveReport_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *LiveReport_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsLiveReportTargetsPassValue0 returns the union data inside the LiveReport_Targets_PassValue as a LiveReportTargetsPassValue0
+func (t LiveReport_Targets_PassValue) AsLiveReportTargetsPassValue0() (LiveReportTargetsPassValue0, error) {
+	var body LiveReportTargetsPassValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportTargetsPassValue0 overwrites any union data inside the LiveReport_Targets_PassValue as the provided LiveReportTargetsPassValue0
+func (t *LiveReport_Targets_PassValue) FromLiveReportTargetsPassValue0(v LiveReportTargetsPassValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportTargetsPassValue0 performs a merge with any union data inside the LiveReport_Targets_PassValue, using the provided LiveReportTargetsPassValue0
+func (t *LiveReport_Targets_PassValue) MergeLiveReportTargetsPassValue0(v LiveReportTargetsPassValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportTargetsPassValue1 returns the union data inside the LiveReport_Targets_PassValue as a LiveReportTargetsPassValue1
+func (t LiveReport_Targets_PassValue) AsLiveReportTargetsPassValue1() (LiveReportTargetsPassValue1, error) {
+	var body LiveReportTargetsPassValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportTargetsPassValue1 overwrites any union data inside the LiveReport_Targets_PassValue as the provided LiveReportTargetsPassValue1
+func (t *LiveReport_Targets_PassValue) FromLiveReportTargetsPassValue1(v LiveReportTargetsPassValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportTargetsPassValue1 performs a merge with any union data inside the LiveReport_Targets_PassValue, using the provided LiveReportTargetsPassValue1
+func (t *LiveReport_Targets_PassValue) MergeLiveReportTargetsPassValue1(v LiveReportTargetsPassValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportTargetsPassValue2 returns the union data inside the LiveReport_Targets_PassValue as a LiveReportTargetsPassValue2
+func (t LiveReport_Targets_PassValue) AsLiveReportTargetsPassValue2() (LiveReportTargetsPassValue2, error) {
+	var body LiveReportTargetsPassValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportTargetsPassValue2 overwrites any union data inside the LiveReport_Targets_PassValue as the provided LiveReportTargetsPassValue2
+func (t *LiveReport_Targets_PassValue) FromLiveReportTargetsPassValue2(v LiveReportTargetsPassValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportTargetsPassValue2 performs a merge with any union data inside the LiveReport_Targets_PassValue, using the provided LiveReportTargetsPassValue2
+func (t *LiveReport_Targets_PassValue) MergeLiveReportTargetsPassValue2(v LiveReportTargetsPassValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t LiveReport_Targets_PassValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *LiveReport_Targets_PassValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsLiveReportDocumentDefinitionFiltersValue0 returns the union data inside the LiveReportDocument_Definition_Filters_Value as a LiveReportDocumentDefinitionFiltersValue0
+func (t LiveReportDocument_Definition_Filters_Value) AsLiveReportDocumentDefinitionFiltersValue0() (LiveReportDocumentDefinitionFiltersValue0, error) {
+	var body LiveReportDocumentDefinitionFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportDocumentDefinitionFiltersValue0 overwrites any union data inside the LiveReportDocument_Definition_Filters_Value as the provided LiveReportDocumentDefinitionFiltersValue0
+func (t *LiveReportDocument_Definition_Filters_Value) FromLiveReportDocumentDefinitionFiltersValue0(v LiveReportDocumentDefinitionFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportDocumentDefinitionFiltersValue0 performs a merge with any union data inside the LiveReportDocument_Definition_Filters_Value, using the provided LiveReportDocumentDefinitionFiltersValue0
+func (t *LiveReportDocument_Definition_Filters_Value) MergeLiveReportDocumentDefinitionFiltersValue0(v LiveReportDocumentDefinitionFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportDocumentDefinitionFiltersValue1 returns the union data inside the LiveReportDocument_Definition_Filters_Value as a LiveReportDocumentDefinitionFiltersValue1
+func (t LiveReportDocument_Definition_Filters_Value) AsLiveReportDocumentDefinitionFiltersValue1() (LiveReportDocumentDefinitionFiltersValue1, error) {
+	var body LiveReportDocumentDefinitionFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportDocumentDefinitionFiltersValue1 overwrites any union data inside the LiveReportDocument_Definition_Filters_Value as the provided LiveReportDocumentDefinitionFiltersValue1
+func (t *LiveReportDocument_Definition_Filters_Value) FromLiveReportDocumentDefinitionFiltersValue1(v LiveReportDocumentDefinitionFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportDocumentDefinitionFiltersValue1 performs a merge with any union data inside the LiveReportDocument_Definition_Filters_Value, using the provided LiveReportDocumentDefinitionFiltersValue1
+func (t *LiveReportDocument_Definition_Filters_Value) MergeLiveReportDocumentDefinitionFiltersValue1(v LiveReportDocumentDefinitionFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportDocumentDefinitionFiltersValue2 returns the union data inside the LiveReportDocument_Definition_Filters_Value as a LiveReportDocumentDefinitionFiltersValue2
+func (t LiveReportDocument_Definition_Filters_Value) AsLiveReportDocumentDefinitionFiltersValue2() (LiveReportDocumentDefinitionFiltersValue2, error) {
+	var body LiveReportDocumentDefinitionFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportDocumentDefinitionFiltersValue2 overwrites any union data inside the LiveReportDocument_Definition_Filters_Value as the provided LiveReportDocumentDefinitionFiltersValue2
+func (t *LiveReportDocument_Definition_Filters_Value) FromLiveReportDocumentDefinitionFiltersValue2(v LiveReportDocumentDefinitionFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportDocumentDefinitionFiltersValue2 performs a merge with any union data inside the LiveReportDocument_Definition_Filters_Value, using the provided LiveReportDocumentDefinitionFiltersValue2
+func (t *LiveReportDocument_Definition_Filters_Value) MergeLiveReportDocumentDefinitionFiltersValue2(v LiveReportDocumentDefinitionFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t LiveReportDocument_Definition_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *LiveReportDocument_Definition_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsLiveReportDocumentDefinitionTargetsPassValue0 returns the union data inside the LiveReportDocument_Definition_Targets_PassValue as a LiveReportDocumentDefinitionTargetsPassValue0
+func (t LiveReportDocument_Definition_Targets_PassValue) AsLiveReportDocumentDefinitionTargetsPassValue0() (LiveReportDocumentDefinitionTargetsPassValue0, error) {
+	var body LiveReportDocumentDefinitionTargetsPassValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportDocumentDefinitionTargetsPassValue0 overwrites any union data inside the LiveReportDocument_Definition_Targets_PassValue as the provided LiveReportDocumentDefinitionTargetsPassValue0
+func (t *LiveReportDocument_Definition_Targets_PassValue) FromLiveReportDocumentDefinitionTargetsPassValue0(v LiveReportDocumentDefinitionTargetsPassValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportDocumentDefinitionTargetsPassValue0 performs a merge with any union data inside the LiveReportDocument_Definition_Targets_PassValue, using the provided LiveReportDocumentDefinitionTargetsPassValue0
+func (t *LiveReportDocument_Definition_Targets_PassValue) MergeLiveReportDocumentDefinitionTargetsPassValue0(v LiveReportDocumentDefinitionTargetsPassValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportDocumentDefinitionTargetsPassValue1 returns the union data inside the LiveReportDocument_Definition_Targets_PassValue as a LiveReportDocumentDefinitionTargetsPassValue1
+func (t LiveReportDocument_Definition_Targets_PassValue) AsLiveReportDocumentDefinitionTargetsPassValue1() (LiveReportDocumentDefinitionTargetsPassValue1, error) {
+	var body LiveReportDocumentDefinitionTargetsPassValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportDocumentDefinitionTargetsPassValue1 overwrites any union data inside the LiveReportDocument_Definition_Targets_PassValue as the provided LiveReportDocumentDefinitionTargetsPassValue1
+func (t *LiveReportDocument_Definition_Targets_PassValue) FromLiveReportDocumentDefinitionTargetsPassValue1(v LiveReportDocumentDefinitionTargetsPassValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportDocumentDefinitionTargetsPassValue1 performs a merge with any union data inside the LiveReportDocument_Definition_Targets_PassValue, using the provided LiveReportDocumentDefinitionTargetsPassValue1
+func (t *LiveReportDocument_Definition_Targets_PassValue) MergeLiveReportDocumentDefinitionTargetsPassValue1(v LiveReportDocumentDefinitionTargetsPassValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportDocumentDefinitionTargetsPassValue2 returns the union data inside the LiveReportDocument_Definition_Targets_PassValue as a LiveReportDocumentDefinitionTargetsPassValue2
+func (t LiveReportDocument_Definition_Targets_PassValue) AsLiveReportDocumentDefinitionTargetsPassValue2() (LiveReportDocumentDefinitionTargetsPassValue2, error) {
+	var body LiveReportDocumentDefinitionTargetsPassValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportDocumentDefinitionTargetsPassValue2 overwrites any union data inside the LiveReportDocument_Definition_Targets_PassValue as the provided LiveReportDocumentDefinitionTargetsPassValue2
+func (t *LiveReportDocument_Definition_Targets_PassValue) FromLiveReportDocumentDefinitionTargetsPassValue2(v LiveReportDocumentDefinitionTargetsPassValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportDocumentDefinitionTargetsPassValue2 performs a merge with any union data inside the LiveReportDocument_Definition_Targets_PassValue, using the provided LiveReportDocumentDefinitionTargetsPassValue2
+func (t *LiveReportDocument_Definition_Targets_PassValue) MergeLiveReportDocumentDefinitionTargetsPassValue2(v LiveReportDocumentDefinitionTargetsPassValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t LiveReportDocument_Definition_Targets_PassValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *LiveReportDocument_Definition_Targets_PassValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsLiveReportFilterConfigValue0 returns the union data inside the LiveReportFilterConfig_Value as a LiveReportFilterConfigValue0
+func (t LiveReportFilterConfig_Value) AsLiveReportFilterConfigValue0() (LiveReportFilterConfigValue0, error) {
+	var body LiveReportFilterConfigValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportFilterConfigValue0 overwrites any union data inside the LiveReportFilterConfig_Value as the provided LiveReportFilterConfigValue0
+func (t *LiveReportFilterConfig_Value) FromLiveReportFilterConfigValue0(v LiveReportFilterConfigValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportFilterConfigValue0 performs a merge with any union data inside the LiveReportFilterConfig_Value, using the provided LiveReportFilterConfigValue0
+func (t *LiveReportFilterConfig_Value) MergeLiveReportFilterConfigValue0(v LiveReportFilterConfigValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportFilterConfigValue1 returns the union data inside the LiveReportFilterConfig_Value as a LiveReportFilterConfigValue1
+func (t LiveReportFilterConfig_Value) AsLiveReportFilterConfigValue1() (LiveReportFilterConfigValue1, error) {
+	var body LiveReportFilterConfigValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportFilterConfigValue1 overwrites any union data inside the LiveReportFilterConfig_Value as the provided LiveReportFilterConfigValue1
+func (t *LiveReportFilterConfig_Value) FromLiveReportFilterConfigValue1(v LiveReportFilterConfigValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportFilterConfigValue1 performs a merge with any union data inside the LiveReportFilterConfig_Value, using the provided LiveReportFilterConfigValue1
+func (t *LiveReportFilterConfig_Value) MergeLiveReportFilterConfigValue1(v LiveReportFilterConfigValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportFilterConfigValue2 returns the union data inside the LiveReportFilterConfig_Value as a LiveReportFilterConfigValue2
+func (t LiveReportFilterConfig_Value) AsLiveReportFilterConfigValue2() (LiveReportFilterConfigValue2, error) {
+	var body LiveReportFilterConfigValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportFilterConfigValue2 overwrites any union data inside the LiveReportFilterConfig_Value as the provided LiveReportFilterConfigValue2
+func (t *LiveReportFilterConfig_Value) FromLiveReportFilterConfigValue2(v LiveReportFilterConfigValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportFilterConfigValue2 performs a merge with any union data inside the LiveReportFilterConfig_Value, using the provided LiveReportFilterConfigValue2
+func (t *LiveReportFilterConfig_Value) MergeLiveReportFilterConfigValue2(v LiveReportFilterConfigValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t LiveReportFilterConfig_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *LiveReportFilterConfig_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsLiveReportInputFiltersValue0 returns the union data inside the LiveReportInput_Filters_Value as a LiveReportInputFiltersValue0
+func (t LiveReportInput_Filters_Value) AsLiveReportInputFiltersValue0() (LiveReportInputFiltersValue0, error) {
+	var body LiveReportInputFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportInputFiltersValue0 overwrites any union data inside the LiveReportInput_Filters_Value as the provided LiveReportInputFiltersValue0
+func (t *LiveReportInput_Filters_Value) FromLiveReportInputFiltersValue0(v LiveReportInputFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportInputFiltersValue0 performs a merge with any union data inside the LiveReportInput_Filters_Value, using the provided LiveReportInputFiltersValue0
+func (t *LiveReportInput_Filters_Value) MergeLiveReportInputFiltersValue0(v LiveReportInputFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportInputFiltersValue1 returns the union data inside the LiveReportInput_Filters_Value as a LiveReportInputFiltersValue1
+func (t LiveReportInput_Filters_Value) AsLiveReportInputFiltersValue1() (LiveReportInputFiltersValue1, error) {
+	var body LiveReportInputFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportInputFiltersValue1 overwrites any union data inside the LiveReportInput_Filters_Value as the provided LiveReportInputFiltersValue1
+func (t *LiveReportInput_Filters_Value) FromLiveReportInputFiltersValue1(v LiveReportInputFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportInputFiltersValue1 performs a merge with any union data inside the LiveReportInput_Filters_Value, using the provided LiveReportInputFiltersValue1
+func (t *LiveReportInput_Filters_Value) MergeLiveReportInputFiltersValue1(v LiveReportInputFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportInputFiltersValue2 returns the union data inside the LiveReportInput_Filters_Value as a LiveReportInputFiltersValue2
+func (t LiveReportInput_Filters_Value) AsLiveReportInputFiltersValue2() (LiveReportInputFiltersValue2, error) {
+	var body LiveReportInputFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportInputFiltersValue2 overwrites any union data inside the LiveReportInput_Filters_Value as the provided LiveReportInputFiltersValue2
+func (t *LiveReportInput_Filters_Value) FromLiveReportInputFiltersValue2(v LiveReportInputFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportInputFiltersValue2 performs a merge with any union data inside the LiveReportInput_Filters_Value, using the provided LiveReportInputFiltersValue2
+func (t *LiveReportInput_Filters_Value) MergeLiveReportInputFiltersValue2(v LiveReportInputFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t LiveReportInput_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *LiveReportInput_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsLiveReportInputTargetsPassValue0 returns the union data inside the LiveReportInput_Targets_PassValue as a LiveReportInputTargetsPassValue0
+func (t LiveReportInput_Targets_PassValue) AsLiveReportInputTargetsPassValue0() (LiveReportInputTargetsPassValue0, error) {
+	var body LiveReportInputTargetsPassValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportInputTargetsPassValue0 overwrites any union data inside the LiveReportInput_Targets_PassValue as the provided LiveReportInputTargetsPassValue0
+func (t *LiveReportInput_Targets_PassValue) FromLiveReportInputTargetsPassValue0(v LiveReportInputTargetsPassValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportInputTargetsPassValue0 performs a merge with any union data inside the LiveReportInput_Targets_PassValue, using the provided LiveReportInputTargetsPassValue0
+func (t *LiveReportInput_Targets_PassValue) MergeLiveReportInputTargetsPassValue0(v LiveReportInputTargetsPassValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportInputTargetsPassValue1 returns the union data inside the LiveReportInput_Targets_PassValue as a LiveReportInputTargetsPassValue1
+func (t LiveReportInput_Targets_PassValue) AsLiveReportInputTargetsPassValue1() (LiveReportInputTargetsPassValue1, error) {
+	var body LiveReportInputTargetsPassValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportInputTargetsPassValue1 overwrites any union data inside the LiveReportInput_Targets_PassValue as the provided LiveReportInputTargetsPassValue1
+func (t *LiveReportInput_Targets_PassValue) FromLiveReportInputTargetsPassValue1(v LiveReportInputTargetsPassValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportInputTargetsPassValue1 performs a merge with any union data inside the LiveReportInput_Targets_PassValue, using the provided LiveReportInputTargetsPassValue1
+func (t *LiveReportInput_Targets_PassValue) MergeLiveReportInputTargetsPassValue1(v LiveReportInputTargetsPassValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportInputTargetsPassValue2 returns the union data inside the LiveReportInput_Targets_PassValue as a LiveReportInputTargetsPassValue2
+func (t LiveReportInput_Targets_PassValue) AsLiveReportInputTargetsPassValue2() (LiveReportInputTargetsPassValue2, error) {
+	var body LiveReportInputTargetsPassValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportInputTargetsPassValue2 overwrites any union data inside the LiveReportInput_Targets_PassValue as the provided LiveReportInputTargetsPassValue2
+func (t *LiveReportInput_Targets_PassValue) FromLiveReportInputTargetsPassValue2(v LiveReportInputTargetsPassValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportInputTargetsPassValue2 performs a merge with any union data inside the LiveReportInput_Targets_PassValue, using the provided LiveReportInputTargetsPassValue2
+func (t *LiveReportInput_Targets_PassValue) MergeLiveReportInputTargetsPassValue2(v LiveReportInputTargetsPassValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t LiveReportInput_Targets_PassValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *LiveReportInput_Targets_PassValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsLiveReportTargetConfigPassValue0 returns the union data inside the LiveReportTargetConfig_PassValue as a LiveReportTargetConfigPassValue0
+func (t LiveReportTargetConfig_PassValue) AsLiveReportTargetConfigPassValue0() (LiveReportTargetConfigPassValue0, error) {
+	var body LiveReportTargetConfigPassValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportTargetConfigPassValue0 overwrites any union data inside the LiveReportTargetConfig_PassValue as the provided LiveReportTargetConfigPassValue0
+func (t *LiveReportTargetConfig_PassValue) FromLiveReportTargetConfigPassValue0(v LiveReportTargetConfigPassValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportTargetConfigPassValue0 performs a merge with any union data inside the LiveReportTargetConfig_PassValue, using the provided LiveReportTargetConfigPassValue0
+func (t *LiveReportTargetConfig_PassValue) MergeLiveReportTargetConfigPassValue0(v LiveReportTargetConfigPassValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportTargetConfigPassValue1 returns the union data inside the LiveReportTargetConfig_PassValue as a LiveReportTargetConfigPassValue1
+func (t LiveReportTargetConfig_PassValue) AsLiveReportTargetConfigPassValue1() (LiveReportTargetConfigPassValue1, error) {
+	var body LiveReportTargetConfigPassValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportTargetConfigPassValue1 overwrites any union data inside the LiveReportTargetConfig_PassValue as the provided LiveReportTargetConfigPassValue1
+func (t *LiveReportTargetConfig_PassValue) FromLiveReportTargetConfigPassValue1(v LiveReportTargetConfigPassValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportTargetConfigPassValue1 performs a merge with any union data inside the LiveReportTargetConfig_PassValue, using the provided LiveReportTargetConfigPassValue1
+func (t *LiveReportTargetConfig_PassValue) MergeLiveReportTargetConfigPassValue1(v LiveReportTargetConfigPassValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportTargetConfigPassValue2 returns the union data inside the LiveReportTargetConfig_PassValue as a LiveReportTargetConfigPassValue2
+func (t LiveReportTargetConfig_PassValue) AsLiveReportTargetConfigPassValue2() (LiveReportTargetConfigPassValue2, error) {
+	var body LiveReportTargetConfigPassValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportTargetConfigPassValue2 overwrites any union data inside the LiveReportTargetConfig_PassValue as the provided LiveReportTargetConfigPassValue2
+func (t *LiveReportTargetConfig_PassValue) FromLiveReportTargetConfigPassValue2(v LiveReportTargetConfigPassValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportTargetConfigPassValue2 performs a merge with any union data inside the LiveReportTargetConfig_PassValue, using the provided LiveReportTargetConfigPassValue2
+func (t *LiveReportTargetConfig_PassValue) MergeLiveReportTargetConfigPassValue2(v LiveReportTargetConfigPassValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t LiveReportTargetConfig_PassValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *LiveReportTargetConfig_PassValue) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsMetricCollectionJobMetricValuesResponseValues0Value0 returns the union data inside the MetricCollectionJobMetricValuesResponse_Values_0_Value as a MetricCollectionJobMetricValuesResponseValues0Value0
 func (t MetricCollectionJobMetricValuesResponse_Values_0_Value) AsMetricCollectionJobMetricValuesResponseValues0Value0() (MetricCollectionJobMetricValuesResponseValues0Value0, error) {
 	var body MetricCollectionJobMetricValuesResponseValues0Value0
@@ -46353,6 +50573,32 @@ func (t *ProjectConfig_Resources_Item) FromDashboardConfig(v DashboardConfig) er
 
 // MergeDashboardConfig performs a merge with any union data inside the ProjectConfig_Resources_Item, using the provided DashboardConfig
 func (t *ProjectConfig_Resources_Item) MergeDashboardConfig(v DashboardConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLiveReportConfig returns the union data inside the ProjectConfig_Resources_Item as a LiveReportConfig
+func (t ProjectConfig_Resources_Item) AsLiveReportConfig() (LiveReportConfig, error) {
+	var body LiveReportConfig
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiveReportConfig overwrites any union data inside the ProjectConfig_Resources_Item as the provided LiveReportConfig
+func (t *ProjectConfig_Resources_Item) FromLiveReportConfig(v LiveReportConfig) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiveReportConfig performs a merge with any union data inside the ProjectConfig_Resources_Item, using the provided LiveReportConfig
+func (t *ProjectConfig_Resources_Item) MergeLiveReportConfig(v LiveReportConfig) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -48455,6 +52701,182 @@ func (t UpdateHttpRequestDefinitionInput_Body) MarshalJSON() ([]byte, error) {
 }
 
 func (t *UpdateHttpRequestDefinitionInput_Body) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateLiveReportInputFiltersValue0 returns the union data inside the UpdateLiveReportInput_Filters_Value as a UpdateLiveReportInputFiltersValue0
+func (t UpdateLiveReportInput_Filters_Value) AsUpdateLiveReportInputFiltersValue0() (UpdateLiveReportInputFiltersValue0, error) {
+	var body UpdateLiveReportInputFiltersValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateLiveReportInputFiltersValue0 overwrites any union data inside the UpdateLiveReportInput_Filters_Value as the provided UpdateLiveReportInputFiltersValue0
+func (t *UpdateLiveReportInput_Filters_Value) FromUpdateLiveReportInputFiltersValue0(v UpdateLiveReportInputFiltersValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateLiveReportInputFiltersValue0 performs a merge with any union data inside the UpdateLiveReportInput_Filters_Value, using the provided UpdateLiveReportInputFiltersValue0
+func (t *UpdateLiveReportInput_Filters_Value) MergeUpdateLiveReportInputFiltersValue0(v UpdateLiveReportInputFiltersValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateLiveReportInputFiltersValue1 returns the union data inside the UpdateLiveReportInput_Filters_Value as a UpdateLiveReportInputFiltersValue1
+func (t UpdateLiveReportInput_Filters_Value) AsUpdateLiveReportInputFiltersValue1() (UpdateLiveReportInputFiltersValue1, error) {
+	var body UpdateLiveReportInputFiltersValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateLiveReportInputFiltersValue1 overwrites any union data inside the UpdateLiveReportInput_Filters_Value as the provided UpdateLiveReportInputFiltersValue1
+func (t *UpdateLiveReportInput_Filters_Value) FromUpdateLiveReportInputFiltersValue1(v UpdateLiveReportInputFiltersValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateLiveReportInputFiltersValue1 performs a merge with any union data inside the UpdateLiveReportInput_Filters_Value, using the provided UpdateLiveReportInputFiltersValue1
+func (t *UpdateLiveReportInput_Filters_Value) MergeUpdateLiveReportInputFiltersValue1(v UpdateLiveReportInputFiltersValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateLiveReportInputFiltersValue2 returns the union data inside the UpdateLiveReportInput_Filters_Value as a UpdateLiveReportInputFiltersValue2
+func (t UpdateLiveReportInput_Filters_Value) AsUpdateLiveReportInputFiltersValue2() (UpdateLiveReportInputFiltersValue2, error) {
+	var body UpdateLiveReportInputFiltersValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateLiveReportInputFiltersValue2 overwrites any union data inside the UpdateLiveReportInput_Filters_Value as the provided UpdateLiveReportInputFiltersValue2
+func (t *UpdateLiveReportInput_Filters_Value) FromUpdateLiveReportInputFiltersValue2(v UpdateLiveReportInputFiltersValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateLiveReportInputFiltersValue2 performs a merge with any union data inside the UpdateLiveReportInput_Filters_Value, using the provided UpdateLiveReportInputFiltersValue2
+func (t *UpdateLiveReportInput_Filters_Value) MergeUpdateLiveReportInputFiltersValue2(v UpdateLiveReportInputFiltersValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateLiveReportInput_Filters_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateLiveReportInput_Filters_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsUpdateLiveReportInputTargetsPassValue0 returns the union data inside the UpdateLiveReportInput_Targets_PassValue as a UpdateLiveReportInputTargetsPassValue0
+func (t UpdateLiveReportInput_Targets_PassValue) AsUpdateLiveReportInputTargetsPassValue0() (UpdateLiveReportInputTargetsPassValue0, error) {
+	var body UpdateLiveReportInputTargetsPassValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateLiveReportInputTargetsPassValue0 overwrites any union data inside the UpdateLiveReportInput_Targets_PassValue as the provided UpdateLiveReportInputTargetsPassValue0
+func (t *UpdateLiveReportInput_Targets_PassValue) FromUpdateLiveReportInputTargetsPassValue0(v UpdateLiveReportInputTargetsPassValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateLiveReportInputTargetsPassValue0 performs a merge with any union data inside the UpdateLiveReportInput_Targets_PassValue, using the provided UpdateLiveReportInputTargetsPassValue0
+func (t *UpdateLiveReportInput_Targets_PassValue) MergeUpdateLiveReportInputTargetsPassValue0(v UpdateLiveReportInputTargetsPassValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateLiveReportInputTargetsPassValue1 returns the union data inside the UpdateLiveReportInput_Targets_PassValue as a UpdateLiveReportInputTargetsPassValue1
+func (t UpdateLiveReportInput_Targets_PassValue) AsUpdateLiveReportInputTargetsPassValue1() (UpdateLiveReportInputTargetsPassValue1, error) {
+	var body UpdateLiveReportInputTargetsPassValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateLiveReportInputTargetsPassValue1 overwrites any union data inside the UpdateLiveReportInput_Targets_PassValue as the provided UpdateLiveReportInputTargetsPassValue1
+func (t *UpdateLiveReportInput_Targets_PassValue) FromUpdateLiveReportInputTargetsPassValue1(v UpdateLiveReportInputTargetsPassValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateLiveReportInputTargetsPassValue1 performs a merge with any union data inside the UpdateLiveReportInput_Targets_PassValue, using the provided UpdateLiveReportInputTargetsPassValue1
+func (t *UpdateLiveReportInput_Targets_PassValue) MergeUpdateLiveReportInputTargetsPassValue1(v UpdateLiveReportInputTargetsPassValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsUpdateLiveReportInputTargetsPassValue2 returns the union data inside the UpdateLiveReportInput_Targets_PassValue as a UpdateLiveReportInputTargetsPassValue2
+func (t UpdateLiveReportInput_Targets_PassValue) AsUpdateLiveReportInputTargetsPassValue2() (UpdateLiveReportInputTargetsPassValue2, error) {
+	var body UpdateLiveReportInputTargetsPassValue2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromUpdateLiveReportInputTargetsPassValue2 overwrites any union data inside the UpdateLiveReportInput_Targets_PassValue as the provided UpdateLiveReportInputTargetsPassValue2
+func (t *UpdateLiveReportInput_Targets_PassValue) FromUpdateLiveReportInputTargetsPassValue2(v UpdateLiveReportInputTargetsPassValue2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeUpdateLiveReportInputTargetsPassValue2 performs a merge with any union data inside the UpdateLiveReportInput_Targets_PassValue, using the provided UpdateLiveReportInputTargetsPassValue2
+func (t *UpdateLiveReportInput_Targets_PassValue) MergeUpdateLiveReportInputTargetsPassValue2(v UpdateLiveReportInputTargetsPassValue2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t UpdateLiveReportInput_Targets_PassValue) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *UpdateLiveReportInput_Targets_PassValue) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -50758,6 +55180,70 @@ type ClientInterface interface {
 	// Corresponds with GET /v1/benchmark/target/{targetKey}/score-sample (the `GetV1BenchmarkTargetByTargetKeyScoreSample` operationId).
 	GetV1BenchmarkTargetByTargetKeyScoreSample(ctx context.Context, targetKey string, params *GetV1BenchmarkTargetByTargetKeyScoreSampleParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetV1CalendarConnection List calendar connections
+	//
+	// Returns every calendar connection in the authenticated project, by label. A project has a handful of these, so the list is not paginated: `pagination.hasMore` is always false.
+	//
+	// Corresponds with GET /v1/calendar-connection (the `GetV1CalendarConnection` operationId).
+	GetV1CalendarConnection(ctx context.Context, params *GetV1CalendarConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1CalendarConnectionWithBody Connect a calendar account
+	//
+	// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
+	PostV1CalendarConnectionWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1CalendarConnection Connect a calendar account
+	//
+	// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
+	PostV1CalendarConnection(ctx context.Context, body PostV1CalendarConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1CalendarConnectionByConnectionId Delete a calendar connection
+	//
+	// Deletes the connection and its stored credential outright. A credential the customer deleted should stop existing, so this is not an archive.
+	//
+	// Corresponds with DELETE /v1/calendar-connection/{connectionId} (the `DeleteV1CalendarConnectionByConnectionId` operationId).
+	DeleteV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1CalendarConnectionByConnectionId Get a calendar connection
+	//
+	// Returns one calendar connection. The stored credential is never included.
+	//
+	// Corresponds with GET /v1/calendar-connection/{connectionId} (the `GetV1CalendarConnectionByConnectionId` operationId).
+	GetV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchV1CalendarConnectionByConnectionIdWithBody Update a calendar connection
+	//
+	// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
+	PatchV1CalendarConnectionByConnectionIdWithBody(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchV1CalendarConnectionByConnectionId Update a calendar connection
+	//
+	// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
+	PatchV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, body PatchV1CalendarConnectionByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1CalendarConnectionByConnectionIdCheck Check a calendar connection
+	//
+	// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
+	//
+	// Corresponds with POST /v1/calendar-connection/{connectionId}/check (the `PostV1CalendarConnectionByConnectionIdCheck` operationId).
+	PostV1CalendarConnectionByConnectionIdCheck(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetV1Call List calls
 	//
 	// Returns a paginated list of calls for the authenticated project. Pass agentId to keep calls for specific agents, or properties[agent_name][eq] when you only have the agent name. sortBy and sortDirection apply together with those filters.
@@ -51417,6 +55903,117 @@ type ClientInterface interface {
 	//
 	// Corresponds with GET /v1/knowledge-base/{id} (the `GetV1KnowledgeBaseById` operationId).
 	GetV1KnowledgeBaseById(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1LiveReport List live reports
+	//
+	// Lists the project's saved live call reports, newest first.
+	//
+	// Corresponds with GET /v1/live-report (the `GetV1LiveReport` operationId).
+	GetV1LiveReport(ctx context.Context, params *GetV1LiveReportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1LiveReportWithBody Create a live report
+	//
+	// Saves a report on the project's live calls. Simulations are never included.
+	//
+	// Targets are analytics measures held to a bar: a threshold metric is read as its pass rate (`value` is a
+	// percentage, 0-100, held AT_LEAST by default); a numeric metric as its average (held AT_MOST by default).
+	// Every target is read for the period and the period before it, so the report says whether each was met
+	// and how it moved.
+	//
+	// Scheduled reports are written `deliveryHour` hours into the day after each period ends in `timezone`
+	// (a week runs Monday to Sunday), then emailed and posted per `notifications`. With `generateNow` (the
+	// default) the report for the latest closed period is written right away and not sent.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/live-report (the `PostV1LiveReport` operationId).
+	PostV1LiveReportWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1LiveReport Create a live report
+	//
+	// Saves a report on the project's live calls. Simulations are never included.
+	//
+	// Targets are analytics measures held to a bar: a threshold metric is read as its pass rate (`value` is a
+	// percentage, 0-100, held AT_LEAST by default); a numeric metric as its average (held AT_MOST by default).
+	// Every target is read for the period and the period before it, so the report says whether each was met
+	// and how it moved.
+	//
+	// Scheduled reports are written `deliveryHour` hours into the day after each period ends in `timezone`
+	// (a week runs Monday to Sunday), then emailed and posted per `notifications`. With `generateNow` (the
+	// default) the report for the latest closed period is written right away and not sent.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/live-report (the `PostV1LiveReport` operationId).
+	PostV1LiveReport(ctx context.Context, body PostV1LiveReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1LiveReportByReportId Delete a live report
+	//
+	// Deletes the report and stops its scheduled reports.
+	//
+	// Corresponds with DELETE /v1/live-report/{reportId} (the `DeleteV1LiveReportByReportId` operationId).
+	DeleteV1LiveReportByReportId(ctx context.Context, reportId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1LiveReportByReportId Get a live report
+	//
+	// Corresponds with GET /v1/live-report/{reportId} (the `GetV1LiveReportByReportId` operationId).
+	GetV1LiveReportByReportId(ctx context.Context, reportId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchV1LiveReportByReportIdWithBody Update a live report
+	//
+	// Changes the fields sent. Set `status` to PAUSED to stop scheduled reports.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PATCH /v1/live-report/{reportId} (the `PatchV1LiveReportByReportId` operationId).
+	PatchV1LiveReportByReportIdWithBody(ctx context.Context, reportId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchV1LiveReportByReportId Update a live report
+	//
+	// Changes the fields sent. Set `status` to PAUSED to stop scheduled reports.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PATCH /v1/live-report/{reportId} (the `PatchV1LiveReportByReportId` operationId).
+	PatchV1LiveReportByReportId(ctx context.Context, reportId openapi_types.UUID, body PatchV1LiveReportByReportIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1LiveReportByReportIdDocument List report documents
+	//
+	// Lists a report's documents, newest period first.
+	//
+	// Corresponds with GET /v1/live-report/{reportId}/document (the `GetV1LiveReportByReportIdDocument` operationId).
+	GetV1LiveReportByReportIdDocument(ctx context.Context, reportId string, params *GetV1LiveReportByReportIdDocumentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1LiveReportByReportIdDocumentByDocumentId Get a report document
+	//
+	// Returns one written report. `document` is null until `status` is READY. Theme excerpts and grader quotes (call transcript text) are included only for keys with transcript:read.
+	//
+	// Corresponds with GET /v1/live-report/{reportId}/document/{documentId} (the `GetV1LiveReportByReportIdDocumentByDocumentId` operationId).
+	GetV1LiveReportByReportIdDocumentByDocumentId(ctx context.Context, reportId openapi_types.UUID, documentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1LiveReportByReportIdGenerateWithBody Generate a live report document
+	//
+	// Writes the report now, for its latest closed period or a custom window (`periodStart` + `periodEnd`,
+	// at most 92 days, ended). Returns 202 with the document in PENDING; poll
+	// GET /v1/live-report/{reportId}/document/{documentId} until `status` is READY or FAILED (typically a few
+	// minutes). An identical request already in flight is returned as-is. A generated document is not emailed.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/live-report/{reportId}/generate (the `PostV1LiveReportByReportIdGenerate` operationId).
+	PostV1LiveReportByReportIdGenerateWithBody(ctx context.Context, reportId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1LiveReportByReportIdGenerate Generate a live report document
+	//
+	// Writes the report now, for its latest closed period or a custom window (`periodStart` + `periodEnd`,
+	// at most 92 days, ended). Returns 202 with the document in PENDING; poll
+	// GET /v1/live-report/{reportId}/document/{documentId} until `status` is READY or FAILED (typically a few
+	// minutes). An identical request already in flight is returned as-is. A generated document is not emailed.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/live-report/{reportId}/generate (the `PostV1LiveReportByReportIdGenerate` operationId).
+	PostV1LiveReportByReportIdGenerate(ctx context.Context, reportId openapi_types.UUID, body PostV1LiveReportByReportIdGenerateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1Me Describe the current credential
 	//
@@ -52576,6 +57173,61 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/simulation/tool-mock (the `PostV1SimulationToolMock` operationId).
 	PostV1SimulationToolMock(ctx context.Context, body PostV1SimulationToolMockJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1Tool List tools
+	//
+	// The project's tools and the built-in ones, each with its latest version: inputs, description and, for a tool a hosted agent runs, its request. Attach one to an agent draft by id.
+	//
+	// Corresponds with GET /v1/tool (the `GetV1Tool` operationId).
+	GetV1Tool(ctx context.Context, params *GetV1ToolParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1ToolWithBody Create a tool
+	//
+	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/tool (the `PostV1Tool` operationId).
+	PostV1ToolWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1Tool Create a tool
+	//
+	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/tool (the `PostV1Tool` operationId).
+	PostV1Tool(ctx context.Context, body PostV1ToolJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1ToolByToolId Delete a tool
+	//
+	// Deletes a tool no agent version uses. A tool an agent version uses returns 409.
+	//
+	// Corresponds with DELETE /v1/tool/{toolId} (the `DeleteV1ToolByToolId` operationId).
+	DeleteV1ToolByToolId(ctx context.Context, toolId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1ToolByToolId Get a tool
+	//
+	// Corresponds with GET /v1/tool/{toolId} (the `GetV1ToolByToolId` operationId).
+	GetV1ToolByToolId(ctx context.Context, toolId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1ToolByToolIdWithBody Update a tool
+	//
+	// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/tool/{toolId} (the `PutV1ToolByToolId` operationId).
+	PutV1ToolByToolIdWithBody(ctx context.Context, toolId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1ToolByToolId Update a tool
+	//
+	// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /v1/tool/{toolId} (the `PutV1ToolByToolId` operationId).
+	PutV1ToolByToolId(ctx context.Context, toolId openapi_types.UUID, body PutV1ToolByToolIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1Usage Get usage & cost
 	//
@@ -53751,6 +58403,150 @@ func (c *Client) GetV1BenchmarkTargetByTargetKeyHistory(ctx context.Context, tar
 // Corresponds with GET /v1/benchmark/target/{targetKey}/score-sample (the `GetV1BenchmarkTargetByTargetKeyScoreSample` operationId).
 func (c *Client) GetV1BenchmarkTargetByTargetKeyScoreSample(ctx context.Context, targetKey string, params *GetV1BenchmarkTargetByTargetKeyScoreSampleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetV1BenchmarkTargetByTargetKeyScoreSampleRequest(c.Server, targetKey, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1CalendarConnection List calendar connections
+//
+// Returns every calendar connection in the authenticated project, by label. A project has a handful of these, so the list is not paginated: `pagination.hasMore` is always false.
+//
+// Corresponds with GET /v1/calendar-connection (the `GetV1CalendarConnection` operationId).
+func (c *Client) GetV1CalendarConnection(ctx context.Context, params *GetV1CalendarConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1CalendarConnectionRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1CalendarConnectionWithBody Connect a calendar account
+//
+// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
+func (c *Client) PostV1CalendarConnectionWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1CalendarConnectionRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1CalendarConnection Connect a calendar account
+//
+// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
+func (c *Client) PostV1CalendarConnection(ctx context.Context, body PostV1CalendarConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1CalendarConnectionRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1CalendarConnectionByConnectionId Delete a calendar connection
+//
+// Deletes the connection and its stored credential outright. A credential the customer deleted should stop existing, so this is not an archive.
+//
+// Corresponds with DELETE /v1/calendar-connection/{connectionId} (the `DeleteV1CalendarConnectionByConnectionId` operationId).
+func (c *Client) DeleteV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1CalendarConnectionByConnectionIdRequest(c.Server, connectionId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1CalendarConnectionByConnectionId Get a calendar connection
+//
+// Returns one calendar connection. The stored credential is never included.
+//
+// Corresponds with GET /v1/calendar-connection/{connectionId} (the `GetV1CalendarConnectionByConnectionId` operationId).
+func (c *Client) GetV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1CalendarConnectionByConnectionIdRequest(c.Server, connectionId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchV1CalendarConnectionByConnectionIdWithBody Update a calendar connection
+//
+// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
+func (c *Client) PatchV1CalendarConnectionByConnectionIdWithBody(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchV1CalendarConnectionByConnectionIdRequestWithBody(c.Server, connectionId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchV1CalendarConnectionByConnectionId Update a calendar connection
+//
+// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
+func (c *Client) PatchV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, body PatchV1CalendarConnectionByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchV1CalendarConnectionByConnectionIdRequest(c.Server, connectionId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1CalendarConnectionByConnectionIdCheck Check a calendar connection
+//
+// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
+//
+// Corresponds with POST /v1/calendar-connection/{connectionId}/check (the `PostV1CalendarConnectionByConnectionIdCheck` operationId).
+func (c *Client) PostV1CalendarConnectionByConnectionIdCheck(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1CalendarConnectionByConnectionIdCheckRequest(c.Server, connectionId)
 	if err != nil {
 		return nil, err
 	}
@@ -55151,6 +59947,227 @@ func (c *Client) PostV1KnowledgeBase(ctx context.Context, body PostV1KnowledgeBa
 // Corresponds with GET /v1/knowledge-base/{id} (the `GetV1KnowledgeBaseById` operationId).
 func (c *Client) GetV1KnowledgeBaseById(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetV1KnowledgeBaseByIdRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1LiveReport List live reports
+//
+// Lists the project's saved live call reports, newest first.
+//
+// Corresponds with GET /v1/live-report (the `GetV1LiveReport` operationId).
+func (c *Client) GetV1LiveReport(ctx context.Context, params *GetV1LiveReportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1LiveReportRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1LiveReportWithBody Create a live report
+//
+// Saves a report on the project's live calls. Simulations are never included.
+//
+// Targets are analytics measures held to a bar: a threshold metric is read as its pass rate (`value` is a
+// percentage, 0-100, held AT_LEAST by default); a numeric metric as its average (held AT_MOST by default).
+// Every target is read for the period and the period before it, so the report says whether each was met
+// and how it moved.
+//
+// Scheduled reports are written `deliveryHour` hours into the day after each period ends in `timezone`
+// (a week runs Monday to Sunday), then emailed and posted per `notifications`. With `generateNow` (the
+// default) the report for the latest closed period is written right away and not sent.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/live-report (the `PostV1LiveReport` operationId).
+func (c *Client) PostV1LiveReportWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1LiveReportRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1LiveReport Create a live report
+//
+// Saves a report on the project's live calls. Simulations are never included.
+//
+// Targets are analytics measures held to a bar: a threshold metric is read as its pass rate (`value` is a
+// percentage, 0-100, held AT_LEAST by default); a numeric metric as its average (held AT_MOST by default).
+// Every target is read for the period and the period before it, so the report says whether each was met
+// and how it moved.
+//
+// Scheduled reports are written `deliveryHour` hours into the day after each period ends in `timezone`
+// (a week runs Monday to Sunday), then emailed and posted per `notifications`. With `generateNow` (the
+// default) the report for the latest closed period is written right away and not sent.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/live-report (the `PostV1LiveReport` operationId).
+func (c *Client) PostV1LiveReport(ctx context.Context, body PostV1LiveReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1LiveReportRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1LiveReportByReportId Delete a live report
+//
+// Deletes the report and stops its scheduled reports.
+//
+// Corresponds with DELETE /v1/live-report/{reportId} (the `DeleteV1LiveReportByReportId` operationId).
+func (c *Client) DeleteV1LiveReportByReportId(ctx context.Context, reportId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1LiveReportByReportIdRequest(c.Server, reportId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1LiveReportByReportId Get a live report
+//
+// Corresponds with GET /v1/live-report/{reportId} (the `GetV1LiveReportByReportId` operationId).
+func (c *Client) GetV1LiveReportByReportId(ctx context.Context, reportId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1LiveReportByReportIdRequest(c.Server, reportId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchV1LiveReportByReportIdWithBody Update a live report
+//
+// Changes the fields sent. Set `status` to PAUSED to stop scheduled reports.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/live-report/{reportId} (the `PatchV1LiveReportByReportId` operationId).
+func (c *Client) PatchV1LiveReportByReportIdWithBody(ctx context.Context, reportId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchV1LiveReportByReportIdRequestWithBody(c.Server, reportId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchV1LiveReportByReportId Update a live report
+//
+// Changes the fields sent. Set `status` to PAUSED to stop scheduled reports.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/live-report/{reportId} (the `PatchV1LiveReportByReportId` operationId).
+func (c *Client) PatchV1LiveReportByReportId(ctx context.Context, reportId openapi_types.UUID, body PatchV1LiveReportByReportIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchV1LiveReportByReportIdRequest(c.Server, reportId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1LiveReportByReportIdDocument List report documents
+//
+// Lists a report's documents, newest period first.
+//
+// Corresponds with GET /v1/live-report/{reportId}/document (the `GetV1LiveReportByReportIdDocument` operationId).
+func (c *Client) GetV1LiveReportByReportIdDocument(ctx context.Context, reportId string, params *GetV1LiveReportByReportIdDocumentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1LiveReportByReportIdDocumentRequest(c.Server, reportId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1LiveReportByReportIdDocumentByDocumentId Get a report document
+//
+// Returns one written report. `document` is null until `status` is READY. Theme excerpts and grader quotes (call transcript text) are included only for keys with transcript:read.
+//
+// Corresponds with GET /v1/live-report/{reportId}/document/{documentId} (the `GetV1LiveReportByReportIdDocumentByDocumentId` operationId).
+func (c *Client) GetV1LiveReportByReportIdDocumentByDocumentId(ctx context.Context, reportId openapi_types.UUID, documentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1LiveReportByReportIdDocumentByDocumentIdRequest(c.Server, reportId, documentId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1LiveReportByReportIdGenerateWithBody Generate a live report document
+//
+// Writes the report now, for its latest closed period or a custom window (`periodStart` + `periodEnd`,
+// at most 92 days, ended). Returns 202 with the document in PENDING; poll
+// GET /v1/live-report/{reportId}/document/{documentId} until `status` is READY or FAILED (typically a few
+// minutes). An identical request already in flight is returned as-is. A generated document is not emailed.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/live-report/{reportId}/generate (the `PostV1LiveReportByReportIdGenerate` operationId).
+func (c *Client) PostV1LiveReportByReportIdGenerateWithBody(ctx context.Context, reportId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1LiveReportByReportIdGenerateRequestWithBody(c.Server, reportId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1LiveReportByReportIdGenerate Generate a live report document
+//
+// Writes the report now, for its latest closed period or a custom window (`periodStart` + `periodEnd`,
+// at most 92 days, ended). Returns 202 with the document in PENDING; poll
+// GET /v1/live-report/{reportId}/document/{documentId} until `status` is READY or FAILED (typically a few
+// minutes). An identical request already in flight is returned as-is. A generated document is not emailed.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/live-report/{reportId}/generate (the `PostV1LiveReportByReportIdGenerate` operationId).
+func (c *Client) PostV1LiveReportByReportIdGenerate(ctx context.Context, reportId openapi_types.UUID, body PostV1LiveReportByReportIdGenerateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1LiveReportByReportIdGenerateRequest(c.Server, reportId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -57548,6 +62565,131 @@ func (c *Client) PostV1SimulationToolMock(ctx context.Context, body PostV1Simula
 	return c.Client.Do(req)
 }
 
+// GetV1Tool List tools
+//
+// The project's tools and the built-in ones, each with its latest version: inputs, description and, for a tool a hosted agent runs, its request. Attach one to an agent draft by id.
+//
+// Corresponds with GET /v1/tool (the `GetV1Tool` operationId).
+func (c *Client) GetV1Tool(ctx context.Context, params *GetV1ToolParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1ToolRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1ToolWithBody Create a tool
+//
+// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/tool (the `PostV1Tool` operationId).
+func (c *Client) PostV1ToolWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1ToolRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1Tool Create a tool
+//
+// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/tool (the `PostV1Tool` operationId).
+func (c *Client) PostV1Tool(ctx context.Context, body PostV1ToolJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1ToolRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1ToolByToolId Delete a tool
+//
+// Deletes a tool no agent version uses. A tool an agent version uses returns 409.
+//
+// Corresponds with DELETE /v1/tool/{toolId} (the `DeleteV1ToolByToolId` operationId).
+func (c *Client) DeleteV1ToolByToolId(ctx context.Context, toolId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1ToolByToolIdRequest(c.Server, toolId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1ToolByToolId Get a tool
+//
+// Corresponds with GET /v1/tool/{toolId} (the `GetV1ToolByToolId` operationId).
+func (c *Client) GetV1ToolByToolId(ctx context.Context, toolId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1ToolByToolIdRequest(c.Server, toolId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1ToolByToolIdWithBody Update a tool
+//
+// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/tool/{toolId} (the `PutV1ToolByToolId` operationId).
+func (c *Client) PutV1ToolByToolIdWithBody(ctx context.Context, toolId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1ToolByToolIdRequestWithBody(c.Server, toolId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1ToolByToolId Update a tool
+//
+// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/tool/{toolId} (the `PutV1ToolByToolId` operationId).
+func (c *Client) PutV1ToolByToolId(ctx context.Context, toolId openapi_types.UUID, body PutV1ToolByToolIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1ToolByToolIdRequest(c.Server, toolId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GetV1Usage Get usage & cost
 //
 // Report billable usage and cost for the organization over a time window, broken down by project (highest spend first). Pass `from`/`to` as ISO 8601 timestamps; optionally pass `projectId` to scope the report to one project. Amounts are billable spend only (what we absorb is never included). Authenticated by either an organization API key with the `usage:read` permission (any project in the organization), or a project API key with the `billing:read` permission (that key's own project only; any other `projectId` is a 403).
@@ -59758,6 +64900,249 @@ func NewGetV1BenchmarkTargetByTargetKeyScoreSampleRequest(server string, targetK
 	}
 
 	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1CalendarConnectionRequest constructs an http.Request for the GetV1CalendarConnection method
+func NewGetV1CalendarConnectionRequest(server string, params *GetV1CalendarConnectionParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/calendar-connection")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Provider != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "provider", *params.Provider, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1CalendarConnectionRequest calls the generic PostV1CalendarConnection builder with application/json body
+func NewPostV1CalendarConnectionRequest(server string, body PostV1CalendarConnectionJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1CalendarConnectionRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1CalendarConnectionRequestWithBody constructs an http.Request for the PostV1CalendarConnection method, with any body, and a specified content type
+func NewPostV1CalendarConnectionRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/calendar-connection")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1CalendarConnectionByConnectionIdRequest constructs an http.Request for the DeleteV1CalendarConnectionByConnectionId method
+func NewDeleteV1CalendarConnectionByConnectionIdRequest(server string, connectionId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/calendar-connection/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1CalendarConnectionByConnectionIdRequest constructs an http.Request for the GetV1CalendarConnectionByConnectionId method
+func NewGetV1CalendarConnectionByConnectionIdRequest(server string, connectionId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/calendar-connection/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPatchV1CalendarConnectionByConnectionIdRequest calls the generic PatchV1CalendarConnectionByConnectionId builder with application/json body
+func NewPatchV1CalendarConnectionByConnectionIdRequest(server string, connectionId string, body PatchV1CalendarConnectionByConnectionIdJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPatchV1CalendarConnectionByConnectionIdRequestWithBody(server, connectionId, "application/json", bodyReader)
+}
+
+// NewPatchV1CalendarConnectionByConnectionIdRequestWithBody constructs an http.Request for the PatchV1CalendarConnectionByConnectionId method, with any body, and a specified content type
+func NewPatchV1CalendarConnectionByConnectionIdRequestWithBody(server string, connectionId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/calendar-connection/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPostV1CalendarConnectionByConnectionIdCheckRequest constructs an http.Request for the PostV1CalendarConnectionByConnectionIdCheck method
+func NewPostV1CalendarConnectionByConnectionIdCheckRequest(server string, connectionId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/calendar-connection/%s/check", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -62427,6 +67812,388 @@ func NewGetV1KnowledgeBaseByIdRequest(server string, id string) (*http.Request, 
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewGetV1LiveReportRequest constructs an http.Request for the GetV1LiveReport method
+func NewGetV1LiveReportRequest(server string, params *GetV1LiveReportParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/live-report")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "offset", *params.Offset, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1LiveReportRequest calls the generic PostV1LiveReport builder with application/json body
+func NewPostV1LiveReportRequest(server string, body PostV1LiveReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1LiveReportRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1LiveReportRequestWithBody constructs an http.Request for the PostV1LiveReport method, with any body, and a specified content type
+func NewPostV1LiveReportRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/live-report")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1LiveReportByReportIdRequest constructs an http.Request for the DeleteV1LiveReportByReportId method
+func NewDeleteV1LiveReportByReportIdRequest(server string, reportId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "reportId", reportId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/live-report/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1LiveReportByReportIdRequest constructs an http.Request for the GetV1LiveReportByReportId method
+func NewGetV1LiveReportByReportIdRequest(server string, reportId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "reportId", reportId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/live-report/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPatchV1LiveReportByReportIdRequest calls the generic PatchV1LiveReportByReportId builder with application/json body
+func NewPatchV1LiveReportByReportIdRequest(server string, reportId openapi_types.UUID, body PatchV1LiveReportByReportIdJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPatchV1LiveReportByReportIdRequestWithBody(server, reportId, "application/json", bodyReader)
+}
+
+// NewPatchV1LiveReportByReportIdRequestWithBody constructs an http.Request for the PatchV1LiveReportByReportId method, with any body, and a specified content type
+func NewPatchV1LiveReportByReportIdRequestWithBody(server string, reportId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "reportId", reportId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/live-report/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetV1LiveReportByReportIdDocumentRequest constructs an http.Request for the GetV1LiveReportByReportIdDocument method
+func NewGetV1LiveReportByReportIdDocumentRequest(server string, reportId string, params *GetV1LiveReportByReportIdDocumentParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "reportId", reportId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/live-report/%s/document", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "offset", *params.Offset, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1LiveReportByReportIdDocumentByDocumentIdRequest constructs an http.Request for the GetV1LiveReportByReportIdDocumentByDocumentId method
+func NewGetV1LiveReportByReportIdDocumentByDocumentIdRequest(server string, reportId openapi_types.UUID, documentId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "reportId", reportId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "documentId", documentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/live-report/%s/document/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1LiveReportByReportIdGenerateRequest calls the generic PostV1LiveReportByReportIdGenerate builder with application/json body
+func NewPostV1LiveReportByReportIdGenerateRequest(server string, reportId openapi_types.UUID, body PostV1LiveReportByReportIdGenerateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1LiveReportByReportIdGenerateRequestWithBody(server, reportId, "application/json", bodyReader)
+}
+
+// NewPostV1LiveReportByReportIdGenerateRequestWithBody constructs an http.Request for the PostV1LiveReportByReportIdGenerate method, with any body, and a specified content type
+func NewPostV1LiveReportByReportIdGenerateRequestWithBody(server string, reportId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "reportId", reportId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/live-report/%s/generate", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -66515,6 +72282,227 @@ func NewPostV1SimulationToolMockRequestWithBody(server string, contentType strin
 	return req, nil
 }
 
+// NewGetV1ToolRequest constructs an http.Request for the GetV1Tool method
+func NewGetV1ToolRequest(server string, params *GetV1ToolParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/tool")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.AgentId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "agentId", *params.AgentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.IncludeBuiltIn != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeBuiltIn", *params.IncludeBuiltIn, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1ToolRequest calls the generic PostV1Tool builder with application/json body
+func NewPostV1ToolRequest(server string, body PostV1ToolJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1ToolRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1ToolRequestWithBody constructs an http.Request for the PostV1Tool method, with any body, and a specified content type
+func NewPostV1ToolRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/tool")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1ToolByToolIdRequest constructs an http.Request for the DeleteV1ToolByToolId method
+func NewDeleteV1ToolByToolIdRequest(server string, toolId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "toolId", toolId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/tool/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1ToolByToolIdRequest constructs an http.Request for the GetV1ToolByToolId method
+func NewGetV1ToolByToolIdRequest(server string, toolId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "toolId", toolId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/tool/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPutV1ToolByToolIdRequest calls the generic PutV1ToolByToolId builder with application/json body
+func NewPutV1ToolByToolIdRequest(server string, toolId openapi_types.UUID, body PutV1ToolByToolIdJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPutV1ToolByToolIdRequestWithBody(server, toolId, "application/json", bodyReader)
+}
+
+// NewPutV1ToolByToolIdRequestWithBody constructs an http.Request for the PutV1ToolByToolId method, with any body, and a specified content type
+func NewPutV1ToolByToolIdRequestWithBody(server string, toolId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "toolId", toolId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/tool/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGetV1UsageRequest constructs an http.Request for the GetV1Usage method
 func NewGetV1UsageRequest(server string, params *GetV1UsageParams) (*http.Request, error) {
 	var err error
@@ -67396,6 +73384,78 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /v1/benchmark/target/{targetKey}/score-sample (the `GetV1BenchmarkTargetByTargetKeyScoreSample` operationId).
 	GetV1BenchmarkTargetByTargetKeyScoreSampleWithResponse(ctx context.Context, targetKey string, params *GetV1BenchmarkTargetByTargetKeyScoreSampleParams, reqEditors ...RequestEditorFn) (*GetV1BenchmarkTargetByTargetKeyScoreSampleResponse, error)
 
+	// GetV1CalendarConnectionWithResponse List calendar connections
+	//
+	// Returns every calendar connection in the authenticated project, by label. A project has a handful of these, so the list is not paginated: `pagination.hasMore` is always false.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/calendar-connection (the `GetV1CalendarConnection` operationId).
+	GetV1CalendarConnectionWithResponse(ctx context.Context, params *GetV1CalendarConnectionParams, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionResponse, error)
+
+	// PostV1CalendarConnectionWithBodyWithResponse Connect a calendar account
+	//
+	// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
+	PostV1CalendarConnectionWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionResponse, error)
+
+	// PostV1CalendarConnectionWithResponse Connect a calendar account
+	//
+	// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
+	PostV1CalendarConnectionWithResponse(ctx context.Context, body PostV1CalendarConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionResponse, error)
+
+	// DeleteV1CalendarConnectionByConnectionIdWithResponse Delete a calendar connection
+	//
+	// Deletes the connection and its stored credential outright. A credential the customer deleted should stop existing, so this is not an archive.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/calendar-connection/{connectionId} (the `DeleteV1CalendarConnectionByConnectionId` operationId).
+	DeleteV1CalendarConnectionByConnectionIdWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*DeleteV1CalendarConnectionByConnectionIdResponse, error)
+
+	// GetV1CalendarConnectionByConnectionIdWithResponse Get a calendar connection
+	//
+	// Returns one calendar connection. The stored credential is never included.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/calendar-connection/{connectionId} (the `GetV1CalendarConnectionByConnectionId` operationId).
+	GetV1CalendarConnectionByConnectionIdWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionByConnectionIdResponse, error)
+
+	// PatchV1CalendarConnectionByConnectionIdWithBodyWithResponse Update a calendar connection
+	//
+	// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
+	PatchV1CalendarConnectionByConnectionIdWithBodyWithResponse(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1CalendarConnectionByConnectionIdResponse, error)
+
+	// PatchV1CalendarConnectionByConnectionIdWithResponse Update a calendar connection
+	//
+	// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
+	PatchV1CalendarConnectionByConnectionIdWithResponse(ctx context.Context, connectionId string, body PatchV1CalendarConnectionByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1CalendarConnectionByConnectionIdResponse, error)
+
+	// PostV1CalendarConnectionByConnectionIdCheckWithResponse Check a calendar connection
+	//
+	// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/calendar-connection/{connectionId}/check (the `PostV1CalendarConnectionByConnectionIdCheck` operationId).
+	PostV1CalendarConnectionByConnectionIdCheckWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionByConnectionIdCheckResponse, error)
+
 	// GetV1CallWithResponse List calls
 	//
 	// Returns a paginated list of calls for the authenticated project. Pass agentId to keep calls for specific agents, or properties[agent_name][eq] when you only have the agent name. sortBy and sortDirection apply together with those filters.
@@ -68111,6 +74171,127 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with GET /v1/knowledge-base/{id} (the `GetV1KnowledgeBaseById` operationId).
 	GetV1KnowledgeBaseByIdWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetV1KnowledgeBaseByIdResponse, error)
+
+	// GetV1LiveReportWithResponse List live reports
+	//
+	// Lists the project's saved live call reports, newest first.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/live-report (the `GetV1LiveReport` operationId).
+	GetV1LiveReportWithResponse(ctx context.Context, params *GetV1LiveReportParams, reqEditors ...RequestEditorFn) (*GetV1LiveReportResponse, error)
+
+	// PostV1LiveReportWithBodyWithResponse Create a live report
+	//
+	// Saves a report on the project's live calls. Simulations are never included.
+	//
+	// Targets are analytics measures held to a bar: a threshold metric is read as its pass rate (`value` is a
+	// percentage, 0-100, held AT_LEAST by default); a numeric metric as its average (held AT_MOST by default).
+	// Every target is read for the period and the period before it, so the report says whether each was met
+	// and how it moved.
+	//
+	// Scheduled reports are written `deliveryHour` hours into the day after each period ends in `timezone`
+	// (a week runs Monday to Sunday), then emailed and posted per `notifications`. With `generateNow` (the
+	// default) the report for the latest closed period is written right away and not sent.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/live-report (the `PostV1LiveReport` operationId).
+	PostV1LiveReportWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1LiveReportResponse, error)
+
+	// PostV1LiveReportWithResponse Create a live report
+	//
+	// Saves a report on the project's live calls. Simulations are never included.
+	//
+	// Targets are analytics measures held to a bar: a threshold metric is read as its pass rate (`value` is a
+	// percentage, 0-100, held AT_LEAST by default); a numeric metric as its average (held AT_MOST by default).
+	// Every target is read for the period and the period before it, so the report says whether each was met
+	// and how it moved.
+	//
+	// Scheduled reports are written `deliveryHour` hours into the day after each period ends in `timezone`
+	// (a week runs Monday to Sunday), then emailed and posted per `notifications`. With `generateNow` (the
+	// default) the report for the latest closed period is written right away and not sent.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/live-report (the `PostV1LiveReport` operationId).
+	PostV1LiveReportWithResponse(ctx context.Context, body PostV1LiveReportJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1LiveReportResponse, error)
+
+	// DeleteV1LiveReportByReportIdWithResponse Delete a live report
+	//
+	// Deletes the report and stops its scheduled reports.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/live-report/{reportId} (the `DeleteV1LiveReportByReportId` operationId).
+	DeleteV1LiveReportByReportIdWithResponse(ctx context.Context, reportId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1LiveReportByReportIdResponse, error)
+
+	// GetV1LiveReportByReportIdWithResponse Get a live report
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/live-report/{reportId} (the `GetV1LiveReportByReportId` operationId).
+	GetV1LiveReportByReportIdWithResponse(ctx context.Context, reportId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1LiveReportByReportIdResponse, error)
+
+	// PatchV1LiveReportByReportIdWithBodyWithResponse Update a live report
+	//
+	// Changes the fields sent. Set `status` to PAUSED to stop scheduled reports.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/live-report/{reportId} (the `PatchV1LiveReportByReportId` operationId).
+	PatchV1LiveReportByReportIdWithBodyWithResponse(ctx context.Context, reportId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1LiveReportByReportIdResponse, error)
+
+	// PatchV1LiveReportByReportIdWithResponse Update a live report
+	//
+	// Changes the fields sent. Set `status` to PAUSED to stop scheduled reports.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/live-report/{reportId} (the `PatchV1LiveReportByReportId` operationId).
+	PatchV1LiveReportByReportIdWithResponse(ctx context.Context, reportId openapi_types.UUID, body PatchV1LiveReportByReportIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1LiveReportByReportIdResponse, error)
+
+	// GetV1LiveReportByReportIdDocumentWithResponse List report documents
+	//
+	// Lists a report's documents, newest period first.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/live-report/{reportId}/document (the `GetV1LiveReportByReportIdDocument` operationId).
+	GetV1LiveReportByReportIdDocumentWithResponse(ctx context.Context, reportId string, params *GetV1LiveReportByReportIdDocumentParams, reqEditors ...RequestEditorFn) (*GetV1LiveReportByReportIdDocumentResponse, error)
+
+	// GetV1LiveReportByReportIdDocumentByDocumentIdWithResponse Get a report document
+	//
+	// Returns one written report. `document` is null until `status` is READY. Theme excerpts and grader quotes (call transcript text) are included only for keys with transcript:read.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/live-report/{reportId}/document/{documentId} (the `GetV1LiveReportByReportIdDocumentByDocumentId` operationId).
+	GetV1LiveReportByReportIdDocumentByDocumentIdWithResponse(ctx context.Context, reportId openapi_types.UUID, documentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1LiveReportByReportIdDocumentByDocumentIdResponse, error)
+
+	// PostV1LiveReportByReportIdGenerateWithBodyWithResponse Generate a live report document
+	//
+	// Writes the report now, for its latest closed period or a custom window (`periodStart` + `periodEnd`,
+	// at most 92 days, ended). Returns 202 with the document in PENDING; poll
+	// GET /v1/live-report/{reportId}/document/{documentId} until `status` is READY or FAILED (typically a few
+	// minutes). An identical request already in flight is returned as-is. A generated document is not emailed.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/live-report/{reportId}/generate (the `PostV1LiveReportByReportIdGenerate` operationId).
+	PostV1LiveReportByReportIdGenerateWithBodyWithResponse(ctx context.Context, reportId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1LiveReportByReportIdGenerateResponse, error)
+
+	// PostV1LiveReportByReportIdGenerateWithResponse Generate a live report document
+	//
+	// Writes the report now, for its latest closed period or a custom window (`periodStart` + `periodEnd`,
+	// at most 92 days, ended). Returns 202 with the document in PENDING; poll
+	// GET /v1/live-report/{reportId}/document/{documentId} until `status` is READY or FAILED (typically a few
+	// minutes). An identical request already in flight is returned as-is. A generated document is not emailed.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/live-report/{reportId}/generate (the `PostV1LiveReportByReportIdGenerate` operationId).
+	PostV1LiveReportByReportIdGenerateWithResponse(ctx context.Context, reportId openapi_types.UUID, body PostV1LiveReportByReportIdGenerateJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1LiveReportByReportIdGenerateResponse, error)
 
 	// GetV1MeWithResponse Describe the current credential
 	//
@@ -69388,6 +75569,67 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/simulation/tool-mock (the `PostV1SimulationToolMock` operationId).
 	PostV1SimulationToolMockWithResponse(ctx context.Context, body PostV1SimulationToolMockJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1SimulationToolMockResponse, error)
+
+	// GetV1ToolWithResponse List tools
+	//
+	// The project's tools and the built-in ones, each with its latest version: inputs, description and, for a tool a hosted agent runs, its request. Attach one to an agent draft by id.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/tool (the `GetV1Tool` operationId).
+	GetV1ToolWithResponse(ctx context.Context, params *GetV1ToolParams, reqEditors ...RequestEditorFn) (*GetV1ToolResponse, error)
+
+	// PostV1ToolWithBodyWithResponse Create a tool
+	//
+	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/tool (the `PostV1Tool` operationId).
+	PostV1ToolWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1ToolResponse, error)
+
+	// PostV1ToolWithResponse Create a tool
+	//
+	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/tool (the `PostV1Tool` operationId).
+	PostV1ToolWithResponse(ctx context.Context, body PostV1ToolJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1ToolResponse, error)
+
+	// DeleteV1ToolByToolIdWithResponse Delete a tool
+	//
+	// Deletes a tool no agent version uses. A tool an agent version uses returns 409.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/tool/{toolId} (the `DeleteV1ToolByToolId` operationId).
+	DeleteV1ToolByToolIdWithResponse(ctx context.Context, toolId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1ToolByToolIdResponse, error)
+
+	// GetV1ToolByToolIdWithResponse Get a tool
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/tool/{toolId} (the `GetV1ToolByToolId` operationId).
+	GetV1ToolByToolIdWithResponse(ctx context.Context, toolId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1ToolByToolIdResponse, error)
+
+	// PutV1ToolByToolIdWithBodyWithResponse Update a tool
+	//
+	// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/tool/{toolId} (the `PutV1ToolByToolId` operationId).
+	PutV1ToolByToolIdWithBodyWithResponse(ctx context.Context, toolId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1ToolByToolIdResponse, error)
+
+	// PutV1ToolByToolIdWithResponse Update a tool
+	//
+	// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/tool/{toolId} (the `PutV1ToolByToolId` operationId).
+	PutV1ToolByToolIdWithResponse(ctx context.Context, toolId openapi_types.UUID, body PutV1ToolByToolIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1ToolByToolIdResponse, error)
 
 	// GetV1UsageWithResponse Get usage & cost
 	//
@@ -73145,6 +79387,1033 @@ func (r GetV1BenchmarkTargetByTargetKeyScoreSampleResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetV1BenchmarkTargetByTargetKeyScoreSampleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1CalendarConnectionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data []struct {
+			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+			AccountLabel *string `json:"accountLabel"`
+
+			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+			Capabilities struct {
+				// Auth How this provider is authenticated.
+				Auth GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+				Operations []GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+				SlotHold GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+			} `json:"capabilities"`
+
+			// CreatedAt Creation timestamp in ISO 8601 format.
+			CreatedAt string `json:"createdAt"`
+
+			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+			CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+			// Id Unique identifier of the calendar connection.
+			Id openapi_types.UUID `json:"id"`
+
+			// Label Customer-supplied name for this account. Unique within the project.
+			Label string `json:"label"`
+
+			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+			LastCheckedAt *string `json:"lastCheckedAt"`
+
+			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			Provider GetV1CalendarConnection200JSONResponseBodyDataProvider `json:"provider"`
+
+			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+			Scopes *[]string `json:"scopes"`
+
+			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+			Status GetV1CalendarConnection200JSONResponseBodyDataStatus `json:"status"`
+
+			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+			StatusMessage *string `json:"statusMessage"`
+
+			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+			Timezone string `json:"timezone"`
+
+			// UpdatedAt Last update timestamp in ISO 8601 format.
+			UpdatedAt string `json:"updatedAt"`
+		} `json:"data"`
+		Pagination struct {
+			// HasMore Whether there are more items to fetch
+			HasMore bool `json:"hasMore"`
+
+			// NextCursor Cursor for the next page of items
+			NextCursor *string `json:"nextCursor"`
+
+			// Total Total number of items
+			Total float64 `json:"total"`
+		} `json:"pagination"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1CalendarConnectionResponse) GetJSON200() *struct {
+	Data []struct {
+		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+		AccountLabel *string `json:"accountLabel"`
+
+		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+		Capabilities struct {
+			// Auth How this provider is authenticated.
+			Auth GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+			Operations []GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+			SlotHold GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+		} `json:"capabilities"`
+
+		// CreatedAt Creation timestamp in ISO 8601 format.
+		CreatedAt string `json:"createdAt"`
+
+		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+		CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+		// Id Unique identifier of the calendar connection.
+		Id openapi_types.UUID `json:"id"`
+
+		// Label Customer-supplied name for this account. Unique within the project.
+		Label string `json:"label"`
+
+		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+		LastCheckedAt *string `json:"lastCheckedAt"`
+
+		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		Provider GetV1CalendarConnection200JSONResponseBodyDataProvider `json:"provider"`
+
+		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+		Scopes *[]string `json:"scopes"`
+
+		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+		Status GetV1CalendarConnection200JSONResponseBodyDataStatus `json:"status"`
+
+		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+		StatusMessage *string `json:"statusMessage"`
+
+		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+		Timezone string `json:"timezone"`
+
+		// UpdatedAt Last update timestamp in ISO 8601 format.
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"data"`
+	Pagination struct {
+		// HasMore Whether there are more items to fetch
+		HasMore bool `json:"hasMore"`
+
+		// NextCursor Cursor for the next page of items
+		NextCursor *string `json:"nextCursor"`
+
+		// Total Total number of items
+		Total float64 `json:"total"`
+	} `json:"pagination"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1CalendarConnectionResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1CalendarConnectionResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1CalendarConnectionResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1CalendarConnectionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1CalendarConnectionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1CalendarConnectionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1CalendarConnectionResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+		Data struct {
+			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+			AccountLabel *string `json:"accountLabel"`
+
+			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+			Capabilities struct {
+				// Auth How this provider is authenticated.
+				Auth PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+				Operations []PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+				SlotHold PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+			} `json:"capabilities"`
+
+			// CreatedAt Creation timestamp in ISO 8601 format.
+			CreatedAt string `json:"createdAt"`
+
+			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+			CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+			// Id Unique identifier of the calendar connection.
+			Id openapi_types.UUID `json:"id"`
+
+			// Label Customer-supplied name for this account. Unique within the project.
+			Label string `json:"label"`
+
+			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+			LastCheckedAt *string `json:"lastCheckedAt"`
+
+			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			Provider PostV1CalendarConnection201JSONResponseBodyDataProvider `json:"provider"`
+
+			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+			Scopes *[]string `json:"scopes"`
+
+			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+			Status PostV1CalendarConnection201JSONResponseBodyDataStatus `json:"status"`
+
+			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+			StatusMessage *string `json:"statusMessage"`
+
+			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+			Timezone string `json:"timezone"`
+
+			// UpdatedAt Last update timestamp in ISO 8601 format.
+			UpdatedAt string `json:"updatedAt"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1CalendarConnectionResponse) GetJSON201() *struct {
+	// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+	Data struct {
+		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+		AccountLabel *string `json:"accountLabel"`
+
+		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+		Capabilities struct {
+			// Auth How this provider is authenticated.
+			Auth PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+			Operations []PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+			SlotHold PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+		} `json:"capabilities"`
+
+		// CreatedAt Creation timestamp in ISO 8601 format.
+		CreatedAt string `json:"createdAt"`
+
+		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+		CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+		// Id Unique identifier of the calendar connection.
+		Id openapi_types.UUID `json:"id"`
+
+		// Label Customer-supplied name for this account. Unique within the project.
+		Label string `json:"label"`
+
+		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+		LastCheckedAt *string `json:"lastCheckedAt"`
+
+		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		Provider PostV1CalendarConnection201JSONResponseBodyDataProvider `json:"provider"`
+
+		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+		Scopes *[]string `json:"scopes"`
+
+		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+		Status PostV1CalendarConnection201JSONResponseBodyDataStatus `json:"status"`
+
+		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+		StatusMessage *string `json:"statusMessage"`
+
+		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+		Timezone string `json:"timezone"`
+
+		// UpdatedAt Last update timestamp in ISO 8601 format.
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"data"`
+} {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1CalendarConnectionResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1CalendarConnectionResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1CalendarConnectionResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1CalendarConnectionResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1CalendarConnectionResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1CalendarConnectionResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1CalendarConnectionResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1CalendarConnectionResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1CalendarConnectionByConnectionIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			// Deleted Always true. The credential is hard-deleted, not archived.
+			Deleted DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted `json:"deleted"`
+
+			// Id Identifier of the deleted connection.
+			Id openapi_types.UUID `json:"id"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetJSON200() *struct {
+	Data struct {
+		// Deleted Always true. The credential is hard-deleted, not archived.
+		Deleted DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted `json:"deleted"`
+
+		// Id Identifier of the deleted connection.
+		Id openapi_types.UUID `json:"id"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1CalendarConnectionByConnectionIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1CalendarConnectionByConnectionIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1CalendarConnectionByConnectionIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1CalendarConnectionByConnectionIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+		Data struct {
+			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+			AccountLabel *string `json:"accountLabel"`
+
+			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+			Capabilities struct {
+				// Auth How this provider is authenticated.
+				Auth GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+				Operations []GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+				SlotHold GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+			} `json:"capabilities"`
+
+			// CreatedAt Creation timestamp in ISO 8601 format.
+			CreatedAt string `json:"createdAt"`
+
+			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+			CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+			// Id Unique identifier of the calendar connection.
+			Id openapi_types.UUID `json:"id"`
+
+			// Label Customer-supplied name for this account. Unique within the project.
+			Label string `json:"label"`
+
+			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+			LastCheckedAt *string `json:"lastCheckedAt"`
+
+			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			Provider GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
+
+			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+			Scopes *[]string `json:"scopes"`
+
+			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+			Status GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus `json:"status"`
+
+			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+			StatusMessage *string `json:"statusMessage"`
+
+			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+			Timezone string `json:"timezone"`
+
+			// UpdatedAt Last update timestamp in ISO 8601 format.
+			UpdatedAt string `json:"updatedAt"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdResponse) GetJSON200() *struct {
+	// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+	Data struct {
+		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+		AccountLabel *string `json:"accountLabel"`
+
+		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+		Capabilities struct {
+			// Auth How this provider is authenticated.
+			Auth GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+			Operations []GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+			SlotHold GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+		} `json:"capabilities"`
+
+		// CreatedAt Creation timestamp in ISO 8601 format.
+		CreatedAt string `json:"createdAt"`
+
+		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+		CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+		// Id Unique identifier of the calendar connection.
+		Id openapi_types.UUID `json:"id"`
+
+		// Label Customer-supplied name for this account. Unique within the project.
+		Label string `json:"label"`
+
+		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+		LastCheckedAt *string `json:"lastCheckedAt"`
+
+		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		Provider GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
+
+		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+		Scopes *[]string `json:"scopes"`
+
+		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+		Status GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus `json:"status"`
+
+		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+		StatusMessage *string `json:"statusMessage"`
+
+		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+		Timezone string `json:"timezone"`
+
+		// UpdatedAt Last update timestamp in ISO 8601 format.
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1CalendarConnectionByConnectionIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1CalendarConnectionByConnectionIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1CalendarConnectionByConnectionIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1CalendarConnectionByConnectionIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PatchV1CalendarConnectionByConnectionIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+		Data struct {
+			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+			AccountLabel *string `json:"accountLabel"`
+
+			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+			Capabilities struct {
+				// Auth How this provider is authenticated.
+				Auth PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+				Operations []PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+				SlotHold PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+			} `json:"capabilities"`
+
+			// CreatedAt Creation timestamp in ISO 8601 format.
+			CreatedAt string `json:"createdAt"`
+
+			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+			CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+			// Id Unique identifier of the calendar connection.
+			Id openapi_types.UUID `json:"id"`
+
+			// Label Customer-supplied name for this account. Unique within the project.
+			Label string `json:"label"`
+
+			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+			LastCheckedAt *string `json:"lastCheckedAt"`
+
+			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			Provider PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
+
+			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+			Scopes *[]string `json:"scopes"`
+
+			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+			Status PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus `json:"status"`
+
+			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+			StatusMessage *string `json:"statusMessage"`
+
+			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+			Timezone string `json:"timezone"`
+
+			// UpdatedAt Last update timestamp in ISO 8601 format.
+			UpdatedAt string `json:"updatedAt"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PatchV1CalendarConnectionByConnectionIdResponse) GetJSON200() *struct {
+	// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+	Data struct {
+		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+		AccountLabel *string `json:"accountLabel"`
+
+		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+		Capabilities struct {
+			// Auth How this provider is authenticated.
+			Auth PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+			Operations []PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+			SlotHold PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+		} `json:"capabilities"`
+
+		// CreatedAt Creation timestamp in ISO 8601 format.
+		CreatedAt string `json:"createdAt"`
+
+		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+		CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+		// Id Unique identifier of the calendar connection.
+		Id openapi_types.UUID `json:"id"`
+
+		// Label Customer-supplied name for this account. Unique within the project.
+		Label string `json:"label"`
+
+		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+		LastCheckedAt *string `json:"lastCheckedAt"`
+
+		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		Provider PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
+
+		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+		Scopes *[]string `json:"scopes"`
+
+		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+		Status PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus `json:"status"`
+
+		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+		StatusMessage *string `json:"statusMessage"`
+
+		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+		Timezone string `json:"timezone"`
+
+		// UpdatedAt Last update timestamp in ISO 8601 format.
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PatchV1CalendarConnectionByConnectionIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PatchV1CalendarConnectionByConnectionIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PatchV1CalendarConnectionByConnectionIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PatchV1CalendarConnectionByConnectionIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PatchV1CalendarConnectionByConnectionIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PatchV1CalendarConnectionByConnectionIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PatchV1CalendarConnectionByConnectionIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PatchV1CalendarConnectionByConnectionIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PatchV1CalendarConnectionByConnectionIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1CalendarConnectionByConnectionIdCheckResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+		Data struct {
+			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+			AccountLabel *string `json:"accountLabel"`
+
+			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+			Capabilities struct {
+				// Auth How this provider is authenticated.
+				Auth PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+				Operations []PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+				SlotHold PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+			} `json:"capabilities"`
+
+			// CreatedAt Creation timestamp in ISO 8601 format.
+			CreatedAt string `json:"createdAt"`
+
+			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+			CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+			// Id Unique identifier of the calendar connection.
+			Id openapi_types.UUID `json:"id"`
+
+			// Label Customer-supplied name for this account. Unique within the project.
+			Label string `json:"label"`
+
+			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+			LastCheckedAt *string `json:"lastCheckedAt"`
+
+			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			Provider PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
+
+			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+			Scopes *[]string `json:"scopes"`
+
+			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+			Status PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus `json:"status"`
+
+			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+			StatusMessage *string `json:"statusMessage"`
+
+			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+			Timezone string `json:"timezone"`
+
+			// UpdatedAt Last update timestamp in ISO 8601 format.
+			UpdatedAt string `json:"updatedAt"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1CalendarConnectionByConnectionIdCheckResponse) GetJSON200() *struct {
+	// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+	Data struct {
+		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+		AccountLabel *string `json:"accountLabel"`
+
+		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+		Capabilities struct {
+			// Auth How this provider is authenticated.
+			Auth PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+			Operations []PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+			SlotHold PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+		} `json:"capabilities"`
+
+		// CreatedAt Creation timestamp in ISO 8601 format.
+		CreatedAt string `json:"createdAt"`
+
+		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+		CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+		// Id Unique identifier of the calendar connection.
+		Id openapi_types.UUID `json:"id"`
+
+		// Label Customer-supplied name for this account. Unique within the project.
+		Label string `json:"label"`
+
+		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+		LastCheckedAt *string `json:"lastCheckedAt"`
+
+		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		Provider PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
+
+		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+		Scopes *[]string `json:"scopes"`
+
+		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+		Status PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus `json:"status"`
+
+		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+		StatusMessage *string `json:"statusMessage"`
+
+		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+		Timezone string `json:"timezone"`
+
+		// UpdatedAt Last update timestamp in ISO 8601 format.
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1CalendarConnectionByConnectionIdCheckResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1CalendarConnectionByConnectionIdCheckResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PostV1CalendarConnectionByConnectionIdCheckResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1CalendarConnectionByConnectionIdCheckResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1CalendarConnectionByConnectionIdCheckResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1CalendarConnectionByConnectionIdCheckResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1CalendarConnectionByConnectionIdCheckResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1CalendarConnectionByConnectionIdCheckResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -78971,6 +86240,724 @@ func (r GetV1KnowledgeBaseByIdResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetV1KnowledgeBaseByIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1LiveReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			Items      []LiveReport `json:"items"`
+			TotalCount int          `json:"totalCount"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1LiveReportResponse) GetJSON200() *struct {
+	Data struct {
+		Items      []LiveReport `json:"items"`
+		TotalCount int          `json:"totalCount"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1LiveReportResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1LiveReportResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1LiveReportResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1LiveReportResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1LiveReportResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1LiveReportResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1LiveReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1LiveReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1LiveReportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1LiveReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		Data LiveReport `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1LiveReportResponse) GetJSON201() *struct {
+	Data LiveReport `json:"data"`
+} {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1LiveReportResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1LiveReportResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1LiveReportResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1LiveReportResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1LiveReportResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PostV1LiveReportResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1LiveReportResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1LiveReportResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1LiveReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1LiveReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1LiveReportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1LiveReportByReportIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			Deleted DeleteV1LiveReportByReportId200JSONResponseBodyDataDeleted `json:"deleted"`
+			Id      openapi_types.UUID                                         `json:"id"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1LiveReportByReportIdResponse) GetJSON200() *struct {
+	Data struct {
+		Deleted DeleteV1LiveReportByReportId200JSONResponseBodyDataDeleted `json:"deleted"`
+		Id      openapi_types.UUID                                         `json:"id"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r DeleteV1LiveReportByReportIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1LiveReportByReportIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r DeleteV1LiveReportByReportIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1LiveReportByReportIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r DeleteV1LiveReportByReportIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r DeleteV1LiveReportByReportIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1LiveReportByReportIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1LiveReportByReportIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1LiveReportByReportIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1LiveReportByReportIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1LiveReportByReportIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1LiveReportByReportIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data LiveReport `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1LiveReportByReportIdResponse) GetJSON200() *struct {
+	Data LiveReport `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1LiveReportByReportIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1LiveReportByReportIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1LiveReportByReportIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1LiveReportByReportIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1LiveReportByReportIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1LiveReportByReportIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1LiveReportByReportIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1LiveReportByReportIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1LiveReportByReportIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PatchV1LiveReportByReportIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data LiveReport `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PatchV1LiveReportByReportIdResponse) GetJSON200() *struct {
+	Data LiveReport `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PatchV1LiveReportByReportIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PatchV1LiveReportByReportIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PatchV1LiveReportByReportIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PatchV1LiveReportByReportIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PatchV1LiveReportByReportIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PatchV1LiveReportByReportIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PatchV1LiveReportByReportIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PatchV1LiveReportByReportIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PatchV1LiveReportByReportIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PatchV1LiveReportByReportIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PatchV1LiveReportByReportIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1LiveReportByReportIdDocumentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			Items      []LiveReportDocument `json:"items"`
+			TotalCount int                  `json:"totalCount"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1LiveReportByReportIdDocumentResponse) GetJSON200() *struct {
+	Data struct {
+		Items      []LiveReportDocument `json:"items"`
+		TotalCount int                  `json:"totalCount"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1LiveReportByReportIdDocumentResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1LiveReportByReportIdDocumentResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1LiveReportByReportIdDocumentResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1LiveReportByReportIdDocumentResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1LiveReportByReportIdDocumentResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1LiveReportByReportIdDocumentResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1LiveReportByReportIdDocumentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1LiveReportByReportIdDocumentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1LiveReportByReportIdDocumentResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1LiveReportByReportIdDocumentByDocumentIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data One written report over one period. `document` is null until `status` is READY; every number in it comes from the analytics engine (the same reads GET /v1/dashboard/{dashboardId}/data makes over the same window and filters).
+		Data LiveReportDocument `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1LiveReportByReportIdDocumentByDocumentIdResponse) GetJSON200() *struct {
+	// Data One written report over one period. `document` is null until `status` is READY; every number in it comes from the analytics engine (the same reads GET /v1/dashboard/{dashboardId}/data makes over the same window and filters).
+	Data LiveReportDocument `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1LiveReportByReportIdDocumentByDocumentIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1LiveReportByReportIdDocumentByDocumentIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1LiveReportByReportIdDocumentByDocumentIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1LiveReportByReportIdDocumentByDocumentIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1LiveReportByReportIdDocumentByDocumentIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1LiveReportByReportIdDocumentByDocumentIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1LiveReportByReportIdDocumentByDocumentIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1LiveReportByReportIdDocumentByDocumentIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1LiveReportByReportIdDocumentByDocumentIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1LiveReportByReportIdGenerateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON202 the response for an HTTP 202 `application/json` response
+	JSON202 *struct {
+		// Data One written report over one period. `document` is null until `status` is READY; every number in it comes from the analytics engine (the same reads GET /v1/dashboard/{dashboardId}/data makes over the same window and filters).
+		Data LiveReportDocument `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON202 returns the response for an HTTP 202 `application/json` response
+func (r PostV1LiveReportByReportIdGenerateResponse) GetJSON202() *struct {
+	// Data One written report over one period. `document` is null until `status` is READY; every number in it comes from the analytics engine (the same reads GET /v1/dashboard/{dashboardId}/data makes over the same window and filters).
+	Data LiveReportDocument `json:"data"`
+} {
+	return r.JSON202
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1LiveReportByReportIdGenerateResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1LiveReportByReportIdGenerateResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1LiveReportByReportIdGenerateResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1LiveReportByReportIdGenerateResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1LiveReportByReportIdGenerateResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PostV1LiveReportByReportIdGenerateResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1LiveReportByReportIdGenerateResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1LiveReportByReportIdGenerateResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1LiveReportByReportIdGenerateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1LiveReportByReportIdGenerateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1LiveReportByReportIdGenerateResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -87318,6 +95305,344 @@ func (r PostV1SimulationToolMockResponse) ContentType() string {
 	return ""
 }
 
+type GetV1ToolResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ToolListResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1ToolResponse) GetJSON200() *ToolListResponse {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1ToolResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1ToolResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1ToolResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1ToolResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1ToolResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1ToolResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1ToolResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *ToolSingleResponse
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1ToolResponse) GetJSON201() *ToolSingleResponse {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1ToolResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1ToolResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1ToolResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1ToolResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1ToolResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1ToolResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1ToolResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1ToolResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1ToolResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1ToolByToolIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ToolDeleteResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1ToolByToolIdResponse) GetJSON200() *ToolDeleteResponse {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1ToolByToolIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1ToolByToolIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r DeleteV1ToolByToolIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1ToolByToolIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1ToolByToolIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1ToolByToolIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1ToolByToolIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1ToolByToolIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1ToolByToolIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ToolSingleResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1ToolByToolIdResponse) GetJSON200() *ToolSingleResponse {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1ToolByToolIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1ToolByToolIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1ToolByToolIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1ToolByToolIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1ToolByToolIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1ToolByToolIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1ToolByToolIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutV1ToolByToolIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ToolSingleResponse
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutV1ToolByToolIdResponse) GetJSON200() *ToolSingleResponse {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PutV1ToolByToolIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PutV1ToolByToolIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PutV1ToolByToolIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PutV1ToolByToolIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PutV1ToolByToolIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PutV1ToolByToolIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutV1ToolByToolIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutV1ToolByToolIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutV1ToolByToolIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GetV1UsageResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -88624,6 +96949,126 @@ func (c *ClientWithResponses) GetV1BenchmarkTargetByTargetKeyScoreSampleWithResp
 	return ParseGetV1BenchmarkTargetByTargetKeyScoreSampleResponse(rsp)
 }
 
+// GetV1CalendarConnectionWithResponse List calendar connections
+//
+// Returns every calendar connection in the authenticated project, by label. A project has a handful of these, so the list is not paginated: `pagination.hasMore` is always false.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/calendar-connection (the `GetV1CalendarConnection` operationId).
+func (c *ClientWithResponses) GetV1CalendarConnectionWithResponse(ctx context.Context, params *GetV1CalendarConnectionParams, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionResponse, error) {
+	rsp, err := c.GetV1CalendarConnection(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1CalendarConnectionResponse(rsp)
+}
+
+// PostV1CalendarConnectionWithBodyWithResponse Connect a calendar account
+//
+// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
+func (c *ClientWithResponses) PostV1CalendarConnectionWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionResponse, error) {
+	rsp, err := c.PostV1CalendarConnectionWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1CalendarConnectionResponse(rsp)
+}
+
+// PostV1CalendarConnectionWithResponse Connect a calendar account
+//
+// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
+func (c *ClientWithResponses) PostV1CalendarConnectionWithResponse(ctx context.Context, body PostV1CalendarConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionResponse, error) {
+	rsp, err := c.PostV1CalendarConnection(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1CalendarConnectionResponse(rsp)
+}
+
+// DeleteV1CalendarConnectionByConnectionIdWithResponse Delete a calendar connection
+//
+// Deletes the connection and its stored credential outright. A credential the customer deleted should stop existing, so this is not an archive.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/calendar-connection/{connectionId} (the `DeleteV1CalendarConnectionByConnectionId` operationId).
+func (c *ClientWithResponses) DeleteV1CalendarConnectionByConnectionIdWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*DeleteV1CalendarConnectionByConnectionIdResponse, error) {
+	rsp, err := c.DeleteV1CalendarConnectionByConnectionId(ctx, connectionId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1CalendarConnectionByConnectionIdResponse(rsp)
+}
+
+// GetV1CalendarConnectionByConnectionIdWithResponse Get a calendar connection
+//
+// Returns one calendar connection. The stored credential is never included.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/calendar-connection/{connectionId} (the `GetV1CalendarConnectionByConnectionId` operationId).
+func (c *ClientWithResponses) GetV1CalendarConnectionByConnectionIdWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionByConnectionIdResponse, error) {
+	rsp, err := c.GetV1CalendarConnectionByConnectionId(ctx, connectionId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1CalendarConnectionByConnectionIdResponse(rsp)
+}
+
+// PatchV1CalendarConnectionByConnectionIdWithBodyWithResponse Update a calendar connection
+//
+// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
+func (c *ClientWithResponses) PatchV1CalendarConnectionByConnectionIdWithBodyWithResponse(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1CalendarConnectionByConnectionIdResponse, error) {
+	rsp, err := c.PatchV1CalendarConnectionByConnectionIdWithBody(ctx, connectionId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchV1CalendarConnectionByConnectionIdResponse(rsp)
+}
+
+// PatchV1CalendarConnectionByConnectionIdWithResponse Update a calendar connection
+//
+// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
+func (c *ClientWithResponses) PatchV1CalendarConnectionByConnectionIdWithResponse(ctx context.Context, connectionId string, body PatchV1CalendarConnectionByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1CalendarConnectionByConnectionIdResponse, error) {
+	rsp, err := c.PatchV1CalendarConnectionByConnectionId(ctx, connectionId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchV1CalendarConnectionByConnectionIdResponse(rsp)
+}
+
+// PostV1CalendarConnectionByConnectionIdCheckWithResponse Check a calendar connection
+//
+// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/calendar-connection/{connectionId}/check (the `PostV1CalendarConnectionByConnectionIdCheck` operationId).
+func (c *ClientWithResponses) PostV1CalendarConnectionByConnectionIdCheckWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionByConnectionIdCheckResponse, error) {
+	rsp, err := c.PostV1CalendarConnectionByConnectionIdCheck(ctx, connectionId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1CalendarConnectionByConnectionIdCheckResponse(rsp)
+}
+
 // GetV1CallWithResponse List calls
 //
 // Returns a paginated list of calls for the authenticated project. Pass agentId to keep calls for specific agents, or properties[agent_name][eq] when you only have the agent name. sortBy and sortDirection apply together with those filters.
@@ -89782,6 +98227,193 @@ func (c *ClientWithResponses) GetV1KnowledgeBaseByIdWithResponse(ctx context.Con
 		return nil, err
 	}
 	return ParseGetV1KnowledgeBaseByIdResponse(rsp)
+}
+
+// GetV1LiveReportWithResponse List live reports
+//
+// Lists the project's saved live call reports, newest first.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/live-report (the `GetV1LiveReport` operationId).
+func (c *ClientWithResponses) GetV1LiveReportWithResponse(ctx context.Context, params *GetV1LiveReportParams, reqEditors ...RequestEditorFn) (*GetV1LiveReportResponse, error) {
+	rsp, err := c.GetV1LiveReport(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1LiveReportResponse(rsp)
+}
+
+// PostV1LiveReportWithBodyWithResponse Create a live report
+//
+// Saves a report on the project's live calls. Simulations are never included.
+//
+// Targets are analytics measures held to a bar: a threshold metric is read as its pass rate (`value` is a
+// percentage, 0-100, held AT_LEAST by default); a numeric metric as its average (held AT_MOST by default).
+// Every target is read for the period and the period before it, so the report says whether each was met
+// and how it moved.
+//
+// Scheduled reports are written `deliveryHour` hours into the day after each period ends in `timezone`
+// (a week runs Monday to Sunday), then emailed and posted per `notifications`. With `generateNow` (the
+// default) the report for the latest closed period is written right away and not sent.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/live-report (the `PostV1LiveReport` operationId).
+func (c *ClientWithResponses) PostV1LiveReportWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1LiveReportResponse, error) {
+	rsp, err := c.PostV1LiveReportWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1LiveReportResponse(rsp)
+}
+
+// PostV1LiveReportWithResponse Create a live report
+//
+// Saves a report on the project's live calls. Simulations are never included.
+//
+// Targets are analytics measures held to a bar: a threshold metric is read as its pass rate (`value` is a
+// percentage, 0-100, held AT_LEAST by default); a numeric metric as its average (held AT_MOST by default).
+// Every target is read for the period and the period before it, so the report says whether each was met
+// and how it moved.
+//
+// Scheduled reports are written `deliveryHour` hours into the day after each period ends in `timezone`
+// (a week runs Monday to Sunday), then emailed and posted per `notifications`. With `generateNow` (the
+// default) the report for the latest closed period is written right away and not sent.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/live-report (the `PostV1LiveReport` operationId).
+func (c *ClientWithResponses) PostV1LiveReportWithResponse(ctx context.Context, body PostV1LiveReportJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1LiveReportResponse, error) {
+	rsp, err := c.PostV1LiveReport(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1LiveReportResponse(rsp)
+}
+
+// DeleteV1LiveReportByReportIdWithResponse Delete a live report
+//
+// Deletes the report and stops its scheduled reports.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/live-report/{reportId} (the `DeleteV1LiveReportByReportId` operationId).
+func (c *ClientWithResponses) DeleteV1LiveReportByReportIdWithResponse(ctx context.Context, reportId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1LiveReportByReportIdResponse, error) {
+	rsp, err := c.DeleteV1LiveReportByReportId(ctx, reportId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1LiveReportByReportIdResponse(rsp)
+}
+
+// GetV1LiveReportByReportIdWithResponse Get a live report
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/live-report/{reportId} (the `GetV1LiveReportByReportId` operationId).
+func (c *ClientWithResponses) GetV1LiveReportByReportIdWithResponse(ctx context.Context, reportId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1LiveReportByReportIdResponse, error) {
+	rsp, err := c.GetV1LiveReportByReportId(ctx, reportId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1LiveReportByReportIdResponse(rsp)
+}
+
+// PatchV1LiveReportByReportIdWithBodyWithResponse Update a live report
+//
+// Changes the fields sent. Set `status` to PAUSED to stop scheduled reports.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/live-report/{reportId} (the `PatchV1LiveReportByReportId` operationId).
+func (c *ClientWithResponses) PatchV1LiveReportByReportIdWithBodyWithResponse(ctx context.Context, reportId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1LiveReportByReportIdResponse, error) {
+	rsp, err := c.PatchV1LiveReportByReportIdWithBody(ctx, reportId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchV1LiveReportByReportIdResponse(rsp)
+}
+
+// PatchV1LiveReportByReportIdWithResponse Update a live report
+//
+// Changes the fields sent. Set `status` to PAUSED to stop scheduled reports.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/live-report/{reportId} (the `PatchV1LiveReportByReportId` operationId).
+func (c *ClientWithResponses) PatchV1LiveReportByReportIdWithResponse(ctx context.Context, reportId openapi_types.UUID, body PatchV1LiveReportByReportIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1LiveReportByReportIdResponse, error) {
+	rsp, err := c.PatchV1LiveReportByReportId(ctx, reportId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchV1LiveReportByReportIdResponse(rsp)
+}
+
+// GetV1LiveReportByReportIdDocumentWithResponse List report documents
+//
+// Lists a report's documents, newest period first.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/live-report/{reportId}/document (the `GetV1LiveReportByReportIdDocument` operationId).
+func (c *ClientWithResponses) GetV1LiveReportByReportIdDocumentWithResponse(ctx context.Context, reportId string, params *GetV1LiveReportByReportIdDocumentParams, reqEditors ...RequestEditorFn) (*GetV1LiveReportByReportIdDocumentResponse, error) {
+	rsp, err := c.GetV1LiveReportByReportIdDocument(ctx, reportId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1LiveReportByReportIdDocumentResponse(rsp)
+}
+
+// GetV1LiveReportByReportIdDocumentByDocumentIdWithResponse Get a report document
+//
+// Returns one written report. `document` is null until `status` is READY. Theme excerpts and grader quotes (call transcript text) are included only for keys with transcript:read.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/live-report/{reportId}/document/{documentId} (the `GetV1LiveReportByReportIdDocumentByDocumentId` operationId).
+func (c *ClientWithResponses) GetV1LiveReportByReportIdDocumentByDocumentIdWithResponse(ctx context.Context, reportId openapi_types.UUID, documentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1LiveReportByReportIdDocumentByDocumentIdResponse, error) {
+	rsp, err := c.GetV1LiveReportByReportIdDocumentByDocumentId(ctx, reportId, documentId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1LiveReportByReportIdDocumentByDocumentIdResponse(rsp)
+}
+
+// PostV1LiveReportByReportIdGenerateWithBodyWithResponse Generate a live report document
+//
+// Writes the report now, for its latest closed period or a custom window (`periodStart` + `periodEnd`,
+// at most 92 days, ended). Returns 202 with the document in PENDING; poll
+// GET /v1/live-report/{reportId}/document/{documentId} until `status` is READY or FAILED (typically a few
+// minutes). An identical request already in flight is returned as-is. A generated document is not emailed.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/live-report/{reportId}/generate (the `PostV1LiveReportByReportIdGenerate` operationId).
+func (c *ClientWithResponses) PostV1LiveReportByReportIdGenerateWithBodyWithResponse(ctx context.Context, reportId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1LiveReportByReportIdGenerateResponse, error) {
+	rsp, err := c.PostV1LiveReportByReportIdGenerateWithBody(ctx, reportId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1LiveReportByReportIdGenerateResponse(rsp)
+}
+
+// PostV1LiveReportByReportIdGenerateWithResponse Generate a live report document
+//
+// Writes the report now, for its latest closed period or a custom window (`periodStart` + `periodEnd`,
+// at most 92 days, ended). Returns 202 with the document in PENDING; poll
+// GET /v1/live-report/{reportId}/document/{documentId} until `status` is READY or FAILED (typically a few
+// minutes). An identical request already in flight is returned as-is. A generated document is not emailed.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/live-report/{reportId}/generate (the `PostV1LiveReportByReportIdGenerate` operationId).
+func (c *ClientWithResponses) PostV1LiveReportByReportIdGenerateWithResponse(ctx context.Context, reportId openapi_types.UUID, body PostV1LiveReportByReportIdGenerateJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1LiveReportByReportIdGenerateResponse, error) {
+	rsp, err := c.PostV1LiveReportByReportIdGenerate(ctx, reportId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1LiveReportByReportIdGenerateResponse(rsp)
 }
 
 // GetV1MeWithResponse Describe the current credential
@@ -91796,6 +100428,109 @@ func (c *ClientWithResponses) PostV1SimulationToolMockWithResponse(ctx context.C
 		return nil, err
 	}
 	return ParsePostV1SimulationToolMockResponse(rsp)
+}
+
+// GetV1ToolWithResponse List tools
+//
+// The project's tools and the built-in ones, each with its latest version: inputs, description and, for a tool a hosted agent runs, its request. Attach one to an agent draft by id.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/tool (the `GetV1Tool` operationId).
+func (c *ClientWithResponses) GetV1ToolWithResponse(ctx context.Context, params *GetV1ToolParams, reqEditors ...RequestEditorFn) (*GetV1ToolResponse, error) {
+	rsp, err := c.GetV1Tool(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1ToolResponse(rsp)
+}
+
+// PostV1ToolWithBodyWithResponse Create a tool
+//
+// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/tool (the `PostV1Tool` operationId).
+func (c *ClientWithResponses) PostV1ToolWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1ToolResponse, error) {
+	rsp, err := c.PostV1ToolWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1ToolResponse(rsp)
+}
+
+// PostV1ToolWithResponse Create a tool
+//
+// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/tool (the `PostV1Tool` operationId).
+func (c *ClientWithResponses) PostV1ToolWithResponse(ctx context.Context, body PostV1ToolJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1ToolResponse, error) {
+	rsp, err := c.PostV1Tool(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1ToolResponse(rsp)
+}
+
+// DeleteV1ToolByToolIdWithResponse Delete a tool
+//
+// Deletes a tool no agent version uses. A tool an agent version uses returns 409.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/tool/{toolId} (the `DeleteV1ToolByToolId` operationId).
+func (c *ClientWithResponses) DeleteV1ToolByToolIdWithResponse(ctx context.Context, toolId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1ToolByToolIdResponse, error) {
+	rsp, err := c.DeleteV1ToolByToolId(ctx, toolId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1ToolByToolIdResponse(rsp)
+}
+
+// GetV1ToolByToolIdWithResponse Get a tool
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/tool/{toolId} (the `GetV1ToolByToolId` operationId).
+func (c *ClientWithResponses) GetV1ToolByToolIdWithResponse(ctx context.Context, toolId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1ToolByToolIdResponse, error) {
+	rsp, err := c.GetV1ToolByToolId(ctx, toolId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1ToolByToolIdResponse(rsp)
+}
+
+// PutV1ToolByToolIdWithBodyWithResponse Update a tool
+//
+// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/tool/{toolId} (the `PutV1ToolByToolId` operationId).
+func (c *ClientWithResponses) PutV1ToolByToolIdWithBodyWithResponse(ctx context.Context, toolId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1ToolByToolIdResponse, error) {
+	rsp, err := c.PutV1ToolByToolIdWithBody(ctx, toolId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1ToolByToolIdResponse(rsp)
+}
+
+// PutV1ToolByToolIdWithResponse Update a tool
+//
+// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/tool/{toolId} (the `PutV1ToolByToolId` operationId).
+func (c *ClientWithResponses) PutV1ToolByToolIdWithResponse(ctx context.Context, toolId openapi_types.UUID, body PutV1ToolByToolIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1ToolByToolIdResponse, error) {
+	rsp, err := c.PutV1ToolByToolId(ctx, toolId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1ToolByToolIdResponse(rsp)
 }
 
 // GetV1UsageWithResponse Get usage & cost
@@ -94684,6 +103419,626 @@ func ParseGetV1BenchmarkTargetByTargetKeyScoreSampleResponse(rsp *http.Response)
 			return nil, err
 		}
 		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1CalendarConnectionResponse parses an HTTP response from a GetV1CalendarConnectionWithResponse call
+func ParseGetV1CalendarConnectionResponse(rsp *http.Response) (*GetV1CalendarConnectionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1CalendarConnectionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []struct {
+				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+				AccountLabel *string `json:"accountLabel"`
+
+				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+				Capabilities struct {
+					// Auth How this provider is authenticated.
+					Auth GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+					Operations []GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+					SlotHold GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+				} `json:"capabilities"`
+
+				// CreatedAt Creation timestamp in ISO 8601 format.
+				CreatedAt string `json:"createdAt"`
+
+				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+				CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+				// Id Unique identifier of the calendar connection.
+				Id openapi_types.UUID `json:"id"`
+
+				// Label Customer-supplied name for this account. Unique within the project.
+				Label string `json:"label"`
+
+				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+				LastCheckedAt *string `json:"lastCheckedAt"`
+
+				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				Provider GetV1CalendarConnection200JSONResponseBodyDataProvider `json:"provider"`
+
+				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+				Scopes *[]string `json:"scopes"`
+
+				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+				Status GetV1CalendarConnection200JSONResponseBodyDataStatus `json:"status"`
+
+				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+				StatusMessage *string `json:"statusMessage"`
+
+				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+				Timezone string `json:"timezone"`
+
+				// UpdatedAt Last update timestamp in ISO 8601 format.
+				UpdatedAt string `json:"updatedAt"`
+			} `json:"data"`
+			Pagination struct {
+				// HasMore Whether there are more items to fetch
+				HasMore bool `json:"hasMore"`
+
+				// NextCursor Cursor for the next page of items
+				NextCursor *string `json:"nextCursor"`
+
+				// Total Total number of items
+				Total float64 `json:"total"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1CalendarConnectionResponse parses an HTTP response from a PostV1CalendarConnectionWithResponse call
+func ParsePostV1CalendarConnectionResponse(rsp *http.Response) (*PostV1CalendarConnectionResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1CalendarConnectionResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+			Data struct {
+				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+				AccountLabel *string `json:"accountLabel"`
+
+				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+				Capabilities struct {
+					// Auth How this provider is authenticated.
+					Auth PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+					Operations []PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+					SlotHold PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+				} `json:"capabilities"`
+
+				// CreatedAt Creation timestamp in ISO 8601 format.
+				CreatedAt string `json:"createdAt"`
+
+				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+				CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+				// Id Unique identifier of the calendar connection.
+				Id openapi_types.UUID `json:"id"`
+
+				// Label Customer-supplied name for this account. Unique within the project.
+				Label string `json:"label"`
+
+				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+				LastCheckedAt *string `json:"lastCheckedAt"`
+
+				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				Provider PostV1CalendarConnection201JSONResponseBodyDataProvider `json:"provider"`
+
+				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+				Scopes *[]string `json:"scopes"`
+
+				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+				Status PostV1CalendarConnection201JSONResponseBodyDataStatus `json:"status"`
+
+				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+				StatusMessage *string `json:"statusMessage"`
+
+				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+				Timezone string `json:"timezone"`
+
+				// UpdatedAt Last update timestamp in ISO 8601 format.
+				UpdatedAt string `json:"updatedAt"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1CalendarConnectionByConnectionIdResponse parses an HTTP response from a DeleteV1CalendarConnectionByConnectionIdWithResponse call
+func ParseDeleteV1CalendarConnectionByConnectionIdResponse(rsp *http.Response) (*DeleteV1CalendarConnectionByConnectionIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1CalendarConnectionByConnectionIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				// Deleted Always true. The credential is hard-deleted, not archived.
+				Deleted DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted `json:"deleted"`
+
+				// Id Identifier of the deleted connection.
+				Id openapi_types.UUID `json:"id"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1CalendarConnectionByConnectionIdResponse parses an HTTP response from a GetV1CalendarConnectionByConnectionIdWithResponse call
+func ParseGetV1CalendarConnectionByConnectionIdResponse(rsp *http.Response) (*GetV1CalendarConnectionByConnectionIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1CalendarConnectionByConnectionIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+			Data struct {
+				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+				AccountLabel *string `json:"accountLabel"`
+
+				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+				Capabilities struct {
+					// Auth How this provider is authenticated.
+					Auth GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+					Operations []GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+					SlotHold GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+				} `json:"capabilities"`
+
+				// CreatedAt Creation timestamp in ISO 8601 format.
+				CreatedAt string `json:"createdAt"`
+
+				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+				CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+				// Id Unique identifier of the calendar connection.
+				Id openapi_types.UUID `json:"id"`
+
+				// Label Customer-supplied name for this account. Unique within the project.
+				Label string `json:"label"`
+
+				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+				LastCheckedAt *string `json:"lastCheckedAt"`
+
+				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				Provider GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
+
+				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+				Scopes *[]string `json:"scopes"`
+
+				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+				Status GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus `json:"status"`
+
+				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+				StatusMessage *string `json:"statusMessage"`
+
+				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+				Timezone string `json:"timezone"`
+
+				// UpdatedAt Last update timestamp in ISO 8601 format.
+				UpdatedAt string `json:"updatedAt"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePatchV1CalendarConnectionByConnectionIdResponse parses an HTTP response from a PatchV1CalendarConnectionByConnectionIdWithResponse call
+func ParsePatchV1CalendarConnectionByConnectionIdResponse(rsp *http.Response) (*PatchV1CalendarConnectionByConnectionIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PatchV1CalendarConnectionByConnectionIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+			Data struct {
+				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+				AccountLabel *string `json:"accountLabel"`
+
+				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+				Capabilities struct {
+					// Auth How this provider is authenticated.
+					Auth PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+					Operations []PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+					SlotHold PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+				} `json:"capabilities"`
+
+				// CreatedAt Creation timestamp in ISO 8601 format.
+				CreatedAt string `json:"createdAt"`
+
+				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+				CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+				// Id Unique identifier of the calendar connection.
+				Id openapi_types.UUID `json:"id"`
+
+				// Label Customer-supplied name for this account. Unique within the project.
+				Label string `json:"label"`
+
+				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+				LastCheckedAt *string `json:"lastCheckedAt"`
+
+				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				Provider PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
+
+				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+				Scopes *[]string `json:"scopes"`
+
+				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+				Status PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus `json:"status"`
+
+				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+				StatusMessage *string `json:"statusMessage"`
+
+				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+				Timezone string `json:"timezone"`
+
+				// UpdatedAt Last update timestamp in ISO 8601 format.
+				UpdatedAt string `json:"updatedAt"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1CalendarConnectionByConnectionIdCheckResponse parses an HTTP response from a PostV1CalendarConnectionByConnectionIdCheckWithResponse call
+func ParsePostV1CalendarConnectionByConnectionIdCheckResponse(rsp *http.Response) (*PostV1CalendarConnectionByConnectionIdCheckResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1CalendarConnectionByConnectionIdCheckResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+			Data struct {
+				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+				AccountLabel *string `json:"accountLabel"`
+
+				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+				Capabilities struct {
+					// Auth How this provider is authenticated.
+					Auth PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+					Operations []PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+					SlotHold PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+				} `json:"capabilities"`
+
+				// CreatedAt Creation timestamp in ISO 8601 format.
+				CreatedAt string `json:"createdAt"`
+
+				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+				CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+				// Id Unique identifier of the calendar connection.
+				Id openapi_types.UUID `json:"id"`
+
+				// Label Customer-supplied name for this account. Unique within the project.
+				Label string `json:"label"`
+
+				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+				LastCheckedAt *string `json:"lastCheckedAt"`
+
+				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				Provider PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
+
+				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+				Scopes *[]string `json:"scopes"`
+
+				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+				Status PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus `json:"status"`
+
+				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+				StatusMessage *string `json:"statusMessage"`
+
+				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+				Timezone string `json:"timezone"`
+
+				// UpdatedAt Last update timestamp in ISO 8601 format.
+				UpdatedAt string `json:"updatedAt"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse
@@ -98756,6 +108111,577 @@ func ParseGetV1KnowledgeBaseByIdResponse(rsp *http.Response) (*GetV1KnowledgeBas
 			return nil, err
 		}
 		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1LiveReportResponse parses an HTTP response from a GetV1LiveReportWithResponse call
+func ParseGetV1LiveReportResponse(rsp *http.Response) (*GetV1LiveReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1LiveReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				Items      []LiveReport `json:"items"`
+				TotalCount int          `json:"totalCount"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1LiveReportResponse parses an HTTP response from a PostV1LiveReportWithResponse call
+func ParsePostV1LiveReportResponse(rsp *http.Response) (*PostV1LiveReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1LiveReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			Data LiveReport `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1LiveReportByReportIdResponse parses an HTTP response from a DeleteV1LiveReportByReportIdWithResponse call
+func ParseDeleteV1LiveReportByReportIdResponse(rsp *http.Response) (*DeleteV1LiveReportByReportIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1LiveReportByReportIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				Deleted DeleteV1LiveReportByReportId200JSONResponseBodyDataDeleted `json:"deleted"`
+				Id      openapi_types.UUID                                         `json:"id"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1LiveReportByReportIdResponse parses an HTTP response from a GetV1LiveReportByReportIdWithResponse call
+func ParseGetV1LiveReportByReportIdResponse(rsp *http.Response) (*GetV1LiveReportByReportIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1LiveReportByReportIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data LiveReport `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePatchV1LiveReportByReportIdResponse parses an HTTP response from a PatchV1LiveReportByReportIdWithResponse call
+func ParsePatchV1LiveReportByReportIdResponse(rsp *http.Response) (*PatchV1LiveReportByReportIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PatchV1LiveReportByReportIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data LiveReport `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1LiveReportByReportIdDocumentResponse parses an HTTP response from a GetV1LiveReportByReportIdDocumentWithResponse call
+func ParseGetV1LiveReportByReportIdDocumentResponse(rsp *http.Response) (*GetV1LiveReportByReportIdDocumentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1LiveReportByReportIdDocumentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				Items      []LiveReportDocument `json:"items"`
+				TotalCount int                  `json:"totalCount"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1LiveReportByReportIdDocumentByDocumentIdResponse parses an HTTP response from a GetV1LiveReportByReportIdDocumentByDocumentIdWithResponse call
+func ParseGetV1LiveReportByReportIdDocumentByDocumentIdResponse(rsp *http.Response) (*GetV1LiveReportByReportIdDocumentByDocumentIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1LiveReportByReportIdDocumentByDocumentIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data One written report over one period. `document` is null until `status` is READY; every number in it comes from the analytics engine (the same reads GET /v1/dashboard/{dashboardId}/data makes over the same window and filters).
+			Data LiveReportDocument `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1LiveReportByReportIdGenerateResponse parses an HTTP response from a PostV1LiveReportByReportIdGenerateWithResponse call
+func ParsePostV1LiveReportByReportIdGenerateResponse(rsp *http.Response) (*PostV1LiveReportByReportIdGenerateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1LiveReportByReportIdGenerateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest struct {
+			// Data One written report over one period. `document` is null until `status` is READY; every number in it comes from the analytics engine (the same reads GET /v1/dashboard/{dashboardId}/data makes over the same window and filters).
+			Data LiveReportDocument `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse
@@ -105044,6 +114970,269 @@ func ParsePostV1SimulationToolMockResponse(rsp *http.Response) (*PostV1Simulatio
 			return nil, err
 		}
 		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1ToolResponse parses an HTTP response from a GetV1ToolWithResponse call
+func ParseGetV1ToolResponse(rsp *http.Response) (*GetV1ToolResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1ToolResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ToolListResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1ToolResponse parses an HTTP response from a PostV1ToolWithResponse call
+func ParsePostV1ToolResponse(rsp *http.Response) (*PostV1ToolResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1ToolResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest ToolSingleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1ToolByToolIdResponse parses an HTTP response from a DeleteV1ToolByToolIdWithResponse call
+func ParseDeleteV1ToolByToolIdResponse(rsp *http.Response) (*DeleteV1ToolByToolIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1ToolByToolIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ToolDeleteResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1ToolByToolIdResponse parses an HTTP response from a GetV1ToolByToolIdWithResponse call
+func ParseGetV1ToolByToolIdResponse(rsp *http.Response) (*GetV1ToolByToolIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1ToolByToolIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ToolSingleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePutV1ToolByToolIdResponse parses an HTTP response from a PutV1ToolByToolIdWithResponse call
+func ParsePutV1ToolByToolIdResponse(rsp *http.Response) (*PutV1ToolByToolIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PutV1ToolByToolIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ToolSingleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse

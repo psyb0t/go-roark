@@ -2,6 +2,11 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.9.0, 2026-11-05
+
+- Development image package installation uses HTTPS and bounded retries for signed snapshot indexes and package downloads.
+- Breaking: regenerated the current Roark specification, including calendar connection target operations. ToolHandler is now a union; use its generated As/From helpers and variant-specific enums instead of the removed ToolHandlerMethod and ToolHandlerType aliases.
+
 ## v0.8.1, 2026-11-03
 
 - Added calendar connection endpoints: `GetV1CalendarConnection`, `GetV1CalendarConnectionByConnectionId`, `PostV1CalendarConnection`, `PatchV1CalendarConnectionByConnectionId`, `DeleteV1CalendarConnectionByConnectionId` and `PostV1CalendarConnectionByConnectionIdCheck`. Each has `WithBody` and `WithResponse` variants where the client has them, plus request builders and response types. `GetV1CalendarConnectionParams` holds the list filters, including `GetV1CalendarConnectionParamsProvider` (`CALCOM`, `CALENDLY`, `GOOGLE`).

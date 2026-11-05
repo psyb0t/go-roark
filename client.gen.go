@@ -17992,42 +17992,87 @@ func (e ToolDeleteResponseDataDeleted) Valid() bool {
 	}
 }
 
-// Defines values for ToolHandlerMethod.
+// Defines values for ToolHandler0Method.
 const (
-	ToolHandlerMethodDELETE ToolHandlerMethod = "DELETE"
-	ToolHandlerMethodGET    ToolHandlerMethod = "GET"
-	ToolHandlerMethodPATCH  ToolHandlerMethod = "PATCH"
-	ToolHandlerMethodPOST   ToolHandlerMethod = "POST"
-	ToolHandlerMethodPUT    ToolHandlerMethod = "PUT"
+	ToolHandler0MethodDELETE ToolHandler0Method = "DELETE"
+	ToolHandler0MethodGET    ToolHandler0Method = "GET"
+	ToolHandler0MethodPATCH  ToolHandler0Method = "PATCH"
+	ToolHandler0MethodPOST   ToolHandler0Method = "POST"
+	ToolHandler0MethodPUT    ToolHandler0Method = "PUT"
 )
 
-// Valid indicates whether the value is a known member of the ToolHandlerMethod enum.
-func (e ToolHandlerMethod) Valid() bool {
+// Valid indicates whether the value is a known member of the ToolHandler0Method enum.
+func (e ToolHandler0Method) Valid() bool {
 	switch e {
-	case ToolHandlerMethodDELETE:
+	case ToolHandler0MethodDELETE:
 		return true
-	case ToolHandlerMethodGET:
+	case ToolHandler0MethodGET:
 		return true
-	case ToolHandlerMethodPATCH:
+	case ToolHandler0MethodPATCH:
 		return true
-	case ToolHandlerMethodPOST:
+	case ToolHandler0MethodPOST:
 		return true
-	case ToolHandlerMethodPUT:
+	case ToolHandler0MethodPUT:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for ToolHandlerType.
+// Defines values for ToolHandler0Type.
 const (
-	ToolHandlerTypeHttp ToolHandlerType = "http"
+	ToolHandler0TypeHttp ToolHandler0Type = "http"
 )
 
-// Valid indicates whether the value is a known member of the ToolHandlerType enum.
-func (e ToolHandlerType) Valid() bool {
+// Valid indicates whether the value is a known member of the ToolHandler0Type enum.
+func (e ToolHandler0Type) Valid() bool {
 	switch e {
-	case ToolHandlerTypeHttp:
+	case ToolHandler0TypeHttp:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ToolHandler1Operation.
+const (
+	ToolHandler1OperationBOOK              ToolHandler1Operation = "BOOK"
+	ToolHandler1OperationCANCEL            ToolHandler1Operation = "CANCEL"
+	ToolHandler1OperationCHECKAVAILABILITY ToolHandler1Operation = "CHECK_AVAILABILITY"
+	ToolHandler1OperationLISTBOOKINGS      ToolHandler1Operation = "LIST_BOOKINGS"
+	ToolHandler1OperationLOOKUPBOOKING     ToolHandler1Operation = "LOOKUP_BOOKING"
+	ToolHandler1OperationRESCHEDULE        ToolHandler1Operation = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the ToolHandler1Operation enum.
+func (e ToolHandler1Operation) Valid() bool {
+	switch e {
+	case ToolHandler1OperationBOOK:
+		return true
+	case ToolHandler1OperationCANCEL:
+		return true
+	case ToolHandler1OperationCHECKAVAILABILITY:
+		return true
+	case ToolHandler1OperationLISTBOOKINGS:
+		return true
+	case ToolHandler1OperationLOOKUPBOOKING:
+		return true
+	case ToolHandler1OperationRESCHEDULE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ToolHandler1Type.
+const (
+	ToolHandler1TypeCalendar ToolHandler1Type = "calendar"
+)
+
+// Valid indicates whether the value is a known member of the ToolHandler1Type enum.
+func (e ToolHandler1Type) Valid() bool {
+	switch e {
+	case ToolHandler1TypeCalendar:
 		return true
 	default:
 		return false
@@ -21280,6 +21325,36 @@ func (e PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus
 	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusERROR:
 		return true
 	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider.
+const (
+	GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProviderCALCOM GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider = "CAL_COM"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider enum.
+func (e GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider) Valid() bool {
+	switch e {
+	case GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProviderCALCOM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider.
+const (
+	GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProviderCALCOM GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider = "CAL_COM"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider enum.
+func (e GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider) Valid() bool {
+	switch e {
+	case GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProviderCALCOM:
 		return true
 	default:
 		return false
@@ -27006,13 +27081,14 @@ type AnalyticsSchemaOperators string
 
 // ApiCheckMetricConfig defines model for ApiCheckMetricConfig.
 type ApiCheckMetricConfig struct {
-	CalculationType ApiCheckMetricConfigCalculationType `json:"calculationType"`
-	DisplayName     *string                             `json:"displayName,omitempty"`
-	FalseLabel      *string                             `json:"falseLabel,omitempty"`
-	HttpRequest     ApiCheckRequestConfig               `json:"httpRequest"`
-	Kind            ApiCheckMetricConfigKind            `json:"kind"`
-	Name            string                              `json:"name"`
-	TrueLabel       *string                             `json:"trueLabel,omitempty"`
+	CalculationType  ApiCheckMetricConfigCalculationType `json:"calculationType"`
+	DisplayName      *string                             `json:"displayName,omitempty"`
+	FalseLabel       *string                             `json:"falseLabel,omitempty"`
+	GradesShortCalls *bool                               `json:"gradesShortCalls,omitempty"`
+	HttpRequest      ApiCheckRequestConfig               `json:"httpRequest"`
+	Kind             ApiCheckMetricConfigKind            `json:"kind"`
+	Name             string                              `json:"name"`
+	TrueLabel        *string                             `json:"trueLabel,omitempty"`
 }
 
 // ApiCheckMetricConfigCalculationType defines model for ApiCheckMetricConfig.CalculationType.
@@ -31298,6 +31374,9 @@ type FormulaMetricResponse struct {
 	} `json:"evidenceSource"`
 	Formula FormulaMetricDetails `json:"formula"`
 
+	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines. Such calls skip every metric without it.
+	GradesShortCalls bool `json:"gradesShortCalls"`
+
 	// Id Unique identifier for the metric definition
 	Id openapi_types.UUID `json:"id"`
 
@@ -31927,6 +32006,9 @@ type HttpRequestMetricInput struct {
 	// CalculationType BOOLEAN metric answered by your own endpoint. Roark sends a request about each call, live or simulated, and your endpoint answers {"passed": true | false, "reason": "..."}.
 	CalculationType HttpRequestMetricInputCalculationType `json:"calculationType"`
 
+	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines. Such calls skip every other metric. Default false.
+	GradesShortCalls *bool `json:"gradesShortCalls,omitempty"`
+
 	// HttpRequest The request to send. With no body, Roark POSTs the default payload: { version, requestId, metric, call, simulation }.
 	HttpRequest struct {
 		// Body A JSON template with {{path}} placeholders into the request payload, such as {"cardId": "{{call.properties.cardId}}"}. Omit or pass null to send the default payload.
@@ -32070,6 +32152,9 @@ type HttpRequestMetricResponse struct {
 		// MetricId Slug of the metric whose per-turn values are the evidence behind this count or rate
 		MetricId string `json:"metricId"`
 	} `json:"evidenceSource"`
+
+	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines. Such calls skip every metric without it.
+	GradesShortCalls bool `json:"gradesShortCalls"`
 
 	// HttpRequest The request this metric sends.
 	HttpRequest *HttpRequestMetricDetails `json:"httpRequest"`
@@ -33783,6 +33868,9 @@ type LlmJudgeMetricResponse struct {
 		MetricId string `json:"metricId"`
 	} `json:"evidenceSource"`
 
+	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines. Such calls skip every metric without it.
+	GradesShortCalls bool `json:"gradesShortCalls"`
+
 	// Id Unique identifier for the metric definition
 	Id openapi_types.UUID `json:"id"`
 
@@ -34492,14 +34580,15 @@ type MetricCollectionJobResponseTriggeredBy string
 
 // MetricConfig defines model for MetricConfig.
 type MetricConfig struct {
-	CalculationType *MetricConfigCalculationType `json:"calculationType,omitempty"`
-	Contexts        *[]MetricConfigContexts      `json:"contexts,omitempty"`
-	DisplayName     *string                      `json:"displayName,omitempty"`
-	FalseLabel      *string                      `json:"falseLabel,omitempty"`
-	Kind            MetricConfigKind             `json:"kind"`
-	MaxSelections   *int                         `json:"maxSelections,omitempty"`
-	Name            string                       `json:"name"`
-	Options         *[]struct {
+	CalculationType  *MetricConfigCalculationType `json:"calculationType,omitempty"`
+	Contexts         *[]MetricConfigContexts      `json:"contexts,omitempty"`
+	DisplayName      *string                      `json:"displayName,omitempty"`
+	FalseLabel       *string                      `json:"falseLabel,omitempty"`
+	GradesShortCalls *bool                        `json:"gradesShortCalls,omitempty"`
+	Kind             MetricConfigKind             `json:"kind"`
+	MaxSelections    *int                         `json:"maxSelections,omitempty"`
+	Name             string                       `json:"name"`
+	Options          *[]struct {
 		Description  *string `json:"description,omitempty"`
 		DisplayOrder int     `json:"displayOrder"`
 		Label        string  `json:"label"`
@@ -34877,6 +34966,9 @@ type PatternMetricResponse struct {
 		MetricId string `json:"metricId"`
 	} `json:"evidenceSource"`
 
+	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines. Such calls skip every metric without it.
+	GradesShortCalls bool `json:"gradesShortCalls"`
+
 	// Id Unique identifier for the metric definition
 	Id openapi_types.UUID `json:"id"`
 
@@ -35202,6 +35294,9 @@ type PromptMetricInput struct {
 		Label        string `json:"label"`
 	} `json:"classificationOptions,omitempty"`
 
+	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines. Such calls skip every other metric. Default false.
+	GradesShortCalls *bool `json:"gradesShortCalls,omitempty"`
+
 	// LlmPrompt LLM prompt/criteria for evaluating this metric. Required for BOOLEAN, NUMERIC, TEXT, and SCALE types.
 	//
 	// Example: Evaluate whether the customer expressed satisfaction with the service provided.
@@ -35302,6 +35397,9 @@ type ProviderMetricResponse struct {
 		// MetricId Slug of the metric whose per-turn values are the evidence behind this count or rate
 		MetricId string `json:"metricId"`
 	} `json:"evidenceSource"`
+
+	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines. Such calls skip every metric without it.
+	GradesShortCalls bool `json:"gradesShortCalls"`
 
 	// Id Unique identifier for the metric definition
 	Id openapi_types.UUID `json:"id"`
@@ -36500,11 +36598,13 @@ type ScriptedFlowConfig struct {
 	Agents        *[]string                        `json:"agents,omitempty"`
 	BranchingMode *ScriptedFlowConfigBranchingMode `json:"branchingMode,omitempty"`
 	Description   *string                          `json:"description,omitempty"`
+	Environment   *string                          `json:"environment,omitempty"`
 	Expectations  *[]string                        `json:"expectations,omitempty"`
 	Graph         []ConfigFlowStep                 `json:"graph"`
 	Kind          ScriptedFlowConfigKind           `json:"kind"`
 	Name          string                           `json:"name"`
 	OffScript     *ConfigOffScript                 `json:"offScript,omitempty"`
+	Persona       *string                          `json:"persona,omitempty"`
 	Title         *string                          `json:"title,omitempty"`
 	Type          ScriptedFlowConfigType           `json:"type"`
 }
@@ -37251,7 +37351,7 @@ type SimulationPlanConfig struct {
 	MaxConcurrentJobs             *int                                `json:"maxConcurrentJobs,omitempty"`
 	MaxDurationSeconds            int                                 `json:"maxDurationSeconds"`
 	MaxNoResponseRetries          *int                                `json:"maxNoResponseRetries,omitempty"`
-	Metrics                       []string                            `json:"metrics"`
+	Metrics                       []SimulationPlanConfig_Metrics_Item `json:"metrics"`
 	Name                          string                              `json:"name"`
 	NoResponseRetryBackoffSeconds *int                                `json:"noResponseRetryBackoffSeconds,omitempty"`
 	Notify                        *SimulationNotifyConfig             `json:"notify,omitempty"`
@@ -37269,6 +37369,14 @@ type SimulationPlanConfigExecutionMode string
 // SimulationPlanConfigKind defines model for SimulationPlanConfig.Kind.
 type SimulationPlanConfigKind string
 
+// SimulationPlanConfigMetrics0 defines model for SimulationPlanConfig.Metrics.0.
+type SimulationPlanConfigMetrics0 = string
+
+// SimulationPlanConfig_Metrics_Item defines model for SimulationPlanConfig.metrics.Item.
+type SimulationPlanConfig_Metrics_Item struct {
+	union json.RawMessage
+}
+
 // SimulationPlanConfigTemplate defines model for SimulationPlanConfig.Template.
 type SimulationPlanConfigTemplate string
 
@@ -37279,6 +37387,12 @@ type SimulationPlanFlowConfig struct {
 	HappyPath       *bool     `json:"happyPath,omitempty"`
 	PersonaOverride *string   `json:"personaOverride,omitempty"`
 	System          *string   `json:"system,omitempty"`
+}
+
+// SimulationPlanMetricConfig defines model for SimulationPlanMetricConfig.
+type SimulationPlanMetricConfig struct {
+	Metric      string   `json:"metric"`
+	MinPassRate *float64 `json:"minPassRate,omitempty"`
 }
 
 // SimulationPlanNotificationsInput Where each run's report announces itself once it is ready.
@@ -38813,6 +38927,9 @@ type ThresholdMetricResponse struct {
 		MetricId string `json:"metricId"`
 	} `json:"evidenceSource"`
 
+	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines. Such calls skip every metric without it.
+	GradesShortCalls bool `json:"gradesShortCalls"`
+
 	// Id Unique identifier for the metric definition
 	Id openapi_types.UUID `json:"id"`
 
@@ -38964,19 +39081,44 @@ type ToolDeleteResponseDataDeleted bool
 
 // ToolHandler defines model for ToolHandler.
 type ToolHandler struct {
-	Body      *string            `json:"body,omitempty"`
-	Headers   *map[string]string `json:"headers,omitempty"`
-	Method    *ToolHandlerMethod `json:"method,omitempty"`
-	TimeoutMs *int               `json:"timeoutMs,omitempty"`
-	Type      ToolHandlerType    `json:"type"`
-	Url       string             `json:"url"`
+	union json.RawMessage
 }
 
-// ToolHandlerMethod defines model for ToolHandler.Method.
-type ToolHandlerMethod string
+// ToolHandler0 defines model for ToolHandler.0.
+type ToolHandler0 struct {
+	Body      *string             `json:"body,omitempty"`
+	Headers   *map[string]string  `json:"headers,omitempty"`
+	Method    *ToolHandler0Method `json:"method,omitempty"`
+	TimeoutMs *int                `json:"timeoutMs,omitempty"`
+	Type      ToolHandler0Type    `json:"type"`
+	Url       string              `json:"url"`
+}
 
-// ToolHandlerType defines model for ToolHandler.Type.
-type ToolHandlerType string
+// ToolHandler0Method defines model for ToolHandler.0.Method.
+type ToolHandler0Method string
+
+// ToolHandler0Type defines model for ToolHandler.0.Type.
+type ToolHandler0Type string
+
+// ToolHandler1 defines model for ToolHandler.1.
+type ToolHandler1 struct {
+	AppointmentTypes []struct {
+		DurationMinutes *int    `json:"durationMinutes,omitempty"`
+		EventTypeId     int     `json:"eventTypeId"`
+		Name            string  `json:"name"`
+		WhenToUse       *string `json:"whenToUse,omitempty"`
+	} `json:"appointmentTypes"`
+	CalendarConnection openapi_types.UUID    `json:"calendarConnection"`
+	Operation          ToolHandler1Operation `json:"operation"`
+	Simulate           *bool                 `json:"simulate,omitempty"`
+	Type               ToolHandler1Type      `json:"type"`
+}
+
+// ToolHandler1Operation defines model for ToolHandler.1.Operation.
+type ToolHandler1Operation string
+
+// ToolHandler1Type defines model for ToolHandler.1.Type.
+type ToolHandler1Type string
 
 // ToolInput defines model for ToolInput.
 type ToolInput struct {
@@ -39896,8 +40038,11 @@ type UpdateMetricDefinitionInput struct {
 	} `json:"classificationOptions,omitempty"`
 
 	// Formula New formula expression (FORMULA only). Pass `sources` alongside if the referenced metrics change.
-	Formula     *string                  `json:"formula,omitempty"`
-	HttpRequest *HttpRequestMetricConfig `json:"httpRequest,omitempty"`
+	Formula *string `json:"formula,omitempty"`
+
+	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines. Such calls skip every other metric. Default false.
+	GradesShortCalls *bool                    `json:"gradesShortCalls,omitempty"`
+	HttpRequest      *HttpRequestMetricConfig `json:"httpRequest,omitempty"`
 
 	// LlmPrompt New LLM prompt (only for LLM_JUDGE metrics whose prompt is editable)
 	LlmPrompt *string `json:"llmPrompt,omitempty"`
@@ -40028,6 +40173,9 @@ type UpdateMetricVariantInput struct {
 
 	// ChangeReason Free-text audit note recorded on the new version.
 	ChangeReason *string `json:"changeReason,omitempty"`
+
+	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines. Such calls skip every other metric. Default false.
+	GradesShortCalls *bool `json:"gradesShortCalls,omitempty"`
 
 	// LlmPrompt The rubric this variant applies. LLM judge metrics only.
 	LlmPrompt *string `json:"llmPrompt,omitempty"`
@@ -40874,6 +41022,12 @@ type PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider 
 
 // PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus defines parameters for PostV1CalendarConnectionByConnectionIdCheck.
 type PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus string
+
+// GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider defines parameters for GetV1CalendarConnectionByConnectionIdTargets.
+type GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider string
+
+// GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider defines parameters for GetV1CalendarConnectionByConnectionIdTargetsByTargetId.
+type GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider string
 
 // GetV1CallParams defines parameters for GetV1Call.
 type GetV1CallParams struct {
@@ -51333,6 +51487,68 @@ func (t *SimulationNotifyConfig_Email) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsSimulationPlanConfigMetrics0 returns the union data inside the SimulationPlanConfig_Metrics_Item as a SimulationPlanConfigMetrics0
+func (t SimulationPlanConfig_Metrics_Item) AsSimulationPlanConfigMetrics0() (SimulationPlanConfigMetrics0, error) {
+	var body SimulationPlanConfigMetrics0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSimulationPlanConfigMetrics0 overwrites any union data inside the SimulationPlanConfig_Metrics_Item as the provided SimulationPlanConfigMetrics0
+func (t *SimulationPlanConfig_Metrics_Item) FromSimulationPlanConfigMetrics0(v SimulationPlanConfigMetrics0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSimulationPlanConfigMetrics0 performs a merge with any union data inside the SimulationPlanConfig_Metrics_Item, using the provided SimulationPlanConfigMetrics0
+func (t *SimulationPlanConfig_Metrics_Item) MergeSimulationPlanConfigMetrics0(v SimulationPlanConfigMetrics0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSimulationPlanMetricConfig returns the union data inside the SimulationPlanConfig_Metrics_Item as a SimulationPlanMetricConfig
+func (t SimulationPlanConfig_Metrics_Item) AsSimulationPlanMetricConfig() (SimulationPlanMetricConfig, error) {
+	var body SimulationPlanMetricConfig
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSimulationPlanMetricConfig overwrites any union data inside the SimulationPlanConfig_Metrics_Item as the provided SimulationPlanMetricConfig
+func (t *SimulationPlanConfig_Metrics_Item) FromSimulationPlanMetricConfig(v SimulationPlanMetricConfig) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSimulationPlanMetricConfig performs a merge with any union data inside the SimulationPlanConfig_Metrics_Item, using the provided SimulationPlanMetricConfig
+func (t *SimulationPlanConfig_Metrics_Item) MergeSimulationPlanMetricConfig(v SimulationPlanMetricConfig) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t SimulationPlanConfig_Metrics_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *SimulationPlanConfig_Metrics_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsSimulationPlanScheduleConfig0 returns the union data inside the SimulationPlanScheduleConfig as a SimulationPlanScheduleConfig0
 func (t SimulationPlanScheduleConfig) AsSimulationPlanScheduleConfig0() (SimulationPlanScheduleConfig0, error) {
 	var body SimulationPlanScheduleConfig0
@@ -51811,6 +52027,68 @@ func (t ThresholdMetricConfig_Value) MarshalJSON() ([]byte, error) {
 }
 
 func (t *ThresholdMetricConfig_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsToolHandler0 returns the union data inside the ToolHandler as a ToolHandler0
+func (t ToolHandler) AsToolHandler0() (ToolHandler0, error) {
+	var body ToolHandler0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromToolHandler0 overwrites any union data inside the ToolHandler as the provided ToolHandler0
+func (t *ToolHandler) FromToolHandler0(v ToolHandler0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeToolHandler0 performs a merge with any union data inside the ToolHandler, using the provided ToolHandler0
+func (t *ToolHandler) MergeToolHandler0(v ToolHandler0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsToolHandler1 returns the union data inside the ToolHandler as a ToolHandler1
+func (t ToolHandler) AsToolHandler1() (ToolHandler1, error) {
+	var body ToolHandler1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromToolHandler1 overwrites any union data inside the ToolHandler as the provided ToolHandler1
+func (t *ToolHandler) FromToolHandler1(v ToolHandler1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeToolHandler1 performs a merge with any union data inside the ToolHandler, using the provided ToolHandler1
+func (t *ToolHandler) MergeToolHandler1(v ToolHandler1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ToolHandler) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ToolHandler) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -55207,7 +55485,7 @@ type ClientInterface interface {
 
 	// DeleteV1CalendarConnectionByConnectionId Delete a calendar connection
 	//
-	// Deletes the connection and its stored credential outright. A credential the customer deleted should stop existing, so this is not an archive.
+	// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
 	//
 	// Corresponds with DELETE /v1/calendar-connection/{connectionId} (the `DeleteV1CalendarConnectionByConnectionId` operationId).
 	DeleteV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -55243,6 +55521,20 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/calendar-connection/{connectionId}/check (the `PostV1CalendarConnectionByConnectionIdCheck` operationId).
 	PostV1CalendarConnectionByConnectionIdCheck(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1CalendarConnectionByConnectionIdTargets List what can be booked on a calendar
+	//
+	// What an agent can be pointed at on this connection: Cal.com event types today, Google calendars when that lands. Read live from the provider, so an event type added since you connected is here without reconnecting. Each entry carries a `target` ready to put on a calendar tool, so nothing has to assemble one by hand.
+	//
+	// Corresponds with GET /v1/calendar-connection/{connectionId}/targets (the `GetV1CalendarConnectionByConnectionIdTargets` operationId).
+	GetV1CalendarConnectionByConnectionIdTargets(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1CalendarConnectionByConnectionIdTargetsByTargetId Read one bookable target
+	//
+	// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
+	//
+	// Corresponds with GET /v1/calendar-connection/{connectionId}/targets/{targetId} (the `GetV1CalendarConnectionByConnectionIdTargetsByTargetId` operationId).
+	GetV1CalendarConnectionByConnectionIdTargetsByTargetId(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1Call List calls
 	//
@@ -58470,7 +58762,7 @@ func (c *Client) PostV1CalendarConnection(ctx context.Context, body PostV1Calend
 
 // DeleteV1CalendarConnectionByConnectionId Delete a calendar connection
 //
-// Deletes the connection and its stored credential outright. A credential the customer deleted should stop existing, so this is not an archive.
+// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
 //
 // Corresponds with DELETE /v1/calendar-connection/{connectionId} (the `DeleteV1CalendarConnectionByConnectionId` operationId).
 func (c *Client) DeleteV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -58547,6 +58839,40 @@ func (c *Client) PatchV1CalendarConnectionByConnectionId(ctx context.Context, co
 // Corresponds with POST /v1/calendar-connection/{connectionId}/check (the `PostV1CalendarConnectionByConnectionIdCheck` operationId).
 func (c *Client) PostV1CalendarConnectionByConnectionIdCheck(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPostV1CalendarConnectionByConnectionIdCheckRequest(c.Server, connectionId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1CalendarConnectionByConnectionIdTargets List what can be booked on a calendar
+//
+// What an agent can be pointed at on this connection: Cal.com event types today, Google calendars when that lands. Read live from the provider, so an event type added since you connected is here without reconnecting. Each entry carries a `target` ready to put on a calendar tool, so nothing has to assemble one by hand.
+//
+// Corresponds with GET /v1/calendar-connection/{connectionId}/targets (the `GetV1CalendarConnectionByConnectionIdTargets` operationId).
+func (c *Client) GetV1CalendarConnectionByConnectionIdTargets(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1CalendarConnectionByConnectionIdTargetsRequest(c.Server, connectionId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1CalendarConnectionByConnectionIdTargetsByTargetId Read one bookable target
+//
+// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
+//
+// Corresponds with GET /v1/calendar-connection/{connectionId}/targets/{targetId} (the `GetV1CalendarConnectionByConnectionIdTargetsByTargetId` operationId).
+func (c *Client) GetV1CalendarConnectionByConnectionIdTargetsByTargetId(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1CalendarConnectionByConnectionIdTargetsByTargetIdRequest(c.Server, connectionId, targetId)
 	if err != nil {
 		return nil, err
 	}
@@ -65143,6 +65469,81 @@ func NewPostV1CalendarConnectionByConnectionIdCheckRequest(server string, connec
 	}
 
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1CalendarConnectionByConnectionIdTargetsRequest constructs an http.Request for the GetV1CalendarConnectionByConnectionIdTargets method
+func NewGetV1CalendarConnectionByConnectionIdTargetsRequest(server string, connectionId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/calendar-connection/%s/targets", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1CalendarConnectionByConnectionIdTargetsByTargetIdRequest constructs an http.Request for the GetV1CalendarConnectionByConnectionIdTargetsByTargetId method
+func NewGetV1CalendarConnectionByConnectionIdTargetsByTargetIdRequest(server string, connectionId string, targetId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "targetId", targetId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/calendar-connection/%s/targets/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -73413,7 +73814,7 @@ type ClientWithResponsesInterface interface {
 
 	// DeleteV1CalendarConnectionByConnectionIdWithResponse Delete a calendar connection
 	//
-	// Deletes the connection and its stored credential outright. A credential the customer deleted should stop existing, so this is not an archive.
+	// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -73455,6 +73856,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/calendar-connection/{connectionId}/check (the `PostV1CalendarConnectionByConnectionIdCheck` operationId).
 	PostV1CalendarConnectionByConnectionIdCheckWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionByConnectionIdCheckResponse, error)
+
+	// GetV1CalendarConnectionByConnectionIdTargetsWithResponse List what can be booked on a calendar
+	//
+	// What an agent can be pointed at on this connection: Cal.com event types today, Google calendars when that lands. Read live from the provider, so an event type added since you connected is here without reconnecting. Each entry carries a `target` ready to put on a calendar tool, so nothing has to assemble one by hand.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/calendar-connection/{connectionId}/targets (the `GetV1CalendarConnectionByConnectionIdTargets` operationId).
+	GetV1CalendarConnectionByConnectionIdTargetsWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionByConnectionIdTargetsResponse, error)
+
+	// GetV1CalendarConnectionByConnectionIdTargetsByTargetIdWithResponse Read one bookable target
+	//
+	// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/calendar-connection/{connectionId}/targets/{targetId} (the `GetV1CalendarConnectionByConnectionIdTargetsByTargetId` operationId).
+	GetV1CalendarConnectionByConnectionIdTargetsByTargetIdWithResponse(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse, error)
 
 	// GetV1CallWithResponse List calls
 	//
@@ -79792,6 +80211,8 @@ type DeleteV1CalendarConnectionByConnectionIdResponse struct {
 	JSON401 *ErrorResponse
 	// JSON404 the response for an HTTP 404 `application/json` response
 	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
 	// JSON500 the response for an HTTP 500 `application/json` response
 	JSON500 *ErrorResponse
 }
@@ -79817,6 +80238,11 @@ func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetJSON401() *ErrorRes
 // GetJSON404 returns the response for an HTTP 404 `application/json` response
 func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetJSON404() *ErrorResponse {
 	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
 }
 
 // GetJSON500 returns the response for an HTTP 500 `application/json` response
@@ -80414,6 +80840,262 @@ func (r PostV1CalendarConnectionByConnectionIdCheckResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r PostV1CalendarConnectionByConnectionIdCheckResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1CalendarConnectionByConnectionIdTargetsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data []struct {
+			// DurationMinutes How long an appointment runs, when the provider fixes one length.
+			DurationMinutes *float64 `json:"durationMinutes"`
+
+			// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+			DurationOptions []float64 `json:"durationOptions"`
+
+			// Id Identifier within this connection. Pass it back to read one target in detail.
+			Id string `json:"id"`
+
+			// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+			IsHidden bool `json:"isHidden"`
+
+			// Label What the customer called it on the provider.
+			Label string `json:"label"`
+
+			// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+			RequiresConfirmation bool `json:"requiresConfirmation"`
+
+			// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+			Target struct {
+				EventTypeId int                                                                               `json:"eventTypeId"`
+				Provider    GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider `json:"provider"`
+			} `json:"target"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) GetJSON200() *struct {
+	Data []struct {
+		// DurationMinutes How long an appointment runs, when the provider fixes one length.
+		DurationMinutes *float64 `json:"durationMinutes"`
+
+		// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+		DurationOptions []float64 `json:"durationOptions"`
+
+		// Id Identifier within this connection. Pass it back to read one target in detail.
+		Id string `json:"id"`
+
+		// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+		IsHidden bool `json:"isHidden"`
+
+		// Label What the customer called it on the provider.
+		Label string `json:"label"`
+
+		// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+		RequiresConfirmation bool `json:"requiresConfirmation"`
+
+		// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+		Target struct {
+			EventTypeId int                                                                               `json:"eventTypeId"`
+			Provider    GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider `json:"provider"`
+		} `json:"target"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data Something on a connected account an agent can be pointed at: a Cal.com event type today, a Google calendar when that lands.
+		Data struct {
+			// DurationMinutes How long an appointment runs, when the provider fixes one length.
+			DurationMinutes *float64 `json:"durationMinutes"`
+
+			// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+			DurationOptions []float64 `json:"durationOptions"`
+
+			// Id Identifier within this connection. Pass it back to read one target in detail.
+			Id string `json:"id"`
+
+			// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+			IsHidden bool `json:"isHidden"`
+
+			// Label What the customer called it on the provider.
+			Label string `json:"label"`
+
+			// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
+			RequiredBookingFields []string `json:"requiredBookingFields"`
+
+			// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+			RequiresConfirmation bool `json:"requiresConfirmation"`
+
+			// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+			Target struct {
+				EventTypeId int                                                                                         `json:"eventTypeId"`
+				Provider    GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider `json:"provider"`
+			} `json:"target"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) GetJSON200() *struct {
+	// Data Something on a connected account an agent can be pointed at: a Cal.com event type today, a Google calendar when that lands.
+	Data struct {
+		// DurationMinutes How long an appointment runs, when the provider fixes one length.
+		DurationMinutes *float64 `json:"durationMinutes"`
+
+		// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+		DurationOptions []float64 `json:"durationOptions"`
+
+		// Id Identifier within this connection. Pass it back to read one target in detail.
+		Id string `json:"id"`
+
+		// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+		IsHidden bool `json:"isHidden"`
+
+		// Label What the customer called it on the provider.
+		Label string `json:"label"`
+
+		// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
+		RequiredBookingFields []string `json:"requiredBookingFields"`
+
+		// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
+		RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+		// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+		RequiresConfirmation bool `json:"requiresConfirmation"`
+
+		// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+		Target struct {
+			EventTypeId int                                                                                         `json:"eventTypeId"`
+			Provider    GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider `json:"provider"`
+		} `json:"target"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -96996,7 +97678,7 @@ func (c *ClientWithResponses) PostV1CalendarConnectionWithResponse(ctx context.C
 
 // DeleteV1CalendarConnectionByConnectionIdWithResponse Delete a calendar connection
 //
-// Deletes the connection and its stored credential outright. A credential the customer deleted should stop existing, so this is not an archive.
+// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -97067,6 +97749,36 @@ func (c *ClientWithResponses) PostV1CalendarConnectionByConnectionIdCheckWithRes
 		return nil, err
 	}
 	return ParsePostV1CalendarConnectionByConnectionIdCheckResponse(rsp)
+}
+
+// GetV1CalendarConnectionByConnectionIdTargetsWithResponse List what can be booked on a calendar
+//
+// What an agent can be pointed at on this connection: Cal.com event types today, Google calendars when that lands. Read live from the provider, so an event type added since you connected is here without reconnecting. Each entry carries a `target` ready to put on a calendar tool, so nothing has to assemble one by hand.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/calendar-connection/{connectionId}/targets (the `GetV1CalendarConnectionByConnectionIdTargets` operationId).
+func (c *ClientWithResponses) GetV1CalendarConnectionByConnectionIdTargetsWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionByConnectionIdTargetsResponse, error) {
+	rsp, err := c.GetV1CalendarConnectionByConnectionIdTargets(ctx, connectionId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1CalendarConnectionByConnectionIdTargetsResponse(rsp)
+}
+
+// GetV1CalendarConnectionByConnectionIdTargetsByTargetIdWithResponse Read one bookable target
+//
+// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/calendar-connection/{connectionId}/targets/{targetId} (the `GetV1CalendarConnectionByConnectionIdTargetsByTargetId` operationId).
+func (c *ClientWithResponses) GetV1CalendarConnectionByConnectionIdTargetsByTargetIdWithResponse(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse, error) {
+	rsp, err := c.GetV1CalendarConnectionByConnectionIdTargetsByTargetId(ctx, connectionId, targetId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse(rsp)
 }
 
 // GetV1CallWithResponse List calls
@@ -103698,6 +104410,13 @@ func ParseDeleteV1CalendarConnectionByConnectionIdResponse(rsp *http.Response) (
 		}
 		response.JSON404 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -104012,6 +104731,173 @@ func ParsePostV1CalendarConnectionByConnectionIdCheckResponse(rsp *http.Response
 
 				// UpdatedAt Last update timestamp in ISO 8601 format.
 				UpdatedAt string `json:"updatedAt"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1CalendarConnectionByConnectionIdTargetsResponse parses an HTTP response from a GetV1CalendarConnectionByConnectionIdTargetsWithResponse call
+func ParseGetV1CalendarConnectionByConnectionIdTargetsResponse(rsp *http.Response) (*GetV1CalendarConnectionByConnectionIdTargetsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1CalendarConnectionByConnectionIdTargetsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []struct {
+				// DurationMinutes How long an appointment runs, when the provider fixes one length.
+				DurationMinutes *float64 `json:"durationMinutes"`
+
+				// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+				DurationOptions []float64 `json:"durationOptions"`
+
+				// Id Identifier within this connection. Pass it back to read one target in detail.
+				Id string `json:"id"`
+
+				// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+				IsHidden bool `json:"isHidden"`
+
+				// Label What the customer called it on the provider.
+				Label string `json:"label"`
+
+				// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+				RequiresConfirmation bool `json:"requiresConfirmation"`
+
+				// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+				Target struct {
+					EventTypeId int                                                                               `json:"eventTypeId"`
+					Provider    GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider `json:"provider"`
+				} `json:"target"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse parses an HTTP response from a GetV1CalendarConnectionByConnectionIdTargetsByTargetIdWithResponse call
+func ParseGetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse(rsp *http.Response) (*GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data Something on a connected account an agent can be pointed at: a Cal.com event type today, a Google calendar when that lands.
+			Data struct {
+				// DurationMinutes How long an appointment runs, when the provider fixes one length.
+				DurationMinutes *float64 `json:"durationMinutes"`
+
+				// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+				DurationOptions []float64 `json:"durationOptions"`
+
+				// Id Identifier within this connection. Pass it back to read one target in detail.
+				Id string `json:"id"`
+
+				// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+				IsHidden bool `json:"isHidden"`
+
+				// Label What the customer called it on the provider.
+				Label string `json:"label"`
+
+				// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
+				RequiredBookingFields []string `json:"requiredBookingFields"`
+
+				// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
+				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+				// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+				RequiresConfirmation bool `json:"requiresConfirmation"`
+
+				// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+				Target struct {
+					EventTypeId int                                                                                         `json:"eventTypeId"`
+					Provider    GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider `json:"provider"`
+				} `json:"target"`
 			} `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {

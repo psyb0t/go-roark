@@ -3040,10 +3040,50 @@ func (e ConfigDiffChangeOp) Valid() bool {
 	}
 }
 
+// Defines values for ConfigFlowStepAudioClip.
+const (
+	ConfigFlowStepAudioClipHOLDBEEP                    ConfigFlowStepAudioClip = "HOLD_BEEP"
+	ConfigFlowStepAudioClipHOLDMUSICAMBIENT            ConfigFlowStepAudioClip = "HOLD_MUSIC_AMBIENT"
+	ConfigFlowStepAudioClipHOLDMUSICCLASSICALORCHESTRA ConfigFlowStepAudioClip = "HOLD_MUSIC_CLASSICAL_ORCHESTRA"
+	ConfigFlowStepAudioClipHOLDMUSICCLASSICALPIANO     ConfigFlowStepAudioClip = "HOLD_MUSIC_CLASSICAL_PIANO"
+	ConfigFlowStepAudioClipHOLDMUSICSMOOTHJAZZ         ConfigFlowStepAudioClip = "HOLD_MUSIC_SMOOTH_JAZZ"
+	ConfigFlowStepAudioClipHOLDMUSICSOFTSYNTH          ConfigFlowStepAudioClip = "HOLD_MUSIC_SOFT_SYNTH"
+	ConfigFlowStepAudioClipHOLDMUSICSTRINGQUARTET      ConfigFlowStepAudioClip = "HOLD_MUSIC_STRING_QUARTET"
+	ConfigFlowStepAudioClipRINGBACKUK                  ConfigFlowStepAudioClip = "RINGBACK_UK"
+	ConfigFlowStepAudioClipRINGBACKUS                  ConfigFlowStepAudioClip = "RINGBACK_US"
+)
+
+// Valid indicates whether the value is a known member of the ConfigFlowStepAudioClip enum.
+func (e ConfigFlowStepAudioClip) Valid() bool {
+	switch e {
+	case ConfigFlowStepAudioClipHOLDBEEP:
+		return true
+	case ConfigFlowStepAudioClipHOLDMUSICAMBIENT:
+		return true
+	case ConfigFlowStepAudioClipHOLDMUSICCLASSICALORCHESTRA:
+		return true
+	case ConfigFlowStepAudioClipHOLDMUSICCLASSICALPIANO:
+		return true
+	case ConfigFlowStepAudioClipHOLDMUSICSMOOTHJAZZ:
+		return true
+	case ConfigFlowStepAudioClipHOLDMUSICSOFTSYNTH:
+		return true
+	case ConfigFlowStepAudioClipHOLDMUSICSTRINGQUARTET:
+		return true
+	case ConfigFlowStepAudioClipRINGBACKUK:
+		return true
+	case ConfigFlowStepAudioClipRINGBACKUS:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ConfigFlowStepType.
 const (
 	ConfigFlowStepTypeAGENTDTMF            ConfigFlowStepType = "AGENT_DTMF"
 	ConfigFlowStepTypeAGENTTURN            ConfigFlowStepType = "AGENT_TURN"
+	ConfigFlowStepTypeCUSTOMERAUDIO        ConfigFlowStepType = "CUSTOMER_AUDIO"
 	ConfigFlowStepTypeCUSTOMERDTMF         ConfigFlowStepType = "CUSTOMER_DTMF"
 	ConfigFlowStepTypeCUSTOMERFIRSTMESSAGE ConfigFlowStepType = "CUSTOMER_FIRST_MESSAGE"
 	ConfigFlowStepTypeCUSTOMERHANDOFF      ConfigFlowStepType = "CUSTOMER_HANDOFF"
@@ -3060,6 +3100,8 @@ func (e ConfigFlowStepType) Valid() bool {
 	case ConfigFlowStepTypeAGENTDTMF:
 		return true
 	case ConfigFlowStepTypeAGENTTURN:
+		return true
+	case ConfigFlowStepTypeCUSTOMERAUDIO:
 		return true
 	case ConfigFlowStepTypeCUSTOMERDTMF:
 		return true
@@ -7840,15 +7882,54 @@ func (e FlowStep4Type) Valid() bool {
 	}
 }
 
+// Defines values for FlowStep5AudioClip.
+const (
+	FlowStep5AudioClipHOLDBEEP                    FlowStep5AudioClip = "HOLD_BEEP"
+	FlowStep5AudioClipHOLDMUSICAMBIENT            FlowStep5AudioClip = "HOLD_MUSIC_AMBIENT"
+	FlowStep5AudioClipHOLDMUSICCLASSICALORCHESTRA FlowStep5AudioClip = "HOLD_MUSIC_CLASSICAL_ORCHESTRA"
+	FlowStep5AudioClipHOLDMUSICCLASSICALPIANO     FlowStep5AudioClip = "HOLD_MUSIC_CLASSICAL_PIANO"
+	FlowStep5AudioClipHOLDMUSICSMOOTHJAZZ         FlowStep5AudioClip = "HOLD_MUSIC_SMOOTH_JAZZ"
+	FlowStep5AudioClipHOLDMUSICSOFTSYNTH          FlowStep5AudioClip = "HOLD_MUSIC_SOFT_SYNTH"
+	FlowStep5AudioClipHOLDMUSICSTRINGQUARTET      FlowStep5AudioClip = "HOLD_MUSIC_STRING_QUARTET"
+	FlowStep5AudioClipRINGBACKUK                  FlowStep5AudioClip = "RINGBACK_UK"
+	FlowStep5AudioClipRINGBACKUS                  FlowStep5AudioClip = "RINGBACK_US"
+)
+
+// Valid indicates whether the value is a known member of the FlowStep5AudioClip enum.
+func (e FlowStep5AudioClip) Valid() bool {
+	switch e {
+	case FlowStep5AudioClipHOLDBEEP:
+		return true
+	case FlowStep5AudioClipHOLDMUSICAMBIENT:
+		return true
+	case FlowStep5AudioClipHOLDMUSICCLASSICALORCHESTRA:
+		return true
+	case FlowStep5AudioClipHOLDMUSICCLASSICALPIANO:
+		return true
+	case FlowStep5AudioClipHOLDMUSICSMOOTHJAZZ:
+		return true
+	case FlowStep5AudioClipHOLDMUSICSOFTSYNTH:
+		return true
+	case FlowStep5AudioClipHOLDMUSICSTRINGQUARTET:
+		return true
+	case FlowStep5AudioClipRINGBACKUK:
+		return true
+	case FlowStep5AudioClipRINGBACKUS:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FlowStep5Type.
 const (
-	FlowStep5TypeCUSTOMERDTMF FlowStep5Type = "CUSTOMER_DTMF"
+	FlowStep5TypeCUSTOMERAUDIO FlowStep5Type = "CUSTOMER_AUDIO"
 )
 
 // Valid indicates whether the value is a known member of the FlowStep5Type enum.
 func (e FlowStep5Type) Valid() bool {
 	switch e {
-	case FlowStep5TypeCUSTOMERDTMF:
+	case FlowStep5TypeCUSTOMERAUDIO:
 		return true
 	default:
 		return false
@@ -7857,13 +7938,61 @@ func (e FlowStep5Type) Valid() bool {
 
 // Defines values for FlowStep6Type.
 const (
-	FlowStep6TypeAGENTDTMF FlowStep6Type = "AGENT_DTMF"
+	FlowStep6TypeCUSTOMERDTMF FlowStep6Type = "CUSTOMER_DTMF"
 )
 
 // Valid indicates whether the value is a known member of the FlowStep6Type enum.
 func (e FlowStep6Type) Valid() bool {
 	switch e {
-	case FlowStep6TypeAGENTDTMF:
+	case FlowStep6TypeCUSTOMERDTMF:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FlowStep7OffScriptPolicyReaction.
+const (
+	FlowStep7OffScriptPolicyReactionREPEAT     FlowStep7OffScriptPolicyReaction = "REPEAT"
+	FlowStep7OffScriptPolicyReactionRESPOND    FlowStep7OffScriptPolicyReaction = "RESPOND"
+	FlowStep7OffScriptPolicyReactionSAY        FlowStep7OffScriptPolicyReaction = "SAY"
+	FlowStep7OffScriptPolicyReactionSTAYSILENT FlowStep7OffScriptPolicyReaction = "STAY_SILENT"
+)
+
+// Valid indicates whether the value is a known member of the FlowStep7OffScriptPolicyReaction enum.
+func (e FlowStep7OffScriptPolicyReaction) Valid() bool {
+	switch e {
+	case FlowStep7OffScriptPolicyReactionREPEAT:
+		return true
+	case FlowStep7OffScriptPolicyReactionRESPOND:
+		return true
+	case FlowStep7OffScriptPolicyReactionSAY:
+		return true
+	case FlowStep7OffScriptPolicyReactionSTAYSILENT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FlowStep7OffScriptPolicyThen.
+const (
+	FlowStep7OffScriptPolicyThenADAPT            FlowStep7OffScriptPolicyThen = "ADAPT"
+	FlowStep7OffScriptPolicyThenHANGUP           FlowStep7OffScriptPolicyThen = "HANG_UP"
+	FlowStep7OffScriptPolicyThenHANGUPINVALIDATE FlowStep7OffScriptPolicyThen = "HANG_UP_INVALIDATE"
+	FlowStep7OffScriptPolicyThenMOVEON           FlowStep7OffScriptPolicyThen = "MOVE_ON"
+)
+
+// Valid indicates whether the value is a known member of the FlowStep7OffScriptPolicyThen enum.
+func (e FlowStep7OffScriptPolicyThen) Valid() bool {
+	switch e {
+	case FlowStep7OffScriptPolicyThenADAPT:
+		return true
+	case FlowStep7OffScriptPolicyThenHANGUP:
+		return true
+	case FlowStep7OffScriptPolicyThenHANGUPINVALIDATE:
+		return true
+	case FlowStep7OffScriptPolicyThenMOVEON:
 		return true
 	default:
 		return false
@@ -7872,13 +8001,13 @@ func (e FlowStep6Type) Valid() bool {
 
 // Defines values for FlowStep7Type.
 const (
-	FlowStep7TypeVOICEMAIL FlowStep7Type = "VOICEMAIL"
+	FlowStep7TypeAGENTDTMF FlowStep7Type = "AGENT_DTMF"
 )
 
 // Valid indicates whether the value is a known member of the FlowStep7Type enum.
 func (e FlowStep7Type) Valid() bool {
 	switch e {
-	case FlowStep7TypeVOICEMAIL:
+	case FlowStep7TypeAGENTDTMF:
 		return true
 	default:
 		return false
@@ -7887,13 +8016,13 @@ func (e FlowStep7Type) Valid() bool {
 
 // Defines values for FlowStep8Type.
 const (
-	FlowStep8TypeCUSTOMERHANDOFF FlowStep8Type = "CUSTOMER_HANDOFF"
+	FlowStep8TypeVOICEMAIL FlowStep8Type = "VOICEMAIL"
 )
 
 // Valid indicates whether the value is a known member of the FlowStep8Type enum.
 func (e FlowStep8Type) Valid() bool {
 	switch e {
-	case FlowStep8TypeCUSTOMERHANDOFF:
+	case FlowStep8TypeVOICEMAIL:
 		return true
 	default:
 		return false
@@ -7902,13 +8031,28 @@ func (e FlowStep8Type) Valid() bool {
 
 // Defines values for FlowStep9Type.
 const (
-	FlowStep9TypeSCENARIOLINK FlowStep9Type = "SCENARIO_LINK"
+	FlowStep9TypeCUSTOMERHANDOFF FlowStep9Type = "CUSTOMER_HANDOFF"
 )
 
 // Valid indicates whether the value is a known member of the FlowStep9Type enum.
 func (e FlowStep9Type) Valid() bool {
 	switch e {
-	case FlowStep9TypeSCENARIOLINK:
+	case FlowStep9TypeCUSTOMERHANDOFF:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FlowStep10Type.
+const (
+	FlowStep10TypeSCENARIOLINK FlowStep10Type = "SCENARIO_LINK"
+)
+
+// Valid indicates whether the value is a known member of the FlowStep10Type enum.
+func (e FlowStep10Type) Valid() bool {
+	switch e {
+	case FlowStep10TypeSCENARIOLINK:
 		return true
 	default:
 		return false
@@ -15328,6 +15472,66 @@ const (
 func (e ScriptedFlowVariantType) Valid() bool {
 	switch e {
 	case ScriptedFlowVariantTypeSCRIPTED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationAudioClipCategory.
+const (
+	SimulationAudioClipCategoryHOLDMUSIC SimulationAudioClipCategory = "HOLD_MUSIC"
+	SimulationAudioClipCategoryHOLDTONE  SimulationAudioClipCategory = "HOLD_TONE"
+	SimulationAudioClipCategoryRINGBACK  SimulationAudioClipCategory = "RINGBACK"
+)
+
+// Valid indicates whether the value is a known member of the SimulationAudioClipCategory enum.
+func (e SimulationAudioClipCategory) Valid() bool {
+	switch e {
+	case SimulationAudioClipCategoryHOLDMUSIC:
+		return true
+	case SimulationAudioClipCategoryHOLDTONE:
+		return true
+	case SimulationAudioClipCategoryRINGBACK:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationAudioClipClip.
+const (
+	SimulationAudioClipClipHOLDBEEP                    SimulationAudioClipClip = "HOLD_BEEP"
+	SimulationAudioClipClipHOLDMUSICAMBIENT            SimulationAudioClipClip = "HOLD_MUSIC_AMBIENT"
+	SimulationAudioClipClipHOLDMUSICCLASSICALORCHESTRA SimulationAudioClipClip = "HOLD_MUSIC_CLASSICAL_ORCHESTRA"
+	SimulationAudioClipClipHOLDMUSICCLASSICALPIANO     SimulationAudioClipClip = "HOLD_MUSIC_CLASSICAL_PIANO"
+	SimulationAudioClipClipHOLDMUSICSMOOTHJAZZ         SimulationAudioClipClip = "HOLD_MUSIC_SMOOTH_JAZZ"
+	SimulationAudioClipClipHOLDMUSICSOFTSYNTH          SimulationAudioClipClip = "HOLD_MUSIC_SOFT_SYNTH"
+	SimulationAudioClipClipHOLDMUSICSTRINGQUARTET      SimulationAudioClipClip = "HOLD_MUSIC_STRING_QUARTET"
+	SimulationAudioClipClipRINGBACKUK                  SimulationAudioClipClip = "RINGBACK_UK"
+	SimulationAudioClipClipRINGBACKUS                  SimulationAudioClipClip = "RINGBACK_US"
+)
+
+// Valid indicates whether the value is a known member of the SimulationAudioClipClip enum.
+func (e SimulationAudioClipClip) Valid() bool {
+	switch e {
+	case SimulationAudioClipClipHOLDBEEP:
+		return true
+	case SimulationAudioClipClipHOLDMUSICAMBIENT:
+		return true
+	case SimulationAudioClipClipHOLDMUSICCLASSICALORCHESTRA:
+		return true
+	case SimulationAudioClipClipHOLDMUSICCLASSICALPIANO:
+		return true
+	case SimulationAudioClipClipHOLDMUSICSMOOTHJAZZ:
+		return true
+	case SimulationAudioClipClipHOLDMUSICSOFTSYNTH:
+		return true
+	case SimulationAudioClipClipHOLDMUSICSTRINGQUARTET:
+		return true
+	case SimulationAudioClipClipRINGBACKUK:
+		return true
+	case SimulationAudioClipClipRINGBACKUS:
 		return true
 	default:
 		return false
@@ -28378,13 +28582,14 @@ type ConfigDiffSummary struct {
 
 // ConfigFlowStep defines model for ConfigFlowStep.
 type ConfigFlowStep struct {
-	Content        *string          `json:"content,omitempty"`
-	DtmfDigits     *string          `json:"dtmfDigits,omitempty"`
-	Flow           *string          `json:"flow,omitempty"`
-	HandoffPersona *string          `json:"handoffPersona,omitempty"`
-	MergeInto      *[]string        `json:"mergeInto,omitempty"`
-	OffScript      *ConfigOffScript `json:"offScript,omitempty"`
-	Ref            *string          `json:"ref,omitempty"`
+	AudioClip      *ConfigFlowStepAudioClip `json:"audioClip,omitempty"`
+	Content        *string                  `json:"content,omitempty"`
+	DtmfDigits     *string                  `json:"dtmfDigits,omitempty"`
+	Flow           *string                  `json:"flow,omitempty"`
+	HandoffPersona *string                  `json:"handoffPersona,omitempty"`
+	MergeInto      *[]string                `json:"mergeInto,omitempty"`
+	OffScript      *ConfigOffScript         `json:"offScript,omitempty"`
+	Ref            *string                  `json:"ref,omitempty"`
 
 	// RequiredForValidRun Removed. Use `stage` with `required: true`.
 	RequiredForValidRun    *bool                 `json:"requiredForValidRun,omitempty"`
@@ -28393,6 +28598,9 @@ type ConfigFlowStep struct {
 	Steps                  *[]ConfigFlowStep     `json:"steps,omitempty"`
 	Type                   ConfigFlowStepType    `json:"type"`
 }
+
+// ConfigFlowStepAudioClip defines model for ConfigFlowStep.AudioClip.
+type ConfigFlowStepAudioClip string
 
 // ConfigFlowStepStage0 defines model for ConfigFlowStep.Stage.0.
 type ConfigFlowStepStage0 = string
@@ -31070,9 +31278,21 @@ type FlowHappyPathInput struct {
 // own persona when it is null. The steps after it are spoken by whoever holds the phone. It sits between
 // turns like a silence, so it may follow either side.
 //
+// A `CUSTOMER_AUDIO` plays audio from the library (`audioClip`, see GET /v1/simulation/audio-clip) on the
+// line for `silenceDurationSeconds` (up to 600, 30 when unset), looping it or cutting it to fit, the way an IVR plays hold music. It
+// plays in a STRICT voice flow only: anywhere else it is a pause of the same length. It sits between turns
+// like a silence.
+//
 // In a STRICT flow an `AGENT_TURN` may carry its own `offScriptPolicy`, which replaces the flow-level one at
 // that step. Omit it (or send null) to follow the flow's policy. Use it where one missed step makes the rest
 // of the call meaningless: an authentication menu, say, with `then: HANG_UP_INVALIDATE`.
+//
+// In a STRICT flow an `AGENT_DTMF` may carry an `offScriptPolicy` too, read differently: `waitSeconds` is how
+// long to wait for the keys (at least 5, and just under the run's silence timeout by default and at most) and
+// `then` what follows (`MOVE_ON`, `HANG_UP` or `HANG_UP_INVALIDATE`). Without one the call hangs up in silence
+// after that wait, whatever the flow-level policy says. Speech does not end the wait. `reaction` is
+// `STAY_SILENT` or `REPEAT`: with `REPEAT` the caller says the line before the step again each time the wait
+// runs out, up to `maxAttempts` waits (at most 5), and `then` follows the last one.
 //
 // Any step may set `stage`, the named phase of the flow it belongs to: the IVR, the login, the scenario
 // itself. Steps in one stage are drawn as a group in the editor, and the name is yours: the reports say it
@@ -31203,11 +31423,12 @@ type FlowStep4Type string
 
 // FlowStep5 defines model for FlowStep.5.
 type FlowStep5 struct {
-	DtmfDigits       *string             `json:"dtmfDigits,omitempty"`
-	MergeIntoNodeIds *[]string           `json:"mergeIntoNodeIds,omitempty"`
-	NodeId           *openapi_types.UUID `json:"nodeId,omitempty"`
-	Ref              *string             `json:"ref,omitempty"`
-	Stage            *struct {
+	AudioClip              *FlowStep5AudioClip `json:"audioClip,omitempty"`
+	MergeIntoNodeIds       *[]string           `json:"mergeIntoNodeIds,omitempty"`
+	NodeId                 *openapi_types.UUID `json:"nodeId,omitempty"`
+	Ref                    *string             `json:"ref,omitempty"`
+	SilenceDurationSeconds *int                `json:"silenceDurationSeconds,omitempty"`
+	Stage                  *struct {
 		Analyze  *bool  `json:"analyze,omitempty"`
 		Name     string `json:"name"`
 		Required *bool  `json:"required,omitempty"`
@@ -31215,6 +31436,9 @@ type FlowStep5 struct {
 	Steps *[]FlowStep   `json:"steps,omitempty"`
 	Type  FlowStep5Type `json:"type"`
 }
+
+// FlowStep5AudioClip defines model for FlowStep.5.AudioClip.
+type FlowStep5AudioClip string
 
 // FlowStep5Type defines model for FlowStep.5.Type.
 type FlowStep5Type string
@@ -31239,10 +31463,18 @@ type FlowStep6Type string
 
 // FlowStep7 defines model for FlowStep.7.
 type FlowStep7 struct {
+	DtmfDigits       *string             `json:"dtmfDigits,omitempty"`
 	MergeIntoNodeIds *[]string           `json:"mergeIntoNodeIds,omitempty"`
 	NodeId           *openapi_types.UUID `json:"nodeId,omitempty"`
-	Ref              *string             `json:"ref,omitempty"`
-	Stage            *struct {
+	OffScriptPolicy  *struct {
+		MaxAttempts int                              `json:"maxAttempts"`
+		Reaction    FlowStep7OffScriptPolicyReaction `json:"reaction"`
+		SayLine     *string                          `json:"sayLine,omitempty"`
+		Then        FlowStep7OffScriptPolicyThen     `json:"then"`
+		WaitSeconds *int                             `json:"waitSeconds,omitempty"`
+	} `json:"offScriptPolicy,omitempty"`
+	Ref   *string `json:"ref,omitempty"`
+	Stage *struct {
 		Analyze  *bool  `json:"analyze,omitempty"`
 		Name     string `json:"name"`
 		Required *bool  `json:"required,omitempty"`
@@ -31251,12 +31483,17 @@ type FlowStep7 struct {
 	Type  FlowStep7Type `json:"type"`
 }
 
+// FlowStep7OffScriptPolicyReaction defines model for FlowStep.7.OffScriptPolicy.Reaction.
+type FlowStep7OffScriptPolicyReaction string
+
+// FlowStep7OffScriptPolicyThen defines model for FlowStep.7.OffScriptPolicy.Then.
+type FlowStep7OffScriptPolicyThen string
+
 // FlowStep7Type defines model for FlowStep.7.Type.
 type FlowStep7Type string
 
 // FlowStep8 defines model for FlowStep.8.
 type FlowStep8 struct {
-	HandoffPersonaId *openapi_types.UUID `json:"handoffPersonaId,omitempty"`
 	MergeIntoNodeIds *[]string           `json:"mergeIntoNodeIds,omitempty"`
 	NodeId           *openapi_types.UUID `json:"nodeId,omitempty"`
 	Ref              *string             `json:"ref,omitempty"`
@@ -31274,12 +31511,11 @@ type FlowStep8Type string
 
 // FlowStep9 defines model for FlowStep.9.
 type FlowStep9 struct {
-	LinkedCustomerFlowId        *openapi_types.UUID `json:"linkedCustomerFlowId,omitempty"`
-	LinkedCustomerFlowVariantId *openapi_types.UUID `json:"linkedCustomerFlowVariantId,omitempty"`
-	MergeIntoNodeIds            *[]string           `json:"mergeIntoNodeIds,omitempty"`
-	NodeId                      *openapi_types.UUID `json:"nodeId,omitempty"`
-	Ref                         *string             `json:"ref,omitempty"`
-	Stage                       *struct {
+	HandoffPersonaId *openapi_types.UUID `json:"handoffPersonaId,omitempty"`
+	MergeIntoNodeIds *[]string           `json:"mergeIntoNodeIds,omitempty"`
+	NodeId           *openapi_types.UUID `json:"nodeId,omitempty"`
+	Ref              *string             `json:"ref,omitempty"`
+	Stage            *struct {
 		Analyze  *bool  `json:"analyze,omitempty"`
 		Name     string `json:"name"`
 		Required *bool  `json:"required,omitempty"`
@@ -31290,6 +31526,25 @@ type FlowStep9 struct {
 
 // FlowStep9Type defines model for FlowStep.9.Type.
 type FlowStep9Type string
+
+// FlowStep10 defines model for FlowStep.10.
+type FlowStep10 struct {
+	LinkedCustomerFlowId        *openapi_types.UUID `json:"linkedCustomerFlowId,omitempty"`
+	LinkedCustomerFlowVariantId *openapi_types.UUID `json:"linkedCustomerFlowVariantId,omitempty"`
+	MergeIntoNodeIds            *[]string           `json:"mergeIntoNodeIds,omitempty"`
+	NodeId                      *openapi_types.UUID `json:"nodeId,omitempty"`
+	Ref                         *string             `json:"ref,omitempty"`
+	Stage                       *struct {
+		Analyze  *bool  `json:"analyze,omitempty"`
+		Name     string `json:"name"`
+		Required *bool  `json:"required,omitempty"`
+	} `json:"stage,omitempty"`
+	Steps *[]FlowStep    `json:"steps,omitempty"`
+	Type  FlowStep10Type `json:"type"`
+}
+
+// FlowStep10Type defines model for FlowStep.10.Type.
+type FlowStep10Type string
 
 // FlowVariant One way of running a customer flow.
 type FlowVariant struct {
@@ -31374,7 +31629,7 @@ type FormulaMetricResponse struct {
 	} `json:"evidenceSource"`
 	Formula FormulaMetricDetails `json:"formula"`
 
-	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines. Such calls skip every metric without it.
+	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines or where your agent never spoke. Such calls skip every metric without it.
 	GradesShortCalls bool `json:"gradesShortCalls"`
 
 	// Id Unique identifier for the metric definition
@@ -31536,6 +31791,11 @@ type GetRunPlansResponse struct {
 		// Total Total number of items
 		Total float64 `json:"total"`
 	} `json:"pagination"`
+}
+
+// GetSimulationAudioClipsResponse defines model for GetSimulationAudioClipsResponse.
+type GetSimulationAudioClipsResponse struct {
+	Data []SimulationAudioClip `json:"data"`
 }
 
 // GetSimulationPlanJobResponse Simulation run plan job with all associated simulation jobs
@@ -32006,7 +32266,7 @@ type HttpRequestMetricInput struct {
 	// CalculationType BOOLEAN metric answered by your own endpoint. Roark sends a request about each call, live or simulated, and your endpoint answers {"passed": true | false, "reason": "..."}.
 	CalculationType HttpRequestMetricInputCalculationType `json:"calculationType"`
 
-	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines. Such calls skip every other metric. Default false.
+	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines or where your agent never spoke (custom metrics only, not ones that judge the audio). Such calls skip every other metric. Default false.
 	GradesShortCalls *bool `json:"gradesShortCalls,omitempty"`
 
 	// HttpRequest The request to send. With no body, Roark POSTs the default payload: { version, requestId, metric, call, simulation }.
@@ -32153,7 +32413,7 @@ type HttpRequestMetricResponse struct {
 		MetricId string `json:"metricId"`
 	} `json:"evidenceSource"`
 
-	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines. Such calls skip every metric without it.
+	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines or where your agent never spoke. Such calls skip every metric without it.
 	GradesShortCalls bool `json:"gradesShortCalls"`
 
 	// HttpRequest The request this metric sends.
@@ -33868,7 +34128,7 @@ type LlmJudgeMetricResponse struct {
 		MetricId string `json:"metricId"`
 	} `json:"evidenceSource"`
 
-	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines. Such calls skip every metric without it.
+	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines or where your agent never spoke. Such calls skip every metric without it.
 	GradesShortCalls bool `json:"gradesShortCalls"`
 
 	// Id Unique identifier for the metric definition
@@ -34966,7 +35226,7 @@ type PatternMetricResponse struct {
 		MetricId string `json:"metricId"`
 	} `json:"evidenceSource"`
 
-	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines. Such calls skip every metric without it.
+	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines or where your agent never spoke. Such calls skip every metric without it.
 	GradesShortCalls bool `json:"gradesShortCalls"`
 
 	// Id Unique identifier for the metric definition
@@ -35294,7 +35554,7 @@ type PromptMetricInput struct {
 		Label        string `json:"label"`
 	} `json:"classificationOptions,omitempty"`
 
-	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines. Such calls skip every other metric. Default false.
+	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines or where your agent never spoke (custom metrics only, not ones that judge the audio). Such calls skip every other metric. Default false.
 	GradesShortCalls *bool `json:"gradesShortCalls,omitempty"`
 
 	// LlmPrompt LLM prompt/criteria for evaluating this metric. Required for BOOLEAN, NUMERIC, TEXT, and SCALE types.
@@ -35398,7 +35658,7 @@ type ProviderMetricResponse struct {
 		MetricId string `json:"metricId"`
 	} `json:"evidenceSource"`
 
-	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines. Such calls skip every metric without it.
+	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines or where your agent never spoke. Such calls skip every metric without it.
 	GradesShortCalls bool `json:"gradesShortCalls"`
 
 	// Id Unique identifier for the metric definition
@@ -36813,6 +37073,37 @@ type SetAgentPromptResponse struct {
 	// VersionNumber The current version number after the set.
 	VersionNumber int `json:"versionNumber"`
 }
+
+// SimulationAudioClip defines model for SimulationAudioClip.
+type SimulationAudioClip struct {
+	// Category The kind of audio this is
+	//
+	// Example: HOLD_MUSIC
+	Category SimulationAudioClipCategory `json:"category"`
+
+	// Clip What a CUSTOMER_AUDIO step names as its `audioClip`
+	//
+	// Example: HOLD_MUSIC_CLASSICAL_PIANO
+	Clip SimulationAudioClipClip `json:"clip"`
+
+	// Description What it sounds like
+	Description string `json:"description"`
+
+	// Name What the clip is called
+	//
+	// Example: Classical piano
+	Name string `json:"name"`
+}
+
+// SimulationAudioClipCategory The kind of audio this is
+//
+// Example: HOLD_MUSIC
+type SimulationAudioClipCategory string
+
+// SimulationAudioClipClip What a CUSTOMER_AUDIO step names as its `audioClip`
+//
+// Example: HOLD_MUSIC_CLASSICAL_PIANO
+type SimulationAudioClipClip string
 
 // SimulationGroup A saved, repeatable set of plans that run together. Each run starts one run of every plan and groups them into a run group with one combined report.
 type SimulationGroup struct {
@@ -38927,7 +39218,7 @@ type ThresholdMetricResponse struct {
 		MetricId string `json:"metricId"`
 	} `json:"evidenceSource"`
 
-	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines. Such calls skip every metric without it.
+	// GradesShortCalls Whether a simulation scores this metric on a call with fewer than 4 transcript lines or where your agent never spoke. Such calls skip every metric without it.
 	GradesShortCalls bool `json:"gradesShortCalls"`
 
 	// Id Unique identifier for the metric definition
@@ -40040,7 +40331,7 @@ type UpdateMetricDefinitionInput struct {
 	// Formula New formula expression (FORMULA only). Pass `sources` alongside if the referenced metrics change.
 	Formula *string `json:"formula,omitempty"`
 
-	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines. Such calls skip every other metric. Default false.
+	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines or where your agent never spoke (custom metrics only, not ones that judge the audio). Such calls skip every other metric. Default false.
 	GradesShortCalls *bool                    `json:"gradesShortCalls,omitempty"`
 	HttpRequest      *HttpRequestMetricConfig `json:"httpRequest,omitempty"`
 
@@ -40174,7 +40465,7 @@ type UpdateMetricVariantInput struct {
 	// ChangeReason Free-text audit note recorded on the new version.
 	ChangeReason *string `json:"changeReason,omitempty"`
 
-	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines. Such calls skip every other metric. Default false.
+	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines or where your agent never spoke (custom metrics only, not ones that judge the audio). Such calls skip every other metric. Default false.
 	GradesShortCalls *bool `json:"gradesShortCalls,omitempty"`
 
 	// LlmPrompt The rubric this variant applies. LLM judge metrics only.
@@ -48827,6 +49118,32 @@ func (t *FlowStep) MergeFlowStep9(v FlowStep9) error {
 	return err
 }
 
+// AsFlowStep10 returns the union data inside the FlowStep as a FlowStep10
+func (t FlowStep) AsFlowStep10() (FlowStep10, error) {
+	var body FlowStep10
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromFlowStep10 overwrites any union data inside the FlowStep as the provided FlowStep10
+func (t *FlowStep) FromFlowStep10(v FlowStep10) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeFlowStep10 performs a merge with any union data inside the FlowStep, using the provided FlowStep10
+func (t *FlowStep) MergeFlowStep10(v FlowStep10) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t FlowStep) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -56924,6 +57241,14 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/public/prospect-sim/run (the `PostV1PublicProspectSimRun` operationId).
 	PostV1PublicProspectSimRun(ctx context.Context, body PostV1PublicProspectSimRunJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetV1SimulationAudioClip List audio clips
+	//
+	// Returns the audio a CUSTOMER_AUDIO step can play: hold music, hold tones and ringback.
+	// Name one as the step's `audioClip`. A fixed catalogue, so it is not paginated.
+	//
+	// Corresponds with GET /v1/simulation/audio-clip (the `GetV1SimulationAudioClip` operationId).
+	GetV1SimulationAudioClip(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetV1SimulationEnvironment List environments
 	//
 	// Returns a paginated list of environments: the project's own plus the environments Roark curates and shares across every project. Reference one by id when setting a customer flow variant's environment.
@@ -61831,6 +62156,24 @@ func (c *Client) PostV1PublicProspectSimRunWithBody(ctx context.Context, content
 // Corresponds with POST /v1/public/prospect-sim/run (the `PostV1PublicProspectSimRun` operationId).
 func (c *Client) PostV1PublicProspectSimRun(ctx context.Context, body PostV1PublicProspectSimRunJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPostV1PublicProspectSimRunRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1SimulationAudioClip List audio clips
+//
+// Returns the audio a CUSTOMER_AUDIO step can play: hold music, hold tones and ringback.
+// Name one as the step's `audioClip`. A fixed catalogue, so it is not paginated.
+//
+// Corresponds with GET /v1/simulation/audio-clip (the `GetV1SimulationAudioClip` operationId).
+func (c *Client) GetV1SimulationAudioClip(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1SimulationAudioClipRequest(c.Server)
 	if err != nil {
 		return nil, err
 	}
@@ -70971,6 +71314,33 @@ func NewPostV1PublicProspectSimRunRequestWithBody(server string, contentType str
 	return req, nil
 }
 
+// NewGetV1SimulationAudioClipRequest constructs an http.Request for the GetV1SimulationAudioClip method
+func NewGetV1SimulationAudioClipRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/simulation/audio-clip")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewGetV1SimulationEnvironmentRequest constructs an http.Request for the GetV1SimulationEnvironment method
 func NewGetV1SimulationEnvironmentRequest(server string, params *GetV1SimulationEnvironmentParams) (*http.Request, error) {
 	var err error
@@ -75396,6 +75766,16 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/public/prospect-sim/run (the `PostV1PublicProspectSimRun` operationId).
 	PostV1PublicProspectSimRunWithResponse(ctx context.Context, body PostV1PublicProspectSimRunJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1PublicProspectSimRunResponse, error)
+
+	// GetV1SimulationAudioClipWithResponse List audio clips
+	//
+	// Returns the audio a CUSTOMER_AUDIO step can play: hold music, hold tones and ringback.
+	// Name one as the step's `audioClip`. A fixed catalogue, so it is not paginated.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/simulation/audio-clip (the `GetV1SimulationAudioClip` operationId).
+	GetV1SimulationAudioClipWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1SimulationAudioClipResponse, error)
 
 	// GetV1SimulationEnvironmentWithResponse List environments
 	//
@@ -92670,6 +93050,75 @@ func (r PostV1PublicProspectSimRunResponse) ContentType() string {
 	return ""
 }
 
+type GetV1SimulationAudioClipResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *GetSimulationAudioClipsResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1SimulationAudioClipResponse) GetJSON200() *GetSimulationAudioClipsResponse {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1SimulationAudioClipResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1SimulationAudioClipResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1SimulationAudioClipResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1SimulationAudioClipResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1SimulationAudioClipResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1SimulationAudioClipResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1SimulationAudioClipResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1SimulationAudioClipResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GetV1SimulationEnvironmentResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -100243,6 +100692,22 @@ func (c *ClientWithResponses) PostV1PublicProspectSimRunWithResponse(ctx context
 		return nil, err
 	}
 	return ParsePostV1PublicProspectSimRunResponse(rsp)
+}
+
+// GetV1SimulationAudioClipWithResponse List audio clips
+//
+// Returns the audio a CUSTOMER_AUDIO step can play: hold music, hold tones and ringback.
+// Name one as the step's `audioClip`. A fixed catalogue, so it is not paginated.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/simulation/audio-clip (the `GetV1SimulationAudioClip` operationId).
+func (c *ClientWithResponses) GetV1SimulationAudioClipWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1SimulationAudioClipResponse, error) {
+	rsp, err := c.GetV1SimulationAudioClip(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1SimulationAudioClipResponse(rsp)
 }
 
 // GetV1SimulationEnvironmentWithResponse List environments
@@ -113215,6 +113680,60 @@ func ParsePostV1PublicProspectSimRunResponse(rsp *http.Response) (*PostV1PublicP
 			return nil, err
 		}
 		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1SimulationAudioClipResponse parses an HTTP response from a GetV1SimulationAudioClipWithResponse call
+func ParseGetV1SimulationAudioClipResponse(rsp *http.Response) (*GetV1SimulationAudioClipResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1SimulationAudioClipResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest GetSimulationAudioClipsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
 		var dest ErrorResponse

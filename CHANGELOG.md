@@ -2,6 +2,15 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.10.0, 2026-11-05
+
+- Breaking: a new flow step variant was inserted, so the `FlowStep` union variants after it shifted. `FlowStep5.DtmfDigits` and `FlowStep5TypeCUSTOMERDTMF` are removed, as are `FlowStep6TypeAGENTDTMF`, `FlowStep7TypeVOICEMAIL`, `FlowStep8.HandoffPersonaId`, `FlowStep8TypeCUSTOMERHANDOFF`, `FlowStep9.LinkedCustomerFlowId`, `FlowStep9.LinkedCustomerFlowVariantId` and `FlowStep9TypeSCENARIOLINK`. Use the matching names on the next variant: `FlowStep6TypeCUSTOMERDTMF`, `FlowStep7.DtmfDigits`, `FlowStep7TypeAGENTDTMF`, `FlowStep8TypeVOICEMAIL`, `FlowStep9.HandoffPersonaId`, `FlowStep9TypeCUSTOMERHANDOFF` and `FlowStep10TypeSCENARIOLINK`.
+- Added `FlowStep10` and `FlowStep10Type`, with `FlowStep.AsFlowStep10`, `FlowStep.FromFlowStep10` and `FlowStep.MergeFlowStep10`.
+- Added the customer audio step: `FlowStep5TypeCUSTOMERAUDIO` and `ConfigFlowStepTypeCUSTOMERAUDIO`, with `AudioClip` fields on `FlowStep5` and `ConfigFlowStep`, and a `SilenceDurationSeconds` field on `FlowStep5`. The enums `FlowStep5AudioClip` and `ConfigFlowStepAudioClip` list the clips: `HOLD_BEEP`, six `HOLD_MUSIC_*` clips, `RINGBACK_UK` and `RINGBACK_US`.
+- Added `FlowStep7.OffScriptPolicy`, with the enums `FlowStep7OffScriptPolicyReaction` (`REPEAT`, `RESPOND`, `SAY`, `STAY_SILENT`) and `FlowStep7OffScriptPolicyThen` (`ADAPT`, `HANGUP`, `HANGUP_INVALIDATE`, `MOVE_ON`).
+- Added the simulation audio clip endpoint: `GetV1SimulationAudioClip` and `GetV1SimulationAudioClipWithResponse`, `NewGetV1SimulationAudioClipRequest`, `ParseGetV1SimulationAudioClipResponse`, `GetV1SimulationAudioClipResponse`, and the types `SimulationAudioClip`, `SimulationAudioClipCategory`, `SimulationAudioClipClip` and `GetSimulationAudioClipsResponse`.
+- `ClientInterface` and `ClientWithResponsesInterface` gained `GetV1SimulationAudioClip` and `GetV1SimulationAudioClipWithResponse`. Code that implements these interfaces, such as test mocks, must add them.
+
 ## v0.9.0, 2026-11-05
 
 - Development image package installation uses HTTPS and bounded retries for signed snapshot indexes and package downloads.

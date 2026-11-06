@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.11.0, 2026-11-06
+
+- Breaking: `CreateAgentEndpointInput.Value` and `AgentEndpointDetailResponse.Value` changed from `string` to `*string`. The `Value` field of the `AgentConfig.Endpoints` element changed from `string` to `*string` too. Callers must pass and read a pointer.
+- Breaking: the `ImprovFlowConfig.HappyPath` struct and the `ImprovFlowConfig.EdgeCases` element type gained an `OpeningLine` field, so code that builds these anonymous structs by type must be updated.
+- Added `OpeningLine` to `FlowHappyPathInput`, `FlowEdgeCaseInput`, `ImprovFlowVariant`, `ScriptedFlowVariant`, `UpdateFlowVariantInput` and `VoicemailFlowVariant`.
+- Added `Client.DeleteV1SimulationPlanJobByJobId` and `ClientWithResponses.DeleteV1SimulationPlanJobByJobIdWithResponse`, with `NewDeleteV1SimulationPlanJobByJobIdRequest`, `ParseDeleteV1SimulationPlanJobByJobIdResponse` and the types `DeleteV1SimulationPlanJobByJobIdResponse` and `DeleteSimulationPlanJobResponse`.
+- Added the public campaign credit endpoints `PostV1PublicCampaignCreditByCampaignKeyClaim` and `PostV1PublicCampaignCreditVerify`, each with a `WithBody` variant, a `WithResponse` variant, request builders, response parsers, JSON body types and an `Outcome` enum (`GRANTED`, `ALREADYCLAIMED`, `AWAITINGSIGNUP`, `CAMPAIGNEXHAUSTED`, `ORGANIZATIONALREADYCLAIMED`, `VERIFICATIONSENT`, `VERIFICATIONALREADYSENT`).
+- Added the fields `Greeting`, `JobDescription`, `Llm`, `Provider`, `Stt`, `Tts` and `Voice` to `AgentConfig`, with the enums `AgentConfigProvider`, `AgentConfigLlmProvider`, `AgentConfigSttProvider` and `AgentConfigTtsProvider`.
+- Added `SimulationPlanAgentEndpointConfig.Environment`.
+- Added the methods above to `ClientInterface` and `ClientWithResponsesInterface`, so custom implementations of these interfaces must add them.
+
 ## v0.10.0, 2026-11-05
 
 - Breaking: a new flow step variant was inserted, so the `FlowStep` union variants after it shifted. `FlowStep5.DtmfDigits` and `FlowStep5TypeCUSTOMERDTMF` are removed, as are `FlowStep6TypeAGENTDTMF`, `FlowStep7TypeVOICEMAIL`, `FlowStep8.HandoffPersonaId`, `FlowStep8TypeCUSTOMERHANDOFF`, `FlowStep9.LinkedCustomerFlowId`, `FlowStep9.LinkedCustomerFlowVariantId` and `FlowStep9TypeSCENARIOLINK`. Use the matching names on the next variant: `FlowStep6TypeCUSTOMERDTMF`, `FlowStep7.DtmfDigits`, `FlowStep7TypeAGENTDTMF`, `FlowStep8TypeVOICEMAIL`, `FlowStep9.HandoffPersonaId`, `FlowStep9TypeCUSTOMERHANDOFF` and `FlowStep10TypeSCENARIOLINK`.

@@ -106,6 +106,141 @@ func (e AgentConfigKind) Valid() bool {
 	}
 }
 
+// Defines values for AgentConfigLlmProvider.
+const (
+	AgentConfigLlmProviderANTHROPIC  AgentConfigLlmProvider = "ANTHROPIC"
+	AgentConfigLlmProviderAWS        AgentConfigLlmProvider = "AWS"
+	AgentConfigLlmProviderELEVENLABS AgentConfigLlmProvider = "ELEVENLABS"
+	AgentConfigLlmProviderGOOGLE     AgentConfigLlmProvider = "GOOGLE"
+	AgentConfigLlmProviderOPENAI     AgentConfigLlmProvider = "OPENAI"
+	AgentConfigLlmProviderULTRAVOX   AgentConfigLlmProvider = "ULTRAVOX"
+	AgentConfigLlmProviderXAI        AgentConfigLlmProvider = "XAI"
+)
+
+// Valid indicates whether the value is a known member of the AgentConfigLlmProvider enum.
+func (e AgentConfigLlmProvider) Valid() bool {
+	switch e {
+	case AgentConfigLlmProviderANTHROPIC:
+		return true
+	case AgentConfigLlmProviderAWS:
+		return true
+	case AgentConfigLlmProviderELEVENLABS:
+		return true
+	case AgentConfigLlmProviderGOOGLE:
+		return true
+	case AgentConfigLlmProviderOPENAI:
+		return true
+	case AgentConfigLlmProviderULTRAVOX:
+		return true
+	case AgentConfigLlmProviderXAI:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentConfigProvider.
+const (
+	AgentConfigProviderApi               AgentConfigProvider = "api"
+	AgentConfigProviderBland             AgentConfigProvider = "bland"
+	AgentConfigProviderElevenlabs        AgentConfigProvider = "elevenlabs"
+	AgentConfigProviderGoogleCes         AgentConfigProvider = "google-ces"
+	AgentConfigProviderKore              AgentConfigProvider = "kore"
+	AgentConfigProviderLeaping           AgentConfigProvider = "leaping"
+	AgentConfigProviderLivekit           AgentConfigProvider = "livekit"
+	AgentConfigProviderLivekitSelfHosted AgentConfigProvider = "livekit-self-hosted"
+	AgentConfigProviderPipecatCloud      AgentConfigProvider = "pipecat-cloud"
+	AgentConfigProviderPipecatSelfHosted AgentConfigProvider = "pipecat-self-hosted"
+	AgentConfigProviderRetell            AgentConfigProvider = "retell"
+	AgentConfigProviderRoark             AgentConfigProvider = "roark"
+	AgentConfigProviderVapi              AgentConfigProvider = "vapi"
+)
+
+// Valid indicates whether the value is a known member of the AgentConfigProvider enum.
+func (e AgentConfigProvider) Valid() bool {
+	switch e {
+	case AgentConfigProviderApi:
+		return true
+	case AgentConfigProviderBland:
+		return true
+	case AgentConfigProviderElevenlabs:
+		return true
+	case AgentConfigProviderGoogleCes:
+		return true
+	case AgentConfigProviderKore:
+		return true
+	case AgentConfigProviderLeaping:
+		return true
+	case AgentConfigProviderLivekit:
+		return true
+	case AgentConfigProviderLivekitSelfHosted:
+		return true
+	case AgentConfigProviderPipecatCloud:
+		return true
+	case AgentConfigProviderPipecatSelfHosted:
+		return true
+	case AgentConfigProviderRetell:
+		return true
+	case AgentConfigProviderRoark:
+		return true
+	case AgentConfigProviderVapi:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentConfigSttProvider.
+const (
+	AgentConfigSttProviderASSEMBLYAI    AgentConfigSttProvider = "ASSEMBLYAI"
+	AgentConfigSttProviderDEEPGRAM      AgentConfigSttProvider = "DEEPGRAM"
+	AgentConfigSttProviderELEVENLABS    AgentConfigSttProvider = "ELEVENLABS"
+	AgentConfigSttProviderOPENAIWHISPER AgentConfigSttProvider = "OPENAI_WHISPER"
+	AgentConfigSttProviderSPEECHMATICS  AgentConfigSttProvider = "SPEECHMATICS"
+)
+
+// Valid indicates whether the value is a known member of the AgentConfigSttProvider enum.
+func (e AgentConfigSttProvider) Valid() bool {
+	switch e {
+	case AgentConfigSttProviderASSEMBLYAI:
+		return true
+	case AgentConfigSttProviderDEEPGRAM:
+		return true
+	case AgentConfigSttProviderELEVENLABS:
+		return true
+	case AgentConfigSttProviderOPENAIWHISPER:
+		return true
+	case AgentConfigSttProviderSPEECHMATICS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentConfigTtsProvider.
+const (
+	AgentConfigTtsProviderCARTESIA   AgentConfigTtsProvider = "CARTESIA"
+	AgentConfigTtsProviderELEVENLABS AgentConfigTtsProvider = "ELEVENLABS"
+	AgentConfigTtsProviderOPENAI     AgentConfigTtsProvider = "OPENAI"
+	AgentConfigTtsProviderRIME       AgentConfigTtsProvider = "RIME"
+)
+
+// Valid indicates whether the value is a known member of the AgentConfigTtsProvider enum.
+func (e AgentConfigTtsProvider) Valid() bool {
+	switch e {
+	case AgentConfigTtsProviderCARTESIA:
+		return true
+	case AgentConfigTtsProviderELEVENLABS:
+		return true
+	case AgentConfigTtsProviderOPENAI:
+		return true
+	case AgentConfigTtsProviderRIME:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AgentEndpointDetailResponseDirection.
 const (
 	AgentEndpointDetailResponseDirectionINCOMING            AgentEndpointDetailResponseDirection = "INCOMING"
@@ -26281,6 +26416,72 @@ func (e GetV1PhoneNumberAvailableParamsNumberType) Valid() bool {
 	}
 }
 
+// Defines values for PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome.
+const (
+	PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeALREADYCLAIMED             PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome = "ALREADY_CLAIMED"
+	PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeAWAITINGSIGNUP             PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome = "AWAITING_SIGNUP"
+	PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeCAMPAIGNEXHAUSTED          PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome = "CAMPAIGN_EXHAUSTED"
+	PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeGRANTED                    PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome = "GRANTED"
+	PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeORGANIZATIONALREADYCLAIMED PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome = "ORGANIZATION_ALREADY_CLAIMED"
+	PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeVERIFICATIONALREADYSENT    PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome = "VERIFICATION_ALREADY_SENT"
+	PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeVERIFICATIONSENT           PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome = "VERIFICATION_SENT"
+)
+
+// Valid indicates whether the value is a known member of the PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome enum.
+func (e PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome) Valid() bool {
+	switch e {
+	case PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeALREADYCLAIMED:
+		return true
+	case PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeAWAITINGSIGNUP:
+		return true
+	case PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeCAMPAIGNEXHAUSTED:
+		return true
+	case PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeGRANTED:
+		return true
+	case PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeORGANIZATIONALREADYCLAIMED:
+		return true
+	case PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeVERIFICATIONALREADYSENT:
+		return true
+	case PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcomeVERIFICATIONSENT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome.
+const (
+	PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeALREADYCLAIMED             PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome = "ALREADY_CLAIMED"
+	PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeAWAITINGSIGNUP             PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome = "AWAITING_SIGNUP"
+	PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeCAMPAIGNEXHAUSTED          PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome = "CAMPAIGN_EXHAUSTED"
+	PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeGRANTED                    PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome = "GRANTED"
+	PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeORGANIZATIONALREADYCLAIMED PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome = "ORGANIZATION_ALREADY_CLAIMED"
+	PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeVERIFICATIONALREADYSENT    PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome = "VERIFICATION_ALREADY_SENT"
+	PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeVERIFICATIONSENT           PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome = "VERIFICATION_SENT"
+)
+
+// Valid indicates whether the value is a known member of the PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome enum.
+func (e PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome) Valid() bool {
+	switch e {
+	case PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeALREADYCLAIMED:
+		return true
+	case PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeAWAITINGSIGNUP:
+		return true
+	case PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeCAMPAIGNEXHAUSTED:
+		return true
+	case PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeGRANTED:
+		return true
+	case PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeORGANIZATIONALREADYCLAIMED:
+		return true
+	case PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeVERIFICATIONALREADYSENT:
+		return true
+	case PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcomeVERIFICATIONSENT:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState.
 const (
 	GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsStateCompleted  GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState = "completed"
@@ -26422,11 +26623,28 @@ type AgentConfig struct {
 		OutboundDialHttpRequestDefinition *string                               `json:"outboundDialHttpRequestDefinition,omitempty"`
 		OutboundDialType                  *AgentConfigEndpointsOutboundDialType `json:"outboundDialType,omitempty"`
 		Type                              *AgentConfigEndpointsType             `json:"type,omitempty"`
-		Value                             string                                `json:"value"`
+		Value                             *string                               `json:"value,omitempty"`
 	} `json:"endpoints,omitempty"`
-	Kind   AgentConfigKind `json:"kind"`
-	Name   string          `json:"name"`
-	Prompt *string         `json:"prompt,omitempty"`
+	Greeting       *string         `json:"greeting,omitempty"`
+	JobDescription *string         `json:"jobDescription,omitempty"`
+	Kind           AgentConfigKind `json:"kind"`
+	Llm            *struct {
+		Model    string                 `json:"model"`
+		Provider AgentConfigLlmProvider `json:"provider"`
+	} `json:"llm,omitempty"`
+	Name     string               `json:"name"`
+	Prompt   *string              `json:"prompt,omitempty"`
+	Provider *AgentConfigProvider `json:"provider,omitempty"`
+	Stt      *struct {
+		Model    string                 `json:"model"`
+		Provider AgentConfigSttProvider `json:"provider"`
+	} `json:"stt,omitempty"`
+	Tts *struct {
+		Model    *string                `json:"model,omitempty"`
+		Provider AgentConfigTtsProvider `json:"provider"`
+		VoiceId  string                 `json:"voiceId"`
+	} `json:"tts,omitempty"`
+	Voice *string `json:"voice,omitempty"`
 }
 
 // AgentConfigEndpointsDirection defines model for AgentConfig.Endpoints.Direction.
@@ -26440,6 +26658,18 @@ type AgentConfigEndpointsType string
 
 // AgentConfigKind defines model for AgentConfig.Kind.
 type AgentConfigKind string
+
+// AgentConfigLlmProvider defines model for AgentConfig.Llm.Provider.
+type AgentConfigLlmProvider string
+
+// AgentConfigProvider defines model for AgentConfig.Provider.
+type AgentConfigProvider string
+
+// AgentConfigSttProvider defines model for AgentConfig.Stt.Provider.
+type AgentConfigSttProvider string
+
+// AgentConfigTtsProvider defines model for AgentConfig.Tts.Provider.
+type AgentConfigTtsProvider string
 
 // AgentEndpointById defines model for AgentEndpointById.
 type AgentEndpointById struct {
@@ -26488,8 +26718,8 @@ type AgentEndpointDetailResponse struct {
 	// UpdatedAt Last update timestamp
 	UpdatedAt string `json:"updatedAt"`
 
-	// Value Agent endpoint value (phone number, URL, etc.)
-	Value string `json:"value"`
+	// Value Agent endpoint value (phone number, URL, etc.). Null for an outbound phone endpoint with no fixed calling number.
+	Value *string `json:"value"`
 }
 
 // AgentEndpointDetailResponseDirection Agent endpoint direction (INCOMING, OUTGOING, INCOMING_AND_OUTGOING)
@@ -28682,8 +28912,8 @@ type CreateAgentEndpointInput struct {
 	// OutboundDialType Outbound dial type: NONE or HTTP_REQUEST (default: NONE)
 	OutboundDialType *CreateAgentEndpointInputOutboundDialType `json:"outboundDialType,omitempty"`
 
-	// Value Phone number in E.164 format (e.g., +12345678900)
-	Value string `json:"value"`
+	// Value Phone number in E.164 format (e.g., +12345678900). Optional when direction is OUTGOING, for an agent that calls from numbers you do not know up front.
+	Value *string `json:"value,omitempty"`
 }
 
 // CreateAgentEndpointInputDirection Call direction: INCOMING, OUTGOING, or INCOMING_AND_OUTGOING
@@ -31136,6 +31366,13 @@ type DeleteOrgResourceResponse struct {
 // DeleteOrgResourceResponseDeleted defines model for DeleteOrgResourceResponse.Deleted.
 type DeleteOrgResourceResponseDeleted bool
 
+// DeleteSimulationPlanJobResponse Result of deleting a simulation plan job
+type DeleteSimulationPlanJobResponse struct {
+	// Deleted True when the run was removed from the run history.
+	Deleted                bool               `json:"deleted"`
+	SimulationRunPlanJobId openapi_types.UUID `json:"simulationRunPlanJobId"`
+}
+
 // DuplicateCustomerFlowInput Options for duplicating a customer flow. Every field is optional.
 type DuplicateCustomerFlowInput struct {
 	// AgentIds Agents to link on the copy. Omit to carry the source flow's agents over. Required when the source is a Roark-managed flow with no agents of its own.
@@ -31203,7 +31440,8 @@ type FlowEdgeCaseInput struct {
 	EnvironmentId          *openapi_types.UUID     `json:"environmentId,omitempty"`
 
 	// IncludeFlowExpectations Whether this edge case is graded on the flow's agentExpectations as well as its own additionalExpectations. Defaults to true; false grades it on its additionalExpectations only.
-	IncludeFlowExpectations *bool `json:"includeFlowExpectations,omitempty"`
+	IncludeFlowExpectations *bool   `json:"includeFlowExpectations,omitempty"`
+	OpeningLine             *string `json:"openingLine,omitempty"`
 
 	// PersonaOverrideId The persona this runs as. Omit to inherit the happy path's.
 	PersonaOverrideId               *openapi_types.UUID `json:"personaOverrideId,omitempty"`
@@ -31241,6 +31479,7 @@ type FlowHappyPathInput struct {
 
 	// EnvironmentId The conditions this flow runs under. Edge cases inherit them unless they name their own.
 	EnvironmentId openapi_types.UUID `json:"environmentId"`
+	OpeningLine   *string            `json:"openingLine,omitempty"`
 
 	// PersonaOverrideId The persona this flow runs as. Edge cases inherit it unless they name their own.
 	PersonaOverrideId               openapi_types.UUID  `json:"personaOverrideId"`
@@ -32547,6 +32786,7 @@ type ImprovFlowConfig struct {
 		Expectations            *[]string `json:"expectations,omitempty"`
 		IncludeFlowExpectations *bool     `json:"includeFlowExpectations,omitempty"`
 		Name                    string    `json:"name"`
+		OpeningLine             *string   `json:"openingLine,omitempty"`
 		Persona                 *string   `json:"persona,omitempty"`
 		Prompt                  *string   `json:"prompt,omitempty"`
 		Title                   *string   `json:"title,omitempty"`
@@ -32555,6 +32795,7 @@ type ImprovFlowConfig struct {
 	HappyPath    struct {
 		Environment  string    `json:"environment"`
 		Expectations *[]string `json:"expectations,omitempty"`
+		OpeningLine  *string   `json:"openingLine,omitempty"`
 		Persona      string    `json:"persona"`
 		Prompt       *string   `json:"prompt,omitempty"`
 		Title        *string   `json:"title,omitempty"`
@@ -32685,6 +32926,9 @@ type ImprovFlowVariant struct {
 	// IncludeFlowExpectations Whether this variant is graded on the flow's agentExpectations as well as its additionalExpectations. False grades it on its additionalExpectations only. Always true on the happy path.
 	IncludeFlowExpectations bool `json:"includeFlowExpectations"`
 	IsGenerated             bool `json:"isGenerated"`
+
+	// OpeningLine What the simulated customer says word for word as the call connects. Null on an edge case inherits the happy path's; null on the happy path waits for your agent to speak first. Ignored when a preceding flow runs first. Cannot use {{variables}}.
+	OpeningLine *string `json:"openingLine,omitempty"`
 
 	// PersonaOverride The persona this runs as instead of the happy path's. Null means it inherits.
 	PersonaOverride *struct {
@@ -36897,8 +37141,9 @@ type ScriptedFlowVariant struct {
 	Id          openapi_types.UUID   `json:"id"`
 
 	// IncludeFlowExpectations Whether this variant is graded on the flow's agentExpectations as well as its additionalExpectations. False grades it on its additionalExpectations only. Always true on the happy path.
-	IncludeFlowExpectations bool `json:"includeFlowExpectations"`
-	IsGenerated             bool `json:"isGenerated"`
+	IncludeFlowExpectations bool    `json:"includeFlowExpectations"`
+	IsGenerated             bool    `json:"isGenerated"`
+	OpeningLine             *string `json:"openingLine,omitempty"`
 
 	// PersonaOverride The persona this runs as instead of the happy path's. Null means it inherits.
 	PersonaOverride *struct {
@@ -37617,9 +37862,10 @@ type SimulationNotifyConfig_Email struct {
 
 // SimulationPlanAgentEndpointConfig defines model for SimulationPlanAgentEndpointConfig.
 type SimulationPlanAgentEndpointConfig struct {
-	Agent     string                                      `json:"agent"`
-	Direction *SimulationPlanAgentEndpointConfigDirection `json:"direction,omitempty"`
-	Value     *string                                     `json:"value,omitempty"`
+	Agent       string                                      `json:"agent"`
+	Direction   *SimulationPlanAgentEndpointConfigDirection `json:"direction,omitempty"`
+	Environment *string                                     `json:"environment,omitempty"`
+	Value       *string                                     `json:"value,omitempty"`
 }
 
 // SimulationPlanAgentEndpointConfigDirection defines model for SimulationPlanAgentEndpointConfig.Direction.
@@ -40155,7 +40401,8 @@ type UpdateFlowVariantInput struct {
 	EnvironmentId          *openapi_types.UUID     `json:"environmentId,omitempty"`
 
 	// IncludeFlowExpectations Whether this edge case is graded on the flow's agentExpectations as well as its own additionalExpectations. Defaults to true; false grades it on its additionalExpectations only.
-	IncludeFlowExpectations *bool `json:"includeFlowExpectations,omitempty"`
+	IncludeFlowExpectations *bool   `json:"includeFlowExpectations,omitempty"`
+	OpeningLine             *string `json:"openingLine,omitempty"`
 
 	// PersonaOverrideId The persona this runs as. Null on an edge case inherits the happy path's.
 	PersonaOverrideId               *openapi_types.UUID `json:"personaOverrideId,omitempty"`
@@ -40846,8 +41093,9 @@ type VoicemailFlowVariant struct {
 	Id          openapi_types.UUID   `json:"id"`
 
 	// IncludeFlowExpectations Whether this variant is graded on the flow's agentExpectations as well as its additionalExpectations. False grades it on its additionalExpectations only. Always true on the happy path.
-	IncludeFlowExpectations bool `json:"includeFlowExpectations"`
-	IsGenerated             bool `json:"isGenerated"`
+	IncludeFlowExpectations bool    `json:"includeFlowExpectations"`
+	IsGenerated             bool    `json:"isGenerated"`
+	OpeningLine             *string `json:"openingLine,omitempty"`
 
 	// PersonaOverride The persona this runs as instead of the happy path's. Null means it inherits.
 	PersonaOverride *struct {
@@ -42869,6 +43117,23 @@ type GetV1PhoneNumberAvailableParamsCountry string
 // GetV1PhoneNumberAvailableParamsNumberType defines parameters for GetV1PhoneNumberAvailable.
 type GetV1PhoneNumberAvailableParamsNumberType string
 
+// PostV1PublicCampaignCreditVerifyJSONBody defines parameters for PostV1PublicCampaignCreditVerify.
+type PostV1PublicCampaignCreditVerifyJSONBody struct {
+	Token string `json:"token"`
+}
+
+// PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome defines parameters for PostV1PublicCampaignCreditVerify.
+type PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome string
+
+// PostV1PublicCampaignCreditByCampaignKeyClaimJSONBody defines parameters for PostV1PublicCampaignCreditByCampaignKeyClaim.
+type PostV1PublicCampaignCreditByCampaignKeyClaimJSONBody struct {
+	CaptchaToken *string `json:"captchaToken,omitempty"`
+	Email        string  `json:"email"`
+}
+
+// PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome defines parameters for PostV1PublicCampaignCreditByCampaignKeyClaim.
+type PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome string
+
 // GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState defines parameters for GetV1PublicProspectSimReportByToken.
 type GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState string
 
@@ -43161,6 +43426,12 @@ type PostV1PhoneNumberJSONRequestBody = CreatePhoneNumberInput
 
 // PutV1PhoneNumberByPhoneNumberIdJSONRequestBody defines body for PutV1PhoneNumberByPhoneNumberId for application/json ContentType.
 type PutV1PhoneNumberByPhoneNumberIdJSONRequestBody = UpdatePhoneNumberInput
+
+// PostV1PublicCampaignCreditVerifyJSONRequestBody defines body for PostV1PublicCampaignCreditVerify for application/json ContentType.
+type PostV1PublicCampaignCreditVerifyJSONRequestBody PostV1PublicCampaignCreditVerifyJSONBody
+
+// PostV1PublicCampaignCreditByCampaignKeyClaimJSONRequestBody defines body for PostV1PublicCampaignCreditByCampaignKeyClaim for application/json ContentType.
+type PostV1PublicCampaignCreditByCampaignKeyClaimJSONRequestBody PostV1PublicCampaignCreditByCampaignKeyClaimJSONBody
 
 // PostV1PublicProspectSimRunJSONRequestBody defines body for PostV1PublicProspectSimRun for application/json ContentType.
 type PostV1PublicProspectSimRunJSONRequestBody PostV1PublicProspectSimRunJSONBody
@@ -57209,6 +57480,42 @@ type ClientInterface interface {
 	// Corresponds with GET /v1/projects (the `GetV1Projects` operationId).
 	GetV1Projects(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// PostV1PublicCampaignCreditVerifyWithBody Verify a campaign credit claim
+	//
+	// Public endpoint scoped by the unguessable token from the verification email. Proves the address, then grants the credit if it already has a Roark organization. Safe to repeat.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/public/campaign-credit/verify (the `PostV1PublicCampaignCreditVerify` operationId).
+	PostV1PublicCampaignCreditVerifyWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1PublicCampaignCreditVerify Verify a campaign credit claim
+	//
+	// Public endpoint scoped by the unguessable token from the verification email. Proves the address, then grants the credit if it already has a Roark organization. Safe to repeat.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/public/campaign-credit/verify (the `PostV1PublicCampaignCreditVerify` operationId).
+	PostV1PublicCampaignCreditVerify(ctx context.Context, body PostV1PublicCampaignCreditVerifyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1PublicCampaignCreditByCampaignKeyClaimWithBody Claim a campaign credit
+	//
+	// Public endpoint: opens a claim for the email and sends it a verification link. Nothing is granted until the link is clicked. Returns the claim state for the page to show.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/public/campaign-credit/{campaignKey}/claim (the `PostV1PublicCampaignCreditByCampaignKeyClaim` operationId).
+	PostV1PublicCampaignCreditByCampaignKeyClaimWithBody(ctx context.Context, campaignKey string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1PublicCampaignCreditByCampaignKeyClaim Claim a campaign credit
+	//
+	// Public endpoint: opens a claim for the email and sends it a verification link. Nothing is granted until the link is clicked. Returns the claim state for the page to show.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/public/campaign-credit/{campaignKey}/claim (the `PostV1PublicCampaignCreditByCampaignKeyClaim` operationId).
+	PostV1PublicCampaignCreditByCampaignKeyClaim(ctx context.Context, campaignKey string, body PostV1PublicCampaignCreditByCampaignKeyClaimJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetV1PublicProspectSimReportByToken Read a prospect simulation teaser report
 	//
 	// Public endpoint scoped by the unguessable report token. Returns a truncated teaser once the debrief is ready; the full report is gated behind claiming an account.
@@ -57460,6 +57767,16 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/simulation/plan (the `PostV1SimulationPlan` operationId).
 	PostV1SimulationPlan(ctx context.Context, body PostV1SimulationPlanJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1SimulationPlanJobByJobId Delete a simulation plan job
+	//
+	// Removes a finished run from the run history (a soft delete). The run stops appearing in run lists,
+	// counts and plan run histories, and reading it by ID returns 404.
+	//
+	// A run that is still in progress is refused with 409: cancel it first.
+	//
+	// Corresponds with DELETE /v1/simulation/plan/job/{jobId} (the `DeleteV1SimulationPlanJobByJobId` operationId).
+	DeleteV1SimulationPlanJobByJobId(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1SimulationPlanJobByJobId Get simulation plan job
 	//
@@ -62094,6 +62411,82 @@ func (c *Client) GetV1Projects(ctx context.Context, reqEditors ...RequestEditorF
 	return c.Client.Do(req)
 }
 
+// PostV1PublicCampaignCreditVerifyWithBody Verify a campaign credit claim
+//
+// Public endpoint scoped by the unguessable token from the verification email. Proves the address, then grants the credit if it already has a Roark organization. Safe to repeat.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/public/campaign-credit/verify (the `PostV1PublicCampaignCreditVerify` operationId).
+func (c *Client) PostV1PublicCampaignCreditVerifyWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1PublicCampaignCreditVerifyRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1PublicCampaignCreditVerify Verify a campaign credit claim
+//
+// Public endpoint scoped by the unguessable token from the verification email. Proves the address, then grants the credit if it already has a Roark organization. Safe to repeat.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/public/campaign-credit/verify (the `PostV1PublicCampaignCreditVerify` operationId).
+func (c *Client) PostV1PublicCampaignCreditVerify(ctx context.Context, body PostV1PublicCampaignCreditVerifyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1PublicCampaignCreditVerifyRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1PublicCampaignCreditByCampaignKeyClaimWithBody Claim a campaign credit
+//
+// Public endpoint: opens a claim for the email and sends it a verification link. Nothing is granted until the link is clicked. Returns the claim state for the page to show.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/public/campaign-credit/{campaignKey}/claim (the `PostV1PublicCampaignCreditByCampaignKeyClaim` operationId).
+func (c *Client) PostV1PublicCampaignCreditByCampaignKeyClaimWithBody(ctx context.Context, campaignKey string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1PublicCampaignCreditByCampaignKeyClaimRequestWithBody(c.Server, campaignKey, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1PublicCampaignCreditByCampaignKeyClaim Claim a campaign credit
+//
+// Public endpoint: opens a claim for the email and sends it a verification link. Nothing is granted until the link is clicked. Returns the claim state for the page to show.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/public/campaign-credit/{campaignKey}/claim (the `PostV1PublicCampaignCreditByCampaignKeyClaim` operationId).
+func (c *Client) PostV1PublicCampaignCreditByCampaignKeyClaim(ctx context.Context, campaignKey string, body PostV1PublicCampaignCreditByCampaignKeyClaimJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1PublicCampaignCreditByCampaignKeyClaimRequest(c.Server, campaignKey, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GetV1PublicProspectSimReportByToken Read a prospect simulation teaser report
 //
 // Public endpoint scoped by the unguessable report token. Returns a truncated teaser once the debrief is ready; the full report is gated behind claiming an account.
@@ -62596,6 +62989,26 @@ func (c *Client) PostV1SimulationPlanWithBody(ctx context.Context, contentType s
 // Corresponds with POST /v1/simulation/plan (the `PostV1SimulationPlan` operationId).
 func (c *Client) PostV1SimulationPlan(ctx context.Context, body PostV1SimulationPlanJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPostV1SimulationPlanRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1SimulationPlanJobByJobId Delete a simulation plan job
+//
+// Removes a finished run from the run history (a soft delete). The run stops appearing in run lists,
+// counts and plan run histories, and reading it by ID returns 404.
+//
+// A run that is still in progress is refused with 409: cancel it first.
+//
+// Corresponds with DELETE /v1/simulation/plan/job/{jobId} (the `DeleteV1SimulationPlanJobByJobId` operationId).
+func (c *Client) DeleteV1SimulationPlanJobByJobId(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1SimulationPlanJobByJobIdRequest(c.Server, jobId)
 	if err != nil {
 		return nil, err
 	}
@@ -71179,6 +71592,93 @@ func NewGetV1ProjectsRequest(server string) (*http.Request, error) {
 	return req, nil
 }
 
+// NewPostV1PublicCampaignCreditVerifyRequest calls the generic PostV1PublicCampaignCreditVerify builder with application/json body
+func NewPostV1PublicCampaignCreditVerifyRequest(server string, body PostV1PublicCampaignCreditVerifyJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1PublicCampaignCreditVerifyRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1PublicCampaignCreditVerifyRequestWithBody constructs an http.Request for the PostV1PublicCampaignCreditVerify method, with any body, and a specified content type
+func NewPostV1PublicCampaignCreditVerifyRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/public/campaign-credit/verify")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPostV1PublicCampaignCreditByCampaignKeyClaimRequest calls the generic PostV1PublicCampaignCreditByCampaignKeyClaim builder with application/json body
+func NewPostV1PublicCampaignCreditByCampaignKeyClaimRequest(server string, campaignKey string, body PostV1PublicCampaignCreditByCampaignKeyClaimJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1PublicCampaignCreditByCampaignKeyClaimRequestWithBody(server, campaignKey, "application/json", bodyReader)
+}
+
+// NewPostV1PublicCampaignCreditByCampaignKeyClaimRequestWithBody constructs an http.Request for the PostV1PublicCampaignCreditByCampaignKeyClaim method, with any body, and a specified content type
+func NewPostV1PublicCampaignCreditByCampaignKeyClaimRequestWithBody(server string, campaignKey string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "campaignKey", campaignKey, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/public/campaign-credit/%s/claim", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGetV1PublicProspectSimReportByTokenRequest constructs an http.Request for the GetV1PublicProspectSimReportByToken method
 func NewGetV1PublicProspectSimReportByTokenRequest(server string, token string) (*http.Request, error) {
 	var err error
@@ -72073,6 +72573,40 @@ func NewPostV1SimulationPlanRequestWithBody(server string, contentType string, b
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1SimulationPlanJobByJobIdRequest constructs an http.Request for the DeleteV1SimulationPlanJobByJobId method
+func NewDeleteV1SimulationPlanJobByJobIdRequest(server string, jobId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/simulation/plan/job/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -75731,6 +76265,42 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /v1/projects (the `GetV1Projects` operationId).
 	GetV1ProjectsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1ProjectsResponse, error)
 
+	// PostV1PublicCampaignCreditVerifyWithBodyWithResponse Verify a campaign credit claim
+	//
+	// Public endpoint scoped by the unguessable token from the verification email. Proves the address, then grants the credit if it already has a Roark organization. Safe to repeat.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/public/campaign-credit/verify (the `PostV1PublicCampaignCreditVerify` operationId).
+	PostV1PublicCampaignCreditVerifyWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1PublicCampaignCreditVerifyResponse, error)
+
+	// PostV1PublicCampaignCreditVerifyWithResponse Verify a campaign credit claim
+	//
+	// Public endpoint scoped by the unguessable token from the verification email. Proves the address, then grants the credit if it already has a Roark organization. Safe to repeat.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/public/campaign-credit/verify (the `PostV1PublicCampaignCreditVerify` operationId).
+	PostV1PublicCampaignCreditVerifyWithResponse(ctx context.Context, body PostV1PublicCampaignCreditVerifyJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1PublicCampaignCreditVerifyResponse, error)
+
+	// PostV1PublicCampaignCreditByCampaignKeyClaimWithBodyWithResponse Claim a campaign credit
+	//
+	// Public endpoint: opens a claim for the email and sends it a verification link. Nothing is granted until the link is clicked. Returns the claim state for the page to show.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/public/campaign-credit/{campaignKey}/claim (the `PostV1PublicCampaignCreditByCampaignKeyClaim` operationId).
+	PostV1PublicCampaignCreditByCampaignKeyClaimWithBodyWithResponse(ctx context.Context, campaignKey string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1PublicCampaignCreditByCampaignKeyClaimResponse, error)
+
+	// PostV1PublicCampaignCreditByCampaignKeyClaimWithResponse Claim a campaign credit
+	//
+	// Public endpoint: opens a claim for the email and sends it a verification link. Nothing is granted until the link is clicked. Returns the claim state for the page to show.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/public/campaign-credit/{campaignKey}/claim (the `PostV1PublicCampaignCreditByCampaignKeyClaim` operationId).
+	PostV1PublicCampaignCreditByCampaignKeyClaimWithResponse(ctx context.Context, campaignKey string, body PostV1PublicCampaignCreditByCampaignKeyClaimJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1PublicCampaignCreditByCampaignKeyClaimResponse, error)
+
 	// GetV1PublicProspectSimReportByTokenWithResponse Read a prospect simulation teaser report
 	//
 	// Public endpoint scoped by the unguessable report token. Returns a truncated teaser once the debrief is ready; the full report is gated behind claiming an account.
@@ -76010,6 +76580,18 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/simulation/plan (the `PostV1SimulationPlan` operationId).
 	PostV1SimulationPlanWithResponse(ctx context.Context, body PostV1SimulationPlanJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1SimulationPlanResponse, error)
+
+	// DeleteV1SimulationPlanJobByJobIdWithResponse Delete a simulation plan job
+	//
+	// Removes a finished run from the run history (a soft delete). The run stops appearing in run lists,
+	// counts and plan run histories, and reading it by ID returns 404.
+	//
+	// A run that is still in progress is refused with 409: cancel it first.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/simulation/plan/job/{jobId} (the `DeleteV1SimulationPlanJobByJobId` operationId).
+	DeleteV1SimulationPlanJobByJobIdWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1SimulationPlanJobByJobIdResponse, error)
 
 	// GetV1SimulationPlanJobByJobIdWithResponse Get simulation plan job
 	//
@@ -92751,6 +93333,158 @@ func (r GetV1ProjectsResponse) ContentType() string {
 	return ""
 }
 
+type PostV1PublicCampaignCreditVerifyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			AmountUsd        float64                                                        `json:"amountUsd"`
+			CampaignKey      string                                                         `json:"campaignKey"`
+			OrganizationName *string                                                        `json:"organizationName"`
+			Outcome          PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome `json:"outcome"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1PublicCampaignCreditVerifyResponse) GetJSON200() *struct {
+	Data struct {
+		AmountUsd        float64                                                        `json:"amountUsd"`
+		CampaignKey      string                                                         `json:"campaignKey"`
+		OrganizationName *string                                                        `json:"organizationName"`
+		Outcome          PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome `json:"outcome"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1PublicCampaignCreditVerifyResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1PublicCampaignCreditVerifyResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1PublicCampaignCreditVerifyResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1PublicCampaignCreditVerifyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1PublicCampaignCreditVerifyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1PublicCampaignCreditVerifyResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1PublicCampaignCreditByCampaignKeyClaimResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			AmountUsd        float64                                                                    `json:"amountUsd"`
+			CampaignKey      string                                                                     `json:"campaignKey"`
+			OrganizationName *string                                                                    `json:"organizationName"`
+			Outcome          PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome `json:"outcome"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1PublicCampaignCreditByCampaignKeyClaimResponse) GetJSON200() *struct {
+	Data struct {
+		AmountUsd        float64                                                                    `json:"amountUsd"`
+		CampaignKey      string                                                                     `json:"campaignKey"`
+		OrganizationName *string                                                                    `json:"organizationName"`
+		Outcome          PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome `json:"outcome"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1PublicCampaignCreditByCampaignKeyClaimResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1PublicCampaignCreditByCampaignKeyClaimResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PostV1PublicCampaignCreditByCampaignKeyClaimResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1PublicCampaignCreditByCampaignKeyClaimResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1PublicCampaignCreditByCampaignKeyClaimResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1PublicCampaignCreditByCampaignKeyClaimResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1PublicCampaignCreditByCampaignKeyClaimResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1PublicCampaignCreditByCampaignKeyClaimResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GetV1PublicProspectSimReportByTokenResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -94492,6 +95226,102 @@ func (r PostV1SimulationPlanResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r PostV1SimulationPlanResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1SimulationPlanJobByJobIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data Result of deleting a simulation plan job
+		Data DeleteSimulationPlanJobResponse `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1SimulationPlanJobByJobIdResponse) GetJSON200() *struct {
+	// Data Result of deleting a simulation plan job
+	Data DeleteSimulationPlanJobResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r DeleteV1SimulationPlanJobByJobIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1SimulationPlanJobByJobIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r DeleteV1SimulationPlanJobByJobIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1SimulationPlanJobByJobIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r DeleteV1SimulationPlanJobByJobIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r DeleteV1SimulationPlanJobByJobIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1SimulationPlanJobByJobIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1SimulationPlanJobByJobIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1SimulationPlanJobByJobIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1SimulationPlanJobByJobIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1SimulationPlanJobByJobIdResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -100634,6 +101464,66 @@ func (c *ClientWithResponses) GetV1ProjectsWithResponse(ctx context.Context, req
 	return ParseGetV1ProjectsResponse(rsp)
 }
 
+// PostV1PublicCampaignCreditVerifyWithBodyWithResponse Verify a campaign credit claim
+//
+// Public endpoint scoped by the unguessable token from the verification email. Proves the address, then grants the credit if it already has a Roark organization. Safe to repeat.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/public/campaign-credit/verify (the `PostV1PublicCampaignCreditVerify` operationId).
+func (c *ClientWithResponses) PostV1PublicCampaignCreditVerifyWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1PublicCampaignCreditVerifyResponse, error) {
+	rsp, err := c.PostV1PublicCampaignCreditVerifyWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1PublicCampaignCreditVerifyResponse(rsp)
+}
+
+// PostV1PublicCampaignCreditVerifyWithResponse Verify a campaign credit claim
+//
+// Public endpoint scoped by the unguessable token from the verification email. Proves the address, then grants the credit if it already has a Roark organization. Safe to repeat.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/public/campaign-credit/verify (the `PostV1PublicCampaignCreditVerify` operationId).
+func (c *ClientWithResponses) PostV1PublicCampaignCreditVerifyWithResponse(ctx context.Context, body PostV1PublicCampaignCreditVerifyJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1PublicCampaignCreditVerifyResponse, error) {
+	rsp, err := c.PostV1PublicCampaignCreditVerify(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1PublicCampaignCreditVerifyResponse(rsp)
+}
+
+// PostV1PublicCampaignCreditByCampaignKeyClaimWithBodyWithResponse Claim a campaign credit
+//
+// Public endpoint: opens a claim for the email and sends it a verification link. Nothing is granted until the link is clicked. Returns the claim state for the page to show.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/public/campaign-credit/{campaignKey}/claim (the `PostV1PublicCampaignCreditByCampaignKeyClaim` operationId).
+func (c *ClientWithResponses) PostV1PublicCampaignCreditByCampaignKeyClaimWithBodyWithResponse(ctx context.Context, campaignKey string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1PublicCampaignCreditByCampaignKeyClaimResponse, error) {
+	rsp, err := c.PostV1PublicCampaignCreditByCampaignKeyClaimWithBody(ctx, campaignKey, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1PublicCampaignCreditByCampaignKeyClaimResponse(rsp)
+}
+
+// PostV1PublicCampaignCreditByCampaignKeyClaimWithResponse Claim a campaign credit
+//
+// Public endpoint: opens a claim for the email and sends it a verification link. Nothing is granted until the link is clicked. Returns the claim state for the page to show.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/public/campaign-credit/{campaignKey}/claim (the `PostV1PublicCampaignCreditByCampaignKeyClaim` operationId).
+func (c *ClientWithResponses) PostV1PublicCampaignCreditByCampaignKeyClaimWithResponse(ctx context.Context, campaignKey string, body PostV1PublicCampaignCreditByCampaignKeyClaimJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1PublicCampaignCreditByCampaignKeyClaimResponse, error) {
+	rsp, err := c.PostV1PublicCampaignCreditByCampaignKeyClaim(ctx, campaignKey, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1PublicCampaignCreditByCampaignKeyClaimResponse(rsp)
+}
+
 // GetV1PublicProspectSimReportByTokenWithResponse Read a prospect simulation teaser report
 //
 // Public endpoint scoped by the unguessable report token. Returns a truncated teaser once the debrief is ready; the full report is gated behind claiming an account.
@@ -101068,6 +101958,24 @@ func (c *ClientWithResponses) PostV1SimulationPlanWithResponse(ctx context.Conte
 		return nil, err
 	}
 	return ParsePostV1SimulationPlanResponse(rsp)
+}
+
+// DeleteV1SimulationPlanJobByJobIdWithResponse Delete a simulation plan job
+//
+// Removes a finished run from the run history (a soft delete). The run stops appearing in run lists,
+// counts and plan run histories, and reading it by ID returns 404.
+//
+// A run that is still in progress is refused with 409: cancel it first.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/simulation/plan/job/{jobId} (the `DeleteV1SimulationPlanJobByJobId` operationId).
+func (c *ClientWithResponses) DeleteV1SimulationPlanJobByJobIdWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1SimulationPlanJobByJobIdResponse, error) {
+	rsp, err := c.DeleteV1SimulationPlanJobByJobId(ctx, jobId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1SimulationPlanJobByJobIdResponse(rsp)
 }
 
 // GetV1SimulationPlanJobByJobIdWithResponse Get simulation plan job
@@ -113506,6 +114414,114 @@ func ParseGetV1ProjectsResponse(rsp *http.Response) (*GetV1ProjectsResponse, err
 	return response, nil
 }
 
+// ParsePostV1PublicCampaignCreditVerifyResponse parses an HTTP response from a PostV1PublicCampaignCreditVerifyWithResponse call
+func ParsePostV1PublicCampaignCreditVerifyResponse(rsp *http.Response) (*PostV1PublicCampaignCreditVerifyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1PublicCampaignCreditVerifyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				AmountUsd        float64                                                        `json:"amountUsd"`
+				CampaignKey      string                                                         `json:"campaignKey"`
+				OrganizationName *string                                                        `json:"organizationName"`
+				Outcome          PostV1PublicCampaignCreditVerify200JSONResponseBodyDataOutcome `json:"outcome"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1PublicCampaignCreditByCampaignKeyClaimResponse parses an HTTP response from a PostV1PublicCampaignCreditByCampaignKeyClaimWithResponse call
+func ParsePostV1PublicCampaignCreditByCampaignKeyClaimResponse(rsp *http.Response) (*PostV1PublicCampaignCreditByCampaignKeyClaimResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1PublicCampaignCreditByCampaignKeyClaimResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				AmountUsd        float64                                                                    `json:"amountUsd"`
+				CampaignKey      string                                                                     `json:"campaignKey"`
+				OrganizationName *string                                                                    `json:"organizationName"`
+				Outcome          PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome `json:"outcome"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseGetV1PublicProspectSimReportByTokenResponse parses an HTTP response from a GetV1PublicProspectSimReportByTokenWithResponse call
 func ParseGetV1PublicProspectSimReportByTokenResponse(rsp *http.Response) (*GetV1PublicProspectSimReportByTokenResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -114830,6 +115846,84 @@ func ParsePostV1SimulationPlanResponse(rsp *http.Response) (*PostV1SimulationPla
 			return nil, err
 		}
 		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1SimulationPlanJobByJobIdResponse parses an HTTP response from a DeleteV1SimulationPlanJobByJobIdWithResponse call
+func ParseDeleteV1SimulationPlanJobByJobIdResponse(rsp *http.Response) (*DeleteV1SimulationPlanJobByJobIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1SimulationPlanJobByJobIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data Result of deleting a simulation plan job
+			Data DeleteSimulationPlanJobResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
 		var dest ErrorResponse

@@ -143,6 +143,7 @@ func (e AgentConfigLlmProvider) Valid() bool {
 const (
 	AgentConfigProviderApi               AgentConfigProvider = "api"
 	AgentConfigProviderBland             AgentConfigProvider = "bland"
+	AgentConfigProviderCustom            AgentConfigProvider = "custom"
 	AgentConfigProviderElevenlabs        AgentConfigProvider = "elevenlabs"
 	AgentConfigProviderGoogleCes         AgentConfigProvider = "google-ces"
 	AgentConfigProviderKore              AgentConfigProvider = "kore"
@@ -162,6 +163,8 @@ func (e AgentConfigProvider) Valid() bool {
 	case AgentConfigProviderApi:
 		return true
 	case AgentConfigProviderBland:
+		return true
+	case AgentConfigProviderCustom:
 		return true
 	case AgentConfigProviderElevenlabs:
 		return true
@@ -28815,6 +28818,7 @@ type ConfigFlowStep struct {
 	AudioClip      *ConfigFlowStepAudioClip `json:"audioClip,omitempty"`
 	Content        *string                  `json:"content,omitempty"`
 	DtmfDigits     *string                  `json:"dtmfDigits,omitempty"`
+	EndsCall       *bool                    `json:"endsCall,omitempty"`
 	Flow           *string                  `json:"flow,omitempty"`
 	HandoffPersona *string                  `json:"handoffPersona,omitempty"`
 	MergeInto      *[]string                `json:"mergeInto,omitempty"`
@@ -31522,6 +31526,10 @@ type FlowHappyPathInput struct {
 // plays in a STRICT voice flow only: anywhere else it is a pause of the same length. It sits between turns
 // like a silence.
 //
+// When an improv flow opens with a STRICT scripted flow, every path through the script hands over to the
+// improv. Set `endsCall: true` on the last step of a path to end the call there instead, as an IVR does after
+// saying goodbye. Sharing the script between improvs shares this too. A step with steps after it, or a `SCENARIO_LINK`, is rejected.
+//
 // In a STRICT flow an `AGENT_TURN` may carry its own `offScriptPolicy`, which replaces the flow-level one at
 // that step. Omit it (or send null) to follow the flow's policy. Use it where one missed step makes the rest
 // of the call meaningless: an authentication menu, say, with `then: HANG_UP_INVALIDATE`.
@@ -31560,6 +31568,7 @@ type FlowStep struct {
 // FlowStep0 defines model for FlowStep.0.
 type FlowStep0 struct {
 	Content          *string             `json:"content,omitempty"`
+	EndsCall         *bool               `json:"endsCall,omitempty"`
 	MergeIntoNodeIds *[]string           `json:"mergeIntoNodeIds,omitempty"`
 	NodeId           *openapi_types.UUID `json:"nodeId,omitempty"`
 	OffScriptPolicy  *struct {
@@ -31591,6 +31600,7 @@ type FlowStep0Type string
 // FlowStep1 defines model for FlowStep.1.
 type FlowStep1 struct {
 	Content          *string             `json:"content,omitempty"`
+	EndsCall         *bool               `json:"endsCall,omitempty"`
 	MergeIntoNodeIds *[]string           `json:"mergeIntoNodeIds,omitempty"`
 	NodeId           *openapi_types.UUID `json:"nodeId,omitempty"`
 	Ref              *string             `json:"ref,omitempty"`
@@ -31609,6 +31619,7 @@ type FlowStep1Type string
 // FlowStep2 defines model for FlowStep.2.
 type FlowStep2 struct {
 	Content          *string             `json:"content,omitempty"`
+	EndsCall         *bool               `json:"endsCall,omitempty"`
 	MergeIntoNodeIds *[]string           `json:"mergeIntoNodeIds,omitempty"`
 	NodeId           *openapi_types.UUID `json:"nodeId,omitempty"`
 	Ref              *string             `json:"ref,omitempty"`
@@ -31627,6 +31638,7 @@ type FlowStep2Type string
 // FlowStep3 defines model for FlowStep.3.
 type FlowStep3 struct {
 	Content          *string             `json:"content,omitempty"`
+	EndsCall         *bool               `json:"endsCall,omitempty"`
 	MergeIntoNodeIds *[]string           `json:"mergeIntoNodeIds,omitempty"`
 	NodeId           *openapi_types.UUID `json:"nodeId,omitempty"`
 	Ref              *string             `json:"ref,omitempty"`
@@ -31644,6 +31656,7 @@ type FlowStep3Type string
 
 // FlowStep4 defines model for FlowStep.4.
 type FlowStep4 struct {
+	EndsCall               *bool               `json:"endsCall,omitempty"`
 	MergeIntoNodeIds       *[]string           `json:"mergeIntoNodeIds,omitempty"`
 	NodeId                 *openapi_types.UUID `json:"nodeId,omitempty"`
 	Ref                    *string             `json:"ref,omitempty"`
@@ -31663,6 +31676,7 @@ type FlowStep4Type string
 // FlowStep5 defines model for FlowStep.5.
 type FlowStep5 struct {
 	AudioClip              *FlowStep5AudioClip `json:"audioClip,omitempty"`
+	EndsCall               *bool               `json:"endsCall,omitempty"`
 	MergeIntoNodeIds       *[]string           `json:"mergeIntoNodeIds,omitempty"`
 	NodeId                 *openapi_types.UUID `json:"nodeId,omitempty"`
 	Ref                    *string             `json:"ref,omitempty"`
@@ -31685,6 +31699,7 @@ type FlowStep5Type string
 // FlowStep6 defines model for FlowStep.6.
 type FlowStep6 struct {
 	DtmfDigits       *string             `json:"dtmfDigits,omitempty"`
+	EndsCall         *bool               `json:"endsCall,omitempty"`
 	MergeIntoNodeIds *[]string           `json:"mergeIntoNodeIds,omitempty"`
 	NodeId           *openapi_types.UUID `json:"nodeId,omitempty"`
 	Ref              *string             `json:"ref,omitempty"`
@@ -31703,6 +31718,7 @@ type FlowStep6Type string
 // FlowStep7 defines model for FlowStep.7.
 type FlowStep7 struct {
 	DtmfDigits       *string             `json:"dtmfDigits,omitempty"`
+	EndsCall         *bool               `json:"endsCall,omitempty"`
 	MergeIntoNodeIds *[]string           `json:"mergeIntoNodeIds,omitempty"`
 	NodeId           *openapi_types.UUID `json:"nodeId,omitempty"`
 	OffScriptPolicy  *struct {
@@ -31733,6 +31749,7 @@ type FlowStep7Type string
 
 // FlowStep8 defines model for FlowStep.8.
 type FlowStep8 struct {
+	EndsCall         *bool               `json:"endsCall,omitempty"`
 	MergeIntoNodeIds *[]string           `json:"mergeIntoNodeIds,omitempty"`
 	NodeId           *openapi_types.UUID `json:"nodeId,omitempty"`
 	Ref              *string             `json:"ref,omitempty"`
@@ -31750,6 +31767,7 @@ type FlowStep8Type string
 
 // FlowStep9 defines model for FlowStep.9.
 type FlowStep9 struct {
+	EndsCall         *bool               `json:"endsCall,omitempty"`
 	HandoffPersonaId *openapi_types.UUID `json:"handoffPersonaId,omitempty"`
 	MergeIntoNodeIds *[]string           `json:"mergeIntoNodeIds,omitempty"`
 	NodeId           *openapi_types.UUID `json:"nodeId,omitempty"`
@@ -31768,6 +31786,7 @@ type FlowStep9Type string
 
 // FlowStep10 defines model for FlowStep.10.
 type FlowStep10 struct {
+	EndsCall                    *bool               `json:"endsCall,omitempty"`
 	LinkedCustomerFlowId        *openapi_types.UUID `json:"linkedCustomerFlowId,omitempty"`
 	LinkedCustomerFlowVariantId *openapi_types.UUID `json:"linkedCustomerFlowVariantId,omitempty"`
 	MergeIntoNodeIds            *[]string           `json:"mergeIntoNodeIds,omitempty"`
@@ -92210,6 +92229,8 @@ type DeleteV1PersonaByPersonaIdResponse struct {
 	JSON401 *ErrorResponse
 	// JSON404 the response for an HTTP 404 `application/json` response
 	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
 	// JSON500 the response for an HTTP 500 `application/json` response
 	JSON500 *ErrorResponse
 }
@@ -92240,6 +92261,11 @@ func (r DeleteV1PersonaByPersonaIdResponse) GetJSON401() *ErrorResponse {
 // GetJSON404 returns the response for an HTTP 404 `application/json` response
 func (r DeleteV1PersonaByPersonaIdResponse) GetJSON404() *ErrorResponse {
 	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r DeleteV1PersonaByPersonaIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
 }
 
 // GetJSON500 returns the response for an HTTP 500 `application/json` response
@@ -113690,6 +113716,13 @@ func ParseDeleteV1PersonaByPersonaIdResponse(rsp *http.Response) (*DeleteV1Perso
 			return nil, err
 		}
 		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse

@@ -2,6 +2,12 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.11.1, 2026-11-07
+
+- Added an optional `EndsCall` field (`*bool`) to `ConfigFlowStep` and `FlowStep0` through `FlowStep10`. Set it on the last step of a scripted path to end the call there instead of handing over to the improv flow.
+- Added the `AgentConfigProviderCustom` constant (`"custom"`) to the `AgentConfigProvider` enum.
+- Added `JSON409` and `GetJSON409` to `DeleteV1PersonaByPersonaIdResponse`, holding an `ErrorResponse`. `ParseDeleteV1PersonaByPersonaIdResponse` now fills it on an HTTP 409 response.
+
 ## v0.11.0, 2026-11-06
 
 - Breaking: `CreateAgentEndpointInput.Value` and `AgentEndpointDetailResponse.Value` changed from `string` to `*string`. The `Value` field of the `AgentConfig.Endpoints` element changed from `string` to `*string` too. Callers must pass and read a pointer.

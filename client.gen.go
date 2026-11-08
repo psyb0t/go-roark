@@ -2484,21 +2484,33 @@ func (e CallCostLineQuantityUnit) Valid() bool {
 
 // Defines values for CallCostLineSource.
 const (
-	CallCostLineSourceINTERNALLLM    CallCostLineSource = "INTERNAL_LLM"
-	CallCostLineSourceINTERNALSTT    CallCostLineSource = "INTERNAL_STT"
-	CallCostLineSourceMETRIC         CallCostLineSource = "METRIC"
-	CallCostLineSourcePHONENUMBER    CallCostLineSource = "PHONE_NUMBER"
-	CallCostLineSourceSIMLLM         CallCostLineSource = "SIM_LLM"
-	CallCostLineSourceSIMPLATFORMFEE CallCostLineSource = "SIM_PLATFORM_FEE"
-	CallCostLineSourceSIMSTT         CallCostLineSource = "SIM_STT"
-	CallCostLineSourceSIMTELEPHONY   CallCostLineSource = "SIM_TELEPHONY"
-	CallCostLineSourceSIMTTS         CallCostLineSource = "SIM_TTS"
-	CallCostLineSourceTRANSCRIPTION  CallCostLineSource = "TRANSCRIPTION"
+	CallCostLineSourceHOSTEDAGENTLLM       CallCostLineSource = "HOSTED_AGENT_LLM"
+	CallCostLineSourceHOSTEDAGENTSTT       CallCostLineSource = "HOSTED_AGENT_STT"
+	CallCostLineSourceHOSTEDAGENTTELEPHONY CallCostLineSource = "HOSTED_AGENT_TELEPHONY"
+	CallCostLineSourceHOSTEDAGENTTTS       CallCostLineSource = "HOSTED_AGENT_TTS"
+	CallCostLineSourceINTERNALLLM          CallCostLineSource = "INTERNAL_LLM"
+	CallCostLineSourceINTERNALSTT          CallCostLineSource = "INTERNAL_STT"
+	CallCostLineSourceMETRIC               CallCostLineSource = "METRIC"
+	CallCostLineSourcePHONENUMBER          CallCostLineSource = "PHONE_NUMBER"
+	CallCostLineSourceSIMLLM               CallCostLineSource = "SIM_LLM"
+	CallCostLineSourceSIMPLATFORMFEE       CallCostLineSource = "SIM_PLATFORM_FEE"
+	CallCostLineSourceSIMSTT               CallCostLineSource = "SIM_STT"
+	CallCostLineSourceSIMTELEPHONY         CallCostLineSource = "SIM_TELEPHONY"
+	CallCostLineSourceSIMTTS               CallCostLineSource = "SIM_TTS"
+	CallCostLineSourceTRANSCRIPTION        CallCostLineSource = "TRANSCRIPTION"
 )
 
 // Valid indicates whether the value is a known member of the CallCostLineSource enum.
 func (e CallCostLineSource) Valid() bool {
 	switch e {
+	case CallCostLineSourceHOSTEDAGENTLLM:
+		return true
+	case CallCostLineSourceHOSTEDAGENTSTT:
+		return true
+	case CallCostLineSourceHOSTEDAGENTTELEPHONY:
+		return true
+	case CallCostLineSourceHOSTEDAGENTTTS:
+		return true
 	case CallCostLineSourceINTERNALLLM:
 		return true
 	case CallCostLineSourceINTERNALSTT:
@@ -3312,21 +3324,33 @@ func (e ConfigOffScriptThen) Valid() bool {
 
 // Defines values for CostBreakdownItemSource.
 const (
-	CostBreakdownItemSourceINTERNALLLM    CostBreakdownItemSource = "INTERNAL_LLM"
-	CostBreakdownItemSourceINTERNALSTT    CostBreakdownItemSource = "INTERNAL_STT"
-	CostBreakdownItemSourceMETRIC         CostBreakdownItemSource = "METRIC"
-	CostBreakdownItemSourcePHONENUMBER    CostBreakdownItemSource = "PHONE_NUMBER"
-	CostBreakdownItemSourceSIMLLM         CostBreakdownItemSource = "SIM_LLM"
-	CostBreakdownItemSourceSIMPLATFORMFEE CostBreakdownItemSource = "SIM_PLATFORM_FEE"
-	CostBreakdownItemSourceSIMSTT         CostBreakdownItemSource = "SIM_STT"
-	CostBreakdownItemSourceSIMTELEPHONY   CostBreakdownItemSource = "SIM_TELEPHONY"
-	CostBreakdownItemSourceSIMTTS         CostBreakdownItemSource = "SIM_TTS"
-	CostBreakdownItemSourceTRANSCRIPTION  CostBreakdownItemSource = "TRANSCRIPTION"
+	CostBreakdownItemSourceHOSTEDAGENTLLM       CostBreakdownItemSource = "HOSTED_AGENT_LLM"
+	CostBreakdownItemSourceHOSTEDAGENTSTT       CostBreakdownItemSource = "HOSTED_AGENT_STT"
+	CostBreakdownItemSourceHOSTEDAGENTTELEPHONY CostBreakdownItemSource = "HOSTED_AGENT_TELEPHONY"
+	CostBreakdownItemSourceHOSTEDAGENTTTS       CostBreakdownItemSource = "HOSTED_AGENT_TTS"
+	CostBreakdownItemSourceINTERNALLLM          CostBreakdownItemSource = "INTERNAL_LLM"
+	CostBreakdownItemSourceINTERNALSTT          CostBreakdownItemSource = "INTERNAL_STT"
+	CostBreakdownItemSourceMETRIC               CostBreakdownItemSource = "METRIC"
+	CostBreakdownItemSourcePHONENUMBER          CostBreakdownItemSource = "PHONE_NUMBER"
+	CostBreakdownItemSourceSIMLLM               CostBreakdownItemSource = "SIM_LLM"
+	CostBreakdownItemSourceSIMPLATFORMFEE       CostBreakdownItemSource = "SIM_PLATFORM_FEE"
+	CostBreakdownItemSourceSIMSTT               CostBreakdownItemSource = "SIM_STT"
+	CostBreakdownItemSourceSIMTELEPHONY         CostBreakdownItemSource = "SIM_TELEPHONY"
+	CostBreakdownItemSourceSIMTTS               CostBreakdownItemSource = "SIM_TTS"
+	CostBreakdownItemSourceTRANSCRIPTION        CostBreakdownItemSource = "TRANSCRIPTION"
 )
 
 // Valid indicates whether the value is a known member of the CostBreakdownItemSource enum.
 func (e CostBreakdownItemSource) Valid() bool {
 	switch e {
+	case CostBreakdownItemSourceHOSTEDAGENTLLM:
+		return true
+	case CostBreakdownItemSourceHOSTEDAGENTSTT:
+		return true
+	case CostBreakdownItemSourceHOSTEDAGENTTELEPHONY:
+		return true
+	case CostBreakdownItemSourceHOSTEDAGENTTTS:
+		return true
 	case CostBreakdownItemSourceINTERNALLLM:
 		return true
 	case CostBreakdownItemSourceINTERNALSTT:
@@ -4030,6 +4054,24 @@ func (e CreateThresholdInputSourceParticipantRole) Valid() bool {
 	case CreateThresholdInputSourceParticipantRoleCUSTOMER:
 		return true
 	case CreateThresholdInputSourceParticipantRoleSIMULATEDCUSTOMER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateWebSessionTokenInputModality.
+const (
+	CreateWebSessionTokenInputModalityCall CreateWebSessionTokenInputModality = "call"
+	CreateWebSessionTokenInputModalityChat CreateWebSessionTokenInputModality = "chat"
+)
+
+// Valid indicates whether the value is a known member of the CreateWebSessionTokenInputModality enum.
+func (e CreateWebSessionTokenInputModality) Valid() bool {
+	switch e {
+	case CreateWebSessionTokenInputModalityCall:
+		return true
+	case CreateWebSessionTokenInputModalityChat:
 		return true
 	default:
 		return false
@@ -20193,21 +20235,33 @@ func (e UpdateRunPlanInputExecutionMode) Valid() bool {
 
 // Defines values for UsageCostTypeSource.
 const (
-	UsageCostTypeSourceINTERNALLLM    UsageCostTypeSource = "INTERNAL_LLM"
-	UsageCostTypeSourceINTERNALSTT    UsageCostTypeSource = "INTERNAL_STT"
-	UsageCostTypeSourceMETRIC         UsageCostTypeSource = "METRIC"
-	UsageCostTypeSourcePHONENUMBER    UsageCostTypeSource = "PHONE_NUMBER"
-	UsageCostTypeSourceSIMLLM         UsageCostTypeSource = "SIM_LLM"
-	UsageCostTypeSourceSIMPLATFORMFEE UsageCostTypeSource = "SIM_PLATFORM_FEE"
-	UsageCostTypeSourceSIMSTT         UsageCostTypeSource = "SIM_STT"
-	UsageCostTypeSourceSIMTELEPHONY   UsageCostTypeSource = "SIM_TELEPHONY"
-	UsageCostTypeSourceSIMTTS         UsageCostTypeSource = "SIM_TTS"
-	UsageCostTypeSourceTRANSCRIPTION  UsageCostTypeSource = "TRANSCRIPTION"
+	UsageCostTypeSourceHOSTEDAGENTLLM       UsageCostTypeSource = "HOSTED_AGENT_LLM"
+	UsageCostTypeSourceHOSTEDAGENTSTT       UsageCostTypeSource = "HOSTED_AGENT_STT"
+	UsageCostTypeSourceHOSTEDAGENTTELEPHONY UsageCostTypeSource = "HOSTED_AGENT_TELEPHONY"
+	UsageCostTypeSourceHOSTEDAGENTTTS       UsageCostTypeSource = "HOSTED_AGENT_TTS"
+	UsageCostTypeSourceINTERNALLLM          UsageCostTypeSource = "INTERNAL_LLM"
+	UsageCostTypeSourceINTERNALSTT          UsageCostTypeSource = "INTERNAL_STT"
+	UsageCostTypeSourceMETRIC               UsageCostTypeSource = "METRIC"
+	UsageCostTypeSourcePHONENUMBER          UsageCostTypeSource = "PHONE_NUMBER"
+	UsageCostTypeSourceSIMLLM               UsageCostTypeSource = "SIM_LLM"
+	UsageCostTypeSourceSIMPLATFORMFEE       UsageCostTypeSource = "SIM_PLATFORM_FEE"
+	UsageCostTypeSourceSIMSTT               UsageCostTypeSource = "SIM_STT"
+	UsageCostTypeSourceSIMTELEPHONY         UsageCostTypeSource = "SIM_TELEPHONY"
+	UsageCostTypeSourceSIMTTS               UsageCostTypeSource = "SIM_TTS"
+	UsageCostTypeSourceTRANSCRIPTION        UsageCostTypeSource = "TRANSCRIPTION"
 )
 
 // Valid indicates whether the value is a known member of the UsageCostTypeSource enum.
 func (e UsageCostTypeSource) Valid() bool {
 	switch e {
+	case UsageCostTypeSourceHOSTEDAGENTLLM:
+		return true
+	case UsageCostTypeSourceHOSTEDAGENTSTT:
+		return true
+	case UsageCostTypeSourceHOSTEDAGENTTELEPHONY:
+		return true
+	case UsageCostTypeSourceHOSTEDAGENTTTS:
+		return true
 	case UsageCostTypeSourceINTERNALLLM:
 		return true
 	case UsageCostTypeSourceINTERNALSTT:
@@ -20821,6 +20875,24 @@ const (
 func (e VoicemailFlowVariantType) Valid() bool {
 	switch e {
 	case VoicemailFlowVariantTypeVOICEMAIL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for WebSessionTokenModality.
+const (
+	WebSessionTokenModalityCall WebSessionTokenModality = "call"
+	WebSessionTokenModalityChat WebSessionTokenModality = "chat"
+)
+
+// Valid indicates whether the value is a known member of the WebSessionTokenModality enum.
+func (e WebSessionTokenModality) Valid() bool {
+	switch e {
+	case WebSessionTokenModalityCall:
+		return true
+	case WebSessionTokenModalityChat:
 		return true
 	default:
 		return false
@@ -22825,6 +22897,162 @@ func (e PostV1CliAuthToken200JSONResponseBodyDataScopeKind) Valid() bool {
 	}
 }
 
+// Defines values for GetV1CustomerParamsModality.
+const (
+	GetV1CustomerParamsModalityCall GetV1CustomerParamsModality = "call"
+	GetV1CustomerParamsModalityChat GetV1CustomerParamsModality = "chat"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CustomerParamsModality enum.
+func (e GetV1CustomerParamsModality) Valid() bool {
+	switch e {
+	case GetV1CustomerParamsModalityCall:
+		return true
+	case GetV1CustomerParamsModalityChat:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CustomerParamsIncludeNoData.
+const (
+	GetV1CustomerParamsIncludeNoDataFalse GetV1CustomerParamsIncludeNoData = "false"
+	GetV1CustomerParamsIncludeNoDataTrue  GetV1CustomerParamsIncludeNoData = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CustomerParamsIncludeNoData enum.
+func (e GetV1CustomerParamsIncludeNoData) Valid() bool {
+	switch e {
+	case GetV1CustomerParamsIncludeNoDataFalse:
+		return true
+	case GetV1CustomerParamsIncludeNoDataTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CustomerParamsSortDirection.
+const (
+	GetV1CustomerParamsSortDirectionAsc  GetV1CustomerParamsSortDirection = "asc"
+	GetV1CustomerParamsSortDirectionDesc GetV1CustomerParamsSortDirection = "desc"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CustomerParamsSortDirection enum.
+func (e GetV1CustomerParamsSortDirection) Valid() bool {
+	switch e {
+	case GetV1CustomerParamsSortDirectionAsc:
+		return true
+	case GetV1CustomerParamsSortDirectionDesc:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CustomerParamsFieldOperator.
+const (
+	GetV1CustomerParamsFieldOperatorCONTAINS   GetV1CustomerParamsFieldOperator = "CONTAINS"
+	GetV1CustomerParamsFieldOperatorEQUALS     GetV1CustomerParamsFieldOperator = "EQUALS"
+	GetV1CustomerParamsFieldOperatorISNOTSET   GetV1CustomerParamsFieldOperator = "IS_NOT_SET"
+	GetV1CustomerParamsFieldOperatorISSET      GetV1CustomerParamsFieldOperator = "IS_SET"
+	GetV1CustomerParamsFieldOperatorNOTEQUALS  GetV1CustomerParamsFieldOperator = "NOT_EQUALS"
+	GetV1CustomerParamsFieldOperatorSTARTSWITH GetV1CustomerParamsFieldOperator = "STARTS_WITH"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CustomerParamsFieldOperator enum.
+func (e GetV1CustomerParamsFieldOperator) Valid() bool {
+	switch e {
+	case GetV1CustomerParamsFieldOperatorCONTAINS:
+		return true
+	case GetV1CustomerParamsFieldOperatorEQUALS:
+		return true
+	case GetV1CustomerParamsFieldOperatorISNOTSET:
+		return true
+	case GetV1CustomerParamsFieldOperatorISSET:
+		return true
+	case GetV1CustomerParamsFieldOperatorNOTEQUALS:
+		return true
+	case GetV1CustomerParamsFieldOperatorSTARTSWITH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSource.
+const (
+	GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSourceAPI                GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSource = "API"
+	GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSourceLIVEEXTRACTION     GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSource = "LIVE_EXTRACTION"
+	GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSourcePOSTCALLEXTRACTION GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSource = "POST_CALL_EXTRACTION"
+	GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSourceUSER               GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSource enum.
+func (e GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSource) Valid() bool {
+	switch e {
+	case GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSourceAPI:
+		return true
+	case GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSourceLIVEEXTRACTION:
+		return true
+	case GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSourcePOSTCALLEXTRACTION:
+		return true
+	case GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource.
+const (
+	GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySourceAPI                GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource = "API"
+	GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySourceLIVEEXTRACTION     GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource = "LIVE_EXTRACTION"
+	GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySourcePOSTCALLEXTRACTION GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource = "POST_CALL_EXTRACTION"
+	GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySourceUSER               GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource enum.
+func (e GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource) Valid() bool {
+	switch e {
+	case GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySourceAPI:
+		return true
+	case GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySourceLIVEEXTRACTION:
+		return true
+	case GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySourcePOSTCALLEXTRACTION:
+		return true
+	case GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1Customer200JSONResponseBodyDataItemsAttributesSource.
+const (
+	GetV1Customer200JSONResponseBodyDataItemsAttributesSourceAPI                GetV1Customer200JSONResponseBodyDataItemsAttributesSource = "API"
+	GetV1Customer200JSONResponseBodyDataItemsAttributesSourceLIVEEXTRACTION     GetV1Customer200JSONResponseBodyDataItemsAttributesSource = "LIVE_EXTRACTION"
+	GetV1Customer200JSONResponseBodyDataItemsAttributesSourcePOSTCALLEXTRACTION GetV1Customer200JSONResponseBodyDataItemsAttributesSource = "POST_CALL_EXTRACTION"
+	GetV1Customer200JSONResponseBodyDataItemsAttributesSourceUSER               GetV1Customer200JSONResponseBodyDataItemsAttributesSource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the GetV1Customer200JSONResponseBodyDataItemsAttributesSource enum.
+func (e GetV1Customer200JSONResponseBodyDataItemsAttributesSource) Valid() bool {
+	switch e {
+	case GetV1Customer200JSONResponseBodyDataItemsAttributesSourceAPI:
+		return true
+	case GetV1Customer200JSONResponseBodyDataItemsAttributesSourceLIVEEXTRACTION:
+		return true
+	case GetV1Customer200JSONResponseBodyDataItemsAttributesSourcePOSTCALLEXTRACTION:
+		return true
+	case GetV1Customer200JSONResponseBodyDataItemsAttributesSourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetV1CustomerFlowParamsType.
 const (
 	GetV1CustomerFlowParamsTypeIMPROV    GetV1CustomerFlowParamsType = "IMPROV"
@@ -22858,6 +23086,693 @@ func (e GetV1CustomerFlowParamsIncludeSystem) Valid() bool {
 	case GetV1CustomerFlowParamsIncludeSystemFalse:
 		return true
 	case GetV1CustomerFlowParamsIncludeSystemTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CustomerFields200JSONResponseBodyDataRedactedBy.
+const (
+	GetV1CustomerFields200JSONResponseBodyDataRedactedByRedactAddress           GetV1CustomerFields200JSONResponseBodyDataRedactedBy = "redactAddress"
+	GetV1CustomerFields200JSONResponseBodyDataRedactedByRedactBankAccountNumber GetV1CustomerFields200JSONResponseBodyDataRedactedBy = "redactBankAccountNumber"
+	GetV1CustomerFields200JSONResponseBodyDataRedactedByRedactDateOfBirth       GetV1CustomerFields200JSONResponseBodyDataRedactedBy = "redactDateOfBirth"
+	GetV1CustomerFields200JSONResponseBodyDataRedactedByRedactEmail             GetV1CustomerFields200JSONResponseBodyDataRedactedBy = "redactEmail"
+	GetV1CustomerFields200JSONResponseBodyDataRedactedByRedactName              GetV1CustomerFields200JSONResponseBodyDataRedactedBy = "redactName"
+	GetV1CustomerFields200JSONResponseBodyDataRedactedByRedactPhone             GetV1CustomerFields200JSONResponseBodyDataRedactedBy = "redactPhone"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CustomerFields200JSONResponseBodyDataRedactedBy enum.
+func (e GetV1CustomerFields200JSONResponseBodyDataRedactedBy) Valid() bool {
+	switch e {
+	case GetV1CustomerFields200JSONResponseBodyDataRedactedByRedactAddress:
+		return true
+	case GetV1CustomerFields200JSONResponseBodyDataRedactedByRedactBankAccountNumber:
+		return true
+	case GetV1CustomerFields200JSONResponseBodyDataRedactedByRedactDateOfBirth:
+		return true
+	case GetV1CustomerFields200JSONResponseBodyDataRedactedByRedactEmail:
+		return true
+	case GetV1CustomerFields200JSONResponseBodyDataRedactedByRedactName:
+		return true
+	case GetV1CustomerFields200JSONResponseBodyDataRedactedByRedactPhone:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CustomerFields200JSONResponseBodyDataSource.
+const (
+	GetV1CustomerFields200JSONResponseBodyDataSourceCUSTOM GetV1CustomerFields200JSONResponseBodyDataSource = "CUSTOM"
+	GetV1CustomerFields200JSONResponseBodyDataSourceSYSTEM GetV1CustomerFields200JSONResponseBodyDataSource = "SYSTEM"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CustomerFields200JSONResponseBodyDataSource enum.
+func (e GetV1CustomerFields200JSONResponseBodyDataSource) Valid() bool {
+	switch e {
+	case GetV1CustomerFields200JSONResponseBodyDataSourceCUSTOM:
+		return true
+	case GetV1CustomerFields200JSONResponseBodyDataSourceSYSTEM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CustomerFields200JSONResponseBodyDataValueType.
+const (
+	GetV1CustomerFields200JSONResponseBodyDataValueTypeBOOLEAN     GetV1CustomerFields200JSONResponseBodyDataValueType = "BOOLEAN"
+	GetV1CustomerFields200JSONResponseBodyDataValueTypeCURRENCY    GetV1CustomerFields200JSONResponseBodyDataValueType = "CURRENCY"
+	GetV1CustomerFields200JSONResponseBodyDataValueTypeDATE        GetV1CustomerFields200JSONResponseBodyDataValueType = "DATE"
+	GetV1CustomerFields200JSONResponseBodyDataValueTypeEMAIL       GetV1CustomerFields200JSONResponseBodyDataValueType = "EMAIL"
+	GetV1CustomerFields200JSONResponseBodyDataValueTypeNUMBER      GetV1CustomerFields200JSONResponseBodyDataValueType = "NUMBER"
+	GetV1CustomerFields200JSONResponseBodyDataValueTypePHONENUMBER GetV1CustomerFields200JSONResponseBodyDataValueType = "PHONE_NUMBER"
+	GetV1CustomerFields200JSONResponseBodyDataValueTypeTEXT        GetV1CustomerFields200JSONResponseBodyDataValueType = "TEXT"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CustomerFields200JSONResponseBodyDataValueType enum.
+func (e GetV1CustomerFields200JSONResponseBodyDataValueType) Valid() bool {
+	switch e {
+	case GetV1CustomerFields200JSONResponseBodyDataValueTypeBOOLEAN:
+		return true
+	case GetV1CustomerFields200JSONResponseBodyDataValueTypeCURRENCY:
+		return true
+	case GetV1CustomerFields200JSONResponseBodyDataValueTypeDATE:
+		return true
+	case GetV1CustomerFields200JSONResponseBodyDataValueTypeEMAIL:
+		return true
+	case GetV1CustomerFields200JSONResponseBodyDataValueTypeNUMBER:
+		return true
+	case GetV1CustomerFields200JSONResponseBodyDataValueTypePHONENUMBER:
+		return true
+	case GetV1CustomerFields200JSONResponseBodyDataValueTypeTEXT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CustomerFieldsJSONBodyValueType.
+const (
+	PostV1CustomerFieldsJSONBodyValueTypeBOOLEAN     PostV1CustomerFieldsJSONBodyValueType = "BOOLEAN"
+	PostV1CustomerFieldsJSONBodyValueTypeCURRENCY    PostV1CustomerFieldsJSONBodyValueType = "CURRENCY"
+	PostV1CustomerFieldsJSONBodyValueTypeDATE        PostV1CustomerFieldsJSONBodyValueType = "DATE"
+	PostV1CustomerFieldsJSONBodyValueTypeEMAIL       PostV1CustomerFieldsJSONBodyValueType = "EMAIL"
+	PostV1CustomerFieldsJSONBodyValueTypeNUMBER      PostV1CustomerFieldsJSONBodyValueType = "NUMBER"
+	PostV1CustomerFieldsJSONBodyValueTypePHONENUMBER PostV1CustomerFieldsJSONBodyValueType = "PHONE_NUMBER"
+	PostV1CustomerFieldsJSONBodyValueTypeTEXT        PostV1CustomerFieldsJSONBodyValueType = "TEXT"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CustomerFieldsJSONBodyValueType enum.
+func (e PostV1CustomerFieldsJSONBodyValueType) Valid() bool {
+	switch e {
+	case PostV1CustomerFieldsJSONBodyValueTypeBOOLEAN:
+		return true
+	case PostV1CustomerFieldsJSONBodyValueTypeCURRENCY:
+		return true
+	case PostV1CustomerFieldsJSONBodyValueTypeDATE:
+		return true
+	case PostV1CustomerFieldsJSONBodyValueTypeEMAIL:
+		return true
+	case PostV1CustomerFieldsJSONBodyValueTypeNUMBER:
+		return true
+	case PostV1CustomerFieldsJSONBodyValueTypePHONENUMBER:
+		return true
+	case PostV1CustomerFieldsJSONBodyValueTypeTEXT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CustomerFields201JSONResponseBodyDataRedactedBy.
+const (
+	PostV1CustomerFields201JSONResponseBodyDataRedactedByRedactAddress           PostV1CustomerFields201JSONResponseBodyDataRedactedBy = "redactAddress"
+	PostV1CustomerFields201JSONResponseBodyDataRedactedByRedactBankAccountNumber PostV1CustomerFields201JSONResponseBodyDataRedactedBy = "redactBankAccountNumber"
+	PostV1CustomerFields201JSONResponseBodyDataRedactedByRedactDateOfBirth       PostV1CustomerFields201JSONResponseBodyDataRedactedBy = "redactDateOfBirth"
+	PostV1CustomerFields201JSONResponseBodyDataRedactedByRedactEmail             PostV1CustomerFields201JSONResponseBodyDataRedactedBy = "redactEmail"
+	PostV1CustomerFields201JSONResponseBodyDataRedactedByRedactName              PostV1CustomerFields201JSONResponseBodyDataRedactedBy = "redactName"
+	PostV1CustomerFields201JSONResponseBodyDataRedactedByRedactPhone             PostV1CustomerFields201JSONResponseBodyDataRedactedBy = "redactPhone"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CustomerFields201JSONResponseBodyDataRedactedBy enum.
+func (e PostV1CustomerFields201JSONResponseBodyDataRedactedBy) Valid() bool {
+	switch e {
+	case PostV1CustomerFields201JSONResponseBodyDataRedactedByRedactAddress:
+		return true
+	case PostV1CustomerFields201JSONResponseBodyDataRedactedByRedactBankAccountNumber:
+		return true
+	case PostV1CustomerFields201JSONResponseBodyDataRedactedByRedactDateOfBirth:
+		return true
+	case PostV1CustomerFields201JSONResponseBodyDataRedactedByRedactEmail:
+		return true
+	case PostV1CustomerFields201JSONResponseBodyDataRedactedByRedactName:
+		return true
+	case PostV1CustomerFields201JSONResponseBodyDataRedactedByRedactPhone:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CustomerFields201JSONResponseBodyDataSource.
+const (
+	PostV1CustomerFields201JSONResponseBodyDataSourceCUSTOM PostV1CustomerFields201JSONResponseBodyDataSource = "CUSTOM"
+	PostV1CustomerFields201JSONResponseBodyDataSourceSYSTEM PostV1CustomerFields201JSONResponseBodyDataSource = "SYSTEM"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CustomerFields201JSONResponseBodyDataSource enum.
+func (e PostV1CustomerFields201JSONResponseBodyDataSource) Valid() bool {
+	switch e {
+	case PostV1CustomerFields201JSONResponseBodyDataSourceCUSTOM:
+		return true
+	case PostV1CustomerFields201JSONResponseBodyDataSourceSYSTEM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CustomerFields201JSONResponseBodyDataValueType.
+const (
+	PostV1CustomerFields201JSONResponseBodyDataValueTypeBOOLEAN     PostV1CustomerFields201JSONResponseBodyDataValueType = "BOOLEAN"
+	PostV1CustomerFields201JSONResponseBodyDataValueTypeCURRENCY    PostV1CustomerFields201JSONResponseBodyDataValueType = "CURRENCY"
+	PostV1CustomerFields201JSONResponseBodyDataValueTypeDATE        PostV1CustomerFields201JSONResponseBodyDataValueType = "DATE"
+	PostV1CustomerFields201JSONResponseBodyDataValueTypeEMAIL       PostV1CustomerFields201JSONResponseBodyDataValueType = "EMAIL"
+	PostV1CustomerFields201JSONResponseBodyDataValueTypeNUMBER      PostV1CustomerFields201JSONResponseBodyDataValueType = "NUMBER"
+	PostV1CustomerFields201JSONResponseBodyDataValueTypePHONENUMBER PostV1CustomerFields201JSONResponseBodyDataValueType = "PHONE_NUMBER"
+	PostV1CustomerFields201JSONResponseBodyDataValueTypeTEXT        PostV1CustomerFields201JSONResponseBodyDataValueType = "TEXT"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CustomerFields201JSONResponseBodyDataValueType enum.
+func (e PostV1CustomerFields201JSONResponseBodyDataValueType) Valid() bool {
+	switch e {
+	case PostV1CustomerFields201JSONResponseBodyDataValueTypeBOOLEAN:
+		return true
+	case PostV1CustomerFields201JSONResponseBodyDataValueTypeCURRENCY:
+		return true
+	case PostV1CustomerFields201JSONResponseBodyDataValueTypeDATE:
+		return true
+	case PostV1CustomerFields201JSONResponseBodyDataValueTypeEMAIL:
+		return true
+	case PostV1CustomerFields201JSONResponseBodyDataValueTypeNUMBER:
+		return true
+	case PostV1CustomerFields201JSONResponseBodyDataValueTypePHONENUMBER:
+		return true
+	case PostV1CustomerFields201JSONResponseBodyDataValueTypeTEXT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1CustomerFieldsByKeyJSONBodyValueType.
+const (
+	PatchV1CustomerFieldsByKeyJSONBodyValueTypeBOOLEAN     PatchV1CustomerFieldsByKeyJSONBodyValueType = "BOOLEAN"
+	PatchV1CustomerFieldsByKeyJSONBodyValueTypeCURRENCY    PatchV1CustomerFieldsByKeyJSONBodyValueType = "CURRENCY"
+	PatchV1CustomerFieldsByKeyJSONBodyValueTypeDATE        PatchV1CustomerFieldsByKeyJSONBodyValueType = "DATE"
+	PatchV1CustomerFieldsByKeyJSONBodyValueTypeEMAIL       PatchV1CustomerFieldsByKeyJSONBodyValueType = "EMAIL"
+	PatchV1CustomerFieldsByKeyJSONBodyValueTypeNUMBER      PatchV1CustomerFieldsByKeyJSONBodyValueType = "NUMBER"
+	PatchV1CustomerFieldsByKeyJSONBodyValueTypePHONENUMBER PatchV1CustomerFieldsByKeyJSONBodyValueType = "PHONE_NUMBER"
+	PatchV1CustomerFieldsByKeyJSONBodyValueTypeTEXT        PatchV1CustomerFieldsByKeyJSONBodyValueType = "TEXT"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1CustomerFieldsByKeyJSONBodyValueType enum.
+func (e PatchV1CustomerFieldsByKeyJSONBodyValueType) Valid() bool {
+	switch e {
+	case PatchV1CustomerFieldsByKeyJSONBodyValueTypeBOOLEAN:
+		return true
+	case PatchV1CustomerFieldsByKeyJSONBodyValueTypeCURRENCY:
+		return true
+	case PatchV1CustomerFieldsByKeyJSONBodyValueTypeDATE:
+		return true
+	case PatchV1CustomerFieldsByKeyJSONBodyValueTypeEMAIL:
+		return true
+	case PatchV1CustomerFieldsByKeyJSONBodyValueTypeNUMBER:
+		return true
+	case PatchV1CustomerFieldsByKeyJSONBodyValueTypePHONENUMBER:
+		return true
+	case PatchV1CustomerFieldsByKeyJSONBodyValueTypeTEXT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy.
+const (
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedByRedactAddress           PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy = "redactAddress"
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedByRedactBankAccountNumber PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy = "redactBankAccountNumber"
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedByRedactDateOfBirth       PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy = "redactDateOfBirth"
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedByRedactEmail             PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy = "redactEmail"
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedByRedactName              PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy = "redactName"
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedByRedactPhone             PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy = "redactPhone"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy enum.
+func (e PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy) Valid() bool {
+	switch e {
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedByRedactAddress:
+		return true
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedByRedactBankAccountNumber:
+		return true
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedByRedactDateOfBirth:
+		return true
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedByRedactEmail:
+		return true
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedByRedactName:
+		return true
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedByRedactPhone:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1CustomerFieldsByKey200JSONResponseBodyDataSource.
+const (
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataSourceCUSTOM PatchV1CustomerFieldsByKey200JSONResponseBodyDataSource = "CUSTOM"
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataSourceSYSTEM PatchV1CustomerFieldsByKey200JSONResponseBodyDataSource = "SYSTEM"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1CustomerFieldsByKey200JSONResponseBodyDataSource enum.
+func (e PatchV1CustomerFieldsByKey200JSONResponseBodyDataSource) Valid() bool {
+	switch e {
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataSourceCUSTOM:
+		return true
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataSourceSYSTEM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType.
+const (
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypeBOOLEAN     PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType = "BOOLEAN"
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypeCURRENCY    PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType = "CURRENCY"
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypeDATE        PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType = "DATE"
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypeEMAIL       PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType = "EMAIL"
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypeNUMBER      PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType = "NUMBER"
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypePHONENUMBER PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType = "PHONE_NUMBER"
+	PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypeTEXT        PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType = "TEXT"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType enum.
+func (e PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType) Valid() bool {
+	switch e {
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypeBOOLEAN:
+		return true
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypeCURRENCY:
+		return true
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypeDATE:
+		return true
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypeEMAIL:
+		return true
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypeNUMBER:
+		return true
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypePHONENUMBER:
+		return true
+	case PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueTypeTEXT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSource.
+const (
+	GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSourceAPI                GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSource = "API"
+	GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSourceLIVEEXTRACTION     GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSource = "LIVE_EXTRACTION"
+	GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSourcePOSTCALLEXTRACTION GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSource = "POST_CALL_EXTRACTION"
+	GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSourceUSER               GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSource enum.
+func (e GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSource) Valid() bool {
+	switch e {
+	case GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSourceAPI:
+		return true
+	case GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSourceLIVEEXTRACTION:
+		return true
+	case GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSourcePOSTCALLEXTRACTION:
+		return true
+	case GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource.
+const (
+	GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySourceAPI                GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource = "API"
+	GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySourceLIVEEXTRACTION     GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource = "LIVE_EXTRACTION"
+	GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySourcePOSTCALLEXTRACTION GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource = "POST_CALL_EXTRACTION"
+	GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySourceUSER               GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource enum.
+func (e GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource) Valid() bool {
+	switch e {
+	case GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySourceAPI:
+		return true
+	case GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySourceLIVEEXTRACTION:
+		return true
+	case GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySourcePOSTCALLEXTRACTION:
+		return true
+	case GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSource.
+const (
+	GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSourceAPI                GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSource = "API"
+	GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSourceLIVEEXTRACTION     GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSource = "LIVE_EXTRACTION"
+	GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSourcePOSTCALLEXTRACTION GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSource = "POST_CALL_EXTRACTION"
+	GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSourceUSER               GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSource enum.
+func (e GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSource) Valid() bool {
+	switch e {
+	case GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSourceAPI:
+		return true
+	case GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSourceLIVEEXTRACTION:
+		return true
+	case GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSourcePOSTCALLEXTRACTION:
+		return true
+	case GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource.
+const (
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourceAPI                DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource = "API"
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourceLIVEEXTRACTION     DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource = "LIVE_EXTRACTION"
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourcePOSTCALLEXTRACTION DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource = "POST_CALL_EXTRACTION"
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourceUSER               DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource enum.
+func (e DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource) Valid() bool {
+	switch e {
+	case DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourceAPI:
+		return true
+	case DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourceLIVEEXTRACTION:
+		return true
+	case DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourcePOSTCALLEXTRACTION:
+		return true
+	case DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource.
+const (
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourceAPI                DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource = "API"
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourceLIVEEXTRACTION     DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource = "LIVE_EXTRACTION"
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourcePOSTCALLEXTRACTION DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource = "POST_CALL_EXTRACTION"
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourceUSER               DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource enum.
+func (e DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource) Valid() bool {
+	switch e {
+	case DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourceAPI:
+		return true
+	case DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourceLIVEEXTRACTION:
+		return true
+	case DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourcePOSTCALLEXTRACTION:
+		return true
+	case DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource.
+const (
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourceAPI                DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource = "API"
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourceLIVEEXTRACTION     DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource = "LIVE_EXTRACTION"
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourcePOSTCALLEXTRACTION DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource = "POST_CALL_EXTRACTION"
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourceUSER               DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource enum.
+func (e DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource) Valid() bool {
+	switch e {
+	case DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourceAPI:
+		return true
+	case DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourceLIVEEXTRACTION:
+		return true
+	case DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourcePOSTCALLEXTRACTION:
+		return true
+	case DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource.
+const (
+	PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourceAPI                PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource = "API"
+	PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourceLIVEEXTRACTION     PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource = "LIVE_EXTRACTION"
+	PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourcePOSTCALLEXTRACTION PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource = "POST_CALL_EXTRACTION"
+	PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourceUSER               PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource enum.
+func (e PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource) Valid() bool {
+	switch e {
+	case PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourceAPI:
+		return true
+	case PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourceLIVEEXTRACTION:
+		return true
+	case PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourcePOSTCALLEXTRACTION:
+		return true
+	case PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource.
+const (
+	PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourceAPI                PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource = "API"
+	PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourceLIVEEXTRACTION     PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource = "LIVE_EXTRACTION"
+	PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourcePOSTCALLEXTRACTION PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource = "POST_CALL_EXTRACTION"
+	PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourceUSER               PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource enum.
+func (e PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource) Valid() bool {
+	switch e {
+	case PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourceAPI:
+		return true
+	case PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourceLIVEEXTRACTION:
+		return true
+	case PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourcePOSTCALLEXTRACTION:
+		return true
+	case PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource.
+const (
+	PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourceAPI                PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource = "API"
+	PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourceLIVEEXTRACTION     PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource = "LIVE_EXTRACTION"
+	PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourcePOSTCALLEXTRACTION PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource = "POST_CALL_EXTRACTION"
+	PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourceUSER               PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource enum.
+func (e PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource) Valid() bool {
+	switch e {
+	case PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourceAPI:
+		return true
+	case PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourceLIVEEXTRACTION:
+		return true
+	case PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourcePOSTCALLEXTRACTION:
+		return true
+	case PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSource.
+const (
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSourceAPI                PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSource = "API"
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSourceLIVEEXTRACTION     PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSource = "LIVE_EXTRACTION"
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSourcePOSTCALLEXTRACTION PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSource = "POST_CALL_EXTRACTION"
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSourceUSER               PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSource enum.
+func (e PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSource) Valid() bool {
+	switch e {
+	case PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSourceAPI:
+		return true
+	case PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSourceLIVEEXTRACTION:
+		return true
+	case PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSourcePOSTCALLEXTRACTION:
+		return true
+	case PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource.
+const (
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySourceAPI                PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource = "API"
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySourceLIVEEXTRACTION     PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource = "LIVE_EXTRACTION"
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySourcePOSTCALLEXTRACTION PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource = "POST_CALL_EXTRACTION"
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySourceUSER               PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource enum.
+func (e PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource) Valid() bool {
+	switch e {
+	case PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySourceAPI:
+		return true
+	case PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySourceLIVEEXTRACTION:
+		return true
+	case PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySourcePOSTCALLEXTRACTION:
+		return true
+	case PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSource.
+const (
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSourceAPI                PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSource = "API"
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSourceLIVEEXTRACTION     PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSource = "LIVE_EXTRACTION"
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSourcePOSTCALLEXTRACTION PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSource = "POST_CALL_EXTRACTION"
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSourceUSER               PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSource enum.
+func (e PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSource) Valid() bool {
+	switch e {
+	case PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSourceAPI:
+		return true
+	case PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSourceLIVEEXTRACTION:
+		return true
+	case PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSourcePOSTCALLEXTRACTION:
+		return true
+	case PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType.
+const (
+	GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationTypeCall GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType = "call"
+	GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationTypeChat GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType = "chat"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType enum.
+func (e GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType) Valid() bool {
+	switch e {
+	case GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationTypeCall:
+		return true
+	case GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationTypeChat:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSource.
+const (
+	PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSourceAPI                PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSource = "API"
+	PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSourceLIVEEXTRACTION     PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSource = "LIVE_EXTRACTION"
+	PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSourcePOSTCALLEXTRACTION PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSource = "POST_CALL_EXTRACTION"
+	PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSourceUSER               PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSource enum.
+func (e PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSource) Valid() bool {
+	switch e {
+	case PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSourceAPI:
+		return true
+	case PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSourceLIVEEXTRACTION:
+		return true
+	case PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSourcePOSTCALLEXTRACTION:
+		return true
+	case PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource.
+const (
+	PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySourceAPI                PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource = "API"
+	PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySourceLIVEEXTRACTION     PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource = "LIVE_EXTRACTION"
+	PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySourcePOSTCALLEXTRACTION PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource = "POST_CALL_EXTRACTION"
+	PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySourceUSER               PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource enum.
+func (e PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource) Valid() bool {
+	switch e {
+	case PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySourceAPI:
+		return true
+	case PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySourceLIVEEXTRACTION:
+		return true
+	case PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySourcePOSTCALLEXTRACTION:
+		return true
+	case PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySourceUSER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSource.
+const (
+	PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSourceAPI                PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSource = "API"
+	PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSourceLIVEEXTRACTION     PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSource = "LIVE_EXTRACTION"
+	PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSourcePOSTCALLEXTRACTION PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSource = "POST_CALL_EXTRACTION"
+	PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSourceUSER               PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSource = "USER"
+)
+
+// Valid indicates whether the value is a known member of the PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSource enum.
+func (e PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSource) Valid() bool {
+	switch e {
+	case PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSourceAPI:
+		return true
+	case PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSourceLIVEEXTRACTION:
+		return true
+	case PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSourcePOSTCALLEXTRACTION:
+		return true
+	case PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSourceUSER:
 		return true
 	default:
 		return false
@@ -28121,6 +29036,9 @@ type CallCreate struct {
 
 	// Customer Single customer participating in the call. Use this for simpler API when you have only one customer.
 	Customer *struct {
+		// ExternalId Your own stable id for this person. Links conversations to one customer profile where there is no phone number, such as web calls.
+		ExternalId *string `json:"externalId,omitempty"`
+
 		// Label Label to identify this customer in the transcript (e.g., "speaker-01", "speaker-02")
 		Label *string `json:"label,omitempty"`
 
@@ -28130,6 +29048,9 @@ type CallCreate struct {
 
 	// Customers Customers participating in the call.
 	Customers *[]struct {
+		// ExternalId Your own stable id for this person. Links conversations to one customer profile where there is no phone number, such as web calls.
+		ExternalId *string `json:"externalId,omitempty"`
+
 		// Label Label to identify this customer in the transcript (e.g., "speaker-01", "speaker-02")
 		Label *string `json:"label,omitempty"`
 
@@ -28477,6 +29398,9 @@ type ChatCreate struct {
 
 	// Customer Single customer participating in the chat. Use this for the simpler API when you have only one customer.
 	Customer *struct {
+		// ExternalId Your own stable id for this person. Links their conversations to one customer profile when there is no phone number.
+		ExternalId *string `json:"externalId,omitempty"`
+
 		// Label Label to identify this customer in the chat (e.g., "user-01", "anonymous-visitor")
 		Label *string `json:"label,omitempty"`
 
@@ -28486,6 +29410,9 @@ type ChatCreate struct {
 
 	// Customers Customers participating in the chat.
 	Customers *[]struct {
+		// ExternalId Your own stable id for this person. Links their conversations to one customer profile when there is no phone number.
+		ExternalId *string `json:"externalId,omitempty"`
+
 		// Label Label to identify this customer in the chat (e.g., "user-01", "anonymous-visitor")
 		Label *string `json:"label,omitempty"`
 
@@ -29879,6 +30806,29 @@ type CreateThresholdInputOperator string
 
 // CreateThresholdInputSourceParticipantRole When the source metric is per-participant, restrict evaluation to this role. Only valid for sources with TURN/SEGMENT contexts.
 type CreateThresholdInputSourceParticipantRole string
+
+// CreateWebSessionTokenInput defines model for CreateWebSessionTokenInput.
+type CreateWebSessionTokenInput struct {
+	// AllowedOrigins The origins the token may be spent from, exactly as the browser sends them: https only (http on localhost for development), no paths or wildcards.
+	//
+	// Example: ["https://app.example.com"]
+	AllowedOrigins []string `json:"allowedOrigins"`
+
+	// Modality What the token opens: `call` for a voice session, `chat` for a text chat. A token opens only that kind. Default `call`.
+	//
+	// Example: chat
+	Modality *CreateWebSessionTokenInputModality `json:"modality,omitempty"`
+
+	// TtlSeconds How long the token can be spent for, in seconds. Default 120.
+	//
+	// Example: 120
+	TtlSeconds *int `json:"ttlSeconds,omitempty"`
+}
+
+// CreateWebSessionTokenInputModality What the token opens: `call` for a voice session, `chat` for a text chat. A token opens only that kind. Default `call`.
+//
+// Example: chat
+type CreateWebSessionTokenInputModality string
 
 // CreateWebhookInput Input for creating a webhook
 type CreateWebhookInput struct {
@@ -41269,6 +42219,24 @@ type VoicemailFlowVariantPersonaOverrideUnderstoodLanguages string
 // VoicemailFlowVariantType defines model for VoicemailFlowVariant.Type.
 type VoicemailFlowVariantType string
 
+// WebSessionToken defines model for WebSessionToken.
+type WebSessionToken struct {
+	// AllowedOrigins The allowed origins, normalized.
+	AllowedOrigins []string `json:"allowedOrigins"`
+
+	// ExpiresAt When the token can no longer be spent (ISO 8601).
+	ExpiresAt string `json:"expiresAt"`
+
+	// Modality What the token opens: `call` or `chat`.
+	Modality WebSessionTokenModality `json:"modality"`
+
+	// Token A single-use client token for the browser. It opens one web session with this agent, from one of the allowed origins, before it expires. It is not an API key.
+	Token string `json:"token"`
+}
+
+// WebSessionTokenModality What the token opens: `call` or `chat`.
+type WebSessionTokenModality string
+
 // WebhookResponse Webhook with its subscribed event types
 type WebhookResponse struct {
 	// CreatedAt Creation timestamp
@@ -42488,6 +43456,42 @@ type PostV1CliAuthTokenJSONBody struct {
 // PostV1CliAuthToken200JSONResponseBodyDataScopeKind defines parameters for PostV1CliAuthToken.
 type PostV1CliAuthToken200JSONResponseBodyDataScopeKind string
 
+// GetV1CustomerParams defines parameters for GetV1Customer.
+type GetV1CustomerParams struct {
+	Limit         *int                              `form:"limit,omitempty" json:"limit,omitempty"`
+	Page          *int                              `form:"page,omitempty" json:"page,omitempty"`
+	Search        *string                           `form:"search,omitempty" json:"search,omitempty"`
+	AgentId       *openapi_types.UUID               `form:"agentId,omitempty" json:"agentId,omitempty"`
+	Modality      *GetV1CustomerParamsModality      `form:"modality,omitempty" json:"modality,omitempty"`
+	IncludeNoData *GetV1CustomerParamsIncludeNoData `form:"includeNoData,omitempty" json:"includeNoData,omitempty"`
+	SortBy        *string                           `form:"sortBy,omitempty" json:"sortBy,omitempty"`
+	SortDirection *GetV1CustomerParamsSortDirection `form:"sortDirection,omitempty" json:"sortDirection,omitempty"`
+	FieldKey      *string                           `form:"fieldKey,omitempty" json:"fieldKey,omitempty"`
+	FieldOperator *GetV1CustomerParamsFieldOperator `form:"fieldOperator,omitempty" json:"fieldOperator,omitempty"`
+	FieldValue    *string                           `form:"fieldValue,omitempty" json:"fieldValue,omitempty"`
+}
+
+// GetV1CustomerParamsModality defines parameters for GetV1Customer.
+type GetV1CustomerParamsModality string
+
+// GetV1CustomerParamsIncludeNoData defines parameters for GetV1Customer.
+type GetV1CustomerParamsIncludeNoData string
+
+// GetV1CustomerParamsSortDirection defines parameters for GetV1Customer.
+type GetV1CustomerParamsSortDirection string
+
+// GetV1CustomerParamsFieldOperator defines parameters for GetV1Customer.
+type GetV1CustomerParamsFieldOperator string
+
+// GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSource defines parameters for GetV1Customer.
+type GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSource string
+
+// GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource defines parameters for GetV1Customer.
+type GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource string
+
+// GetV1Customer200JSONResponseBodyDataItemsAttributesSource defines parameters for GetV1Customer.
+type GetV1Customer200JSONResponseBodyDataItemsAttributesSource string
+
 // GetV1CustomerFlowParams defines parameters for GetV1CustomerFlow.
 type GetV1CustomerFlowParams struct {
 	Limit         *int                                  `form:"limit,omitempty" json:"limit,omitempty"`
@@ -42502,6 +43506,129 @@ type GetV1CustomerFlowParamsType string
 
 // GetV1CustomerFlowParamsIncludeSystem defines parameters for GetV1CustomerFlow.
 type GetV1CustomerFlowParamsIncludeSystem string
+
+// GetV1CustomerFields200JSONResponseBodyDataRedactedBy defines parameters for GetV1CustomerFields.
+type GetV1CustomerFields200JSONResponseBodyDataRedactedBy string
+
+// GetV1CustomerFields200JSONResponseBodyDataSource defines parameters for GetV1CustomerFields.
+type GetV1CustomerFields200JSONResponseBodyDataSource string
+
+// GetV1CustomerFields200JSONResponseBodyDataValueType defines parameters for GetV1CustomerFields.
+type GetV1CustomerFields200JSONResponseBodyDataValueType string
+
+// PostV1CustomerFieldsJSONBody defines parameters for PostV1CustomerFields.
+type PostV1CustomerFieldsJSONBody struct {
+	// Description What the agent listens for in a conversation. Required when extract is true.
+	Description *string `json:"description,omitempty"`
+
+	// Extract Whether conversations fill this field
+	Extract bool `json:"extract"`
+
+	// Key Starts with a letter; letters, numbers and underscores only. Fixed once created.
+	//
+	// Example: plan_tier
+	Key       string                                `json:"key"`
+	Label     string                                `json:"label"`
+	ValueType PostV1CustomerFieldsJSONBodyValueType `json:"valueType"`
+}
+
+// PostV1CustomerFieldsJSONBodyValueType defines parameters for PostV1CustomerFields.
+type PostV1CustomerFieldsJSONBodyValueType string
+
+// PostV1CustomerFields201JSONResponseBodyDataRedactedBy defines parameters for PostV1CustomerFields.
+type PostV1CustomerFields201JSONResponseBodyDataRedactedBy string
+
+// PostV1CustomerFields201JSONResponseBodyDataSource defines parameters for PostV1CustomerFields.
+type PostV1CustomerFields201JSONResponseBodyDataSource string
+
+// PostV1CustomerFields201JSONResponseBodyDataValueType defines parameters for PostV1CustomerFields.
+type PostV1CustomerFields201JSONResponseBodyDataValueType string
+
+// PatchV1CustomerFieldsByKeyJSONBody defines parameters for PatchV1CustomerFieldsByKey.
+type PatchV1CustomerFieldsByKeyJSONBody struct {
+	Description *string                                      `json:"description,omitempty"`
+	Extract     *bool                                        `json:"extract,omitempty"`
+	Label       *string                                      `json:"label,omitempty"`
+	ValueType   *PatchV1CustomerFieldsByKeyJSONBodyValueType `json:"valueType,omitempty"`
+}
+
+// PatchV1CustomerFieldsByKeyJSONBodyValueType defines parameters for PatchV1CustomerFieldsByKey.
+type PatchV1CustomerFieldsByKeyJSONBodyValueType string
+
+// PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy defines parameters for PatchV1CustomerFieldsByKey.
+type PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy string
+
+// PatchV1CustomerFieldsByKey200JSONResponseBodyDataSource defines parameters for PatchV1CustomerFieldsByKey.
+type PatchV1CustomerFieldsByKey200JSONResponseBodyDataSource string
+
+// PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType defines parameters for PatchV1CustomerFieldsByKey.
+type PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType string
+
+// GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSource defines parameters for GetV1CustomerByCustomerProfileId.
+type GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSource string
+
+// GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource defines parameters for GetV1CustomerByCustomerProfileId.
+type GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource string
+
+// GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSource defines parameters for GetV1CustomerByCustomerProfileId.
+type GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSource string
+
+// DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource defines parameters for DeleteV1CustomerByCustomerProfileIdAttributesByKey.
+type DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource string
+
+// DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource defines parameters for DeleteV1CustomerByCustomerProfileIdAttributesByKey.
+type DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource string
+
+// DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource defines parameters for DeleteV1CustomerByCustomerProfileIdAttributesByKey.
+type DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource string
+
+// PutV1CustomerByCustomerProfileIdAttributesByKeyJSONBody defines parameters for PutV1CustomerByCustomerProfileIdAttributesByKey.
+type PutV1CustomerByCustomerProfileIdAttributesByKeyJSONBody struct {
+	// Value The new value. Setting a field locks it, so newer conversations cannot change it.
+	Value string `json:"value"`
+}
+
+// PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource defines parameters for PutV1CustomerByCustomerProfileIdAttributesByKey.
+type PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource string
+
+// PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource defines parameters for PutV1CustomerByCustomerProfileIdAttributesByKey.
+type PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource string
+
+// PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource defines parameters for PutV1CustomerByCustomerProfileIdAttributesByKey.
+type PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource string
+
+// PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSource defines parameters for PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock.
+type PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSource string
+
+// PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource defines parameters for PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock.
+type PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource string
+
+// PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSource defines parameters for PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock.
+type PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSource string
+
+// GetV1CustomerByCustomerProfileIdConversationsParams defines parameters for GetV1CustomerByCustomerProfileIdConversations.
+type GetV1CustomerByCustomerProfileIdConversationsParams struct {
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+	Page  *int `form:"page,omitempty" json:"page,omitempty"`
+}
+
+// GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType defines parameters for GetV1CustomerByCustomerProfileIdConversations.
+type GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType string
+
+// PutV1CustomerByCustomerProfileIdNotesJSONBody defines parameters for PutV1CustomerByCustomerProfileIdNotes.
+type PutV1CustomerByCustomerProfileIdNotesJSONBody struct {
+	// Notes Replaces the existing notes. Null or empty clears them.
+	Notes *string `json:"notes"`
+}
+
+// PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSource defines parameters for PutV1CustomerByCustomerProfileIdNotes.
+type PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSource string
+
+// PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource defines parameters for PutV1CustomerByCustomerProfileIdNotes.
+type PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource string
+
+// PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSource defines parameters for PutV1CustomerByCustomerProfileIdNotes.
+type PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSource string
 
 // DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeleted defines parameters for DeleteV1DashboardByDashboardId.
 type DeleteV1DashboardByDashboardId200JSONResponseBodyDataDeleted bool
@@ -43296,6 +44423,9 @@ type PutV1AgentByAgentIdPromptsJSONRequestBody = SetAgentPromptInput
 // PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody defines body for PostV1AgentByAgentIdVersionsByVersionIdRollback for application/json ContentType.
 type PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody = RollbackAgentVersionInput
 
+// PostV1AgentByAgentIdWebSessionTokensJSONRequestBody defines body for PostV1AgentByAgentIdWebSessionTokens for application/json ContentType.
+type PostV1AgentByAgentIdWebSessionTokensJSONRequestBody = CreateWebSessionTokenInput
+
 // PostV1AnalyticsQueryJSONRequestBody defines body for PostV1AnalyticsQuery for application/json ContentType.
 type PostV1AnalyticsQueryJSONRequestBody = AnalyticsQuery
 
@@ -43358,6 +44488,18 @@ type PutV1CustomerFlowByFlowIdGraphJSONRequestBody = ReplaceFlowStepsInput
 
 // PutV1CustomerFlowByFlowIdHappyPathJSONRequestBody defines body for PutV1CustomerFlowByFlowIdHappyPath for application/json ContentType.
 type PutV1CustomerFlowByFlowIdHappyPathJSONRequestBody = UpdateFlowVariantInput
+
+// PostV1CustomerFieldsJSONRequestBody defines body for PostV1CustomerFields for application/json ContentType.
+type PostV1CustomerFieldsJSONRequestBody PostV1CustomerFieldsJSONBody
+
+// PatchV1CustomerFieldsByKeyJSONRequestBody defines body for PatchV1CustomerFieldsByKey for application/json ContentType.
+type PatchV1CustomerFieldsByKeyJSONRequestBody PatchV1CustomerFieldsByKeyJSONBody
+
+// PutV1CustomerByCustomerProfileIdAttributesByKeyJSONRequestBody defines body for PutV1CustomerByCustomerProfileIdAttributesByKey for application/json ContentType.
+type PutV1CustomerByCustomerProfileIdAttributesByKeyJSONRequestBody PutV1CustomerByCustomerProfileIdAttributesByKeyJSONBody
+
+// PutV1CustomerByCustomerProfileIdNotesJSONRequestBody defines body for PutV1CustomerByCustomerProfileIdNotes for application/json ContentType.
+type PutV1CustomerByCustomerProfileIdNotesJSONRequestBody PutV1CustomerByCustomerProfileIdNotesJSONBody
 
 // PostV1DashboardJSONRequestBody defines body for PostV1Dashboard for application/json ContentType.
 type PostV1DashboardJSONRequestBody = DashboardInput
@@ -55864,6 +57006,24 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
 	PostV1AgentByAgentIdVersionsByVersionIdRollback(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// PostV1AgentByAgentIdWebSessionTokensWithBody Create a web session token
+	//
+	// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
+	PostV1AgentByAgentIdWebSessionTokensWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1AgentByAgentIdWebSessionTokens Create a web session token
+	//
+	// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
+	PostV1AgentByAgentIdWebSessionTokens(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdWebSessionTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// PostV1AnalyticsQueryWithBody Run an analytics query
 	//
 	// Aggregates metric values and conversation counts over a time window and returns one series per
@@ -56364,6 +57524,13 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/config/diff (the `PostV1ConfigDiff` operationId).
 	PostV1ConfigDiff(ctx context.Context, body PostV1ConfigDiffJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetV1Customer List customers
+	//
+	// Returns the people who have talked to your agents in this project. Customers we hold nothing about beyond their identifier are left out unless includeNoData is true.
+	//
+	// Corresponds with GET /v1/customer (the `GetV1Customer` operationId).
+	GetV1Customer(ctx context.Context, params *GetV1CustomerParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetV1CustomerFlow List customer flows
 	//
 	// Returns a paginated list of customer flows with their agents, expectations, happy path and edge cases. The step graph is the one field omitted: reading it walks the project's whole step graph, so it comes back from the single-flow endpoint instead. Customer flows are how a project describes what to test; they replace the older simulation scenarios.
@@ -56558,6 +57725,125 @@ type ClientInterface interface {
 	//
 	// Corresponds with PUT /v1/customer-flow/{flowId}/happy-path (the `PutV1CustomerFlowByFlowIdHappyPath` operationId).
 	PutV1CustomerFlowByFlowIdHappyPath(ctx context.Context, flowId openapi_types.UUID, body PutV1CustomerFlowByFlowIdHappyPathJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1CustomerFields List customer fields
+	//
+	// The fields this project's customers can hold, in display order. Use a field's key to filter, sort and set attributes.
+	//
+	// Corresponds with GET /v1/customer/fields (the `GetV1CustomerFields` operationId).
+	GetV1CustomerFields(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1CustomerFieldsWithBody Create a customer field
+	//
+	// Adds a field of your project's own. With extract on, conversations fill it from what customers say, guided by its description.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/customer/fields (the `PostV1CustomerFields` operationId).
+	PostV1CustomerFieldsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1CustomerFields Create a customer field
+	//
+	// Adds a field of your project's own. With extract on, conversations fill it from what customers say, guided by its description.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/customer/fields (the `PostV1CustomerFields` operationId).
+	PostV1CustomerFields(ctx context.Context, body PostV1CustomerFieldsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1CustomerFieldsByKey Delete a customer field
+	//
+	// Deletes a field of your project's own. Its values stop showing on customers. A built-in field cannot be deleted; turn it off instead.
+	//
+	// Corresponds with DELETE /v1/customer/fields/{key} (the `DeleteV1CustomerFieldsByKey` operationId).
+	DeleteV1CustomerFieldsByKey(ctx context.Context, key string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchV1CustomerFieldsByKeyWithBody Update a customer field
+	//
+	// Changes a field. A built-in field can only be turned on or off for your project; any field of your project's own can change everything but its key.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PATCH /v1/customer/fields/{key} (the `PatchV1CustomerFieldsByKey` operationId).
+	PatchV1CustomerFieldsByKeyWithBody(ctx context.Context, key string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchV1CustomerFieldsByKey Update a customer field
+	//
+	// Changes a field. A built-in field can only be turned on or off for your project; any field of your project's own can change everything but its key.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PATCH /v1/customer/fields/{key} (the `PatchV1CustomerFieldsByKey` operationId).
+	PatchV1CustomerFieldsByKey(ctx context.Context, key string, body PatchV1CustomerFieldsByKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1CustomerByCustomerProfileId Erase a customer
+	//
+	// Permanently removes the customer, with their fields, evidence and notes. Conversations are kept. A new conversation from the same identifier starts a new customer.
+	//
+	// Corresponds with DELETE /v1/customer/{customerProfileId} (the `DeleteV1CustomerByCustomerProfileId` operationId).
+	DeleteV1CustomerByCustomerProfileId(ctx context.Context, customerProfileId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1CustomerByCustomerProfileId Get a customer
+	//
+	// Corresponds with GET /v1/customer/{customerProfileId} (the `GetV1CustomerByCustomerProfileId` operationId).
+	GetV1CustomerByCustomerProfileId(ctx context.Context, customerProfileId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1CustomerByCustomerProfileIdAttributesByKey Clear a field on a customer
+	//
+	// Removes the value and any lock, so a later conversation can fill it again.
+	//
+	// Corresponds with DELETE /v1/customer/{customerProfileId}/attributes/{key} (the `DeleteV1CustomerByCustomerProfileIdAttributesByKey` operationId).
+	DeleteV1CustomerByCustomerProfileIdAttributesByKey(ctx context.Context, customerProfileId openapi_types.UUID, key string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1CustomerByCustomerProfileIdAttributesByKeyWithBody Set a field on a customer
+	//
+	// Sets the value and locks the field, so newer conversations cannot change it.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/customer/{customerProfileId}/attributes/{key} (the `PutV1CustomerByCustomerProfileIdAttributesByKey` operationId).
+	PutV1CustomerByCustomerProfileIdAttributesByKeyWithBody(ctx context.Context, customerProfileId openapi_types.UUID, key string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1CustomerByCustomerProfileIdAttributesByKey Set a field on a customer
+	//
+	// Sets the value and locks the field, so newer conversations cannot change it.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /v1/customer/{customerProfileId}/attributes/{key} (the `PutV1CustomerByCustomerProfileIdAttributesByKey` operationId).
+	PutV1CustomerByCustomerProfileIdAttributesByKey(ctx context.Context, customerProfileId openapi_types.UUID, key string, body PutV1CustomerByCustomerProfileIdAttributesByKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock Unlock a field on a customer
+	//
+	// Lets newer conversations change this field again. The current value stays until one does.
+	//
+	// Corresponds with POST /v1/customer/{customerProfileId}/attributes/{key}/unlock (the `PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock` operationId).
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock(ctx context.Context, customerProfileId openapi_types.UUID, key string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1CustomerByCustomerProfileIdConversations List a customer's conversations
+	//
+	// Calls and chats with this customer, newest first.
+	//
+	// Corresponds with GET /v1/customer/{customerProfileId}/conversations (the `GetV1CustomerByCustomerProfileIdConversations` operationId).
+	GetV1CustomerByCustomerProfileIdConversations(ctx context.Context, customerProfileId string, params *GetV1CustomerByCustomerProfileIdConversationsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1CustomerByCustomerProfileIdNotesWithBody Update the notes on a customer
+	//
+	// Replaces your team's shared notes. Null or empty clears them. The last save wins.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/customer/{customerProfileId}/notes (the `PutV1CustomerByCustomerProfileIdNotes` operationId).
+	PutV1CustomerByCustomerProfileIdNotesWithBody(ctx context.Context, customerProfileId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1CustomerByCustomerProfileIdNotes Update the notes on a customer
+	//
+	// Replaces your team's shared notes. Null or empty clears them. The last save wins.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /v1/customer/{customerProfileId}/notes (the `PutV1CustomerByCustomerProfileIdNotes` operationId).
+	PutV1CustomerByCustomerProfileIdNotes(ctx context.Context, customerProfileId openapi_types.UUID, body PutV1CustomerByCustomerProfileIdNotesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1Dashboard List dashboards
 	//
@@ -58965,6 +60251,44 @@ func (c *Client) PostV1AgentByAgentIdVersionsByVersionIdRollback(ctx context.Con
 	return c.Client.Do(req)
 }
 
+// PostV1AgentByAgentIdWebSessionTokensWithBody Create a web session token
+//
+// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
+func (c *Client) PostV1AgentByAgentIdWebSessionTokensWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AgentByAgentIdWebSessionTokensRequestWithBody(c.Server, agentId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1AgentByAgentIdWebSessionTokens Create a web session token
+//
+// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
+func (c *Client) PostV1AgentByAgentIdWebSessionTokens(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdWebSessionTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AgentByAgentIdWebSessionTokensRequest(c.Server, agentId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // PostV1AnalyticsQueryWithBody Run an analytics query
 //
 // Aggregates metric values and conversation counts over a time window and returns one series per
@@ -60035,6 +61359,23 @@ func (c *Client) PostV1ConfigDiff(ctx context.Context, body PostV1ConfigDiffJSON
 	return c.Client.Do(req)
 }
 
+// GetV1Customer List customers
+//
+// Returns the people who have talked to your agents in this project. Customers we hold nothing about beyond their identifier are left out unless includeNoData is true.
+//
+// Corresponds with GET /v1/customer (the `GetV1Customer` operationId).
+func (c *Client) GetV1Customer(ctx context.Context, params *GetV1CustomerParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1CustomerRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GetV1CustomerFlow List customer flows
 //
 // Returns a paginated list of customer flows with their agents, expectations, happy path and edge cases. The step graph is the one field omitted: reading it walks the project's whole step graph, so it comes back from the single-flow endpoint instead. Customer flows are how a project describes what to test; they replace the older simulation scenarios.
@@ -60410,6 +61751,275 @@ func (c *Client) PutV1CustomerFlowByFlowIdHappyPathWithBody(ctx context.Context,
 // Corresponds with PUT /v1/customer-flow/{flowId}/happy-path (the `PutV1CustomerFlowByFlowIdHappyPath` operationId).
 func (c *Client) PutV1CustomerFlowByFlowIdHappyPath(ctx context.Context, flowId openapi_types.UUID, body PutV1CustomerFlowByFlowIdHappyPathJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPutV1CustomerFlowByFlowIdHappyPathRequest(c.Server, flowId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1CustomerFields List customer fields
+//
+// The fields this project's customers can hold, in display order. Use a field's key to filter, sort and set attributes.
+//
+// Corresponds with GET /v1/customer/fields (the `GetV1CustomerFields` operationId).
+func (c *Client) GetV1CustomerFields(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1CustomerFieldsRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1CustomerFieldsWithBody Create a customer field
+//
+// Adds a field of your project's own. With extract on, conversations fill it from what customers say, guided by its description.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/customer/fields (the `PostV1CustomerFields` operationId).
+func (c *Client) PostV1CustomerFieldsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1CustomerFieldsRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1CustomerFields Create a customer field
+//
+// Adds a field of your project's own. With extract on, conversations fill it from what customers say, guided by its description.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/customer/fields (the `PostV1CustomerFields` operationId).
+func (c *Client) PostV1CustomerFields(ctx context.Context, body PostV1CustomerFieldsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1CustomerFieldsRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1CustomerFieldsByKey Delete a customer field
+//
+// Deletes a field of your project's own. Its values stop showing on customers. A built-in field cannot be deleted; turn it off instead.
+//
+// Corresponds with DELETE /v1/customer/fields/{key} (the `DeleteV1CustomerFieldsByKey` operationId).
+func (c *Client) DeleteV1CustomerFieldsByKey(ctx context.Context, key string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1CustomerFieldsByKeyRequest(c.Server, key)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchV1CustomerFieldsByKeyWithBody Update a customer field
+//
+// Changes a field. A built-in field can only be turned on or off for your project; any field of your project's own can change everything but its key.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/customer/fields/{key} (the `PatchV1CustomerFieldsByKey` operationId).
+func (c *Client) PatchV1CustomerFieldsByKeyWithBody(ctx context.Context, key string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchV1CustomerFieldsByKeyRequestWithBody(c.Server, key, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchV1CustomerFieldsByKey Update a customer field
+//
+// Changes a field. A built-in field can only be turned on or off for your project; any field of your project's own can change everything but its key.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/customer/fields/{key} (the `PatchV1CustomerFieldsByKey` operationId).
+func (c *Client) PatchV1CustomerFieldsByKey(ctx context.Context, key string, body PatchV1CustomerFieldsByKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchV1CustomerFieldsByKeyRequest(c.Server, key, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1CustomerByCustomerProfileId Erase a customer
+//
+// Permanently removes the customer, with their fields, evidence and notes. Conversations are kept. A new conversation from the same identifier starts a new customer.
+//
+// Corresponds with DELETE /v1/customer/{customerProfileId} (the `DeleteV1CustomerByCustomerProfileId` operationId).
+func (c *Client) DeleteV1CustomerByCustomerProfileId(ctx context.Context, customerProfileId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1CustomerByCustomerProfileIdRequest(c.Server, customerProfileId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1CustomerByCustomerProfileId Get a customer
+//
+// Corresponds with GET /v1/customer/{customerProfileId} (the `GetV1CustomerByCustomerProfileId` operationId).
+func (c *Client) GetV1CustomerByCustomerProfileId(ctx context.Context, customerProfileId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1CustomerByCustomerProfileIdRequest(c.Server, customerProfileId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1CustomerByCustomerProfileIdAttributesByKey Clear a field on a customer
+//
+// Removes the value and any lock, so a later conversation can fill it again.
+//
+// Corresponds with DELETE /v1/customer/{customerProfileId}/attributes/{key} (the `DeleteV1CustomerByCustomerProfileIdAttributesByKey` operationId).
+func (c *Client) DeleteV1CustomerByCustomerProfileIdAttributesByKey(ctx context.Context, customerProfileId openapi_types.UUID, key string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1CustomerByCustomerProfileIdAttributesByKeyRequest(c.Server, customerProfileId, key)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1CustomerByCustomerProfileIdAttributesByKeyWithBody Set a field on a customer
+//
+// Sets the value and locks the field, so newer conversations cannot change it.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/customer/{customerProfileId}/attributes/{key} (the `PutV1CustomerByCustomerProfileIdAttributesByKey` operationId).
+func (c *Client) PutV1CustomerByCustomerProfileIdAttributesByKeyWithBody(ctx context.Context, customerProfileId openapi_types.UUID, key string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1CustomerByCustomerProfileIdAttributesByKeyRequestWithBody(c.Server, customerProfileId, key, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1CustomerByCustomerProfileIdAttributesByKey Set a field on a customer
+//
+// Sets the value and locks the field, so newer conversations cannot change it.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/customer/{customerProfileId}/attributes/{key} (the `PutV1CustomerByCustomerProfileIdAttributesByKey` operationId).
+func (c *Client) PutV1CustomerByCustomerProfileIdAttributesByKey(ctx context.Context, customerProfileId openapi_types.UUID, key string, body PutV1CustomerByCustomerProfileIdAttributesByKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1CustomerByCustomerProfileIdAttributesByKeyRequest(c.Server, customerProfileId, key, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock Unlock a field on a customer
+//
+// Lets newer conversations change this field again. The current value stays until one does.
+//
+// Corresponds with POST /v1/customer/{customerProfileId}/attributes/{key}/unlock (the `PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock` operationId).
+func (c *Client) PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock(ctx context.Context, customerProfileId openapi_types.UUID, key string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1CustomerByCustomerProfileIdAttributesByKeyUnlockRequest(c.Server, customerProfileId, key)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1CustomerByCustomerProfileIdConversations List a customer's conversations
+//
+// Calls and chats with this customer, newest first.
+//
+// Corresponds with GET /v1/customer/{customerProfileId}/conversations (the `GetV1CustomerByCustomerProfileIdConversations` operationId).
+func (c *Client) GetV1CustomerByCustomerProfileIdConversations(ctx context.Context, customerProfileId string, params *GetV1CustomerByCustomerProfileIdConversationsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1CustomerByCustomerProfileIdConversationsRequest(c.Server, customerProfileId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1CustomerByCustomerProfileIdNotesWithBody Update the notes on a customer
+//
+// Replaces your team's shared notes. Null or empty clears them. The last save wins.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/customer/{customerProfileId}/notes (the `PutV1CustomerByCustomerProfileIdNotes` operationId).
+func (c *Client) PutV1CustomerByCustomerProfileIdNotesWithBody(ctx context.Context, customerProfileId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1CustomerByCustomerProfileIdNotesRequestWithBody(c.Server, customerProfileId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1CustomerByCustomerProfileIdNotes Update the notes on a customer
+//
+// Replaces your team's shared notes. Null or empty clears them. The last save wins.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/customer/{customerProfileId}/notes (the `PutV1CustomerByCustomerProfileIdNotes` operationId).
+func (c *Client) PutV1CustomerByCustomerProfileIdNotes(ctx context.Context, customerProfileId openapi_types.UUID, body PutV1CustomerByCustomerProfileIdNotesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1CustomerByCustomerProfileIdNotesRequest(c.Server, customerProfileId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -65130,6 +66740,53 @@ func NewPostV1AgentByAgentIdVersionsByVersionIdRollbackRequestWithBody(server st
 	return req, nil
 }
 
+// NewPostV1AgentByAgentIdWebSessionTokensRequest calls the generic PostV1AgentByAgentIdWebSessionTokens builder with application/json body
+func NewPostV1AgentByAgentIdWebSessionTokensRequest(server string, agentId openapi_types.UUID, body PostV1AgentByAgentIdWebSessionTokensJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1AgentByAgentIdWebSessionTokensRequestWithBody(server, agentId, "application/json", bodyReader)
+}
+
+// NewPostV1AgentByAgentIdWebSessionTokensRequestWithBody constructs an http.Request for the PostV1AgentByAgentIdWebSessionTokens method, with any body, and a specified content type
+func NewPostV1AgentByAgentIdWebSessionTokensRequestWithBody(server string, agentId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/agent/%s/web-session-tokens", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewPostV1AnalyticsQueryRequest calls the generic PostV1AnalyticsQuery builder with application/json body
 func NewPostV1AnalyticsQueryRequest(server string, body PostV1AnalyticsQueryJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -67383,6 +69040,180 @@ func NewPostV1ConfigDiffRequestWithBody(server string, contentType string, body 
 	return req, nil
 }
 
+// NewGetV1CustomerRequest constructs an http.Request for the GetV1Customer method
+func NewGetV1CustomerRequest(server string, params *GetV1CustomerParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page", *params.Page, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Search != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "search", *params.Search, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.AgentId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "agentId", *params.AgentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Modality != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "modality", *params.Modality, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.IncludeNoData != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeNoData", *params.IncludeNoData, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.SortBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sortBy", *params.SortBy, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.SortDirection != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "sortDirection", *params.SortDirection, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FieldKey != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "fieldKey", *params.FieldKey, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FieldOperator != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "fieldOperator", *params.FieldOperator, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.FieldValue != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "fieldValue", *params.FieldValue, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewGetV1CustomerFlowRequest constructs an http.Request for the GetV1CustomerFlow method
 func NewGetV1CustomerFlowRequest(server string, params *GetV1CustomerFlowParams) (*http.Request, error) {
 	var err error
@@ -67945,6 +69776,478 @@ func NewPutV1CustomerFlowByFlowIdHappyPathRequestWithBody(server string, flowId 
 	}
 
 	operationPath := fmt.Sprintf("/v1/customer-flow/%s/happy-path", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetV1CustomerFieldsRequest constructs an http.Request for the GetV1CustomerFields method
+func NewGetV1CustomerFieldsRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer/fields")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1CustomerFieldsRequest calls the generic PostV1CustomerFields builder with application/json body
+func NewPostV1CustomerFieldsRequest(server string, body PostV1CustomerFieldsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1CustomerFieldsRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1CustomerFieldsRequestWithBody constructs an http.Request for the PostV1CustomerFields method, with any body, and a specified content type
+func NewPostV1CustomerFieldsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer/fields")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1CustomerFieldsByKeyRequest constructs an http.Request for the DeleteV1CustomerFieldsByKey method
+func NewDeleteV1CustomerFieldsByKeyRequest(server string, key string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "key", key, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer/fields/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPatchV1CustomerFieldsByKeyRequest calls the generic PatchV1CustomerFieldsByKey builder with application/json body
+func NewPatchV1CustomerFieldsByKeyRequest(server string, key string, body PatchV1CustomerFieldsByKeyJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPatchV1CustomerFieldsByKeyRequestWithBody(server, key, "application/json", bodyReader)
+}
+
+// NewPatchV1CustomerFieldsByKeyRequestWithBody constructs an http.Request for the PatchV1CustomerFieldsByKey method, with any body, and a specified content type
+func NewPatchV1CustomerFieldsByKeyRequestWithBody(server string, key string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "key", key, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer/fields/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1CustomerByCustomerProfileIdRequest constructs an http.Request for the DeleteV1CustomerByCustomerProfileId method
+func NewDeleteV1CustomerByCustomerProfileIdRequest(server string, customerProfileId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "customerProfileId", customerProfileId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1CustomerByCustomerProfileIdRequest constructs an http.Request for the GetV1CustomerByCustomerProfileId method
+func NewGetV1CustomerByCustomerProfileIdRequest(server string, customerProfileId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "customerProfileId", customerProfileId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewDeleteV1CustomerByCustomerProfileIdAttributesByKeyRequest constructs an http.Request for the DeleteV1CustomerByCustomerProfileIdAttributesByKey method
+func NewDeleteV1CustomerByCustomerProfileIdAttributesByKeyRequest(server string, customerProfileId openapi_types.UUID, key string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "customerProfileId", customerProfileId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "key", key, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer/%s/attributes/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPutV1CustomerByCustomerProfileIdAttributesByKeyRequest calls the generic PutV1CustomerByCustomerProfileIdAttributesByKey builder with application/json body
+func NewPutV1CustomerByCustomerProfileIdAttributesByKeyRequest(server string, customerProfileId openapi_types.UUID, key string, body PutV1CustomerByCustomerProfileIdAttributesByKeyJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPutV1CustomerByCustomerProfileIdAttributesByKeyRequestWithBody(server, customerProfileId, key, "application/json", bodyReader)
+}
+
+// NewPutV1CustomerByCustomerProfileIdAttributesByKeyRequestWithBody constructs an http.Request for the PutV1CustomerByCustomerProfileIdAttributesByKey method, with any body, and a specified content type
+func NewPutV1CustomerByCustomerProfileIdAttributesByKeyRequestWithBody(server string, customerProfileId openapi_types.UUID, key string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "customerProfileId", customerProfileId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "key", key, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer/%s/attributes/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPostV1CustomerByCustomerProfileIdAttributesByKeyUnlockRequest constructs an http.Request for the PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock method
+func NewPostV1CustomerByCustomerProfileIdAttributesByKeyUnlockRequest(server string, customerProfileId openapi_types.UUID, key string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "customerProfileId", customerProfileId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "key", key, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer/%s/attributes/%s/unlock", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1CustomerByCustomerProfileIdConversationsRequest constructs an http.Request for the GetV1CustomerByCustomerProfileIdConversations method
+func NewGetV1CustomerByCustomerProfileIdConversationsRequest(server string, customerProfileId string, params *GetV1CustomerByCustomerProfileIdConversationsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "customerProfileId", customerProfileId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer/%s/conversations", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page", *params.Page, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPutV1CustomerByCustomerProfileIdNotesRequest calls the generic PutV1CustomerByCustomerProfileIdNotes builder with application/json body
+func NewPutV1CustomerByCustomerProfileIdNotesRequest(server string, customerProfileId openapi_types.UUID, body PutV1CustomerByCustomerProfileIdNotesJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPutV1CustomerByCustomerProfileIdNotesRequestWithBody(server, customerProfileId, "application/json", bodyReader)
+}
+
+// NewPutV1CustomerByCustomerProfileIdNotesRequestWithBody constructs an http.Request for the PutV1CustomerByCustomerProfileIdNotes method, with any body, and a specified content type
+func NewPutV1CustomerByCustomerProfileIdNotesRequestWithBody(server string, customerProfileId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "customerProfileId", customerProfileId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer/%s/notes", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -74483,6 +76786,24 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
 	PostV1AgentByAgentIdVersionsByVersionIdRollbackWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse, error)
 
+	// PostV1AgentByAgentIdWebSessionTokensWithBodyWithResponse Create a web session token
+	//
+	// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
+	PostV1AgentByAgentIdWebSessionTokensWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdWebSessionTokensResponse, error)
+
+	// PostV1AgentByAgentIdWebSessionTokensWithResponse Create a web session token
+	//
+	// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
+	PostV1AgentByAgentIdWebSessionTokensWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdWebSessionTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdWebSessionTokensResponse, error)
+
 	// PostV1AnalyticsQueryWithBodyWithResponse Run an analytics query
 	//
 	// Aggregates metric values and conversation counts over a time window and returns one series per
@@ -75041,6 +77362,15 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/config/diff (the `PostV1ConfigDiff` operationId).
 	PostV1ConfigDiffWithResponse(ctx context.Context, body PostV1ConfigDiffJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1ConfigDiffResponse, error)
 
+	// GetV1CustomerWithResponse List customers
+	//
+	// Returns the people who have talked to your agents in this project. Customers we hold nothing about beyond their identifier are left out unless includeNoData is true.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/customer (the `GetV1Customer` operationId).
+	GetV1CustomerWithResponse(ctx context.Context, params *GetV1CustomerParams, reqEditors ...RequestEditorFn) (*GetV1CustomerResponse, error)
+
 	// GetV1CustomerFlowWithResponse List customer flows
 	//
 	// Returns a paginated list of customer flows with their agents, expectations, happy path and edge cases. The step graph is the one field omitted: reading it walks the project's whole step graph, so it comes back from the single-flow endpoint instead. Customer flows are how a project describes what to test; they replace the older simulation scenarios.
@@ -75245,6 +77575,139 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PUT /v1/customer-flow/{flowId}/happy-path (the `PutV1CustomerFlowByFlowIdHappyPath` operationId).
 	PutV1CustomerFlowByFlowIdHappyPathWithResponse(ctx context.Context, flowId openapi_types.UUID, body PutV1CustomerFlowByFlowIdHappyPathJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1CustomerFlowByFlowIdHappyPathResponse, error)
+
+	// GetV1CustomerFieldsWithResponse List customer fields
+	//
+	// The fields this project's customers can hold, in display order. Use a field's key to filter, sort and set attributes.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/customer/fields (the `GetV1CustomerFields` operationId).
+	GetV1CustomerFieldsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1CustomerFieldsResponse, error)
+
+	// PostV1CustomerFieldsWithBodyWithResponse Create a customer field
+	//
+	// Adds a field of your project's own. With extract on, conversations fill it from what customers say, guided by its description.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/customer/fields (the `PostV1CustomerFields` operationId).
+	PostV1CustomerFieldsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1CustomerFieldsResponse, error)
+
+	// PostV1CustomerFieldsWithResponse Create a customer field
+	//
+	// Adds a field of your project's own. With extract on, conversations fill it from what customers say, guided by its description.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/customer/fields (the `PostV1CustomerFields` operationId).
+	PostV1CustomerFieldsWithResponse(ctx context.Context, body PostV1CustomerFieldsJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1CustomerFieldsResponse, error)
+
+	// DeleteV1CustomerFieldsByKeyWithResponse Delete a customer field
+	//
+	// Deletes a field of your project's own. Its values stop showing on customers. A built-in field cannot be deleted; turn it off instead.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/customer/fields/{key} (the `DeleteV1CustomerFieldsByKey` operationId).
+	DeleteV1CustomerFieldsByKeyWithResponse(ctx context.Context, key string, reqEditors ...RequestEditorFn) (*DeleteV1CustomerFieldsByKeyResponse, error)
+
+	// PatchV1CustomerFieldsByKeyWithBodyWithResponse Update a customer field
+	//
+	// Changes a field. A built-in field can only be turned on or off for your project; any field of your project's own can change everything but its key.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/customer/fields/{key} (the `PatchV1CustomerFieldsByKey` operationId).
+	PatchV1CustomerFieldsByKeyWithBodyWithResponse(ctx context.Context, key string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1CustomerFieldsByKeyResponse, error)
+
+	// PatchV1CustomerFieldsByKeyWithResponse Update a customer field
+	//
+	// Changes a field. A built-in field can only be turned on or off for your project; any field of your project's own can change everything but its key.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/customer/fields/{key} (the `PatchV1CustomerFieldsByKey` operationId).
+	PatchV1CustomerFieldsByKeyWithResponse(ctx context.Context, key string, body PatchV1CustomerFieldsByKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1CustomerFieldsByKeyResponse, error)
+
+	// DeleteV1CustomerByCustomerProfileIdWithResponse Erase a customer
+	//
+	// Permanently removes the customer, with their fields, evidence and notes. Conversations are kept. A new conversation from the same identifier starts a new customer.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/customer/{customerProfileId} (the `DeleteV1CustomerByCustomerProfileId` operationId).
+	DeleteV1CustomerByCustomerProfileIdWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1CustomerByCustomerProfileIdResponse, error)
+
+	// GetV1CustomerByCustomerProfileIdWithResponse Get a customer
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/customer/{customerProfileId} (the `GetV1CustomerByCustomerProfileId` operationId).
+	GetV1CustomerByCustomerProfileIdWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1CustomerByCustomerProfileIdResponse, error)
+
+	// DeleteV1CustomerByCustomerProfileIdAttributesByKeyWithResponse Clear a field on a customer
+	//
+	// Removes the value and any lock, so a later conversation can fill it again.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/customer/{customerProfileId}/attributes/{key} (the `DeleteV1CustomerByCustomerProfileIdAttributesByKey` operationId).
+	DeleteV1CustomerByCustomerProfileIdAttributesByKeyWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, key string, reqEditors ...RequestEditorFn) (*DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse, error)
+
+	// PutV1CustomerByCustomerProfileIdAttributesByKeyWithBodyWithResponse Set a field on a customer
+	//
+	// Sets the value and locks the field, so newer conversations cannot change it.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/customer/{customerProfileId}/attributes/{key} (the `PutV1CustomerByCustomerProfileIdAttributesByKey` operationId).
+	PutV1CustomerByCustomerProfileIdAttributesByKeyWithBodyWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, key string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1CustomerByCustomerProfileIdAttributesByKeyResponse, error)
+
+	// PutV1CustomerByCustomerProfileIdAttributesByKeyWithResponse Set a field on a customer
+	//
+	// Sets the value and locks the field, so newer conversations cannot change it.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/customer/{customerProfileId}/attributes/{key} (the `PutV1CustomerByCustomerProfileIdAttributesByKey` operationId).
+	PutV1CustomerByCustomerProfileIdAttributesByKeyWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, key string, body PutV1CustomerByCustomerProfileIdAttributesByKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1CustomerByCustomerProfileIdAttributesByKeyResponse, error)
+
+	// PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockWithResponse Unlock a field on a customer
+	//
+	// Lets newer conversations change this field again. The current value stays until one does.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/customer/{customerProfileId}/attributes/{key}/unlock (the `PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock` operationId).
+	PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, key string, reqEditors ...RequestEditorFn) (*PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse, error)
+
+	// GetV1CustomerByCustomerProfileIdConversationsWithResponse List a customer's conversations
+	//
+	// Calls and chats with this customer, newest first.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/customer/{customerProfileId}/conversations (the `GetV1CustomerByCustomerProfileIdConversations` operationId).
+	GetV1CustomerByCustomerProfileIdConversationsWithResponse(ctx context.Context, customerProfileId string, params *GetV1CustomerByCustomerProfileIdConversationsParams, reqEditors ...RequestEditorFn) (*GetV1CustomerByCustomerProfileIdConversationsResponse, error)
+
+	// PutV1CustomerByCustomerProfileIdNotesWithBodyWithResponse Update the notes on a customer
+	//
+	// Replaces your team's shared notes. Null or empty clears them. The last save wins.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/customer/{customerProfileId}/notes (the `PutV1CustomerByCustomerProfileIdNotes` operationId).
+	PutV1CustomerByCustomerProfileIdNotesWithBodyWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1CustomerByCustomerProfileIdNotesResponse, error)
+
+	// PutV1CustomerByCustomerProfileIdNotesWithResponse Update the notes on a customer
+	//
+	// Replaces your team's shared notes. Null or empty clears them. The last save wins.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/customer/{customerProfileId}/notes (the `PutV1CustomerByCustomerProfileIdNotes` operationId).
+	PutV1CustomerByCustomerProfileIdNotesWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, body PutV1CustomerByCustomerProfileIdNotesJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1CustomerByCustomerProfileIdNotesResponse, error)
 
 	// GetV1DashboardWithResponse List dashboards
 	//
@@ -79431,6 +81894,93 @@ func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) ContentType() s
 	return ""
 }
 
+type PostV1AgentByAgentIdWebSessionTokensResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		Data WebSessionToken `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON201() *struct {
+	Data WebSessionToken `json:"data"`
+} {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1AgentByAgentIdWebSessionTokensResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1AgentByAgentIdWebSessionTokensResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1AgentByAgentIdWebSessionTokensResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type PostV1AnalyticsQueryResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -82117,8 +84667,9 @@ type GetV1CallResponse struct {
 			//
 			// Example: [{"label":"customer-01","phoneNumberE164":"+1234567891"}]
 			Customers *[]struct {
-				Label           *string `json:"label,omitempty"`
-				PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+				CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+				Label             *string             `json:"label,omitempty"`
+				PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 			} `json:"customers,omitempty"`
 
 			// DurationMs Duration of the call in milliseconds
@@ -82256,8 +84807,9 @@ func (r GetV1CallResponse) GetJSON200() *struct {
 		//
 		// Example: [{"label":"customer-01","phoneNumberE164":"+1234567891"}]
 		Customers *[]struct {
-			Label           *string `json:"label,omitempty"`
-			PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+			CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+			Label             *string             `json:"label,omitempty"`
+			PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 		} `json:"customers,omitempty"`
 
 		// DurationMs Duration of the call in milliseconds
@@ -82427,8 +84979,9 @@ type PostV1CallResponse struct {
 			CallDirection PostV1Call200JSONResponseBodyDataCallDirection `json:"callDirection"`
 			CreatedAt     *string                                        `json:"createdAt"`
 			Customers     *[]struct {
-				Label           *string `json:"label,omitempty"`
-				PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+				CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+				Label             *string             `json:"label,omitempty"`
+				PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 			} `json:"customers"`
 			ExternalId *string `json:"externalId"`
 
@@ -82484,8 +85037,9 @@ func (r PostV1CallResponse) GetJSON200() *struct {
 		CallDirection PostV1Call200JSONResponseBodyDataCallDirection `json:"callDirection"`
 		CreatedAt     *string                                        `json:"createdAt"`
 		Customers     *[]struct {
-			Label           *string `json:"label,omitempty"`
-			PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+			CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+			Label             *string             `json:"label,omitempty"`
+			PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 		} `json:"customers"`
 		ExternalId *string `json:"externalId"`
 
@@ -82802,8 +85356,9 @@ type GetV1CallByCallIdResponse struct {
 			//
 			// Example: [{"label":"customer-01","phoneNumberE164":"+1234567891"}]
 			Customers *[]struct {
-				Label           *string `json:"label,omitempty"`
-				PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+				CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+				Label             *string             `json:"label,omitempty"`
+				PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 			} `json:"customers,omitempty"`
 
 			// DurationMs Duration of the call in milliseconds
@@ -82936,8 +85491,9 @@ func (r GetV1CallByCallIdResponse) GetJSON200() *struct {
 		//
 		// Example: [{"label":"customer-01","phoneNumberE164":"+1234567891"}]
 		Customers *[]struct {
-			Label           *string `json:"label,omitempty"`
-			PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+			CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+			Label             *string             `json:"label,omitempty"`
+			PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 		} `json:"customers,omitempty"`
 
 		// DurationMs Duration of the call in milliseconds
@@ -83761,8 +86317,9 @@ type GetV1ChatResponse struct {
 			//
 			// Example: [{"label":"web-visitor-abc123","phoneNumberE164":null}]
 			Customers *[]struct {
-				Label           *string `json:"label,omitempty"`
-				PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+				CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+				Label             *string             `json:"label,omitempty"`
+				PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 			} `json:"customers,omitempty"`
 
 			// DurationMs Duration of the chat in milliseconds
@@ -83871,8 +86428,9 @@ func (r GetV1ChatResponse) GetJSON200() *struct {
 		//
 		// Example: [{"label":"web-visitor-abc123","phoneNumberE164":null}]
 		Customers *[]struct {
-			Label           *string `json:"label,omitempty"`
-			PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+			CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+			Label             *string             `json:"label,omitempty"`
+			PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 		} `json:"customers,omitempty"`
 
 		// DurationMs Duration of the chat in milliseconds
@@ -84021,8 +86579,9 @@ type PostV1ChatResponse struct {
 			//
 			// Example: [{"label":"web-visitor-abc123","phoneNumberE164":null}]
 			Customers *[]struct {
-				Label           *string `json:"label,omitempty"`
-				PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+				CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+				Label             *string             `json:"label,omitempty"`
+				PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 			} `json:"customers,omitempty"`
 
 			// DurationMs Duration of the chat in milliseconds
@@ -84130,8 +86689,9 @@ func (r PostV1ChatResponse) GetJSON200() *struct {
 		//
 		// Example: [{"label":"web-visitor-abc123","phoneNumberE164":null}]
 		Customers *[]struct {
-			Label           *string `json:"label,omitempty"`
-			PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+			CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+			Label             *string             `json:"label,omitempty"`
+			PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 		} `json:"customers,omitempty"`
 
 		// DurationMs Duration of the chat in milliseconds
@@ -84290,8 +86850,9 @@ type GetV1ChatByIdResponse struct {
 			//
 			// Example: [{"label":"web-visitor-abc123","phoneNumberE164":null}]
 			Customers *[]struct {
-				Label           *string `json:"label,omitempty"`
-				PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+				CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+				Label             *string             `json:"label,omitempty"`
+				PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 			} `json:"customers,omitempty"`
 
 			// DurationMs Duration of the chat in milliseconds
@@ -84397,8 +86958,9 @@ func (r GetV1ChatByIdResponse) GetJSON200() *struct {
 		//
 		// Example: [{"label":"web-visitor-abc123","phoneNumberE164":null}]
 		Customers *[]struct {
-			Label           *string `json:"label,omitempty"`
-			PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+			CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+			Label             *string             `json:"label,omitempty"`
+			PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 		} `json:"customers,omitempty"`
 
 		// DurationMs Duration of the chat in milliseconds
@@ -85028,6 +87590,219 @@ func (r PostV1ConfigDiffResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r PostV1ConfigDiffResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1CustomerResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			Items []struct {
+				AgentIds   []openapi_types.UUID `json:"agentIds"`
+				Attributes []struct {
+					// BlockedValue What a newer conversation said while this field was locked
+					BlockedValue *string `json:"blockedValue"`
+
+					// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+					Evidence *struct {
+						CallId     *openapi_types.UUID `json:"callId"`
+						ChatId     *openapi_types.UUID `json:"chatId"`
+						ObservedAt time.Time           `json:"observedAt"`
+
+						// OffsetMs Where in the conversation this was said
+						OffsetMs *int `json:"offsetMs"`
+
+						// Quote The customer's words. Null on a project with redaction on.
+						Quote  *string                                                           `json:"quote"`
+						Source GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSource `json:"source"`
+						Value  string                                                            `json:"value"`
+					} `json:"evidence"`
+
+					// History Other values this field has held or been offered, newest first
+					History []struct {
+						CallId     *openapi_types.UUID `json:"callId"`
+						ChatId     *openapi_types.UUID `json:"chatId"`
+						ObservedAt time.Time           `json:"observedAt"`
+
+						// OffsetMs Where in the conversation this was said
+						OffsetMs *int `json:"offsetMs"`
+
+						// Quote The customer's words. Null on a project with redaction on.
+						Quote  *string                                                          `json:"quote"`
+						Source GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource `json:"source"`
+						Value  string                                                           `json:"value"`
+					} `json:"history"`
+
+					// IsLocked True when newer conversations cannot change this field
+					IsLocked   bool      `json:"isLocked"`
+					Key        string    `json:"key"`
+					ObservedAt time.Time `json:"observedAt"`
+
+					// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+					Source GetV1Customer200JSONResponseBodyDataItemsAttributesSource `json:"source"`
+					Value  string                                                    `json:"value"`
+				} `json:"attributes"`
+				ChatCount         int `json:"chatCount"`
+				ConversationCount int `json:"conversationCount"`
+
+				// DisplayName Null until a name is known, which is common
+				DisplayName *string    `json:"displayName"`
+				ExternalId  *string    `json:"externalId"`
+				FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+				// Id Unique identifier of the customer
+				Id         openapi_types.UUID `json:"id"`
+				LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+				// Notes Your team's shared notes. Never sent to the agent.
+				Notes           *string    `json:"notes"`
+				NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+				PhoneNumberE164 *string    `json:"phoneNumberE164"`
+				Summary         *string    `json:"summary"`
+
+				// TalkTimeMs Voice only. Chat time is not included.
+				TalkTimeMs int `json:"talkTimeMs"`
+				VoiceCount int `json:"voiceCount"`
+			} `json:"items"`
+			Page       int `json:"page"`
+			TotalCount int `json:"totalCount"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1CustomerResponse) GetJSON200() *struct {
+	Data struct {
+		Items []struct {
+			AgentIds   []openapi_types.UUID `json:"agentIds"`
+			Attributes []struct {
+				// BlockedValue What a newer conversation said while this field was locked
+				BlockedValue *string `json:"blockedValue"`
+
+				// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+				Evidence *struct {
+					CallId     *openapi_types.UUID `json:"callId"`
+					ChatId     *openapi_types.UUID `json:"chatId"`
+					ObservedAt time.Time           `json:"observedAt"`
+
+					// OffsetMs Where in the conversation this was said
+					OffsetMs *int `json:"offsetMs"`
+
+					// Quote The customer's words. Null on a project with redaction on.
+					Quote  *string                                                           `json:"quote"`
+					Source GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSource `json:"source"`
+					Value  string                                                            `json:"value"`
+				} `json:"evidence"`
+
+				// History Other values this field has held or been offered, newest first
+				History []struct {
+					CallId     *openapi_types.UUID `json:"callId"`
+					ChatId     *openapi_types.UUID `json:"chatId"`
+					ObservedAt time.Time           `json:"observedAt"`
+
+					// OffsetMs Where in the conversation this was said
+					OffsetMs *int `json:"offsetMs"`
+
+					// Quote The customer's words. Null on a project with redaction on.
+					Quote  *string                                                          `json:"quote"`
+					Source GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource `json:"source"`
+					Value  string                                                           `json:"value"`
+				} `json:"history"`
+
+				// IsLocked True when newer conversations cannot change this field
+				IsLocked   bool      `json:"isLocked"`
+				Key        string    `json:"key"`
+				ObservedAt time.Time `json:"observedAt"`
+
+				// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+				Source GetV1Customer200JSONResponseBodyDataItemsAttributesSource `json:"source"`
+				Value  string                                                    `json:"value"`
+			} `json:"attributes"`
+			ChatCount         int `json:"chatCount"`
+			ConversationCount int `json:"conversationCount"`
+
+			// DisplayName Null until a name is known, which is common
+			DisplayName *string    `json:"displayName"`
+			ExternalId  *string    `json:"externalId"`
+			FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+			// Id Unique identifier of the customer
+			Id         openapi_types.UUID `json:"id"`
+			LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+			// Notes Your team's shared notes. Never sent to the agent.
+			Notes           *string    `json:"notes"`
+			NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+			PhoneNumberE164 *string    `json:"phoneNumberE164"`
+			Summary         *string    `json:"summary"`
+
+			// TalkTimeMs Voice only. Chat time is not included.
+			TalkTimeMs int `json:"talkTimeMs"`
+			VoiceCount int `json:"voiceCount"`
+		} `json:"items"`
+		Page       int `json:"page"`
+		TotalCount int `json:"totalCount"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetV1CustomerResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1CustomerResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1CustomerResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1CustomerResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1CustomerResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1CustomerResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1CustomerResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1CustomerResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -86068,6 +88843,1566 @@ func (r PutV1CustomerFlowByFlowIdHappyPathResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r PutV1CustomerFlowByFlowIdHappyPathResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1CustomerFieldsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data []struct {
+			// Description What extraction looks for in a conversation
+			Description *string `json:"description"`
+
+			// Extract Whether conversations fill this field on this project: the project's own setting where it made one
+			Extract bool `json:"extract"`
+
+			// Key What filters, sorts and attribute routes name the field by
+			Key   string `json:"key"`
+			Label string `json:"label"`
+
+			// RedactedBy The project redaction setting that, when on, keeps conversations from filling this field
+			RedactedBy *GetV1CustomerFields200JSONResponseBodyDataRedactedBy `json:"redactedBy"`
+
+			// Source SYSTEM for a built-in field, CUSTOM for one your project defined
+			Source    GetV1CustomerFields200JSONResponseBodyDataSource    `json:"source"`
+			ValueType GetV1CustomerFields200JSONResponseBodyDataValueType `json:"valueType"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1CustomerFieldsResponse) GetJSON200() *struct {
+	Data []struct {
+		// Description What extraction looks for in a conversation
+		Description *string `json:"description"`
+
+		// Extract Whether conversations fill this field on this project: the project's own setting where it made one
+		Extract bool `json:"extract"`
+
+		// Key What filters, sorts and attribute routes name the field by
+		Key   string `json:"key"`
+		Label string `json:"label"`
+
+		// RedactedBy The project redaction setting that, when on, keeps conversations from filling this field
+		RedactedBy *GetV1CustomerFields200JSONResponseBodyDataRedactedBy `json:"redactedBy"`
+
+		// Source SYSTEM for a built-in field, CUSTOM for one your project defined
+		Source    GetV1CustomerFields200JSONResponseBodyDataSource    `json:"source"`
+		ValueType GetV1CustomerFields200JSONResponseBodyDataValueType `json:"valueType"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1CustomerFieldsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1CustomerFieldsResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1CustomerFieldsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1CustomerFieldsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1CustomerFieldsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1CustomerFieldsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1CustomerFieldsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1CustomerFieldsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		Data struct {
+			// Description What extraction looks for in a conversation
+			Description *string `json:"description"`
+
+			// Extract Whether conversations fill this field on this project: the project's own setting where it made one
+			Extract bool `json:"extract"`
+
+			// Key What filters, sorts and attribute routes name the field by
+			Key   string `json:"key"`
+			Label string `json:"label"`
+
+			// RedactedBy The project redaction setting that, when on, keeps conversations from filling this field
+			RedactedBy *PostV1CustomerFields201JSONResponseBodyDataRedactedBy `json:"redactedBy"`
+
+			// Source SYSTEM for a built-in field, CUSTOM for one your project defined
+			Source    PostV1CustomerFields201JSONResponseBodyDataSource    `json:"source"`
+			ValueType PostV1CustomerFields201JSONResponseBodyDataValueType `json:"valueType"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1CustomerFieldsResponse) GetJSON201() *struct {
+	Data struct {
+		// Description What extraction looks for in a conversation
+		Description *string `json:"description"`
+
+		// Extract Whether conversations fill this field on this project: the project's own setting where it made one
+		Extract bool `json:"extract"`
+
+		// Key What filters, sorts and attribute routes name the field by
+		Key   string `json:"key"`
+		Label string `json:"label"`
+
+		// RedactedBy The project redaction setting that, when on, keeps conversations from filling this field
+		RedactedBy *PostV1CustomerFields201JSONResponseBodyDataRedactedBy `json:"redactedBy"`
+
+		// Source SYSTEM for a built-in field, CUSTOM for one your project defined
+		Source    PostV1CustomerFields201JSONResponseBodyDataSource    `json:"source"`
+		ValueType PostV1CustomerFields201JSONResponseBodyDataValueType `json:"valueType"`
+	} `json:"data"`
+} {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1CustomerFieldsResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1CustomerFieldsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1CustomerFieldsResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1CustomerFieldsResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1CustomerFieldsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1CustomerFieldsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1CustomerFieldsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1CustomerFieldsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1CustomerFieldsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1CustomerFieldsByKeyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			Success bool `json:"success"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1CustomerFieldsByKeyResponse) GetJSON200() *struct {
+	Data struct {
+		Success bool `json:"success"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r DeleteV1CustomerFieldsByKeyResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1CustomerFieldsByKeyResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1CustomerFieldsByKeyResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1CustomerFieldsByKeyResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1CustomerFieldsByKeyResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1CustomerFieldsByKeyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1CustomerFieldsByKeyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1CustomerFieldsByKeyResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PatchV1CustomerFieldsByKeyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			// Description What extraction looks for in a conversation
+			Description *string `json:"description"`
+
+			// Extract Whether conversations fill this field on this project: the project's own setting where it made one
+			Extract bool `json:"extract"`
+
+			// Key What filters, sorts and attribute routes name the field by
+			Key   string `json:"key"`
+			Label string `json:"label"`
+
+			// RedactedBy The project redaction setting that, when on, keeps conversations from filling this field
+			RedactedBy *PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy `json:"redactedBy"`
+
+			// Source SYSTEM for a built-in field, CUSTOM for one your project defined
+			Source    PatchV1CustomerFieldsByKey200JSONResponseBodyDataSource    `json:"source"`
+			ValueType PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType `json:"valueType"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PatchV1CustomerFieldsByKeyResponse) GetJSON200() *struct {
+	Data struct {
+		// Description What extraction looks for in a conversation
+		Description *string `json:"description"`
+
+		// Extract Whether conversations fill this field on this project: the project's own setting where it made one
+		Extract bool `json:"extract"`
+
+		// Key What filters, sorts and attribute routes name the field by
+		Key   string `json:"key"`
+		Label string `json:"label"`
+
+		// RedactedBy The project redaction setting that, when on, keeps conversations from filling this field
+		RedactedBy *PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy `json:"redactedBy"`
+
+		// Source SYSTEM for a built-in field, CUSTOM for one your project defined
+		Source    PatchV1CustomerFieldsByKey200JSONResponseBodyDataSource    `json:"source"`
+		ValueType PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType `json:"valueType"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PatchV1CustomerFieldsByKeyResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PatchV1CustomerFieldsByKeyResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PatchV1CustomerFieldsByKeyResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PatchV1CustomerFieldsByKeyResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PatchV1CustomerFieldsByKeyResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PatchV1CustomerFieldsByKeyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PatchV1CustomerFieldsByKeyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PatchV1CustomerFieldsByKeyResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1CustomerByCustomerProfileIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			Success bool `json:"success"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1CustomerByCustomerProfileIdResponse) GetJSON200() *struct {
+	Data struct {
+		Success bool `json:"success"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1CustomerByCustomerProfileIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1CustomerByCustomerProfileIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1CustomerByCustomerProfileIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1CustomerByCustomerProfileIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1CustomerByCustomerProfileIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1CustomerByCustomerProfileIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1CustomerByCustomerProfileIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1CustomerByCustomerProfileIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			AgentIds   []openapi_types.UUID `json:"agentIds"`
+			Attributes []struct {
+				// BlockedValue What a newer conversation said while this field was locked
+				BlockedValue *string `json:"blockedValue"`
+
+				// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+				Evidence *struct {
+					CallId     *openapi_types.UUID `json:"callId"`
+					ChatId     *openapi_types.UUID `json:"chatId"`
+					ObservedAt time.Time           `json:"observedAt"`
+
+					// OffsetMs Where in the conversation this was said
+					OffsetMs *int `json:"offsetMs"`
+
+					// Quote The customer's words. Null on a project with redaction on.
+					Quote  *string                                                                         `json:"quote"`
+					Source GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+					Value  string                                                                          `json:"value"`
+				} `json:"evidence"`
+
+				// History Other values this field has held or been offered, newest first
+				History []struct {
+					CallId     *openapi_types.UUID `json:"callId"`
+					ChatId     *openapi_types.UUID `json:"chatId"`
+					ObservedAt time.Time           `json:"observedAt"`
+
+					// OffsetMs Where in the conversation this was said
+					OffsetMs *int `json:"offsetMs"`
+
+					// Quote The customer's words. Null on a project with redaction on.
+					Quote  *string                                                                        `json:"quote"`
+					Source GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+					Value  string                                                                         `json:"value"`
+				} `json:"history"`
+
+				// IsLocked True when newer conversations cannot change this field
+				IsLocked   bool      `json:"isLocked"`
+				Key        string    `json:"key"`
+				ObservedAt time.Time `json:"observedAt"`
+
+				// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+				Source GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSource `json:"source"`
+				Value  string                                                                  `json:"value"`
+			} `json:"attributes"`
+			ChatCount         int `json:"chatCount"`
+			ConversationCount int `json:"conversationCount"`
+
+			// DisplayName Null until a name is known, which is common
+			DisplayName *string    `json:"displayName"`
+			ExternalId  *string    `json:"externalId"`
+			FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+			// Id Unique identifier of the customer
+			Id         openapi_types.UUID `json:"id"`
+			LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+			// Notes Your team's shared notes. Never sent to the agent.
+			Notes           *string    `json:"notes"`
+			NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+			PhoneNumberE164 *string    `json:"phoneNumberE164"`
+			Summary         *string    `json:"summary"`
+
+			// TalkTimeMs Voice only. Chat time is not included.
+			TalkTimeMs int `json:"talkTimeMs"`
+			VoiceCount int `json:"voiceCount"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1CustomerByCustomerProfileIdResponse) GetJSON200() *struct {
+	Data struct {
+		AgentIds   []openapi_types.UUID `json:"agentIds"`
+		Attributes []struct {
+			// BlockedValue What a newer conversation said while this field was locked
+			BlockedValue *string `json:"blockedValue"`
+
+			// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+			Evidence *struct {
+				CallId     *openapi_types.UUID `json:"callId"`
+				ChatId     *openapi_types.UUID `json:"chatId"`
+				ObservedAt time.Time           `json:"observedAt"`
+
+				// OffsetMs Where in the conversation this was said
+				OffsetMs *int `json:"offsetMs"`
+
+				// Quote The customer's words. Null on a project with redaction on.
+				Quote  *string                                                                         `json:"quote"`
+				Source GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+				Value  string                                                                          `json:"value"`
+			} `json:"evidence"`
+
+			// History Other values this field has held or been offered, newest first
+			History []struct {
+				CallId     *openapi_types.UUID `json:"callId"`
+				ChatId     *openapi_types.UUID `json:"chatId"`
+				ObservedAt time.Time           `json:"observedAt"`
+
+				// OffsetMs Where in the conversation this was said
+				OffsetMs *int `json:"offsetMs"`
+
+				// Quote The customer's words. Null on a project with redaction on.
+				Quote  *string                                                                        `json:"quote"`
+				Source GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+				Value  string                                                                         `json:"value"`
+			} `json:"history"`
+
+			// IsLocked True when newer conversations cannot change this field
+			IsLocked   bool      `json:"isLocked"`
+			Key        string    `json:"key"`
+			ObservedAt time.Time `json:"observedAt"`
+
+			// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+			Source GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSource `json:"source"`
+			Value  string                                                                  `json:"value"`
+		} `json:"attributes"`
+		ChatCount         int `json:"chatCount"`
+		ConversationCount int `json:"conversationCount"`
+
+		// DisplayName Null until a name is known, which is common
+		DisplayName *string    `json:"displayName"`
+		ExternalId  *string    `json:"externalId"`
+		FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+		// Id Unique identifier of the customer
+		Id         openapi_types.UUID `json:"id"`
+		LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+		// Notes Your team's shared notes. Never sent to the agent.
+		Notes           *string    `json:"notes"`
+		NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+		PhoneNumberE164 *string    `json:"phoneNumberE164"`
+		Summary         *string    `json:"summary"`
+
+		// TalkTimeMs Voice only. Chat time is not included.
+		TalkTimeMs int `json:"talkTimeMs"`
+		VoiceCount int `json:"voiceCount"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1CustomerByCustomerProfileIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1CustomerByCustomerProfileIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1CustomerByCustomerProfileIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1CustomerByCustomerProfileIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1CustomerByCustomerProfileIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1CustomerByCustomerProfileIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1CustomerByCustomerProfileIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			AgentIds   []openapi_types.UUID `json:"agentIds"`
+			Attributes []struct {
+				// BlockedValue What a newer conversation said while this field was locked
+				BlockedValue *string `json:"blockedValue"`
+
+				// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+				Evidence *struct {
+					CallId     *openapi_types.UUID `json:"callId"`
+					ChatId     *openapi_types.UUID `json:"chatId"`
+					ObservedAt time.Time           `json:"observedAt"`
+
+					// OffsetMs Where in the conversation this was said
+					OffsetMs *int `json:"offsetMs"`
+
+					// Quote The customer's words. Null on a project with redaction on.
+					Quote  *string                                                                                           `json:"quote"`
+					Source DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+					Value  string                                                                                            `json:"value"`
+				} `json:"evidence"`
+
+				// History Other values this field has held or been offered, newest first
+				History []struct {
+					CallId     *openapi_types.UUID `json:"callId"`
+					ChatId     *openapi_types.UUID `json:"chatId"`
+					ObservedAt time.Time           `json:"observedAt"`
+
+					// OffsetMs Where in the conversation this was said
+					OffsetMs *int `json:"offsetMs"`
+
+					// Quote The customer's words. Null on a project with redaction on.
+					Quote  *string                                                                                          `json:"quote"`
+					Source DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+					Value  string                                                                                           `json:"value"`
+				} `json:"history"`
+
+				// IsLocked True when newer conversations cannot change this field
+				IsLocked   bool      `json:"isLocked"`
+				Key        string    `json:"key"`
+				ObservedAt time.Time `json:"observedAt"`
+
+				// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+				Source DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource `json:"source"`
+				Value  string                                                                                    `json:"value"`
+			} `json:"attributes"`
+			ChatCount         int `json:"chatCount"`
+			ConversationCount int `json:"conversationCount"`
+
+			// DisplayName Null until a name is known, which is common
+			DisplayName *string    `json:"displayName"`
+			ExternalId  *string    `json:"externalId"`
+			FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+			// Id Unique identifier of the customer
+			Id         openapi_types.UUID `json:"id"`
+			LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+			// Notes Your team's shared notes. Never sent to the agent.
+			Notes           *string    `json:"notes"`
+			NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+			PhoneNumberE164 *string    `json:"phoneNumberE164"`
+			Summary         *string    `json:"summary"`
+
+			// TalkTimeMs Voice only. Chat time is not included.
+			TalkTimeMs int `json:"talkTimeMs"`
+			VoiceCount int `json:"voiceCount"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetJSON200() *struct {
+	Data struct {
+		AgentIds   []openapi_types.UUID `json:"agentIds"`
+		Attributes []struct {
+			// BlockedValue What a newer conversation said while this field was locked
+			BlockedValue *string `json:"blockedValue"`
+
+			// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+			Evidence *struct {
+				CallId     *openapi_types.UUID `json:"callId"`
+				ChatId     *openapi_types.UUID `json:"chatId"`
+				ObservedAt time.Time           `json:"observedAt"`
+
+				// OffsetMs Where in the conversation this was said
+				OffsetMs *int `json:"offsetMs"`
+
+				// Quote The customer's words. Null on a project with redaction on.
+				Quote  *string                                                                                           `json:"quote"`
+				Source DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+				Value  string                                                                                            `json:"value"`
+			} `json:"evidence"`
+
+			// History Other values this field has held or been offered, newest first
+			History []struct {
+				CallId     *openapi_types.UUID `json:"callId"`
+				ChatId     *openapi_types.UUID `json:"chatId"`
+				ObservedAt time.Time           `json:"observedAt"`
+
+				// OffsetMs Where in the conversation this was said
+				OffsetMs *int `json:"offsetMs"`
+
+				// Quote The customer's words. Null on a project with redaction on.
+				Quote  *string                                                                                          `json:"quote"`
+				Source DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+				Value  string                                                                                           `json:"value"`
+			} `json:"history"`
+
+			// IsLocked True when newer conversations cannot change this field
+			IsLocked   bool      `json:"isLocked"`
+			Key        string    `json:"key"`
+			ObservedAt time.Time `json:"observedAt"`
+
+			// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+			Source DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource `json:"source"`
+			Value  string                                                                                    `json:"value"`
+		} `json:"attributes"`
+		ChatCount         int `json:"chatCount"`
+		ConversationCount int `json:"conversationCount"`
+
+		// DisplayName Null until a name is known, which is common
+		DisplayName *string    `json:"displayName"`
+		ExternalId  *string    `json:"externalId"`
+		FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+		// Id Unique identifier of the customer
+		Id         openapi_types.UUID `json:"id"`
+		LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+		// Notes Your team's shared notes. Never sent to the agent.
+		Notes           *string    `json:"notes"`
+		NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+		PhoneNumberE164 *string    `json:"phoneNumberE164"`
+		Summary         *string    `json:"summary"`
+
+		// TalkTimeMs Voice only. Chat time is not included.
+		TalkTimeMs int `json:"talkTimeMs"`
+		VoiceCount int `json:"voiceCount"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutV1CustomerByCustomerProfileIdAttributesByKeyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			AgentIds   []openapi_types.UUID `json:"agentIds"`
+			Attributes []struct {
+				// BlockedValue What a newer conversation said while this field was locked
+				BlockedValue *string `json:"blockedValue"`
+
+				// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+				Evidence *struct {
+					CallId     *openapi_types.UUID `json:"callId"`
+					ChatId     *openapi_types.UUID `json:"chatId"`
+					ObservedAt time.Time           `json:"observedAt"`
+
+					// OffsetMs Where in the conversation this was said
+					OffsetMs *int `json:"offsetMs"`
+
+					// Quote The customer's words. Null on a project with redaction on.
+					Quote  *string                                                                                        `json:"quote"`
+					Source PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+					Value  string                                                                                         `json:"value"`
+				} `json:"evidence"`
+
+				// History Other values this field has held or been offered, newest first
+				History []struct {
+					CallId     *openapi_types.UUID `json:"callId"`
+					ChatId     *openapi_types.UUID `json:"chatId"`
+					ObservedAt time.Time           `json:"observedAt"`
+
+					// OffsetMs Where in the conversation this was said
+					OffsetMs *int `json:"offsetMs"`
+
+					// Quote The customer's words. Null on a project with redaction on.
+					Quote  *string                                                                                       `json:"quote"`
+					Source PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+					Value  string                                                                                        `json:"value"`
+				} `json:"history"`
+
+				// IsLocked True when newer conversations cannot change this field
+				IsLocked   bool      `json:"isLocked"`
+				Key        string    `json:"key"`
+				ObservedAt time.Time `json:"observedAt"`
+
+				// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+				Source PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource `json:"source"`
+				Value  string                                                                                 `json:"value"`
+			} `json:"attributes"`
+			ChatCount         int `json:"chatCount"`
+			ConversationCount int `json:"conversationCount"`
+
+			// DisplayName Null until a name is known, which is common
+			DisplayName *string    `json:"displayName"`
+			ExternalId  *string    `json:"externalId"`
+			FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+			// Id Unique identifier of the customer
+			Id         openapi_types.UUID `json:"id"`
+			LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+			// Notes Your team's shared notes. Never sent to the agent.
+			Notes           *string    `json:"notes"`
+			NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+			PhoneNumberE164 *string    `json:"phoneNumberE164"`
+			Summary         *string    `json:"summary"`
+
+			// TalkTimeMs Voice only. Chat time is not included.
+			TalkTimeMs int `json:"talkTimeMs"`
+			VoiceCount int `json:"voiceCount"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetJSON200() *struct {
+	Data struct {
+		AgentIds   []openapi_types.UUID `json:"agentIds"`
+		Attributes []struct {
+			// BlockedValue What a newer conversation said while this field was locked
+			BlockedValue *string `json:"blockedValue"`
+
+			// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+			Evidence *struct {
+				CallId     *openapi_types.UUID `json:"callId"`
+				ChatId     *openapi_types.UUID `json:"chatId"`
+				ObservedAt time.Time           `json:"observedAt"`
+
+				// OffsetMs Where in the conversation this was said
+				OffsetMs *int `json:"offsetMs"`
+
+				// Quote The customer's words. Null on a project with redaction on.
+				Quote  *string                                                                                        `json:"quote"`
+				Source PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+				Value  string                                                                                         `json:"value"`
+			} `json:"evidence"`
+
+			// History Other values this field has held or been offered, newest first
+			History []struct {
+				CallId     *openapi_types.UUID `json:"callId"`
+				ChatId     *openapi_types.UUID `json:"chatId"`
+				ObservedAt time.Time           `json:"observedAt"`
+
+				// OffsetMs Where in the conversation this was said
+				OffsetMs *int `json:"offsetMs"`
+
+				// Quote The customer's words. Null on a project with redaction on.
+				Quote  *string                                                                                       `json:"quote"`
+				Source PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+				Value  string                                                                                        `json:"value"`
+			} `json:"history"`
+
+			// IsLocked True when newer conversations cannot change this field
+			IsLocked   bool      `json:"isLocked"`
+			Key        string    `json:"key"`
+			ObservedAt time.Time `json:"observedAt"`
+
+			// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+			Source PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource `json:"source"`
+			Value  string                                                                                 `json:"value"`
+		} `json:"attributes"`
+		ChatCount         int `json:"chatCount"`
+		ConversationCount int `json:"conversationCount"`
+
+		// DisplayName Null until a name is known, which is common
+		DisplayName *string    `json:"displayName"`
+		ExternalId  *string    `json:"externalId"`
+		FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+		// Id Unique identifier of the customer
+		Id         openapi_types.UUID `json:"id"`
+		LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+		// Notes Your team's shared notes. Never sent to the agent.
+		Notes           *string    `json:"notes"`
+		NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+		PhoneNumberE164 *string    `json:"phoneNumberE164"`
+		Summary         *string    `json:"summary"`
+
+		// TalkTimeMs Voice only. Chat time is not included.
+		TalkTimeMs int `json:"talkTimeMs"`
+		VoiceCount int `json:"voiceCount"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PutV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PutV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PutV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PutV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PutV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutV1CustomerByCustomerProfileIdAttributesByKeyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutV1CustomerByCustomerProfileIdAttributesByKeyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutV1CustomerByCustomerProfileIdAttributesByKeyResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			AgentIds   []openapi_types.UUID `json:"agentIds"`
+			Attributes []struct {
+				// BlockedValue What a newer conversation said while this field was locked
+				BlockedValue *string `json:"blockedValue"`
+
+				// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+				Evidence *struct {
+					CallId     *openapi_types.UUID `json:"callId"`
+					ChatId     *openapi_types.UUID `json:"chatId"`
+					ObservedAt time.Time           `json:"observedAt"`
+
+					// OffsetMs Where in the conversation this was said
+					OffsetMs *int `json:"offsetMs"`
+
+					// Quote The customer's words. Null on a project with redaction on.
+					Quote  *string                                                                                               `json:"quote"`
+					Source PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+					Value  string                                                                                                `json:"value"`
+				} `json:"evidence"`
+
+				// History Other values this field has held or been offered, newest first
+				History []struct {
+					CallId     *openapi_types.UUID `json:"callId"`
+					ChatId     *openapi_types.UUID `json:"chatId"`
+					ObservedAt time.Time           `json:"observedAt"`
+
+					// OffsetMs Where in the conversation this was said
+					OffsetMs *int `json:"offsetMs"`
+
+					// Quote The customer's words. Null on a project with redaction on.
+					Quote  *string                                                                                              `json:"quote"`
+					Source PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+					Value  string                                                                                               `json:"value"`
+				} `json:"history"`
+
+				// IsLocked True when newer conversations cannot change this field
+				IsLocked   bool      `json:"isLocked"`
+				Key        string    `json:"key"`
+				ObservedAt time.Time `json:"observedAt"`
+
+				// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+				Source PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSource `json:"source"`
+				Value  string                                                                                        `json:"value"`
+			} `json:"attributes"`
+			ChatCount         int `json:"chatCount"`
+			ConversationCount int `json:"conversationCount"`
+
+			// DisplayName Null until a name is known, which is common
+			DisplayName *string    `json:"displayName"`
+			ExternalId  *string    `json:"externalId"`
+			FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+			// Id Unique identifier of the customer
+			Id         openapi_types.UUID `json:"id"`
+			LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+			// Notes Your team's shared notes. Never sent to the agent.
+			Notes           *string    `json:"notes"`
+			NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+			PhoneNumberE164 *string    `json:"phoneNumberE164"`
+			Summary         *string    `json:"summary"`
+
+			// TalkTimeMs Voice only. Chat time is not included.
+			TalkTimeMs int `json:"talkTimeMs"`
+			VoiceCount int `json:"voiceCount"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse) GetJSON200() *struct {
+	Data struct {
+		AgentIds   []openapi_types.UUID `json:"agentIds"`
+		Attributes []struct {
+			// BlockedValue What a newer conversation said while this field was locked
+			BlockedValue *string `json:"blockedValue"`
+
+			// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+			Evidence *struct {
+				CallId     *openapi_types.UUID `json:"callId"`
+				ChatId     *openapi_types.UUID `json:"chatId"`
+				ObservedAt time.Time           `json:"observedAt"`
+
+				// OffsetMs Where in the conversation this was said
+				OffsetMs *int `json:"offsetMs"`
+
+				// Quote The customer's words. Null on a project with redaction on.
+				Quote  *string                                                                                               `json:"quote"`
+				Source PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+				Value  string                                                                                                `json:"value"`
+			} `json:"evidence"`
+
+			// History Other values this field has held or been offered, newest first
+			History []struct {
+				CallId     *openapi_types.UUID `json:"callId"`
+				ChatId     *openapi_types.UUID `json:"chatId"`
+				ObservedAt time.Time           `json:"observedAt"`
+
+				// OffsetMs Where in the conversation this was said
+				OffsetMs *int `json:"offsetMs"`
+
+				// Quote The customer's words. Null on a project with redaction on.
+				Quote  *string                                                                                              `json:"quote"`
+				Source PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+				Value  string                                                                                               `json:"value"`
+			} `json:"history"`
+
+			// IsLocked True when newer conversations cannot change this field
+			IsLocked   bool      `json:"isLocked"`
+			Key        string    `json:"key"`
+			ObservedAt time.Time `json:"observedAt"`
+
+			// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+			Source PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSource `json:"source"`
+			Value  string                                                                                        `json:"value"`
+		} `json:"attributes"`
+		ChatCount         int `json:"chatCount"`
+		ConversationCount int `json:"conversationCount"`
+
+		// DisplayName Null until a name is known, which is common
+		DisplayName *string    `json:"displayName"`
+		ExternalId  *string    `json:"externalId"`
+		FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+		// Id Unique identifier of the customer
+		Id         openapi_types.UUID `json:"id"`
+		LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+		// Notes Your team's shared notes. Never sent to the agent.
+		Notes           *string    `json:"notes"`
+		NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+		PhoneNumberE164 *string    `json:"phoneNumberE164"`
+		Summary         *string    `json:"summary"`
+
+		// TalkTimeMs Voice only. Chat time is not included.
+		TalkTimeMs int `json:"talkTimeMs"`
+		VoiceCount int `json:"voiceCount"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1CustomerByCustomerProfileIdConversationsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			Items []struct {
+				ConversationType GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType `json:"conversationType"`
+				DurationMs       *int                                                                                      `json:"durationMs"`
+				Id               openapi_types.UUID                                                                        `json:"id"`
+				StartedAt        time.Time                                                                                 `json:"startedAt"`
+				Summary          *string                                                                                   `json:"summary"`
+				Title            *string                                                                                   `json:"title"`
+			} `json:"items"`
+			Page       int `json:"page"`
+			TotalCount int `json:"totalCount"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1CustomerByCustomerProfileIdConversationsResponse) GetJSON200() *struct {
+	Data struct {
+		Items []struct {
+			ConversationType GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType `json:"conversationType"`
+			DurationMs       *int                                                                                      `json:"durationMs"`
+			Id               openapi_types.UUID                                                                        `json:"id"`
+			StartedAt        time.Time                                                                                 `json:"startedAt"`
+			Summary          *string                                                                                   `json:"summary"`
+			Title            *string                                                                                   `json:"title"`
+		} `json:"items"`
+		Page       int `json:"page"`
+		TotalCount int `json:"totalCount"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1CustomerByCustomerProfileIdConversationsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1CustomerByCustomerProfileIdConversationsResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1CustomerByCustomerProfileIdConversationsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1CustomerByCustomerProfileIdConversationsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1CustomerByCustomerProfileIdConversationsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1CustomerByCustomerProfileIdConversationsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1CustomerByCustomerProfileIdConversationsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutV1CustomerByCustomerProfileIdNotesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			AgentIds   []openapi_types.UUID `json:"agentIds"`
+			Attributes []struct {
+				// BlockedValue What a newer conversation said while this field was locked
+				BlockedValue *string `json:"blockedValue"`
+
+				// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+				Evidence *struct {
+					CallId     *openapi_types.UUID `json:"callId"`
+					ChatId     *openapi_types.UUID `json:"chatId"`
+					ObservedAt time.Time           `json:"observedAt"`
+
+					// OffsetMs Where in the conversation this was said
+					OffsetMs *int `json:"offsetMs"`
+
+					// Quote The customer's words. Null on a project with redaction on.
+					Quote  *string                                                                              `json:"quote"`
+					Source PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+					Value  string                                                                               `json:"value"`
+				} `json:"evidence"`
+
+				// History Other values this field has held or been offered, newest first
+				History []struct {
+					CallId     *openapi_types.UUID `json:"callId"`
+					ChatId     *openapi_types.UUID `json:"chatId"`
+					ObservedAt time.Time           `json:"observedAt"`
+
+					// OffsetMs Where in the conversation this was said
+					OffsetMs *int `json:"offsetMs"`
+
+					// Quote The customer's words. Null on a project with redaction on.
+					Quote  *string                                                                             `json:"quote"`
+					Source PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+					Value  string                                                                              `json:"value"`
+				} `json:"history"`
+
+				// IsLocked True when newer conversations cannot change this field
+				IsLocked   bool      `json:"isLocked"`
+				Key        string    `json:"key"`
+				ObservedAt time.Time `json:"observedAt"`
+
+				// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+				Source PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSource `json:"source"`
+				Value  string                                                                       `json:"value"`
+			} `json:"attributes"`
+			ChatCount         int `json:"chatCount"`
+			ConversationCount int `json:"conversationCount"`
+
+			// DisplayName Null until a name is known, which is common
+			DisplayName *string    `json:"displayName"`
+			ExternalId  *string    `json:"externalId"`
+			FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+			// Id Unique identifier of the customer
+			Id         openapi_types.UUID `json:"id"`
+			LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+			// Notes Your team's shared notes. Never sent to the agent.
+			Notes           *string    `json:"notes"`
+			NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+			PhoneNumberE164 *string    `json:"phoneNumberE164"`
+			Summary         *string    `json:"summary"`
+
+			// TalkTimeMs Voice only. Chat time is not included.
+			TalkTimeMs int `json:"talkTimeMs"`
+			VoiceCount int `json:"voiceCount"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutV1CustomerByCustomerProfileIdNotesResponse) GetJSON200() *struct {
+	Data struct {
+		AgentIds   []openapi_types.UUID `json:"agentIds"`
+		Attributes []struct {
+			// BlockedValue What a newer conversation said while this field was locked
+			BlockedValue *string `json:"blockedValue"`
+
+			// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+			Evidence *struct {
+				CallId     *openapi_types.UUID `json:"callId"`
+				ChatId     *openapi_types.UUID `json:"chatId"`
+				ObservedAt time.Time           `json:"observedAt"`
+
+				// OffsetMs Where in the conversation this was said
+				OffsetMs *int `json:"offsetMs"`
+
+				// Quote The customer's words. Null on a project with redaction on.
+				Quote  *string                                                                              `json:"quote"`
+				Source PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+				Value  string                                                                               `json:"value"`
+			} `json:"evidence"`
+
+			// History Other values this field has held or been offered, newest first
+			History []struct {
+				CallId     *openapi_types.UUID `json:"callId"`
+				ChatId     *openapi_types.UUID `json:"chatId"`
+				ObservedAt time.Time           `json:"observedAt"`
+
+				// OffsetMs Where in the conversation this was said
+				OffsetMs *int `json:"offsetMs"`
+
+				// Quote The customer's words. Null on a project with redaction on.
+				Quote  *string                                                                             `json:"quote"`
+				Source PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+				Value  string                                                                              `json:"value"`
+			} `json:"history"`
+
+			// IsLocked True when newer conversations cannot change this field
+			IsLocked   bool      `json:"isLocked"`
+			Key        string    `json:"key"`
+			ObservedAt time.Time `json:"observedAt"`
+
+			// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+			Source PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSource `json:"source"`
+			Value  string                                                                       `json:"value"`
+		} `json:"attributes"`
+		ChatCount         int `json:"chatCount"`
+		ConversationCount int `json:"conversationCount"`
+
+		// DisplayName Null until a name is known, which is common
+		DisplayName *string    `json:"displayName"`
+		ExternalId  *string    `json:"externalId"`
+		FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+		// Id Unique identifier of the customer
+		Id         openapi_types.UUID `json:"id"`
+		LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+		// Notes Your team's shared notes. Never sent to the agent.
+		Notes           *string    `json:"notes"`
+		NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+		PhoneNumberE164 *string    `json:"phoneNumberE164"`
+		Summary         *string    `json:"summary"`
+
+		// TalkTimeMs Voice only. Chat time is not included.
+		TalkTimeMs int `json:"talkTimeMs"`
+		VoiceCount int `json:"voiceCount"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PutV1CustomerByCustomerProfileIdNotesResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PutV1CustomerByCustomerProfileIdNotesResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PutV1CustomerByCustomerProfileIdNotesResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PutV1CustomerByCustomerProfileIdNotesResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PutV1CustomerByCustomerProfileIdNotesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutV1CustomerByCustomerProfileIdNotesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutV1CustomerByCustomerProfileIdNotesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutV1CustomerByCustomerProfileIdNotesResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -98591,6 +102926,36 @@ func (c *ClientWithResponses) PostV1AgentByAgentIdVersionsByVersionIdRollbackWit
 	return ParsePostV1AgentByAgentIdVersionsByVersionIdRollbackResponse(rsp)
 }
 
+// PostV1AgentByAgentIdWebSessionTokensWithBodyWithResponse Create a web session token
+//
+// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
+func (c *ClientWithResponses) PostV1AgentByAgentIdWebSessionTokensWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdWebSessionTokensResponse, error) {
+	rsp, err := c.PostV1AgentByAgentIdWebSessionTokensWithBody(ctx, agentId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1AgentByAgentIdWebSessionTokensResponse(rsp)
+}
+
+// PostV1AgentByAgentIdWebSessionTokensWithResponse Create a web session token
+//
+// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
+func (c *ClientWithResponses) PostV1AgentByAgentIdWebSessionTokensWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdWebSessionTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdWebSessionTokensResponse, error) {
+	rsp, err := c.PostV1AgentByAgentIdWebSessionTokens(ctx, agentId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1AgentByAgentIdWebSessionTokensResponse(rsp)
+}
+
 // PostV1AnalyticsQueryWithBodyWithResponse Run an analytics query
 //
 // Aggregates metric values and conversation counts over a time window and returns one series per
@@ -99491,6 +103856,21 @@ func (c *ClientWithResponses) PostV1ConfigDiffWithResponse(ctx context.Context, 
 	return ParsePostV1ConfigDiffResponse(rsp)
 }
 
+// GetV1CustomerWithResponse List customers
+//
+// Returns the people who have talked to your agents in this project. Customers we hold nothing about beyond their identifier are left out unless includeNoData is true.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/customer (the `GetV1Customer` operationId).
+func (c *ClientWithResponses) GetV1CustomerWithResponse(ctx context.Context, params *GetV1CustomerParams, reqEditors ...RequestEditorFn) (*GetV1CustomerResponse, error) {
+	rsp, err := c.GetV1Customer(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1CustomerResponse(rsp)
+}
+
 // GetV1CustomerFlowWithResponse List customer flows
 //
 // Returns a paginated list of customer flows with their agents, expectations, happy path and edge cases. The step graph is the one field omitted: reading it walks the project's whole step graph, so it comes back from the single-flow endpoint instead. Customer flows are how a project describes what to test; they replace the older simulation scenarios.
@@ -99808,6 +104188,229 @@ func (c *ClientWithResponses) PutV1CustomerFlowByFlowIdHappyPathWithResponse(ctx
 		return nil, err
 	}
 	return ParsePutV1CustomerFlowByFlowIdHappyPathResponse(rsp)
+}
+
+// GetV1CustomerFieldsWithResponse List customer fields
+//
+// The fields this project's customers can hold, in display order. Use a field's key to filter, sort and set attributes.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/customer/fields (the `GetV1CustomerFields` operationId).
+func (c *ClientWithResponses) GetV1CustomerFieldsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1CustomerFieldsResponse, error) {
+	rsp, err := c.GetV1CustomerFields(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1CustomerFieldsResponse(rsp)
+}
+
+// PostV1CustomerFieldsWithBodyWithResponse Create a customer field
+//
+// Adds a field of your project's own. With extract on, conversations fill it from what customers say, guided by its description.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/customer/fields (the `PostV1CustomerFields` operationId).
+func (c *ClientWithResponses) PostV1CustomerFieldsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1CustomerFieldsResponse, error) {
+	rsp, err := c.PostV1CustomerFieldsWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1CustomerFieldsResponse(rsp)
+}
+
+// PostV1CustomerFieldsWithResponse Create a customer field
+//
+// Adds a field of your project's own. With extract on, conversations fill it from what customers say, guided by its description.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/customer/fields (the `PostV1CustomerFields` operationId).
+func (c *ClientWithResponses) PostV1CustomerFieldsWithResponse(ctx context.Context, body PostV1CustomerFieldsJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1CustomerFieldsResponse, error) {
+	rsp, err := c.PostV1CustomerFields(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1CustomerFieldsResponse(rsp)
+}
+
+// DeleteV1CustomerFieldsByKeyWithResponse Delete a customer field
+//
+// Deletes a field of your project's own. Its values stop showing on customers. A built-in field cannot be deleted; turn it off instead.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/customer/fields/{key} (the `DeleteV1CustomerFieldsByKey` operationId).
+func (c *ClientWithResponses) DeleteV1CustomerFieldsByKeyWithResponse(ctx context.Context, key string, reqEditors ...RequestEditorFn) (*DeleteV1CustomerFieldsByKeyResponse, error) {
+	rsp, err := c.DeleteV1CustomerFieldsByKey(ctx, key, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1CustomerFieldsByKeyResponse(rsp)
+}
+
+// PatchV1CustomerFieldsByKeyWithBodyWithResponse Update a customer field
+//
+// Changes a field. A built-in field can only be turned on or off for your project; any field of your project's own can change everything but its key.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/customer/fields/{key} (the `PatchV1CustomerFieldsByKey` operationId).
+func (c *ClientWithResponses) PatchV1CustomerFieldsByKeyWithBodyWithResponse(ctx context.Context, key string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1CustomerFieldsByKeyResponse, error) {
+	rsp, err := c.PatchV1CustomerFieldsByKeyWithBody(ctx, key, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchV1CustomerFieldsByKeyResponse(rsp)
+}
+
+// PatchV1CustomerFieldsByKeyWithResponse Update a customer field
+//
+// Changes a field. A built-in field can only be turned on or off for your project; any field of your project's own can change everything but its key.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/customer/fields/{key} (the `PatchV1CustomerFieldsByKey` operationId).
+func (c *ClientWithResponses) PatchV1CustomerFieldsByKeyWithResponse(ctx context.Context, key string, body PatchV1CustomerFieldsByKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1CustomerFieldsByKeyResponse, error) {
+	rsp, err := c.PatchV1CustomerFieldsByKey(ctx, key, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchV1CustomerFieldsByKeyResponse(rsp)
+}
+
+// DeleteV1CustomerByCustomerProfileIdWithResponse Erase a customer
+//
+// Permanently removes the customer, with their fields, evidence and notes. Conversations are kept. A new conversation from the same identifier starts a new customer.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/customer/{customerProfileId} (the `DeleteV1CustomerByCustomerProfileId` operationId).
+func (c *ClientWithResponses) DeleteV1CustomerByCustomerProfileIdWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1CustomerByCustomerProfileIdResponse, error) {
+	rsp, err := c.DeleteV1CustomerByCustomerProfileId(ctx, customerProfileId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1CustomerByCustomerProfileIdResponse(rsp)
+}
+
+// GetV1CustomerByCustomerProfileIdWithResponse Get a customer
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/customer/{customerProfileId} (the `GetV1CustomerByCustomerProfileId` operationId).
+func (c *ClientWithResponses) GetV1CustomerByCustomerProfileIdWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1CustomerByCustomerProfileIdResponse, error) {
+	rsp, err := c.GetV1CustomerByCustomerProfileId(ctx, customerProfileId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1CustomerByCustomerProfileIdResponse(rsp)
+}
+
+// DeleteV1CustomerByCustomerProfileIdAttributesByKeyWithResponse Clear a field on a customer
+//
+// Removes the value and any lock, so a later conversation can fill it again.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/customer/{customerProfileId}/attributes/{key} (the `DeleteV1CustomerByCustomerProfileIdAttributesByKey` operationId).
+func (c *ClientWithResponses) DeleteV1CustomerByCustomerProfileIdAttributesByKeyWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, key string, reqEditors ...RequestEditorFn) (*DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse, error) {
+	rsp, err := c.DeleteV1CustomerByCustomerProfileIdAttributesByKey(ctx, customerProfileId, key, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse(rsp)
+}
+
+// PutV1CustomerByCustomerProfileIdAttributesByKeyWithBodyWithResponse Set a field on a customer
+//
+// Sets the value and locks the field, so newer conversations cannot change it.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/customer/{customerProfileId}/attributes/{key} (the `PutV1CustomerByCustomerProfileIdAttributesByKey` operationId).
+func (c *ClientWithResponses) PutV1CustomerByCustomerProfileIdAttributesByKeyWithBodyWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, key string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1CustomerByCustomerProfileIdAttributesByKeyResponse, error) {
+	rsp, err := c.PutV1CustomerByCustomerProfileIdAttributesByKeyWithBody(ctx, customerProfileId, key, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1CustomerByCustomerProfileIdAttributesByKeyResponse(rsp)
+}
+
+// PutV1CustomerByCustomerProfileIdAttributesByKeyWithResponse Set a field on a customer
+//
+// Sets the value and locks the field, so newer conversations cannot change it.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/customer/{customerProfileId}/attributes/{key} (the `PutV1CustomerByCustomerProfileIdAttributesByKey` operationId).
+func (c *ClientWithResponses) PutV1CustomerByCustomerProfileIdAttributesByKeyWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, key string, body PutV1CustomerByCustomerProfileIdAttributesByKeyJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1CustomerByCustomerProfileIdAttributesByKeyResponse, error) {
+	rsp, err := c.PutV1CustomerByCustomerProfileIdAttributesByKey(ctx, customerProfileId, key, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1CustomerByCustomerProfileIdAttributesByKeyResponse(rsp)
+}
+
+// PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockWithResponse Unlock a field on a customer
+//
+// Lets newer conversations change this field again. The current value stays until one does.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/customer/{customerProfileId}/attributes/{key}/unlock (the `PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock` operationId).
+func (c *ClientWithResponses) PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, key string, reqEditors ...RequestEditorFn) (*PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse, error) {
+	rsp, err := c.PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock(ctx, customerProfileId, key, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse(rsp)
+}
+
+// GetV1CustomerByCustomerProfileIdConversationsWithResponse List a customer's conversations
+//
+// Calls and chats with this customer, newest first.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/customer/{customerProfileId}/conversations (the `GetV1CustomerByCustomerProfileIdConversations` operationId).
+func (c *ClientWithResponses) GetV1CustomerByCustomerProfileIdConversationsWithResponse(ctx context.Context, customerProfileId string, params *GetV1CustomerByCustomerProfileIdConversationsParams, reqEditors ...RequestEditorFn) (*GetV1CustomerByCustomerProfileIdConversationsResponse, error) {
+	rsp, err := c.GetV1CustomerByCustomerProfileIdConversations(ctx, customerProfileId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1CustomerByCustomerProfileIdConversationsResponse(rsp)
+}
+
+// PutV1CustomerByCustomerProfileIdNotesWithBodyWithResponse Update the notes on a customer
+//
+// Replaces your team's shared notes. Null or empty clears them. The last save wins.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/customer/{customerProfileId}/notes (the `PutV1CustomerByCustomerProfileIdNotes` operationId).
+func (c *ClientWithResponses) PutV1CustomerByCustomerProfileIdNotesWithBodyWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1CustomerByCustomerProfileIdNotesResponse, error) {
+	rsp, err := c.PutV1CustomerByCustomerProfileIdNotesWithBody(ctx, customerProfileId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1CustomerByCustomerProfileIdNotesResponse(rsp)
+}
+
+// PutV1CustomerByCustomerProfileIdNotesWithResponse Update the notes on a customer
+//
+// Replaces your team's shared notes. Null or empty clears them. The last save wins.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/customer/{customerProfileId}/notes (the `PutV1CustomerByCustomerProfileIdNotes` operationId).
+func (c *ClientWithResponses) PutV1CustomerByCustomerProfileIdNotesWithResponse(ctx context.Context, customerProfileId openapi_types.UUID, body PutV1CustomerByCustomerProfileIdNotesJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1CustomerByCustomerProfileIdNotesResponse, error) {
+	rsp, err := c.PutV1CustomerByCustomerProfileIdNotes(ctx, customerProfileId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1CustomerByCustomerProfileIdNotesResponse(rsp)
 }
 
 // GetV1DashboardWithResponse List dashboards
@@ -104480,6 +109083,76 @@ func ParsePostV1AgentByAgentIdVersionsByVersionIdRollbackResponse(rsp *http.Resp
 	return response, nil
 }
 
+// ParsePostV1AgentByAgentIdWebSessionTokensResponse parses an HTTP response from a PostV1AgentByAgentIdWebSessionTokensWithResponse call
+func ParsePostV1AgentByAgentIdWebSessionTokensResponse(rsp *http.Response) (*PostV1AgentByAgentIdWebSessionTokensResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1AgentByAgentIdWebSessionTokensResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			Data WebSessionToken `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParsePostV1AnalyticsQueryResponse parses an HTTP response from a PostV1AnalyticsQueryWithResponse call
 func ParsePostV1AnalyticsQueryResponse(rsp *http.Response) (*PostV1AnalyticsQueryResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -106382,8 +111055,9 @@ func ParseGetV1CallResponse(rsp *http.Response) (*GetV1CallResponse, error) {
 				//
 				// Example: [{"label":"customer-01","phoneNumberE164":"+1234567891"}]
 				Customers *[]struct {
-					Label           *string `json:"label,omitempty"`
-					PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+					CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+					Label             *string             `json:"label,omitempty"`
+					PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 				} `json:"customers,omitempty"`
 
 				// DurationMs Duration of the call in milliseconds
@@ -106548,8 +111222,9 @@ func ParsePostV1CallResponse(rsp *http.Response) (*PostV1CallResponse, error) {
 				CallDirection PostV1Call200JSONResponseBodyDataCallDirection `json:"callDirection"`
 				CreatedAt     *string                                        `json:"createdAt"`
 				Customers     *[]struct {
-					Label           *string `json:"label,omitempty"`
-					PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+					CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+					Label             *string             `json:"label,omitempty"`
+					PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 				} `json:"customers"`
 				ExternalId *string `json:"externalId"`
 
@@ -106817,8 +111492,9 @@ func ParseGetV1CallByCallIdResponse(rsp *http.Response) (*GetV1CallByCallIdRespo
 				//
 				// Example: [{"label":"customer-01","phoneNumberE164":"+1234567891"}]
 				Customers *[]struct {
-					Label           *string `json:"label,omitempty"`
-					PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+					CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+					Label             *string             `json:"label,omitempty"`
+					PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 				} `json:"customers,omitempty"`
 
 				// DurationMs Duration of the call in milliseconds
@@ -107465,8 +112141,9 @@ func ParseGetV1ChatResponse(rsp *http.Response) (*GetV1ChatResponse, error) {
 				//
 				// Example: [{"label":"web-visitor-abc123","phoneNumberE164":null}]
 				Customers *[]struct {
-					Label           *string `json:"label,omitempty"`
-					PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+					CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+					Label             *string             `json:"label,omitempty"`
+					PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 				} `json:"customers,omitempty"`
 
 				// DurationMs Duration of the chat in milliseconds
@@ -107608,8 +112285,9 @@ func ParsePostV1ChatResponse(rsp *http.Response) (*PostV1ChatResponse, error) {
 				//
 				// Example: [{"label":"web-visitor-abc123","phoneNumberE164":null}]
 				Customers *[]struct {
-					Label           *string `json:"label,omitempty"`
-					PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+					CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+					Label             *string             `json:"label,omitempty"`
+					PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 				} `json:"customers,omitempty"`
 
 				// DurationMs Duration of the chat in milliseconds
@@ -107769,8 +112447,9 @@ func ParseGetV1ChatByIdResponse(rsp *http.Response) (*GetV1ChatByIdResponse, err
 				//
 				// Example: [{"label":"web-visitor-abc123","phoneNumberE164":null}]
 				Customers *[]struct {
-					Label           *string `json:"label,omitempty"`
-					PhoneNumberE164 *string `json:"phoneNumberE164,omitempty"`
+					CustomerProfileId *openapi_types.UUID `json:"customerProfileId,omitempty"`
+					Label             *string             `json:"label,omitempty"`
+					PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 				} `json:"customers,omitempty"`
 
 				// DurationMs Duration of the chat in milliseconds
@@ -108233,6 +112912,132 @@ func ParsePostV1ConfigDiffResponse(rsp *http.Response) (*PostV1ConfigDiffRespons
 			return nil, err
 		}
 		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1CustomerResponse parses an HTTP response from a GetV1CustomerWithResponse call
+func ParseGetV1CustomerResponse(rsp *http.Response) (*GetV1CustomerResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1CustomerResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				Items []struct {
+					AgentIds   []openapi_types.UUID `json:"agentIds"`
+					Attributes []struct {
+						// BlockedValue What a newer conversation said while this field was locked
+						BlockedValue *string `json:"blockedValue"`
+
+						// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+						Evidence *struct {
+							CallId     *openapi_types.UUID `json:"callId"`
+							ChatId     *openapi_types.UUID `json:"chatId"`
+							ObservedAt time.Time           `json:"observedAt"`
+
+							// OffsetMs Where in the conversation this was said
+							OffsetMs *int `json:"offsetMs"`
+
+							// Quote The customer's words. Null on a project with redaction on.
+							Quote  *string                                                           `json:"quote"`
+							Source GetV1Customer200JSONResponseBodyDataItemsAttributesEvidenceSource `json:"source"`
+							Value  string                                                            `json:"value"`
+						} `json:"evidence"`
+
+						// History Other values this field has held or been offered, newest first
+						History []struct {
+							CallId     *openapi_types.UUID `json:"callId"`
+							ChatId     *openapi_types.UUID `json:"chatId"`
+							ObservedAt time.Time           `json:"observedAt"`
+
+							// OffsetMs Where in the conversation this was said
+							OffsetMs *int `json:"offsetMs"`
+
+							// Quote The customer's words. Null on a project with redaction on.
+							Quote  *string                                                          `json:"quote"`
+							Source GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource `json:"source"`
+							Value  string                                                           `json:"value"`
+						} `json:"history"`
+
+						// IsLocked True when newer conversations cannot change this field
+						IsLocked   bool      `json:"isLocked"`
+						Key        string    `json:"key"`
+						ObservedAt time.Time `json:"observedAt"`
+
+						// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+						Source GetV1Customer200JSONResponseBodyDataItemsAttributesSource `json:"source"`
+						Value  string                                                    `json:"value"`
+					} `json:"attributes"`
+					ChatCount         int `json:"chatCount"`
+					ConversationCount int `json:"conversationCount"`
+
+					// DisplayName Null until a name is known, which is common
+					DisplayName *string    `json:"displayName"`
+					ExternalId  *string    `json:"externalId"`
+					FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+					// Id Unique identifier of the customer
+					Id         openapi_types.UUID `json:"id"`
+					LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+					// Notes Your team's shared notes. Never sent to the agent.
+					Notes           *string    `json:"notes"`
+					NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+					PhoneNumberE164 *string    `json:"phoneNumberE164"`
+					Summary         *string    `json:"summary"`
+
+					// TalkTimeMs Voice only. Chat time is not included.
+					TalkTimeMs int `json:"talkTimeMs"`
+					VoiceCount int `json:"voiceCount"`
+				} `json:"items"`
+				Page       int `json:"page"`
+				TotalCount int `json:"totalCount"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse
@@ -109057,6 +113862,983 @@ func ParsePutV1CustomerFlowByFlowIdHappyPathResponse(rsp *http.Response) (*PutV1
 			return nil, err
 		}
 		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1CustomerFieldsResponse parses an HTTP response from a GetV1CustomerFieldsWithResponse call
+func ParseGetV1CustomerFieldsResponse(rsp *http.Response) (*GetV1CustomerFieldsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1CustomerFieldsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []struct {
+				// Description What extraction looks for in a conversation
+				Description *string `json:"description"`
+
+				// Extract Whether conversations fill this field on this project: the project's own setting where it made one
+				Extract bool `json:"extract"`
+
+				// Key What filters, sorts and attribute routes name the field by
+				Key   string `json:"key"`
+				Label string `json:"label"`
+
+				// RedactedBy The project redaction setting that, when on, keeps conversations from filling this field
+				RedactedBy *GetV1CustomerFields200JSONResponseBodyDataRedactedBy `json:"redactedBy"`
+
+				// Source SYSTEM for a built-in field, CUSTOM for one your project defined
+				Source    GetV1CustomerFields200JSONResponseBodyDataSource    `json:"source"`
+				ValueType GetV1CustomerFields200JSONResponseBodyDataValueType `json:"valueType"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1CustomerFieldsResponse parses an HTTP response from a PostV1CustomerFieldsWithResponse call
+func ParsePostV1CustomerFieldsResponse(rsp *http.Response) (*PostV1CustomerFieldsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1CustomerFieldsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			Data struct {
+				// Description What extraction looks for in a conversation
+				Description *string `json:"description"`
+
+				// Extract Whether conversations fill this field on this project: the project's own setting where it made one
+				Extract bool `json:"extract"`
+
+				// Key What filters, sorts and attribute routes name the field by
+				Key   string `json:"key"`
+				Label string `json:"label"`
+
+				// RedactedBy The project redaction setting that, when on, keeps conversations from filling this field
+				RedactedBy *PostV1CustomerFields201JSONResponseBodyDataRedactedBy `json:"redactedBy"`
+
+				// Source SYSTEM for a built-in field, CUSTOM for one your project defined
+				Source    PostV1CustomerFields201JSONResponseBodyDataSource    `json:"source"`
+				ValueType PostV1CustomerFields201JSONResponseBodyDataValueType `json:"valueType"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1CustomerFieldsByKeyResponse parses an HTTP response from a DeleteV1CustomerFieldsByKeyWithResponse call
+func ParseDeleteV1CustomerFieldsByKeyResponse(rsp *http.Response) (*DeleteV1CustomerFieldsByKeyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1CustomerFieldsByKeyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				Success bool `json:"success"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePatchV1CustomerFieldsByKeyResponse parses an HTTP response from a PatchV1CustomerFieldsByKeyWithResponse call
+func ParsePatchV1CustomerFieldsByKeyResponse(rsp *http.Response) (*PatchV1CustomerFieldsByKeyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PatchV1CustomerFieldsByKeyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				// Description What extraction looks for in a conversation
+				Description *string `json:"description"`
+
+				// Extract Whether conversations fill this field on this project: the project's own setting where it made one
+				Extract bool `json:"extract"`
+
+				// Key What filters, sorts and attribute routes name the field by
+				Key   string `json:"key"`
+				Label string `json:"label"`
+
+				// RedactedBy The project redaction setting that, when on, keeps conversations from filling this field
+				RedactedBy *PatchV1CustomerFieldsByKey200JSONResponseBodyDataRedactedBy `json:"redactedBy"`
+
+				// Source SYSTEM for a built-in field, CUSTOM for one your project defined
+				Source    PatchV1CustomerFieldsByKey200JSONResponseBodyDataSource    `json:"source"`
+				ValueType PatchV1CustomerFieldsByKey200JSONResponseBodyDataValueType `json:"valueType"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1CustomerByCustomerProfileIdResponse parses an HTTP response from a DeleteV1CustomerByCustomerProfileIdWithResponse call
+func ParseDeleteV1CustomerByCustomerProfileIdResponse(rsp *http.Response) (*DeleteV1CustomerByCustomerProfileIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1CustomerByCustomerProfileIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				Success bool `json:"success"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1CustomerByCustomerProfileIdResponse parses an HTTP response from a GetV1CustomerByCustomerProfileIdWithResponse call
+func ParseGetV1CustomerByCustomerProfileIdResponse(rsp *http.Response) (*GetV1CustomerByCustomerProfileIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1CustomerByCustomerProfileIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				AgentIds   []openapi_types.UUID `json:"agentIds"`
+				Attributes []struct {
+					// BlockedValue What a newer conversation said while this field was locked
+					BlockedValue *string `json:"blockedValue"`
+
+					// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+					Evidence *struct {
+						CallId     *openapi_types.UUID `json:"callId"`
+						ChatId     *openapi_types.UUID `json:"chatId"`
+						ObservedAt time.Time           `json:"observedAt"`
+
+						// OffsetMs Where in the conversation this was said
+						OffsetMs *int `json:"offsetMs"`
+
+						// Quote The customer's words. Null on a project with redaction on.
+						Quote  *string                                                                         `json:"quote"`
+						Source GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+						Value  string                                                                          `json:"value"`
+					} `json:"evidence"`
+
+					// History Other values this field has held or been offered, newest first
+					History []struct {
+						CallId     *openapi_types.UUID `json:"callId"`
+						ChatId     *openapi_types.UUID `json:"chatId"`
+						ObservedAt time.Time           `json:"observedAt"`
+
+						// OffsetMs Where in the conversation this was said
+						OffsetMs *int `json:"offsetMs"`
+
+						// Quote The customer's words. Null on a project with redaction on.
+						Quote  *string                                                                        `json:"quote"`
+						Source GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+						Value  string                                                                         `json:"value"`
+					} `json:"history"`
+
+					// IsLocked True when newer conversations cannot change this field
+					IsLocked   bool      `json:"isLocked"`
+					Key        string    `json:"key"`
+					ObservedAt time.Time `json:"observedAt"`
+
+					// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+					Source GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesSource `json:"source"`
+					Value  string                                                                  `json:"value"`
+				} `json:"attributes"`
+				ChatCount         int `json:"chatCount"`
+				ConversationCount int `json:"conversationCount"`
+
+				// DisplayName Null until a name is known, which is common
+				DisplayName *string    `json:"displayName"`
+				ExternalId  *string    `json:"externalId"`
+				FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+				// Id Unique identifier of the customer
+				Id         openapi_types.UUID `json:"id"`
+				LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+				// Notes Your team's shared notes. Never sent to the agent.
+				Notes           *string    `json:"notes"`
+				NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+				PhoneNumberE164 *string    `json:"phoneNumberE164"`
+				Summary         *string    `json:"summary"`
+
+				// TalkTimeMs Voice only. Chat time is not included.
+				TalkTimeMs int `json:"talkTimeMs"`
+				VoiceCount int `json:"voiceCount"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse parses an HTTP response from a DeleteV1CustomerByCustomerProfileIdAttributesByKeyWithResponse call
+func ParseDeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse(rsp *http.Response) (*DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				AgentIds   []openapi_types.UUID `json:"agentIds"`
+				Attributes []struct {
+					// BlockedValue What a newer conversation said while this field was locked
+					BlockedValue *string `json:"blockedValue"`
+
+					// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+					Evidence *struct {
+						CallId     *openapi_types.UUID `json:"callId"`
+						ChatId     *openapi_types.UUID `json:"chatId"`
+						ObservedAt time.Time           `json:"observedAt"`
+
+						// OffsetMs Where in the conversation this was said
+						OffsetMs *int `json:"offsetMs"`
+
+						// Quote The customer's words. Null on a project with redaction on.
+						Quote  *string                                                                                           `json:"quote"`
+						Source DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+						Value  string                                                                                            `json:"value"`
+					} `json:"evidence"`
+
+					// History Other values this field has held or been offered, newest first
+					History []struct {
+						CallId     *openapi_types.UUID `json:"callId"`
+						ChatId     *openapi_types.UUID `json:"chatId"`
+						ObservedAt time.Time           `json:"observedAt"`
+
+						// OffsetMs Where in the conversation this was said
+						OffsetMs *int `json:"offsetMs"`
+
+						// Quote The customer's words. Null on a project with redaction on.
+						Quote  *string                                                                                          `json:"quote"`
+						Source DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+						Value  string                                                                                           `json:"value"`
+					} `json:"history"`
+
+					// IsLocked True when newer conversations cannot change this field
+					IsLocked   bool      `json:"isLocked"`
+					Key        string    `json:"key"`
+					ObservedAt time.Time `json:"observedAt"`
+
+					// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+					Source DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource `json:"source"`
+					Value  string                                                                                    `json:"value"`
+				} `json:"attributes"`
+				ChatCount         int `json:"chatCount"`
+				ConversationCount int `json:"conversationCount"`
+
+				// DisplayName Null until a name is known, which is common
+				DisplayName *string    `json:"displayName"`
+				ExternalId  *string    `json:"externalId"`
+				FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+				// Id Unique identifier of the customer
+				Id         openapi_types.UUID `json:"id"`
+				LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+				// Notes Your team's shared notes. Never sent to the agent.
+				Notes           *string    `json:"notes"`
+				NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+				PhoneNumberE164 *string    `json:"phoneNumberE164"`
+				Summary         *string    `json:"summary"`
+
+				// TalkTimeMs Voice only. Chat time is not included.
+				TalkTimeMs int `json:"talkTimeMs"`
+				VoiceCount int `json:"voiceCount"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePutV1CustomerByCustomerProfileIdAttributesByKeyResponse parses an HTTP response from a PutV1CustomerByCustomerProfileIdAttributesByKeyWithResponse call
+func ParsePutV1CustomerByCustomerProfileIdAttributesByKeyResponse(rsp *http.Response) (*PutV1CustomerByCustomerProfileIdAttributesByKeyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PutV1CustomerByCustomerProfileIdAttributesByKeyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				AgentIds   []openapi_types.UUID `json:"agentIds"`
+				Attributes []struct {
+					// BlockedValue What a newer conversation said while this field was locked
+					BlockedValue *string `json:"blockedValue"`
+
+					// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+					Evidence *struct {
+						CallId     *openapi_types.UUID `json:"callId"`
+						ChatId     *openapi_types.UUID `json:"chatId"`
+						ObservedAt time.Time           `json:"observedAt"`
+
+						// OffsetMs Where in the conversation this was said
+						OffsetMs *int `json:"offsetMs"`
+
+						// Quote The customer's words. Null on a project with redaction on.
+						Quote  *string                                                                                        `json:"quote"`
+						Source PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+						Value  string                                                                                         `json:"value"`
+					} `json:"evidence"`
+
+					// History Other values this field has held or been offered, newest first
+					History []struct {
+						CallId     *openapi_types.UUID `json:"callId"`
+						ChatId     *openapi_types.UUID `json:"chatId"`
+						ObservedAt time.Time           `json:"observedAt"`
+
+						// OffsetMs Where in the conversation this was said
+						OffsetMs *int `json:"offsetMs"`
+
+						// Quote The customer's words. Null on a project with redaction on.
+						Quote  *string                                                                                       `json:"quote"`
+						Source PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+						Value  string                                                                                        `json:"value"`
+					} `json:"history"`
+
+					// IsLocked True when newer conversations cannot change this field
+					IsLocked   bool      `json:"isLocked"`
+					Key        string    `json:"key"`
+					ObservedAt time.Time `json:"observedAt"`
+
+					// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+					Source PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesSource `json:"source"`
+					Value  string                                                                                 `json:"value"`
+				} `json:"attributes"`
+				ChatCount         int `json:"chatCount"`
+				ConversationCount int `json:"conversationCount"`
+
+				// DisplayName Null until a name is known, which is common
+				DisplayName *string    `json:"displayName"`
+				ExternalId  *string    `json:"externalId"`
+				FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+				// Id Unique identifier of the customer
+				Id         openapi_types.UUID `json:"id"`
+				LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+				// Notes Your team's shared notes. Never sent to the agent.
+				Notes           *string    `json:"notes"`
+				NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+				PhoneNumberE164 *string    `json:"phoneNumberE164"`
+				Summary         *string    `json:"summary"`
+
+				// TalkTimeMs Voice only. Chat time is not included.
+				TalkTimeMs int `json:"talkTimeMs"`
+				VoiceCount int `json:"voiceCount"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse parses an HTTP response from a PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockWithResponse call
+func ParsePostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse(rsp *http.Response) (*PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				AgentIds   []openapi_types.UUID `json:"agentIds"`
+				Attributes []struct {
+					// BlockedValue What a newer conversation said while this field was locked
+					BlockedValue *string `json:"blockedValue"`
+
+					// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+					Evidence *struct {
+						CallId     *openapi_types.UUID `json:"callId"`
+						ChatId     *openapi_types.UUID `json:"chatId"`
+						ObservedAt time.Time           `json:"observedAt"`
+
+						// OffsetMs Where in the conversation this was said
+						OffsetMs *int `json:"offsetMs"`
+
+						// Quote The customer's words. Null on a project with redaction on.
+						Quote  *string                                                                                               `json:"quote"`
+						Source PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+						Value  string                                                                                                `json:"value"`
+					} `json:"evidence"`
+
+					// History Other values this field has held or been offered, newest first
+					History []struct {
+						CallId     *openapi_types.UUID `json:"callId"`
+						ChatId     *openapi_types.UUID `json:"chatId"`
+						ObservedAt time.Time           `json:"observedAt"`
+
+						// OffsetMs Where in the conversation this was said
+						OffsetMs *int `json:"offsetMs"`
+
+						// Quote The customer's words. Null on a project with redaction on.
+						Quote  *string                                                                                              `json:"quote"`
+						Source PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+						Value  string                                                                                               `json:"value"`
+					} `json:"history"`
+
+					// IsLocked True when newer conversations cannot change this field
+					IsLocked   bool      `json:"isLocked"`
+					Key        string    `json:"key"`
+					ObservedAt time.Time `json:"observedAt"`
+
+					// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+					Source PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesSource `json:"source"`
+					Value  string                                                                                        `json:"value"`
+				} `json:"attributes"`
+				ChatCount         int `json:"chatCount"`
+				ConversationCount int `json:"conversationCount"`
+
+				// DisplayName Null until a name is known, which is common
+				DisplayName *string    `json:"displayName"`
+				ExternalId  *string    `json:"externalId"`
+				FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+				// Id Unique identifier of the customer
+				Id         openapi_types.UUID `json:"id"`
+				LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+				// Notes Your team's shared notes. Never sent to the agent.
+				Notes           *string    `json:"notes"`
+				NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+				PhoneNumberE164 *string    `json:"phoneNumberE164"`
+				Summary         *string    `json:"summary"`
+
+				// TalkTimeMs Voice only. Chat time is not included.
+				TalkTimeMs int `json:"talkTimeMs"`
+				VoiceCount int `json:"voiceCount"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1CustomerByCustomerProfileIdConversationsResponse parses an HTTP response from a GetV1CustomerByCustomerProfileIdConversationsWithResponse call
+func ParseGetV1CustomerByCustomerProfileIdConversationsResponse(rsp *http.Response) (*GetV1CustomerByCustomerProfileIdConversationsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1CustomerByCustomerProfileIdConversationsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				Items []struct {
+					ConversationType GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType `json:"conversationType"`
+					DurationMs       *int                                                                                      `json:"durationMs"`
+					Id               openapi_types.UUID                                                                        `json:"id"`
+					StartedAt        time.Time                                                                                 `json:"startedAt"`
+					Summary          *string                                                                                   `json:"summary"`
+					Title            *string                                                                                   `json:"title"`
+				} `json:"items"`
+				Page       int `json:"page"`
+				TotalCount int `json:"totalCount"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePutV1CustomerByCustomerProfileIdNotesResponse parses an HTTP response from a PutV1CustomerByCustomerProfileIdNotesWithResponse call
+func ParsePutV1CustomerByCustomerProfileIdNotesResponse(rsp *http.Response) (*PutV1CustomerByCustomerProfileIdNotesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PutV1CustomerByCustomerProfileIdNotesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				AgentIds   []openapi_types.UUID `json:"agentIds"`
+				Attributes []struct {
+					// BlockedValue What a newer conversation said while this field was locked
+					BlockedValue *string `json:"blockedValue"`
+
+					// Evidence The moment the current value was heard. Null for a value set by a person or the API.
+					Evidence *struct {
+						CallId     *openapi_types.UUID `json:"callId"`
+						ChatId     *openapi_types.UUID `json:"chatId"`
+						ObservedAt time.Time           `json:"observedAt"`
+
+						// OffsetMs Where in the conversation this was said
+						OffsetMs *int `json:"offsetMs"`
+
+						// Quote The customer's words. Null on a project with redaction on.
+						Quote  *string                                                                              `json:"quote"`
+						Source PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesEvidenceSource `json:"source"`
+						Value  string                                                                               `json:"value"`
+					} `json:"evidence"`
+
+					// History Other values this field has held or been offered, newest first
+					History []struct {
+						CallId     *openapi_types.UUID `json:"callId"`
+						ChatId     *openapi_types.UUID `json:"chatId"`
+						ObservedAt time.Time           `json:"observedAt"`
+
+						// OffsetMs Where in the conversation this was said
+						OffsetMs *int `json:"offsetMs"`
+
+						// Quote The customer's words. Null on a project with redaction on.
+						Quote  *string                                                                             `json:"quote"`
+						Source PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource `json:"source"`
+						Value  string                                                                              `json:"value"`
+					} `json:"history"`
+
+					// IsLocked True when newer conversations cannot change this field
+					IsLocked   bool      `json:"isLocked"`
+					Key        string    `json:"key"`
+					ObservedAt time.Time `json:"observedAt"`
+
+					// Source Where the current value came from. LIVE and POST_CALL extraction are read from conversations.
+					Source PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesSource `json:"source"`
+					Value  string                                                                       `json:"value"`
+				} `json:"attributes"`
+				ChatCount         int `json:"chatCount"`
+				ConversationCount int `json:"conversationCount"`
+
+				// DisplayName Null until a name is known, which is common
+				DisplayName *string    `json:"displayName"`
+				ExternalId  *string    `json:"externalId"`
+				FirstSeenAt *time.Time `json:"firstSeenAt"`
+
+				// Id Unique identifier of the customer
+				Id         openapi_types.UUID `json:"id"`
+				LastSeenAt *time.Time         `json:"lastSeenAt"`
+
+				// Notes Your team's shared notes. Never sent to the agent.
+				Notes           *string    `json:"notes"`
+				NotesUpdatedAt  *time.Time `json:"notesUpdatedAt"`
+				PhoneNumberE164 *string    `json:"phoneNumberE164"`
+				Summary         *string    `json:"summary"`
+
+				// TalkTimeMs Voice only. Chat time is not included.
+				TalkTimeMs int `json:"talkTimeMs"`
+				VoiceCount int `json:"voiceCount"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse

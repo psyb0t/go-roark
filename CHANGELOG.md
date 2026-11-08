@@ -2,6 +2,15 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.12.0, 2026-11-08
+
+- Breaking: the anonymous customer struct gained an optional `ExternalId` field (`*string`) in `CallCreate.Customer`, `CallCreate.Customers`, `ChatCreate.Customer` and `ChatCreate.Customers`. The same change changed the `JSON200` and `GetJSON200` types of `GetV1CallResponse`, `GetV1CallByCallIdResponse`, `PostV1CallResponse`, `GetV1ChatResponse`, `GetV1ChatByIdResponse` and `PostV1ChatResponse`. Composite literals of these struct types must be updated. Code that sets fields by name still compiles.
+- Added customer profile endpoints: `GetV1Customer`, `GetV1CustomerByCustomerProfileId`, `DeleteV1CustomerByCustomerProfileId`, `GetV1CustomerByCustomerProfileIdConversations`, `PutV1CustomerByCustomerProfileIdNotes`, `PutV1CustomerByCustomerProfileIdAttributesByKey`, `DeleteV1CustomerByCustomerProfileIdAttributesByKey` and `PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock`. Each has a `WithResponse` variant, a request builder, a response parser and a response type. The ones that send a body also have `WithBody` variants. `GetV1CustomerParams` and `GetV1CustomerByCustomerProfileIdConversationsParams` hold the query filters, including `GetV1CustomerParamsFieldOperator`.
+- Added customer field endpoints: `GetV1CustomerFields`, `PostV1CustomerFields`, `PatchV1CustomerFieldsByKey` and `DeleteV1CustomerFieldsByKey`, with `PostV1CustomerFieldsJSONBody` and `PatchV1CustomerFieldsByKeyJSONBody`. Value type enums cover `TEXT`, `NUMBER`, `BOOLEAN`, `DATE`, `EMAIL`, `CURRENCY` and `PHONE_NUMBER`.
+- Added `PostV1AgentByAgentIdWebSessionTokens`, with `WithBody` and `WithResponse` variants, and the types `CreateWebSessionTokenInput` and `WebSessionToken`. Both have a `Modality` enum with `Call` and `Chat` values.
+- Added the cost source constants `HOSTED_AGENT_LLM`, `HOSTED_AGENT_STT`, `HOSTED_AGENT_TELEPHONY` and `HOSTED_AGENT_TTS` for `CallCostLineSource`, `CostBreakdownItemSource` and `UsageCostTypeSource`.
+- `ClientInterface` and `ClientWithResponsesInterface` gained the matching methods. Code that implements these interfaces, such as test mocks, must add them.
+
 ## v0.11.1, 2026-11-07
 
 - Added an optional `EndsCall` field (`*bool`) to `ConfigFlowStep` and `FlowStep0` through `FlowStep10`. Set it on the last step of a scripted path to end the call there instead of handing over to the improv flow.

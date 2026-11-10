@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.14.0, 2026-11-10
+
+- Breaking: the calendar connection endpoints moved from `/v1/calendar/connection` to `/v1/integrations/calendar`. The old methods are removed: `GetV1CalendarConnection`, `PostV1CalendarConnection`, `GetV1CalendarConnectionByConnectionId`, `PatchV1CalendarConnectionByConnectionId`, `DeleteV1CalendarConnectionByConnectionId`, `PostV1CalendarConnectionByConnectionIdCheck`, `GetV1CalendarConnectionByConnectionIdTargets` and `GetV1CalendarConnectionByConnectionIdTargetsByTargetId`, with their `WithBody` and `WithResponse` variants and response types. The replacements are `GetV1IntegrationsCalendar`, `PostV1IntegrationsCalendar`, `GetV1IntegrationsCalendarByConnectionId`, `PatchV1IntegrationsCalendarByConnectionId`, `DeleteV1IntegrationsCalendarByConnectionId`, `PostV1IntegrationsCalendarByConnectionIdCheck` and the two `Targets` methods.
+- Breaking: removed `PostV1AgentByAgentIdWebSessionTokens`, `CreateWebSessionTokenInput` and its `Modality` enum. Use `PostV1AgentByAgentIdConversations` with `CreateAgentConversationInput` and `CreateAgentWebConversationInput` instead. The result types are `AgentConversationCreated` and `AgentWebConversationCreated`.
+- Breaking: removed the public prospect simulation endpoints `PostV1PublicProspectSimRun`, `GetV1PublicProspectSimReportByToken` and `GetV1PublicProspectSimReportByTokenObserverUrl`, with their variants and response types.
+- Breaking: chat responses changed. In the `JSON200` and `GetJSON200` types of `GetV1ChatResponse`, `GetV1ChatByIdResponse` and `PostV1ChatResponse`, `DurationMs` is now `*float64` and `EndTimestamp` is now `*string`, and a required `Status` field was added. Code that reads or builds these values must be updated.
+- Breaking: removed `AgentVersionResponseModalitiesCall`. Added `AgentConfigModalitiesVoice`, `AgentVersionResponseModalitiesVoice` and `CollectorConfigModalityVoice`, plus similar `Voice` modality values.
+- Added conversation endpoints `GetV1Conversation` and `GetV1ConversationByConversationId`, with the types `Conversation`, `ConversationList`, `ConversationModality` and `ConversationStatus` (`PENDING`, `INPROGRESS`, `ENDED`).
+- Added MCP server endpoints: `GetV1IntegrationsMcpServer`, `PostV1IntegrationsMcpServer`, `GetV1IntegrationsMcpServerByServerId`, `PatchV1IntegrationsMcpServerByServerId`, `DeleteV1IntegrationsMcpServerByServerId`, `PostV1IntegrationsMcpServerByServerIdRefresh` and `PostV1IntegrationsMcpServerDiscover`. Types include `McpServerCreateBody`, `McpServerUpdateBody`, `McpServerDiscoverBody`, `McpServerResponse`, `McpServerListResponse`, `McpServerTool` and `McpServerAuth`.
+- `ClientInterface` and `ClientWithResponsesInterface` gained the new methods and lost the removed ones. Code that implements these interfaces, such as test mocks, must be updated.
+
 ## v0.13.0, 2026-11-10
 
 - Breaking: the anonymous attribute struct gained a required `IsInferred` field (`bool`), true when the value was inferred from the conversation and not stated. This changes the `JSON200` and `GetJSON200` types of `GetV1CustomerResponse`, `GetV1CustomerByCustomerProfileIdResponse`, `PutV1CustomerByCustomerProfileIdNotesResponse`, `PutV1CustomerByCustomerProfileIdAttributesByKeyResponse`, `DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse` and `PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse`. Code that builds or assigns these struct types must be updated. Code that reads fields by name still compiles.

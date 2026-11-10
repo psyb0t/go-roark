@@ -139,6 +139,27 @@ func (e AgentConfigLlmProvider) Valid() bool {
 	}
 }
 
+// Defines values for AgentConfigModalities.
+const (
+	AgentConfigModalitiesCall  AgentConfigModalities = "call"
+	AgentConfigModalitiesChat  AgentConfigModalities = "chat"
+	AgentConfigModalitiesVoice AgentConfigModalities = "voice"
+)
+
+// Valid indicates whether the value is a known member of the AgentConfigModalities enum.
+func (e AgentConfigModalities) Valid() bool {
+	switch e {
+	case AgentConfigModalitiesCall:
+		return true
+	case AgentConfigModalitiesChat:
+		return true
+	case AgentConfigModalitiesVoice:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AgentConfigProvider.
 const (
 	AgentConfigProviderApi               AgentConfigProvider = "api"
@@ -687,16 +708,16 @@ func (e AgentVersionResponseInterruptionMode) Valid() bool {
 
 // Defines values for AgentVersionResponseModalities.
 const (
-	AgentVersionResponseModalitiesCall AgentVersionResponseModalities = "call"
-	AgentVersionResponseModalitiesChat AgentVersionResponseModalities = "chat"
+	AgentVersionResponseModalitiesChat  AgentVersionResponseModalities = "chat"
+	AgentVersionResponseModalitiesVoice AgentVersionResponseModalities = "voice"
 )
 
 // Valid indicates whether the value is a known member of the AgentVersionResponseModalities enum.
 func (e AgentVersionResponseModalities) Valid() bool {
 	switch e {
-	case AgentVersionResponseModalitiesCall:
-		return true
 	case AgentVersionResponseModalitiesChat:
+		return true
+	case AgentVersionResponseModalitiesVoice:
 		return true
 	default:
 		return false
@@ -748,6 +769,54 @@ func (e AgentVersionResponseStatus) Valid() bool {
 	case AgentVersionResponseStatusDRAFT:
 		return true
 	case AgentVersionResponseStatusPUBLISHED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentWebConversationCreatedChannel.
+const (
+	AgentWebConversationCreatedChannelWeb AgentWebConversationCreatedChannel = "web"
+)
+
+// Valid indicates whether the value is a known member of the AgentWebConversationCreatedChannel enum.
+func (e AgentWebConversationCreatedChannel) Valid() bool {
+	switch e {
+	case AgentWebConversationCreatedChannelWeb:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentWebConversationCreatedModality.
+const (
+	AgentWebConversationCreatedModalityChat  AgentWebConversationCreatedModality = "chat"
+	AgentWebConversationCreatedModalityVoice AgentWebConversationCreatedModality = "voice"
+)
+
+// Valid indicates whether the value is a known member of the AgentWebConversationCreatedModality enum.
+func (e AgentWebConversationCreatedModality) Valid() bool {
+	switch e {
+	case AgentWebConversationCreatedModalityChat:
+		return true
+	case AgentWebConversationCreatedModalityVoice:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentWebConversationCreatedStatus.
+const (
+	AgentWebConversationCreatedStatusPENDING AgentWebConversationCreatedStatus = "PENDING"
+)
+
+// Valid indicates whether the value is a known member of the AgentWebConversationCreatedStatus enum.
+func (e AgentWebConversationCreatedStatus) Valid() bool {
+	switch e {
+	case AgentWebConversationCreatedStatusPENDING:
 		return true
 	default:
 		return false
@@ -2979,8 +3048,9 @@ func (e CollectorConfigKind) Valid() bool {
 
 // Defines values for CollectorConfigModality.
 const (
-	CollectorConfigModalityCall CollectorConfigModality = "call"
-	CollectorConfigModalityChat CollectorConfigModality = "chat"
+	CollectorConfigModalityCall  CollectorConfigModality = "call"
+	CollectorConfigModalityChat  CollectorConfigModality = "chat"
+	CollectorConfigModalityVoice CollectorConfigModality = "voice"
 )
 
 // Valid indicates whether the value is a known member of the CollectorConfigModality enum.
@@ -2989,6 +3059,8 @@ func (e CollectorConfigModality) Valid() bool {
 	case CollectorConfigModalityCall:
 		return true
 	case CollectorConfigModalityChat:
+		return true
+	case CollectorConfigModalityVoice:
 		return true
 	default:
 		return false
@@ -3322,6 +3394,45 @@ func (e ConfigOffScriptThen) Valid() bool {
 	}
 }
 
+// Defines values for ConversationModality.
+const (
+	ConversationModalityChat  ConversationModality = "chat"
+	ConversationModalityVoice ConversationModality = "voice"
+)
+
+// Valid indicates whether the value is a known member of the ConversationModality enum.
+func (e ConversationModality) Valid() bool {
+	switch e {
+	case ConversationModalityChat:
+		return true
+	case ConversationModalityVoice:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ConversationStatus.
+const (
+	ConversationStatusENDED      ConversationStatus = "ENDED"
+	ConversationStatusINPROGRESS ConversationStatus = "IN_PROGRESS"
+	ConversationStatusPENDING    ConversationStatus = "PENDING"
+)
+
+// Valid indicates whether the value is a known member of the ConversationStatus enum.
+func (e ConversationStatus) Valid() bool {
+	switch e {
+	case ConversationStatusENDED:
+		return true
+	case ConversationStatusINPROGRESS:
+		return true
+	case ConversationStatusPENDING:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CostBreakdownItemSource.
 const (
 	CostBreakdownItemSourceHOSTEDAGENTLLM       CostBreakdownItemSource = "HOSTED_AGENT_LLM"
@@ -3427,6 +3538,42 @@ func (e CreateAgentEndpointInputOutboundDialType) Valid() bool {
 	case CreateAgentEndpointInputOutboundDialTypeHTTPREQUEST:
 		return true
 	case CreateAgentEndpointInputOutboundDialTypeNONE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateAgentWebConversationInputChannel.
+const (
+	CreateAgentWebConversationInputChannelWeb CreateAgentWebConversationInputChannel = "web"
+)
+
+// Valid indicates whether the value is a known member of the CreateAgentWebConversationInputChannel enum.
+func (e CreateAgentWebConversationInputChannel) Valid() bool {
+	switch e {
+	case CreateAgentWebConversationInputChannelWeb:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateAgentWebConversationInputModality.
+const (
+	CreateAgentWebConversationInputModalityCall  CreateAgentWebConversationInputModality = "call"
+	CreateAgentWebConversationInputModalityChat  CreateAgentWebConversationInputModality = "chat"
+	CreateAgentWebConversationInputModalityVoice CreateAgentWebConversationInputModality = "voice"
+)
+
+// Valid indicates whether the value is a known member of the CreateAgentWebConversationInputModality enum.
+func (e CreateAgentWebConversationInputModality) Valid() bool {
+	switch e {
+	case CreateAgentWebConversationInputModalityCall:
+		return true
+	case CreateAgentWebConversationInputModalityChat:
+		return true
+	case CreateAgentWebConversationInputModalityVoice:
 		return true
 	default:
 		return false
@@ -3621,8 +3768,9 @@ func (e CreateMetricPolicyInputConditionsConditionsConditionType) Valid() bool {
 
 // Defines values for CreateMetricPolicyInputModality.
 const (
-	CreateMetricPolicyInputModalityCall CreateMetricPolicyInputModality = "call"
-	CreateMetricPolicyInputModalityChat CreateMetricPolicyInputModality = "chat"
+	CreateMetricPolicyInputModalityCall  CreateMetricPolicyInputModality = "call"
+	CreateMetricPolicyInputModalityChat  CreateMetricPolicyInputModality = "chat"
+	CreateMetricPolicyInputModalityVoice CreateMetricPolicyInputModality = "voice"
 )
 
 // Valid indicates whether the value is a known member of the CreateMetricPolicyInputModality enum.
@@ -3631,6 +3779,8 @@ func (e CreateMetricPolicyInputModality) Valid() bool {
 	case CreateMetricPolicyInputModalityCall:
 		return true
 	case CreateMetricPolicyInputModalityChat:
+		return true
+	case CreateMetricPolicyInputModalityVoice:
 		return true
 	default:
 		return false
@@ -4054,24 +4204,6 @@ func (e CreateThresholdInputSourceParticipantRole) Valid() bool {
 	case CreateThresholdInputSourceParticipantRoleCUSTOMER:
 		return true
 	case CreateThresholdInputSourceParticipantRoleSIMULATEDCUSTOMER:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for CreateWebSessionTokenInputModality.
-const (
-	CreateWebSessionTokenInputModalityCall CreateWebSessionTokenInputModality = "call"
-	CreateWebSessionTokenInputModalityChat CreateWebSessionTokenInputModality = "chat"
-)
-
-// Valid indicates whether the value is a known member of the CreateWebSessionTokenInputModality enum.
-func (e CreateWebSessionTokenInputModality) Valid() bool {
-	switch e {
-	case CreateWebSessionTokenInputModalityCall:
-		return true
-	case CreateWebSessionTokenInputModalityChat:
 		return true
 	default:
 		return false
@@ -12358,6 +12490,141 @@ func (e ManagedAgentConfigRevisionCreatedByType) Valid() bool {
 	}
 }
 
+// Defines values for McpServerAuth0Type.
+const (
+	McpServerAuth0TypeNONE McpServerAuth0Type = "NONE"
+)
+
+// Valid indicates whether the value is a known member of the McpServerAuth0Type enum.
+func (e McpServerAuth0Type) Valid() bool {
+	switch e {
+	case McpServerAuth0TypeNONE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for McpServerAuth1Type.
+const (
+	McpServerAuth1TypeBEARER McpServerAuth1Type = "BEARER"
+)
+
+// Valid indicates whether the value is a known member of the McpServerAuth1Type enum.
+func (e McpServerAuth1Type) Valid() bool {
+	switch e {
+	case McpServerAuth1TypeBEARER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for McpServerAuth2Type.
+const (
+	McpServerAuth2TypeHEADER McpServerAuth2Type = "HEADER"
+)
+
+// Valid indicates whether the value is a known member of the McpServerAuth2Type enum.
+func (e McpServerAuth2Type) Valid() bool {
+	switch e {
+	case McpServerAuth2TypeHEADER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for McpServerCreateBodyTransport.
+const (
+	McpServerCreateBodyTransportSSE            McpServerCreateBodyTransport = "SSE"
+	McpServerCreateBodyTransportSTREAMABLEHTTP McpServerCreateBodyTransport = "STREAMABLE_HTTP"
+)
+
+// Valid indicates whether the value is a known member of the McpServerCreateBodyTransport enum.
+func (e McpServerCreateBodyTransport) Valid() bool {
+	switch e {
+	case McpServerCreateBodyTransportSSE:
+		return true
+	case McpServerCreateBodyTransportSTREAMABLEHTTP:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for McpServerDeleteResponseDataDeleted.
+const (
+	McpServerDeleteResponseDataDeletedTrue McpServerDeleteResponseDataDeleted = true
+)
+
+// Valid indicates whether the value is a known member of the McpServerDeleteResponseDataDeleted enum.
+func (e McpServerDeleteResponseDataDeleted) Valid() bool {
+	switch e {
+	case McpServerDeleteResponseDataDeletedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for McpServerDiscoverBodyTransport.
+const (
+	McpServerDiscoverBodyTransportSSE            McpServerDiscoverBodyTransport = "SSE"
+	McpServerDiscoverBodyTransportSTREAMABLEHTTP McpServerDiscoverBodyTransport = "STREAMABLE_HTTP"
+)
+
+// Valid indicates whether the value is a known member of the McpServerDiscoverBodyTransport enum.
+func (e McpServerDiscoverBodyTransport) Valid() bool {
+	switch e {
+	case McpServerDiscoverBodyTransportSSE:
+		return true
+	case McpServerDiscoverBodyTransportSTREAMABLEHTTP:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for McpServerResponseAuthType.
+const (
+	McpServerResponseAuthTypeBEARER McpServerResponseAuthType = "BEARER"
+	McpServerResponseAuthTypeHEADER McpServerResponseAuthType = "HEADER"
+	McpServerResponseAuthTypeNONE   McpServerResponseAuthType = "NONE"
+)
+
+// Valid indicates whether the value is a known member of the McpServerResponseAuthType enum.
+func (e McpServerResponseAuthType) Valid() bool {
+	switch e {
+	case McpServerResponseAuthTypeBEARER:
+		return true
+	case McpServerResponseAuthTypeHEADER:
+		return true
+	case McpServerResponseAuthTypeNONE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for McpServerResponseTransport.
+const (
+	McpServerResponseTransportSSE            McpServerResponseTransport = "SSE"
+	McpServerResponseTransportSTREAMABLEHTTP McpServerResponseTransport = "STREAMABLE_HTTP"
+)
+
+// Valid indicates whether the value is a known member of the McpServerResponseTransport enum.
+func (e McpServerResponseTransport) Valid() bool {
+	switch e {
+	case McpServerResponseTransportSSE:
+		return true
+	case McpServerResponseTransportSTREAMABLEHTTP:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for MeApiKeyStatus.
 const (
 	MeApiKeyStatusACTIVE  MeApiKeyStatus = "ACTIVE"
@@ -18708,8 +18975,9 @@ func (e UpdateAgentDraftInputSettingsInterruptionMode) Valid() bool {
 
 // Defines values for UpdateAgentDraftInputSettingsModalities.
 const (
-	UpdateAgentDraftInputSettingsModalitiesCall UpdateAgentDraftInputSettingsModalities = "call"
-	UpdateAgentDraftInputSettingsModalitiesChat UpdateAgentDraftInputSettingsModalities = "chat"
+	UpdateAgentDraftInputSettingsModalitiesCall  UpdateAgentDraftInputSettingsModalities = "call"
+	UpdateAgentDraftInputSettingsModalitiesChat  UpdateAgentDraftInputSettingsModalities = "chat"
+	UpdateAgentDraftInputSettingsModalitiesVoice UpdateAgentDraftInputSettingsModalities = "voice"
 )
 
 // Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsModalities enum.
@@ -18718,6 +18986,8 @@ func (e UpdateAgentDraftInputSettingsModalities) Valid() bool {
 	case UpdateAgentDraftInputSettingsModalitiesCall:
 		return true
 	case UpdateAgentDraftInputSettingsModalitiesChat:
+		return true
+	case UpdateAgentDraftInputSettingsModalitiesVoice:
 		return true
 	default:
 		return false
@@ -20941,24 +21211,6 @@ func (e VoicemailFlowVariantType) Valid() bool {
 	}
 }
 
-// Defines values for WebSessionTokenModality.
-const (
-	WebSessionTokenModalityCall WebSessionTokenModality = "call"
-	WebSessionTokenModalityChat WebSessionTokenModality = "chat"
-)
-
-// Valid indicates whether the value is a known member of the WebSessionTokenModality enum.
-func (e WebSessionTokenModality) Valid() bool {
-	switch e {
-	case WebSessionTokenModalityCall:
-		return true
-	case WebSessionTokenModalityChat:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for WebhookResponseEvents.
 const (
 	WebhookResponseEventsCALLANALYSISCANCELLED         WebhookResponseEvents = "CALL_ANALYSIS_CANCELLED"
@@ -21202,633 +21454,6 @@ func (e GetV1BenchmarkLeaderboardParamsOrder) Valid() bool {
 	case GetV1BenchmarkLeaderboardParamsOrderAsc:
 		return true
 	case GetV1BenchmarkLeaderboardParamsOrderDesc:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnectionParamsProvider.
-const (
-	GetV1CalendarConnectionParamsProviderCALCOM   GetV1CalendarConnectionParamsProvider = "CAL_COM"
-	GetV1CalendarConnectionParamsProviderCALENDLY GetV1CalendarConnectionParamsProvider = "CALENDLY"
-	GetV1CalendarConnectionParamsProviderGOOGLE   GetV1CalendarConnectionParamsProvider = "GOOGLE"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnectionParamsProvider enum.
-func (e GetV1CalendarConnectionParamsProvider) Valid() bool {
-	switch e {
-	case GetV1CalendarConnectionParamsProviderCALCOM:
-		return true
-	case GetV1CalendarConnectionParamsProviderCALENDLY:
-		return true
-	case GetV1CalendarConnectionParamsProviderGOOGLE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth.
-const (
-	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuthAPIKEY GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
-	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuthOAUTH  GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth enum.
-func (e GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
-	switch e {
-	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuthAPIKEY:
-		return true
-	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuthOAUTH:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations.
-const (
-	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsBOOK              GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations = "BOOK"
-	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsCANCEL            GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
-	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
-	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
-	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
-	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations enum.
-func (e GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
-	switch e {
-	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsBOOK:
-		return true
-	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsCANCEL:
-		return true
-	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
-		return true
-	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
-		return true
-	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
-		return true
-	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold.
-const (
-	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHoldNONE        GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
-	GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold enum.
-func (e GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
-	switch e {
-	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHoldNONE:
-		return true
-	case GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnection200JSONResponseBodyDataProvider.
-const (
-	GetV1CalendarConnection200JSONResponseBodyDataProviderCALCOM   GetV1CalendarConnection200JSONResponseBodyDataProvider = "CAL_COM"
-	GetV1CalendarConnection200JSONResponseBodyDataProviderCALENDLY GetV1CalendarConnection200JSONResponseBodyDataProvider = "CALENDLY"
-	GetV1CalendarConnection200JSONResponseBodyDataProviderGOOGLE   GetV1CalendarConnection200JSONResponseBodyDataProvider = "GOOGLE"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnection200JSONResponseBodyDataProvider enum.
-func (e GetV1CalendarConnection200JSONResponseBodyDataProvider) Valid() bool {
-	switch e {
-	case GetV1CalendarConnection200JSONResponseBodyDataProviderCALCOM:
-		return true
-	case GetV1CalendarConnection200JSONResponseBodyDataProviderCALENDLY:
-		return true
-	case GetV1CalendarConnection200JSONResponseBodyDataProviderGOOGLE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnection200JSONResponseBodyDataStatus.
-const (
-	GetV1CalendarConnection200JSONResponseBodyDataStatusACTIVE             GetV1CalendarConnection200JSONResponseBodyDataStatus = "ACTIVE"
-	GetV1CalendarConnection200JSONResponseBodyDataStatusERROR              GetV1CalendarConnection200JSONResponseBodyDataStatus = "ERROR"
-	GetV1CalendarConnection200JSONResponseBodyDataStatusINVALIDCREDENTIALS GetV1CalendarConnection200JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnection200JSONResponseBodyDataStatus enum.
-func (e GetV1CalendarConnection200JSONResponseBodyDataStatus) Valid() bool {
-	switch e {
-	case GetV1CalendarConnection200JSONResponseBodyDataStatusACTIVE:
-		return true
-	case GetV1CalendarConnection200JSONResponseBodyDataStatusERROR:
-		return true
-	case GetV1CalendarConnection200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PostV1CalendarConnectionJSONBodyProvider.
-const (
-	PostV1CalendarConnectionJSONBodyProviderCALCOM   PostV1CalendarConnectionJSONBodyProvider = "CAL_COM"
-	PostV1CalendarConnectionJSONBodyProviderCALENDLY PostV1CalendarConnectionJSONBodyProvider = "CALENDLY"
-	PostV1CalendarConnectionJSONBodyProviderGOOGLE   PostV1CalendarConnectionJSONBodyProvider = "GOOGLE"
-)
-
-// Valid indicates whether the value is a known member of the PostV1CalendarConnectionJSONBodyProvider enum.
-func (e PostV1CalendarConnectionJSONBodyProvider) Valid() bool {
-	switch e {
-	case PostV1CalendarConnectionJSONBodyProviderCALCOM:
-		return true
-	case PostV1CalendarConnectionJSONBodyProviderCALENDLY:
-		return true
-	case PostV1CalendarConnectionJSONBodyProviderGOOGLE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth.
-const (
-	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuthAPIKEY PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
-	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuthOAUTH  PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
-)
-
-// Valid indicates whether the value is a known member of the PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth enum.
-func (e PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
-	switch e {
-	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuthAPIKEY:
-		return true
-	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuthOAUTH:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations.
-const (
-	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsBOOK              PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations = "BOOK"
-	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsCANCEL            PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
-	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
-	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
-	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
-	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
-)
-
-// Valid indicates whether the value is a known member of the PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations enum.
-func (e PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
-	switch e {
-	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsBOOK:
-		return true
-	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsCANCEL:
-		return true
-	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
-		return true
-	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
-		return true
-	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
-		return true
-	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold.
-const (
-	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHoldNONE        PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
-	PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
-)
-
-// Valid indicates whether the value is a known member of the PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold enum.
-func (e PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
-	switch e {
-	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHoldNONE:
-		return true
-	case PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PostV1CalendarConnection201JSONResponseBodyDataProvider.
-const (
-	PostV1CalendarConnection201JSONResponseBodyDataProviderCALCOM   PostV1CalendarConnection201JSONResponseBodyDataProvider = "CAL_COM"
-	PostV1CalendarConnection201JSONResponseBodyDataProviderCALENDLY PostV1CalendarConnection201JSONResponseBodyDataProvider = "CALENDLY"
-	PostV1CalendarConnection201JSONResponseBodyDataProviderGOOGLE   PostV1CalendarConnection201JSONResponseBodyDataProvider = "GOOGLE"
-)
-
-// Valid indicates whether the value is a known member of the PostV1CalendarConnection201JSONResponseBodyDataProvider enum.
-func (e PostV1CalendarConnection201JSONResponseBodyDataProvider) Valid() bool {
-	switch e {
-	case PostV1CalendarConnection201JSONResponseBodyDataProviderCALCOM:
-		return true
-	case PostV1CalendarConnection201JSONResponseBodyDataProviderCALENDLY:
-		return true
-	case PostV1CalendarConnection201JSONResponseBodyDataProviderGOOGLE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PostV1CalendarConnection201JSONResponseBodyDataStatus.
-const (
-	PostV1CalendarConnection201JSONResponseBodyDataStatusACTIVE             PostV1CalendarConnection201JSONResponseBodyDataStatus = "ACTIVE"
-	PostV1CalendarConnection201JSONResponseBodyDataStatusERROR              PostV1CalendarConnection201JSONResponseBodyDataStatus = "ERROR"
-	PostV1CalendarConnection201JSONResponseBodyDataStatusINVALIDCREDENTIALS PostV1CalendarConnection201JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
-)
-
-// Valid indicates whether the value is a known member of the PostV1CalendarConnection201JSONResponseBodyDataStatus enum.
-func (e PostV1CalendarConnection201JSONResponseBodyDataStatus) Valid() bool {
-	switch e {
-	case PostV1CalendarConnection201JSONResponseBodyDataStatusACTIVE:
-		return true
-	case PostV1CalendarConnection201JSONResponseBodyDataStatusERROR:
-		return true
-	case PostV1CalendarConnection201JSONResponseBodyDataStatusINVALIDCREDENTIALS:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted.
-const (
-	DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeletedTrue DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted = true
-)
-
-// Valid indicates whether the value is a known member of the DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted enum.
-func (e DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted) Valid() bool {
-	switch e {
-	case DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeletedTrue:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth.
-const (
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthAPIKEY GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthOAUTH  GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth enum.
-func (e GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
-	switch e {
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthAPIKEY:
-		return true
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthOAUTH:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations.
-const (
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsBOOK              GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "BOOK"
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCANCEL            GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations enum.
-func (e GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
-	switch e {
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsBOOK:
-		return true
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCANCEL:
-		return true
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
-		return true
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
-		return true
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
-		return true
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold.
-const (
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldNONE        GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold enum.
-func (e GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
-	switch e {
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldNONE:
-		return true
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider.
-const (
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALCOM   GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider = "CAL_COM"
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALENDLY GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider = "CALENDLY"
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderGOOGLE   GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider = "GOOGLE"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider enum.
-func (e GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider) Valid() bool {
-	switch e {
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALCOM:
-		return true
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALENDLY:
-		return true
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderGOOGLE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus.
-const (
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusACTIVE             GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus = "ACTIVE"
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusERROR              GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus = "ERROR"
-	GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusINVALIDCREDENTIALS GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus enum.
-func (e GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus) Valid() bool {
-	switch e {
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusACTIVE:
-		return true
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusERROR:
-		return true
-	case GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth.
-const (
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthAPIKEY PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthOAUTH  PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
-)
-
-// Valid indicates whether the value is a known member of the PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth enum.
-func (e PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
-	switch e {
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthAPIKEY:
-		return true
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuthOAUTH:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations.
-const (
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsBOOK              PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "BOOK"
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCANCEL            PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
-)
-
-// Valid indicates whether the value is a known member of the PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations enum.
-func (e PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
-	switch e {
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsBOOK:
-		return true
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCANCEL:
-		return true
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
-		return true
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
-		return true
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
-		return true
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold.
-const (
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldNONE        PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
-)
-
-// Valid indicates whether the value is a known member of the PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold enum.
-func (e PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
-	switch e {
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldNONE:
-		return true
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider.
-const (
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALCOM   PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider = "CAL_COM"
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALENDLY PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider = "CALENDLY"
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderGOOGLE   PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider = "GOOGLE"
-)
-
-// Valid indicates whether the value is a known member of the PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider enum.
-func (e PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider) Valid() bool {
-	switch e {
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALCOM:
-		return true
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderCALENDLY:
-		return true
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProviderGOOGLE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus.
-const (
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusACTIVE             PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus = "ACTIVE"
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusERROR              PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus = "ERROR"
-	PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusINVALIDCREDENTIALS PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
-)
-
-// Valid indicates whether the value is a known member of the PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus enum.
-func (e PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus) Valid() bool {
-	switch e {
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusACTIVE:
-		return true
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusERROR:
-		return true
-	case PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth.
-const (
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuthAPIKEY PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuthOAUTH  PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
-)
-
-// Valid indicates whether the value is a known member of the PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth enum.
-func (e PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
-	switch e {
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuthAPIKEY:
-		return true
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuthOAUTH:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations.
-const (
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsBOOK              PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "BOOK"
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsCANCEL            PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
-)
-
-// Valid indicates whether the value is a known member of the PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations enum.
-func (e PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
-	switch e {
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsBOOK:
-		return true
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsCANCEL:
-		return true
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
-		return true
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
-		return true
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
-		return true
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold.
-const (
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHoldNONE        PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
-)
-
-// Valid indicates whether the value is a known member of the PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold enum.
-func (e PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
-	switch e {
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHoldNONE:
-		return true
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider.
-const (
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProviderCALCOM   PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider = "CAL_COM"
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProviderCALENDLY PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider = "CALENDLY"
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProviderGOOGLE   PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider = "GOOGLE"
-)
-
-// Valid indicates whether the value is a known member of the PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider enum.
-func (e PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider) Valid() bool {
-	switch e {
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProviderCALCOM:
-		return true
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProviderCALENDLY:
-		return true
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProviderGOOGLE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus.
-const (
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusACTIVE             PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus = "ACTIVE"
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusERROR              PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus = "ERROR"
-	PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusINVALIDCREDENTIALS PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
-)
-
-// Valid indicates whether the value is a known member of the PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus enum.
-func (e PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus) Valid() bool {
-	switch e {
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusACTIVE:
-		return true
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusERROR:
-		return true
-	case PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider.
-const (
-	GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProviderCALCOM GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider = "CAL_COM"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider enum.
-func (e GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider) Valid() bool {
-	switch e {
-	case GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProviderCALCOM:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider.
-const (
-	GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProviderCALCOM GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider = "CAL_COM"
-)
-
-// Valid indicates whether the value is a known member of the GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider enum.
-func (e GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider) Valid() bool {
-	switch e {
-	case GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProviderCALCOM:
 		return true
 	default:
 		return false
@@ -22642,6 +22267,69 @@ func (e GetV1ChatParamsSortDirection) Valid() bool {
 	}
 }
 
+// Defines values for GetV1Chat200JSONResponseBodyDataStatus.
+const (
+	GetV1Chat200JSONResponseBodyDataStatusENDED      GetV1Chat200JSONResponseBodyDataStatus = "ENDED"
+	GetV1Chat200JSONResponseBodyDataStatusINPROGRESS GetV1Chat200JSONResponseBodyDataStatus = "IN_PROGRESS"
+	GetV1Chat200JSONResponseBodyDataStatusPENDING    GetV1Chat200JSONResponseBodyDataStatus = "PENDING"
+)
+
+// Valid indicates whether the value is a known member of the GetV1Chat200JSONResponseBodyDataStatus enum.
+func (e GetV1Chat200JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case GetV1Chat200JSONResponseBodyDataStatusENDED:
+		return true
+	case GetV1Chat200JSONResponseBodyDataStatusINPROGRESS:
+		return true
+	case GetV1Chat200JSONResponseBodyDataStatusPENDING:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1Chat200JSONResponseBodyDataStatus.
+const (
+	PostV1Chat200JSONResponseBodyDataStatusENDED      PostV1Chat200JSONResponseBodyDataStatus = "ENDED"
+	PostV1Chat200JSONResponseBodyDataStatusINPROGRESS PostV1Chat200JSONResponseBodyDataStatus = "IN_PROGRESS"
+	PostV1Chat200JSONResponseBodyDataStatusPENDING    PostV1Chat200JSONResponseBodyDataStatus = "PENDING"
+)
+
+// Valid indicates whether the value is a known member of the PostV1Chat200JSONResponseBodyDataStatus enum.
+func (e PostV1Chat200JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case PostV1Chat200JSONResponseBodyDataStatusENDED:
+		return true
+	case PostV1Chat200JSONResponseBodyDataStatusINPROGRESS:
+		return true
+	case PostV1Chat200JSONResponseBodyDataStatusPENDING:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1ChatById200JSONResponseBodyDataStatus.
+const (
+	GetV1ChatById200JSONResponseBodyDataStatusENDED      GetV1ChatById200JSONResponseBodyDataStatus = "ENDED"
+	GetV1ChatById200JSONResponseBodyDataStatusINPROGRESS GetV1ChatById200JSONResponseBodyDataStatus = "IN_PROGRESS"
+	GetV1ChatById200JSONResponseBodyDataStatusPENDING    GetV1ChatById200JSONResponseBodyDataStatus = "PENDING"
+)
+
+// Valid indicates whether the value is a known member of the GetV1ChatById200JSONResponseBodyDataStatus enum.
+func (e GetV1ChatById200JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case GetV1ChatById200JSONResponseBodyDataStatusENDED:
+		return true
+	case GetV1ChatById200JSONResponseBodyDataStatusINPROGRESS:
+		return true
+	case GetV1ChatById200JSONResponseBodyDataStatusPENDING:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetV1ChatByIdMetricsParamsStatus.
 const (
 	GetV1ChatByIdMetricsParamsStatusAll     GetV1ChatByIdMetricsParamsStatus = "all"
@@ -22957,10 +22645,32 @@ func (e PostV1CliAuthToken200JSONResponseBodyDataScopeKind) Valid() bool {
 	}
 }
 
+// Defines values for GetV1ConversationParamsModality.
+const (
+	GetV1ConversationParamsModalityCall  GetV1ConversationParamsModality = "call"
+	GetV1ConversationParamsModalityChat  GetV1ConversationParamsModality = "chat"
+	GetV1ConversationParamsModalityVoice GetV1ConversationParamsModality = "voice"
+)
+
+// Valid indicates whether the value is a known member of the GetV1ConversationParamsModality enum.
+func (e GetV1ConversationParamsModality) Valid() bool {
+	switch e {
+	case GetV1ConversationParamsModalityCall:
+		return true
+	case GetV1ConversationParamsModalityChat:
+		return true
+	case GetV1ConversationParamsModalityVoice:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetV1CustomerParamsModality.
 const (
-	GetV1CustomerParamsModalityCall GetV1CustomerParamsModality = "call"
-	GetV1CustomerParamsModalityChat GetV1CustomerParamsModality = "chat"
+	GetV1CustomerParamsModalityCall  GetV1CustomerParamsModality = "call"
+	GetV1CustomerParamsModalityChat  GetV1CustomerParamsModality = "chat"
+	GetV1CustomerParamsModalityVoice GetV1CustomerParamsModality = "voice"
 )
 
 // Valid indicates whether the value is a known member of the GetV1CustomerParamsModality enum.
@@ -22969,6 +22679,8 @@ func (e GetV1CustomerParamsModality) Valid() bool {
 	case GetV1CustomerParamsModalityCall:
 		return true
 	case GetV1CustomerParamsModalityChat:
+		return true
+	case GetV1CustomerParamsModalityVoice:
 		return true
 	default:
 		return false
@@ -23751,16 +23463,16 @@ func (e PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBod
 
 // Defines values for GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType.
 const (
-	GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationTypeCall GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType = "call"
-	GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationTypeChat GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType = "chat"
+	GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationTypeChat  GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType = "chat"
+	GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationTypeVoice GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType = "voice"
 )
 
 // Valid indicates whether the value is a known member of the GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType enum.
 func (e GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType) Valid() bool {
 	switch e {
-	case GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationTypeCall:
-		return true
 	case GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationTypeChat:
+		return true
+	case GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationTypeVoice:
 		return true
 	default:
 		return false
@@ -23863,6 +23575,633 @@ const (
 func (e DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeleted) Valid() bool {
 	switch e {
 	case DeleteV1DashboardByDashboardIdWidgetByWidgetId200JSONResponseBodyDataDeletedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendarParamsProvider.
+const (
+	GetV1IntegrationsCalendarParamsProviderCALCOM   GetV1IntegrationsCalendarParamsProvider = "CAL_COM"
+	GetV1IntegrationsCalendarParamsProviderCALENDLY GetV1IntegrationsCalendarParamsProvider = "CALENDLY"
+	GetV1IntegrationsCalendarParamsProviderGOOGLE   GetV1IntegrationsCalendarParamsProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarParamsProvider enum.
+func (e GetV1IntegrationsCalendarParamsProvider) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendarParamsProviderCALCOM:
+		return true
+	case GetV1IntegrationsCalendarParamsProviderCALENDLY:
+		return true
+	case GetV1IntegrationsCalendarParamsProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth.
+const (
+	GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuthAPIKEY GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
+	GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuthOAUTH  GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth enum.
+func (e GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuthAPIKEY:
+		return true
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuthOAUTH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations.
+const (
+	GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperationsBOOK              GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations = "BOOK"
+	GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperationsCANCEL            GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
+	GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
+	GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
+	GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
+	GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations enum.
+func (e GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperationsBOOK:
+		return true
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperationsCANCEL:
+		return true
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
+		return true
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
+		return true
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
+		return true
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHold.
+const (
+	GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHoldNONE        GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
+	GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHold enum.
+func (e GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHoldNONE:
+		return true
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendar200JSONResponseBodyDataProvider.
+const (
+	GetV1IntegrationsCalendar200JSONResponseBodyDataProviderCALCOM   GetV1IntegrationsCalendar200JSONResponseBodyDataProvider = "CAL_COM"
+	GetV1IntegrationsCalendar200JSONResponseBodyDataProviderCALENDLY GetV1IntegrationsCalendar200JSONResponseBodyDataProvider = "CALENDLY"
+	GetV1IntegrationsCalendar200JSONResponseBodyDataProviderGOOGLE   GetV1IntegrationsCalendar200JSONResponseBodyDataProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendar200JSONResponseBodyDataProvider enum.
+func (e GetV1IntegrationsCalendar200JSONResponseBodyDataProvider) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataProviderCALCOM:
+		return true
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendar200JSONResponseBodyDataStatus.
+const (
+	GetV1IntegrationsCalendar200JSONResponseBodyDataStatusACTIVE             GetV1IntegrationsCalendar200JSONResponseBodyDataStatus = "ACTIVE"
+	GetV1IntegrationsCalendar200JSONResponseBodyDataStatusERROR              GetV1IntegrationsCalendar200JSONResponseBodyDataStatus = "ERROR"
+	GetV1IntegrationsCalendar200JSONResponseBodyDataStatusINVALIDCREDENTIALS GetV1IntegrationsCalendar200JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendar200JSONResponseBodyDataStatus enum.
+func (e GetV1IntegrationsCalendar200JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataStatusACTIVE:
+		return true
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataStatusERROR:
+		return true
+	case GetV1IntegrationsCalendar200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendarJSONBodyProvider.
+const (
+	PostV1IntegrationsCalendarJSONBodyProviderCALCOM   PostV1IntegrationsCalendarJSONBodyProvider = "CAL_COM"
+	PostV1IntegrationsCalendarJSONBodyProviderCALENDLY PostV1IntegrationsCalendarJSONBodyProvider = "CALENDLY"
+	PostV1IntegrationsCalendarJSONBodyProviderGOOGLE   PostV1IntegrationsCalendarJSONBodyProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendarJSONBodyProvider enum.
+func (e PostV1IntegrationsCalendarJSONBodyProvider) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendarJSONBodyProviderCALCOM:
+		return true
+	case PostV1IntegrationsCalendarJSONBodyProviderCALENDLY:
+		return true
+	case PostV1IntegrationsCalendarJSONBodyProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth.
+const (
+	PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuthAPIKEY PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
+	PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuthOAUTH  PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth enum.
+func (e PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuthAPIKEY:
+		return true
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuthOAUTH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations.
+const (
+	PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperationsBOOK              PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations = "BOOK"
+	PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperationsCANCEL            PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
+	PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
+	PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
+	PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
+	PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations enum.
+func (e PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperationsBOOK:
+		return true
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperationsCANCEL:
+		return true
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
+		return true
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
+		return true
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
+		return true
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHold.
+const (
+	PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHoldNONE        PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
+	PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHold enum.
+func (e PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHoldNONE:
+		return true
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendar201JSONResponseBodyDataProvider.
+const (
+	PostV1IntegrationsCalendar201JSONResponseBodyDataProviderCALCOM   PostV1IntegrationsCalendar201JSONResponseBodyDataProvider = "CAL_COM"
+	PostV1IntegrationsCalendar201JSONResponseBodyDataProviderCALENDLY PostV1IntegrationsCalendar201JSONResponseBodyDataProvider = "CALENDLY"
+	PostV1IntegrationsCalendar201JSONResponseBodyDataProviderGOOGLE   PostV1IntegrationsCalendar201JSONResponseBodyDataProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendar201JSONResponseBodyDataProvider enum.
+func (e PostV1IntegrationsCalendar201JSONResponseBodyDataProvider) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataProviderCALCOM:
+		return true
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendar201JSONResponseBodyDataStatus.
+const (
+	PostV1IntegrationsCalendar201JSONResponseBodyDataStatusACTIVE             PostV1IntegrationsCalendar201JSONResponseBodyDataStatus = "ACTIVE"
+	PostV1IntegrationsCalendar201JSONResponseBodyDataStatusERROR              PostV1IntegrationsCalendar201JSONResponseBodyDataStatus = "ERROR"
+	PostV1IntegrationsCalendar201JSONResponseBodyDataStatusINVALIDCREDENTIALS PostV1IntegrationsCalendar201JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendar201JSONResponseBodyDataStatus enum.
+func (e PostV1IntegrationsCalendar201JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataStatusACTIVE:
+		return true
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataStatusERROR:
+		return true
+	case PostV1IntegrationsCalendar201JSONResponseBodyDataStatusINVALIDCREDENTIALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeleted.
+const (
+	DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeletedTrue DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeleted = true
+)
+
+// Valid indicates whether the value is a known member of the DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeleted enum.
+func (e DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeleted) Valid() bool {
+	switch e {
+	case DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeletedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth.
+const (
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuthAPIKEY GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuthOAUTH  GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth enum.
+func (e GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuthAPIKEY:
+		return true
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuthOAUTH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations.
+const (
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsBOOK              GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "BOOK"
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCANCEL            GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations enum.
+func (e GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsBOOK:
+		return true
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCANCEL:
+		return true
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
+		return true
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
+		return true
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
+		return true
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold.
+const (
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldNONE        GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold enum.
+func (e GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldNONE:
+		return true
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider.
+const (
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProviderCALCOM   GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider = "CAL_COM"
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProviderCALENDLY GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider = "CALENDLY"
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProviderGOOGLE   GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider enum.
+func (e GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProviderCALCOM:
+		return true
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus.
+const (
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatusACTIVE             GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus = "ACTIVE"
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatusERROR              GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus = "ERROR"
+	GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatusINVALIDCREDENTIALS GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus enum.
+func (e GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatusACTIVE:
+		return true
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatusERROR:
+		return true
+	case GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth.
+const (
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuthAPIKEY PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuthOAUTH  PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth enum.
+func (e PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
+	switch e {
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuthAPIKEY:
+		return true
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuthOAUTH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations.
+const (
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsBOOK              PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "BOOK"
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCANCEL            PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations enum.
+func (e PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
+	switch e {
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsBOOK:
+		return true
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCANCEL:
+		return true
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
+		return true
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
+		return true
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
+		return true
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold.
+const (
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldNONE        PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold enum.
+func (e PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
+	switch e {
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldNONE:
+		return true
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider.
+const (
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProviderCALCOM   PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider = "CAL_COM"
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProviderCALENDLY PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider = "CALENDLY"
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProviderGOOGLE   PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider enum.
+func (e PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider) Valid() bool {
+	switch e {
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProviderCALCOM:
+		return true
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus.
+const (
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatusACTIVE             PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus = "ACTIVE"
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatusERROR              PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus = "ERROR"
+	PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatusINVALIDCREDENTIALS PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
+)
+
+// Valid indicates whether the value is a known member of the PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus enum.
+func (e PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatusACTIVE:
+		return true
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatusERROR:
+		return true
+	case PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth.
+const (
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuthAPIKEY PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth = "API_KEY"
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuthOAUTH  PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth = "OAUTH"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth enum.
+func (e PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuthAPIKEY:
+		return true
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuthOAUTH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations.
+const (
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsBOOK              PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "BOOK"
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsCANCEL            PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "CANCEL"
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "CHECK_AVAILABILITY"
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS      PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "LIST_BOOKINGS"
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING     PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "LOOKUP_BOOKING"
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE        PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations enum.
+func (e PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsBOOK:
+		return true
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsCANCEL:
+		return true
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsCHECKAVAILABILITY:
+		return true
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsLISTBOOKINGS:
+		return true
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsLOOKUPBOOKING:
+		return true
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperationsRESCHEDULE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold.
+const (
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHoldNONE        PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold = "NONE"
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold = "RESERVATION"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold enum.
+func (e PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHoldNONE:
+		return true
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHoldRESERVATION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider.
+const (
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderCALCOM   PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider = "CAL_COM"
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderCALENDLY PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider = "CALENDLY"
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderGOOGLE   PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider enum.
+func (e PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderCALCOM:
+		return true
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus.
+const (
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatusACTIVE             PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus = "ACTIVE"
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatusERROR              PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus = "ERROR"
+	PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatusINVALIDCREDENTIALS PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus = "INVALID_CREDENTIALS"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus enum.
+func (e PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatusACTIVE:
+		return true
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatusERROR:
+		return true
+	case PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatusINVALIDCREDENTIALS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider.
+const (
+	GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProviderCALCOM GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider = "CAL_COM"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider enum.
+func (e GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProviderCALCOM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider.
+const (
+	GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProviderCALCOM GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider = "CAL_COM"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider enum.
+func (e GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProviderCALCOM:
 		return true
 	default:
 		return false
@@ -27460,51 +27799,6 @@ func (e PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutco
 	}
 }
 
-// Defines values for GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState.
-const (
-	GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsStateCompleted  GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState = "completed"
-	GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsStateFailed     GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState = "failed"
-	GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsStateInProgress GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState = "in_progress"
-	GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsStateQueued     GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState = "queued"
-)
-
-// Valid indicates whether the value is a known member of the GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState enum.
-func (e GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState) Valid() bool {
-	switch e {
-	case GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsStateCompleted:
-		return true
-	case GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsStateFailed:
-		return true
-	case GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsStateInProgress:
-		return true
-	case GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsStateQueued:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for PostV1PublicProspectSimRunJSONBodyTemplateKey.
-const (
-	PostV1PublicProspectSimRunJSONBodyTemplateKeyAppointment PostV1PublicProspectSimRunJSONBodyTemplateKey = "appointment"
-	PostV1PublicProspectSimRunJSONBodyTemplateKeyBilling     PostV1PublicProspectSimRunJSONBodyTemplateKey = "billing"
-	PostV1PublicProspectSimRunJSONBodyTemplateKeySupport     PostV1PublicProspectSimRunJSONBodyTemplateKey = "support"
-)
-
-// Valid indicates whether the value is a known member of the PostV1PublicProspectSimRunJSONBodyTemplateKey enum.
-func (e PostV1PublicProspectSimRunJSONBodyTemplateKey) Valid() bool {
-	switch e {
-	case PostV1PublicProspectSimRunJSONBodyTemplateKeyAppointment:
-		return true
-	case PostV1PublicProspectSimRunJSONBodyTemplateKeyBilling:
-		return true
-	case PostV1PublicProspectSimRunJSONBodyTemplateKeySupport:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for GetV1SimulationPlanJobsParamsStatus.
 const (
 	GetV1SimulationPlanJobsParamsStatusCANCELLED           GetV1SimulationPlanJobsParamsStatus = "CANCELLED"
@@ -27610,10 +27904,11 @@ type AgentConfig struct {
 		Model    string                 `json:"model"`
 		Provider AgentConfigLlmProvider `json:"provider"`
 	} `json:"llm,omitempty"`
-	Name     string               `json:"name"`
-	Prompt   *string              `json:"prompt,omitempty"`
-	Provider *AgentConfigProvider `json:"provider,omitempty"`
-	Stt      *struct {
+	Modalities *[]AgentConfigModalities `json:"modalities,omitempty"`
+	Name       string                   `json:"name"`
+	Prompt     *string                  `json:"prompt,omitempty"`
+	Provider   *AgentConfigProvider     `json:"provider,omitempty"`
+	Stt        *struct {
 		Model    string                 `json:"model"`
 		Provider AgentConfigSttProvider `json:"provider"`
 	} `json:"stt,omitempty"`
@@ -27640,6 +27935,9 @@ type AgentConfigKind string
 // AgentConfigLlmProvider defines model for AgentConfig.Llm.Provider.
 type AgentConfigLlmProvider string
 
+// AgentConfigModalities defines model for AgentConfig.Modalities.
+type AgentConfigModalities string
+
 // AgentConfigProvider defines model for AgentConfig.Provider.
 type AgentConfigProvider string
 
@@ -27648,6 +27946,9 @@ type AgentConfigSttProvider string
 
 // AgentConfigTtsProvider defines model for AgentConfig.Tts.Provider.
 type AgentConfigTtsProvider string
+
+// AgentConversationCreated defines model for AgentConversationCreated.
+type AgentConversationCreated = AgentWebConversationCreated
 
 // AgentEndpointById defines model for AgentEndpointById.
 type AgentEndpointById struct {
@@ -27955,7 +28256,7 @@ type AgentVersionResponse struct {
 	// Language ISO 639-1, e.g. en.
 	Language *string `json:"language"`
 
-	// Modalities Whether the agent takes calls, chats, or both.
+	// Modalities Whether the agent talks by voice, in chats, or both: `voice`, `chat`.
 	Modalities []AgentVersionResponseModalities `json:"modalities"`
 
 	// PublishedAt ISO 8601.
@@ -28034,6 +28335,48 @@ type AgentVersionTool struct {
 	// PinnedVersion The tool version the agent runs; null runs the tool's latest declared version.
 	PinnedVersion    *int               `json:"pinnedVersion"`
 	ToolDefinitionId openapi_types.UUID `json:"toolDefinitionId"`
+}
+
+// AgentWebConversationCreated defines model for AgentWebConversationCreated.
+type AgentWebConversationCreated struct {
+	AgentId openapi_types.UUID                 `json:"agentId"`
+	Channel AgentWebConversationCreatedChannel `json:"channel"`
+
+	// CreatedAt When it was created (ISO 8601).
+	CreatedAt string `json:"createdAt"`
+
+	// Id The conversation id. Read it with `GET /v1/conversation/{conversationId}`; once it is recorded it is also its call or chat id, and a call's tools get it as `{{conversation.id}}`.
+	Id       openapi_types.UUID                  `json:"id"`
+	Modality AgentWebConversationCreatedModality `json:"modality"`
+
+	// Status Waiting for the browser to join.
+	Status AgentWebConversationCreatedStatus `json:"status"`
+
+	// Web What a browser needs to join the conversation.
+	Web AgentWebJoin `json:"web"`
+}
+
+// AgentWebConversationCreatedChannel defines model for AgentWebConversationCreated.Channel.
+type AgentWebConversationCreatedChannel string
+
+// AgentWebConversationCreatedModality defines model for AgentWebConversationCreated.Modality.
+type AgentWebConversationCreatedModality string
+
+// AgentWebConversationCreatedStatus Waiting for the browser to join.
+type AgentWebConversationCreatedStatus string
+
+// AgentWebJoin What a browser needs to join the conversation.
+type AgentWebJoin struct {
+	// AllowedOrigins The origins the browser may join from, normalized.
+	AllowedOrigins []string `json:"allowedOrigins"`
+
+	// ClientToken A single-use token for the browser, and the only thing your page should get. The web SDK spends it to join from one of `allowedOrigins` before `clientTokenExpiresAt`, and runs the connection itself. It is not an API key.
+	ClientToken string `json:"clientToken"`
+
+	// ClientTokenExpiresAt When the browser can no longer join (ISO 8601).
+	//
+	// Example: 2026-11-10T09:02:00.000Z
+	ClientTokenExpiresAt string `json:"clientTokenExpiresAt"`
 }
 
 // AlertActions defines model for AlertActions.
@@ -28124,7 +28467,7 @@ type AlertThresholdTriggerType string
 
 // AnalyticsQuery An aggregate query: one or more measures over a time window, optionally filtered, broken down and compared. GET /v1/analytics/schema lists the metrics, filters and breakdowns available.
 //
-// Example: {"filters":[{"type":"MODALITY","value":"call"}],"interval":"DAY","measures":[{"aggregation":"AVG","metric":"sentiment_score"},{"aggregation":"COUNT","type":"CONVERSATION"}],"timeRange":{"type":"LAST","unit":"DAYS","value":7},"timezone":"Europe/London"}
+// Example: {"filters":[{"type":"MODALITY","value":"voice"}],"interval":"DAY","measures":[{"aggregation":"AVG","metric":"sentiment_score"},{"aggregation":"COUNT","type":"CONVERSATION"}],"timeRange":{"type":"LAST","unit":"DAYS","value":7},"timezone":"Europe/London"}
 type AnalyticsQuery struct {
 	// ComparisonGroups Run every measure once per named filter set, e.g. one group per agent.
 	ComparisonGroups *[]struct {
@@ -29856,6 +30199,64 @@ type ConfigOffScriptReaction string
 // ConfigOffScriptThen defines model for ConfigOffScript.Then.
 type ConfigOffScriptThen string
 
+// Conversation defines model for Conversation.
+type Conversation struct {
+	CreatedAt string `json:"createdAt"`
+
+	// DurationMs How long it ran. Null until it ends.
+	DurationMs *int `json:"durationMs"`
+
+	// EndedAt When it ended (ISO 8601). Null until it ends.
+	EndedAt *string `json:"endedAt"`
+
+	// ExternalId Your own id for it, if one was given.
+	ExternalId *string `json:"externalId"`
+
+	// Id The conversation id: its call id or chat id. `modality` says which, and where to read its transcript and metrics (`/v1/call/{callId}` or `/v1/chat/{id}`).
+	Id openapi_types.UUID `json:"id"`
+
+	// Modality `voice` or `chat`. A voice conversation is recorded as a call (`/v1/call/{callId}`), a chat as a chat (`/v1/chat/{id}`).
+	//
+	// Example: voice
+	Modality  ConversationModality `json:"modality"`
+	ProjectId openapi_types.UUID   `json:"projectId"`
+
+	// StartedAt When it started, or was created while pending (ISO 8601).
+	StartedAt string `json:"startedAt"`
+
+	// Status `PENDING` until it starts (a call ringing, a chat nobody has joined yet), `IN_PROGRESS`, then `ENDED`.
+	//
+	// Example: ENDED
+	Status  ConversationStatus `json:"status"`
+	Summary *string            `json:"summary"`
+	Title   *string            `json:"title"`
+}
+
+// ConversationModality `voice` or `chat`. A voice conversation is recorded as a call (`/v1/call/{callId}`), a chat as a chat (`/v1/chat/{id}`).
+//
+// Example: voice
+type ConversationModality string
+
+// ConversationStatus `PENDING` until it starts (a call ringing, a chat nobody has joined yet), `IN_PROGRESS`, then `ENDED`.
+//
+// Example: ENDED
+type ConversationStatus string
+
+// ConversationList defines model for ConversationList.
+type ConversationList struct {
+	Data       []Conversation `json:"data"`
+	Pagination struct {
+		// HasMore Whether there are more items to fetch
+		HasMore bool `json:"hasMore"`
+
+		// NextCursor Cursor for the next page of items
+		NextCursor *string `json:"nextCursor"`
+
+		// Total Total number of items
+		Total float64 `json:"total"`
+	} `json:"pagination"`
+}
+
 // CostBreakdownItem defines model for CostBreakdownItem.
 type CostBreakdownItem struct {
 	// AmountUsd The same figure in US dollars.
@@ -29879,6 +30280,9 @@ type CostBreakdownItemSource string
 
 // CostBreakdownItemSurface SIMULATION or POST_CALL.
 type CostBreakdownItemSurface string
+
+// CreateAgentConversationInput defines model for CreateAgentConversationInput.
+type CreateAgentConversationInput = CreateAgentWebConversationInput
 
 // CreateAgentDraftInput defines model for CreateAgentDraftInput.
 type CreateAgentDraftInput struct {
@@ -29912,6 +30316,35 @@ type CreateAgentEndpointInputDirection string
 
 // CreateAgentEndpointInputOutboundDialType Outbound dial type: NONE or HTTP_REQUEST (default: NONE)
 type CreateAgentEndpointInputOutboundDialType string
+
+// CreateAgentWebConversationInput defines model for CreateAgentWebConversationInput.
+type CreateAgentWebConversationInput struct {
+	// AllowedOrigins The origins your page may join from, exactly as the browser sends them: https only (http on localhost for development), no paths or wildcards.
+	//
+	// Example: ["https://app.example.com"]
+	AllowedOrigins []string `json:"allowedOrigins"`
+
+	// Channel How it is reached. `web`: in a browser on one of `allowedOrigins`, joined with the web SDK.
+	Channel CreateAgentWebConversationInputChannel `json:"channel"`
+
+	// ClientTokenTtlSeconds How long the browser has to join, in seconds. Default 120.
+	//
+	// Example: 120
+	ClientTokenTtlSeconds *int `json:"clientTokenTtlSeconds,omitempty"`
+
+	// Modality `voice` or `chat`. The agent must have that modality turned on.
+	//
+	// Example: voice
+	Modality CreateAgentWebConversationInputModality `json:"modality"`
+}
+
+// CreateAgentWebConversationInputChannel How it is reached. `web`: in a browser on one of `allowedOrigins`, joined with the web SDK.
+type CreateAgentWebConversationInputChannel string
+
+// CreateAgentWebConversationInputModality `voice` or `chat`. The agent must have that modality turned on.
+//
+// Example: voice
+type CreateAgentWebConversationInputModality string
 
 // CreateAutoimproveJobInput defines model for CreateAutoimproveJobInput.
 type CreateAutoimproveJobInput struct {
@@ -30123,9 +30556,9 @@ type CreateMetricPolicyInput struct {
 		Settings *PolicyMetricSettings `json:"settings,omitempty"`
 	} `json:"metrics"`
 
-	// Modality Modality this policy targets. A policy fires for exactly one modality and can only reference metrics that support that modality.
+	// Modality Modality this policy targets: `voice` or `chat` (`call` is still accepted for `voice`). A policy fires for exactly one modality and can only reference metrics that support that modality.
 	//
-	// Example: call
+	// Example: voice
 	Modality CreateMetricPolicyInputModality `json:"modality"`
 
 	// Name Name of the metric policy
@@ -30145,9 +30578,9 @@ type CreateMetricPolicyInputConditionsConditionsConditionOperator string
 // CreateMetricPolicyInputConditionsConditionsConditionType Type of condition: AGENT (match by agent ID), CALL_SOURCE (match by source e.g. VAPI, RETELL), CALL_PROPERTY (match by call property key/value)
 type CreateMetricPolicyInputConditionsConditionsConditionType string
 
-// CreateMetricPolicyInputModality Modality this policy targets. A policy fires for exactly one modality and can only reference metrics that support that modality.
+// CreateMetricPolicyInputModality Modality this policy targets: `voice` or `chat` (`call` is still accepted for `voice`). A policy fires for exactly one modality and can only reference metrics that support that modality.
 //
-// Example: call
+// Example: voice
 type CreateMetricPolicyInputModality string
 
 // CreateMetricPolicyInputStatus Status of the policy (default: ACTIVE)
@@ -30867,29 +31300,6 @@ type CreateThresholdInputOperator string
 // CreateThresholdInputSourceParticipantRole When the source metric is per-participant, restrict evaluation to this role. Only valid for sources with TURN/SEGMENT contexts.
 type CreateThresholdInputSourceParticipantRole string
 
-// CreateWebSessionTokenInput defines model for CreateWebSessionTokenInput.
-type CreateWebSessionTokenInput struct {
-	// AllowedOrigins The origins the token may be spent from, exactly as the browser sends them: https only (http on localhost for development), no paths or wildcards.
-	//
-	// Example: ["https://app.example.com"]
-	AllowedOrigins []string `json:"allowedOrigins"`
-
-	// Modality What the token opens: `call` for a voice session, `chat` for a text chat. A token opens only that kind. Default `call`.
-	//
-	// Example: chat
-	Modality *CreateWebSessionTokenInputModality `json:"modality,omitempty"`
-
-	// TtlSeconds How long the token can be spent for, in seconds. Default 120.
-	//
-	// Example: 120
-	TtlSeconds *int `json:"ttlSeconds,omitempty"`
-}
-
-// CreateWebSessionTokenInputModality What the token opens: `call` for a voice session, `chat` for a text chat. A token opens only that kind. Default `call`.
-//
-// Example: chat
-type CreateWebSessionTokenInputModality string
-
 // CreateWebhookInput Input for creating a webhook
 type CreateWebhookInput struct {
 	// Description Webhook description
@@ -31351,7 +31761,7 @@ type DashboardFilterConfig_Value struct {
 
 // DashboardInput A dashboard: a name, the window and filters every widget reads, and its widgets top to bottom. Each widget is an analytics query (the shape POST /v1/analytics/query takes) plus a name, chart type and size.
 //
-// Example: {"filters":[{"type":"MODALITY","value":"call"}],"name":"Support agent health","timeRange":{"type":"LAST","unit":"DAYS","value":30},"widgets":[{"display":"LINE","interval":"DAY","measures":[{"aggregation":"AVG","metric":"sentiment_score"}],"name":"Sentiment","size":"LARGE"},{"display":"NUMBER","measures":[{"type":"CONVERSATION"}],"name":"Calls"}]}
+// Example: {"filters":[{"type":"MODALITY","value":"voice"}],"name":"Support agent health","timeRange":{"type":"LAST","unit":"DAYS","value":30},"widgets":[{"display":"LINE","interval":"DAY","measures":[{"aggregation":"AVG","metric":"sentiment_score"}],"name":"Sentiment","size":"LARGE"},{"display":"NUMBER","measures":[{"type":"CONVERSATION"}],"name":"Calls"}]}
 type DashboardInput struct {
 	Description *string `json:"description,omitempty"`
 	Filters     *[]struct {
@@ -35539,6 +35949,187 @@ type ManagedAgentConfigRevision struct {
 // ManagedAgentConfigRevisionCreatedByType Who wrote it: your own pushes, or the Autoimprove loop staging a candidate.
 type ManagedAgentConfigRevisionCreatedByType string
 
+// McpServerAuth How the server authenticates. Stored encrypted; never returned.
+type McpServerAuth struct {
+	union json.RawMessage
+}
+
+// McpServerAuth0 defines model for McpServerAuth.0.
+type McpServerAuth0 struct {
+	Type McpServerAuth0Type `json:"type"`
+}
+
+// McpServerAuth0Type defines model for McpServerAuth.0.Type.
+type McpServerAuth0Type string
+
+// McpServerAuth1 defines model for McpServerAuth.1.
+type McpServerAuth1 struct {
+	Token string             `json:"token"`
+	Type  McpServerAuth1Type `json:"type"`
+}
+
+// McpServerAuth1Type defines model for McpServerAuth.1.Type.
+type McpServerAuth1Type string
+
+// McpServerAuth2 defines model for McpServerAuth.2.
+type McpServerAuth2 struct {
+	// Name Example: X-Api-Key
+	Name  string             `json:"name"`
+	Type  McpServerAuth2Type `json:"type"`
+	Value string             `json:"value"`
+}
+
+// McpServerAuth2Type defines model for McpServerAuth.2.Type.
+type McpServerAuth2Type string
+
+// McpServerBoundTool defines model for McpServerBoundTool.
+type McpServerBoundTool struct {
+	Name string `json:"name"`
+
+	// Offered False when the server stopped offering it: agents lose the tool
+	Offered bool `json:"offered"`
+
+	// RemoteToolName The tool it calls, as the server names it
+	RemoteToolName   string             `json:"remoteToolName"`
+	ToolDefinitionId openapi_types.UUID `json:"toolDefinitionId"`
+}
+
+// McpServerCatalogResponse defines model for McpServerCatalogResponse.
+type McpServerCatalogResponse struct {
+	Data struct {
+		// CatalogHash Changes when the server changes the tools it offers
+		CatalogHash string `json:"catalogHash"`
+
+		// Instructions The server's own advice on using it, for you to read. Never shown to the agent.
+		Instructions *string `json:"instructions"`
+
+		// ServerName The name the server gives itself
+		ServerName    *string         `json:"serverName"`
+		ServerVersion *string         `json:"serverVersion"`
+		Tools         []McpServerTool `json:"tools"`
+	} `json:"data"`
+}
+
+// McpServerCreateBody defines model for McpServerCreateBody.
+type McpServerCreateBody struct {
+	Auth         *McpServerAuth `json:"auth,omitempty"`
+	DirectoryKey *string        `json:"directoryKey,omitempty"`
+
+	// Label Example: CRM
+	Label     string                        `json:"label"`
+	Transport *McpServerCreateBodyTransport `json:"transport,omitempty"`
+
+	// Url Example: https://mcp.example.com/mcp
+	Url string `json:"url"`
+}
+
+// McpServerCreateBodyTransport defines model for McpServerCreateBody.Transport.
+type McpServerCreateBodyTransport string
+
+// McpServerDeleteResponse defines model for McpServerDeleteResponse.
+type McpServerDeleteResponse struct {
+	Data struct {
+		Deleted McpServerDeleteResponseDataDeleted `json:"deleted"`
+		Id      openapi_types.UUID                 `json:"id"`
+	} `json:"data"`
+}
+
+// McpServerDeleteResponseDataDeleted defines model for McpServerDeleteResponse.Data.Deleted.
+type McpServerDeleteResponseDataDeleted bool
+
+// McpServerDiscoverBody defines model for McpServerDiscoverBody.
+type McpServerDiscoverBody struct {
+	Auth      *McpServerAuth                  `json:"auth,omitempty"`
+	Transport *McpServerDiscoverBodyTransport `json:"transport,omitempty"`
+
+	// Url Example: https://mcp.example.com/mcp
+	Url string `json:"url"`
+}
+
+// McpServerDiscoverBodyTransport defines model for McpServerDiscoverBody.Transport.
+type McpServerDiscoverBodyTransport string
+
+// McpServerListResponse defines model for McpServerListResponse.
+type McpServerListResponse struct {
+	Data []McpServerResponse `json:"data"`
+}
+
+// McpServerResponse defines model for McpServerResponse.
+type McpServerResponse struct {
+	// AuthHeaderName The header a HEADER credential is sent in
+	AuthHeaderName *string `json:"authHeaderName"`
+
+	// AuthType How the server authenticates. The credential is never returned.
+	AuthType McpServerResponseAuthType `json:"authType"`
+
+	// BoundTools The tools calling on this server, and whether it still offers each
+	BoundTools []McpServerBoundTool `json:"boundTools"`
+
+	// CatalogHash Changes when the server changes the tools it offers
+	CatalogHash string `json:"catalogHash"`
+	CreatedAt   string `json:"createdAt"`
+
+	// DirectoryKey The MCP registry entry it was connected from
+	DirectoryKey *string `json:"directoryKey"`
+
+	// Id The id a tool names the server by
+	Id openapi_types.UUID `json:"id"`
+
+	// Instructions The server's own advice on using it, for you to read. Never shown to the agent.
+	Instructions *string `json:"instructions"`
+
+	// Label Example: CRM
+	Label            string `json:"label"`
+	LastDiscoveredAt string `json:"lastDiscoveredAt"`
+
+	// ServerName The name the server gives itself
+	ServerName    *string                    `json:"serverName"`
+	ServerVersion *string                    `json:"serverVersion"`
+	Tools         []McpServerTool            `json:"tools"`
+	Transport     McpServerResponseTransport `json:"transport"`
+	UpdatedAt     string                     `json:"updatedAt"`
+
+	// Url Example: https://mcp.example.com/mcp
+	Url string `json:"url"`
+}
+
+// McpServerResponseAuthType How the server authenticates. The credential is never returned.
+type McpServerResponseAuthType string
+
+// McpServerResponseTransport defines model for McpServerResponse.Transport.
+type McpServerResponseTransport string
+
+// McpServerSingleResponse defines model for McpServerSingleResponse.
+type McpServerSingleResponse struct {
+	Data McpServerResponse `json:"data"`
+}
+
+// McpServerTool defines model for McpServerTool.
+type McpServerTool struct {
+	Description *string `json:"description"`
+
+	// Name The tool as the server names it
+	//
+	// Example: search_customers
+	Name string `json:"name"`
+
+	// ReadOnly The server's hint that the tool only reads
+	ReadOnly *bool `json:"readOnly"`
+
+	// SuggestedName What a tool for it is called by default: the name with unusable characters replaced
+	SuggestedName *string `json:"suggestedName"`
+
+	// UnavailableReason Why an agent could not use this tool, such as a name a built-in tool already has
+	UnavailableReason *string `json:"unavailableReason"`
+}
+
+// McpServerUpdateBody defines model for McpServerUpdateBody.
+type McpServerUpdateBody struct {
+	// Auth How the server authenticates. Stored encrypted; never returned.
+	Auth  *McpServerAuth `json:"auth,omitempty"`
+	Label *string        `json:"label,omitempty"`
+}
+
 // MeApiKey A credential that acts as the caller
 //
 // Example: {"createdAt":"2026-09-28T11:04:00.000Z","defaultProjectId":"1a2b3c4d-5e6f-4701-8293-a4b5c6d7e8f9","expiresAt":null,"id":"7c6d5e4f-3a2b-4109-8765-4f3e2d1c0b9a","lastUsedAt":"2026-10-02T08:12:31.000Z","name":"CLI on laptop","organizationId":"9f8e7d6c-5b4a-4312-9081-7f6e5d4c3b2a","permissions":["call:read","metric:read"],"scopes":["READ"],"status":"ACTIVE"}
@@ -36830,9 +37421,13 @@ type PromptMetricInput struct {
 	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines or where your agent never spoke (custom metrics only, not ones that judge the audio). Such calls skip every other metric. Default false.
 	GradesShortCalls *bool `json:"gradesShortCalls,omitempty"`
 
-	// LlmPrompt LLM prompt/criteria for evaluating this metric. Required for BOOLEAN, NUMERIC, TEXT, and SCALE types.
+	// LlmPrompt LLM prompt/criteria for evaluating this metric. Required for BOOLEAN, NUMERIC, TEXT, and SCALE types. A custom metric prompt must include a transcript variable such as `{{transcript}}` and `{{world_context}}`, which gives the judge the current date and time when it grades.
 	//
 	// Example: Evaluate whether the customer expressed satisfaction with the service provided.
+	//
+	// {{transcript}}
+	//
+	// Context: {{world_context}}
 	LlmPrompt *string `json:"llmPrompt,omitempty"`
 
 	// MaxClassifications Maximum number of classifications that can be selected (only for CLASSIFICATION type)
@@ -40597,6 +41192,19 @@ type ToolBody struct {
 	} `json:"inputs,omitempty"`
 	InvocationCriteria *string `json:"invocationCriteria,omitempty"`
 
+	// Mcp Makes this a tool on one of the project's MCP servers: it takes no runtime, no inputs and no calendar, and the description replaces the server's own. On update, omitting it makes the tool an ordinary one.
+	Mcp *struct {
+		McpServerId openapi_types.UUID `json:"mcpServerId"`
+		Messages    *struct {
+			Before  *string `json:"before,omitempty"`
+			Failure *string `json:"failure,omitempty"`
+			Slow    *string `json:"slow,omitempty"`
+		} `json:"messages,omitempty"`
+
+		// Tool The tool as the server names it
+		Tool string `json:"tool"`
+	} `json:"mcp,omitempty"`
+
 	// Name Example: book_appointment
 	Name string `json:"name"`
 
@@ -40774,6 +41382,18 @@ type ToolListResponse struct {
 	Data []ToolResponse `json:"data"`
 }
 
+// ToolMcp A tool on one of the project's MCP servers. The server runs it and defines its arguments.
+type ToolMcp struct {
+	// McpServerId The MCP server the tool calls
+	McpServerId openapi_types.UUID `json:"mcpServerId"`
+	Messages    ToolMessages       `json:"messages"`
+
+	// Tool The tool as the server names it
+	//
+	// Example: search_customers
+	Tool string `json:"tool"`
+}
+
 // ToolMessages defines model for ToolMessages.
 type ToolMessages struct {
 	// Before Said as the request goes out
@@ -40828,6 +41448,9 @@ type ToolResponse struct {
 
 	// InvocationCriteria When the agent should call it, for grading
 	InvocationCriteria *string `json:"invocationCriteria"`
+
+	// Mcp Null for every tool that is not an MCP tool
+	Mcp *ToolMcp `json:"mcp"`
 
 	// Name Example: book_appointment
 	Name string `json:"name"`
@@ -41675,7 +42298,7 @@ type UpdateMetricDefinitionInput struct {
 	GradesShortCalls *bool                    `json:"gradesShortCalls,omitempty"`
 	HttpRequest      *HttpRequestMetricConfig `json:"httpRequest,omitempty"`
 
-	// LlmPrompt New LLM prompt (only for LLM_JUDGE metrics whose prompt is editable)
+	// LlmPrompt New LLM prompt (only for LLM_JUDGE metrics whose prompt is editable). A custom metric prompt must include a transcript variable such as `{{transcript}}` and `{{world_context}}`, which gives the judge the current date and time when it grades.
 	LlmPrompt *string `json:"llmPrompt,omitempty"`
 
 	// MaxClassifications New maximum number of classifications (CLASSIFICATION output only)
@@ -41794,7 +42417,7 @@ type UpdateMetricPolicyInputStatus string
 // Editing Roark's own variant forks it for your organization first: the response carries the new variant's id,
 // and other organizations keep the original. Delete that variant to go back to Roark's version.
 //
-// Example: {"llmPrompt":"Did the agent verify identity before disclosing anything? {{transcript}}"}
+// Example: {"llmPrompt":"Did the agent verify identity before disclosing anything? {{transcript}} Context: {{world_context}}"}
 type UpdateMetricVariantInput struct {
 	// BooleanFalseLabel What a `false` value means. Given to the judge as its polarity rule, so keep it accurate.
 	BooleanFalseLabel *string `json:"booleanFalseLabel,omitempty"`
@@ -41808,7 +42431,7 @@ type UpdateMetricVariantInput struct {
 	// GradesShortCalls Score this metric on a simulated call with fewer than 4 transcript lines or where your agent never spoke (custom metrics only, not ones that judge the audio). Such calls skip every other metric. Default false.
 	GradesShortCalls *bool `json:"gradesShortCalls,omitempty"`
 
-	// LlmPrompt The rubric this variant applies. LLM judge metrics only.
+	// LlmPrompt The rubric this variant applies. LLM judge metrics only. A custom metric prompt must include a transcript variable such as `{{transcript}}` and `{{world_context}}`, which gives the judge the current date and time when it grades.
 	LlmPrompt *string `json:"llmPrompt,omitempty"`
 
 	// MaxClassifications Maximum classifications returned. CLASSIFICATION output only.
@@ -42343,24 +42966,6 @@ type VoicemailFlowVariantPersonaOverrideUnderstoodLanguages string
 // VoicemailFlowVariantType defines model for VoicemailFlowVariant.Type.
 type VoicemailFlowVariantType string
 
-// WebSessionToken defines model for WebSessionToken.
-type WebSessionToken struct {
-	// AllowedOrigins The allowed origins, normalized.
-	AllowedOrigins []string `json:"allowedOrigins"`
-
-	// ExpiresAt When the token can no longer be spent (ISO 8601).
-	ExpiresAt string `json:"expiresAt"`
-
-	// Modality What the token opens: `call` or `chat`.
-	Modality WebSessionTokenModality `json:"modality"`
-
-	// Token A single-use client token for the browser. It opens one web session with this agent, from one of the allowed origins, before it expires. It is not an API key.
-	Token string `json:"token"`
-}
-
-// WebSessionTokenModality What the token opens: `call` or `chat`.
-type WebSessionTokenModality string
-
 // WebhookResponse Webhook with its subscribed event types
 type WebhookResponse struct {
 	// CreatedAt Creation timestamp
@@ -42556,128 +43161,6 @@ type GetV1BenchmarkTargetByTargetKeyScoreSampleParams struct {
 	Limit        *int    `form:"limit,omitempty" json:"limit,omitempty"`
 	Offset       *int    `form:"offset,omitempty" json:"offset,omitempty"`
 }
-
-// GetV1CalendarConnectionParams defines parameters for GetV1CalendarConnection.
-type GetV1CalendarConnectionParams struct {
-	Provider *GetV1CalendarConnectionParamsProvider `form:"provider,omitempty" json:"provider,omitempty"`
-}
-
-// GetV1CalendarConnectionParamsProvider defines parameters for GetV1CalendarConnection.
-type GetV1CalendarConnectionParamsProvider string
-
-// GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth defines parameters for GetV1CalendarConnection.
-type GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth string
-
-// GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations defines parameters for GetV1CalendarConnection.
-type GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations string
-
-// GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold defines parameters for GetV1CalendarConnection.
-type GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold string
-
-// GetV1CalendarConnection200JSONResponseBodyDataProvider defines parameters for GetV1CalendarConnection.
-type GetV1CalendarConnection200JSONResponseBodyDataProvider string
-
-// GetV1CalendarConnection200JSONResponseBodyDataStatus defines parameters for GetV1CalendarConnection.
-type GetV1CalendarConnection200JSONResponseBodyDataStatus string
-
-// PostV1CalendarConnectionJSONBody defines parameters for PostV1CalendarConnection.
-type PostV1CalendarConnectionJSONBody struct {
-	// ApiKey For CAL_COM: a Cal.com API key (starts with `cal_`). It is verified against Cal.com before anything is stored, so an invalid key is a 400 and no connection is created. Stored encrypted and never returned.
-	ApiKey string `json:"apiKey"`
-
-	// Label Customer-facing name for this account, unique within the project. Required.
-	Label string `json:"label"`
-
-	// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-	Provider PostV1CalendarConnectionJSONBodyProvider `json:"provider"`
-
-	// Timezone The named IANA timezone to offer slots in, for example `America/Los_Angeles`. Omit to adopt the provider account’s own timezone. A fixed offset such as `-08:00` is rejected: it does not observe DST.
-	Timezone *string `json:"timezone,omitempty"`
-}
-
-// PostV1CalendarConnectionJSONBodyProvider defines parameters for PostV1CalendarConnection.
-type PostV1CalendarConnectionJSONBodyProvider string
-
-// PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth defines parameters for PostV1CalendarConnection.
-type PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth string
-
-// PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations defines parameters for PostV1CalendarConnection.
-type PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations string
-
-// PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold defines parameters for PostV1CalendarConnection.
-type PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold string
-
-// PostV1CalendarConnection201JSONResponseBodyDataProvider defines parameters for PostV1CalendarConnection.
-type PostV1CalendarConnection201JSONResponseBodyDataProvider string
-
-// PostV1CalendarConnection201JSONResponseBodyDataStatus defines parameters for PostV1CalendarConnection.
-type PostV1CalendarConnection201JSONResponseBodyDataStatus string
-
-// DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted defines parameters for DeleteV1CalendarConnectionByConnectionId.
-type DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted bool
-
-// GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth defines parameters for GetV1CalendarConnectionByConnectionId.
-type GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth string
-
-// GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations defines parameters for GetV1CalendarConnectionByConnectionId.
-type GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations string
-
-// GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold defines parameters for GetV1CalendarConnectionByConnectionId.
-type GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold string
-
-// GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider defines parameters for GetV1CalendarConnectionByConnectionId.
-type GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider string
-
-// GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus defines parameters for GetV1CalendarConnectionByConnectionId.
-type GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus string
-
-// PatchV1CalendarConnectionByConnectionIdJSONBody defines parameters for PatchV1CalendarConnectionByConnectionId.
-type PatchV1CalendarConnectionByConnectionIdJSONBody struct {
-	// ApiKey Rotate the credential. The new key is verified before it is stored, and a verified key returns the connection to ACTIVE, which is how a connection recovers from INVALID_CREDENTIALS.
-	ApiKey *string `json:"apiKey,omitempty"`
-
-	// Label Rename the connection.
-	Label *string `json:"label,omitempty"`
-
-	// Timezone Change the named IANA timezone slots are offered in.
-	Timezone *string `json:"timezone,omitempty"`
-}
-
-// PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth defines parameters for PatchV1CalendarConnectionByConnectionId.
-type PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth string
-
-// PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations defines parameters for PatchV1CalendarConnectionByConnectionId.
-type PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations string
-
-// PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold defines parameters for PatchV1CalendarConnectionByConnectionId.
-type PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold string
-
-// PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider defines parameters for PatchV1CalendarConnectionByConnectionId.
-type PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider string
-
-// PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus defines parameters for PatchV1CalendarConnectionByConnectionId.
-type PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus string
-
-// PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth defines parameters for PostV1CalendarConnectionByConnectionIdCheck.
-type PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth string
-
-// PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations defines parameters for PostV1CalendarConnectionByConnectionIdCheck.
-type PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations string
-
-// PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold defines parameters for PostV1CalendarConnectionByConnectionIdCheck.
-type PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold string
-
-// PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider defines parameters for PostV1CalendarConnectionByConnectionIdCheck.
-type PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider string
-
-// PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus defines parameters for PostV1CalendarConnectionByConnectionIdCheck.
-type PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus string
-
-// GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider defines parameters for GetV1CalendarConnectionByConnectionIdTargets.
-type GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider string
-
-// GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider defines parameters for GetV1CalendarConnectionByConnectionIdTargetsByTargetId.
-type GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider string
 
 // GetV1CallParams defines parameters for GetV1Call.
 type GetV1CallParams struct {
@@ -43178,6 +43661,15 @@ type GetV1ChatParamsSortBy string
 // GetV1ChatParamsSortDirection defines parameters for GetV1Chat.
 type GetV1ChatParamsSortDirection string
 
+// GetV1Chat200JSONResponseBodyDataStatus defines parameters for GetV1Chat.
+type GetV1Chat200JSONResponseBodyDataStatus string
+
+// PostV1Chat200JSONResponseBodyDataStatus defines parameters for PostV1Chat.
+type PostV1Chat200JSONResponseBodyDataStatus string
+
+// GetV1ChatById200JSONResponseBodyDataStatus defines parameters for GetV1ChatById.
+type GetV1ChatById200JSONResponseBodyDataStatus string
+
 // GetV1ChatByIdMetricsParams defines parameters for GetV1ChatByIdMetrics.
 type GetV1ChatByIdMetricsParams struct {
 	Flatten *string                           `form:"flatten,omitempty" json:"flatten,omitempty"`
@@ -43580,6 +44072,18 @@ type PostV1CliAuthTokenJSONBody struct {
 // PostV1CliAuthToken200JSONResponseBodyDataScopeKind defines parameters for PostV1CliAuthToken.
 type PostV1CliAuthToken200JSONResponseBodyDataScopeKind string
 
+// GetV1ConversationParams defines parameters for GetV1Conversation.
+type GetV1ConversationParams struct {
+	Modality    *GetV1ConversationParamsModality `form:"modality,omitempty" json:"modality,omitempty"`
+	StartedFrom *time.Time                       `form:"startedFrom,omitempty" json:"startedFrom,omitempty"`
+	StartedTo   *time.Time                       `form:"startedTo,omitempty" json:"startedTo,omitempty"`
+	Limit       *int                             `form:"limit,omitempty" json:"limit,omitempty"`
+	After       *string                          `form:"after,omitempty" json:"after,omitempty"`
+}
+
+// GetV1ConversationParamsModality defines parameters for GetV1Conversation.
+type GetV1ConversationParamsModality string
+
 // GetV1CustomerParams defines parameters for GetV1Customer.
 type GetV1CustomerParams struct {
 	Limit         *int                              `form:"limit,omitempty" json:"limit,omitempty"`
@@ -43779,6 +44283,128 @@ type GetV1HttpRequestDefinitionParams struct {
 	Limit *int    `form:"limit,omitempty" json:"limit,omitempty"`
 	After *string `form:"after,omitempty" json:"after,omitempty"`
 }
+
+// GetV1IntegrationsCalendarParams defines parameters for GetV1IntegrationsCalendar.
+type GetV1IntegrationsCalendarParams struct {
+	Provider *GetV1IntegrationsCalendarParamsProvider `form:"provider,omitempty" json:"provider,omitempty"`
+}
+
+// GetV1IntegrationsCalendarParamsProvider defines parameters for GetV1IntegrationsCalendar.
+type GetV1IntegrationsCalendarParamsProvider string
+
+// GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth defines parameters for GetV1IntegrationsCalendar.
+type GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth string
+
+// GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations defines parameters for GetV1IntegrationsCalendar.
+type GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations string
+
+// GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHold defines parameters for GetV1IntegrationsCalendar.
+type GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHold string
+
+// GetV1IntegrationsCalendar200JSONResponseBodyDataProvider defines parameters for GetV1IntegrationsCalendar.
+type GetV1IntegrationsCalendar200JSONResponseBodyDataProvider string
+
+// GetV1IntegrationsCalendar200JSONResponseBodyDataStatus defines parameters for GetV1IntegrationsCalendar.
+type GetV1IntegrationsCalendar200JSONResponseBodyDataStatus string
+
+// PostV1IntegrationsCalendarJSONBody defines parameters for PostV1IntegrationsCalendar.
+type PostV1IntegrationsCalendarJSONBody struct {
+	// ApiKey The provider account’s API key. For CAL_COM, a Cal.com API key (starts with `cal_`). It is verified against the provider before anything is stored, so an invalid key is a 400 and no connection is created. Stored encrypted and never returned.
+	ApiKey string `json:"apiKey"`
+
+	// Label Customer-facing name for this account, unique within the project. Required.
+	Label string `json:"label"`
+
+	// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+	Provider PostV1IntegrationsCalendarJSONBodyProvider `json:"provider"`
+
+	// Timezone The named IANA timezone to offer slots in, for example `America/Los_Angeles`. Omit to adopt the provider account’s own timezone. A fixed offset such as `-08:00` is rejected: it does not observe DST.
+	Timezone *string `json:"timezone,omitempty"`
+}
+
+// PostV1IntegrationsCalendarJSONBodyProvider defines parameters for PostV1IntegrationsCalendar.
+type PostV1IntegrationsCalendarJSONBodyProvider string
+
+// PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth defines parameters for PostV1IntegrationsCalendar.
+type PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth string
+
+// PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations defines parameters for PostV1IntegrationsCalendar.
+type PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations string
+
+// PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHold defines parameters for PostV1IntegrationsCalendar.
+type PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHold string
+
+// PostV1IntegrationsCalendar201JSONResponseBodyDataProvider defines parameters for PostV1IntegrationsCalendar.
+type PostV1IntegrationsCalendar201JSONResponseBodyDataProvider string
+
+// PostV1IntegrationsCalendar201JSONResponseBodyDataStatus defines parameters for PostV1IntegrationsCalendar.
+type PostV1IntegrationsCalendar201JSONResponseBodyDataStatus string
+
+// DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeleted defines parameters for DeleteV1IntegrationsCalendarByConnectionId.
+type DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeleted bool
+
+// GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth defines parameters for GetV1IntegrationsCalendarByConnectionId.
+type GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth string
+
+// GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations defines parameters for GetV1IntegrationsCalendarByConnectionId.
+type GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations string
+
+// GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold defines parameters for GetV1IntegrationsCalendarByConnectionId.
+type GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold string
+
+// GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider defines parameters for GetV1IntegrationsCalendarByConnectionId.
+type GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider string
+
+// GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus defines parameters for GetV1IntegrationsCalendarByConnectionId.
+type GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus string
+
+// PatchV1IntegrationsCalendarByConnectionIdJSONBody defines parameters for PatchV1IntegrationsCalendarByConnectionId.
+type PatchV1IntegrationsCalendarByConnectionIdJSONBody struct {
+	// ApiKey Rotate the credential. The new key is verified before it is stored, and a verified key returns the connection to ACTIVE, which is how a connection recovers from INVALID_CREDENTIALS.
+	ApiKey *string `json:"apiKey,omitempty"`
+
+	// Label Rename the connection.
+	Label *string `json:"label,omitempty"`
+
+	// Timezone Change the named IANA timezone slots are offered in.
+	Timezone *string `json:"timezone,omitempty"`
+}
+
+// PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth defines parameters for PatchV1IntegrationsCalendarByConnectionId.
+type PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth string
+
+// PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations defines parameters for PatchV1IntegrationsCalendarByConnectionId.
+type PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations string
+
+// PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold defines parameters for PatchV1IntegrationsCalendarByConnectionId.
+type PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold string
+
+// PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider defines parameters for PatchV1IntegrationsCalendarByConnectionId.
+type PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider string
+
+// PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus defines parameters for PatchV1IntegrationsCalendarByConnectionId.
+type PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus string
+
+// PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth defines parameters for PostV1IntegrationsCalendarByConnectionIdCheck.
+type PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth string
+
+// PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations defines parameters for PostV1IntegrationsCalendarByConnectionIdCheck.
+type PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations string
+
+// PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold defines parameters for PostV1IntegrationsCalendarByConnectionIdCheck.
+type PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold string
+
+// PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider defines parameters for PostV1IntegrationsCalendarByConnectionIdCheck.
+type PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider string
+
+// PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus defines parameters for PostV1IntegrationsCalendarByConnectionIdCheck.
+type PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus string
+
+// GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider defines parameters for GetV1IntegrationsCalendarByConnectionIdTargets.
+type GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider string
+
+// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider defines parameters for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider string
 
 // GetV1IssueParams defines parameters for GetV1Issue.
 type GetV1IssueParams struct {
@@ -44404,27 +45030,6 @@ type PostV1PublicCampaignCreditByCampaignKeyClaimJSONBody struct {
 // PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome defines parameters for PostV1PublicCampaignCreditByCampaignKeyClaim.
 type PostV1PublicCampaignCreditByCampaignKeyClaim200JSONResponseBodyDataOutcome string
 
-// GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState defines parameters for GetV1PublicProspectSimReportByToken.
-type GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState string
-
-// GetV1PublicProspectSimReportByTokenObserverUrlParams defines parameters for GetV1PublicProspectSimReportByTokenObserverUrl.
-type GetV1PublicProspectSimReportByTokenObserverUrlParams struct {
-	CallId *openapi_types.UUID `form:"callId,omitempty" json:"callId,omitempty"`
-}
-
-// PostV1PublicProspectSimRunJSONBody defines parameters for PostV1PublicProspectSimRun.
-type PostV1PublicProspectSimRunJSONBody struct {
-	AgentDescription *string                                       `json:"agentDescription,omitempty"`
-	CaptchaToken     *string                                       `json:"captchaToken,omitempty"`
-	Email            openapi_types.Email                           `json:"email"`
-	Name             *string                                       `json:"name,omitempty"`
-	PhoneNumber      string                                        `json:"phoneNumber"`
-	TemplateKey      PostV1PublicProspectSimRunJSONBodyTemplateKey `json:"templateKey"`
-}
-
-// PostV1PublicProspectSimRunJSONBodyTemplateKey defines parameters for PostV1PublicProspectSimRun.
-type PostV1PublicProspectSimRunJSONBodyTemplateKey string
-
 // GetV1SimulationEnvironmentParams defines parameters for GetV1SimulationEnvironment.
 type GetV1SimulationEnvironmentParams struct {
 	Limit *int    `form:"limit,omitempty" json:"limit,omitempty"`
@@ -44532,6 +45137,9 @@ type PutV1AgentEndpointByEndpointIdJSONRequestBody = UpdateAgentEndpointInput
 // PutV1AgentByAgentIdJSONRequestBody defines body for PutV1AgentByAgentId for application/json ContentType.
 type PutV1AgentByAgentIdJSONRequestBody PutV1AgentByAgentIdJSONBody
 
+// PostV1AgentByAgentIdConversationsJSONRequestBody defines body for PostV1AgentByAgentIdConversations for application/json ContentType.
+type PostV1AgentByAgentIdConversationsJSONRequestBody = CreateAgentConversationInput
+
 // PostV1AgentByAgentIdDraftJSONRequestBody defines body for PostV1AgentByAgentIdDraft for application/json ContentType.
 type PostV1AgentByAgentIdDraftJSONRequestBody = CreateAgentDraftInput
 
@@ -44547,9 +45155,6 @@ type PutV1AgentByAgentIdPromptsJSONRequestBody = SetAgentPromptInput
 // PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody defines body for PostV1AgentByAgentIdVersionsByVersionIdRollback for application/json ContentType.
 type PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody = RollbackAgentVersionInput
 
-// PostV1AgentByAgentIdWebSessionTokensJSONRequestBody defines body for PostV1AgentByAgentIdWebSessionTokens for application/json ContentType.
-type PostV1AgentByAgentIdWebSessionTokensJSONRequestBody = CreateWebSessionTokenInput
-
 // PostV1AnalyticsQueryJSONRequestBody defines body for PostV1AnalyticsQuery for application/json ContentType.
 type PostV1AnalyticsQueryJSONRequestBody = AnalyticsQuery
 
@@ -44561,12 +45166,6 @@ type PostV1AutoimproveJobByJobIdAnswerJSONRequestBody = AutoimproveTextInput
 
 // PostV1AutoimproveJobByJobIdGuidanceJSONRequestBody defines body for PostV1AutoimproveJobByJobIdGuidance for application/json ContentType.
 type PostV1AutoimproveJobByJobIdGuidanceJSONRequestBody = AutoimproveTextInput
-
-// PostV1CalendarConnectionJSONRequestBody defines body for PostV1CalendarConnection for application/json ContentType.
-type PostV1CalendarConnectionJSONRequestBody PostV1CalendarConnectionJSONBody
-
-// PatchV1CalendarConnectionByConnectionIdJSONRequestBody defines body for PatchV1CalendarConnectionByConnectionId for application/json ContentType.
-type PatchV1CalendarConnectionByConnectionIdJSONRequestBody PatchV1CalendarConnectionByConnectionIdJSONBody
 
 // PostV1CallJSONRequestBody defines body for PostV1Call for application/json ContentType.
 type PostV1CallJSONRequestBody = CallCreate
@@ -44643,6 +45242,21 @@ type PostV1HttpRequestDefinitionJSONRequestBody = CreateHttpRequestDefinitionInp
 // PutV1HttpRequestDefinitionByDefinitionIdJSONRequestBody defines body for PutV1HttpRequestDefinitionByDefinitionId for application/json ContentType.
 type PutV1HttpRequestDefinitionByDefinitionIdJSONRequestBody = UpdateHttpRequestDefinitionInput
 
+// PostV1IntegrationsCalendarJSONRequestBody defines body for PostV1IntegrationsCalendar for application/json ContentType.
+type PostV1IntegrationsCalendarJSONRequestBody PostV1IntegrationsCalendarJSONBody
+
+// PatchV1IntegrationsCalendarByConnectionIdJSONRequestBody defines body for PatchV1IntegrationsCalendarByConnectionId for application/json ContentType.
+type PatchV1IntegrationsCalendarByConnectionIdJSONRequestBody PatchV1IntegrationsCalendarByConnectionIdJSONBody
+
+// PostV1IntegrationsMcpServerJSONRequestBody defines body for PostV1IntegrationsMcpServer for application/json ContentType.
+type PostV1IntegrationsMcpServerJSONRequestBody = McpServerCreateBody
+
+// PostV1IntegrationsMcpServerDiscoverJSONRequestBody defines body for PostV1IntegrationsMcpServerDiscover for application/json ContentType.
+type PostV1IntegrationsMcpServerDiscoverJSONRequestBody = McpServerDiscoverBody
+
+// PatchV1IntegrationsMcpServerByServerIdJSONRequestBody defines body for PatchV1IntegrationsMcpServerByServerId for application/json ContentType.
+type PatchV1IntegrationsMcpServerByServerIdJSONRequestBody = McpServerUpdateBody
+
 // PostV1IssueJSONRequestBody defines body for PostV1Issue for application/json ContentType.
 type PostV1IssueJSONRequestBody = CreateIssueInput
 
@@ -44717,9 +45331,6 @@ type PostV1PublicCampaignCreditVerifyJSONRequestBody PostV1PublicCampaignCreditV
 
 // PostV1PublicCampaignCreditByCampaignKeyClaimJSONRequestBody defines body for PostV1PublicCampaignCreditByCampaignKeyClaim for application/json ContentType.
 type PostV1PublicCampaignCreditByCampaignKeyClaimJSONRequestBody PostV1PublicCampaignCreditByCampaignKeyClaimJSONBody
-
-// PostV1PublicProspectSimRunJSONRequestBody defines body for PostV1PublicProspectSimRun for application/json ContentType.
-type PostV1PublicProspectSimRunJSONRequestBody PostV1PublicProspectSimRunJSONBody
 
 // PostV1SimulationEnvironmentJSONRequestBody defines body for PostV1SimulationEnvironment for application/json ContentType.
 type PostV1SimulationEnvironmentJSONRequestBody = CreateEnvironmentInput
@@ -51737,6 +52348,94 @@ func (t *LiveReportTargetConfig_PassValue) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsMcpServerAuth0 returns the union data inside the McpServerAuth as a McpServerAuth0
+func (t McpServerAuth) AsMcpServerAuth0() (McpServerAuth0, error) {
+	var body McpServerAuth0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromMcpServerAuth0 overwrites any union data inside the McpServerAuth as the provided McpServerAuth0
+func (t *McpServerAuth) FromMcpServerAuth0(v McpServerAuth0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeMcpServerAuth0 performs a merge with any union data inside the McpServerAuth, using the provided McpServerAuth0
+func (t *McpServerAuth) MergeMcpServerAuth0(v McpServerAuth0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsMcpServerAuth1 returns the union data inside the McpServerAuth as a McpServerAuth1
+func (t McpServerAuth) AsMcpServerAuth1() (McpServerAuth1, error) {
+	var body McpServerAuth1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromMcpServerAuth1 overwrites any union data inside the McpServerAuth as the provided McpServerAuth1
+func (t *McpServerAuth) FromMcpServerAuth1(v McpServerAuth1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeMcpServerAuth1 performs a merge with any union data inside the McpServerAuth, using the provided McpServerAuth1
+func (t *McpServerAuth) MergeMcpServerAuth1(v McpServerAuth1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsMcpServerAuth2 returns the union data inside the McpServerAuth as a McpServerAuth2
+func (t McpServerAuth) AsMcpServerAuth2() (McpServerAuth2, error) {
+	var body McpServerAuth2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromMcpServerAuth2 overwrites any union data inside the McpServerAuth as the provided McpServerAuth2
+func (t *McpServerAuth) FromMcpServerAuth2(v McpServerAuth2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeMcpServerAuth2 performs a merge with any union data inside the McpServerAuth, using the provided McpServerAuth2
+func (t *McpServerAuth) MergeMcpServerAuth2(v McpServerAuth2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t McpServerAuth) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *McpServerAuth) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsMetricCollectionJobMetricValuesResponseValues0Value0 returns the union data inside the MetricCollectionJobMetricValuesResponse_Values_0_Value as a MetricCollectionJobMetricValuesResponseValues0Value0
 func (t MetricCollectionJobMetricValuesResponse_Values_0_Value) AsMetricCollectionJobMetricValuesResponseValues0Value0() (MetricCollectionJobMetricValuesResponseValues0Value0, error) {
 	var body MetricCollectionJobMetricValuesResponseValues0Value0
@@ -56998,6 +57697,32 @@ type ClientInterface interface {
 	// Corresponds with PUT /v1/agent/{agentId} (the `PutV1AgentByAgentId` operationId).
 	PutV1AgentByAgentId(ctx context.Context, agentId string, body PutV1AgentByAgentIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// PostV1AgentByAgentIdConversationsWithBody Start a conversation with an agent
+	//
+	// Starts a voice conversation (`modality: voice`) or chat (`modality: chat`) with this Roark-hosted agent and returns its id right away.
+	//
+	// `channel: web` is a conversation in a browser on your site. Call this endpoint from your server, never the browser: it needs your API key. Give the page only `web.clientToken`; the web SDK spends it to join from one of `allowedOrigins` before `web.clientTokenExpiresAt`.
+	//
+	// Read it back with `GET /v1/conversation/{conversationId}` straight away: `PENDING` until the browser joins, `IN_PROGRESS`, then `ENDED`. One nobody joins ends without ever starting and is never billed. Starting a voice conversation needs `call:create`, a chat `chat:create`, and the agent a published version that takes that kind.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/agent/{agentId}/conversations (the `PostV1AgentByAgentIdConversations` operationId).
+	PostV1AgentByAgentIdConversationsWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1AgentByAgentIdConversations Start a conversation with an agent
+	//
+	// Starts a voice conversation (`modality: voice`) or chat (`modality: chat`) with this Roark-hosted agent and returns its id right away.
+	//
+	// `channel: web` is a conversation in a browser on your site. Call this endpoint from your server, never the browser: it needs your API key. Give the page only `web.clientToken`; the web SDK spends it to join from one of `allowedOrigins` before `web.clientTokenExpiresAt`.
+	//
+	// Read it back with `GET /v1/conversation/{conversationId}` straight away: `PENDING` until the browser joins, `IN_PROGRESS`, then `ENDED`. One nobody joins ends without ever starting and is never billed. Starting a voice conversation needs `call:create`, a chat `chat:create`, and the agent a published version that takes that kind.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/agent/{agentId}/conversations (the `PostV1AgentByAgentIdConversations` operationId).
+	PostV1AgentByAgentIdConversations(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdConversationsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// DeleteV1AgentByAgentIdDraft Discard the draft
 	//
 	// Throws the open draft away and returns it. The live version is unchanged.
@@ -57129,24 +57854,6 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
 	PostV1AgentByAgentIdVersionsByVersionIdRollback(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1AgentByAgentIdWebSessionTokensWithBody Create a web session token
-	//
-	// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
-	PostV1AgentByAgentIdWebSessionTokensWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1AgentByAgentIdWebSessionTokens Create a web session token
-	//
-	// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
-	PostV1AgentByAgentIdWebSessionTokens(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdWebSessionTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// PostV1AnalyticsQueryWithBody Run an analytics query
 	//
@@ -57348,84 +58055,6 @@ type ClientInterface interface {
 	//
 	// Corresponds with GET /v1/benchmark/target/{targetKey}/score-sample (the `GetV1BenchmarkTargetByTargetKeyScoreSample` operationId).
 	GetV1BenchmarkTargetByTargetKeyScoreSample(ctx context.Context, targetKey string, params *GetV1BenchmarkTargetByTargetKeyScoreSampleParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetV1CalendarConnection List calendar connections
-	//
-	// Returns every calendar connection in the authenticated project, by label. A project has a handful of these, so the list is not paginated: `pagination.hasMore` is always false.
-	//
-	// Corresponds with GET /v1/calendar-connection (the `GetV1CalendarConnection` operationId).
-	GetV1CalendarConnection(ctx context.Context, params *GetV1CalendarConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1CalendarConnectionWithBody Connect a calendar account
-	//
-	// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
-	PostV1CalendarConnectionWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1CalendarConnection Connect a calendar account
-	//
-	// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
-	PostV1CalendarConnection(ctx context.Context, body PostV1CalendarConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DeleteV1CalendarConnectionByConnectionId Delete a calendar connection
-	//
-	// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
-	//
-	// Corresponds with DELETE /v1/calendar-connection/{connectionId} (the `DeleteV1CalendarConnectionByConnectionId` operationId).
-	DeleteV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetV1CalendarConnectionByConnectionId Get a calendar connection
-	//
-	// Returns one calendar connection. The stored credential is never included.
-	//
-	// Corresponds with GET /v1/calendar-connection/{connectionId} (the `GetV1CalendarConnectionByConnectionId` operationId).
-	GetV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchV1CalendarConnectionByConnectionIdWithBody Update a calendar connection
-	//
-	// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
-	PatchV1CalendarConnectionByConnectionIdWithBody(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PatchV1CalendarConnectionByConnectionId Update a calendar connection
-	//
-	// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
-	PatchV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, body PatchV1CalendarConnectionByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1CalendarConnectionByConnectionIdCheck Check a calendar connection
-	//
-	// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
-	//
-	// Corresponds with POST /v1/calendar-connection/{connectionId}/check (the `PostV1CalendarConnectionByConnectionIdCheck` operationId).
-	PostV1CalendarConnectionByConnectionIdCheck(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetV1CalendarConnectionByConnectionIdTargets List what can be booked on a calendar
-	//
-	// What an agent can be pointed at on this connection: Cal.com event types today, Google calendars when that lands. Read live from the provider, so an event type added since you connected is here without reconnecting. Each entry carries a `target` ready to put on a calendar tool, so nothing has to assemble one by hand.
-	//
-	// Corresponds with GET /v1/calendar-connection/{connectionId}/targets (the `GetV1CalendarConnectionByConnectionIdTargets` operationId).
-	GetV1CalendarConnectionByConnectionIdTargets(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetV1CalendarConnectionByConnectionIdTargetsByTargetId Read one bookable target
-	//
-	// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
-	//
-	// Corresponds with GET /v1/calendar-connection/{connectionId}/targets/{targetId} (the `GetV1CalendarConnectionByConnectionIdTargetsByTargetId` operationId).
-	GetV1CalendarConnectionByConnectionIdTargetsByTargetId(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1Call List calls
 	//
@@ -57647,6 +58276,20 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/config/diff (the `PostV1ConfigDiff` operationId).
 	PostV1ConfigDiff(ctx context.Context, body PostV1ConfigDiffJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1Conversation List conversations
+	//
+	// Calls and chats in the project as one list, most recent start first. A conversation is listed once it is recorded: a call when it connects, a chat when it ends. Listing calls needs `call:read`, chats `chat:read`, and both kinds both.
+	//
+	// Corresponds with GET /v1/conversation (the `GetV1Conversation` operationId).
+	GetV1Conversation(ctx context.Context, params *GetV1ConversationParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1ConversationByConversationId Get a conversation
+	//
+	// A call or chat by its id, whichever it is. One started through `POST /v1/agent/{agentId}/conversations` reads back from the moment it is created, before it is recorded. For its transcript and metrics, read it as a call or chat, as `modality` says.
+	//
+	// Corresponds with GET /v1/conversation/{conversationId} (the `GetV1ConversationByConversationId` operationId).
+	GetV1ConversationByConversationId(ctx context.Context, conversationId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1Customer List customers
 	//
@@ -58148,6 +58791,166 @@ type ClientInterface interface {
 	//
 	// Corresponds with PUT /v1/http-request-definition/{definitionId} (the `PutV1HttpRequestDefinitionByDefinitionId` operationId).
 	PutV1HttpRequestDefinitionByDefinitionId(ctx context.Context, definitionId string, body PutV1HttpRequestDefinitionByDefinitionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1IntegrationsCalendar List calendar connections
+	//
+	// Returns every calendar connection in the authenticated project, by label. A project has a handful of these, so the list is not paginated: `pagination.hasMore` is always false.
+	//
+	// Corresponds with GET /v1/integrations/calendar (the `GetV1IntegrationsCalendar` operationId).
+	GetV1IntegrationsCalendar(ctx context.Context, params *GetV1IntegrationsCalendarParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1IntegrationsCalendarWithBody Connect a calendar account
+	//
+	// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
+	PostV1IntegrationsCalendarWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1IntegrationsCalendar Connect a calendar account
+	//
+	// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
+	PostV1IntegrationsCalendar(ctx context.Context, body PostV1IntegrationsCalendarJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1IntegrationsCalendarByConnectionId Delete a calendar connection
+	//
+	// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
+	//
+	// Corresponds with DELETE /v1/integrations/calendar/{connectionId} (the `DeleteV1IntegrationsCalendarByConnectionId` operationId).
+	DeleteV1IntegrationsCalendarByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1IntegrationsCalendarByConnectionId Get a calendar connection
+	//
+	// Returns one calendar connection. The stored credential is never included.
+	//
+	// Corresponds with GET /v1/integrations/calendar/{connectionId} (the `GetV1IntegrationsCalendarByConnectionId` operationId).
+	GetV1IntegrationsCalendarByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchV1IntegrationsCalendarByConnectionIdWithBody Update a calendar connection
+	//
+	// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PATCH /v1/integrations/calendar/{connectionId} (the `PatchV1IntegrationsCalendarByConnectionId` operationId).
+	PatchV1IntegrationsCalendarByConnectionIdWithBody(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchV1IntegrationsCalendarByConnectionId Update a calendar connection
+	//
+	// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PATCH /v1/integrations/calendar/{connectionId} (the `PatchV1IntegrationsCalendarByConnectionId` operationId).
+	PatchV1IntegrationsCalendarByConnectionId(ctx context.Context, connectionId string, body PatchV1IntegrationsCalendarByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1IntegrationsCalendarByConnectionIdCheck Check a calendar connection
+	//
+	// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
+	//
+	// Corresponds with POST /v1/integrations/calendar/{connectionId}/check (the `PostV1IntegrationsCalendarByConnectionIdCheck` operationId).
+	PostV1IntegrationsCalendarByConnectionIdCheck(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1IntegrationsCalendarByConnectionIdTargets List what can be booked on a calendar
+	//
+	// What an agent can be pointed at on this connection: Cal.com event types today, Google calendars when that lands. Read live from the provider, so an event type added since you connected is here without reconnecting. Each entry carries a `target` ready to put on a calendar tool, so nothing has to assemble one by hand.
+	//
+	// Corresponds with GET /v1/integrations/calendar/{connectionId}/targets (the `GetV1IntegrationsCalendarByConnectionIdTargets` operationId).
+	GetV1IntegrationsCalendarByConnectionIdTargets(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId Read one bookable target
+	//
+	// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
+	//
+	// Corresponds with GET /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+	GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1IntegrationsMcpServer List MCP servers
+	//
+	// The project's MCP servers, by label, each with the tools it offered when last checked. Credentials are never returned.
+	//
+	// Corresponds with GET /v1/integrations/mcp-server (the `GetV1IntegrationsMcpServer` operationId).
+	GetV1IntegrationsMcpServer(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1IntegrationsMcpServerWithBody Connect an MCP server
+	//
+	// Connects to the server, reads its tools, then stores it for the project. A server that does not answer, or refuses the credential, returns 400 and nothing is stored. The credential is encrypted and never returned.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/integrations/mcp-server (the `PostV1IntegrationsMcpServer` operationId).
+	PostV1IntegrationsMcpServerWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1IntegrationsMcpServer Connect an MCP server
+	//
+	// Connects to the server, reads its tools, then stores it for the project. A server that does not answer, or refuses the credential, returns 400 and nothing is stored. The credential is encrypted and never returned.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/integrations/mcp-server (the `PostV1IntegrationsMcpServer` operationId).
+	PostV1IntegrationsMcpServer(ctx context.Context, body PostV1IntegrationsMcpServerJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1IntegrationsMcpServerDiscoverWithBody Discover an MCP server
+	//
+	// Connects to a server and returns the tools it offers, without storing anything. Use it to check a url and credential before connecting.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/integrations/mcp-server/discover (the `PostV1IntegrationsMcpServerDiscover` operationId).
+	PostV1IntegrationsMcpServerDiscoverWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1IntegrationsMcpServerDiscover Discover an MCP server
+	//
+	// Connects to a server and returns the tools it offers, without storing anything. Use it to check a url and credential before connecting.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/integrations/mcp-server/discover (the `PostV1IntegrationsMcpServerDiscover` operationId).
+	PostV1IntegrationsMcpServerDiscover(ctx context.Context, body PostV1IntegrationsMcpServerDiscoverJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1IntegrationsMcpServerByServerId Disconnect an MCP server
+	//
+	// Deletes the server and its stored credential. A server a tool still uses returns 409, naming the tools.
+	//
+	// Corresponds with DELETE /v1/integrations/mcp-server/{serverId} (the `DeleteV1IntegrationsMcpServerByServerId` operationId).
+	DeleteV1IntegrationsMcpServerByServerId(ctx context.Context, serverId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1IntegrationsMcpServerByServerId Get an MCP server
+	//
+	// One MCP server. The credential is never returned.
+	//
+	// Corresponds with GET /v1/integrations/mcp-server/{serverId} (the `GetV1IntegrationsMcpServerByServerId` operationId).
+	GetV1IntegrationsMcpServerByServerId(ctx context.Context, serverId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchV1IntegrationsMcpServerByServerIdWithBody Update an MCP server
+	//
+	// Renames the server or replaces its credential. A new credential is checked by connecting with it first; one the server refuses returns 400 and changes nothing.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PATCH /v1/integrations/mcp-server/{serverId} (the `PatchV1IntegrationsMcpServerByServerId` operationId).
+	PatchV1IntegrationsMcpServerByServerIdWithBody(ctx context.Context, serverId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchV1IntegrationsMcpServerByServerId Update an MCP server
+	//
+	// Renames the server or replaces its credential. A new credential is checked by connecting with it first; one the server refuses returns 400 and changes nothing.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PATCH /v1/integrations/mcp-server/{serverId} (the `PatchV1IntegrationsMcpServerByServerId` operationId).
+	PatchV1IntegrationsMcpServerByServerId(ctx context.Context, serverId openapi_types.UUID, body PatchV1IntegrationsMcpServerByServerIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1IntegrationsMcpServerByServerIdRefresh Refresh an MCP server
+	//
+	// Connects to the server again and records the tools it offers now. Agents keep calling the tools they were given; a new tool reaches an agent only once you add it.
+	//
+	// Corresponds with POST /v1/integrations/mcp-server/{serverId}/refresh (the `PostV1IntegrationsMcpServerByServerIdRefresh` operationId).
+	PostV1IntegrationsMcpServerByServerIdRefresh(ctx context.Context, serverId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1Issue List issues
 	//
@@ -58945,38 +59748,6 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/public/campaign-credit/{campaignKey}/claim (the `PostV1PublicCampaignCreditByCampaignKeyClaim` operationId).
 	PostV1PublicCampaignCreditByCampaignKeyClaim(ctx context.Context, campaignKey string, body PostV1PublicCampaignCreditByCampaignKeyClaimJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetV1PublicProspectSimReportByToken Read a prospect simulation teaser report
-	//
-	// Public endpoint scoped by the unguessable report token. Returns a truncated teaser once the debrief is ready; the full report is gated behind claiming an account.
-	//
-	// Corresponds with GET /v1/public/prospect-sim/report/{token} (the `GetV1PublicProspectSimReportByToken` operationId).
-	GetV1PublicProspectSimReportByToken(ctx context.Context, token string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetV1PublicProspectSimReportByTokenObserverUrl Mint a live observer WebSocket URL for a prospect call
-	//
-	// Public endpoint scoped by the report token. Returns a short-lived, self-authenticating WebSocket URL for watching a prospect call live, but only while that call is actually in flight; otherwise wsUrl is null. Pass `callId` (from the live progress list) to pick one of the parallel calls; without it the most recently started live call is used.
-	//
-	// Corresponds with GET /v1/public/prospect-sim/report/{token}/observer-url (the `GetV1PublicProspectSimReportByTokenObserverUrl` operationId).
-	GetV1PublicProspectSimReportByTokenObserverUrl(ctx context.Context, token string, params *GetV1PublicProspectSimReportByTokenObserverUrlParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1PublicProspectSimRunWithBody Run a free simulation against a prospect agent
-	//
-	// Public endpoint: provisions a per-prospect project, runs a canned scenario template against the submitted phone number, and returns a report token to poll. The teaser report is also emailed when ready.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/public/prospect-sim/run (the `PostV1PublicProspectSimRun` operationId).
-	PostV1PublicProspectSimRunWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1PublicProspectSimRun Run a free simulation against a prospect agent
-	//
-	// Public endpoint: provisions a per-prospect project, runs a canned scenario template against the submitted phone number, and returns a report token to poll. The teaser report is also emailed when ready.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/public/prospect-sim/run (the `PostV1PublicProspectSimRun` operationId).
-	PostV1PublicProspectSimRun(ctx context.Context, body PostV1PublicProspectSimRunJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
 	// GetV1SimulationAudioClip List audio clips
 	//
 	// Returns the audio a CUSTOMER_AUDIO step can play: hold music, hold tones and ringback.
@@ -59546,7 +60317,7 @@ type ClientInterface interface {
 
 	// PostV1ToolWithBody Create a tool
 	//
-	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
+	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, a `calendar` for it to book on a calendar connected to the project, or `mcp` for it to call a tool on an MCP server connected to the project. Header values are returned on read, so keep secrets out of them.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -59555,7 +60326,7 @@ type ClientInterface interface {
 
 	// PostV1Tool Create a tool
 	//
-	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
+	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, a `calendar` for it to book on a calendar connected to the project, or `mcp` for it to call a tool on an MCP server connected to the project. Header values are returned on read, so keep secrets out of them.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -59576,7 +60347,7 @@ type ClientInterface interface {
 
 	// PutV1ToolByToolIdWithBody Update a tool
 	//
-	// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
+	// Replaces the tool: its name, scope, inputs, description, grading hints, runtime, calendar and MCP tool. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar or mcp makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -59585,7 +60356,7 @@ type ClientInterface interface {
 
 	// PutV1ToolByToolId Update a tool
 	//
-	// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
+	// Replaces the tool: its name, scope, inputs, description, grading hints, runtime, calendar and MCP tool. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar or mcp makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -60083,6 +60854,52 @@ func (c *Client) PutV1AgentByAgentId(ctx context.Context, agentId string, body P
 	return c.Client.Do(req)
 }
 
+// PostV1AgentByAgentIdConversationsWithBody Start a conversation with an agent
+//
+// Starts a voice conversation (`modality: voice`) or chat (`modality: chat`) with this Roark-hosted agent and returns its id right away.
+//
+// `channel: web` is a conversation in a browser on your site. Call this endpoint from your server, never the browser: it needs your API key. Give the page only `web.clientToken`; the web SDK spends it to join from one of `allowedOrigins` before `web.clientTokenExpiresAt`.
+//
+// Read it back with `GET /v1/conversation/{conversationId}` straight away: `PENDING` until the browser joins, `IN_PROGRESS`, then `ENDED`. One nobody joins ends without ever starting and is never billed. Starting a voice conversation needs `call:create`, a chat `chat:create`, and the agent a published version that takes that kind.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/agent/{agentId}/conversations (the `PostV1AgentByAgentIdConversations` operationId).
+func (c *Client) PostV1AgentByAgentIdConversationsWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AgentByAgentIdConversationsRequestWithBody(c.Server, agentId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1AgentByAgentIdConversations Start a conversation with an agent
+//
+// Starts a voice conversation (`modality: voice`) or chat (`modality: chat`) with this Roark-hosted agent and returns its id right away.
+//
+// `channel: web` is a conversation in a browser on your site. Call this endpoint from your server, never the browser: it needs your API key. Give the page only `web.clientToken`; the web SDK spends it to join from one of `allowedOrigins` before `web.clientTokenExpiresAt`.
+//
+// Read it back with `GET /v1/conversation/{conversationId}` straight away: `PENDING` until the browser joins, `IN_PROGRESS`, then `ENDED`. One nobody joins ends without ever starting and is never billed. Starting a voice conversation needs `call:create`, a chat `chat:create`, and the agent a published version that takes that kind.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/agent/{agentId}/conversations (the `PostV1AgentByAgentIdConversations` operationId).
+func (c *Client) PostV1AgentByAgentIdConversations(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdConversationsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1AgentByAgentIdConversationsRequest(c.Server, agentId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // DeleteV1AgentByAgentIdDraft Discard the draft
 //
 // Throws the open draft away and returns it. The live version is unchanged.
@@ -60365,44 +61182,6 @@ func (c *Client) PostV1AgentByAgentIdVersionsByVersionIdRollbackWithBody(ctx con
 // Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
 func (c *Client) PostV1AgentByAgentIdVersionsByVersionIdRollback(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPostV1AgentByAgentIdVersionsByVersionIdRollbackRequest(c.Server, agentId, versionId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1AgentByAgentIdWebSessionTokensWithBody Create a web session token
-//
-// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
-func (c *Client) PostV1AgentByAgentIdWebSessionTokensWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1AgentByAgentIdWebSessionTokensRequestWithBody(c.Server, agentId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1AgentByAgentIdWebSessionTokens Create a web session token
-//
-// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
-func (c *Client) PostV1AgentByAgentIdWebSessionTokens(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdWebSessionTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1AgentByAgentIdWebSessionTokensRequest(c.Server, agentId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -60804,184 +61583,6 @@ func (c *Client) GetV1BenchmarkTargetByTargetKeyHistory(ctx context.Context, tar
 // Corresponds with GET /v1/benchmark/target/{targetKey}/score-sample (the `GetV1BenchmarkTargetByTargetKeyScoreSample` operationId).
 func (c *Client) GetV1BenchmarkTargetByTargetKeyScoreSample(ctx context.Context, targetKey string, params *GetV1BenchmarkTargetByTargetKeyScoreSampleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetV1BenchmarkTargetByTargetKeyScoreSampleRequest(c.Server, targetKey, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetV1CalendarConnection List calendar connections
-//
-// Returns every calendar connection in the authenticated project, by label. A project has a handful of these, so the list is not paginated: `pagination.hasMore` is always false.
-//
-// Corresponds with GET /v1/calendar-connection (the `GetV1CalendarConnection` operationId).
-func (c *Client) GetV1CalendarConnection(ctx context.Context, params *GetV1CalendarConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetV1CalendarConnectionRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1CalendarConnectionWithBody Connect a calendar account
-//
-// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
-func (c *Client) PostV1CalendarConnectionWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1CalendarConnectionRequestWithBody(c.Server, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1CalendarConnection Connect a calendar account
-//
-// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
-func (c *Client) PostV1CalendarConnection(ctx context.Context, body PostV1CalendarConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1CalendarConnectionRequest(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// DeleteV1CalendarConnectionByConnectionId Delete a calendar connection
-//
-// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
-//
-// Corresponds with DELETE /v1/calendar-connection/{connectionId} (the `DeleteV1CalendarConnectionByConnectionId` operationId).
-func (c *Client) DeleteV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDeleteV1CalendarConnectionByConnectionIdRequest(c.Server, connectionId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetV1CalendarConnectionByConnectionId Get a calendar connection
-//
-// Returns one calendar connection. The stored credential is never included.
-//
-// Corresponds with GET /v1/calendar-connection/{connectionId} (the `GetV1CalendarConnectionByConnectionId` operationId).
-func (c *Client) GetV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetV1CalendarConnectionByConnectionIdRequest(c.Server, connectionId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PatchV1CalendarConnectionByConnectionIdWithBody Update a calendar connection
-//
-// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
-func (c *Client) PatchV1CalendarConnectionByConnectionIdWithBody(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPatchV1CalendarConnectionByConnectionIdRequestWithBody(c.Server, connectionId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PatchV1CalendarConnectionByConnectionId Update a calendar connection
-//
-// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
-func (c *Client) PatchV1CalendarConnectionByConnectionId(ctx context.Context, connectionId string, body PatchV1CalendarConnectionByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPatchV1CalendarConnectionByConnectionIdRequest(c.Server, connectionId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1CalendarConnectionByConnectionIdCheck Check a calendar connection
-//
-// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
-//
-// Corresponds with POST /v1/calendar-connection/{connectionId}/check (the `PostV1CalendarConnectionByConnectionIdCheck` operationId).
-func (c *Client) PostV1CalendarConnectionByConnectionIdCheck(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1CalendarConnectionByConnectionIdCheckRequest(c.Server, connectionId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetV1CalendarConnectionByConnectionIdTargets List what can be booked on a calendar
-//
-// What an agent can be pointed at on this connection: Cal.com event types today, Google calendars when that lands. Read live from the provider, so an event type added since you connected is here without reconnecting. Each entry carries a `target` ready to put on a calendar tool, so nothing has to assemble one by hand.
-//
-// Corresponds with GET /v1/calendar-connection/{connectionId}/targets (the `GetV1CalendarConnectionByConnectionIdTargets` operationId).
-func (c *Client) GetV1CalendarConnectionByConnectionIdTargets(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetV1CalendarConnectionByConnectionIdTargetsRequest(c.Server, connectionId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetV1CalendarConnectionByConnectionIdTargetsByTargetId Read one bookable target
-//
-// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
-//
-// Corresponds with GET /v1/calendar-connection/{connectionId}/targets/{targetId} (the `GetV1CalendarConnectionByConnectionIdTargetsByTargetId` operationId).
-func (c *Client) GetV1CalendarConnectionByConnectionIdTargetsByTargetId(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetV1CalendarConnectionByConnectionIdTargetsByTargetIdRequest(c.Server, connectionId, targetId)
 	if err != nil {
 		return nil, err
 	}
@@ -61473,6 +62074,40 @@ func (c *Client) PostV1ConfigDiffWithBody(ctx context.Context, contentType strin
 // Corresponds with POST /v1/config/diff (the `PostV1ConfigDiff` operationId).
 func (c *Client) PostV1ConfigDiff(ctx context.Context, body PostV1ConfigDiffJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPostV1ConfigDiffRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1Conversation List conversations
+//
+// Calls and chats in the project as one list, most recent start first. A conversation is listed once it is recorded: a call when it connects, a chat when it ends. Listing calls needs `call:read`, chats `chat:read`, and both kinds both.
+//
+// Corresponds with GET /v1/conversation (the `GetV1Conversation` operationId).
+func (c *Client) GetV1Conversation(ctx context.Context, params *GetV1ConversationParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1ConversationRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1ConversationByConversationId Get a conversation
+//
+// A call or chat by its id, whichever it is. One started through `POST /v1/agent/{agentId}/conversations` reads back from the moment it is created, before it is recorded. For its transcript and metrics, read it as a call or chat, as `modality` says.
+//
+// Corresponds with GET /v1/conversation/{conversationId} (the `GetV1ConversationByConversationId` operationId).
+func (c *Client) GetV1ConversationByConversationId(ctx context.Context, conversationId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1ConversationByConversationIdRequest(c.Server, conversationId)
 	if err != nil {
 		return nil, err
 	}
@@ -62524,6 +63159,366 @@ func (c *Client) PutV1HttpRequestDefinitionByDefinitionIdWithBody(ctx context.Co
 // Corresponds with PUT /v1/http-request-definition/{definitionId} (the `PutV1HttpRequestDefinitionByDefinitionId` operationId).
 func (c *Client) PutV1HttpRequestDefinitionByDefinitionId(ctx context.Context, definitionId string, body PutV1HttpRequestDefinitionByDefinitionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPutV1HttpRequestDefinitionByDefinitionIdRequest(c.Server, definitionId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1IntegrationsCalendar List calendar connections
+//
+// Returns every calendar connection in the authenticated project, by label. A project has a handful of these, so the list is not paginated: `pagination.hasMore` is always false.
+//
+// Corresponds with GET /v1/integrations/calendar (the `GetV1IntegrationsCalendar` operationId).
+func (c *Client) GetV1IntegrationsCalendar(ctx context.Context, params *GetV1IntegrationsCalendarParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1IntegrationsCalendarRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1IntegrationsCalendarWithBody Connect a calendar account
+//
+// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
+func (c *Client) PostV1IntegrationsCalendarWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsCalendarRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1IntegrationsCalendar Connect a calendar account
+//
+// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
+func (c *Client) PostV1IntegrationsCalendar(ctx context.Context, body PostV1IntegrationsCalendarJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsCalendarRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1IntegrationsCalendarByConnectionId Delete a calendar connection
+//
+// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
+//
+// Corresponds with DELETE /v1/integrations/calendar/{connectionId} (the `DeleteV1IntegrationsCalendarByConnectionId` operationId).
+func (c *Client) DeleteV1IntegrationsCalendarByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1IntegrationsCalendarByConnectionIdRequest(c.Server, connectionId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1IntegrationsCalendarByConnectionId Get a calendar connection
+//
+// Returns one calendar connection. The stored credential is never included.
+//
+// Corresponds with GET /v1/integrations/calendar/{connectionId} (the `GetV1IntegrationsCalendarByConnectionId` operationId).
+func (c *Client) GetV1IntegrationsCalendarByConnectionId(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1IntegrationsCalendarByConnectionIdRequest(c.Server, connectionId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchV1IntegrationsCalendarByConnectionIdWithBody Update a calendar connection
+//
+// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/integrations/calendar/{connectionId} (the `PatchV1IntegrationsCalendarByConnectionId` operationId).
+func (c *Client) PatchV1IntegrationsCalendarByConnectionIdWithBody(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchV1IntegrationsCalendarByConnectionIdRequestWithBody(c.Server, connectionId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchV1IntegrationsCalendarByConnectionId Update a calendar connection
+//
+// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/integrations/calendar/{connectionId} (the `PatchV1IntegrationsCalendarByConnectionId` operationId).
+func (c *Client) PatchV1IntegrationsCalendarByConnectionId(ctx context.Context, connectionId string, body PatchV1IntegrationsCalendarByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchV1IntegrationsCalendarByConnectionIdRequest(c.Server, connectionId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1IntegrationsCalendarByConnectionIdCheck Check a calendar connection
+//
+// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
+//
+// Corresponds with POST /v1/integrations/calendar/{connectionId}/check (the `PostV1IntegrationsCalendarByConnectionIdCheck` operationId).
+func (c *Client) PostV1IntegrationsCalendarByConnectionIdCheck(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsCalendarByConnectionIdCheckRequest(c.Server, connectionId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1IntegrationsCalendarByConnectionIdTargets List what can be booked on a calendar
+//
+// What an agent can be pointed at on this connection: Cal.com event types today, Google calendars when that lands. Read live from the provider, so an event type added since you connected is here without reconnecting. Each entry carries a `target` ready to put on a calendar tool, so nothing has to assemble one by hand.
+//
+// Corresponds with GET /v1/integrations/calendar/{connectionId}/targets (the `GetV1IntegrationsCalendarByConnectionIdTargets` operationId).
+func (c *Client) GetV1IntegrationsCalendarByConnectionIdTargets(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1IntegrationsCalendarByConnectionIdTargetsRequest(c.Server, connectionId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId Read one bookable target
+//
+// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
+//
+// Corresponds with GET /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+func (c *Client) GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest(c.Server, connectionId, targetId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1IntegrationsMcpServer List MCP servers
+//
+// The project's MCP servers, by label, each with the tools it offered when last checked. Credentials are never returned.
+//
+// Corresponds with GET /v1/integrations/mcp-server (the `GetV1IntegrationsMcpServer` operationId).
+func (c *Client) GetV1IntegrationsMcpServer(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1IntegrationsMcpServerRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1IntegrationsMcpServerWithBody Connect an MCP server
+//
+// Connects to the server, reads its tools, then stores it for the project. A server that does not answer, or refuses the credential, returns 400 and nothing is stored. The credential is encrypted and never returned.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/integrations/mcp-server (the `PostV1IntegrationsMcpServer` operationId).
+func (c *Client) PostV1IntegrationsMcpServerWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsMcpServerRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1IntegrationsMcpServer Connect an MCP server
+//
+// Connects to the server, reads its tools, then stores it for the project. A server that does not answer, or refuses the credential, returns 400 and nothing is stored. The credential is encrypted and never returned.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/integrations/mcp-server (the `PostV1IntegrationsMcpServer` operationId).
+func (c *Client) PostV1IntegrationsMcpServer(ctx context.Context, body PostV1IntegrationsMcpServerJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsMcpServerRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1IntegrationsMcpServerDiscoverWithBody Discover an MCP server
+//
+// Connects to a server and returns the tools it offers, without storing anything. Use it to check a url and credential before connecting.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/integrations/mcp-server/discover (the `PostV1IntegrationsMcpServerDiscover` operationId).
+func (c *Client) PostV1IntegrationsMcpServerDiscoverWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsMcpServerDiscoverRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1IntegrationsMcpServerDiscover Discover an MCP server
+//
+// Connects to a server and returns the tools it offers, without storing anything. Use it to check a url and credential before connecting.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/integrations/mcp-server/discover (the `PostV1IntegrationsMcpServerDiscover` operationId).
+func (c *Client) PostV1IntegrationsMcpServerDiscover(ctx context.Context, body PostV1IntegrationsMcpServerDiscoverJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsMcpServerDiscoverRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1IntegrationsMcpServerByServerId Disconnect an MCP server
+//
+// Deletes the server and its stored credential. A server a tool still uses returns 409, naming the tools.
+//
+// Corresponds with DELETE /v1/integrations/mcp-server/{serverId} (the `DeleteV1IntegrationsMcpServerByServerId` operationId).
+func (c *Client) DeleteV1IntegrationsMcpServerByServerId(ctx context.Context, serverId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1IntegrationsMcpServerByServerIdRequest(c.Server, serverId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1IntegrationsMcpServerByServerId Get an MCP server
+//
+// One MCP server. The credential is never returned.
+//
+// Corresponds with GET /v1/integrations/mcp-server/{serverId} (the `GetV1IntegrationsMcpServerByServerId` operationId).
+func (c *Client) GetV1IntegrationsMcpServerByServerId(ctx context.Context, serverId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1IntegrationsMcpServerByServerIdRequest(c.Server, serverId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchV1IntegrationsMcpServerByServerIdWithBody Update an MCP server
+//
+// Renames the server or replaces its credential. A new credential is checked by connecting with it first; one the server refuses returns 400 and changes nothing.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PATCH /v1/integrations/mcp-server/{serverId} (the `PatchV1IntegrationsMcpServerByServerId` operationId).
+func (c *Client) PatchV1IntegrationsMcpServerByServerIdWithBody(ctx context.Context, serverId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchV1IntegrationsMcpServerByServerIdRequestWithBody(c.Server, serverId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PatchV1IntegrationsMcpServerByServerId Update an MCP server
+//
+// Renames the server or replaces its credential. A new credential is checked by connecting with it first; one the server refuses returns 400 and changes nothing.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PATCH /v1/integrations/mcp-server/{serverId} (the `PatchV1IntegrationsMcpServerByServerId` operationId).
+func (c *Client) PatchV1IntegrationsMcpServerByServerId(ctx context.Context, serverId openapi_types.UUID, body PatchV1IntegrationsMcpServerByServerIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchV1IntegrationsMcpServerByServerIdRequest(c.Server, serverId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1IntegrationsMcpServerByServerIdRefresh Refresh an MCP server
+//
+// Connects to the server again and records the tools it offers now. Agents keep calling the tools they were given; a new tool reaches an agent only once you add it.
+//
+// Corresponds with POST /v1/integrations/mcp-server/{serverId}/refresh (the `PostV1IntegrationsMcpServerByServerIdRefresh` operationId).
+func (c *Client) PostV1IntegrationsMcpServerByServerIdRefresh(ctx context.Context, serverId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsMcpServerByServerIdRefreshRequest(c.Server, serverId)
 	if err != nil {
 		return nil, err
 	}
@@ -64240,78 +65235,6 @@ func (c *Client) PostV1PublicCampaignCreditByCampaignKeyClaim(ctx context.Contex
 	return c.Client.Do(req)
 }
 
-// GetV1PublicProspectSimReportByToken Read a prospect simulation teaser report
-//
-// Public endpoint scoped by the unguessable report token. Returns a truncated teaser once the debrief is ready; the full report is gated behind claiming an account.
-//
-// Corresponds with GET /v1/public/prospect-sim/report/{token} (the `GetV1PublicProspectSimReportByToken` operationId).
-func (c *Client) GetV1PublicProspectSimReportByToken(ctx context.Context, token string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetV1PublicProspectSimReportByTokenRequest(c.Server, token)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetV1PublicProspectSimReportByTokenObserverUrl Mint a live observer WebSocket URL for a prospect call
-//
-// Public endpoint scoped by the report token. Returns a short-lived, self-authenticating WebSocket URL for watching a prospect call live, but only while that call is actually in flight; otherwise wsUrl is null. Pass `callId` (from the live progress list) to pick one of the parallel calls; without it the most recently started live call is used.
-//
-// Corresponds with GET /v1/public/prospect-sim/report/{token}/observer-url (the `GetV1PublicProspectSimReportByTokenObserverUrl` operationId).
-func (c *Client) GetV1PublicProspectSimReportByTokenObserverUrl(ctx context.Context, token string, params *GetV1PublicProspectSimReportByTokenObserverUrlParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetV1PublicProspectSimReportByTokenObserverUrlRequest(c.Server, token, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1PublicProspectSimRunWithBody Run a free simulation against a prospect agent
-//
-// Public endpoint: provisions a per-prospect project, runs a canned scenario template against the submitted phone number, and returns a report token to poll. The teaser report is also emailed when ready.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/public/prospect-sim/run (the `PostV1PublicProspectSimRun` operationId).
-func (c *Client) PostV1PublicProspectSimRunWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1PublicProspectSimRunRequestWithBody(c.Server, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1PublicProspectSimRun Run a free simulation against a prospect agent
-//
-// Public endpoint: provisions a per-prospect project, runs a canned scenario template against the submitted phone number, and returns a report token to poll. The teaser report is also emailed when ready.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/public/prospect-sim/run (the `PostV1PublicProspectSimRun` operationId).
-func (c *Client) PostV1PublicProspectSimRun(ctx context.Context, body PostV1PublicProspectSimRunJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1PublicProspectSimRunRequest(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
 // GetV1SimulationAudioClip List audio clips
 //
 // Returns the audio a CUSTOMER_AUDIO step can play: hold music, hold tones and ringback.
@@ -65419,7 +66342,7 @@ func (c *Client) GetV1Tool(ctx context.Context, params *GetV1ToolParams, reqEdit
 
 // PostV1ToolWithBody Create a tool
 //
-// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
+// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, a `calendar` for it to book on a calendar connected to the project, or `mcp` for it to call a tool on an MCP server connected to the project. Header values are returned on read, so keep secrets out of them.
 //
 // Takes any type of body and a specified content type.
 //
@@ -65438,7 +66361,7 @@ func (c *Client) PostV1ToolWithBody(ctx context.Context, contentType string, bod
 
 // PostV1Tool Create a tool
 //
-// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
+// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, a `calendar` for it to book on a calendar connected to the project, or `mcp` for it to call a tool on an MCP server connected to the project. Header values are returned on read, so keep secrets out of them.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -65489,7 +66412,7 @@ func (c *Client) GetV1ToolByToolId(ctx context.Context, toolId openapi_types.UUI
 
 // PutV1ToolByToolIdWithBody Update a tool
 //
-// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
+// Replaces the tool: its name, scope, inputs, description, grading hints, runtime, calendar and MCP tool. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar or mcp makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 //
 // Takes any type of body and a specified content type.
 //
@@ -65508,7 +66431,7 @@ func (c *Client) PutV1ToolByToolIdWithBody(ctx context.Context, toolId openapi_t
 
 // PutV1ToolByToolId Update a tool
 //
-// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
+// Replaces the tool: its name, scope, inputs, description, grading hints, runtime, calendar and MCP tool. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar or mcp makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -66365,6 +67288,53 @@ func NewPutV1AgentByAgentIdRequestWithBody(server string, agentId string, conten
 	return req, nil
 }
 
+// NewPostV1AgentByAgentIdConversationsRequest calls the generic PostV1AgentByAgentIdConversations builder with application/json body
+func NewPostV1AgentByAgentIdConversationsRequest(server string, agentId openapi_types.UUID, body PostV1AgentByAgentIdConversationsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1AgentByAgentIdConversationsRequestWithBody(server, agentId, "application/json", bodyReader)
+}
+
+// NewPostV1AgentByAgentIdConversationsRequestWithBody constructs an http.Request for the PostV1AgentByAgentIdConversations method, with any body, and a specified content type
+func NewPostV1AgentByAgentIdConversationsRequestWithBody(server string, agentId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/agent/%s/conversations", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewDeleteV1AgentByAgentIdDraftRequest constructs an http.Request for the DeleteV1AgentByAgentIdDraft method
 func NewDeleteV1AgentByAgentIdDraftRequest(server string, agentId openapi_types.UUID) (*http.Request, error) {
 	var err error
@@ -66845,53 +67815,6 @@ func NewPostV1AgentByAgentIdVersionsByVersionIdRollbackRequestWithBody(server st
 	}
 
 	operationPath := fmt.Sprintf("/v1/agent/%s/versions/%s/rollback", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewPostV1AgentByAgentIdWebSessionTokensRequest calls the generic PostV1AgentByAgentIdWebSessionTokens builder with application/json body
-func NewPostV1AgentByAgentIdWebSessionTokensRequest(server string, agentId openapi_types.UUID, body PostV1AgentByAgentIdWebSessionTokensJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewPostV1AgentByAgentIdWebSessionTokensRequestWithBody(server, agentId, "application/json", bodyReader)
-}
-
-// NewPostV1AgentByAgentIdWebSessionTokensRequestWithBody constructs an http.Request for the PostV1AgentByAgentIdWebSessionTokens method, with any body, and a specified content type
-func NewPostV1AgentByAgentIdWebSessionTokensRequestWithBody(server string, agentId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/agent/%s/web-session-tokens", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -67779,324 +68702,6 @@ func NewGetV1BenchmarkTargetByTargetKeyScoreSampleRequest(server string, targetK
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
 		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetV1CalendarConnectionRequest constructs an http.Request for the GetV1CalendarConnection method
-func NewGetV1CalendarConnectionRequest(server string, params *GetV1CalendarConnectionParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/calendar-connection")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.Provider != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "provider", *params.Provider, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewPostV1CalendarConnectionRequest calls the generic PostV1CalendarConnection builder with application/json body
-func NewPostV1CalendarConnectionRequest(server string, body PostV1CalendarConnectionJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewPostV1CalendarConnectionRequestWithBody(server, "application/json", bodyReader)
-}
-
-// NewPostV1CalendarConnectionRequestWithBody constructs an http.Request for the PostV1CalendarConnection method, with any body, and a specified content type
-func NewPostV1CalendarConnectionRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/calendar-connection")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewDeleteV1CalendarConnectionByConnectionIdRequest constructs an http.Request for the DeleteV1CalendarConnectionByConnectionId method
-func NewDeleteV1CalendarConnectionByConnectionIdRequest(server string, connectionId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/calendar-connection/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetV1CalendarConnectionByConnectionIdRequest constructs an http.Request for the GetV1CalendarConnectionByConnectionId method
-func NewGetV1CalendarConnectionByConnectionIdRequest(server string, connectionId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/calendar-connection/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewPatchV1CalendarConnectionByConnectionIdRequest calls the generic PatchV1CalendarConnectionByConnectionId builder with application/json body
-func NewPatchV1CalendarConnectionByConnectionIdRequest(server string, connectionId string, body PatchV1CalendarConnectionByConnectionIdJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewPatchV1CalendarConnectionByConnectionIdRequestWithBody(server, connectionId, "application/json", bodyReader)
-}
-
-// NewPatchV1CalendarConnectionByConnectionIdRequestWithBody constructs an http.Request for the PatchV1CalendarConnectionByConnectionId method, with any body, and a specified content type
-func NewPatchV1CalendarConnectionByConnectionIdRequestWithBody(server string, connectionId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/calendar-connection/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewPostV1CalendarConnectionByConnectionIdCheckRequest constructs an http.Request for the PostV1CalendarConnectionByConnectionIdCheck method
-func NewPostV1CalendarConnectionByConnectionIdCheckRequest(server string, connectionId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/calendar-connection/%s/check", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetV1CalendarConnectionByConnectionIdTargetsRequest constructs an http.Request for the GetV1CalendarConnectionByConnectionIdTargets method
-func NewGetV1CalendarConnectionByConnectionIdTargetsRequest(server string, connectionId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/calendar-connection/%s/targets", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetV1CalendarConnectionByConnectionIdTargetsByTargetIdRequest constructs an http.Request for the GetV1CalendarConnectionByConnectionIdTargetsByTargetId method
-func NewGetV1CalendarConnectionByConnectionIdTargetsByTargetIdRequest(server string, connectionId string, targetId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "targetId", targetId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/calendar-connection/%s/targets/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
 	}
 
 	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
@@ -69160,6 +69765,142 @@ func NewPostV1ConfigDiffRequestWithBody(server string, contentType string, body 
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetV1ConversationRequest constructs an http.Request for the GetV1Conversation method
+func NewGetV1ConversationRequest(server string, params *GetV1ConversationParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/conversation")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Modality != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "modality", *params.Modality, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.StartedFrom != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "startedFrom", *params.StartedFrom, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.StartedTo != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "startedTo", *params.StartedTo, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date-time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.After != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "after", *params.After, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1ConversationByConversationIdRequest constructs an http.Request for the GetV1ConversationByConversationId method
+func NewGetV1ConversationByConversationIdRequest(server string, conversationId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "conversationId", conversationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/conversation/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -71075,6 +71816,580 @@ func NewPutV1HttpRequestDefinitionByDefinitionIdRequestWithBody(server string, d
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetV1IntegrationsCalendarRequest constructs an http.Request for the GetV1IntegrationsCalendar method
+func NewGetV1IntegrationsCalendarRequest(server string, params *GetV1IntegrationsCalendarParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Provider != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "provider", *params.Provider, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1IntegrationsCalendarRequest calls the generic PostV1IntegrationsCalendar builder with application/json body
+func NewPostV1IntegrationsCalendarRequest(server string, body PostV1IntegrationsCalendarJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1IntegrationsCalendarRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1IntegrationsCalendarRequestWithBody constructs an http.Request for the PostV1IntegrationsCalendar method, with any body, and a specified content type
+func NewPostV1IntegrationsCalendarRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1IntegrationsCalendarByConnectionIdRequest constructs an http.Request for the DeleteV1IntegrationsCalendarByConnectionId method
+func NewDeleteV1IntegrationsCalendarByConnectionIdRequest(server string, connectionId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1IntegrationsCalendarByConnectionIdRequest constructs an http.Request for the GetV1IntegrationsCalendarByConnectionId method
+func NewGetV1IntegrationsCalendarByConnectionIdRequest(server string, connectionId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPatchV1IntegrationsCalendarByConnectionIdRequest calls the generic PatchV1IntegrationsCalendarByConnectionId builder with application/json body
+func NewPatchV1IntegrationsCalendarByConnectionIdRequest(server string, connectionId string, body PatchV1IntegrationsCalendarByConnectionIdJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPatchV1IntegrationsCalendarByConnectionIdRequestWithBody(server, connectionId, "application/json", bodyReader)
+}
+
+// NewPatchV1IntegrationsCalendarByConnectionIdRequestWithBody constructs an http.Request for the PatchV1IntegrationsCalendarByConnectionId method, with any body, and a specified content type
+func NewPatchV1IntegrationsCalendarByConnectionIdRequestWithBody(server string, connectionId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPostV1IntegrationsCalendarByConnectionIdCheckRequest constructs an http.Request for the PostV1IntegrationsCalendarByConnectionIdCheck method
+func NewPostV1IntegrationsCalendarByConnectionIdCheckRequest(server string, connectionId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar/%s/check", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1IntegrationsCalendarByConnectionIdTargetsRequest constructs an http.Request for the GetV1IntegrationsCalendarByConnectionIdTargets method
+func NewGetV1IntegrationsCalendarByConnectionIdTargetsRequest(server string, connectionId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar/%s/targets", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest constructs an http.Request for the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId method
+func NewGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest(server string, connectionId string, targetId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "targetId", targetId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar/%s/targets/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1IntegrationsMcpServerRequest constructs an http.Request for the GetV1IntegrationsMcpServer method
+func NewGetV1IntegrationsMcpServerRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/mcp-server")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1IntegrationsMcpServerRequest calls the generic PostV1IntegrationsMcpServer builder with application/json body
+func NewPostV1IntegrationsMcpServerRequest(server string, body PostV1IntegrationsMcpServerJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1IntegrationsMcpServerRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1IntegrationsMcpServerRequestWithBody constructs an http.Request for the PostV1IntegrationsMcpServer method, with any body, and a specified content type
+func NewPostV1IntegrationsMcpServerRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/mcp-server")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPostV1IntegrationsMcpServerDiscoverRequest calls the generic PostV1IntegrationsMcpServerDiscover builder with application/json body
+func NewPostV1IntegrationsMcpServerDiscoverRequest(server string, body PostV1IntegrationsMcpServerDiscoverJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1IntegrationsMcpServerDiscoverRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1IntegrationsMcpServerDiscoverRequestWithBody constructs an http.Request for the PostV1IntegrationsMcpServerDiscover method, with any body, and a specified content type
+func NewPostV1IntegrationsMcpServerDiscoverRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/mcp-server/discover")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1IntegrationsMcpServerByServerIdRequest constructs an http.Request for the DeleteV1IntegrationsMcpServerByServerId method
+func NewDeleteV1IntegrationsMcpServerByServerIdRequest(server string, serverId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "serverId", serverId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/mcp-server/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetV1IntegrationsMcpServerByServerIdRequest constructs an http.Request for the GetV1IntegrationsMcpServerByServerId method
+func NewGetV1IntegrationsMcpServerByServerIdRequest(server string, serverId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "serverId", serverId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/mcp-server/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPatchV1IntegrationsMcpServerByServerIdRequest calls the generic PatchV1IntegrationsMcpServerByServerId builder with application/json body
+func NewPatchV1IntegrationsMcpServerByServerIdRequest(server string, serverId openapi_types.UUID, body PatchV1IntegrationsMcpServerByServerIdJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPatchV1IntegrationsMcpServerByServerIdRequestWithBody(server, serverId, "application/json", bodyReader)
+}
+
+// NewPatchV1IntegrationsMcpServerByServerIdRequestWithBody constructs an http.Request for the PatchV1IntegrationsMcpServerByServerId method, with any body, and a specified content type
+func NewPatchV1IntegrationsMcpServerByServerIdRequestWithBody(server string, serverId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "serverId", serverId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/mcp-server/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPostV1IntegrationsMcpServerByServerIdRefreshRequest constructs an http.Request for the PostV1IntegrationsMcpServerByServerIdRefresh method
+func NewPostV1IntegrationsMcpServerByServerIdRefreshRequest(server string, serverId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "serverId", serverId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/mcp-server/%s/refresh", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -74125,141 +75440,6 @@ func NewPostV1PublicCampaignCreditByCampaignKeyClaimRequestWithBody(server strin
 	return req, nil
 }
 
-// NewGetV1PublicProspectSimReportByTokenRequest constructs an http.Request for the GetV1PublicProspectSimReportByToken method
-func NewGetV1PublicProspectSimReportByTokenRequest(server string, token string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "token", token, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/public/prospect-sim/report/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewGetV1PublicProspectSimReportByTokenObserverUrlRequest constructs an http.Request for the GetV1PublicProspectSimReportByTokenObserverUrl method
-func NewGetV1PublicProspectSimReportByTokenObserverUrlRequest(server string, token string, params *GetV1PublicProspectSimReportByTokenObserverUrlParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "token", token, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/public/prospect-sim/report/%s/observer-url", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		// queryValues collects non-styled parameters (passthrough, JSON)
-		// that are safe to round-trip through url.Values.Encode().
-		queryValues := queryURL.Query()
-		// rawQueryFragments collects pre-encoded query fragments from
-		// styled parameters, preserving literal commas as delimiters
-		// per the OpenAPI spec (e.g. "color=blue,black,brown").
-		var rawQueryFragments []string
-
-		if params.CallId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "callId", *params.CallId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "uuid"}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
-			}
-
-		}
-
-		if encoded := queryValues.Encode(); encoded != "" {
-			rawQueryFragments = append(rawQueryFragments, encoded)
-		}
-		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewPostV1PublicProspectSimRunRequest calls the generic PostV1PublicProspectSimRun builder with application/json body
-func NewPostV1PublicProspectSimRunRequest(server string, body PostV1PublicProspectSimRunJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewPostV1PublicProspectSimRunRequestWithBody(server, "application/json", bodyReader)
-}
-
-// NewPostV1PublicProspectSimRunRequestWithBody constructs an http.Request for the PostV1PublicProspectSimRun method, with any body, and a specified content type
-func NewPostV1PublicProspectSimRunRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/public/prospect-sim/run")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
 // NewGetV1SimulationAudioClipRequest constructs an http.Request for the GetV1SimulationAudioClip method
 func NewGetV1SimulationAudioClipRequest(server string) (*http.Request, error) {
 	var err error
@@ -76766,6 +77946,32 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PUT /v1/agent/{agentId} (the `PutV1AgentByAgentId` operationId).
 	PutV1AgentByAgentIdWithResponse(ctx context.Context, agentId string, body PutV1AgentByAgentIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1AgentByAgentIdResponse, error)
 
+	// PostV1AgentByAgentIdConversationsWithBodyWithResponse Start a conversation with an agent
+	//
+	// Starts a voice conversation (`modality: voice`) or chat (`modality: chat`) with this Roark-hosted agent and returns its id right away.
+	//
+	// `channel: web` is a conversation in a browser on your site. Call this endpoint from your server, never the browser: it needs your API key. Give the page only `web.clientToken`; the web SDK spends it to join from one of `allowedOrigins` before `web.clientTokenExpiresAt`.
+	//
+	// Read it back with `GET /v1/conversation/{conversationId}` straight away: `PENDING` until the browser joins, `IN_PROGRESS`, then `ENDED`. One nobody joins ends without ever starting and is never billed. Starting a voice conversation needs `call:create`, a chat `chat:create`, and the agent a published version that takes that kind.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/agent/{agentId}/conversations (the `PostV1AgentByAgentIdConversations` operationId).
+	PostV1AgentByAgentIdConversationsWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdConversationsResponse, error)
+
+	// PostV1AgentByAgentIdConversationsWithResponse Start a conversation with an agent
+	//
+	// Starts a voice conversation (`modality: voice`) or chat (`modality: chat`) with this Roark-hosted agent and returns its id right away.
+	//
+	// `channel: web` is a conversation in a browser on your site. Call this endpoint from your server, never the browser: it needs your API key. Give the page only `web.clientToken`; the web SDK spends it to join from one of `allowedOrigins` before `web.clientTokenExpiresAt`.
+	//
+	// Read it back with `GET /v1/conversation/{conversationId}` straight away: `PENDING` until the browser joins, `IN_PROGRESS`, then `ENDED`. One nobody joins ends without ever starting and is never billed. Starting a voice conversation needs `call:create`, a chat `chat:create`, and the agent a published version that takes that kind.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/agent/{agentId}/conversations (the `PostV1AgentByAgentIdConversations` operationId).
+	PostV1AgentByAgentIdConversationsWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdConversationsJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdConversationsResponse, error)
+
 	// DeleteV1AgentByAgentIdDraftWithResponse Discard the draft
 	//
 	// Throws the open draft away and returns it. The live version is unchanged.
@@ -76909,24 +78115,6 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/agent/{agentId}/versions/{versionId}/rollback (the `PostV1AgentByAgentIdVersionsByVersionIdRollback` operationId).
 	PostV1AgentByAgentIdVersionsByVersionIdRollbackWithResponse(ctx context.Context, agentId openapi_types.UUID, versionId openapi_types.UUID, body PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse, error)
-
-	// PostV1AgentByAgentIdWebSessionTokensWithBodyWithResponse Create a web session token
-	//
-	// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
-	PostV1AgentByAgentIdWebSessionTokensWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdWebSessionTokensResponse, error)
-
-	// PostV1AgentByAgentIdWebSessionTokensWithResponse Create a web session token
-	//
-	// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
-	PostV1AgentByAgentIdWebSessionTokensWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdWebSessionTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdWebSessionTokensResponse, error)
 
 	// PostV1AnalyticsQueryWithBodyWithResponse Run an analytics query
 	//
@@ -77152,96 +78340,6 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with GET /v1/benchmark/target/{targetKey}/score-sample (the `GetV1BenchmarkTargetByTargetKeyScoreSample` operationId).
 	GetV1BenchmarkTargetByTargetKeyScoreSampleWithResponse(ctx context.Context, targetKey string, params *GetV1BenchmarkTargetByTargetKeyScoreSampleParams, reqEditors ...RequestEditorFn) (*GetV1BenchmarkTargetByTargetKeyScoreSampleResponse, error)
-
-	// GetV1CalendarConnectionWithResponse List calendar connections
-	//
-	// Returns every calendar connection in the authenticated project, by label. A project has a handful of these, so the list is not paginated: `pagination.hasMore` is always false.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/calendar-connection (the `GetV1CalendarConnection` operationId).
-	GetV1CalendarConnectionWithResponse(ctx context.Context, params *GetV1CalendarConnectionParams, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionResponse, error)
-
-	// PostV1CalendarConnectionWithBodyWithResponse Connect a calendar account
-	//
-	// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
-	PostV1CalendarConnectionWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionResponse, error)
-
-	// PostV1CalendarConnectionWithResponse Connect a calendar account
-	//
-	// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
-	PostV1CalendarConnectionWithResponse(ctx context.Context, body PostV1CalendarConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionResponse, error)
-
-	// DeleteV1CalendarConnectionByConnectionIdWithResponse Delete a calendar connection
-	//
-	// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with DELETE /v1/calendar-connection/{connectionId} (the `DeleteV1CalendarConnectionByConnectionId` operationId).
-	DeleteV1CalendarConnectionByConnectionIdWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*DeleteV1CalendarConnectionByConnectionIdResponse, error)
-
-	// GetV1CalendarConnectionByConnectionIdWithResponse Get a calendar connection
-	//
-	// Returns one calendar connection. The stored credential is never included.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/calendar-connection/{connectionId} (the `GetV1CalendarConnectionByConnectionId` operationId).
-	GetV1CalendarConnectionByConnectionIdWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionByConnectionIdResponse, error)
-
-	// PatchV1CalendarConnectionByConnectionIdWithBodyWithResponse Update a calendar connection
-	//
-	// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
-	PatchV1CalendarConnectionByConnectionIdWithBodyWithResponse(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1CalendarConnectionByConnectionIdResponse, error)
-
-	// PatchV1CalendarConnectionByConnectionIdWithResponse Update a calendar connection
-	//
-	// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
-	PatchV1CalendarConnectionByConnectionIdWithResponse(ctx context.Context, connectionId string, body PatchV1CalendarConnectionByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1CalendarConnectionByConnectionIdResponse, error)
-
-	// PostV1CalendarConnectionByConnectionIdCheckWithResponse Check a calendar connection
-	//
-	// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/calendar-connection/{connectionId}/check (the `PostV1CalendarConnectionByConnectionIdCheck` operationId).
-	PostV1CalendarConnectionByConnectionIdCheckWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionByConnectionIdCheckResponse, error)
-
-	// GetV1CalendarConnectionByConnectionIdTargetsWithResponse List what can be booked on a calendar
-	//
-	// What an agent can be pointed at on this connection: Cal.com event types today, Google calendars when that lands. Read live from the provider, so an event type added since you connected is here without reconnecting. Each entry carries a `target` ready to put on a calendar tool, so nothing has to assemble one by hand.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/calendar-connection/{connectionId}/targets (the `GetV1CalendarConnectionByConnectionIdTargets` operationId).
-	GetV1CalendarConnectionByConnectionIdTargetsWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionByConnectionIdTargetsResponse, error)
-
-	// GetV1CalendarConnectionByConnectionIdTargetsByTargetIdWithResponse Read one bookable target
-	//
-	// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/calendar-connection/{connectionId}/targets/{targetId} (the `GetV1CalendarConnectionByConnectionIdTargetsByTargetId` operationId).
-	GetV1CalendarConnectionByConnectionIdTargetsByTargetIdWithResponse(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse, error)
 
 	// GetV1CallWithResponse List calls
 	//
@@ -77485,6 +78583,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/config/diff (the `PostV1ConfigDiff` operationId).
 	PostV1ConfigDiffWithResponse(ctx context.Context, body PostV1ConfigDiffJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1ConfigDiffResponse, error)
+
+	// GetV1ConversationWithResponse List conversations
+	//
+	// Calls and chats in the project as one list, most recent start first. A conversation is listed once it is recorded: a call when it connects, a chat when it ends. Listing calls needs `call:read`, chats `chat:read`, and both kinds both.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/conversation (the `GetV1Conversation` operationId).
+	GetV1ConversationWithResponse(ctx context.Context, params *GetV1ConversationParams, reqEditors ...RequestEditorFn) (*GetV1ConversationResponse, error)
+
+	// GetV1ConversationByConversationIdWithResponse Get a conversation
+	//
+	// A call or chat by its id, whichever it is. One started through `POST /v1/agent/{agentId}/conversations` reads back from the moment it is created, before it is recorded. For its transcript and metrics, read it as a call or chat, as `modality` says.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/conversation/{conversationId} (the `GetV1ConversationByConversationId` operationId).
+	GetV1ConversationByConversationIdWithResponse(ctx context.Context, conversationId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1ConversationByConversationIdResponse, error)
 
 	// GetV1CustomerWithResponse List customers
 	//
@@ -78028,6 +79144,186 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with PUT /v1/http-request-definition/{definitionId} (the `PutV1HttpRequestDefinitionByDefinitionId` operationId).
 	PutV1HttpRequestDefinitionByDefinitionIdWithResponse(ctx context.Context, definitionId string, body PutV1HttpRequestDefinitionByDefinitionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1HttpRequestDefinitionByDefinitionIdResponse, error)
+
+	// GetV1IntegrationsCalendarWithResponse List calendar connections
+	//
+	// Returns every calendar connection in the authenticated project, by label. A project has a handful of these, so the list is not paginated: `pagination.hasMore` is always false.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/integrations/calendar (the `GetV1IntegrationsCalendar` operationId).
+	GetV1IntegrationsCalendarWithResponse(ctx context.Context, params *GetV1IntegrationsCalendarParams, reqEditors ...RequestEditorFn) (*GetV1IntegrationsCalendarResponse, error)
+
+	// PostV1IntegrationsCalendarWithBodyWithResponse Connect a calendar account
+	//
+	// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
+	PostV1IntegrationsCalendarWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarResponse, error)
+
+	// PostV1IntegrationsCalendarWithResponse Connect a calendar account
+	//
+	// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
+	PostV1IntegrationsCalendarWithResponse(ctx context.Context, body PostV1IntegrationsCalendarJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarResponse, error)
+
+	// DeleteV1IntegrationsCalendarByConnectionIdWithResponse Delete a calendar connection
+	//
+	// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/integrations/calendar/{connectionId} (the `DeleteV1IntegrationsCalendarByConnectionId` operationId).
+	DeleteV1IntegrationsCalendarByConnectionIdWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*DeleteV1IntegrationsCalendarByConnectionIdResponse, error)
+
+	// GetV1IntegrationsCalendarByConnectionIdWithResponse Get a calendar connection
+	//
+	// Returns one calendar connection. The stored credential is never included.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/integrations/calendar/{connectionId} (the `GetV1IntegrationsCalendarByConnectionId` operationId).
+	GetV1IntegrationsCalendarByConnectionIdWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1IntegrationsCalendarByConnectionIdResponse, error)
+
+	// PatchV1IntegrationsCalendarByConnectionIdWithBodyWithResponse Update a calendar connection
+	//
+	// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/integrations/calendar/{connectionId} (the `PatchV1IntegrationsCalendarByConnectionId` operationId).
+	PatchV1IntegrationsCalendarByConnectionIdWithBodyWithResponse(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1IntegrationsCalendarByConnectionIdResponse, error)
+
+	// PatchV1IntegrationsCalendarByConnectionIdWithResponse Update a calendar connection
+	//
+	// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/integrations/calendar/{connectionId} (the `PatchV1IntegrationsCalendarByConnectionId` operationId).
+	PatchV1IntegrationsCalendarByConnectionIdWithResponse(ctx context.Context, connectionId string, body PatchV1IntegrationsCalendarByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1IntegrationsCalendarByConnectionIdResponse, error)
+
+	// PostV1IntegrationsCalendarByConnectionIdCheckWithResponse Check a calendar connection
+	//
+	// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/calendar/{connectionId}/check (the `PostV1IntegrationsCalendarByConnectionIdCheck` operationId).
+	PostV1IntegrationsCalendarByConnectionIdCheckWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarByConnectionIdCheckResponse, error)
+
+	// GetV1IntegrationsCalendarByConnectionIdTargetsWithResponse List what can be booked on a calendar
+	//
+	// What an agent can be pointed at on this connection: Cal.com event types today, Google calendars when that lands. Read live from the provider, so an event type added since you connected is here without reconnecting. Each entry carries a `target` ready to put on a calendar tool, so nothing has to assemble one by hand.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/integrations/calendar/{connectionId}/targets (the `GetV1IntegrationsCalendarByConnectionIdTargets` operationId).
+	GetV1IntegrationsCalendarByConnectionIdTargetsWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1IntegrationsCalendarByConnectionIdTargetsResponse, error)
+
+	// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse Read one bookable target
+	//
+	// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+	GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error)
+
+	// GetV1IntegrationsMcpServerWithResponse List MCP servers
+	//
+	// The project's MCP servers, by label, each with the tools it offered when last checked. Credentials are never returned.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/integrations/mcp-server (the `GetV1IntegrationsMcpServer` operationId).
+	GetV1IntegrationsMcpServerWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1IntegrationsMcpServerResponse, error)
+
+	// PostV1IntegrationsMcpServerWithBodyWithResponse Connect an MCP server
+	//
+	// Connects to the server, reads its tools, then stores it for the project. A server that does not answer, or refuses the credential, returns 400 and nothing is stored. The credential is encrypted and never returned.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/mcp-server (the `PostV1IntegrationsMcpServer` operationId).
+	PostV1IntegrationsMcpServerWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1IntegrationsMcpServerResponse, error)
+
+	// PostV1IntegrationsMcpServerWithResponse Connect an MCP server
+	//
+	// Connects to the server, reads its tools, then stores it for the project. A server that does not answer, or refuses the credential, returns 400 and nothing is stored. The credential is encrypted and never returned.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/mcp-server (the `PostV1IntegrationsMcpServer` operationId).
+	PostV1IntegrationsMcpServerWithResponse(ctx context.Context, body PostV1IntegrationsMcpServerJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsMcpServerResponse, error)
+
+	// PostV1IntegrationsMcpServerDiscoverWithBodyWithResponse Discover an MCP server
+	//
+	// Connects to a server and returns the tools it offers, without storing anything. Use it to check a url and credential before connecting.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/mcp-server/discover (the `PostV1IntegrationsMcpServerDiscover` operationId).
+	PostV1IntegrationsMcpServerDiscoverWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1IntegrationsMcpServerDiscoverResponse, error)
+
+	// PostV1IntegrationsMcpServerDiscoverWithResponse Discover an MCP server
+	//
+	// Connects to a server and returns the tools it offers, without storing anything. Use it to check a url and credential before connecting.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/mcp-server/discover (the `PostV1IntegrationsMcpServerDiscover` operationId).
+	PostV1IntegrationsMcpServerDiscoverWithResponse(ctx context.Context, body PostV1IntegrationsMcpServerDiscoverJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsMcpServerDiscoverResponse, error)
+
+	// DeleteV1IntegrationsMcpServerByServerIdWithResponse Disconnect an MCP server
+	//
+	// Deletes the server and its stored credential. A server a tool still uses returns 409, naming the tools.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/integrations/mcp-server/{serverId} (the `DeleteV1IntegrationsMcpServerByServerId` operationId).
+	DeleteV1IntegrationsMcpServerByServerIdWithResponse(ctx context.Context, serverId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1IntegrationsMcpServerByServerIdResponse, error)
+
+	// GetV1IntegrationsMcpServerByServerIdWithResponse Get an MCP server
+	//
+	// One MCP server. The credential is never returned.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/integrations/mcp-server/{serverId} (the `GetV1IntegrationsMcpServerByServerId` operationId).
+	GetV1IntegrationsMcpServerByServerIdWithResponse(ctx context.Context, serverId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1IntegrationsMcpServerByServerIdResponse, error)
+
+	// PatchV1IntegrationsMcpServerByServerIdWithBodyWithResponse Update an MCP server
+	//
+	// Renames the server or replaces its credential. A new credential is checked by connecting with it first; one the server refuses returns 400 and changes nothing.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/integrations/mcp-server/{serverId} (the `PatchV1IntegrationsMcpServerByServerId` operationId).
+	PatchV1IntegrationsMcpServerByServerIdWithBodyWithResponse(ctx context.Context, serverId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1IntegrationsMcpServerByServerIdResponse, error)
+
+	// PatchV1IntegrationsMcpServerByServerIdWithResponse Update an MCP server
+	//
+	// Renames the server or replaces its credential. A new credential is checked by connecting with it first; one the server refuses returns 400 and changes nothing.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PATCH /v1/integrations/mcp-server/{serverId} (the `PatchV1IntegrationsMcpServerByServerId` operationId).
+	PatchV1IntegrationsMcpServerByServerIdWithResponse(ctx context.Context, serverId openapi_types.UUID, body PatchV1IntegrationsMcpServerByServerIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1IntegrationsMcpServerByServerIdResponse, error)
+
+	// PostV1IntegrationsMcpServerByServerIdRefreshWithResponse Refresh an MCP server
+	//
+	// Connects to the server again and records the tools it offers now. Agents keep calling the tools they were given; a new tool reaches an agent only once you add it.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/mcp-server/{serverId}/refresh (the `PostV1IntegrationsMcpServerByServerIdRefresh` operationId).
+	PostV1IntegrationsMcpServerByServerIdRefreshWithResponse(ctx context.Context, serverId openapi_types.UUID, reqEditors ...RequestEditorFn) (*PostV1IntegrationsMcpServerByServerIdRefreshResponse, error)
 
 	// GetV1IssueWithResponse List issues
 	//
@@ -78907,42 +80203,6 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/public/campaign-credit/{campaignKey}/claim (the `PostV1PublicCampaignCreditByCampaignKeyClaim` operationId).
 	PostV1PublicCampaignCreditByCampaignKeyClaimWithResponse(ctx context.Context, campaignKey string, body PostV1PublicCampaignCreditByCampaignKeyClaimJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1PublicCampaignCreditByCampaignKeyClaimResponse, error)
 
-	// GetV1PublicProspectSimReportByTokenWithResponse Read a prospect simulation teaser report
-	//
-	// Public endpoint scoped by the unguessable report token. Returns a truncated teaser once the debrief is ready; the full report is gated behind claiming an account.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/public/prospect-sim/report/{token} (the `GetV1PublicProspectSimReportByToken` operationId).
-	GetV1PublicProspectSimReportByTokenWithResponse(ctx context.Context, token string, reqEditors ...RequestEditorFn) (*GetV1PublicProspectSimReportByTokenResponse, error)
-
-	// GetV1PublicProspectSimReportByTokenObserverUrlWithResponse Mint a live observer WebSocket URL for a prospect call
-	//
-	// Public endpoint scoped by the report token. Returns a short-lived, self-authenticating WebSocket URL for watching a prospect call live, but only while that call is actually in flight; otherwise wsUrl is null. Pass `callId` (from the live progress list) to pick one of the parallel calls; without it the most recently started live call is used.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/public/prospect-sim/report/{token}/observer-url (the `GetV1PublicProspectSimReportByTokenObserverUrl` operationId).
-	GetV1PublicProspectSimReportByTokenObserverUrlWithResponse(ctx context.Context, token string, params *GetV1PublicProspectSimReportByTokenObserverUrlParams, reqEditors ...RequestEditorFn) (*GetV1PublicProspectSimReportByTokenObserverUrlResponse, error)
-
-	// PostV1PublicProspectSimRunWithBodyWithResponse Run a free simulation against a prospect agent
-	//
-	// Public endpoint: provisions a per-prospect project, runs a canned scenario template against the submitted phone number, and returns a report token to poll. The teaser report is also emailed when ready.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/public/prospect-sim/run (the `PostV1PublicProspectSimRun` operationId).
-	PostV1PublicProspectSimRunWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1PublicProspectSimRunResponse, error)
-
-	// PostV1PublicProspectSimRunWithResponse Run a free simulation against a prospect agent
-	//
-	// Public endpoint: provisions a per-prospect project, runs a canned scenario template against the submitted phone number, and returns a report token to poll. The teaser report is also emailed when ready.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/public/prospect-sim/run (the `PostV1PublicProspectSimRun` operationId).
-	PostV1PublicProspectSimRunWithResponse(ctx context.Context, body PostV1PublicProspectSimRunJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1PublicProspectSimRunResponse, error)
-
 	// GetV1SimulationAudioClipWithResponse List audio clips
 	//
 	// Returns the audio a CUSTOMER_AUDIO step can play: hold music, hold tones and ringback.
@@ -79568,7 +80828,7 @@ type ClientWithResponsesInterface interface {
 
 	// PostV1ToolWithBodyWithResponse Create a tool
 	//
-	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
+	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, a `calendar` for it to book on a calendar connected to the project, or `mcp` for it to call a tool on an MCP server connected to the project. Header values are returned on read, so keep secrets out of them.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -79577,7 +80837,7 @@ type ClientWithResponsesInterface interface {
 
 	// PostV1ToolWithResponse Create a tool
 	//
-	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
+	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, a `calendar` for it to book on a calendar connected to the project, or `mcp` for it to call a tool on an MCP server connected to the project. Header values are returned on read, so keep secrets out of them.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -79602,7 +80862,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutV1ToolByToolIdWithBodyWithResponse Update a tool
 	//
-	// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
+	// Replaces the tool: its name, scope, inputs, description, grading hints, runtime, calendar and MCP tool. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar or mcp makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -79611,7 +80871,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutV1ToolByToolIdWithResponse Update a tool
 	//
-	// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
+	// Replaces the tool: its name, scope, inputs, description, grading hints, runtime, calendar and MCP tool. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar or mcp makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -81178,6 +82438,100 @@ func (r PutV1AgentByAgentIdResponse) ContentType() string {
 	return ""
 }
 
+type PostV1AgentByAgentIdConversationsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		Data AgentConversationCreated `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1AgentByAgentIdConversationsResponse) GetJSON201() *struct {
+	Data AgentConversationCreated `json:"data"`
+} {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1AgentByAgentIdConversationsResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1AgentByAgentIdConversationsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1AgentByAgentIdConversationsResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1AgentByAgentIdConversationsResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1AgentByAgentIdConversationsResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PostV1AgentByAgentIdConversationsResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1AgentByAgentIdConversationsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1AgentByAgentIdConversationsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1AgentByAgentIdConversationsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1AgentByAgentIdConversationsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1AgentByAgentIdConversationsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type DeleteV1AgentByAgentIdDraftResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -82012,93 +83366,6 @@ func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) StatusCode() in
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r PostV1AgentByAgentIdVersionsByVersionIdRollbackResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PostV1AgentByAgentIdWebSessionTokensResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *struct {
-		Data WebSessionToken `json:"data"`
-	}
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ErrorResponse
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON201() *struct {
-	Data WebSessionToken `json:"data"`
-} {
-	return r.JSON201
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON400() *ErrorResponse {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON403() *ErrorResponse {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON409() *ErrorResponse {
-	return r.JSON409
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r PostV1AgentByAgentIdWebSessionTokensResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PostV1AgentByAgentIdWebSessionTokensResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PostV1AgentByAgentIdWebSessionTokensResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PostV1AgentByAgentIdWebSessionTokensResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -83461,1296 +84728,6 @@ func (r GetV1BenchmarkTargetByTargetKeyScoreSampleResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetV1BenchmarkTargetByTargetKeyScoreSampleResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetV1CalendarConnectionResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Data []struct {
-			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-			AccountLabel *string `json:"accountLabel"`
-
-			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-			Capabilities struct {
-				// Auth How this provider is authenticated.
-				Auth GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-				Operations []GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-				SlotHold GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-			} `json:"capabilities"`
-
-			// CreatedAt Creation timestamp in ISO 8601 format.
-			CreatedAt string `json:"createdAt"`
-
-			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-			CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-			// Id Unique identifier of the calendar connection.
-			Id openapi_types.UUID `json:"id"`
-
-			// Label Customer-supplied name for this account. Unique within the project.
-			Label string `json:"label"`
-
-			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-			LastCheckedAt *string `json:"lastCheckedAt"`
-
-			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-			Provider GetV1CalendarConnection200JSONResponseBodyDataProvider `json:"provider"`
-
-			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-			Scopes *[]string `json:"scopes"`
-
-			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-			Status GetV1CalendarConnection200JSONResponseBodyDataStatus `json:"status"`
-
-			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-			StatusMessage *string `json:"statusMessage"`
-
-			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-			Timezone string `json:"timezone"`
-
-			// UpdatedAt Last update timestamp in ISO 8601 format.
-			UpdatedAt string `json:"updatedAt"`
-		} `json:"data"`
-		Pagination struct {
-			// HasMore Whether there are more items to fetch
-			HasMore bool `json:"hasMore"`
-
-			// NextCursor Cursor for the next page of items
-			NextCursor *string `json:"nextCursor"`
-
-			// Total Total number of items
-			Total float64 `json:"total"`
-		} `json:"pagination"`
-	}
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetV1CalendarConnectionResponse) GetJSON200() *struct {
-	Data []struct {
-		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-		AccountLabel *string `json:"accountLabel"`
-
-		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-		Capabilities struct {
-			// Auth How this provider is authenticated.
-			Auth GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-			Operations []GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-			SlotHold GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-		} `json:"capabilities"`
-
-		// CreatedAt Creation timestamp in ISO 8601 format.
-		CreatedAt string `json:"createdAt"`
-
-		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-		CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-		// Id Unique identifier of the calendar connection.
-		Id openapi_types.UUID `json:"id"`
-
-		// Label Customer-supplied name for this account. Unique within the project.
-		Label string `json:"label"`
-
-		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-		LastCheckedAt *string `json:"lastCheckedAt"`
-
-		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-		Provider GetV1CalendarConnection200JSONResponseBodyDataProvider `json:"provider"`
-
-		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-		Scopes *[]string `json:"scopes"`
-
-		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-		Status GetV1CalendarConnection200JSONResponseBodyDataStatus `json:"status"`
-
-		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-		StatusMessage *string `json:"statusMessage"`
-
-		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-		Timezone string `json:"timezone"`
-
-		// UpdatedAt Last update timestamp in ISO 8601 format.
-		UpdatedAt string `json:"updatedAt"`
-	} `json:"data"`
-	Pagination struct {
-		// HasMore Whether there are more items to fetch
-		HasMore bool `json:"hasMore"`
-
-		// NextCursor Cursor for the next page of items
-		NextCursor *string `json:"nextCursor"`
-
-		// Total Total number of items
-		Total float64 `json:"total"`
-	} `json:"pagination"`
-} {
-	return r.JSON200
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r GetV1CalendarConnectionResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r GetV1CalendarConnectionResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r GetV1CalendarConnectionResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetV1CalendarConnectionResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetV1CalendarConnectionResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetV1CalendarConnectionResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PostV1CalendarConnectionResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON201 the response for an HTTP 201 `application/json` response
-	JSON201 *struct {
-		// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
-		Data struct {
-			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-			AccountLabel *string `json:"accountLabel"`
-
-			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-			Capabilities struct {
-				// Auth How this provider is authenticated.
-				Auth PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-				Operations []PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-				SlotHold PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-			} `json:"capabilities"`
-
-			// CreatedAt Creation timestamp in ISO 8601 format.
-			CreatedAt string `json:"createdAt"`
-
-			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-			CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-			// Id Unique identifier of the calendar connection.
-			Id openapi_types.UUID `json:"id"`
-
-			// Label Customer-supplied name for this account. Unique within the project.
-			Label string `json:"label"`
-
-			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-			LastCheckedAt *string `json:"lastCheckedAt"`
-
-			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-			Provider PostV1CalendarConnection201JSONResponseBodyDataProvider `json:"provider"`
-
-			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-			Scopes *[]string `json:"scopes"`
-
-			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-			Status PostV1CalendarConnection201JSONResponseBodyDataStatus `json:"status"`
-
-			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-			StatusMessage *string `json:"statusMessage"`
-
-			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-			Timezone string `json:"timezone"`
-
-			// UpdatedAt Last update timestamp in ISO 8601 format.
-			UpdatedAt string `json:"updatedAt"`
-		} `json:"data"`
-	}
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ErrorResponse
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON201 returns the response for an HTTP 201 `application/json` response
-func (r PostV1CalendarConnectionResponse) GetJSON201() *struct {
-	// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
-	Data struct {
-		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-		AccountLabel *string `json:"accountLabel"`
-
-		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-		Capabilities struct {
-			// Auth How this provider is authenticated.
-			Auth PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-			Operations []PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-			SlotHold PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-		} `json:"capabilities"`
-
-		// CreatedAt Creation timestamp in ISO 8601 format.
-		CreatedAt string `json:"createdAt"`
-
-		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-		CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-		// Id Unique identifier of the calendar connection.
-		Id openapi_types.UUID `json:"id"`
-
-		// Label Customer-supplied name for this account. Unique within the project.
-		Label string `json:"label"`
-
-		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-		LastCheckedAt *string `json:"lastCheckedAt"`
-
-		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-		Provider PostV1CalendarConnection201JSONResponseBodyDataProvider `json:"provider"`
-
-		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-		Scopes *[]string `json:"scopes"`
-
-		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-		Status PostV1CalendarConnection201JSONResponseBodyDataStatus `json:"status"`
-
-		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-		StatusMessage *string `json:"statusMessage"`
-
-		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-		Timezone string `json:"timezone"`
-
-		// UpdatedAt Last update timestamp in ISO 8601 format.
-		UpdatedAt string `json:"updatedAt"`
-	} `json:"data"`
-} {
-	return r.JSON201
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r PostV1CalendarConnectionResponse) GetJSON400() *ErrorResponse {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r PostV1CalendarConnectionResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r PostV1CalendarConnectionResponse) GetJSON409() *ErrorResponse {
-	return r.JSON409
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r PostV1CalendarConnectionResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r PostV1CalendarConnectionResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PostV1CalendarConnectionResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PostV1CalendarConnectionResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PostV1CalendarConnectionResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type DeleteV1CalendarConnectionByConnectionIdResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Data struct {
-			// Deleted Always true. The credential is hard-deleted, not archived.
-			Deleted DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted `json:"deleted"`
-
-			// Id Identifier of the deleted connection.
-			Id openapi_types.UUID `json:"id"`
-		} `json:"data"`
-	}
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetJSON200() *struct {
-	Data struct {
-		// Deleted Always true. The credential is hard-deleted, not archived.
-		Deleted DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted `json:"deleted"`
-
-		// Id Identifier of the deleted connection.
-		Id openapi_types.UUID `json:"id"`
-	} `json:"data"`
-} {
-	return r.JSON200
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetJSON409() *ErrorResponse {
-	return r.JSON409
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r DeleteV1CalendarConnectionByConnectionIdResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r DeleteV1CalendarConnectionByConnectionIdResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DeleteV1CalendarConnectionByConnectionIdResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r DeleteV1CalendarConnectionByConnectionIdResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetV1CalendarConnectionByConnectionIdResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
-		Data struct {
-			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-			AccountLabel *string `json:"accountLabel"`
-
-			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-			Capabilities struct {
-				// Auth How this provider is authenticated.
-				Auth GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-				Operations []GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-				SlotHold GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-			} `json:"capabilities"`
-
-			// CreatedAt Creation timestamp in ISO 8601 format.
-			CreatedAt string `json:"createdAt"`
-
-			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-			CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-			// Id Unique identifier of the calendar connection.
-			Id openapi_types.UUID `json:"id"`
-
-			// Label Customer-supplied name for this account. Unique within the project.
-			Label string `json:"label"`
-
-			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-			LastCheckedAt *string `json:"lastCheckedAt"`
-
-			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-			Provider GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
-
-			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-			Scopes *[]string `json:"scopes"`
-
-			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-			Status GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus `json:"status"`
-
-			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-			StatusMessage *string `json:"statusMessage"`
-
-			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-			Timezone string `json:"timezone"`
-
-			// UpdatedAt Last update timestamp in ISO 8601 format.
-			UpdatedAt string `json:"updatedAt"`
-		} `json:"data"`
-	}
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdResponse) GetJSON200() *struct {
-	// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
-	Data struct {
-		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-		AccountLabel *string `json:"accountLabel"`
-
-		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-		Capabilities struct {
-			// Auth How this provider is authenticated.
-			Auth GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-			Operations []GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-			SlotHold GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-		} `json:"capabilities"`
-
-		// CreatedAt Creation timestamp in ISO 8601 format.
-		CreatedAt string `json:"createdAt"`
-
-		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-		CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-		// Id Unique identifier of the calendar connection.
-		Id openapi_types.UUID `json:"id"`
-
-		// Label Customer-supplied name for this account. Unique within the project.
-		Label string `json:"label"`
-
-		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-		LastCheckedAt *string `json:"lastCheckedAt"`
-
-		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-		Provider GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
-
-		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-		Scopes *[]string `json:"scopes"`
-
-		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-		Status GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus `json:"status"`
-
-		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-		StatusMessage *string `json:"statusMessage"`
-
-		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-		Timezone string `json:"timezone"`
-
-		// UpdatedAt Last update timestamp in ISO 8601 format.
-		UpdatedAt string `json:"updatedAt"`
-	} `json:"data"`
-} {
-	return r.JSON200
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r GetV1CalendarConnectionByConnectionIdResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetV1CalendarConnectionByConnectionIdResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetV1CalendarConnectionByConnectionIdResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetV1CalendarConnectionByConnectionIdResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PatchV1CalendarConnectionByConnectionIdResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
-		Data struct {
-			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-			AccountLabel *string `json:"accountLabel"`
-
-			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-			Capabilities struct {
-				// Auth How this provider is authenticated.
-				Auth PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-				Operations []PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-				SlotHold PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-			} `json:"capabilities"`
-
-			// CreatedAt Creation timestamp in ISO 8601 format.
-			CreatedAt string `json:"createdAt"`
-
-			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-			CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-			// Id Unique identifier of the calendar connection.
-			Id openapi_types.UUID `json:"id"`
-
-			// Label Customer-supplied name for this account. Unique within the project.
-			Label string `json:"label"`
-
-			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-			LastCheckedAt *string `json:"lastCheckedAt"`
-
-			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-			Provider PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
-
-			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-			Scopes *[]string `json:"scopes"`
-
-			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-			Status PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus `json:"status"`
-
-			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-			StatusMessage *string `json:"statusMessage"`
-
-			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-			Timezone string `json:"timezone"`
-
-			// UpdatedAt Last update timestamp in ISO 8601 format.
-			UpdatedAt string `json:"updatedAt"`
-		} `json:"data"`
-	}
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ErrorResponse
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r PatchV1CalendarConnectionByConnectionIdResponse) GetJSON200() *struct {
-	// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
-	Data struct {
-		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-		AccountLabel *string `json:"accountLabel"`
-
-		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-		Capabilities struct {
-			// Auth How this provider is authenticated.
-			Auth PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-			Operations []PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-			SlotHold PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-		} `json:"capabilities"`
-
-		// CreatedAt Creation timestamp in ISO 8601 format.
-		CreatedAt string `json:"createdAt"`
-
-		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-		CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-		// Id Unique identifier of the calendar connection.
-		Id openapi_types.UUID `json:"id"`
-
-		// Label Customer-supplied name for this account. Unique within the project.
-		Label string `json:"label"`
-
-		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-		LastCheckedAt *string `json:"lastCheckedAt"`
-
-		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-		Provider PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
-
-		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-		Scopes *[]string `json:"scopes"`
-
-		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-		Status PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus `json:"status"`
-
-		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-		StatusMessage *string `json:"statusMessage"`
-
-		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-		Timezone string `json:"timezone"`
-
-		// UpdatedAt Last update timestamp in ISO 8601 format.
-		UpdatedAt string `json:"updatedAt"`
-	} `json:"data"`
-} {
-	return r.JSON200
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r PatchV1CalendarConnectionByConnectionIdResponse) GetJSON400() *ErrorResponse {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r PatchV1CalendarConnectionByConnectionIdResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r PatchV1CalendarConnectionByConnectionIdResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r PatchV1CalendarConnectionByConnectionIdResponse) GetJSON409() *ErrorResponse {
-	return r.JSON409
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r PatchV1CalendarConnectionByConnectionIdResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r PatchV1CalendarConnectionByConnectionIdResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PatchV1CalendarConnectionByConnectionIdResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PatchV1CalendarConnectionByConnectionIdResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PatchV1CalendarConnectionByConnectionIdResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PostV1CalendarConnectionByConnectionIdCheckResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
-		Data struct {
-			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-			AccountLabel *string `json:"accountLabel"`
-
-			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-			Capabilities struct {
-				// Auth How this provider is authenticated.
-				Auth PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-				Operations []PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-				SlotHold PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-			} `json:"capabilities"`
-
-			// CreatedAt Creation timestamp in ISO 8601 format.
-			CreatedAt string `json:"createdAt"`
-
-			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-			CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-			// Id Unique identifier of the calendar connection.
-			Id openapi_types.UUID `json:"id"`
-
-			// Label Customer-supplied name for this account. Unique within the project.
-			Label string `json:"label"`
-
-			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-			LastCheckedAt *string `json:"lastCheckedAt"`
-
-			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-			Provider PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
-
-			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-			Scopes *[]string `json:"scopes"`
-
-			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-			Status PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus `json:"status"`
-
-			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-			StatusMessage *string `json:"statusMessage"`
-
-			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-			Timezone string `json:"timezone"`
-
-			// UpdatedAt Last update timestamp in ISO 8601 format.
-			UpdatedAt string `json:"updatedAt"`
-		} `json:"data"`
-	}
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON429 the response for an HTTP 429 `application/json` response
-	JSON429 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r PostV1CalendarConnectionByConnectionIdCheckResponse) GetJSON200() *struct {
-	// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
-	Data struct {
-		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-		AccountLabel *string `json:"accountLabel"`
-
-		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-		Capabilities struct {
-			// Auth How this provider is authenticated.
-			Auth PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-			Operations []PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-			SlotHold PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-		} `json:"capabilities"`
-
-		// CreatedAt Creation timestamp in ISO 8601 format.
-		CreatedAt string `json:"createdAt"`
-
-		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-		CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-		// Id Unique identifier of the calendar connection.
-		Id openapi_types.UUID `json:"id"`
-
-		// Label Customer-supplied name for this account. Unique within the project.
-		Label string `json:"label"`
-
-		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-		LastCheckedAt *string `json:"lastCheckedAt"`
-
-		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-		Provider PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
-
-		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-		Scopes *[]string `json:"scopes"`
-
-		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-		Status PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus `json:"status"`
-
-		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-		StatusMessage *string `json:"statusMessage"`
-
-		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-		Timezone string `json:"timezone"`
-
-		// UpdatedAt Last update timestamp in ISO 8601 format.
-		UpdatedAt string `json:"updatedAt"`
-	} `json:"data"`
-} {
-	return r.JSON200
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r PostV1CalendarConnectionByConnectionIdCheckResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r PostV1CalendarConnectionByConnectionIdCheckResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON429 returns the response for an HTTP 429 `application/json` response
-func (r PostV1CalendarConnectionByConnectionIdCheckResponse) GetJSON429() *ErrorResponse {
-	return r.JSON429
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r PostV1CalendarConnectionByConnectionIdCheckResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r PostV1CalendarConnectionByConnectionIdCheckResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PostV1CalendarConnectionByConnectionIdCheckResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PostV1CalendarConnectionByConnectionIdCheckResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PostV1CalendarConnectionByConnectionIdCheckResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetV1CalendarConnectionByConnectionIdTargetsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Data []struct {
-			// DurationMinutes How long an appointment runs, when the provider fixes one length.
-			DurationMinutes *float64 `json:"durationMinutes"`
-
-			// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
-			DurationOptions []float64 `json:"durationOptions"`
-
-			// Id Identifier within this connection. Pass it back to read one target in detail.
-			Id string `json:"id"`
-
-			// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
-			IsHidden bool `json:"isHidden"`
-
-			// Label What the customer called it on the provider.
-			Label string `json:"label"`
-
-			// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
-			RequiresConfirmation bool `json:"requiresConfirmation"`
-
-			// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
-			Target struct {
-				EventTypeId int                                                                               `json:"eventTypeId"`
-				Provider    GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider `json:"provider"`
-			} `json:"target"`
-		} `json:"data"`
-	}
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON429 the response for an HTTP 429 `application/json` response
-	JSON429 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) GetJSON200() *struct {
-	Data []struct {
-		// DurationMinutes How long an appointment runs, when the provider fixes one length.
-		DurationMinutes *float64 `json:"durationMinutes"`
-
-		// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
-		DurationOptions []float64 `json:"durationOptions"`
-
-		// Id Identifier within this connection. Pass it back to read one target in detail.
-		Id string `json:"id"`
-
-		// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
-		IsHidden bool `json:"isHidden"`
-
-		// Label What the customer called it on the provider.
-		Label string `json:"label"`
-
-		// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
-		RequiresConfirmation bool `json:"requiresConfirmation"`
-
-		// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
-		Target struct {
-			EventTypeId int                                                                               `json:"eventTypeId"`
-			Provider    GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider `json:"provider"`
-		} `json:"target"`
-	} `json:"data"`
-} {
-	return r.JSON200
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON429 returns the response for an HTTP 429 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) GetJSON429() *ErrorResponse {
-	return r.JSON429
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetV1CalendarConnectionByConnectionIdTargetsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Data Something on a connected account an agent can be pointed at: a Cal.com event type today, a Google calendar when that lands.
-		Data struct {
-			// DurationMinutes How long an appointment runs, when the provider fixes one length.
-			DurationMinutes *float64 `json:"durationMinutes"`
-
-			// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
-			DurationOptions []float64 `json:"durationOptions"`
-
-			// Id Identifier within this connection. Pass it back to read one target in detail.
-			Id string `json:"id"`
-
-			// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
-			IsHidden bool `json:"isHidden"`
-
-			// Label What the customer called it on the provider.
-			Label string `json:"label"`
-
-			// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
-			RequiredBookingFields []string `json:"requiredBookingFields"`
-
-			// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
-			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-			// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
-			RequiresConfirmation bool `json:"requiresConfirmation"`
-
-			// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
-			Target struct {
-				EventTypeId int                                                                                         `json:"eventTypeId"`
-				Provider    GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider `json:"provider"`
-			} `json:"target"`
-		} `json:"data"`
-	}
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON429 the response for an HTTP 429 `application/json` response
-	JSON429 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) GetJSON200() *struct {
-	// Data Something on a connected account an agent can be pointed at: a Cal.com event type today, a Google calendar when that lands.
-	Data struct {
-		// DurationMinutes How long an appointment runs, when the provider fixes one length.
-		DurationMinutes *float64 `json:"durationMinutes"`
-
-		// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
-		DurationOptions []float64 `json:"durationOptions"`
-
-		// Id Identifier within this connection. Pass it back to read one target in detail.
-		Id string `json:"id"`
-
-		// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
-		IsHidden bool `json:"isHidden"`
-
-		// Label What the customer called it on the provider.
-		Label string `json:"label"`
-
-		// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
-		RequiredBookingFields []string `json:"requiredBookingFields"`
-
-		// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
-		RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-		// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
-		RequiresConfirmation bool `json:"requiresConfirmation"`
-
-		// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
-		Target struct {
-			EventTypeId int                                                                                         `json:"eventTypeId"`
-			Provider    GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider `json:"provider"`
-		} `json:"target"`
-	} `json:"data"`
-} {
-	return r.JSON200
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON429 returns the response for an HTTP 429 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) GetJSON429() *ErrorResponse {
-	return r.JSON429
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -86446,15 +86423,15 @@ type GetV1ChatResponse struct {
 				PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 			} `json:"customers,omitempty"`
 
-			// DurationMs Duration of the chat in milliseconds
+			// DurationMs Duration of the chat in milliseconds. Null until it ends.
 			//
 			// Example: 1800000
-			DurationMs float64 `json:"durationMs"`
+			DurationMs *float64 `json:"durationMs"`
 
-			// EndTimestamp Timestamp when the chat ended
+			// EndTimestamp Timestamp when the chat ended. Null until it ends.
 			//
 			// Example: 2024-01-15T10:30:00Z
-			EndTimestamp string `json:"endTimestamp"`
+			EndTimestamp *string `json:"endTimestamp"`
 
 			// ExternalId Caller-supplied correlation ID echoed back from the create request, if any was provided
 			//
@@ -86500,6 +86477,11 @@ type GetV1ChatResponse struct {
 			//
 			// Example: 2024-01-15T10:00:00Z
 			StartTimestamp string `json:"startTimestamp"`
+
+			// Status Where the chat is: `PENDING` until a visitor joins a chat started through the API, `IN_PROGRESS` while it runs, `ENDED` once it is over.
+			//
+			// Example: ENDED
+			Status GetV1Chat200JSONResponseBodyDataStatus `json:"status"`
 
 			// Summary Auto-generated summary of the chat conversation
 			//
@@ -86557,15 +86539,15 @@ func (r GetV1ChatResponse) GetJSON200() *struct {
 			PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 		} `json:"customers,omitempty"`
 
-		// DurationMs Duration of the chat in milliseconds
+		// DurationMs Duration of the chat in milliseconds. Null until it ends.
 		//
 		// Example: 1800000
-		DurationMs float64 `json:"durationMs"`
+		DurationMs *float64 `json:"durationMs"`
 
-		// EndTimestamp Timestamp when the chat ended
+		// EndTimestamp Timestamp when the chat ended. Null until it ends.
 		//
 		// Example: 2024-01-15T10:30:00Z
-		EndTimestamp string `json:"endTimestamp"`
+		EndTimestamp *string `json:"endTimestamp"`
 
 		// ExternalId Caller-supplied correlation ID echoed back from the create request, if any was provided
 		//
@@ -86611,6 +86593,11 @@ func (r GetV1ChatResponse) GetJSON200() *struct {
 		//
 		// Example: 2024-01-15T10:00:00Z
 		StartTimestamp string `json:"startTimestamp"`
+
+		// Status Where the chat is: `PENDING` until a visitor joins a chat started through the API, `IN_PROGRESS` while it runs, `ENDED` once it is over.
+		//
+		// Example: ENDED
+		Status GetV1Chat200JSONResponseBodyDataStatus `json:"status"`
 
 		// Summary Auto-generated summary of the chat conversation
 		//
@@ -86708,15 +86695,15 @@ type PostV1ChatResponse struct {
 				PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 			} `json:"customers,omitempty"`
 
-			// DurationMs Duration of the chat in milliseconds
+			// DurationMs Duration of the chat in milliseconds. Null until it ends.
 			//
 			// Example: 1800000
-			DurationMs float64 `json:"durationMs"`
+			DurationMs *float64 `json:"durationMs"`
 
-			// EndTimestamp Timestamp when the chat ended
+			// EndTimestamp Timestamp when the chat ended. Null until it ends.
 			//
 			// Example: 2024-01-15T10:30:00Z
-			EndTimestamp string `json:"endTimestamp"`
+			EndTimestamp *string `json:"endTimestamp"`
 
 			// ExternalId Caller-supplied correlation ID echoed back from the create request, if any was provided
 			//
@@ -86762,6 +86749,11 @@ type PostV1ChatResponse struct {
 			//
 			// Example: 2024-01-15T10:00:00Z
 			StartTimestamp string `json:"startTimestamp"`
+
+			// Status Where the chat is: `PENDING` until a visitor joins a chat started through the API, `IN_PROGRESS` while it runs, `ENDED` once it is over.
+			//
+			// Example: ENDED
+			Status PostV1Chat200JSONResponseBodyDataStatus `json:"status"`
 
 			// Summary Auto-generated summary of the chat conversation
 			//
@@ -86818,15 +86810,15 @@ func (r PostV1ChatResponse) GetJSON200() *struct {
 			PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 		} `json:"customers,omitempty"`
 
-		// DurationMs Duration of the chat in milliseconds
+		// DurationMs Duration of the chat in milliseconds. Null until it ends.
 		//
 		// Example: 1800000
-		DurationMs float64 `json:"durationMs"`
+		DurationMs *float64 `json:"durationMs"`
 
-		// EndTimestamp Timestamp when the chat ended
+		// EndTimestamp Timestamp when the chat ended. Null until it ends.
 		//
 		// Example: 2024-01-15T10:30:00Z
-		EndTimestamp string `json:"endTimestamp"`
+		EndTimestamp *string `json:"endTimestamp"`
 
 		// ExternalId Caller-supplied correlation ID echoed back from the create request, if any was provided
 		//
@@ -86872,6 +86864,11 @@ func (r PostV1ChatResponse) GetJSON200() *struct {
 		//
 		// Example: 2024-01-15T10:00:00Z
 		StartTimestamp string `json:"startTimestamp"`
+
+		// Status Where the chat is: `PENDING` until a visitor joins a chat started through the API, `IN_PROGRESS` while it runs, `ENDED` once it is over.
+		//
+		// Example: ENDED
+		Status PostV1Chat200JSONResponseBodyDataStatus `json:"status"`
 
 		// Summary Auto-generated summary of the chat conversation
 		//
@@ -86979,15 +86976,15 @@ type GetV1ChatByIdResponse struct {
 				PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 			} `json:"customers,omitempty"`
 
-			// DurationMs Duration of the chat in milliseconds
+			// DurationMs Duration of the chat in milliseconds. Null until it ends.
 			//
 			// Example: 1800000
-			DurationMs float64 `json:"durationMs"`
+			DurationMs *float64 `json:"durationMs"`
 
-			// EndTimestamp Timestamp when the chat ended
+			// EndTimestamp Timestamp when the chat ended. Null until it ends.
 			//
 			// Example: 2024-01-15T10:30:00Z
-			EndTimestamp string `json:"endTimestamp"`
+			EndTimestamp *string `json:"endTimestamp"`
 
 			// ExternalId Caller-supplied correlation ID echoed back from the create request, if any was provided
 			//
@@ -87033,6 +87030,11 @@ type GetV1ChatByIdResponse struct {
 			//
 			// Example: 2024-01-15T10:00:00Z
 			StartTimestamp string `json:"startTimestamp"`
+
+			// Status Where the chat is: `PENDING` until a visitor joins a chat started through the API, `IN_PROGRESS` while it runs, `ENDED` once it is over.
+			//
+			// Example: ENDED
+			Status GetV1ChatById200JSONResponseBodyDataStatus `json:"status"`
 
 			// Summary Auto-generated summary of the chat conversation
 			//
@@ -87087,15 +87089,15 @@ func (r GetV1ChatByIdResponse) GetJSON200() *struct {
 			PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 		} `json:"customers,omitempty"`
 
-		// DurationMs Duration of the chat in milliseconds
+		// DurationMs Duration of the chat in milliseconds. Null until it ends.
 		//
 		// Example: 1800000
-		DurationMs float64 `json:"durationMs"`
+		DurationMs *float64 `json:"durationMs"`
 
-		// EndTimestamp Timestamp when the chat ended
+		// EndTimestamp Timestamp when the chat ended. Null until it ends.
 		//
 		// Example: 2024-01-15T10:30:00Z
-		EndTimestamp string `json:"endTimestamp"`
+		EndTimestamp *string `json:"endTimestamp"`
 
 		// ExternalId Caller-supplied correlation ID echoed back from the create request, if any was provided
 		//
@@ -87141,6 +87143,11 @@ func (r GetV1ChatByIdResponse) GetJSON200() *struct {
 		//
 		// Example: 2024-01-15T10:00:00Z
 		StartTimestamp string `json:"startTimestamp"`
+
+		// Status Where the chat is: `PENDING` until a visitor joins a chat started through the API, `IN_PROGRESS` while it runs, `ENDED` once it is over.
+		//
+		// Example: ENDED
+		Status GetV1ChatById200JSONResponseBodyDataStatus `json:"status"`
 
 		// Summary Auto-generated summary of the chat conversation
 		//
@@ -87714,6 +87721,141 @@ func (r PostV1ConfigDiffResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r PostV1ConfigDiffResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1ConversationResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ConversationList
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1ConversationResponse) GetJSON200() *ConversationList {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetV1ConversationResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1ConversationResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1ConversationResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1ConversationResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1ConversationResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1ConversationResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1ConversationResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1ConversationResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1ConversationByConversationIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data Conversation `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1ConversationByConversationIdResponse) GetJSON200() *struct {
+	Data Conversation `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1ConversationByConversationIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1ConversationByConversationIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1ConversationByConversationIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1ConversationByConversationIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1ConversationByConversationIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1ConversationByConversationIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1ConversationByConversationIdResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -90277,6 +90419,7 @@ type GetV1CustomerByCustomerProfileIdConversationsResponse struct {
 	JSON200 *struct {
 		Data struct {
 			Items []struct {
+				// ConversationType `voice` or `chat`.
 				ConversationType GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType `json:"conversationType"`
 				DurationMs       *int                                                                                      `json:"durationMs"`
 				Id               openapi_types.UUID                                                                        `json:"id"`
@@ -90300,6 +90443,7 @@ type GetV1CustomerByCustomerProfileIdConversationsResponse struct {
 func (r GetV1CustomerByCustomerProfileIdConversationsResponse) GetJSON200() *struct {
 	Data struct {
 		Items []struct {
+			// ConversationType `voice` or `chat`.
 			ConversationType GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType `json:"conversationType"`
 			DurationMs       *int                                                                                      `json:"durationMs"`
 			Id               openapi_types.UUID                                                                        `json:"id"`
@@ -91737,6 +91881,1744 @@ func (r PutV1HttpRequestDefinitionByDefinitionIdResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r PutV1HttpRequestDefinitionByDefinitionIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1IntegrationsCalendarResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data []struct {
+			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+			AccountLabel *string `json:"accountLabel"`
+
+			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+			Capabilities struct {
+				// Auth How this provider is authenticated.
+				Auth GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+				Operations []GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+				SlotHold GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+			} `json:"capabilities"`
+
+			// CreatedAt Creation timestamp in ISO 8601 format.
+			CreatedAt string `json:"createdAt"`
+
+			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+			CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+			// Id Unique identifier of the calendar connection.
+			Id openapi_types.UUID `json:"id"`
+
+			// Label Customer-supplied name for this account. Unique within the project.
+			Label string `json:"label"`
+
+			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+			LastCheckedAt *string `json:"lastCheckedAt"`
+
+			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			Provider GetV1IntegrationsCalendar200JSONResponseBodyDataProvider `json:"provider"`
+
+			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+			Scopes *[]string `json:"scopes"`
+
+			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+			Status GetV1IntegrationsCalendar200JSONResponseBodyDataStatus `json:"status"`
+
+			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+			StatusMessage *string `json:"statusMessage"`
+
+			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+			Timezone string `json:"timezone"`
+
+			// UpdatedAt Last update timestamp in ISO 8601 format.
+			UpdatedAt string `json:"updatedAt"`
+		} `json:"data"`
+		Pagination struct {
+			// HasMore Whether there are more items to fetch
+			HasMore bool `json:"hasMore"`
+
+			// NextCursor Cursor for the next page of items
+			NextCursor *string `json:"nextCursor"`
+
+			// Total Total number of items
+			Total float64 `json:"total"`
+		} `json:"pagination"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1IntegrationsCalendarResponse) GetJSON200() *struct {
+	Data []struct {
+		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+		AccountLabel *string `json:"accountLabel"`
+
+		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+		Capabilities struct {
+			// Auth How this provider is authenticated.
+			Auth GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+			Operations []GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+			SlotHold GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+		} `json:"capabilities"`
+
+		// CreatedAt Creation timestamp in ISO 8601 format.
+		CreatedAt string `json:"createdAt"`
+
+		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+		CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+		// Id Unique identifier of the calendar connection.
+		Id openapi_types.UUID `json:"id"`
+
+		// Label Customer-supplied name for this account. Unique within the project.
+		Label string `json:"label"`
+
+		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+		LastCheckedAt *string `json:"lastCheckedAt"`
+
+		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		Provider GetV1IntegrationsCalendar200JSONResponseBodyDataProvider `json:"provider"`
+
+		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+		Scopes *[]string `json:"scopes"`
+
+		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+		Status GetV1IntegrationsCalendar200JSONResponseBodyDataStatus `json:"status"`
+
+		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+		StatusMessage *string `json:"statusMessage"`
+
+		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+		Timezone string `json:"timezone"`
+
+		// UpdatedAt Last update timestamp in ISO 8601 format.
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"data"`
+	Pagination struct {
+		// HasMore Whether there are more items to fetch
+		HasMore bool `json:"hasMore"`
+
+		// NextCursor Cursor for the next page of items
+		NextCursor *string `json:"nextCursor"`
+
+		// Total Total number of items
+		Total float64 `json:"total"`
+	} `json:"pagination"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1IntegrationsCalendarResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1IntegrationsCalendarResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1IntegrationsCalendarResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1IntegrationsCalendarResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1IntegrationsCalendarResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1IntegrationsCalendarResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1IntegrationsCalendarResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+		Data struct {
+			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+			AccountLabel *string `json:"accountLabel"`
+
+			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+			Capabilities struct {
+				// Auth How this provider is authenticated.
+				Auth PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+				Operations []PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+				SlotHold PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+			} `json:"capabilities"`
+
+			// CreatedAt Creation timestamp in ISO 8601 format.
+			CreatedAt string `json:"createdAt"`
+
+			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+			CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+			// Id Unique identifier of the calendar connection.
+			Id openapi_types.UUID `json:"id"`
+
+			// Label Customer-supplied name for this account. Unique within the project.
+			Label string `json:"label"`
+
+			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+			LastCheckedAt *string `json:"lastCheckedAt"`
+
+			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			Provider PostV1IntegrationsCalendar201JSONResponseBodyDataProvider `json:"provider"`
+
+			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+			Scopes *[]string `json:"scopes"`
+
+			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+			Status PostV1IntegrationsCalendar201JSONResponseBodyDataStatus `json:"status"`
+
+			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+			StatusMessage *string `json:"statusMessage"`
+
+			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+			Timezone string `json:"timezone"`
+
+			// UpdatedAt Last update timestamp in ISO 8601 format.
+			UpdatedAt string `json:"updatedAt"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1IntegrationsCalendarResponse) GetJSON201() *struct {
+	// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+	Data struct {
+		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+		AccountLabel *string `json:"accountLabel"`
+
+		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+		Capabilities struct {
+			// Auth How this provider is authenticated.
+			Auth PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+			Operations []PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+			SlotHold PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+		} `json:"capabilities"`
+
+		// CreatedAt Creation timestamp in ISO 8601 format.
+		CreatedAt string `json:"createdAt"`
+
+		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+		CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+		// Id Unique identifier of the calendar connection.
+		Id openapi_types.UUID `json:"id"`
+
+		// Label Customer-supplied name for this account. Unique within the project.
+		Label string `json:"label"`
+
+		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+		LastCheckedAt *string `json:"lastCheckedAt"`
+
+		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		Provider PostV1IntegrationsCalendar201JSONResponseBodyDataProvider `json:"provider"`
+
+		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+		Scopes *[]string `json:"scopes"`
+
+		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+		Status PostV1IntegrationsCalendar201JSONResponseBodyDataStatus `json:"status"`
+
+		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+		StatusMessage *string `json:"statusMessage"`
+
+		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+		Timezone string `json:"timezone"`
+
+		// UpdatedAt Last update timestamp in ISO 8601 format.
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"data"`
+} {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1IntegrationsCalendarResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1IntegrationsCalendarResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1IntegrationsCalendarResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1IntegrationsCalendarResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1IntegrationsCalendarResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1IntegrationsCalendarResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1IntegrationsCalendarResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1IntegrationsCalendarResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1IntegrationsCalendarByConnectionIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			// Deleted Always true. The credential is hard-deleted, not archived.
+			Deleted DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeleted `json:"deleted"`
+
+			// Id Identifier of the deleted connection.
+			Id openapi_types.UUID `json:"id"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1IntegrationsCalendarByConnectionIdResponse) GetJSON200() *struct {
+	Data struct {
+		// Deleted Always true. The credential is hard-deleted, not archived.
+		Deleted DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeleted `json:"deleted"`
+
+		// Id Identifier of the deleted connection.
+		Id openapi_types.UUID `json:"id"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1IntegrationsCalendarByConnectionIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1IntegrationsCalendarByConnectionIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r DeleteV1IntegrationsCalendarByConnectionIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1IntegrationsCalendarByConnectionIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1IntegrationsCalendarByConnectionIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1IntegrationsCalendarByConnectionIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1IntegrationsCalendarByConnectionIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1IntegrationsCalendarByConnectionIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1IntegrationsCalendarByConnectionIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+		Data struct {
+			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+			AccountLabel *string `json:"accountLabel"`
+
+			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+			Capabilities struct {
+				// Auth How this provider is authenticated.
+				Auth GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+				Operations []GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+				SlotHold GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+			} `json:"capabilities"`
+
+			// CreatedAt Creation timestamp in ISO 8601 format.
+			CreatedAt string `json:"createdAt"`
+
+			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+			CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+			// Id Unique identifier of the calendar connection.
+			Id openapi_types.UUID `json:"id"`
+
+			// Label Customer-supplied name for this account. Unique within the project.
+			Label string `json:"label"`
+
+			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+			LastCheckedAt *string `json:"lastCheckedAt"`
+
+			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			Provider GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
+
+			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+			Scopes *[]string `json:"scopes"`
+
+			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+			Status GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus `json:"status"`
+
+			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+			StatusMessage *string `json:"statusMessage"`
+
+			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+			Timezone string `json:"timezone"`
+
+			// UpdatedAt Last update timestamp in ISO 8601 format.
+			UpdatedAt string `json:"updatedAt"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdResponse) GetJSON200() *struct {
+	// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+	Data struct {
+		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+		AccountLabel *string `json:"accountLabel"`
+
+		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+		Capabilities struct {
+			// Auth How this provider is authenticated.
+			Auth GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+			Operations []GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+			SlotHold GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+		} `json:"capabilities"`
+
+		// CreatedAt Creation timestamp in ISO 8601 format.
+		CreatedAt string `json:"createdAt"`
+
+		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+		CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+		// Id Unique identifier of the calendar connection.
+		Id openapi_types.UUID `json:"id"`
+
+		// Label Customer-supplied name for this account. Unique within the project.
+		Label string `json:"label"`
+
+		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+		LastCheckedAt *string `json:"lastCheckedAt"`
+
+		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		Provider GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
+
+		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+		Scopes *[]string `json:"scopes"`
+
+		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+		Status GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus `json:"status"`
+
+		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+		StatusMessage *string `json:"statusMessage"`
+
+		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+		Timezone string `json:"timezone"`
+
+		// UpdatedAt Last update timestamp in ISO 8601 format.
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1IntegrationsCalendarByConnectionIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1IntegrationsCalendarByConnectionIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1IntegrationsCalendarByConnectionIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1IntegrationsCalendarByConnectionIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PatchV1IntegrationsCalendarByConnectionIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+		Data struct {
+			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+			AccountLabel *string `json:"accountLabel"`
+
+			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+			Capabilities struct {
+				// Auth How this provider is authenticated.
+				Auth PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+				Operations []PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+				SlotHold PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+			} `json:"capabilities"`
+
+			// CreatedAt Creation timestamp in ISO 8601 format.
+			CreatedAt string `json:"createdAt"`
+
+			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+			CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+			// Id Unique identifier of the calendar connection.
+			Id openapi_types.UUID `json:"id"`
+
+			// Label Customer-supplied name for this account. Unique within the project.
+			Label string `json:"label"`
+
+			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+			LastCheckedAt *string `json:"lastCheckedAt"`
+
+			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			Provider PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
+
+			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+			Scopes *[]string `json:"scopes"`
+
+			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+			Status PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus `json:"status"`
+
+			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+			StatusMessage *string `json:"statusMessage"`
+
+			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+			Timezone string `json:"timezone"`
+
+			// UpdatedAt Last update timestamp in ISO 8601 format.
+			UpdatedAt string `json:"updatedAt"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PatchV1IntegrationsCalendarByConnectionIdResponse) GetJSON200() *struct {
+	// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+	Data struct {
+		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+		AccountLabel *string `json:"accountLabel"`
+
+		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+		Capabilities struct {
+			// Auth How this provider is authenticated.
+			Auth PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+			Operations []PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+			SlotHold PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+		} `json:"capabilities"`
+
+		// CreatedAt Creation timestamp in ISO 8601 format.
+		CreatedAt string `json:"createdAt"`
+
+		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+		CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+		// Id Unique identifier of the calendar connection.
+		Id openapi_types.UUID `json:"id"`
+
+		// Label Customer-supplied name for this account. Unique within the project.
+		Label string `json:"label"`
+
+		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+		LastCheckedAt *string `json:"lastCheckedAt"`
+
+		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		Provider PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
+
+		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+		Scopes *[]string `json:"scopes"`
+
+		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+		Status PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus `json:"status"`
+
+		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+		StatusMessage *string `json:"statusMessage"`
+
+		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+		Timezone string `json:"timezone"`
+
+		// UpdatedAt Last update timestamp in ISO 8601 format.
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PatchV1IntegrationsCalendarByConnectionIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PatchV1IntegrationsCalendarByConnectionIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PatchV1IntegrationsCalendarByConnectionIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PatchV1IntegrationsCalendarByConnectionIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PatchV1IntegrationsCalendarByConnectionIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PatchV1IntegrationsCalendarByConnectionIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PatchV1IntegrationsCalendarByConnectionIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PatchV1IntegrationsCalendarByConnectionIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PatchV1IntegrationsCalendarByConnectionIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1IntegrationsCalendarByConnectionIdCheckResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+		Data struct {
+			// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+			AccountLabel *string `json:"accountLabel"`
+
+			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+			Capabilities struct {
+				// Auth How this provider is authenticated.
+				Auth PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+				AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+				// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+				Operations []PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+				SlotHold PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+			} `json:"capabilities"`
+
+			// CreatedAt Creation timestamp in ISO 8601 format.
+			CreatedAt string `json:"createdAt"`
+
+			// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+			CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+			// Id Unique identifier of the calendar connection.
+			Id openapi_types.UUID `json:"id"`
+
+			// Label Customer-supplied name for this account. Unique within the project.
+			Label string `json:"label"`
+
+			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+			LastCheckedAt *string `json:"lastCheckedAt"`
+
+			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			Provider PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
+
+			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+			Scopes *[]string `json:"scopes"`
+
+			// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+			Status PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus `json:"status"`
+
+			// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+			StatusMessage *string `json:"statusMessage"`
+
+			// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+			Timezone string `json:"timezone"`
+
+			// UpdatedAt Last update timestamp in ISO 8601 format.
+			UpdatedAt string `json:"updatedAt"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) GetJSON200() *struct {
+	// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+	Data struct {
+		// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+		AccountLabel *string `json:"accountLabel"`
+
+		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+		Capabilities struct {
+			// Auth How this provider is authenticated.
+			Auth PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+			AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+			// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+			Operations []PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+			SlotHold PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+		} `json:"capabilities"`
+
+		// CreatedAt Creation timestamp in ISO 8601 format.
+		CreatedAt string `json:"createdAt"`
+
+		// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+		CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+		// Id Unique identifier of the calendar connection.
+		Id openapi_types.UUID `json:"id"`
+
+		// Label Customer-supplied name for this account. Unique within the project.
+		Label string `json:"label"`
+
+		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+		LastCheckedAt *string `json:"lastCheckedAt"`
+
+		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		Provider PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
+
+		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+		Scopes *[]string `json:"scopes"`
+
+		// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+		Status PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus `json:"status"`
+
+		// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+		StatusMessage *string `json:"statusMessage"`
+
+		// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+		Timezone string `json:"timezone"`
+
+		// UpdatedAt Last update timestamp in ISO 8601 format.
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1IntegrationsCalendarByConnectionIdTargetsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data []struct {
+			// DurationMinutes How long an appointment runs, when the provider fixes one length.
+			DurationMinutes *float64 `json:"durationMinutes"`
+
+			// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+			DurationOptions []float64 `json:"durationOptions"`
+
+			// Id Identifier within this connection. Pass it back to read one target in detail.
+			Id string `json:"id"`
+
+			// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+			IsHidden bool `json:"isHidden"`
+
+			// Label What the customer called it on the provider.
+			Label string `json:"label"`
+
+			// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+			RequiresConfirmation bool `json:"requiresConfirmation"`
+
+			// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+			Target struct {
+				EventTypeId int                                                                                 `json:"eventTypeId"`
+				Provider    GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider `json:"provider"`
+			} `json:"target"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsResponse) GetJSON200() *struct {
+	Data []struct {
+		// DurationMinutes How long an appointment runs, when the provider fixes one length.
+		DurationMinutes *float64 `json:"durationMinutes"`
+
+		// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+		DurationOptions []float64 `json:"durationOptions"`
+
+		// Id Identifier within this connection. Pass it back to read one target in detail.
+		Id string `json:"id"`
+
+		// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+		IsHidden bool `json:"isHidden"`
+
+		// Label What the customer called it on the provider.
+		Label string `json:"label"`
+
+		// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+		RequiresConfirmation bool `json:"requiresConfirmation"`
+
+		// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+		Target struct {
+			EventTypeId int                                                                                 `json:"eventTypeId"`
+			Provider    GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider `json:"provider"`
+		} `json:"target"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data Something on a connected account an agent can be pointed at: a Cal.com event type today, a Google calendar when that lands.
+		Data struct {
+			// DurationMinutes How long an appointment runs, when the provider fixes one length.
+			DurationMinutes *float64 `json:"durationMinutes"`
+
+			// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+			DurationOptions []float64 `json:"durationOptions"`
+
+			// Id Identifier within this connection. Pass it back to read one target in detail.
+			Id string `json:"id"`
+
+			// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+			IsHidden bool `json:"isHidden"`
+
+			// Label What the customer called it on the provider.
+			Label string `json:"label"`
+
+			// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
+			RequiredBookingFields []string `json:"requiredBookingFields"`
+
+			// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+			RequiresConfirmation bool `json:"requiresConfirmation"`
+
+			// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+			Target struct {
+				EventTypeId int                                                                                           `json:"eventTypeId"`
+				Provider    GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider `json:"provider"`
+			} `json:"target"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON200() *struct {
+	// Data Something on a connected account an agent can be pointed at: a Cal.com event type today, a Google calendar when that lands.
+	Data struct {
+		// DurationMinutes How long an appointment runs, when the provider fixes one length.
+		DurationMinutes *float64 `json:"durationMinutes"`
+
+		// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+		DurationOptions []float64 `json:"durationOptions"`
+
+		// Id Identifier within this connection. Pass it back to read one target in detail.
+		Id string `json:"id"`
+
+		// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+		IsHidden bool `json:"isHidden"`
+
+		// Label What the customer called it on the provider.
+		Label string `json:"label"`
+
+		// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
+		RequiredBookingFields []string `json:"requiredBookingFields"`
+
+		// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
+		RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+		// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+		RequiresConfirmation bool `json:"requiresConfirmation"`
+
+		// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+		Target struct {
+			EventTypeId int                                                                                           `json:"eventTypeId"`
+			Provider    GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider `json:"provider"`
+		} `json:"target"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1IntegrationsMcpServerResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *McpServerListResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1IntegrationsMcpServerResponse) GetJSON200() *McpServerListResponse {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1IntegrationsMcpServerResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1IntegrationsMcpServerResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1IntegrationsMcpServerResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1IntegrationsMcpServerResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1IntegrationsMcpServerResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1IntegrationsMcpServerResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1IntegrationsMcpServerResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *McpServerSingleResponse
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1IntegrationsMcpServerResponse) GetJSON201() *McpServerSingleResponse {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1IntegrationsMcpServerResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1IntegrationsMcpServerResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1IntegrationsMcpServerResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1IntegrationsMcpServerResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1IntegrationsMcpServerResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1IntegrationsMcpServerResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1IntegrationsMcpServerResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1IntegrationsMcpServerDiscoverResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *McpServerCatalogResponse
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1IntegrationsMcpServerDiscoverResponse) GetJSON200() *McpServerCatalogResponse {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1IntegrationsMcpServerDiscoverResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1IntegrationsMcpServerDiscoverResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1IntegrationsMcpServerDiscoverResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1IntegrationsMcpServerDiscoverResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1IntegrationsMcpServerDiscoverResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1IntegrationsMcpServerDiscoverResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1IntegrationsMcpServerDiscoverResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1IntegrationsMcpServerByServerIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *McpServerDeleteResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1IntegrationsMcpServerByServerIdResponse) GetJSON200() *McpServerDeleteResponse {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1IntegrationsMcpServerByServerIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1IntegrationsMcpServerByServerIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r DeleteV1IntegrationsMcpServerByServerIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1IntegrationsMcpServerByServerIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1IntegrationsMcpServerByServerIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1IntegrationsMcpServerByServerIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1IntegrationsMcpServerByServerIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1IntegrationsMcpServerByServerIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1IntegrationsMcpServerByServerIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *McpServerSingleResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1IntegrationsMcpServerByServerIdResponse) GetJSON200() *McpServerSingleResponse {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1IntegrationsMcpServerByServerIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1IntegrationsMcpServerByServerIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1IntegrationsMcpServerByServerIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1IntegrationsMcpServerByServerIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1IntegrationsMcpServerByServerIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1IntegrationsMcpServerByServerIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1IntegrationsMcpServerByServerIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PatchV1IntegrationsMcpServerByServerIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *McpServerSingleResponse
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PatchV1IntegrationsMcpServerByServerIdResponse) GetJSON200() *McpServerSingleResponse {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PatchV1IntegrationsMcpServerByServerIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PatchV1IntegrationsMcpServerByServerIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PatchV1IntegrationsMcpServerByServerIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PatchV1IntegrationsMcpServerByServerIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PatchV1IntegrationsMcpServerByServerIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PatchV1IntegrationsMcpServerByServerIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PatchV1IntegrationsMcpServerByServerIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PatchV1IntegrationsMcpServerByServerIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1IntegrationsMcpServerByServerIdRefreshResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *McpServerSingleResponse
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1IntegrationsMcpServerByServerIdRefreshResponse) GetJSON200() *McpServerSingleResponse {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1IntegrationsMcpServerByServerIdRefreshResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1IntegrationsMcpServerByServerIdRefreshResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1IntegrationsMcpServerByServerIdRefreshResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1IntegrationsMcpServerByServerIdRefreshResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1IntegrationsMcpServerByServerIdRefreshResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1IntegrationsMcpServerByServerIdRefreshResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1IntegrationsMcpServerByServerIdRefreshResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1IntegrationsMcpServerByServerIdRefreshResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -98006,305 +99888,6 @@ func (r PostV1PublicCampaignCreditByCampaignKeyClaimResponse) ContentType() stri
 	return ""
 }
 
-type GetV1PublicProspectSimReportByTokenResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Data struct {
-			AgentLabel string `json:"agentLabel"`
-			Live       *struct {
-				ActiveIndex *float64 `json:"activeIndex"`
-				Calls       []struct {
-					CallId       string                                                                   `json:"callId"`
-					PersonaLabel string                                                                   `json:"personaLabel"`
-					State        GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState `json:"state"`
-				} `json:"calls"`
-				Completed float64 `json:"completed"`
-				Total     float64 `json:"total"`
-			} `json:"live"`
-			ProspectName *string `json:"prospectName"`
-			Status       string  `json:"status"`
-			Teaser       *struct {
-				CallCount          float64 `json:"callCount"`
-				ChecksPassed       float64 `json:"checksPassed"`
-				ChecksTotal        float64 `json:"checksTotal"`
-				LockedFindingCount float64 `json:"lockedFindingCount"`
-				LockedThemeCount   float64 `json:"lockedThemeCount"`
-				Scorecard          []struct {
-					Name        string   `json:"name"`
-					PassRatePct *float64 `json:"passRatePct"`
-					Passed      bool     `json:"passed"`
-				} `json:"scorecard"`
-				StatTiles []struct {
-					Label string  `json:"label"`
-					Sub   *string `json:"sub"`
-					Value string  `json:"value"`
-				} `json:"statTiles"`
-				Summary []struct {
-					Body    string  `json:"body"`
-					Heading *string `json:"heading"`
-				} `json:"summary"`
-				Themes []struct {
-					AffectedCount float64 `json:"affectedCount"`
-					Severity      string  `json:"severity"`
-					Summary       string  `json:"summary"`
-					Title         string  `json:"title"`
-					TotalCount    float64 `json:"totalCount"`
-				} `json:"themes"`
-				TopFinding *struct {
-					Body  string `json:"body"`
-					Title string `json:"title"`
-				} `json:"topFinding"`
-				Verdict      string `json:"verdict"`
-				VerdictProse string `json:"verdictProse"`
-			} `json:"teaser"`
-		} `json:"data"`
-	}
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetV1PublicProspectSimReportByTokenResponse) GetJSON200() *struct {
-	Data struct {
-		AgentLabel string `json:"agentLabel"`
-		Live       *struct {
-			ActiveIndex *float64 `json:"activeIndex"`
-			Calls       []struct {
-				CallId       string                                                                   `json:"callId"`
-				PersonaLabel string                                                                   `json:"personaLabel"`
-				State        GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState `json:"state"`
-			} `json:"calls"`
-			Completed float64 `json:"completed"`
-			Total     float64 `json:"total"`
-		} `json:"live"`
-		ProspectName *string `json:"prospectName"`
-		Status       string  `json:"status"`
-		Teaser       *struct {
-			CallCount          float64 `json:"callCount"`
-			ChecksPassed       float64 `json:"checksPassed"`
-			ChecksTotal        float64 `json:"checksTotal"`
-			LockedFindingCount float64 `json:"lockedFindingCount"`
-			LockedThemeCount   float64 `json:"lockedThemeCount"`
-			Scorecard          []struct {
-				Name        string   `json:"name"`
-				PassRatePct *float64 `json:"passRatePct"`
-				Passed      bool     `json:"passed"`
-			} `json:"scorecard"`
-			StatTiles []struct {
-				Label string  `json:"label"`
-				Sub   *string `json:"sub"`
-				Value string  `json:"value"`
-			} `json:"statTiles"`
-			Summary []struct {
-				Body    string  `json:"body"`
-				Heading *string `json:"heading"`
-			} `json:"summary"`
-			Themes []struct {
-				AffectedCount float64 `json:"affectedCount"`
-				Severity      string  `json:"severity"`
-				Summary       string  `json:"summary"`
-				Title         string  `json:"title"`
-				TotalCount    float64 `json:"totalCount"`
-			} `json:"themes"`
-			TopFinding *struct {
-				Body  string `json:"body"`
-				Title string `json:"title"`
-			} `json:"topFinding"`
-			Verdict      string `json:"verdict"`
-			VerdictProse string `json:"verdictProse"`
-		} `json:"teaser"`
-	} `json:"data"`
-} {
-	return r.JSON200
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetV1PublicProspectSimReportByTokenResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r GetV1PublicProspectSimReportByTokenResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r GetV1PublicProspectSimReportByTokenResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetV1PublicProspectSimReportByTokenResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetV1PublicProspectSimReportByTokenResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetV1PublicProspectSimReportByTokenResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetV1PublicProspectSimReportByTokenObserverUrlResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Data struct {
-			ExpiresAt *string `json:"expiresAt"`
-			WsUrl     *string `json:"wsUrl"`
-		} `json:"data"`
-	}
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetV1PublicProspectSimReportByTokenObserverUrlResponse) GetJSON200() *struct {
-	Data struct {
-		ExpiresAt *string `json:"expiresAt"`
-		WsUrl     *string `json:"wsUrl"`
-	} `json:"data"`
-} {
-	return r.JSON200
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r GetV1PublicProspectSimReportByTokenObserverUrlResponse) GetJSON400() *ErrorResponse {
-	return r.JSON400
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetV1PublicProspectSimReportByTokenObserverUrlResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r GetV1PublicProspectSimReportByTokenObserverUrlResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r GetV1PublicProspectSimReportByTokenObserverUrlResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetV1PublicProspectSimReportByTokenObserverUrlResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetV1PublicProspectSimReportByTokenObserverUrlResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetV1PublicProspectSimReportByTokenObserverUrlResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PostV1PublicProspectSimRunResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		Data struct {
-			ReportToken string `json:"reportToken"`
-			Status      string `json:"status"`
-		} `json:"data"`
-	}
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ErrorResponse
-	// JSON429 the response for an HTTP 429 `application/json` response
-	JSON429 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r PostV1PublicProspectSimRunResponse) GetJSON200() *struct {
-	Data struct {
-		ReportToken string `json:"reportToken"`
-		Status      string `json:"status"`
-	} `json:"data"`
-} {
-	return r.JSON200
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r PostV1PublicProspectSimRunResponse) GetJSON400() *ErrorResponse {
-	return r.JSON400
-}
-
-// GetJSON429 returns the response for an HTTP 429 `application/json` response
-func (r PostV1PublicProspectSimRunResponse) GetJSON429() *ErrorResponse {
-	return r.JSON429
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r PostV1PublicProspectSimRunResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r PostV1PublicProspectSimRunResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PostV1PublicProspectSimRunResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PostV1PublicProspectSimRunResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PostV1PublicProspectSimRunResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
 type GetV1SimulationAudioClipResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -102846,6 +104429,44 @@ func (c *ClientWithResponses) PutV1AgentByAgentIdWithResponse(ctx context.Contex
 	return ParsePutV1AgentByAgentIdResponse(rsp)
 }
 
+// PostV1AgentByAgentIdConversationsWithBodyWithResponse Start a conversation with an agent
+//
+// Starts a voice conversation (`modality: voice`) or chat (`modality: chat`) with this Roark-hosted agent and returns its id right away.
+//
+// `channel: web` is a conversation in a browser on your site. Call this endpoint from your server, never the browser: it needs your API key. Give the page only `web.clientToken`; the web SDK spends it to join from one of `allowedOrigins` before `web.clientTokenExpiresAt`.
+//
+// Read it back with `GET /v1/conversation/{conversationId}` straight away: `PENDING` until the browser joins, `IN_PROGRESS`, then `ENDED`. One nobody joins ends without ever starting and is never billed. Starting a voice conversation needs `call:create`, a chat `chat:create`, and the agent a published version that takes that kind.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/agent/{agentId}/conversations (the `PostV1AgentByAgentIdConversations` operationId).
+func (c *ClientWithResponses) PostV1AgentByAgentIdConversationsWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdConversationsResponse, error) {
+	rsp, err := c.PostV1AgentByAgentIdConversationsWithBody(ctx, agentId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1AgentByAgentIdConversationsResponse(rsp)
+}
+
+// PostV1AgentByAgentIdConversationsWithResponse Start a conversation with an agent
+//
+// Starts a voice conversation (`modality: voice`) or chat (`modality: chat`) with this Roark-hosted agent and returns its id right away.
+//
+// `channel: web` is a conversation in a browser on your site. Call this endpoint from your server, never the browser: it needs your API key. Give the page only `web.clientToken`; the web SDK spends it to join from one of `allowedOrigins` before `web.clientTokenExpiresAt`.
+//
+// Read it back with `GET /v1/conversation/{conversationId}` straight away: `PENDING` until the browser joins, `IN_PROGRESS`, then `ENDED`. One nobody joins ends without ever starting and is never billed. Starting a voice conversation needs `call:create`, a chat `chat:create`, and the agent a published version that takes that kind.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/agent/{agentId}/conversations (the `PostV1AgentByAgentIdConversations` operationId).
+func (c *ClientWithResponses) PostV1AgentByAgentIdConversationsWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdConversationsJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdConversationsResponse, error) {
+	rsp, err := c.PostV1AgentByAgentIdConversations(ctx, agentId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1AgentByAgentIdConversationsResponse(rsp)
+}
+
 // DeleteV1AgentByAgentIdDraftWithResponse Discard the draft
 //
 // Throws the open draft away and returns it. The live version is unchanged.
@@ -103084,36 +104705,6 @@ func (c *ClientWithResponses) PostV1AgentByAgentIdVersionsByVersionIdRollbackWit
 		return nil, err
 	}
 	return ParsePostV1AgentByAgentIdVersionsByVersionIdRollbackResponse(rsp)
-}
-
-// PostV1AgentByAgentIdWebSessionTokensWithBodyWithResponse Create a web session token
-//
-// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
-func (c *ClientWithResponses) PostV1AgentByAgentIdWebSessionTokensWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdWebSessionTokensResponse, error) {
-	rsp, err := c.PostV1AgentByAgentIdWebSessionTokensWithBody(ctx, agentId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1AgentByAgentIdWebSessionTokensResponse(rsp)
-}
-
-// PostV1AgentByAgentIdWebSessionTokensWithResponse Create a web session token
-//
-// Mints a short-lived, single-use client token that lets a browser on one of `allowedOrigins` open one session with this Roark-hosted agent: a voice call (`modality: call`) or a text chat (`modality: chat`). Call it from your server, never from the browser: it needs your API key, and the token it returns is the only thing your page should see. The agent must have a published version that takes calls or chats, to match.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/agent/{agentId}/web-session-tokens (the `PostV1AgentByAgentIdWebSessionTokens` operationId).
-func (c *ClientWithResponses) PostV1AgentByAgentIdWebSessionTokensWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdWebSessionTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdWebSessionTokensResponse, error) {
-	rsp, err := c.PostV1AgentByAgentIdWebSessionTokens(ctx, agentId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1AgentByAgentIdWebSessionTokensResponse(rsp)
 }
 
 // PostV1AnalyticsQueryWithBodyWithResponse Run an analytics query
@@ -103459,156 +105050,6 @@ func (c *ClientWithResponses) GetV1BenchmarkTargetByTargetKeyScoreSampleWithResp
 		return nil, err
 	}
 	return ParseGetV1BenchmarkTargetByTargetKeyScoreSampleResponse(rsp)
-}
-
-// GetV1CalendarConnectionWithResponse List calendar connections
-//
-// Returns every calendar connection in the authenticated project, by label. A project has a handful of these, so the list is not paginated: `pagination.hasMore` is always false.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/calendar-connection (the `GetV1CalendarConnection` operationId).
-func (c *ClientWithResponses) GetV1CalendarConnectionWithResponse(ctx context.Context, params *GetV1CalendarConnectionParams, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionResponse, error) {
-	rsp, err := c.GetV1CalendarConnection(ctx, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetV1CalendarConnectionResponse(rsp)
-}
-
-// PostV1CalendarConnectionWithBodyWithResponse Connect a calendar account
-//
-// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
-func (c *ClientWithResponses) PostV1CalendarConnectionWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionResponse, error) {
-	rsp, err := c.PostV1CalendarConnectionWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1CalendarConnectionResponse(rsp)
-}
-
-// PostV1CalendarConnectionWithResponse Connect a calendar account
-//
-// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/calendar-connection (the `PostV1CalendarConnection` operationId).
-func (c *ClientWithResponses) PostV1CalendarConnectionWithResponse(ctx context.Context, body PostV1CalendarConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionResponse, error) {
-	rsp, err := c.PostV1CalendarConnection(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1CalendarConnectionResponse(rsp)
-}
-
-// DeleteV1CalendarConnectionByConnectionIdWithResponse Delete a calendar connection
-//
-// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with DELETE /v1/calendar-connection/{connectionId} (the `DeleteV1CalendarConnectionByConnectionId` operationId).
-func (c *ClientWithResponses) DeleteV1CalendarConnectionByConnectionIdWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*DeleteV1CalendarConnectionByConnectionIdResponse, error) {
-	rsp, err := c.DeleteV1CalendarConnectionByConnectionId(ctx, connectionId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDeleteV1CalendarConnectionByConnectionIdResponse(rsp)
-}
-
-// GetV1CalendarConnectionByConnectionIdWithResponse Get a calendar connection
-//
-// Returns one calendar connection. The stored credential is never included.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/calendar-connection/{connectionId} (the `GetV1CalendarConnectionByConnectionId` operationId).
-func (c *ClientWithResponses) GetV1CalendarConnectionByConnectionIdWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionByConnectionIdResponse, error) {
-	rsp, err := c.GetV1CalendarConnectionByConnectionId(ctx, connectionId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetV1CalendarConnectionByConnectionIdResponse(rsp)
-}
-
-// PatchV1CalendarConnectionByConnectionIdWithBodyWithResponse Update a calendar connection
-//
-// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
-func (c *ClientWithResponses) PatchV1CalendarConnectionByConnectionIdWithBodyWithResponse(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1CalendarConnectionByConnectionIdResponse, error) {
-	rsp, err := c.PatchV1CalendarConnectionByConnectionIdWithBody(ctx, connectionId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePatchV1CalendarConnectionByConnectionIdResponse(rsp)
-}
-
-// PatchV1CalendarConnectionByConnectionIdWithResponse Update a calendar connection
-//
-// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with PATCH /v1/calendar-connection/{connectionId} (the `PatchV1CalendarConnectionByConnectionId` operationId).
-func (c *ClientWithResponses) PatchV1CalendarConnectionByConnectionIdWithResponse(ctx context.Context, connectionId string, body PatchV1CalendarConnectionByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1CalendarConnectionByConnectionIdResponse, error) {
-	rsp, err := c.PatchV1CalendarConnectionByConnectionId(ctx, connectionId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePatchV1CalendarConnectionByConnectionIdResponse(rsp)
-}
-
-// PostV1CalendarConnectionByConnectionIdCheckWithResponse Check a calendar connection
-//
-// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/calendar-connection/{connectionId}/check (the `PostV1CalendarConnectionByConnectionIdCheck` operationId).
-func (c *ClientWithResponses) PostV1CalendarConnectionByConnectionIdCheckWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*PostV1CalendarConnectionByConnectionIdCheckResponse, error) {
-	rsp, err := c.PostV1CalendarConnectionByConnectionIdCheck(ctx, connectionId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1CalendarConnectionByConnectionIdCheckResponse(rsp)
-}
-
-// GetV1CalendarConnectionByConnectionIdTargetsWithResponse List what can be booked on a calendar
-//
-// What an agent can be pointed at on this connection: Cal.com event types today, Google calendars when that lands. Read live from the provider, so an event type added since you connected is here without reconnecting. Each entry carries a `target` ready to put on a calendar tool, so nothing has to assemble one by hand.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/calendar-connection/{connectionId}/targets (the `GetV1CalendarConnectionByConnectionIdTargets` operationId).
-func (c *ClientWithResponses) GetV1CalendarConnectionByConnectionIdTargetsWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionByConnectionIdTargetsResponse, error) {
-	rsp, err := c.GetV1CalendarConnectionByConnectionIdTargets(ctx, connectionId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetV1CalendarConnectionByConnectionIdTargetsResponse(rsp)
-}
-
-// GetV1CalendarConnectionByConnectionIdTargetsByTargetIdWithResponse Read one bookable target
-//
-// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/calendar-connection/{connectionId}/targets/{targetId} (the `GetV1CalendarConnectionByConnectionIdTargetsByTargetId` operationId).
-func (c *ClientWithResponses) GetV1CalendarConnectionByConnectionIdTargetsByTargetIdWithResponse(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse, error) {
-	rsp, err := c.GetV1CalendarConnectionByConnectionIdTargetsByTargetId(ctx, connectionId, targetId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse(rsp)
 }
 
 // GetV1CallWithResponse List calls
@@ -104014,6 +105455,36 @@ func (c *ClientWithResponses) PostV1ConfigDiffWithResponse(ctx context.Context, 
 		return nil, err
 	}
 	return ParsePostV1ConfigDiffResponse(rsp)
+}
+
+// GetV1ConversationWithResponse List conversations
+//
+// Calls and chats in the project as one list, most recent start first. A conversation is listed once it is recorded: a call when it connects, a chat when it ends. Listing calls needs `call:read`, chats `chat:read`, and both kinds both.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/conversation (the `GetV1Conversation` operationId).
+func (c *ClientWithResponses) GetV1ConversationWithResponse(ctx context.Context, params *GetV1ConversationParams, reqEditors ...RequestEditorFn) (*GetV1ConversationResponse, error) {
+	rsp, err := c.GetV1Conversation(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1ConversationResponse(rsp)
+}
+
+// GetV1ConversationByConversationIdWithResponse Get a conversation
+//
+// A call or chat by its id, whichever it is. One started through `POST /v1/agent/{agentId}/conversations` reads back from the moment it is created, before it is recorded. For its transcript and metrics, read it as a call or chat, as `modality` says.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/conversation/{conversationId} (the `GetV1ConversationByConversationId` operationId).
+func (c *ClientWithResponses) GetV1ConversationByConversationIdWithResponse(ctx context.Context, conversationId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1ConversationByConversationIdResponse, error) {
+	rsp, err := c.GetV1ConversationByConversationId(ctx, conversationId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1ConversationByConversationIdResponse(rsp)
 }
 
 // GetV1CustomerWithResponse List customers
@@ -104887,6 +106358,306 @@ func (c *ClientWithResponses) PutV1HttpRequestDefinitionByDefinitionIdWithRespon
 		return nil, err
 	}
 	return ParsePutV1HttpRequestDefinitionByDefinitionIdResponse(rsp)
+}
+
+// GetV1IntegrationsCalendarWithResponse List calendar connections
+//
+// Returns every calendar connection in the authenticated project, by label. A project has a handful of these, so the list is not paginated: `pagination.hasMore` is always false.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/calendar (the `GetV1IntegrationsCalendar` operationId).
+func (c *ClientWithResponses) GetV1IntegrationsCalendarWithResponse(ctx context.Context, params *GetV1IntegrationsCalendarParams, reqEditors ...RequestEditorFn) (*GetV1IntegrationsCalendarResponse, error) {
+	rsp, err := c.GetV1IntegrationsCalendar(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1IntegrationsCalendarResponse(rsp)
+}
+
+// PostV1IntegrationsCalendarWithBodyWithResponse Connect a calendar account
+//
+// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsCalendarWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarResponse, error) {
+	rsp, err := c.PostV1IntegrationsCalendarWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsCalendarResponse(rsp)
+}
+
+// PostV1IntegrationsCalendarWithResponse Connect a calendar account
+//
+// Verifies the credential against the provider and, only if it works, stores it encrypted. A credential the provider rejects is a 400 and no connection is created: a connection that has never worked would next be exercised by an inbound call at 2am, with nobody there to fix it.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsCalendarWithResponse(ctx context.Context, body PostV1IntegrationsCalendarJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarResponse, error) {
+	rsp, err := c.PostV1IntegrationsCalendar(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsCalendarResponse(rsp)
+}
+
+// DeleteV1IntegrationsCalendarByConnectionIdWithResponse Delete a calendar connection
+//
+// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/integrations/calendar/{connectionId} (the `DeleteV1IntegrationsCalendarByConnectionId` operationId).
+func (c *ClientWithResponses) DeleteV1IntegrationsCalendarByConnectionIdWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*DeleteV1IntegrationsCalendarByConnectionIdResponse, error) {
+	rsp, err := c.DeleteV1IntegrationsCalendarByConnectionId(ctx, connectionId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1IntegrationsCalendarByConnectionIdResponse(rsp)
+}
+
+// GetV1IntegrationsCalendarByConnectionIdWithResponse Get a calendar connection
+//
+// Returns one calendar connection. The stored credential is never included.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/calendar/{connectionId} (the `GetV1IntegrationsCalendarByConnectionId` operationId).
+func (c *ClientWithResponses) GetV1IntegrationsCalendarByConnectionIdWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1IntegrationsCalendarByConnectionIdResponse, error) {
+	rsp, err := c.GetV1IntegrationsCalendarByConnectionId(ctx, connectionId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1IntegrationsCalendarByConnectionIdResponse(rsp)
+}
+
+// PatchV1IntegrationsCalendarByConnectionIdWithBodyWithResponse Update a calendar connection
+//
+// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/integrations/calendar/{connectionId} (the `PatchV1IntegrationsCalendarByConnectionId` operationId).
+func (c *ClientWithResponses) PatchV1IntegrationsCalendarByConnectionIdWithBodyWithResponse(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1IntegrationsCalendarByConnectionIdResponse, error) {
+	rsp, err := c.PatchV1IntegrationsCalendarByConnectionIdWithBody(ctx, connectionId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchV1IntegrationsCalendarByConnectionIdResponse(rsp)
+}
+
+// PatchV1IntegrationsCalendarByConnectionIdWithResponse Update a calendar connection
+//
+// Renames a connection, changes the timezone slots are offered in, or rotates the credential. A rotated credential is verified first, and a verified credential returns the connection to ACTIVE.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/integrations/calendar/{connectionId} (the `PatchV1IntegrationsCalendarByConnectionId` operationId).
+func (c *ClientWithResponses) PatchV1IntegrationsCalendarByConnectionIdWithResponse(ctx context.Context, connectionId string, body PatchV1IntegrationsCalendarByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1IntegrationsCalendarByConnectionIdResponse, error) {
+	rsp, err := c.PatchV1IntegrationsCalendarByConnectionId(ctx, connectionId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchV1IntegrationsCalendarByConnectionIdResponse(rsp)
+}
+
+// PostV1IntegrationsCalendarByConnectionIdCheckWithResponse Check a calendar connection
+//
+// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/calendar/{connectionId}/check (the `PostV1IntegrationsCalendarByConnectionIdCheck` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsCalendarByConnectionIdCheckWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarByConnectionIdCheckResponse, error) {
+	rsp, err := c.PostV1IntegrationsCalendarByConnectionIdCheck(ctx, connectionId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsCalendarByConnectionIdCheckResponse(rsp)
+}
+
+// GetV1IntegrationsCalendarByConnectionIdTargetsWithResponse List what can be booked on a calendar
+//
+// What an agent can be pointed at on this connection: Cal.com event types today, Google calendars when that lands. Read live from the provider, so an event type added since you connected is here without reconnecting. Each entry carries a `target` ready to put on a calendar tool, so nothing has to assemble one by hand.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/calendar/{connectionId}/targets (the `GetV1IntegrationsCalendarByConnectionIdTargets` operationId).
+func (c *ClientWithResponses) GetV1IntegrationsCalendarByConnectionIdTargetsWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1IntegrationsCalendarByConnectionIdTargetsResponse, error) {
+	rsp, err := c.GetV1IntegrationsCalendarByConnectionIdTargets(ctx, connectionId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1IntegrationsCalendarByConnectionIdTargetsResponse(rsp)
+}
+
+// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse Read one bookable target
+//
+// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+func (c *ClientWithResponses) GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error) {
+	rsp, err := c.GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId(ctx, connectionId, targetId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp)
+}
+
+// GetV1IntegrationsMcpServerWithResponse List MCP servers
+//
+// The project's MCP servers, by label, each with the tools it offered when last checked. Credentials are never returned.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/mcp-server (the `GetV1IntegrationsMcpServer` operationId).
+func (c *ClientWithResponses) GetV1IntegrationsMcpServerWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1IntegrationsMcpServerResponse, error) {
+	rsp, err := c.GetV1IntegrationsMcpServer(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1IntegrationsMcpServerResponse(rsp)
+}
+
+// PostV1IntegrationsMcpServerWithBodyWithResponse Connect an MCP server
+//
+// Connects to the server, reads its tools, then stores it for the project. A server that does not answer, or refuses the credential, returns 400 and nothing is stored. The credential is encrypted and never returned.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/mcp-server (the `PostV1IntegrationsMcpServer` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsMcpServerWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1IntegrationsMcpServerResponse, error) {
+	rsp, err := c.PostV1IntegrationsMcpServerWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsMcpServerResponse(rsp)
+}
+
+// PostV1IntegrationsMcpServerWithResponse Connect an MCP server
+//
+// Connects to the server, reads its tools, then stores it for the project. A server that does not answer, or refuses the credential, returns 400 and nothing is stored. The credential is encrypted and never returned.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/mcp-server (the `PostV1IntegrationsMcpServer` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsMcpServerWithResponse(ctx context.Context, body PostV1IntegrationsMcpServerJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsMcpServerResponse, error) {
+	rsp, err := c.PostV1IntegrationsMcpServer(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsMcpServerResponse(rsp)
+}
+
+// PostV1IntegrationsMcpServerDiscoverWithBodyWithResponse Discover an MCP server
+//
+// Connects to a server and returns the tools it offers, without storing anything. Use it to check a url and credential before connecting.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/mcp-server/discover (the `PostV1IntegrationsMcpServerDiscover` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsMcpServerDiscoverWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1IntegrationsMcpServerDiscoverResponse, error) {
+	rsp, err := c.PostV1IntegrationsMcpServerDiscoverWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsMcpServerDiscoverResponse(rsp)
+}
+
+// PostV1IntegrationsMcpServerDiscoverWithResponse Discover an MCP server
+//
+// Connects to a server and returns the tools it offers, without storing anything. Use it to check a url and credential before connecting.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/mcp-server/discover (the `PostV1IntegrationsMcpServerDiscover` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsMcpServerDiscoverWithResponse(ctx context.Context, body PostV1IntegrationsMcpServerDiscoverJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsMcpServerDiscoverResponse, error) {
+	rsp, err := c.PostV1IntegrationsMcpServerDiscover(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsMcpServerDiscoverResponse(rsp)
+}
+
+// DeleteV1IntegrationsMcpServerByServerIdWithResponse Disconnect an MCP server
+//
+// Deletes the server and its stored credential. A server a tool still uses returns 409, naming the tools.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/integrations/mcp-server/{serverId} (the `DeleteV1IntegrationsMcpServerByServerId` operationId).
+func (c *ClientWithResponses) DeleteV1IntegrationsMcpServerByServerIdWithResponse(ctx context.Context, serverId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1IntegrationsMcpServerByServerIdResponse, error) {
+	rsp, err := c.DeleteV1IntegrationsMcpServerByServerId(ctx, serverId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1IntegrationsMcpServerByServerIdResponse(rsp)
+}
+
+// GetV1IntegrationsMcpServerByServerIdWithResponse Get an MCP server
+//
+// One MCP server. The credential is never returned.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/mcp-server/{serverId} (the `GetV1IntegrationsMcpServerByServerId` operationId).
+func (c *ClientWithResponses) GetV1IntegrationsMcpServerByServerIdWithResponse(ctx context.Context, serverId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1IntegrationsMcpServerByServerIdResponse, error) {
+	rsp, err := c.GetV1IntegrationsMcpServerByServerId(ctx, serverId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1IntegrationsMcpServerByServerIdResponse(rsp)
+}
+
+// PatchV1IntegrationsMcpServerByServerIdWithBodyWithResponse Update an MCP server
+//
+// Renames the server or replaces its credential. A new credential is checked by connecting with it first; one the server refuses returns 400 and changes nothing.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/integrations/mcp-server/{serverId} (the `PatchV1IntegrationsMcpServerByServerId` operationId).
+func (c *ClientWithResponses) PatchV1IntegrationsMcpServerByServerIdWithBodyWithResponse(ctx context.Context, serverId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchV1IntegrationsMcpServerByServerIdResponse, error) {
+	rsp, err := c.PatchV1IntegrationsMcpServerByServerIdWithBody(ctx, serverId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchV1IntegrationsMcpServerByServerIdResponse(rsp)
+}
+
+// PatchV1IntegrationsMcpServerByServerIdWithResponse Update an MCP server
+//
+// Renames the server or replaces its credential. A new credential is checked by connecting with it first; one the server refuses returns 400 and changes nothing.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PATCH /v1/integrations/mcp-server/{serverId} (the `PatchV1IntegrationsMcpServerByServerId` operationId).
+func (c *ClientWithResponses) PatchV1IntegrationsMcpServerByServerIdWithResponse(ctx context.Context, serverId openapi_types.UUID, body PatchV1IntegrationsMcpServerByServerIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1IntegrationsMcpServerByServerIdResponse, error) {
+	rsp, err := c.PatchV1IntegrationsMcpServerByServerId(ctx, serverId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchV1IntegrationsMcpServerByServerIdResponse(rsp)
+}
+
+// PostV1IntegrationsMcpServerByServerIdRefreshWithResponse Refresh an MCP server
+//
+// Connects to the server again and records the tools it offers now. Agents keep calling the tools they were given; a new tool reaches an agent only once you add it.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/mcp-server/{serverId}/refresh (the `PostV1IntegrationsMcpServerByServerIdRefresh` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsMcpServerByServerIdRefreshWithResponse(ctx context.Context, serverId openapi_types.UUID, reqEditors ...RequestEditorFn) (*PostV1IntegrationsMcpServerByServerIdRefreshResponse, error) {
+	rsp, err := c.PostV1IntegrationsMcpServerByServerIdRefresh(ctx, serverId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsMcpServerByServerIdRefreshResponse(rsp)
 }
 
 // GetV1IssueWithResponse List issues
@@ -106313,66 +108084,6 @@ func (c *ClientWithResponses) PostV1PublicCampaignCreditByCampaignKeyClaimWithRe
 	return ParsePostV1PublicCampaignCreditByCampaignKeyClaimResponse(rsp)
 }
 
-// GetV1PublicProspectSimReportByTokenWithResponse Read a prospect simulation teaser report
-//
-// Public endpoint scoped by the unguessable report token. Returns a truncated teaser once the debrief is ready; the full report is gated behind claiming an account.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/public/prospect-sim/report/{token} (the `GetV1PublicProspectSimReportByToken` operationId).
-func (c *ClientWithResponses) GetV1PublicProspectSimReportByTokenWithResponse(ctx context.Context, token string, reqEditors ...RequestEditorFn) (*GetV1PublicProspectSimReportByTokenResponse, error) {
-	rsp, err := c.GetV1PublicProspectSimReportByToken(ctx, token, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetV1PublicProspectSimReportByTokenResponse(rsp)
-}
-
-// GetV1PublicProspectSimReportByTokenObserverUrlWithResponse Mint a live observer WebSocket URL for a prospect call
-//
-// Public endpoint scoped by the report token. Returns a short-lived, self-authenticating WebSocket URL for watching a prospect call live, but only while that call is actually in flight; otherwise wsUrl is null. Pass `callId` (from the live progress list) to pick one of the parallel calls; without it the most recently started live call is used.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/public/prospect-sim/report/{token}/observer-url (the `GetV1PublicProspectSimReportByTokenObserverUrl` operationId).
-func (c *ClientWithResponses) GetV1PublicProspectSimReportByTokenObserverUrlWithResponse(ctx context.Context, token string, params *GetV1PublicProspectSimReportByTokenObserverUrlParams, reqEditors ...RequestEditorFn) (*GetV1PublicProspectSimReportByTokenObserverUrlResponse, error) {
-	rsp, err := c.GetV1PublicProspectSimReportByTokenObserverUrl(ctx, token, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetV1PublicProspectSimReportByTokenObserverUrlResponse(rsp)
-}
-
-// PostV1PublicProspectSimRunWithBodyWithResponse Run a free simulation against a prospect agent
-//
-// Public endpoint: provisions a per-prospect project, runs a canned scenario template against the submitted phone number, and returns a report token to poll. The teaser report is also emailed when ready.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/public/prospect-sim/run (the `PostV1PublicProspectSimRun` operationId).
-func (c *ClientWithResponses) PostV1PublicProspectSimRunWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1PublicProspectSimRunResponse, error) {
-	rsp, err := c.PostV1PublicProspectSimRunWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1PublicProspectSimRunResponse(rsp)
-}
-
-// PostV1PublicProspectSimRunWithResponse Run a free simulation against a prospect agent
-//
-// Public endpoint: provisions a per-prospect project, runs a canned scenario template against the submitted phone number, and returns a report token to poll. The teaser report is also emailed when ready.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/public/prospect-sim/run (the `PostV1PublicProspectSimRun` operationId).
-func (c *ClientWithResponses) PostV1PublicProspectSimRunWithResponse(ctx context.Context, body PostV1PublicProspectSimRunJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1PublicProspectSimRunResponse, error) {
-	rsp, err := c.PostV1PublicProspectSimRun(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1PublicProspectSimRunResponse(rsp)
-}
-
 // GetV1SimulationAudioClipWithResponse List audio clips
 //
 // Returns the audio a CUSTOMER_AUDIO step can play: hold music, hold tones and ringback.
@@ -107321,7 +109032,7 @@ func (c *ClientWithResponses) GetV1ToolWithResponse(ctx context.Context, params 
 
 // PostV1ToolWithBodyWithResponse Create a tool
 //
-// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
+// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, a `calendar` for it to book on a calendar connected to the project, or `mcp` for it to call a tool on an MCP server connected to the project. Header values are returned on read, so keep secrets out of them.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -107336,7 +109047,7 @@ func (c *ClientWithResponses) PostV1ToolWithBodyWithResponse(ctx context.Context
 
 // PostV1ToolWithResponse Create a tool
 //
-// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
+// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, a `calendar` for it to book on a calendar connected to the project, or `mcp` for it to call a tool on an MCP server connected to the project. Header values are returned on read, so keep secrets out of them.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -107379,7 +109090,7 @@ func (c *ClientWithResponses) GetV1ToolByToolIdWithResponse(ctx context.Context,
 
 // PutV1ToolByToolIdWithBodyWithResponse Update a tool
 //
-// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
+// Replaces the tool: its name, scope, inputs, description, grading hints, runtime, calendar and MCP tool. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar or mcp makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -107394,7 +109105,7 @@ func (c *ClientWithResponses) PutV1ToolByToolIdWithBodyWithResponse(ctx context.
 
 // PutV1ToolByToolIdWithResponse Update a tool
 //
-// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
+// Replaces the tool: its name, scope, inputs, description, grading hints, runtime, calendar and MCP tool. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar or mcp makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -108591,6 +110302,83 @@ func ParsePutV1AgentByAgentIdResponse(rsp *http.Response) (*PutV1AgentByAgentIdR
 	return response, nil
 }
 
+// ParsePostV1AgentByAgentIdConversationsResponse parses an HTTP response from a PostV1AgentByAgentIdConversationsWithResponse call
+func ParsePostV1AgentByAgentIdConversationsResponse(rsp *http.Response) (*PostV1AgentByAgentIdConversationsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1AgentByAgentIdConversationsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			Data AgentConversationCreated `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseDeleteV1AgentByAgentIdDraftResponse parses an HTTP response from a DeleteV1AgentByAgentIdDraftWithResponse call
 func ParseDeleteV1AgentByAgentIdDraftResponse(rsp *http.Response) (*DeleteV1AgentByAgentIdDraftResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -109190,76 +110978,6 @@ func ParsePostV1AgentByAgentIdVersionsByVersionIdRollbackResponse(rsp *http.Resp
 		var dest struct {
 			// Data One version of a Roark-hosted agent's configuration. Null settings use the runtime default.
 			Data AgentVersionResponse `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON201 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON409 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParsePostV1AgentByAgentIdWebSessionTokensResponse parses an HTTP response from a PostV1AgentByAgentIdWebSessionTokensWithResponse call
-func ParsePostV1AgentByAgentIdWebSessionTokensResponse(rsp *http.Response) (*PostV1AgentByAgentIdWebSessionTokensResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &PostV1AgentByAgentIdWebSessionTokensResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			Data WebSessionToken `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -110363,800 +112081,6 @@ func ParseGetV1BenchmarkTargetByTargetKeyScoreSampleResponse(rsp *http.Response)
 			return nil, err
 		}
 		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetV1CalendarConnectionResponse parses an HTTP response from a GetV1CalendarConnectionWithResponse call
-func ParseGetV1CalendarConnectionResponse(rsp *http.Response) (*GetV1CalendarConnectionResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetV1CalendarConnectionResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data []struct {
-				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-				AccountLabel *string `json:"accountLabel"`
-
-				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-				Capabilities struct {
-					// Auth How this provider is authenticated.
-					Auth GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-					Operations []GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-					SlotHold GetV1CalendarConnection200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-				} `json:"capabilities"`
-
-				// CreatedAt Creation timestamp in ISO 8601 format.
-				CreatedAt string `json:"createdAt"`
-
-				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-				CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-				// Id Unique identifier of the calendar connection.
-				Id openapi_types.UUID `json:"id"`
-
-				// Label Customer-supplied name for this account. Unique within the project.
-				Label string `json:"label"`
-
-				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-				LastCheckedAt *string `json:"lastCheckedAt"`
-
-				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-				Provider GetV1CalendarConnection200JSONResponseBodyDataProvider `json:"provider"`
-
-				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-				Scopes *[]string `json:"scopes"`
-
-				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-				Status GetV1CalendarConnection200JSONResponseBodyDataStatus `json:"status"`
-
-				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-				StatusMessage *string `json:"statusMessage"`
-
-				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-				Timezone string `json:"timezone"`
-
-				// UpdatedAt Last update timestamp in ISO 8601 format.
-				UpdatedAt string `json:"updatedAt"`
-			} `json:"data"`
-			Pagination struct {
-				// HasMore Whether there are more items to fetch
-				HasMore bool `json:"hasMore"`
-
-				// NextCursor Cursor for the next page of items
-				NextCursor *string `json:"nextCursor"`
-
-				// Total Total number of items
-				Total float64 `json:"total"`
-			} `json:"pagination"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParsePostV1CalendarConnectionResponse parses an HTTP response from a PostV1CalendarConnectionWithResponse call
-func ParsePostV1CalendarConnectionResponse(rsp *http.Response) (*PostV1CalendarConnectionResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &PostV1CalendarConnectionResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
-			Data struct {
-				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-				AccountLabel *string `json:"accountLabel"`
-
-				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-				Capabilities struct {
-					// Auth How this provider is authenticated.
-					Auth PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-					Operations []PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-					SlotHold PostV1CalendarConnection201JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-				} `json:"capabilities"`
-
-				// CreatedAt Creation timestamp in ISO 8601 format.
-				CreatedAt string `json:"createdAt"`
-
-				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-				CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-				// Id Unique identifier of the calendar connection.
-				Id openapi_types.UUID `json:"id"`
-
-				// Label Customer-supplied name for this account. Unique within the project.
-				Label string `json:"label"`
-
-				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-				LastCheckedAt *string `json:"lastCheckedAt"`
-
-				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-				Provider PostV1CalendarConnection201JSONResponseBodyDataProvider `json:"provider"`
-
-				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-				Scopes *[]string `json:"scopes"`
-
-				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-				Status PostV1CalendarConnection201JSONResponseBodyDataStatus `json:"status"`
-
-				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-				StatusMessage *string `json:"statusMessage"`
-
-				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-				Timezone string `json:"timezone"`
-
-				// UpdatedAt Last update timestamp in ISO 8601 format.
-				UpdatedAt string `json:"updatedAt"`
-			} `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON201 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON409 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseDeleteV1CalendarConnectionByConnectionIdResponse parses an HTTP response from a DeleteV1CalendarConnectionByConnectionIdWithResponse call
-func ParseDeleteV1CalendarConnectionByConnectionIdResponse(rsp *http.Response) (*DeleteV1CalendarConnectionByConnectionIdResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DeleteV1CalendarConnectionByConnectionIdResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data struct {
-				// Deleted Always true. The credential is hard-deleted, not archived.
-				Deleted DeleteV1CalendarConnectionByConnectionId200JSONResponseBodyDataDeleted `json:"deleted"`
-
-				// Id Identifier of the deleted connection.
-				Id openapi_types.UUID `json:"id"`
-			} `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON409 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetV1CalendarConnectionByConnectionIdResponse parses an HTTP response from a GetV1CalendarConnectionByConnectionIdWithResponse call
-func ParseGetV1CalendarConnectionByConnectionIdResponse(rsp *http.Response) (*GetV1CalendarConnectionByConnectionIdResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetV1CalendarConnectionByConnectionIdResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
-			Data struct {
-				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-				AccountLabel *string `json:"accountLabel"`
-
-				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-				Capabilities struct {
-					// Auth How this provider is authenticated.
-					Auth GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-					Operations []GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-					SlotHold GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-				} `json:"capabilities"`
-
-				// CreatedAt Creation timestamp in ISO 8601 format.
-				CreatedAt string `json:"createdAt"`
-
-				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-				CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-				// Id Unique identifier of the calendar connection.
-				Id openapi_types.UUID `json:"id"`
-
-				// Label Customer-supplied name for this account. Unique within the project.
-				Label string `json:"label"`
-
-				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-				LastCheckedAt *string `json:"lastCheckedAt"`
-
-				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-				Provider GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
-
-				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-				Scopes *[]string `json:"scopes"`
-
-				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-				Status GetV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus `json:"status"`
-
-				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-				StatusMessage *string `json:"statusMessage"`
-
-				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-				Timezone string `json:"timezone"`
-
-				// UpdatedAt Last update timestamp in ISO 8601 format.
-				UpdatedAt string `json:"updatedAt"`
-			} `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParsePatchV1CalendarConnectionByConnectionIdResponse parses an HTTP response from a PatchV1CalendarConnectionByConnectionIdWithResponse call
-func ParsePatchV1CalendarConnectionByConnectionIdResponse(rsp *http.Response) (*PatchV1CalendarConnectionByConnectionIdResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &PatchV1CalendarConnectionByConnectionIdResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
-			Data struct {
-				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-				AccountLabel *string `json:"accountLabel"`
-
-				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-				Capabilities struct {
-					// Auth How this provider is authenticated.
-					Auth PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-					Operations []PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-					SlotHold PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-				} `json:"capabilities"`
-
-				// CreatedAt Creation timestamp in ISO 8601 format.
-				CreatedAt string `json:"createdAt"`
-
-				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-				CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-				// Id Unique identifier of the calendar connection.
-				Id openapi_types.UUID `json:"id"`
-
-				// Label Customer-supplied name for this account. Unique within the project.
-				Label string `json:"label"`
-
-				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-				LastCheckedAt *string `json:"lastCheckedAt"`
-
-				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-				Provider PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
-
-				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-				Scopes *[]string `json:"scopes"`
-
-				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-				Status PatchV1CalendarConnectionByConnectionId200JSONResponseBodyDataStatus `json:"status"`
-
-				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-				StatusMessage *string `json:"statusMessage"`
-
-				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-				Timezone string `json:"timezone"`
-
-				// UpdatedAt Last update timestamp in ISO 8601 format.
-				UpdatedAt string `json:"updatedAt"`
-			} `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON409 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParsePostV1CalendarConnectionByConnectionIdCheckResponse parses an HTTP response from a PostV1CalendarConnectionByConnectionIdCheckWithResponse call
-func ParsePostV1CalendarConnectionByConnectionIdCheckResponse(rsp *http.Response) (*PostV1CalendarConnectionByConnectionIdCheckResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &PostV1CalendarConnectionByConnectionIdCheckResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
-			Data struct {
-				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
-				AccountLabel *string `json:"accountLabel"`
-
-				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
-				Capabilities struct {
-					// Auth How this provider is authenticated.
-					Auth PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
-
-					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
-					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
-
-					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
-					Operations []PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
-
-					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
-					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
-					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
-
-					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
-					SlotHold PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
-				} `json:"capabilities"`
-
-				// CreatedAt Creation timestamp in ISO 8601 format.
-				CreatedAt string `json:"createdAt"`
-
-				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
-				CredentialExpiresAt *string `json:"credentialExpiresAt"`
-
-				// Id Unique identifier of the calendar connection.
-				Id openapi_types.UUID `json:"id"`
-
-				// Label Customer-supplied name for this account. Unique within the project.
-				Label string `json:"label"`
-
-				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
-				LastCheckedAt *string `json:"lastCheckedAt"`
-
-				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
-				Provider PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
-
-				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
-				Scopes *[]string `json:"scopes"`
-
-				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
-				Status PostV1CalendarConnectionByConnectionIdCheck200JSONResponseBodyDataStatus `json:"status"`
-
-				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
-				StatusMessage *string `json:"statusMessage"`
-
-				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
-				Timezone string `json:"timezone"`
-
-				// UpdatedAt Last update timestamp in ISO 8601 format.
-				UpdatedAt string `json:"updatedAt"`
-			} `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetV1CalendarConnectionByConnectionIdTargetsResponse parses an HTTP response from a GetV1CalendarConnectionByConnectionIdTargetsWithResponse call
-func ParseGetV1CalendarConnectionByConnectionIdTargetsResponse(rsp *http.Response) (*GetV1CalendarConnectionByConnectionIdTargetsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetV1CalendarConnectionByConnectionIdTargetsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data []struct {
-				// DurationMinutes How long an appointment runs, when the provider fixes one length.
-				DurationMinutes *float64 `json:"durationMinutes"`
-
-				// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
-				DurationOptions []float64 `json:"durationOptions"`
-
-				// Id Identifier within this connection. Pass it back to read one target in detail.
-				Id string `json:"id"`
-
-				// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
-				IsHidden bool `json:"isHidden"`
-
-				// Label What the customer called it on the provider.
-				Label string `json:"label"`
-
-				// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
-				RequiresConfirmation bool `json:"requiresConfirmation"`
-
-				// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
-				Target struct {
-					EventTypeId int                                                                               `json:"eventTypeId"`
-					Provider    GetV1CalendarConnectionByConnectionIdTargets200JSONResponseBodyDataTargetProvider `json:"provider"`
-				} `json:"target"`
-			} `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse parses an HTTP response from a GetV1CalendarConnectionByConnectionIdTargetsByTargetIdWithResponse call
-func ParseGetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse(rsp *http.Response) (*GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetV1CalendarConnectionByConnectionIdTargetsByTargetIdResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Data Something on a connected account an agent can be pointed at: a Cal.com event type today, a Google calendar when that lands.
-			Data struct {
-				// DurationMinutes How long an appointment runs, when the provider fixes one length.
-				DurationMinutes *float64 `json:"durationMinutes"`
-
-				// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
-				DurationOptions []float64 `json:"durationOptions"`
-
-				// Id Identifier within this connection. Pass it back to read one target in detail.
-				Id string `json:"id"`
-
-				// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
-				IsHidden bool `json:"isHidden"`
-
-				// Label What the customer called it on the provider.
-				Label string `json:"label"`
-
-				// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
-				RequiredBookingFields []string `json:"requiredBookingFields"`
-
-				// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
-				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
-
-				// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
-				RequiresConfirmation bool `json:"requiresConfirmation"`
-
-				// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
-				Target struct {
-					EventTypeId int                                                                                         `json:"eventTypeId"`
-					Provider    GetV1CalendarConnectionByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider `json:"provider"`
-				} `json:"target"`
-			} `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse
@@ -112306,15 +113230,15 @@ func ParseGetV1ChatResponse(rsp *http.Response) (*GetV1ChatResponse, error) {
 					PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 				} `json:"customers,omitempty"`
 
-				// DurationMs Duration of the chat in milliseconds
+				// DurationMs Duration of the chat in milliseconds. Null until it ends.
 				//
 				// Example: 1800000
-				DurationMs float64 `json:"durationMs"`
+				DurationMs *float64 `json:"durationMs"`
 
-				// EndTimestamp Timestamp when the chat ended
+				// EndTimestamp Timestamp when the chat ended. Null until it ends.
 				//
 				// Example: 2024-01-15T10:30:00Z
-				EndTimestamp string `json:"endTimestamp"`
+				EndTimestamp *string `json:"endTimestamp"`
 
 				// ExternalId Caller-supplied correlation ID echoed back from the create request, if any was provided
 				//
@@ -112360,6 +113284,11 @@ func ParseGetV1ChatResponse(rsp *http.Response) (*GetV1ChatResponse, error) {
 				//
 				// Example: 2024-01-15T10:00:00Z
 				StartTimestamp string `json:"startTimestamp"`
+
+				// Status Where the chat is: `PENDING` until a visitor joins a chat started through the API, `IN_PROGRESS` while it runs, `ENDED` once it is over.
+				//
+				// Example: ENDED
+				Status GetV1Chat200JSONResponseBodyDataStatus `json:"status"`
 
 				// Summary Auto-generated summary of the chat conversation
 				//
@@ -112450,15 +113379,15 @@ func ParsePostV1ChatResponse(rsp *http.Response) (*PostV1ChatResponse, error) {
 					PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 				} `json:"customers,omitempty"`
 
-				// DurationMs Duration of the chat in milliseconds
+				// DurationMs Duration of the chat in milliseconds. Null until it ends.
 				//
 				// Example: 1800000
-				DurationMs float64 `json:"durationMs"`
+				DurationMs *float64 `json:"durationMs"`
 
-				// EndTimestamp Timestamp when the chat ended
+				// EndTimestamp Timestamp when the chat ended. Null until it ends.
 				//
 				// Example: 2024-01-15T10:30:00Z
-				EndTimestamp string `json:"endTimestamp"`
+				EndTimestamp *string `json:"endTimestamp"`
 
 				// ExternalId Caller-supplied correlation ID echoed back from the create request, if any was provided
 				//
@@ -112504,6 +113433,11 @@ func ParsePostV1ChatResponse(rsp *http.Response) (*PostV1ChatResponse, error) {
 				//
 				// Example: 2024-01-15T10:00:00Z
 				StartTimestamp string `json:"startTimestamp"`
+
+				// Status Where the chat is: `PENDING` until a visitor joins a chat started through the API, `IN_PROGRESS` while it runs, `ENDED` once it is over.
+				//
+				// Example: ENDED
+				Status PostV1Chat200JSONResponseBodyDataStatus `json:"status"`
 
 				// Summary Auto-generated summary of the chat conversation
 				//
@@ -112612,15 +113546,15 @@ func ParseGetV1ChatByIdResponse(rsp *http.Response) (*GetV1ChatByIdResponse, err
 					PhoneNumberE164   *string             `json:"phoneNumberE164,omitempty"`
 				} `json:"customers,omitempty"`
 
-				// DurationMs Duration of the chat in milliseconds
+				// DurationMs Duration of the chat in milliseconds. Null until it ends.
 				//
 				// Example: 1800000
-				DurationMs float64 `json:"durationMs"`
+				DurationMs *float64 `json:"durationMs"`
 
-				// EndTimestamp Timestamp when the chat ended
+				// EndTimestamp Timestamp when the chat ended. Null until it ends.
 				//
 				// Example: 2024-01-15T10:30:00Z
-				EndTimestamp string `json:"endTimestamp"`
+				EndTimestamp *string `json:"endTimestamp"`
 
 				// ExternalId Caller-supplied correlation ID echoed back from the create request, if any was provided
 				//
@@ -112666,6 +113600,11 @@ func ParseGetV1ChatByIdResponse(rsp *http.Response) (*GetV1ChatByIdResponse, err
 				//
 				// Example: 2024-01-15T10:00:00Z
 				StartTimestamp string `json:"startTimestamp"`
+
+				// Status Where the chat is: `PENDING` until a visitor joins a chat started through the API, `IN_PROGRESS` while it runs, `ENDED` once it is over.
+				//
+				// Example: ENDED
+				Status GetV1ChatById200JSONResponseBodyDataStatus `json:"status"`
 
 				// Summary Auto-generated summary of the chat conversation
 				//
@@ -113072,6 +114011,109 @@ func ParsePostV1ConfigDiffResponse(rsp *http.Response) (*PostV1ConfigDiffRespons
 			return nil, err
 		}
 		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1ConversationResponse parses an HTTP response from a GetV1ConversationWithResponse call
+func ParseGetV1ConversationResponse(rsp *http.Response) (*GetV1ConversationResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1ConversationResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ConversationList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1ConversationByConversationIdResponse parses an HTTP response from a GetV1ConversationByConversationIdWithResponse call
+func ParseGetV1ConversationByConversationIdResponse(rsp *http.Response) (*GetV1ConversationByConversationIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1ConversationByConversationIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data Conversation `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse
@@ -114863,6 +115905,7 @@ func ParseGetV1CustomerByCustomerProfileIdConversationsResponse(rsp *http.Respon
 		var dest struct {
 			Data struct {
 				Items []struct {
+					// ConversationType `voice` or `chat`.
 					ConversationType GetV1CustomerByCustomerProfileIdConversations200JSONResponseBodyDataItemsConversationType `json:"conversationType"`
 					DurationMs       *int                                                                                      `json:"durationMs"`
 					Id               openapi_types.UUID                                                                        `json:"id"`
@@ -115919,6 +116962,1143 @@ func ParsePutV1HttpRequestDefinitionByDefinitionIdResponse(rsp *http.Response) (
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1IntegrationsCalendarResponse parses an HTTP response from a GetV1IntegrationsCalendarWithResponse call
+func ParseGetV1IntegrationsCalendarResponse(rsp *http.Response) (*GetV1IntegrationsCalendarResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1IntegrationsCalendarResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []struct {
+				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+				AccountLabel *string `json:"accountLabel"`
+
+				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+				Capabilities struct {
+					// Auth How this provider is authenticated.
+					Auth GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+					Operations []GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+					SlotHold GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+				} `json:"capabilities"`
+
+				// CreatedAt Creation timestamp in ISO 8601 format.
+				CreatedAt string `json:"createdAt"`
+
+				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+				CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+				// Id Unique identifier of the calendar connection.
+				Id openapi_types.UUID `json:"id"`
+
+				// Label Customer-supplied name for this account. Unique within the project.
+				Label string `json:"label"`
+
+				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+				LastCheckedAt *string `json:"lastCheckedAt"`
+
+				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				Provider GetV1IntegrationsCalendar200JSONResponseBodyDataProvider `json:"provider"`
+
+				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+				Scopes *[]string `json:"scopes"`
+
+				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+				Status GetV1IntegrationsCalendar200JSONResponseBodyDataStatus `json:"status"`
+
+				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+				StatusMessage *string `json:"statusMessage"`
+
+				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+				Timezone string `json:"timezone"`
+
+				// UpdatedAt Last update timestamp in ISO 8601 format.
+				UpdatedAt string `json:"updatedAt"`
+			} `json:"data"`
+			Pagination struct {
+				// HasMore Whether there are more items to fetch
+				HasMore bool `json:"hasMore"`
+
+				// NextCursor Cursor for the next page of items
+				NextCursor *string `json:"nextCursor"`
+
+				// Total Total number of items
+				Total float64 `json:"total"`
+			} `json:"pagination"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1IntegrationsCalendarResponse parses an HTTP response from a PostV1IntegrationsCalendarWithResponse call
+func ParsePostV1IntegrationsCalendarResponse(rsp *http.Response) (*PostV1IntegrationsCalendarResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1IntegrationsCalendarResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest struct {
+			// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+			Data struct {
+				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+				AccountLabel *string `json:"accountLabel"`
+
+				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+				Capabilities struct {
+					// Auth How this provider is authenticated.
+					Auth PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+					Operations []PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+					SlotHold PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+				} `json:"capabilities"`
+
+				// CreatedAt Creation timestamp in ISO 8601 format.
+				CreatedAt string `json:"createdAt"`
+
+				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+				CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+				// Id Unique identifier of the calendar connection.
+				Id openapi_types.UUID `json:"id"`
+
+				// Label Customer-supplied name for this account. Unique within the project.
+				Label string `json:"label"`
+
+				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+				LastCheckedAt *string `json:"lastCheckedAt"`
+
+				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				Provider PostV1IntegrationsCalendar201JSONResponseBodyDataProvider `json:"provider"`
+
+				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+				Scopes *[]string `json:"scopes"`
+
+				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+				Status PostV1IntegrationsCalendar201JSONResponseBodyDataStatus `json:"status"`
+
+				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+				StatusMessage *string `json:"statusMessage"`
+
+				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+				Timezone string `json:"timezone"`
+
+				// UpdatedAt Last update timestamp in ISO 8601 format.
+				UpdatedAt string `json:"updatedAt"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1IntegrationsCalendarByConnectionIdResponse parses an HTTP response from a DeleteV1IntegrationsCalendarByConnectionIdWithResponse call
+func ParseDeleteV1IntegrationsCalendarByConnectionIdResponse(rsp *http.Response) (*DeleteV1IntegrationsCalendarByConnectionIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1IntegrationsCalendarByConnectionIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				// Deleted Always true. The credential is hard-deleted, not archived.
+				Deleted DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeleted `json:"deleted"`
+
+				// Id Identifier of the deleted connection.
+				Id openapi_types.UUID `json:"id"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1IntegrationsCalendarByConnectionIdResponse parses an HTTP response from a GetV1IntegrationsCalendarByConnectionIdWithResponse call
+func ParseGetV1IntegrationsCalendarByConnectionIdResponse(rsp *http.Response) (*GetV1IntegrationsCalendarByConnectionIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1IntegrationsCalendarByConnectionIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+			Data struct {
+				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+				AccountLabel *string `json:"accountLabel"`
+
+				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+				Capabilities struct {
+					// Auth How this provider is authenticated.
+					Auth GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+					Operations []GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+					SlotHold GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+				} `json:"capabilities"`
+
+				// CreatedAt Creation timestamp in ISO 8601 format.
+				CreatedAt string `json:"createdAt"`
+
+				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+				CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+				// Id Unique identifier of the calendar connection.
+				Id openapi_types.UUID `json:"id"`
+
+				// Label Customer-supplied name for this account. Unique within the project.
+				Label string `json:"label"`
+
+				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+				LastCheckedAt *string `json:"lastCheckedAt"`
+
+				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				Provider GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
+
+				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+				Scopes *[]string `json:"scopes"`
+
+				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+				Status GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus `json:"status"`
+
+				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+				StatusMessage *string `json:"statusMessage"`
+
+				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+				Timezone string `json:"timezone"`
+
+				// UpdatedAt Last update timestamp in ISO 8601 format.
+				UpdatedAt string `json:"updatedAt"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePatchV1IntegrationsCalendarByConnectionIdResponse parses an HTTP response from a PatchV1IntegrationsCalendarByConnectionIdWithResponse call
+func ParsePatchV1IntegrationsCalendarByConnectionIdResponse(rsp *http.Response) (*PatchV1IntegrationsCalendarByConnectionIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PatchV1IntegrationsCalendarByConnectionIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+			Data struct {
+				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+				AccountLabel *string `json:"accountLabel"`
+
+				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+				Capabilities struct {
+					// Auth How this provider is authenticated.
+					Auth PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+					Operations []PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+					SlotHold PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+				} `json:"capabilities"`
+
+				// CreatedAt Creation timestamp in ISO 8601 format.
+				CreatedAt string `json:"createdAt"`
+
+				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+				CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+				// Id Unique identifier of the calendar connection.
+				Id openapi_types.UUID `json:"id"`
+
+				// Label Customer-supplied name for this account. Unique within the project.
+				Label string `json:"label"`
+
+				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+				LastCheckedAt *string `json:"lastCheckedAt"`
+
+				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				Provider PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
+
+				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+				Scopes *[]string `json:"scopes"`
+
+				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+				Status PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataStatus `json:"status"`
+
+				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+				StatusMessage *string `json:"statusMessage"`
+
+				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+				Timezone string `json:"timezone"`
+
+				// UpdatedAt Last update timestamp in ISO 8601 format.
+				UpdatedAt string `json:"updatedAt"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1IntegrationsCalendarByConnectionIdCheckResponse parses an HTTP response from a PostV1IntegrationsCalendarByConnectionIdCheckWithResponse call
+func ParsePostV1IntegrationsCalendarByConnectionIdCheckResponse(rsp *http.Response) (*PostV1IntegrationsCalendarByConnectionIdCheckResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1IntegrationsCalendarByConnectionIdCheckResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data A project’s credential for one calendar account, the thing a calendar tool books against. The credential itself is never returned.
+			Data struct {
+				// AccountLabel How the provider names the connected account (a Cal.com email). Read-only.
+				AccountLabel *string `json:"accountLabel"`
+
+				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
+				Capabilities struct {
+					// Auth How this provider is authenticated.
+					Auth PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
+
+					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
+					AvailabilityWindowDays *float64 `json:"availabilityWindowDays"`
+
+					// Operations The operations this provider supports. An operation that is absent is never registered as a tool, so the agent cannot promise it: Calendly, for example, has no reschedule API, and callers wanting to move an appointment must cancel and rebook.
+					Operations []PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesOperations `json:"operations"`
+
+					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
+					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
+
+					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
+					SlotHold PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesSlotHold `json:"slotHold"`
+				} `json:"capabilities"`
+
+				// CreatedAt Creation timestamp in ISO 8601 format.
+				CreatedAt string `json:"createdAt"`
+
+				// CredentialExpiresAt When the credential expires, ISO 8601. Null when it does not expire.
+				CredentialExpiresAt *string `json:"credentialExpiresAt"`
+
+				// Id Unique identifier of the calendar connection.
+				Id openapi_types.UUID `json:"id"`
+
+				// Label Customer-supplied name for this account. Unique within the project.
+				Label string `json:"label"`
+
+				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
+				LastCheckedAt *string `json:"lastCheckedAt"`
+
+				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				Provider PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
+
+				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
+				Scopes *[]string `json:"scopes"`
+
+				// Status Whether the stored credential still works, as of `lastCheckedAt`. INVALID_CREDENTIALS means the provider rejected it and the connection needs a new one. A provider outage never changes this.
+				Status PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus `json:"status"`
+
+				// StatusMessage Why the status is not ACTIVE, in the provider’s words. Null when ACTIVE.
+				StatusMessage *string `json:"statusMessage"`
+
+				// Timezone The IANA timezone slots are offered in: the business’s, not the caller’s. A clinic’s 3pm is 3pm whoever dials it.
+				Timezone string `json:"timezone"`
+
+				// UpdatedAt Last update timestamp in ISO 8601 format.
+				UpdatedAt string `json:"updatedAt"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1IntegrationsCalendarByConnectionIdTargetsResponse parses an HTTP response from a GetV1IntegrationsCalendarByConnectionIdTargetsWithResponse call
+func ParseGetV1IntegrationsCalendarByConnectionIdTargetsResponse(rsp *http.Response) (*GetV1IntegrationsCalendarByConnectionIdTargetsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1IntegrationsCalendarByConnectionIdTargetsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []struct {
+				// DurationMinutes How long an appointment runs, when the provider fixes one length.
+				DurationMinutes *float64 `json:"durationMinutes"`
+
+				// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+				DurationOptions []float64 `json:"durationOptions"`
+
+				// Id Identifier within this connection. Pass it back to read one target in detail.
+				Id string `json:"id"`
+
+				// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+				IsHidden bool `json:"isHidden"`
+
+				// Label What the customer called it on the provider.
+				Label string `json:"label"`
+
+				// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+				RequiresConfirmation bool `json:"requiresConfirmation"`
+
+				// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+				Target struct {
+					EventTypeId int                                                                                 `json:"eventTypeId"`
+					Provider    GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider `json:"provider"`
+				} `json:"target"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse parses an HTTP response from a GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse call
+func ParseGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp *http.Response) (*GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data Something on a connected account an agent can be pointed at: a Cal.com event type today, a Google calendar when that lands.
+			Data struct {
+				// DurationMinutes How long an appointment runs, when the provider fixes one length.
+				DurationMinutes *float64 `json:"durationMinutes"`
+
+				// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+				DurationOptions []float64 `json:"durationOptions"`
+
+				// Id Identifier within this connection. Pass it back to read one target in detail.
+				Id string `json:"id"`
+
+				// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+				IsHidden bool `json:"isHidden"`
+
+				// Label What the customer called it on the provider.
+				Label string `json:"label"`
+
+				// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
+				RequiredBookingFields []string `json:"requiredBookingFields"`
+
+				// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
+				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+				// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+				RequiresConfirmation bool `json:"requiresConfirmation"`
+
+				// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+				Target struct {
+					EventTypeId int                                                                                           `json:"eventTypeId"`
+					Provider    GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider `json:"provider"`
+				} `json:"target"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1IntegrationsMcpServerResponse parses an HTTP response from a GetV1IntegrationsMcpServerWithResponse call
+func ParseGetV1IntegrationsMcpServerResponse(rsp *http.Response) (*GetV1IntegrationsMcpServerResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1IntegrationsMcpServerResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest McpServerListResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1IntegrationsMcpServerResponse parses an HTTP response from a PostV1IntegrationsMcpServerWithResponse call
+func ParsePostV1IntegrationsMcpServerResponse(rsp *http.Response) (*PostV1IntegrationsMcpServerResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1IntegrationsMcpServerResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest McpServerSingleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1IntegrationsMcpServerDiscoverResponse parses an HTTP response from a PostV1IntegrationsMcpServerDiscoverWithResponse call
+func ParsePostV1IntegrationsMcpServerDiscoverResponse(rsp *http.Response) (*PostV1IntegrationsMcpServerDiscoverResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1IntegrationsMcpServerDiscoverResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest McpServerCatalogResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1IntegrationsMcpServerByServerIdResponse parses an HTTP response from a DeleteV1IntegrationsMcpServerByServerIdWithResponse call
+func ParseDeleteV1IntegrationsMcpServerByServerIdResponse(rsp *http.Response) (*DeleteV1IntegrationsMcpServerByServerIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1IntegrationsMcpServerByServerIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest McpServerDeleteResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1IntegrationsMcpServerByServerIdResponse parses an HTTP response from a GetV1IntegrationsMcpServerByServerIdWithResponse call
+func ParseGetV1IntegrationsMcpServerByServerIdResponse(rsp *http.Response) (*GetV1IntegrationsMcpServerByServerIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1IntegrationsMcpServerByServerIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest McpServerSingleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePatchV1IntegrationsMcpServerByServerIdResponse parses an HTTP response from a PatchV1IntegrationsMcpServerByServerIdWithResponse call
+func ParsePatchV1IntegrationsMcpServerByServerIdResponse(rsp *http.Response) (*PatchV1IntegrationsMcpServerByServerIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PatchV1IntegrationsMcpServerByServerIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest McpServerSingleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1IntegrationsMcpServerByServerIdRefreshResponse parses an HTTP response from a PostV1IntegrationsMcpServerByServerIdRefreshWithResponse call
+func ParsePostV1IntegrationsMcpServerByServerIdRefreshResponse(rsp *http.Response) (*PostV1IntegrationsMcpServerByServerIdRefreshResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1IntegrationsMcpServerByServerIdRefreshResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest McpServerSingleResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest ErrorResponse
@@ -120495,200 +122675,6 @@ func ParsePostV1PublicCampaignCreditByCampaignKeyClaimResponse(rsp *http.Respons
 			return nil, err
 		}
 		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetV1PublicProspectSimReportByTokenResponse parses an HTTP response from a GetV1PublicProspectSimReportByTokenWithResponse call
-func ParseGetV1PublicProspectSimReportByTokenResponse(rsp *http.Response) (*GetV1PublicProspectSimReportByTokenResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetV1PublicProspectSimReportByTokenResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data struct {
-				AgentLabel string `json:"agentLabel"`
-				Live       *struct {
-					ActiveIndex *float64 `json:"activeIndex"`
-					Calls       []struct {
-						CallId       string                                                                   `json:"callId"`
-						PersonaLabel string                                                                   `json:"personaLabel"`
-						State        GetV1PublicProspectSimReportByToken200JSONResponseBodyDataLiveCallsState `json:"state"`
-					} `json:"calls"`
-					Completed float64 `json:"completed"`
-					Total     float64 `json:"total"`
-				} `json:"live"`
-				ProspectName *string `json:"prospectName"`
-				Status       string  `json:"status"`
-				Teaser       *struct {
-					CallCount          float64 `json:"callCount"`
-					ChecksPassed       float64 `json:"checksPassed"`
-					ChecksTotal        float64 `json:"checksTotal"`
-					LockedFindingCount float64 `json:"lockedFindingCount"`
-					LockedThemeCount   float64 `json:"lockedThemeCount"`
-					Scorecard          []struct {
-						Name        string   `json:"name"`
-						PassRatePct *float64 `json:"passRatePct"`
-						Passed      bool     `json:"passed"`
-					} `json:"scorecard"`
-					StatTiles []struct {
-						Label string  `json:"label"`
-						Sub   *string `json:"sub"`
-						Value string  `json:"value"`
-					} `json:"statTiles"`
-					Summary []struct {
-						Body    string  `json:"body"`
-						Heading *string `json:"heading"`
-					} `json:"summary"`
-					Themes []struct {
-						AffectedCount float64 `json:"affectedCount"`
-						Severity      string  `json:"severity"`
-						Summary       string  `json:"summary"`
-						Title         string  `json:"title"`
-						TotalCount    float64 `json:"totalCount"`
-					} `json:"themes"`
-					TopFinding *struct {
-						Body  string `json:"body"`
-						Title string `json:"title"`
-					} `json:"topFinding"`
-					Verdict      string `json:"verdict"`
-					VerdictProse string `json:"verdictProse"`
-				} `json:"teaser"`
-			} `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetV1PublicProspectSimReportByTokenObserverUrlResponse parses an HTTP response from a GetV1PublicProspectSimReportByTokenObserverUrlWithResponse call
-func ParseGetV1PublicProspectSimReportByTokenObserverUrlResponse(rsp *http.Response) (*GetV1PublicProspectSimReportByTokenObserverUrlResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetV1PublicProspectSimReportByTokenObserverUrlResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data struct {
-				ExpiresAt *string `json:"expiresAt"`
-				WsUrl     *string `json:"wsUrl"`
-			} `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParsePostV1PublicProspectSimRunResponse parses an HTTP response from a PostV1PublicProspectSimRunWithResponse call
-func ParsePostV1PublicProspectSimRunResponse(rsp *http.Response) (*PostV1PublicProspectSimRunResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &PostV1PublicProspectSimRunResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Data struct {
-				ReportToken string `json:"reportToken"`
-				Status      string `json:"status"`
-			} `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
 		var dest ErrorResponse

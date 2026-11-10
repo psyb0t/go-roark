@@ -18277,6 +18277,36 @@ func (e ThresholdMetricResponseType) Valid() bool {
 	}
 }
 
+// Defines values for ToolBodyCalendarOperation.
+const (
+	ToolBodyCalendarOperationBOOK              ToolBodyCalendarOperation = "BOOK"
+	ToolBodyCalendarOperationCANCEL            ToolBodyCalendarOperation = "CANCEL"
+	ToolBodyCalendarOperationCHECKAVAILABILITY ToolBodyCalendarOperation = "CHECK_AVAILABILITY"
+	ToolBodyCalendarOperationLISTBOOKINGS      ToolBodyCalendarOperation = "LIST_BOOKINGS"
+	ToolBodyCalendarOperationLOOKUPBOOKING     ToolBodyCalendarOperation = "LOOKUP_BOOKING"
+	ToolBodyCalendarOperationRESCHEDULE        ToolBodyCalendarOperation = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the ToolBodyCalendarOperation enum.
+func (e ToolBodyCalendarOperation) Valid() bool {
+	switch e {
+	case ToolBodyCalendarOperationBOOK:
+		return true
+	case ToolBodyCalendarOperationCANCEL:
+		return true
+	case ToolBodyCalendarOperationCHECKAVAILABILITY:
+		return true
+	case ToolBodyCalendarOperationLISTBOOKINGS:
+		return true
+	case ToolBodyCalendarOperationLOOKUPBOOKING:
+		return true
+	case ToolBodyCalendarOperationRESCHEDULE:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ToolBodyInputsType.
 const (
 	ToolBodyInputsTypeBoolean ToolBodyInputsType = "boolean"
@@ -18319,6 +18349,36 @@ func (e ToolBodyRuntimeRequestMethod) Valid() bool {
 	case ToolBodyRuntimeRequestMethodPOST:
 		return true
 	case ToolBodyRuntimeRequestMethodPUT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ToolCalendarOperation.
+const (
+	ToolCalendarOperationBOOK              ToolCalendarOperation = "BOOK"
+	ToolCalendarOperationCANCEL            ToolCalendarOperation = "CANCEL"
+	ToolCalendarOperationCHECKAVAILABILITY ToolCalendarOperation = "CHECK_AVAILABILITY"
+	ToolCalendarOperationLISTBOOKINGS      ToolCalendarOperation = "LIST_BOOKINGS"
+	ToolCalendarOperationLOOKUPBOOKING     ToolCalendarOperation = "LOOKUP_BOOKING"
+	ToolCalendarOperationRESCHEDULE        ToolCalendarOperation = "RESCHEDULE"
+)
+
+// Valid indicates whether the value is a known member of the ToolCalendarOperation enum.
+func (e ToolCalendarOperation) Valid() bool {
+	switch e {
+	case ToolCalendarOperationBOOK:
+		return true
+	case ToolCalendarOperationCANCEL:
+		return true
+	case ToolCalendarOperationCHECKAVAILABILITY:
+		return true
+	case ToolCalendarOperationLISTBOOKINGS:
+		return true
+	case ToolCalendarOperationLOOKUPBOOKING:
+		return true
+	case ToolCalendarOperationRESCHEDULE:
 		return true
 	default:
 		return false
@@ -40502,6 +40562,28 @@ type ThresholdMetricResponseType string
 type ToolBody struct {
 	AgentId *openapi_types.UUID `json:"agentId,omitempty"`
 
+	// Calendar Makes this a calendar tool, which Roark runs against a connected calendar: it takes no runtime and no inputs. Omit or null for any other tool; on update, omitting it makes the tool an ordinary one.
+	Calendar *struct {
+		AppointmentTypes []struct {
+			DurationMinutes *int `json:"durationMinutes,omitempty"`
+
+			// EventTypeId For Cal.com: the event type to book
+			EventTypeId int `json:"eventTypeId"`
+
+			// Name Example: checkup
+			Name      string  `json:"name"`
+			WhenToUse *string `json:"whenToUse,omitempty"`
+		} `json:"appointmentTypes"`
+		CalendarConnectionId openapi_types.UUID `json:"calendarConnectionId"`
+		Messages             *struct {
+			Before  *string `json:"before,omitempty"`
+			Failure *string `json:"failure,omitempty"`
+			Slow    *string `json:"slow,omitempty"`
+		} `json:"messages,omitempty"`
+		Operation ToolBodyCalendarOperation `json:"operation"`
+		Simulate  *bool                     `json:"simulate,omitempty"`
+	} `json:"calendar,omitempty"`
+
 	// Description When the agent should use the tool
 	Description    string  `json:"description"`
 	ExpectedResult *string `json:"expectedResult,omitempty"`
@@ -40543,11 +40625,50 @@ type ToolBody struct {
 	} `json:"runtime,omitempty"`
 }
 
+// ToolBodyCalendarOperation defines model for ToolBody.Calendar.Operation.
+type ToolBodyCalendarOperation string
+
 // ToolBodyInputsType defines model for ToolBody.Inputs.Type.
 type ToolBodyInputsType string
 
 // ToolBodyRuntimeRequestMethod defines model for ToolBody.Runtime.Request.Method.
 type ToolBodyRuntimeRequestMethod string
+
+// ToolCalendar What a calendar tool books into. Roark runs it; it has no runtime.
+type ToolCalendar struct {
+	// AppointmentTypes The kinds of appointment the tool may reach
+	AppointmentTypes []ToolCalendarAppointmentType `json:"appointmentTypes"`
+
+	// CalendarConnectionId The connected calendar the tool books on
+	CalendarConnectionId openapi_types.UUID `json:"calendarConnectionId"`
+	Messages             ToolMessages       `json:"messages"`
+
+	// Operation The one action this tool takes on the calendar
+	Operation ToolCalendarOperation `json:"operation"`
+
+	// Simulate Every call books on a simulated calendar instead of the customer's
+	Simulate bool `json:"simulate"`
+}
+
+// ToolCalendarOperation The one action this tool takes on the calendar
+type ToolCalendarOperation string
+
+// ToolCalendarAppointmentType defines model for ToolCalendarAppointmentType.
+type ToolCalendarAppointmentType struct {
+	// DurationMinutes Only for an event type offering several durations
+	DurationMinutes *int `json:"durationMinutes"`
+
+	// EventTypeId For Cal.com: the event type it books
+	EventTypeId *int `json:"eventTypeId"`
+
+	// Name What the agent passes to name it
+	//
+	// Example: checkup
+	Name string `json:"name"`
+
+	// WhenToUse The line that tells the agent when it applies
+	WhenToUse *string `json:"whenToUse"`
+}
 
 // ToolConfig defines model for ToolConfig.
 type ToolConfig struct {
@@ -40693,9 +40814,12 @@ type ToolRequestMethod string
 // ToolResponse defines model for ToolResponse.
 type ToolResponse struct {
 	// AgentId The agent the tool is scoped to; null for the project
-	AgentId     *openapi_types.UUID `json:"agentId"`
-	CreatedAt   string              `json:"createdAt"`
-	Description *string             `json:"description"`
+	AgentId *openapi_types.UUID `json:"agentId"`
+
+	// Calendar Null for every tool that is not a calendar tool
+	Calendar    *ToolCalendar `json:"calendar"`
+	CreatedAt   string        `json:"createdAt"`
+	Description *string       `json:"description"`
 
 	// ExpectedResult How it should handle the result, for grading
 	ExpectedResult *string            `json:"expectedResult"`
@@ -59422,7 +59546,7 @@ type ClientInterface interface {
 
 	// PostV1ToolWithBody Create a tool
 	//
-	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -59431,7 +59555,7 @@ type ClientInterface interface {
 
 	// PostV1Tool Create a tool
 	//
-	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -59452,7 +59576,7 @@ type ClientInterface interface {
 
 	// PutV1ToolByToolIdWithBody Update a tool
 	//
-	// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+	// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -59461,7 +59585,7 @@ type ClientInterface interface {
 
 	// PutV1ToolByToolId Update a tool
 	//
-	// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+	// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -65295,7 +65419,7 @@ func (c *Client) GetV1Tool(ctx context.Context, params *GetV1ToolParams, reqEdit
 
 // PostV1ToolWithBody Create a tool
 //
-// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
 //
 // Takes any type of body and a specified content type.
 //
@@ -65314,7 +65438,7 @@ func (c *Client) PostV1ToolWithBody(ctx context.Context, contentType string, bod
 
 // PostV1Tool Create a tool
 //
-// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -65365,7 +65489,7 @@ func (c *Client) GetV1ToolByToolId(ctx context.Context, toolId openapi_types.UUI
 
 // PutV1ToolByToolIdWithBody Update a tool
 //
-// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 //
 // Takes any type of body and a specified content type.
 //
@@ -65384,7 +65508,7 @@ func (c *Client) PutV1ToolByToolIdWithBody(ctx context.Context, toolId openapi_t
 
 // PutV1ToolByToolId Update a tool
 //
-// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -79444,7 +79568,7 @@ type ClientWithResponsesInterface interface {
 
 	// PostV1ToolWithBodyWithResponse Create a tool
 	//
-	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -79453,7 +79577,7 @@ type ClientWithResponsesInterface interface {
 
 	// PostV1ToolWithResponse Create a tool
 	//
-	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+	// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -79478,7 +79602,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutV1ToolByToolIdWithBodyWithResponse Update a tool
 	//
-	// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+	// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -79487,7 +79611,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutV1ToolByToolIdWithResponse Update a tool
 	//
-	// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+	// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -87638,6 +87762,9 @@ type GetV1CustomerResponse struct {
 						Value  string                                                           `json:"value"`
 					} `json:"history"`
 
+					// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+					IsInferred bool `json:"isInferred"`
+
 					// IsLocked True when newer conversations cannot change this field
 					IsLocked   bool      `json:"isLocked"`
 					Key        string    `json:"key"`
@@ -87721,6 +87848,9 @@ func (r GetV1CustomerResponse) GetJSON200() *struct {
 					Source GetV1Customer200JSONResponseBodyDataItemsAttributesHistorySource `json:"source"`
 					Value  string                                                           `json:"value"`
 				} `json:"history"`
+
+				// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+				IsInferred bool `json:"isInferred"`
 
 				// IsLocked True when newer conversations cannot change this field
 				IsLocked   bool      `json:"isLocked"`
@@ -89358,6 +89488,9 @@ type GetV1CustomerByCustomerProfileIdResponse struct {
 					Value  string                                                                         `json:"value"`
 				} `json:"history"`
 
+				// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+				IsInferred bool `json:"isInferred"`
+
 				// IsLocked True when newer conversations cannot change this field
 				IsLocked   bool      `json:"isLocked"`
 				Key        string    `json:"key"`
@@ -89435,6 +89568,9 @@ func (r GetV1CustomerByCustomerProfileIdResponse) GetJSON200() *struct {
 				Source GetV1CustomerByCustomerProfileId200JSONResponseBodyDataAttributesHistorySource `json:"source"`
 				Value  string                                                                         `json:"value"`
 			} `json:"history"`
+
+			// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+			IsInferred bool `json:"isInferred"`
 
 			// IsLocked True when newer conversations cannot change this field
 			IsLocked   bool      `json:"isLocked"`
@@ -89556,6 +89692,9 @@ type DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse struct {
 					Value  string                                                                                           `json:"value"`
 				} `json:"history"`
 
+				// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+				IsInferred bool `json:"isInferred"`
+
 				// IsLocked True when newer conversations cannot change this field
 				IsLocked   bool      `json:"isLocked"`
 				Key        string    `json:"key"`
@@ -89633,6 +89772,9 @@ func (r DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetJSON200()
 				Source DeleteV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource `json:"source"`
 				Value  string                                                                                           `json:"value"`
 			} `json:"history"`
+
+			// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+			IsInferred bool `json:"isInferred"`
 
 			// IsLocked True when newer conversations cannot change this field
 			IsLocked   bool      `json:"isLocked"`
@@ -89754,6 +89896,9 @@ type PutV1CustomerByCustomerProfileIdAttributesByKeyResponse struct {
 					Value  string                                                                                        `json:"value"`
 				} `json:"history"`
 
+				// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+				IsInferred bool `json:"isInferred"`
+
 				// IsLocked True when newer conversations cannot change this field
 				IsLocked   bool      `json:"isLocked"`
 				Key        string    `json:"key"`
@@ -89833,6 +89978,9 @@ func (r PutV1CustomerByCustomerProfileIdAttributesByKeyResponse) GetJSON200() *s
 				Source PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource `json:"source"`
 				Value  string                                                                                        `json:"value"`
 			} `json:"history"`
+
+			// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+			IsInferred bool `json:"isInferred"`
 
 			// IsLocked True when newer conversations cannot change this field
 			IsLocked   bool      `json:"isLocked"`
@@ -89959,6 +90107,9 @@ type PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse struct {
 					Value  string                                                                                               `json:"value"`
 				} `json:"history"`
 
+				// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+				IsInferred bool `json:"isInferred"`
+
 				// IsLocked True when newer conversations cannot change this field
 				IsLocked   bool      `json:"isLocked"`
 				Key        string    `json:"key"`
@@ -90036,6 +90187,9 @@ func (r PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse) GetJSON2
 				Source PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource `json:"source"`
 				Value  string                                                                                               `json:"value"`
 			} `json:"history"`
+
+			// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+			IsInferred bool `json:"isInferred"`
 
 			// IsLocked True when newer conversations cannot change this field
 			IsLocked   bool      `json:"isLocked"`
@@ -90245,6 +90399,9 @@ type PutV1CustomerByCustomerProfileIdNotesResponse struct {
 					Value  string                                                                              `json:"value"`
 				} `json:"history"`
 
+				// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+				IsInferred bool `json:"isInferred"`
+
 				// IsLocked True when newer conversations cannot change this field
 				IsLocked   bool      `json:"isLocked"`
 				Key        string    `json:"key"`
@@ -90324,6 +90481,9 @@ func (r PutV1CustomerByCustomerProfileIdNotesResponse) GetJSON200() *struct {
 				Source PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource `json:"source"`
 				Value  string                                                                              `json:"value"`
 			} `json:"history"`
+
+			// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+			IsInferred bool `json:"isInferred"`
 
 			// IsLocked True when newer conversations cannot change this field
 			IsLocked   bool      `json:"isLocked"`
@@ -107161,7 +107321,7 @@ func (c *ClientWithResponses) GetV1ToolWithResponse(ctx context.Context, params 
 
 // PostV1ToolWithBodyWithResponse Create a tool
 //
-// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -107176,7 +107336,7 @@ func (c *ClientWithResponses) PostV1ToolWithBodyWithResponse(ctx context.Context
 
 // PostV1ToolWithResponse Create a tool
 //
-// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint. Header values are returned on read, so keep secrets out of them.
+// Creates a tool and declares its first version. A tool only recorded from calls under the same name is adopted; one already declared returns 409. Give it a `runtime` for a hosted agent to call your endpoint, or a `calendar` for it to book on a calendar connected to the project. Header values are returned on read, so keep secrets out of them.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -107219,7 +107379,7 @@ func (c *ClientWithResponses) GetV1ToolByToolIdWithResponse(ctx context.Context,
 
 // PutV1ToolByToolIdWithBodyWithResponse Update a tool
 //
-// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -107234,7 +107394,7 @@ func (c *ClientWithResponses) PutV1ToolByToolIdWithBodyWithResponse(ctx context.
 
 // PutV1ToolByToolIdWithResponse Update a tool
 //
-// Replaces the tool: its name, scope, inputs, description, grading hints and runtime. A field left out is cleared, so omitting agentId makes the tool project-wide. A change declares a new version; agent versions pinned to an older one keep it.
+// Replaces the tool: its name, scope, inputs, description, grading hints, runtime and calendar. A field left out is cleared, so omitting agentId makes the tool project-wide and omitting calendar makes it an ordinary tool. A change declares a new version; agent versions pinned to an older one keep it. A tool managed by config-as-code returns 409.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -112978,6 +113138,9 @@ func ParseGetV1CustomerResponse(rsp *http.Response) (*GetV1CustomerResponse, err
 							Value  string                                                           `json:"value"`
 						} `json:"history"`
 
+						// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+						IsInferred bool `json:"isInferred"`
+
 						// IsLocked True when newer conversations cannot change this field
 						IsLocked   bool      `json:"isLocked"`
 						Key        string    `json:"key"`
@@ -114255,6 +114418,9 @@ func ParseGetV1CustomerByCustomerProfileIdResponse(rsp *http.Response) (*GetV1Cu
 						Value  string                                                                         `json:"value"`
 					} `json:"history"`
 
+					// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+					IsInferred bool `json:"isInferred"`
+
 					// IsLocked True when newer conversations cannot change this field
 					IsLocked   bool      `json:"isLocked"`
 					Key        string    `json:"key"`
@@ -114370,6 +114536,9 @@ func ParseDeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse(rsp *http.R
 						Value  string                                                                                           `json:"value"`
 					} `json:"history"`
 
+					// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+					IsInferred bool `json:"isInferred"`
+
 					// IsLocked True when newer conversations cannot change this field
 					IsLocked   bool      `json:"isLocked"`
 					Key        string    `json:"key"`
@@ -114484,6 +114653,9 @@ func ParsePutV1CustomerByCustomerProfileIdAttributesByKeyResponse(rsp *http.Resp
 						Source PutV1CustomerByCustomerProfileIdAttributesByKey200JSONResponseBodyDataAttributesHistorySource `json:"source"`
 						Value  string                                                                                        `json:"value"`
 					} `json:"history"`
+
+					// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+					IsInferred bool `json:"isInferred"`
 
 					// IsLocked True when newer conversations cannot change this field
 					IsLocked   bool      `json:"isLocked"`
@@ -114606,6 +114778,9 @@ func ParsePostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse(rsp *ht
 						Source PostV1CustomerByCustomerProfileIdAttributesByKeyUnlock200JSONResponseBodyDataAttributesHistorySource `json:"source"`
 						Value  string                                                                                               `json:"value"`
 					} `json:"history"`
+
+					// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+					IsInferred bool `json:"isInferred"`
 
 					// IsLocked True when newer conversations cannot change this field
 					IsLocked   bool      `json:"isLocked"`
@@ -114781,6 +114956,9 @@ func ParsePutV1CustomerByCustomerProfileIdNotesResponse(rsp *http.Response) (*Pu
 						Source PutV1CustomerByCustomerProfileIdNotes200JSONResponseBodyDataAttributesHistorySource `json:"source"`
 						Value  string                                                                              `json:"value"`
 					} `json:"history"`
+
+					// IsInferred True when the value was inferred from the conversation, such as a gender read from a name, rather than stated. A stated value always replaces it.
+					IsInferred bool `json:"isInferred"`
 
 					// IsLocked True when newer conversations cannot change this field
 					IsLocked   bool      `json:"isLocked"`

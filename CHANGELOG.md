@@ -2,6 +2,13 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.13.0, 2026-11-10
+
+- Breaking: the anonymous attribute struct gained a required `IsInferred` field (`bool`), true when the value was inferred from the conversation and not stated. This changes the `JSON200` and `GetJSON200` types of `GetV1CustomerResponse`, `GetV1CustomerByCustomerProfileIdResponse`, `PutV1CustomerByCustomerProfileIdNotesResponse`, `PutV1CustomerByCustomerProfileIdAttributesByKeyResponse`, `DeleteV1CustomerByCustomerProfileIdAttributesByKeyResponse` and `PostV1CustomerByCustomerProfileIdAttributesByKeyUnlockResponse`. Code that builds or assigns these struct types must be updated. Code that reads fields by name still compiles.
+- Added calendar tools. `ToolBody` has an optional `Calendar` field, and `ToolResponse` has a `Calendar` field (`*ToolCalendar`), null for other tools.
+- Added the types `ToolCalendar` and `ToolCalendarAppointmentType`, and the `ToolCalendarOperation` and `ToolBodyCalendarOperation` enums with the values `BOOK`, `CANCEL`, `CHECK_AVAILABILITY`, `LIST_BOOKINGS`, `LOOKUP_BOOKING` and `RESCHEDULE`. Each enum has a `Valid` method.
+- Updated the doc comments of the tool create and replace methods to describe the `calendar` field.
+
 ## v0.12.0, 2026-11-08
 
 - Breaking: the anonymous customer struct gained an optional `ExternalId` field (`*string`) in `CallCreate.Customer`, `CallCreate.Customers`, `ChatCreate.Customer` and `ChatCreate.Customers`. The same change changed the `JSON200` and `GetJSON200` types of `GetV1CallResponse`, `GetV1CallByCallIdResponse`, `PostV1CallResponse`, `GetV1ChatResponse`, `GetV1ChatByIdResponse` and `PostV1ChatResponse`. Composite literals of these struct types must be updated. Code that sets fields by name still compiles.

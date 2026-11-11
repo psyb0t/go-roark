@@ -28280,9 +28280,16 @@ type AgentVersionResponse struct {
 	Summary *string `json:"summary"`
 
 	// UpdatedAt ISO 8601.
-	UpdatedAt    string   `json:"updatedAt"`
+	UpdatedAt string `json:"updatedAt"`
+
+	// VadMaxSilenceSecs The longest silence the agent waits through when the caller sounds unfinished, never shorter than vadStopSecs. Null uses vadStopSecs when that is set, else the default.
+	VadMaxSilenceSecs *float64 `json:"vadMaxSilenceSecs"`
+
+	// VadStartSecs Seconds of speech before it counts as the caller talking. Null uses the default.
 	VadStartSecs *float64 `json:"vadStartSecs"`
-	VadStopSecs  *float64 `json:"vadStopSecs"`
+
+	// VadStopSecs Seconds of silence before the agent checks whether the caller has finished. Null uses the default.
+	VadStopSecs *float64 `json:"vadStopSecs"`
 
 	// VersionNumber v1, v2, ... assigned on publish; null on a draft.
 	VersionNumber *int `json:"versionNumber"`
@@ -41574,8 +41581,9 @@ type UpdateAgentDraftInput struct {
 				ToolDefinitionId openapi_types.UUID `json:"toolDefinitionId"`
 			} `json:"tools"`
 		} `json:"subAgents,omitempty"`
-		VadStartSecs *float64 `json:"vadStartSecs,omitempty"`
-		VadStopSecs  *float64 `json:"vadStopSecs,omitempty"`
+		VadMaxSilenceSecs *float64 `json:"vadMaxSilenceSecs,omitempty"`
+		VadStartSecs      *float64 `json:"vadStartSecs,omitempty"`
+		VadStopSecs       *float64 `json:"vadStopSecs,omitempty"`
 	} `json:"settings"`
 }
 

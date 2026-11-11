@@ -2,6 +2,13 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.15.0, 2026-11-11
+
+- Breaking: the anonymous `Settings` struct of `UpdateAgentDraftInput` gained an optional `VadMaxSilenceSecs` field (`*float64`). Composite literals of this struct type must be updated. Code that sets fields by name still compiles.
+- Added `AgentVersionResponse.VadMaxSilenceSecs` (`*float64`), the longest silence the agent waits through when the caller sounds unfinished. Null uses `VadStopSecs` when that is set, else the default.
+- Added doc comments to `AgentVersionResponse.VadStartSecs` and `AgentVersionResponse.VadStopSecs`.
+- Raised the minimum Go version in `go.mod` from 1.26.10 to 1.26.11, which fixes the `net/http` vulnerability GO-2026-6859. The development image uses the matching Go 1.26.11 base image.
+
 ## v0.14.0, 2026-11-10
 
 - Breaking: the calendar connection endpoints moved from `/v1/calendar/connection` to `/v1/integrations/calendar`. The old methods are removed: `GetV1CalendarConnection`, `PostV1CalendarConnection`, `GetV1CalendarConnectionByConnectionId`, `PatchV1CalendarConnectionByConnectionId`, `DeleteV1CalendarConnectionByConnectionId`, `PostV1CalendarConnectionByConnectionIdCheck`, `GetV1CalendarConnectionByConnectionIdTargets` and `GetV1CalendarConnectionByConnectionIdTargetsByTargetId`, with their `WithBody` and `WithResponse` variants and response types. The replacements are `GetV1IntegrationsCalendar`, `PostV1IntegrationsCalendar`, `GetV1IntegrationsCalendarByConnectionId`, `PatchV1IntegrationsCalendarByConnectionId`, `DeleteV1IntegrationsCalendarByConnectionId`, `PostV1IntegrationsCalendarByConnectionIdCheck` and the two `Targets` methods.

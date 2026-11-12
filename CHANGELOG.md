@@ -2,6 +2,15 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.16.0, 2026-11-12
+
+- Breaking: calendar targets are now a union of Cal.com and Google targets. In `GetV1IntegrationsCalendarByConnectionIdTargetsResponse` and `GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse`, the `JSON200` and `GetJSON200` types changed. The old `...DataTargetProvider` and `...DataTargetProviderCALCOM` types are removed. The replacements are the `...DataTarget0` (Cal.com, provider `CAL_COM`) and `...DataTarget1` (Google, provider `GOOGLE`) types, with a `Target` union wrapper. Both variants carry `CalendarId` and `Provider`.
+- Breaking: the appointment types in `ToolBody.Calendar` and `ToolHandler1.AppointmentTypes` changed. `EventTypeId` is now optional (`*int`), and a new optional `CalendarTargetId` field was added. Code that sets or reads `EventTypeId` as an `int` must be updated.
+- Added Google calendar endpoints: `PostV1IntegrationsCalendarGoogleAuthorizeUrl` and `GetV1IntegrationsCalendarByConnectionIdCalendars`.
+- Added calendar target management: `PostV1IntegrationsCalendarByConnectionIdTargets`, `PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId` and `DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId`. Each has `WithBody` and `WithResponse` variants, a request builder and a response parser, and is on `ClientInterface` and `ClientWithResponsesInterface`.
+- Added an optional `Timezone` field to calendar-related request and response bodies.
+- Added provider values `GROQ`, `META`, `PHONIC` and `RIME` for LLM and speech-to-speech configs, `SONIOX` for speech-to-text, and `ASSEMBLYAI` and `DEEPGRAM` for text-to-speech. Examples: `AgentConfigLlmProviderGROQ`, `AgentSttConfigProviderSONIOX`, `AgentTtsConfigProviderDEEPGRAM` and the matching `PostV1AgentBuildJSONBody...` constants.
+
 ## v0.15.0, 2026-11-11
 
 - Breaking: the anonymous `Settings` struct of `UpdateAgentDraftInput` gained an optional `VadMaxSilenceSecs` field (`*float64`). Composite literals of this struct type must be updated. Code that sets fields by name still compiles.

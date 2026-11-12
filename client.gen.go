@@ -112,7 +112,11 @@ const (
 	AgentConfigLlmProviderAWS        AgentConfigLlmProvider = "AWS"
 	AgentConfigLlmProviderELEVENLABS AgentConfigLlmProvider = "ELEVENLABS"
 	AgentConfigLlmProviderGOOGLE     AgentConfigLlmProvider = "GOOGLE"
+	AgentConfigLlmProviderGROQ       AgentConfigLlmProvider = "GROQ"
+	AgentConfigLlmProviderMETA       AgentConfigLlmProvider = "META"
 	AgentConfigLlmProviderOPENAI     AgentConfigLlmProvider = "OPENAI"
+	AgentConfigLlmProviderPHONIC     AgentConfigLlmProvider = "PHONIC"
+	AgentConfigLlmProviderRIME       AgentConfigLlmProvider = "RIME"
 	AgentConfigLlmProviderULTRAVOX   AgentConfigLlmProvider = "ULTRAVOX"
 	AgentConfigLlmProviderXAI        AgentConfigLlmProvider = "XAI"
 )
@@ -128,7 +132,15 @@ func (e AgentConfigLlmProvider) Valid() bool {
 		return true
 	case AgentConfigLlmProviderGOOGLE:
 		return true
+	case AgentConfigLlmProviderGROQ:
+		return true
+	case AgentConfigLlmProviderMETA:
+		return true
 	case AgentConfigLlmProviderOPENAI:
+		return true
+	case AgentConfigLlmProviderPHONIC:
+		return true
+	case AgentConfigLlmProviderRIME:
 		return true
 	case AgentConfigLlmProviderULTRAVOX:
 		return true
@@ -220,6 +232,7 @@ const (
 	AgentConfigSttProviderDEEPGRAM      AgentConfigSttProvider = "DEEPGRAM"
 	AgentConfigSttProviderELEVENLABS    AgentConfigSttProvider = "ELEVENLABS"
 	AgentConfigSttProviderOPENAIWHISPER AgentConfigSttProvider = "OPENAI_WHISPER"
+	AgentConfigSttProviderSONIOX        AgentConfigSttProvider = "SONIOX"
 	AgentConfigSttProviderSPEECHMATICS  AgentConfigSttProvider = "SPEECHMATICS"
 )
 
@@ -234,6 +247,8 @@ func (e AgentConfigSttProvider) Valid() bool {
 		return true
 	case AgentConfigSttProviderOPENAIWHISPER:
 		return true
+	case AgentConfigSttProviderSONIOX:
+		return true
 	case AgentConfigSttProviderSPEECHMATICS:
 		return true
 	default:
@@ -243,7 +258,9 @@ func (e AgentConfigSttProvider) Valid() bool {
 
 // Defines values for AgentConfigTtsProvider.
 const (
+	AgentConfigTtsProviderASSEMBLYAI AgentConfigTtsProvider = "ASSEMBLYAI"
 	AgentConfigTtsProviderCARTESIA   AgentConfigTtsProvider = "CARTESIA"
+	AgentConfigTtsProviderDEEPGRAM   AgentConfigTtsProvider = "DEEPGRAM"
 	AgentConfigTtsProviderELEVENLABS AgentConfigTtsProvider = "ELEVENLABS"
 	AgentConfigTtsProviderOPENAI     AgentConfigTtsProvider = "OPENAI"
 	AgentConfigTtsProviderRIME       AgentConfigTtsProvider = "RIME"
@@ -252,7 +269,11 @@ const (
 // Valid indicates whether the value is a known member of the AgentConfigTtsProvider enum.
 func (e AgentConfigTtsProvider) Valid() bool {
 	switch e {
+	case AgentConfigTtsProviderASSEMBLYAI:
+		return true
 	case AgentConfigTtsProviderCARTESIA:
+		return true
+	case AgentConfigTtsProviderDEEPGRAM:
 		return true
 	case AgentConfigTtsProviderELEVENLABS:
 		return true
@@ -382,7 +403,11 @@ const (
 	AgentLlmConfigProviderAWS        AgentLlmConfigProvider = "AWS"
 	AgentLlmConfigProviderELEVENLABS AgentLlmConfigProvider = "ELEVENLABS"
 	AgentLlmConfigProviderGOOGLE     AgentLlmConfigProvider = "GOOGLE"
+	AgentLlmConfigProviderGROQ       AgentLlmConfigProvider = "GROQ"
+	AgentLlmConfigProviderMETA       AgentLlmConfigProvider = "META"
 	AgentLlmConfigProviderOPENAI     AgentLlmConfigProvider = "OPENAI"
+	AgentLlmConfigProviderPHONIC     AgentLlmConfigProvider = "PHONIC"
+	AgentLlmConfigProviderRIME       AgentLlmConfigProvider = "RIME"
 	AgentLlmConfigProviderULTRAVOX   AgentLlmConfigProvider = "ULTRAVOX"
 	AgentLlmConfigProviderXAI        AgentLlmConfigProvider = "XAI"
 )
@@ -398,7 +423,15 @@ func (e AgentLlmConfigProvider) Valid() bool {
 		return true
 	case AgentLlmConfigProviderGOOGLE:
 		return true
+	case AgentLlmConfigProviderGROQ:
+		return true
+	case AgentLlmConfigProviderMETA:
+		return true
 	case AgentLlmConfigProviderOPENAI:
+		return true
+	case AgentLlmConfigProviderPHONIC:
+		return true
+	case AgentLlmConfigProviderRIME:
 		return true
 	case AgentLlmConfigProviderULTRAVOX:
 		return true
@@ -460,7 +493,11 @@ const (
 	AgentSpeechToSpeechConfigProviderAWS        AgentSpeechToSpeechConfigProvider = "AWS"
 	AgentSpeechToSpeechConfigProviderELEVENLABS AgentSpeechToSpeechConfigProvider = "ELEVENLABS"
 	AgentSpeechToSpeechConfigProviderGOOGLE     AgentSpeechToSpeechConfigProvider = "GOOGLE"
+	AgentSpeechToSpeechConfigProviderGROQ       AgentSpeechToSpeechConfigProvider = "GROQ"
+	AgentSpeechToSpeechConfigProviderMETA       AgentSpeechToSpeechConfigProvider = "META"
 	AgentSpeechToSpeechConfigProviderOPENAI     AgentSpeechToSpeechConfigProvider = "OPENAI"
+	AgentSpeechToSpeechConfigProviderPHONIC     AgentSpeechToSpeechConfigProvider = "PHONIC"
+	AgentSpeechToSpeechConfigProviderRIME       AgentSpeechToSpeechConfigProvider = "RIME"
 	AgentSpeechToSpeechConfigProviderULTRAVOX   AgentSpeechToSpeechConfigProvider = "ULTRAVOX"
 	AgentSpeechToSpeechConfigProviderXAI        AgentSpeechToSpeechConfigProvider = "XAI"
 )
@@ -476,7 +513,15 @@ func (e AgentSpeechToSpeechConfigProvider) Valid() bool {
 		return true
 	case AgentSpeechToSpeechConfigProviderGOOGLE:
 		return true
+	case AgentSpeechToSpeechConfigProviderGROQ:
+		return true
+	case AgentSpeechToSpeechConfigProviderMETA:
+		return true
 	case AgentSpeechToSpeechConfigProviderOPENAI:
+		return true
+	case AgentSpeechToSpeechConfigProviderPHONIC:
+		return true
+	case AgentSpeechToSpeechConfigProviderRIME:
 		return true
 	case AgentSpeechToSpeechConfigProviderULTRAVOX:
 		return true
@@ -508,6 +553,7 @@ const (
 	AgentSttConfigProviderDEEPGRAM      AgentSttConfigProvider = "DEEPGRAM"
 	AgentSttConfigProviderELEVENLABS    AgentSttConfigProvider = "ELEVENLABS"
 	AgentSttConfigProviderOPENAIWHISPER AgentSttConfigProvider = "OPENAI_WHISPER"
+	AgentSttConfigProviderSONIOX        AgentSttConfigProvider = "SONIOX"
 	AgentSttConfigProviderSPEECHMATICS  AgentSttConfigProvider = "SPEECHMATICS"
 )
 
@@ -521,6 +567,8 @@ func (e AgentSttConfigProvider) Valid() bool {
 	case AgentSttConfigProviderELEVENLABS:
 		return true
 	case AgentSttConfigProviderOPENAIWHISPER:
+		return true
+	case AgentSttConfigProviderSONIOX:
 		return true
 	case AgentSttConfigProviderSPEECHMATICS:
 		return true
@@ -549,7 +597,9 @@ func (e AgentSttConfigTurnDetection) Valid() bool {
 
 // Defines values for AgentTtsConfigProvider.
 const (
+	AgentTtsConfigProviderASSEMBLYAI AgentTtsConfigProvider = "ASSEMBLYAI"
 	AgentTtsConfigProviderCARTESIA   AgentTtsConfigProvider = "CARTESIA"
+	AgentTtsConfigProviderDEEPGRAM   AgentTtsConfigProvider = "DEEPGRAM"
 	AgentTtsConfigProviderELEVENLABS AgentTtsConfigProvider = "ELEVENLABS"
 	AgentTtsConfigProviderOPENAI     AgentTtsConfigProvider = "OPENAI"
 	AgentTtsConfigProviderRIME       AgentTtsConfigProvider = "RIME"
@@ -558,7 +608,11 @@ const (
 // Valid indicates whether the value is a known member of the AgentTtsConfigProvider enum.
 func (e AgentTtsConfigProvider) Valid() bool {
 	switch e {
+	case AgentTtsConfigProviderASSEMBLYAI:
+		return true
 	case AgentTtsConfigProviderCARTESIA:
+		return true
+	case AgentTtsConfigProviderDEEPGRAM:
 		return true
 	case AgentTtsConfigProviderELEVENLABS:
 		return true
@@ -19048,7 +19102,11 @@ const (
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderAWS        UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "AWS"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderELEVENLABS UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "ELEVENLABS"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderGOOGLE     UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "GOOGLE"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderGROQ       UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "GROQ"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderMETA       UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "META"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderOPENAI     UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "OPENAI"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderPHONIC     UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "PHONIC"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderRIME       UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "RIME"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderULTRAVOX   UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "ULTRAVOX"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderXAI        UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "XAI"
 )
@@ -19064,7 +19122,15 @@ func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider) Valid() 
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderGOOGLE:
 		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderGROQ:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderMETA:
+		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderOPENAI:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderPHONIC:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderRIME:
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderULTRAVOX:
 		return true
@@ -19081,6 +19147,7 @@ const (
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderDEEPGRAM      UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "DEEPGRAM"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderELEVENLABS    UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "ELEVENLABS"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderOPENAIWHISPER UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "OPENAI_WHISPER"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderSONIOX        UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "SONIOX"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderSPEECHMATICS  UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "SPEECHMATICS"
 )
 
@@ -19094,6 +19161,8 @@ func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider) Valid() 
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderELEVENLABS:
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderOPENAIWHISPER:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderSONIOX:
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderSPEECHMATICS:
 		return true
@@ -19122,7 +19191,9 @@ func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttTurnDetection) Val
 
 // Defines values for UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider.
 const (
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderASSEMBLYAI UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "ASSEMBLYAI"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderCARTESIA   UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "CARTESIA"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderDEEPGRAM   UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "DEEPGRAM"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderELEVENLABS UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "ELEVENLABS"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderOPENAI     UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "OPENAI"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderRIME       UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "RIME"
@@ -19131,7 +19202,11 @@ const (
 // Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider enum.
 func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider) Valid() bool {
 	switch e {
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderASSEMBLYAI:
+		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderCARTESIA:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderDEEPGRAM:
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderELEVENLABS:
 		return true
@@ -19165,7 +19240,11 @@ const (
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderAWS        UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "AWS"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderELEVENLABS UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "ELEVENLABS"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderGOOGLE     UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "GOOGLE"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderGROQ       UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "GROQ"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderMETA       UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "META"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderOPENAI     UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "OPENAI"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderPHONIC     UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "PHONIC"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderRIME       UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "RIME"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderULTRAVOX   UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "ULTRAVOX"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderXAI        UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "XAI"
 )
@@ -19181,7 +19260,15 @@ func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvide
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderGOOGLE:
 		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderGROQ:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderMETA:
+		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderOPENAI:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderPHONIC:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderRIME:
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderULTRAVOX:
 		return true
@@ -21304,7 +21391,11 @@ const (
 	PostV1AgentBuildJSONBodyLlmProviderAWS        PostV1AgentBuildJSONBodyLlmProvider = "AWS"
 	PostV1AgentBuildJSONBodyLlmProviderELEVENLABS PostV1AgentBuildJSONBodyLlmProvider = "ELEVENLABS"
 	PostV1AgentBuildJSONBodyLlmProviderGOOGLE     PostV1AgentBuildJSONBodyLlmProvider = "GOOGLE"
+	PostV1AgentBuildJSONBodyLlmProviderGROQ       PostV1AgentBuildJSONBodyLlmProvider = "GROQ"
+	PostV1AgentBuildJSONBodyLlmProviderMETA       PostV1AgentBuildJSONBodyLlmProvider = "META"
 	PostV1AgentBuildJSONBodyLlmProviderOPENAI     PostV1AgentBuildJSONBodyLlmProvider = "OPENAI"
+	PostV1AgentBuildJSONBodyLlmProviderPHONIC     PostV1AgentBuildJSONBodyLlmProvider = "PHONIC"
+	PostV1AgentBuildJSONBodyLlmProviderRIME       PostV1AgentBuildJSONBodyLlmProvider = "RIME"
 	PostV1AgentBuildJSONBodyLlmProviderULTRAVOX   PostV1AgentBuildJSONBodyLlmProvider = "ULTRAVOX"
 	PostV1AgentBuildJSONBodyLlmProviderXAI        PostV1AgentBuildJSONBodyLlmProvider = "XAI"
 )
@@ -21320,7 +21411,15 @@ func (e PostV1AgentBuildJSONBodyLlmProvider) Valid() bool {
 		return true
 	case PostV1AgentBuildJSONBodyLlmProviderGOOGLE:
 		return true
+	case PostV1AgentBuildJSONBodyLlmProviderGROQ:
+		return true
+	case PostV1AgentBuildJSONBodyLlmProviderMETA:
+		return true
 	case PostV1AgentBuildJSONBodyLlmProviderOPENAI:
+		return true
+	case PostV1AgentBuildJSONBodyLlmProviderPHONIC:
+		return true
+	case PostV1AgentBuildJSONBodyLlmProviderRIME:
 		return true
 	case PostV1AgentBuildJSONBodyLlmProviderULTRAVOX:
 		return true
@@ -21337,6 +21436,7 @@ const (
 	PostV1AgentBuildJSONBodySttProviderDEEPGRAM      PostV1AgentBuildJSONBodySttProvider = "DEEPGRAM"
 	PostV1AgentBuildJSONBodySttProviderELEVENLABS    PostV1AgentBuildJSONBodySttProvider = "ELEVENLABS"
 	PostV1AgentBuildJSONBodySttProviderOPENAIWHISPER PostV1AgentBuildJSONBodySttProvider = "OPENAI_WHISPER"
+	PostV1AgentBuildJSONBodySttProviderSONIOX        PostV1AgentBuildJSONBodySttProvider = "SONIOX"
 	PostV1AgentBuildJSONBodySttProviderSPEECHMATICS  PostV1AgentBuildJSONBodySttProvider = "SPEECHMATICS"
 )
 
@@ -21351,6 +21451,8 @@ func (e PostV1AgentBuildJSONBodySttProvider) Valid() bool {
 		return true
 	case PostV1AgentBuildJSONBodySttProviderOPENAIWHISPER:
 		return true
+	case PostV1AgentBuildJSONBodySttProviderSONIOX:
+		return true
 	case PostV1AgentBuildJSONBodySttProviderSPEECHMATICS:
 		return true
 	default:
@@ -21360,7 +21462,9 @@ func (e PostV1AgentBuildJSONBodySttProvider) Valid() bool {
 
 // Defines values for PostV1AgentBuildJSONBodyTtsProvider.
 const (
+	PostV1AgentBuildJSONBodyTtsProviderASSEMBLYAI PostV1AgentBuildJSONBodyTtsProvider = "ASSEMBLYAI"
 	PostV1AgentBuildJSONBodyTtsProviderCARTESIA   PostV1AgentBuildJSONBodyTtsProvider = "CARTESIA"
+	PostV1AgentBuildJSONBodyTtsProviderDEEPGRAM   PostV1AgentBuildJSONBodyTtsProvider = "DEEPGRAM"
 	PostV1AgentBuildJSONBodyTtsProviderELEVENLABS PostV1AgentBuildJSONBodyTtsProvider = "ELEVENLABS"
 	PostV1AgentBuildJSONBodyTtsProviderOPENAI     PostV1AgentBuildJSONBodyTtsProvider = "OPENAI"
 	PostV1AgentBuildJSONBodyTtsProviderRIME       PostV1AgentBuildJSONBodyTtsProvider = "RIME"
@@ -21369,7 +21473,11 @@ const (
 // Valid indicates whether the value is a known member of the PostV1AgentBuildJSONBodyTtsProvider enum.
 func (e PostV1AgentBuildJSONBodyTtsProvider) Valid() bool {
 	switch e {
+	case PostV1AgentBuildJSONBodyTtsProviderASSEMBLYAI:
+		return true
 	case PostV1AgentBuildJSONBodyTtsProviderCARTESIA:
+		return true
+	case PostV1AgentBuildJSONBodyTtsProviderDEEPGRAM:
 		return true
 	case PostV1AgentBuildJSONBodyTtsProviderELEVENLABS:
 		return true
@@ -24178,30 +24286,135 @@ func (e PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStat
 	}
 }
 
-// Defines values for GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider.
+// Defines values for GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0Provider.
 const (
-	GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProviderCALCOM GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider = "CAL_COM"
+	GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0ProviderCALCOM GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0Provider = "CAL_COM"
 )
 
-// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider enum.
-func (e GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider) Valid() bool {
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0Provider enum.
+func (e GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0Provider) Valid() bool {
 	switch e {
-	case GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProviderCALCOM:
+	case GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0ProviderCALCOM:
 		return true
 	default:
 		return false
 	}
 }
 
-// Defines values for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider.
+// Defines values for GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1Provider.
 const (
-	GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProviderCALCOM GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider = "CAL_COM"
+	GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1ProviderGOOGLE GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1Provider = "GOOGLE"
 )
 
-// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider enum.
-func (e GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider) Valid() bool {
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1Provider enum.
+func (e GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1Provider) Valid() bool {
 	switch e {
-	case GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProviderCALCOM:
+	case GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1ProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0Provider.
+const (
+	PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0ProviderCALCOM PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0Provider = "CAL_COM"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0Provider enum.
+func (e PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0Provider) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0ProviderCALCOM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1Provider.
+const (
+	PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1ProviderGOOGLE PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1Provider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1Provider enum.
+func (e PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1Provider) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1ProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataDeleted.
+const (
+	DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataDeletedTrue DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataDeleted = true
+)
+
+// Valid indicates whether the value is a known member of the DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataDeleted enum.
+func (e DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataDeleted) Valid() bool {
+	switch e {
+	case DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataDeletedTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider.
+const (
+	GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0ProviderCALCOM GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider = "CAL_COM"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider enum.
+func (e GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0ProviderCALCOM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider.
+const (
+	GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1ProviderGOOGLE GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider enum.
+func (e GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1ProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider.
+const (
+	PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0ProviderCALCOM PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider = "CAL_COM"
+)
+
+// Valid indicates whether the value is a known member of the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider enum.
+func (e PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider) Valid() bool {
+	switch e {
+	case PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0ProviderCALCOM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider.
+const (
+	PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1ProviderGOOGLE PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider = "GOOGLE"
+)
+
+// Valid indicates whether the value is a known member of the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider enum.
+func (e PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider) Valid() bool {
+	switch e {
+	case PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1ProviderGOOGLE:
 		return true
 	default:
 		return false
@@ -41167,10 +41380,12 @@ type ToolBody struct {
 	// Calendar Makes this a calendar tool, which Roark runs against a connected calendar: it takes no runtime and no inputs. Omit or null for any other tool; on update, omitting it makes the tool an ordinary one.
 	Calendar *struct {
 		AppointmentTypes []struct {
-			DurationMinutes *int `json:"durationMinutes,omitempty"`
+			// CalendarTargetId For a calendar with no scheduling of its own: the bookable target to book into
+			CalendarTargetId *openapi_types.UUID `json:"calendarTargetId,omitempty"`
+			DurationMinutes  *int                `json:"durationMinutes,omitempty"`
 
 			// EventTypeId For Cal.com: the event type to book
-			EventTypeId int `json:"eventTypeId"`
+			EventTypeId *int `json:"eventTypeId,omitempty"`
 
 			// Name Example: checkup
 			Name      string  `json:"name"`
@@ -41270,6 +41485,9 @@ type ToolCalendarOperation string
 
 // ToolCalendarAppointmentType defines model for ToolCalendarAppointmentType.
 type ToolCalendarAppointmentType struct {
+	// CalendarTargetId For a calendar with no scheduling of its own: the bookable target it books into, which carries the duration, buffers, notice, horizon and weekly hours
+	CalendarTargetId *string `json:"calendarTargetId"`
+
 	// DurationMinutes Only for an event type offering several durations
 	DurationMinutes *int `json:"durationMinutes"`
 
@@ -41345,8 +41563,9 @@ type ToolHandler0Type string
 // ToolHandler1 defines model for ToolHandler.1.
 type ToolHandler1 struct {
 	AppointmentTypes []struct {
+		CalendarTarget  *string `json:"calendarTarget,omitempty"`
 		DurationMinutes *int    `json:"durationMinutes,omitempty"`
-		EventTypeId     int     `json:"eventTypeId"`
+		EventTypeId     *int    `json:"eventTypeId,omitempty"`
 		Name            string  `json:"name"`
 		WhenToUse       *string `json:"whenToUse,omitempty"`
 	} `json:"appointmentTypes"`
@@ -44323,7 +44542,7 @@ type PostV1IntegrationsCalendarJSONBody struct {
 	// Label Customer-facing name for this account, unique within the project. Required.
 	Label string `json:"label"`
 
-	// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+	// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 	Provider PostV1IntegrationsCalendarJSONBodyProvider `json:"provider"`
 
 	// Timezone The named IANA timezone to offer slots in, for example `America/Los_Angeles`. Omit to adopt the provider account’s own timezone. A fixed offset such as `-08:00` is rejected: it does not observe DST.
@@ -44347,6 +44566,18 @@ type PostV1IntegrationsCalendar201JSONResponseBodyDataProvider string
 
 // PostV1IntegrationsCalendar201JSONResponseBodyDataStatus defines parameters for PostV1IntegrationsCalendar.
 type PostV1IntegrationsCalendar201JSONResponseBodyDataStatus string
+
+// PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONBody defines parameters for PostV1IntegrationsCalendarGoogleAuthorizeUrl.
+type PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONBody struct {
+	// Label Customer-facing name for the connection, unique within the project. Decided now because the consent screen has nowhere to carry it.
+	Label string `json:"label"`
+
+	// LoginHint The Google account to preselect on the consent screen. A hint only: it is ignored if the user is signed into another account, and nothing is authorized by it.
+	LoginHint *openapi_types.Email `json:"loginHint,omitempty"`
+
+	// Timezone The named IANA timezone to offer slots in, for example `America/Los_Angeles`. Omit to adopt the Google account’s own. A fixed offset such as `-08:00` is rejected: it does not observe DST.
+	Timezone *string `json:"timezone,omitempty"`
+}
 
 // DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeleted defines parameters for DeleteV1IntegrationsCalendarByConnectionId.
 type DeleteV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataDeleted bool
@@ -44408,11 +44639,185 @@ type PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvide
 // PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus defines parameters for PostV1IntegrationsCalendarByConnectionIdCheck.
 type PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataStatus string
 
-// GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider defines parameters for GetV1IntegrationsCalendarByConnectionIdTargets.
-type GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider string
+// GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0 defines parameters for GetV1IntegrationsCalendarByConnectionIdTargets.
+type GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0 struct {
+	EventTypeId int                                                                                  `json:"eventTypeId"`
+	Provider    GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0Provider `json:"provider"`
+}
 
-// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider defines parameters for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
-type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider string
+// GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0Provider defines parameters for GetV1IntegrationsCalendarByConnectionIdTargets.
+type GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0Provider string
+
+// GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1 defines parameters for GetV1IntegrationsCalendarByConnectionIdTargets.
+type GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1 struct {
+	CalendarId string                                                                               `json:"calendarId"`
+	Provider   GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1Provider `json:"provider"`
+	TargetId   openapi_types.UUID                                                                   `json:"targetId"`
+}
+
+// GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1Provider defines parameters for GetV1IntegrationsCalendarByConnectionIdTargets.
+type GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1Provider string
+
+// GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target defines parameters for GetV1IntegrationsCalendarByConnectionIdTargets.
+type GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target struct {
+	union json.RawMessage
+}
+
+// PostV1IntegrationsCalendarByConnectionIdTargetsJSONBody defines parameters for PostV1IntegrationsCalendarByConnectionIdTargets.
+type PostV1IntegrationsCalendarByConnectionIdTargetsJSONBody struct {
+	// AllDayEventsBlock Whether an all-day event closes the day. Defaults to true, because a calendar marks all-day events free unless their creator says otherwise and a public holiday entered as one would otherwise be bookable.
+	AllDayEventsBlock  *bool `json:"allDayEventsBlock,omitempty"`
+	BufferAfterMinutes *int  `json:"bufferAfterMinutes,omitempty"`
+
+	// BufferBeforeMinutes Dead time before an appointment, counted as busy when a slot is offered. Defaults to 0.
+	BufferBeforeMinutes *int `json:"bufferBeforeMinutes,omitempty"`
+
+	// CalendarId The calendar to write appointments to, from `GET /v1/integrations/calendar/{connectionId}/calendars`. `primary` is accepted and stored as the account’s own id.
+	//
+	// Example: clinic@example.com
+	CalendarId string `json:"calendarId"`
+
+	// DurationMinutes Example: 30
+	DurationMinutes int `json:"durationMinutes"`
+
+	// HorizonDays How far ahead appointments may be made. Defaults to 30.
+	HorizonDays *int `json:"horizonDays,omitempty"`
+
+	// Hours The windows of the week appointments are offered in. Omit to adopt Monday to Friday, 09:00 to 17:00. A target with no windows offers nothing at all, which reads to a caller as a permanently full diary.
+	Hours *[]struct {
+		EndMinute int `json:"endMinute"`
+
+		// StartMinute Minutes from local midnight, in the connection’s timezone.
+		StartMinute int `json:"startMinute"`
+
+		// Weekday ISO weekday: Monday is 1, Sunday is 7.
+		Weekday int `json:"weekday"`
+	} `json:"hours,omitempty"`
+
+	// MinNoticeMinutes How soon from now an appointment may be made. Defaults to 120.
+	MinNoticeMinutes *int `json:"minNoticeMinutes,omitempty"`
+
+	// Name Unique within the connection, and how a config file refers to this target. Letters, digits, spaces, _ or -.
+	//
+	// Example: Front desk
+	Name string `json:"name"`
+
+	// SlotIntervalMinutes The grid slots are offered on. Defaults to the duration, which gives back-to-back appointments.
+	SlotIntervalMinutes *int `json:"slotIntervalMinutes,omitempty"`
+}
+
+// PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0 defines parameters for PostV1IntegrationsCalendarByConnectionIdTargets.
+type PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0 struct {
+	EventTypeId int                                                                                   `json:"eventTypeId"`
+	Provider    PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0Provider `json:"provider"`
+}
+
+// PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0Provider defines parameters for PostV1IntegrationsCalendarByConnectionIdTargets.
+type PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0Provider string
+
+// PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1 defines parameters for PostV1IntegrationsCalendarByConnectionIdTargets.
+type PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1 struct {
+	CalendarId string                                                                                `json:"calendarId"`
+	Provider   PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1Provider `json:"provider"`
+	TargetId   openapi_types.UUID                                                                    `json:"targetId"`
+}
+
+// PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1Provider defines parameters for PostV1IntegrationsCalendarByConnectionIdTargets.
+type PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1Provider string
+
+// PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target defines parameters for PostV1IntegrationsCalendarByConnectionIdTargets.
+type PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target struct {
+	union json.RawMessage
+}
+
+// DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataDeleted defines parameters for DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataDeleted bool
+
+// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0 defines parameters for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0 struct {
+	EventTypeId int                                                                                            `json:"eventTypeId"`
+	Provider    GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider `json:"provider"`
+}
+
+// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider defines parameters for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider string
+
+// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1 defines parameters for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1 struct {
+	CalendarId string                                                                                         `json:"calendarId"`
+	Provider   GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider `json:"provider"`
+	TargetId   openapi_types.UUID                                                                             `json:"targetId"`
+}
+
+// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider defines parameters for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider string
+
+// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target defines parameters for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target struct {
+	union json.RawMessage
+}
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdJSONBody defines parameters for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdJSONBody struct {
+	// AllDayEventsBlock Whether an all-day event closes the day. Defaults to true, because a calendar marks all-day events free unless their creator says otherwise and a public holiday entered as one would otherwise be bookable.
+	AllDayEventsBlock  *bool `json:"allDayEventsBlock,omitempty"`
+	BufferAfterMinutes *int  `json:"bufferAfterMinutes,omitempty"`
+
+	// BufferBeforeMinutes Dead time before an appointment, counted as busy when a slot is offered. Defaults to 0.
+	BufferBeforeMinutes *int `json:"bufferBeforeMinutes,omitempty"`
+
+	// DurationMinutes Example: 30
+	DurationMinutes *int `json:"durationMinutes,omitempty"`
+
+	// HorizonDays How far ahead appointments may be made. Defaults to 30.
+	HorizonDays *int `json:"horizonDays,omitempty"`
+
+	// Hours The windows of the week appointments are offered in. Omit to adopt Monday to Friday, 09:00 to 17:00. A target with no windows offers nothing at all, which reads to a caller as a permanently full diary.
+	Hours *[]struct {
+		EndMinute int `json:"endMinute"`
+
+		// StartMinute Minutes from local midnight, in the connection’s timezone.
+		StartMinute int `json:"startMinute"`
+
+		// Weekday ISO weekday: Monday is 1, Sunday is 7.
+		Weekday int `json:"weekday"`
+	} `json:"hours,omitempty"`
+
+	// MinNoticeMinutes How soon from now an appointment may be made. Defaults to 120.
+	MinNoticeMinutes *int `json:"minNoticeMinutes,omitempty"`
+
+	// Name Unique within the connection, and how a config file refers to this target. Letters, digits, spaces, _ or -.
+	//
+	// Example: Front desk
+	Name *string `json:"name,omitempty"`
+
+	// SlotIntervalMinutes The grid slots are offered on. Defaults to the duration, which gives back-to-back appointments.
+	SlotIntervalMinutes *int `json:"slotIntervalMinutes,omitempty"`
+}
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0 defines parameters for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0 struct {
+	EventTypeId int                                                                                            `json:"eventTypeId"`
+	Provider    PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider `json:"provider"`
+}
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider defines parameters for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider string
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1 defines parameters for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1 struct {
+	CalendarId string                                                                                         `json:"calendarId"`
+	Provider   PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider `json:"provider"`
+	TargetId   openapi_types.UUID                                                                             `json:"targetId"`
+}
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider defines parameters for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider string
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target defines parameters for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target struct {
+	union json.RawMessage
+}
 
 // GetV1IssueParams defines parameters for GetV1Issue.
 type GetV1IssueParams struct {
@@ -45253,8 +45658,17 @@ type PutV1HttpRequestDefinitionByDefinitionIdJSONRequestBody = UpdateHttpRequest
 // PostV1IntegrationsCalendarJSONRequestBody defines body for PostV1IntegrationsCalendar for application/json ContentType.
 type PostV1IntegrationsCalendarJSONRequestBody PostV1IntegrationsCalendarJSONBody
 
+// PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONRequestBody defines body for PostV1IntegrationsCalendarGoogleAuthorizeUrl for application/json ContentType.
+type PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONRequestBody PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONBody
+
 // PatchV1IntegrationsCalendarByConnectionIdJSONRequestBody defines body for PatchV1IntegrationsCalendarByConnectionId for application/json ContentType.
 type PatchV1IntegrationsCalendarByConnectionIdJSONRequestBody PatchV1IntegrationsCalendarByConnectionIdJSONBody
+
+// PostV1IntegrationsCalendarByConnectionIdTargetsJSONRequestBody defines body for PostV1IntegrationsCalendarByConnectionIdTargets for application/json ContentType.
+type PostV1IntegrationsCalendarByConnectionIdTargetsJSONRequestBody PostV1IntegrationsCalendarByConnectionIdTargetsJSONBody
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdJSONRequestBody defines body for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId for application/json ContentType.
+type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdJSONRequestBody PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdJSONBody
 
 // PostV1IntegrationsMcpServerJSONRequestBody defines body for PostV1IntegrationsMcpServer for application/json ContentType.
 type PostV1IntegrationsMcpServerJSONRequestBody = McpServerCreateBody
@@ -56714,6 +57128,254 @@ func (t *GetV1ChatByIdTranscript200JSONResponseBody_Data_Participants_Item) Unma
 	return err
 }
 
+// AsGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0 returns the union data inside the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target as a GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0
+func (t GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) AsGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0() (GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0, error) {
+	var body GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0 overwrites any union data inside the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target as the provided GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0
+func (t *GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) FromGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0(v GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0 performs a merge with any union data inside the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target, using the provided GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0
+func (t *GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) MergeGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0(v GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1 returns the union data inside the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target as a GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1
+func (t GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) AsGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1() (GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1, error) {
+	var body GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1 overwrites any union data inside the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target as the provided GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1
+func (t *GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) FromGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1(v GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1 performs a merge with any union data inside the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target, using the provided GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1
+func (t *GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) MergeGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1(v GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0 returns the union data inside the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target as a PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0
+func (t PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) AsPostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0() (PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0, error) {
+	var body PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0 overwrites any union data inside the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target as the provided PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0
+func (t *PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) FromPostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0(v PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0 performs a merge with any union data inside the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target, using the provided PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0
+func (t *PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) MergePostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0(v PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1 returns the union data inside the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target as a PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1
+func (t PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) AsPostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1() (PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1, error) {
+	var body PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1 overwrites any union data inside the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target as the provided PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1
+func (t *PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) FromPostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1(v PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1 performs a merge with any union data inside the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target, using the provided PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1
+func (t *PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) MergePostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1(v PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0 returns the union data inside the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as a GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0
+func (t GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) AsGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0() (GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0, error) {
+	var body GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0 overwrites any union data inside the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as the provided GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0
+func (t *GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) FromGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0(v GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0 performs a merge with any union data inside the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target, using the provided GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0
+func (t *GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MergeGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0(v GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1 returns the union data inside the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as a GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1
+func (t GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) AsGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1() (GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1, error) {
+	var body GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1 overwrites any union data inside the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as the provided GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1
+func (t *GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) FromGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1(v GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1 performs a merge with any union data inside the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target, using the provided GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1
+func (t *GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MergeGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1(v GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0 returns the union data inside the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as a PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0
+func (t PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) AsPutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0() (PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0, error) {
+	var body PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0 overwrites any union data inside the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as the provided PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0
+func (t *PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) FromPutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0(v PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0 performs a merge with any union data inside the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target, using the provided PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0
+func (t *PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MergePutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0(v PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1 returns the union data inside the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as a PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1
+func (t PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) AsPutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1() (PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1, error) {
+	var body PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1 overwrites any union data inside the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as the provided PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1
+func (t *PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) FromPutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1(v PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1 performs a merge with any union data inside the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target, using the provided PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1
+func (t *PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MergePutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1(v PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsCallAnalysisCompletedWebhook returns the union data inside the WebhookEventJSONBody as a CallAnalysisCompletedWebhook
 func (t WebhookEventJSONBody) AsCallAnalysisCompletedWebhook() (CallAnalysisCompletedWebhook, error) {
 	var body CallAnalysisCompletedWebhook
@@ -58825,6 +59487,24 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
 	PostV1IntegrationsCalendar(ctx context.Context, body PostV1IntegrationsCalendarJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// PostV1IntegrationsCalendarGoogleAuthorizeUrlWithBody Start connecting a Google Calendar
+	//
+	// Returns a URL to open in a browser. Google has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies that both calendar permissions were granted, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/integrations/calendar/google/authorize-url (the `PostV1IntegrationsCalendarGoogleAuthorizeUrl` operationId).
+	PostV1IntegrationsCalendarGoogleAuthorizeUrlWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1IntegrationsCalendarGoogleAuthorizeUrl Start connecting a Google Calendar
+	//
+	// Returns a URL to open in a browser. Google has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies that both calendar permissions were granted, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/integrations/calendar/google/authorize-url (the `PostV1IntegrationsCalendarGoogleAuthorizeUrl` operationId).
+	PostV1IntegrationsCalendarGoogleAuthorizeUrl(ctx context.Context, body PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// DeleteV1IntegrationsCalendarByConnectionId Delete a calendar connection
 	//
 	// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
@@ -58857,6 +59537,13 @@ type ClientInterface interface {
 	// Corresponds with PATCH /v1/integrations/calendar/{connectionId} (the `PatchV1IntegrationsCalendarByConnectionId` operationId).
 	PatchV1IntegrationsCalendarByConnectionId(ctx context.Context, connectionId string, body PatchV1IntegrationsCalendarByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetV1IntegrationsCalendarByConnectionIdCalendars List the calendars a bookable target can be created on
+	//
+	// Only for a connection whose `capabilities.roarkOwnsBookingPolicy` is true: on a scheduling system the bookable things already exist and `GET /targets` returns them. Calendars the account can only read are left out rather than listed and refused: one would answer availability perfectly well and then fail the booking, mid-call, with a caller on the line.
+	//
+	// Corresponds with GET /v1/integrations/calendar/{connectionId}/calendars (the `GetV1IntegrationsCalendarByConnectionIdCalendars` operationId).
+	GetV1IntegrationsCalendarByConnectionIdCalendars(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// PostV1IntegrationsCalendarByConnectionIdCheck Check a calendar connection
 	//
 	// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
@@ -58871,12 +59558,55 @@ type ClientInterface interface {
 	// Corresponds with GET /v1/integrations/calendar/{connectionId}/targets (the `GetV1IntegrationsCalendarByConnectionIdTargets` operationId).
 	GetV1IntegrationsCalendarByConnectionIdTargets(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// PostV1IntegrationsCalendarByConnectionIdTargetsWithBody Create a bookable target
+	//
+	// Only for a connection whose `capabilities.roarkOwnsBookingPolicy` is true. A calendar with no scheduling of its own has nothing an agent can be pointed at, so the thing a calendar tool books into is created here: the calendar, how long an appointment runs, and the hours it is offered in. The policy and the hours are written together, because a target with no hours offers nothing. Refused if the calendar is one the account can only read.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/integrations/calendar/{connectionId}/targets (the `PostV1IntegrationsCalendarByConnectionIdTargets` operationId).
+	PostV1IntegrationsCalendarByConnectionIdTargetsWithBody(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1IntegrationsCalendarByConnectionIdTargets Create a bookable target
+	//
+	// Only for a connection whose `capabilities.roarkOwnsBookingPolicy` is true. A calendar with no scheduling of its own has nothing an agent can be pointed at, so the thing a calendar tool books into is created here: the calendar, how long an appointment runs, and the hours it is offered in. The policy and the hours are written together, because a target with no hours offers nothing. Refused if the calendar is one the account can only read.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/integrations/calendar/{connectionId}/targets (the `PostV1IntegrationsCalendarByConnectionIdTargets` operationId).
+	PostV1IntegrationsCalendarByConnectionIdTargets(ctx context.Context, connectionId string, body PostV1IntegrationsCalendarByConnectionIdTargetsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId Delete a bookable target
+	//
+	// Refused while a calendar tool still books into it, naming the tools. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who deleted the target. Appointments already recorded against it are kept.
+	//
+	// Corresponds with DELETE /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+	DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId Read one bookable target
 	//
 	// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
 	//
 	// Corresponds with GET /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
 	GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithBody Update a bookable target
+	//
+	// Changes what agents ALREADY PUBLISHED against this target book, with no new tool version, the same thing editing a Cal.com event type on cal.com does. `hours` replaces the whole week when present, because a rota is described as a week and a partial update of one window has no meaning anybody would expect. The calendar cannot be changed: it is the target’s identity for the booking ledger, so moving it would orphan every appointment made on the old one.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+	PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithBody(ctx context.Context, connectionId string, targetId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId Update a bookable target
+	//
+	// Changes what agents ALREADY PUBLISHED against this target book, with no new tool version, the same thing editing a Cal.com event type on cal.com does. `hours` replaces the whole week when present, because a rota is described as a week and a partial update of one window has no meaning anybody would expect. The calendar cannot be changed: it is the target’s identity for the booking ledger, so moving it would orphan every appointment made on the old one.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+	PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId(ctx context.Context, connectionId string, targetId string, body PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1IntegrationsMcpServer List MCP servers
 	//
@@ -63232,6 +63962,44 @@ func (c *Client) PostV1IntegrationsCalendar(ctx context.Context, body PostV1Inte
 	return c.Client.Do(req)
 }
 
+// PostV1IntegrationsCalendarGoogleAuthorizeUrlWithBody Start connecting a Google Calendar
+//
+// Returns a URL to open in a browser. Google has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies that both calendar permissions were granted, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/integrations/calendar/google/authorize-url (the `PostV1IntegrationsCalendarGoogleAuthorizeUrl` operationId).
+func (c *Client) PostV1IntegrationsCalendarGoogleAuthorizeUrlWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsCalendarGoogleAuthorizeUrlRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1IntegrationsCalendarGoogleAuthorizeUrl Start connecting a Google Calendar
+//
+// Returns a URL to open in a browser. Google has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies that both calendar permissions were granted, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/integrations/calendar/google/authorize-url (the `PostV1IntegrationsCalendarGoogleAuthorizeUrl` operationId).
+func (c *Client) PostV1IntegrationsCalendarGoogleAuthorizeUrl(ctx context.Context, body PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsCalendarGoogleAuthorizeUrlRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // DeleteV1IntegrationsCalendarByConnectionId Delete a calendar connection
 //
 // Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
@@ -63304,6 +64072,23 @@ func (c *Client) PatchV1IntegrationsCalendarByConnectionId(ctx context.Context, 
 	return c.Client.Do(req)
 }
 
+// GetV1IntegrationsCalendarByConnectionIdCalendars List the calendars a bookable target can be created on
+//
+// Only for a connection whose `capabilities.roarkOwnsBookingPolicy` is true: on a scheduling system the bookable things already exist and `GET /targets` returns them. Calendars the account can only read are left out rather than listed and refused: one would answer availability perfectly well and then fail the booking, mid-call, with a caller on the line.
+//
+// Corresponds with GET /v1/integrations/calendar/{connectionId}/calendars (the `GetV1IntegrationsCalendarByConnectionIdCalendars` operationId).
+func (c *Client) GetV1IntegrationsCalendarByConnectionIdCalendars(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1IntegrationsCalendarByConnectionIdCalendarsRequest(c.Server, connectionId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // PostV1IntegrationsCalendarByConnectionIdCheck Check a calendar connection
 //
 // Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
@@ -63338,6 +64123,61 @@ func (c *Client) GetV1IntegrationsCalendarByConnectionIdTargets(ctx context.Cont
 	return c.Client.Do(req)
 }
 
+// PostV1IntegrationsCalendarByConnectionIdTargetsWithBody Create a bookable target
+//
+// Only for a connection whose `capabilities.roarkOwnsBookingPolicy` is true. A calendar with no scheduling of its own has nothing an agent can be pointed at, so the thing a calendar tool books into is created here: the calendar, how long an appointment runs, and the hours it is offered in. The policy and the hours are written together, because a target with no hours offers nothing. Refused if the calendar is one the account can only read.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/integrations/calendar/{connectionId}/targets (the `PostV1IntegrationsCalendarByConnectionIdTargets` operationId).
+func (c *Client) PostV1IntegrationsCalendarByConnectionIdTargetsWithBody(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsCalendarByConnectionIdTargetsRequestWithBody(c.Server, connectionId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1IntegrationsCalendarByConnectionIdTargets Create a bookable target
+//
+// Only for a connection whose `capabilities.roarkOwnsBookingPolicy` is true. A calendar with no scheduling of its own has nothing an agent can be pointed at, so the thing a calendar tool books into is created here: the calendar, how long an appointment runs, and the hours it is offered in. The policy and the hours are written together, because a target with no hours offers nothing. Refused if the calendar is one the account can only read.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/integrations/calendar/{connectionId}/targets (the `PostV1IntegrationsCalendarByConnectionIdTargets` operationId).
+func (c *Client) PostV1IntegrationsCalendarByConnectionIdTargets(ctx context.Context, connectionId string, body PostV1IntegrationsCalendarByConnectionIdTargetsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsCalendarByConnectionIdTargetsRequest(c.Server, connectionId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId Delete a bookable target
+//
+// Refused while a calendar tool still books into it, naming the tools. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who deleted the target. Appointments already recorded against it are kept.
+//
+// Corresponds with DELETE /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+func (c *Client) DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest(c.Server, connectionId, targetId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId Read one bookable target
 //
 // The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
@@ -63345,6 +64185,44 @@ func (c *Client) GetV1IntegrationsCalendarByConnectionIdTargets(ctx context.Cont
 // Corresponds with GET /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
 func (c *Client) GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest(c.Server, connectionId, targetId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithBody Update a bookable target
+//
+// Changes what agents ALREADY PUBLISHED against this target book, with no new tool version, the same thing editing a Cal.com event type on cal.com does. `hours` replaces the whole week when present, because a rota is described as a week and a partial update of one window has no meaning anybody would expect. The calendar cannot be changed: it is the target’s identity for the booking ledger, so moving it would orphan every appointment made on the old one.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+func (c *Client) PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithBody(ctx context.Context, connectionId string, targetId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequestWithBody(c.Server, connectionId, targetId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId Update a bookable target
+//
+// Changes what agents ALREADY PUBLISHED against this target book, with no new tool version, the same thing editing a Cal.com event type on cal.com does. `hours` replaces the whole week when present, because a rota is described as a week and a partial update of one window has no meaning anybody would expect. The calendar cannot be changed: it is the target’s identity for the booking ledger, so moving it would orphan every appointment made on the old one.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+func (c *Client) PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId(ctx context.Context, connectionId string, targetId string, body PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest(c.Server, connectionId, targetId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -71922,6 +72800,46 @@ func NewPostV1IntegrationsCalendarRequestWithBody(server string, contentType str
 	return req, nil
 }
 
+// NewPostV1IntegrationsCalendarGoogleAuthorizeUrlRequest calls the generic PostV1IntegrationsCalendarGoogleAuthorizeUrl builder with application/json body
+func NewPostV1IntegrationsCalendarGoogleAuthorizeUrlRequest(server string, body PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1IntegrationsCalendarGoogleAuthorizeUrlRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1IntegrationsCalendarGoogleAuthorizeUrlRequestWithBody constructs an http.Request for the PostV1IntegrationsCalendarGoogleAuthorizeUrl method, with any body, and a specified content type
+func NewPostV1IntegrationsCalendarGoogleAuthorizeUrlRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar/google/authorize-url")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewDeleteV1IntegrationsCalendarByConnectionIdRequest constructs an http.Request for the DeleteV1IntegrationsCalendarByConnectionId method
 func NewDeleteV1IntegrationsCalendarByConnectionIdRequest(server string, connectionId string) (*http.Request, error) {
 	var err error
@@ -72037,6 +72955,40 @@ func NewPatchV1IntegrationsCalendarByConnectionIdRequestWithBody(server string, 
 	return req, nil
 }
 
+// NewGetV1IntegrationsCalendarByConnectionIdCalendarsRequest constructs an http.Request for the GetV1IntegrationsCalendarByConnectionIdCalendars method
+func NewGetV1IntegrationsCalendarByConnectionIdCalendarsRequest(server string, connectionId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar/%s/calendars", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewPostV1IntegrationsCalendarByConnectionIdCheckRequest constructs an http.Request for the PostV1IntegrationsCalendarByConnectionIdCheck method
 func NewPostV1IntegrationsCalendarByConnectionIdCheckRequest(server string, connectionId string) (*http.Request, error) {
 	var err error
@@ -72105,6 +73057,94 @@ func NewGetV1IntegrationsCalendarByConnectionIdTargetsRequest(server string, con
 	return req, nil
 }
 
+// NewPostV1IntegrationsCalendarByConnectionIdTargetsRequest calls the generic PostV1IntegrationsCalendarByConnectionIdTargets builder with application/json body
+func NewPostV1IntegrationsCalendarByConnectionIdTargetsRequest(server string, connectionId string, body PostV1IntegrationsCalendarByConnectionIdTargetsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1IntegrationsCalendarByConnectionIdTargetsRequestWithBody(server, connectionId, "application/json", bodyReader)
+}
+
+// NewPostV1IntegrationsCalendarByConnectionIdTargetsRequestWithBody constructs an http.Request for the PostV1IntegrationsCalendarByConnectionIdTargets method, with any body, and a specified content type
+func NewPostV1IntegrationsCalendarByConnectionIdTargetsRequestWithBody(server string, connectionId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar/%s/targets", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest constructs an http.Request for the DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId method
+func NewDeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest(server string, connectionId string, targetId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "targetId", targetId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar/%s/targets/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest constructs an http.Request for the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId method
 func NewGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest(server string, connectionId string, targetId string) (*http.Request, error) {
 	var err error
@@ -72142,6 +73182,60 @@ func NewGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest(server s
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewPutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest calls the generic PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId builder with application/json body
+func NewPutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequest(server string, connectionId string, targetId string, body PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequestWithBody(server, connectionId, targetId, "application/json", bodyReader)
+}
+
+// NewPutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequestWithBody constructs an http.Request for the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId method, with any body, and a specified content type
+func NewPutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdRequestWithBody(server string, connectionId string, targetId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "connectionId", connectionId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "targetId", targetId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar/%s/targets/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -79180,6 +80274,24 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
 	PostV1IntegrationsCalendarWithResponse(ctx context.Context, body PostV1IntegrationsCalendarJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarResponse, error)
 
+	// PostV1IntegrationsCalendarGoogleAuthorizeUrlWithBodyWithResponse Start connecting a Google Calendar
+	//
+	// Returns a URL to open in a browser. Google has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies that both calendar permissions were granted, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/calendar/google/authorize-url (the `PostV1IntegrationsCalendarGoogleAuthorizeUrl` operationId).
+	PostV1IntegrationsCalendarGoogleAuthorizeUrlWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse, error)
+
+	// PostV1IntegrationsCalendarGoogleAuthorizeUrlWithResponse Start connecting a Google Calendar
+	//
+	// Returns a URL to open in a browser. Google has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies that both calendar permissions were granted, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/calendar/google/authorize-url (the `PostV1IntegrationsCalendarGoogleAuthorizeUrl` operationId).
+	PostV1IntegrationsCalendarGoogleAuthorizeUrlWithResponse(ctx context.Context, body PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse, error)
+
 	// DeleteV1IntegrationsCalendarByConnectionIdWithResponse Delete a calendar connection
 	//
 	// Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
@@ -79216,6 +80328,15 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PATCH /v1/integrations/calendar/{connectionId} (the `PatchV1IntegrationsCalendarByConnectionId` operationId).
 	PatchV1IntegrationsCalendarByConnectionIdWithResponse(ctx context.Context, connectionId string, body PatchV1IntegrationsCalendarByConnectionIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchV1IntegrationsCalendarByConnectionIdResponse, error)
 
+	// GetV1IntegrationsCalendarByConnectionIdCalendarsWithResponse List the calendars a bookable target can be created on
+	//
+	// Only for a connection whose `capabilities.roarkOwnsBookingPolicy` is true: on a scheduling system the bookable things already exist and `GET /targets` returns them. Calendars the account can only read are left out rather than listed and refused: one would answer availability perfectly well and then fail the booking, mid-call, with a caller on the line.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/integrations/calendar/{connectionId}/calendars (the `GetV1IntegrationsCalendarByConnectionIdCalendars` operationId).
+	GetV1IntegrationsCalendarByConnectionIdCalendarsWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1IntegrationsCalendarByConnectionIdCalendarsResponse, error)
+
 	// PostV1IntegrationsCalendarByConnectionIdCheckWithResponse Check a calendar connection
 	//
 	// Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
@@ -79234,6 +80355,33 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /v1/integrations/calendar/{connectionId}/targets (the `GetV1IntegrationsCalendarByConnectionIdTargets` operationId).
 	GetV1IntegrationsCalendarByConnectionIdTargetsWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1IntegrationsCalendarByConnectionIdTargetsResponse, error)
 
+	// PostV1IntegrationsCalendarByConnectionIdTargetsWithBodyWithResponse Create a bookable target
+	//
+	// Only for a connection whose `capabilities.roarkOwnsBookingPolicy` is true. A calendar with no scheduling of its own has nothing an agent can be pointed at, so the thing a calendar tool books into is created here: the calendar, how long an appointment runs, and the hours it is offered in. The policy and the hours are written together, because a target with no hours offers nothing. Refused if the calendar is one the account can only read.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/calendar/{connectionId}/targets (the `PostV1IntegrationsCalendarByConnectionIdTargets` operationId).
+	PostV1IntegrationsCalendarByConnectionIdTargetsWithBodyWithResponse(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarByConnectionIdTargetsResponse, error)
+
+	// PostV1IntegrationsCalendarByConnectionIdTargetsWithResponse Create a bookable target
+	//
+	// Only for a connection whose `capabilities.roarkOwnsBookingPolicy` is true. A calendar with no scheduling of its own has nothing an agent can be pointed at, so the thing a calendar tool books into is created here: the calendar, how long an appointment runs, and the hours it is offered in. The policy and the hours are written together, because a target with no hours offers nothing. Refused if the calendar is one the account can only read.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/calendar/{connectionId}/targets (the `PostV1IntegrationsCalendarByConnectionIdTargets` operationId).
+	PostV1IntegrationsCalendarByConnectionIdTargetsWithResponse(ctx context.Context, connectionId string, body PostV1IntegrationsCalendarByConnectionIdTargetsJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarByConnectionIdTargetsResponse, error)
+
+	// DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse Delete a bookable target
+	//
+	// Refused while a calendar tool still books into it, naming the tools. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who deleted the target. Appointments already recorded against it are kept.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+	DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error)
+
 	// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse Read one bookable target
 	//
 	// The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
@@ -79242,6 +80390,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with GET /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
 	GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error)
+
+	// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithBodyWithResponse Update a bookable target
+	//
+	// Changes what agents ALREADY PUBLISHED against this target book, with no new tool version, the same thing editing a Cal.com event type on cal.com does. `hours` replaces the whole week when present, because a rota is described as a week and a partial update of one window has no meaning anybody would expect. The calendar cannot be changed: it is the target’s identity for the booking ledger, so moving it would orphan every appointment made on the old one.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+	PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithBodyWithResponse(ctx context.Context, connectionId string, targetId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error)
+
+	// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse Update a bookable target
+	//
+	// Changes what agents ALREADY PUBLISHED against this target book, with no new tool version, the same thing editing a Cal.com event type on cal.com does. `hours` replaces the whole week when present, because a rota is described as a week and a partial update of one window has no meaning anybody would expect. The calendar cannot be changed: it is the target’s identity for the booking ledger, so moving it would orphan every appointment made on the old one.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+	PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse(ctx context.Context, connectionId string, targetId string, body PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error)
 
 	// GetV1IntegrationsMcpServerWithResponse List MCP servers
 	//
@@ -91906,7 +93072,7 @@ type GetV1IntegrationsCalendarResponse struct {
 
 			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 			Capabilities struct {
-				// Auth How this provider is authenticated.
+				// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 				Auth GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -91918,7 +93084,7 @@ type GetV1IntegrationsCalendarResponse struct {
 				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -91940,7 +93106,7 @@ type GetV1IntegrationsCalendarResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 			Provider GetV1IntegrationsCalendar200JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -91983,7 +93149,7 @@ func (r GetV1IntegrationsCalendarResponse) GetJSON200() *struct {
 
 		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 		Capabilities struct {
-			// Auth How this provider is authenticated.
+			// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 			Auth GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -91995,7 +93161,7 @@ func (r GetV1IntegrationsCalendarResponse) GetJSON200() *struct {
 			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -92017,7 +93183,7 @@ func (r GetV1IntegrationsCalendarResponse) GetJSON200() *struct {
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 		Provider GetV1IntegrationsCalendar200JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -92100,7 +93266,7 @@ type PostV1IntegrationsCalendarResponse struct {
 
 			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 			Capabilities struct {
-				// Auth How this provider is authenticated.
+				// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 				Auth PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -92112,7 +93278,7 @@ type PostV1IntegrationsCalendarResponse struct {
 				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -92134,7 +93300,7 @@ type PostV1IntegrationsCalendarResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 			Provider PostV1IntegrationsCalendar201JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -92172,7 +93338,7 @@ func (r PostV1IntegrationsCalendarResponse) GetJSON201() *struct {
 
 		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 		Capabilities struct {
-			// Auth How this provider is authenticated.
+			// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 			Auth PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -92184,7 +93350,7 @@ func (r PostV1IntegrationsCalendarResponse) GetJSON201() *struct {
 			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -92206,7 +93372,7 @@ func (r PostV1IntegrationsCalendarResponse) GetJSON201() *struct {
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 		Provider PostV1IntegrationsCalendar201JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -92271,6 +93437,90 @@ func (r PostV1IntegrationsCalendarResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r PostV1IntegrationsCalendarResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			// AuthorizeUrl Open this in a browser. After the customer consents, Google returns to Roark, which exchanges the code, verifies the credential and stores the connection. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+			AuthorizeUrl string `json:"authorizeUrl"`
+
+			// ExpiresAt When the link stops working, ISO 8601. Start again after that.
+			ExpiresAt string `json:"expiresAt"`
+
+			// State The opaque single-use value this flow is identified by, echoed so a caller can correlate its own UI. Not a credential and not accepted anywhere as one.
+			State string `json:"state"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse) GetJSON200() *struct {
+	Data struct {
+		// AuthorizeUrl Open this in a browser. After the customer consents, Google returns to Roark, which exchanges the code, verifies the credential and stores the connection. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+		AuthorizeUrl string `json:"authorizeUrl"`
+
+		// ExpiresAt When the link stops working, ISO 8601. Start again after that.
+		ExpiresAt string `json:"expiresAt"`
+
+		// State The opaque single-use value this flow is identified by, echoed so a caller can correlate its own UI. Not a credential and not accepted anywhere as one.
+		State string `json:"state"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -92374,7 +93624,7 @@ type GetV1IntegrationsCalendarByConnectionIdResponse struct {
 
 			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 			Capabilities struct {
-				// Auth How this provider is authenticated.
+				// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 				Auth GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -92386,7 +93636,7 @@ type GetV1IntegrationsCalendarByConnectionIdResponse struct {
 				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -92408,7 +93658,7 @@ type GetV1IntegrationsCalendarByConnectionIdResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 			Provider GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -92444,7 +93694,7 @@ func (r GetV1IntegrationsCalendarByConnectionIdResponse) GetJSON200() *struct {
 
 		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 		Capabilities struct {
-			// Auth How this provider is authenticated.
+			// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 			Auth GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -92456,7 +93706,7 @@ func (r GetV1IntegrationsCalendarByConnectionIdResponse) GetJSON200() *struct {
 			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -92478,7 +93728,7 @@ func (r GetV1IntegrationsCalendarByConnectionIdResponse) GetJSON200() *struct {
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 		Provider GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -92556,7 +93806,7 @@ type PatchV1IntegrationsCalendarByConnectionIdResponse struct {
 
 			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 			Capabilities struct {
-				// Auth How this provider is authenticated.
+				// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 				Auth PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -92568,7 +93818,7 @@ type PatchV1IntegrationsCalendarByConnectionIdResponse struct {
 				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -92590,7 +93840,7 @@ type PatchV1IntegrationsCalendarByConnectionIdResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 			Provider PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -92630,7 +93880,7 @@ func (r PatchV1IntegrationsCalendarByConnectionIdResponse) GetJSON200() *struct 
 
 		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 		Capabilities struct {
-			// Auth How this provider is authenticated.
+			// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 			Auth PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -92642,7 +93892,7 @@ func (r PatchV1IntegrationsCalendarByConnectionIdResponse) GetJSON200() *struct 
 			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -92664,7 +93914,7 @@ func (r PatchV1IntegrationsCalendarByConnectionIdResponse) GetJSON200() *struct 
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 		Provider PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -92740,6 +93990,112 @@ func (r PatchV1IntegrationsCalendarByConnectionIdResponse) ContentType() string 
 	return ""
 }
 
+type GetV1IntegrationsCalendarByConnectionIdCalendarsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data []struct {
+			// CanWrite Always true: a calendar that cannot be written to is not listed.
+			CanWrite bool `json:"canWrite"`
+
+			// Id Pass this as `calendarId` when creating a target.
+			Id        string `json:"id"`
+			IsPrimary bool   `json:"isPrimary"`
+
+			// Label What the calendar is called on the account.
+			Label string `json:"label"`
+
+			// Timezone The calendar’s own timezone, when it reports one.
+			Timezone *string `json:"timezone"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdCalendarsResponse) GetJSON200() *struct {
+	Data []struct {
+		// CanWrite Always true: a calendar that cannot be written to is not listed.
+		CanWrite bool `json:"canWrite"`
+
+		// Id Pass this as `calendarId` when creating a target.
+		Id        string `json:"id"`
+		IsPrimary bool   `json:"isPrimary"`
+
+		// Label What the calendar is called on the account.
+		Label string `json:"label"`
+
+		// Timezone The calendar’s own timezone, when it reports one.
+		Timezone *string `json:"timezone"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdCalendarsResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdCalendarsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdCalendarsResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdCalendarsResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdCalendarsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1IntegrationsCalendarByConnectionIdCalendarsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1IntegrationsCalendarByConnectionIdCalendarsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1IntegrationsCalendarByConnectionIdCalendarsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1IntegrationsCalendarByConnectionIdCalendarsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type PostV1IntegrationsCalendarByConnectionIdCheckResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -92752,7 +94108,7 @@ type PostV1IntegrationsCalendarByConnectionIdCheckResponse struct {
 
 			// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 			Capabilities struct {
-				// Auth How this provider is authenticated.
+				// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 				Auth PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 				// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -92764,7 +94120,7 @@ type PostV1IntegrationsCalendarByConnectionIdCheckResponse struct {
 				// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 				RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-				// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+				// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 				RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 				// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -92786,7 +94142,7 @@ type PostV1IntegrationsCalendarByConnectionIdCheckResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 			Provider PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -92824,7 +94180,7 @@ func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) GetJSON200() *str
 
 		// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 		Capabilities struct {
-			// Auth How this provider is authenticated.
+			// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 			Auth PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 			// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -92836,7 +94192,7 @@ func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) GetJSON200() *str
 			// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-			// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+			// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 			RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 			// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -92858,7 +94214,7 @@ func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) GetJSON200() *str
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 		Provider PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -92950,14 +94306,40 @@ type GetV1IntegrationsCalendarByConnectionIdTargetsResponse struct {
 			// Label What the customer called it on the provider.
 			Label string `json:"label"`
 
+			// Policy The booking policy Roark applies, for a calendar with no scheduling of its own. Null on a scheduling system, which owns its own rules, so this one field says which kind of provider you are looking at without matching on the provider name.
+			Policy *struct {
+				// AllDayEventsBlock Whether an all-day event closes the day. On by default: a calendar marks all-day events free unless their creator says otherwise, so a public holiday entered as one would otherwise still be bookable.
+				AllDayEventsBlock  bool `json:"allDayEventsBlock"`
+				BufferAfterMinutes int  `json:"bufferAfterMinutes"`
+
+				// BufferBeforeMinutes Dead time before an appointment, counted as busy.
+				BufferBeforeMinutes int `json:"bufferBeforeMinutes"`
+				DurationMinutes     int `json:"durationMinutes"`
+
+				// HorizonDays How far ahead appointments may be made.
+				HorizonDays int `json:"horizonDays"`
+				Hours       []struct {
+					EndMinute int `json:"endMinute"`
+
+					// StartMinute Minutes from local midnight, in the connection’s timezone.
+					StartMinute int `json:"startMinute"`
+
+					// Weekday ISO weekday: Monday is 1, Sunday is 7.
+					Weekday int `json:"weekday"`
+				} `json:"hours"`
+
+				// MinNoticeMinutes How soon from now an appointment may be made.
+				MinNoticeMinutes int `json:"minNoticeMinutes"`
+
+				// SlotIntervalMinutes The grid slots are offered on, measured from each bookable window’s own start rather than the hour.
+				SlotIntervalMinutes int `json:"slotIntervalMinutes"`
+			} `json:"policy"`
+
 			// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
 			RequiresConfirmation bool `json:"requiresConfirmation"`
 
 			// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
-			Target struct {
-				EventTypeId int                                                                                 `json:"eventTypeId"`
-				Provider    GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider `json:"provider"`
-			} `json:"target"`
+			Target GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target `json:"target"`
 		} `json:"data"`
 	}
 	// JSON401 the response for an HTTP 401 `application/json` response
@@ -92988,14 +94370,40 @@ func (r GetV1IntegrationsCalendarByConnectionIdTargetsResponse) GetJSON200() *st
 		// Label What the customer called it on the provider.
 		Label string `json:"label"`
 
+		// Policy The booking policy Roark applies, for a calendar with no scheduling of its own. Null on a scheduling system, which owns its own rules, so this one field says which kind of provider you are looking at without matching on the provider name.
+		Policy *struct {
+			// AllDayEventsBlock Whether an all-day event closes the day. On by default: a calendar marks all-day events free unless their creator says otherwise, so a public holiday entered as one would otherwise still be bookable.
+			AllDayEventsBlock  bool `json:"allDayEventsBlock"`
+			BufferAfterMinutes int  `json:"bufferAfterMinutes"`
+
+			// BufferBeforeMinutes Dead time before an appointment, counted as busy.
+			BufferBeforeMinutes int `json:"bufferBeforeMinutes"`
+			DurationMinutes     int `json:"durationMinutes"`
+
+			// HorizonDays How far ahead appointments may be made.
+			HorizonDays int `json:"horizonDays"`
+			Hours       []struct {
+				EndMinute int `json:"endMinute"`
+
+				// StartMinute Minutes from local midnight, in the connection’s timezone.
+				StartMinute int `json:"startMinute"`
+
+				// Weekday ISO weekday: Monday is 1, Sunday is 7.
+				Weekday int `json:"weekday"`
+			} `json:"hours"`
+
+			// MinNoticeMinutes How soon from now an appointment may be made.
+			MinNoticeMinutes int `json:"minNoticeMinutes"`
+
+			// SlotIntervalMinutes The grid slots are offered on, measured from each bookable window’s own start rather than the hour.
+			SlotIntervalMinutes int `json:"slotIntervalMinutes"`
+		} `json:"policy"`
+
 		// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
 		RequiresConfirmation bool `json:"requiresConfirmation"`
 
 		// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
-		Target struct {
-			EventTypeId int                                                                                 `json:"eventTypeId"`
-			Provider    GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider `json:"provider"`
-		} `json:"target"`
+		Target GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target `json:"target"`
 	} `json:"data"`
 } {
 	return r.JSON200
@@ -93050,12 +94458,12 @@ func (r GetV1IntegrationsCalendarByConnectionIdTargetsResponse) ContentType() st
 	return ""
 }
 
-type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse struct {
+type PostV1IntegrationsCalendarByConnectionIdTargetsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Data Something on a connected account an agent can be pointed at: a Cal.com event type today, a Google calendar when that lands.
+	// JSON201 the response for an HTTP 201 `application/json` response
+	JSON201 *struct {
+		// Data Something on a connected account an agent can be pointed at: a Cal.com event type, or a bookable target on a calendar whose booking policy Roark owns.
 		Data struct {
 			// DurationMinutes How long an appointment runs, when the provider fixes one length.
 			DurationMinutes *float64 `json:"durationMinutes"`
@@ -93072,35 +94480,57 @@ type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse struct {
 			// Label What the customer called it on the provider.
 			Label string `json:"label"`
 
-			// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
-			RequiredBookingFields []string `json:"requiredBookingFields"`
+			// Policy The booking policy Roark applies, for a calendar with no scheduling of its own. Null on a scheduling system, which owns its own rules, so this one field says which kind of provider you are looking at without matching on the provider name.
+			Policy *struct {
+				// AllDayEventsBlock Whether an all-day event closes the day. On by default: a calendar marks all-day events free unless their creator says otherwise, so a public holiday entered as one would otherwise still be bookable.
+				AllDayEventsBlock  bool `json:"allDayEventsBlock"`
+				BufferAfterMinutes int  `json:"bufferAfterMinutes"`
 
-			// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
-			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+				// BufferBeforeMinutes Dead time before an appointment, counted as busy.
+				BufferBeforeMinutes int `json:"bufferBeforeMinutes"`
+				DurationMinutes     int `json:"durationMinutes"`
+
+				// HorizonDays How far ahead appointments may be made.
+				HorizonDays int `json:"horizonDays"`
+				Hours       []struct {
+					EndMinute int `json:"endMinute"`
+
+					// StartMinute Minutes from local midnight, in the connection’s timezone.
+					StartMinute int `json:"startMinute"`
+
+					// Weekday ISO weekday: Monday is 1, Sunday is 7.
+					Weekday int `json:"weekday"`
+				} `json:"hours"`
+
+				// MinNoticeMinutes How soon from now an appointment may be made.
+				MinNoticeMinutes int `json:"minNoticeMinutes"`
+
+				// SlotIntervalMinutes The grid slots are offered on, measured from each bookable window’s own start rather than the hour.
+				SlotIntervalMinutes int `json:"slotIntervalMinutes"`
+			} `json:"policy"`
 
 			// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
 			RequiresConfirmation bool `json:"requiresConfirmation"`
 
 			// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
-			Target struct {
-				EventTypeId int                                                                                           `json:"eventTypeId"`
-				Provider    GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider `json:"provider"`
-			} `json:"target"`
+			Target PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target `json:"target"`
 		} `json:"data"`
 	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
 	// JSON404 the response for an HTTP 404 `application/json` response
 	JSON404 *ErrorResponse
-	// JSON429 the response for an HTTP 429 `application/json` response
-	JSON429 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
 	// JSON500 the response for an HTTP 500 `application/json` response
 	JSON500 *ErrorResponse
 }
 
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON200() *struct {
-	// Data Something on a connected account an agent can be pointed at: a Cal.com event type today, a Google calendar when that lands.
+// GetJSON201 returns the response for an HTTP 201 `application/json` response
+func (r PostV1IntegrationsCalendarByConnectionIdTargetsResponse) GetJSON201() *struct {
+	// Data Something on a connected account an agent can be pointed at: a Cal.com event type, or a bookable target on a calendar whose booking policy Roark owns.
 	Data struct {
 		// DurationMinutes How long an appointment runs, when the provider fixes one length.
 		DurationMinutes *float64 `json:"durationMinutes"`
@@ -93117,6 +94547,304 @@ func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSO
 		// Label What the customer called it on the provider.
 		Label string `json:"label"`
 
+		// Policy The booking policy Roark applies, for a calendar with no scheduling of its own. Null on a scheduling system, which owns its own rules, so this one field says which kind of provider you are looking at without matching on the provider name.
+		Policy *struct {
+			// AllDayEventsBlock Whether an all-day event closes the day. On by default: a calendar marks all-day events free unless their creator says otherwise, so a public holiday entered as one would otherwise still be bookable.
+			AllDayEventsBlock  bool `json:"allDayEventsBlock"`
+			BufferAfterMinutes int  `json:"bufferAfterMinutes"`
+
+			// BufferBeforeMinutes Dead time before an appointment, counted as busy.
+			BufferBeforeMinutes int `json:"bufferBeforeMinutes"`
+			DurationMinutes     int `json:"durationMinutes"`
+
+			// HorizonDays How far ahead appointments may be made.
+			HorizonDays int `json:"horizonDays"`
+			Hours       []struct {
+				EndMinute int `json:"endMinute"`
+
+				// StartMinute Minutes from local midnight, in the connection’s timezone.
+				StartMinute int `json:"startMinute"`
+
+				// Weekday ISO weekday: Monday is 1, Sunday is 7.
+				Weekday int `json:"weekday"`
+			} `json:"hours"`
+
+			// MinNoticeMinutes How soon from now an appointment may be made.
+			MinNoticeMinutes int `json:"minNoticeMinutes"`
+
+			// SlotIntervalMinutes The grid slots are offered on, measured from each bookable window’s own start rather than the hour.
+			SlotIntervalMinutes int `json:"slotIntervalMinutes"`
+		} `json:"policy"`
+
+		// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+		RequiresConfirmation bool `json:"requiresConfirmation"`
+
+		// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+		Target PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target `json:"target"`
+	} `json:"data"`
+} {
+	return r.JSON201
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1IntegrationsCalendarByConnectionIdTargetsResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1IntegrationsCalendarByConnectionIdTargetsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1IntegrationsCalendarByConnectionIdTargetsResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1IntegrationsCalendarByConnectionIdTargetsResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1IntegrationsCalendarByConnectionIdTargetsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1IntegrationsCalendarByConnectionIdTargetsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1IntegrationsCalendarByConnectionIdTargetsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1IntegrationsCalendarByConnectionIdTargetsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1IntegrationsCalendarByConnectionIdTargetsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			Deleted DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataDeleted `json:"deleted"`
+
+			// Id Identifier of the deleted target.
+			Id openapi_types.UUID `json:"id"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON200() *struct {
+	Data struct {
+		Deleted DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataDeleted `json:"deleted"`
+
+		// Id Identifier of the deleted target.
+		Id openapi_types.UUID `json:"id"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data Something on a connected account an agent can be pointed at: a Cal.com event type, or a bookable target on a calendar whose booking policy Roark owns.
+		Data struct {
+			// DurationMinutes How long an appointment runs, when the provider fixes one length.
+			DurationMinutes *float64 `json:"durationMinutes"`
+
+			// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+			DurationOptions []float64 `json:"durationOptions"`
+
+			// Id Identifier within this connection. Pass it back to read one target in detail.
+			Id string `json:"id"`
+
+			// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+			IsHidden bool `json:"isHidden"`
+
+			// Label What the customer called it on the provider.
+			Label string `json:"label"`
+
+			// Policy The booking policy Roark applies, for a calendar with no scheduling of its own. Null on a scheduling system, which owns its own rules, so this one field says which kind of provider you are looking at without matching on the provider name.
+			Policy *struct {
+				// AllDayEventsBlock Whether an all-day event closes the day. On by default: a calendar marks all-day events free unless their creator says otherwise, so a public holiday entered as one would otherwise still be bookable.
+				AllDayEventsBlock  bool `json:"allDayEventsBlock"`
+				BufferAfterMinutes int  `json:"bufferAfterMinutes"`
+
+				// BufferBeforeMinutes Dead time before an appointment, counted as busy.
+				BufferBeforeMinutes int `json:"bufferBeforeMinutes"`
+				DurationMinutes     int `json:"durationMinutes"`
+
+				// HorizonDays How far ahead appointments may be made.
+				HorizonDays int `json:"horizonDays"`
+				Hours       []struct {
+					EndMinute int `json:"endMinute"`
+
+					// StartMinute Minutes from local midnight, in the connection’s timezone.
+					StartMinute int `json:"startMinute"`
+
+					// Weekday ISO weekday: Monday is 1, Sunday is 7.
+					Weekday int `json:"weekday"`
+				} `json:"hours"`
+
+				// MinNoticeMinutes How soon from now an appointment may be made.
+				MinNoticeMinutes int `json:"minNoticeMinutes"`
+
+				// SlotIntervalMinutes The grid slots are offered on, measured from each bookable window’s own start rather than the hour.
+				SlotIntervalMinutes int `json:"slotIntervalMinutes"`
+			} `json:"policy"`
+
+			// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
+			RequiredBookingFields []string `json:"requiredBookingFields"`
+
+			// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
+			RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
+
+			// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+			RequiresConfirmation bool `json:"requiresConfirmation"`
+
+			// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+			Target GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target `json:"target"`
+		} `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON200() *struct {
+	// Data Something on a connected account an agent can be pointed at: a Cal.com event type, or a bookable target on a calendar whose booking policy Roark owns.
+	Data struct {
+		// DurationMinutes How long an appointment runs, when the provider fixes one length.
+		DurationMinutes *float64 `json:"durationMinutes"`
+
+		// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+		DurationOptions []float64 `json:"durationOptions"`
+
+		// Id Identifier within this connection. Pass it back to read one target in detail.
+		Id string `json:"id"`
+
+		// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+		IsHidden bool `json:"isHidden"`
+
+		// Label What the customer called it on the provider.
+		Label string `json:"label"`
+
+		// Policy The booking policy Roark applies, for a calendar with no scheduling of its own. Null on a scheduling system, which owns its own rules, so this one field says which kind of provider you are looking at without matching on the provider name.
+		Policy *struct {
+			// AllDayEventsBlock Whether an all-day event closes the day. On by default: a calendar marks all-day events free unless their creator says otherwise, so a public holiday entered as one would otherwise still be bookable.
+			AllDayEventsBlock  bool `json:"allDayEventsBlock"`
+			BufferAfterMinutes int  `json:"bufferAfterMinutes"`
+
+			// BufferBeforeMinutes Dead time before an appointment, counted as busy.
+			BufferBeforeMinutes int `json:"bufferBeforeMinutes"`
+			DurationMinutes     int `json:"durationMinutes"`
+
+			// HorizonDays How far ahead appointments may be made.
+			HorizonDays int `json:"horizonDays"`
+			Hours       []struct {
+				EndMinute int `json:"endMinute"`
+
+				// StartMinute Minutes from local midnight, in the connection’s timezone.
+				StartMinute int `json:"startMinute"`
+
+				// Weekday ISO weekday: Monday is 1, Sunday is 7.
+				Weekday int `json:"weekday"`
+			} `json:"hours"`
+
+			// MinNoticeMinutes How soon from now an appointment may be made.
+			MinNoticeMinutes int `json:"minNoticeMinutes"`
+
+			// SlotIntervalMinutes The grid slots are offered on, measured from each bookable window’s own start rather than the hour.
+			SlotIntervalMinutes int `json:"slotIntervalMinutes"`
+		} `json:"policy"`
+
 		// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
 		RequiredBookingFields []string `json:"requiredBookingFields"`
 
@@ -93127,10 +94855,7 @@ func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSO
 		RequiresConfirmation bool `json:"requiresConfirmation"`
 
 		// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
-		Target struct {
-			EventTypeId int                                                                                           `json:"eventTypeId"`
-			Provider    GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider `json:"provider"`
-		} `json:"target"`
+		Target GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target `json:"target"`
 	} `json:"data"`
 } {
 	return r.JSON200
@@ -93179,6 +94904,188 @@ func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) Status
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data Something on a connected account an agent can be pointed at: a Cal.com event type, or a bookable target on a calendar whose booking policy Roark owns.
+		Data struct {
+			// DurationMinutes How long an appointment runs, when the provider fixes one length.
+			DurationMinutes *float64 `json:"durationMinutes"`
+
+			// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+			DurationOptions []float64 `json:"durationOptions"`
+
+			// Id Identifier within this connection. Pass it back to read one target in detail.
+			Id string `json:"id"`
+
+			// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+			IsHidden bool `json:"isHidden"`
+
+			// Label What the customer called it on the provider.
+			Label string `json:"label"`
+
+			// Policy The booking policy Roark applies, for a calendar with no scheduling of its own. Null on a scheduling system, which owns its own rules, so this one field says which kind of provider you are looking at without matching on the provider name.
+			Policy *struct {
+				// AllDayEventsBlock Whether an all-day event closes the day. On by default: a calendar marks all-day events free unless their creator says otherwise, so a public holiday entered as one would otherwise still be bookable.
+				AllDayEventsBlock  bool `json:"allDayEventsBlock"`
+				BufferAfterMinutes int  `json:"bufferAfterMinutes"`
+
+				// BufferBeforeMinutes Dead time before an appointment, counted as busy.
+				BufferBeforeMinutes int `json:"bufferBeforeMinutes"`
+				DurationMinutes     int `json:"durationMinutes"`
+
+				// HorizonDays How far ahead appointments may be made.
+				HorizonDays int `json:"horizonDays"`
+				Hours       []struct {
+					EndMinute int `json:"endMinute"`
+
+					// StartMinute Minutes from local midnight, in the connection’s timezone.
+					StartMinute int `json:"startMinute"`
+
+					// Weekday ISO weekday: Monday is 1, Sunday is 7.
+					Weekday int `json:"weekday"`
+				} `json:"hours"`
+
+				// MinNoticeMinutes How soon from now an appointment may be made.
+				MinNoticeMinutes int `json:"minNoticeMinutes"`
+
+				// SlotIntervalMinutes The grid slots are offered on, measured from each bookable window’s own start rather than the hour.
+				SlotIntervalMinutes int `json:"slotIntervalMinutes"`
+			} `json:"policy"`
+
+			// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+			RequiresConfirmation bool `json:"requiresConfirmation"`
+
+			// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+			Target PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target `json:"target"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON200() *struct {
+	// Data Something on a connected account an agent can be pointed at: a Cal.com event type, or a bookable target on a calendar whose booking policy Roark owns.
+	Data struct {
+		// DurationMinutes How long an appointment runs, when the provider fixes one length.
+		DurationMinutes *float64 `json:"durationMinutes"`
+
+		// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+		DurationOptions []float64 `json:"durationOptions"`
+
+		// Id Identifier within this connection. Pass it back to read one target in detail.
+		Id string `json:"id"`
+
+		// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+		IsHidden bool `json:"isHidden"`
+
+		// Label What the customer called it on the provider.
+		Label string `json:"label"`
+
+		// Policy The booking policy Roark applies, for a calendar with no scheduling of its own. Null on a scheduling system, which owns its own rules, so this one field says which kind of provider you are looking at without matching on the provider name.
+		Policy *struct {
+			// AllDayEventsBlock Whether an all-day event closes the day. On by default: a calendar marks all-day events free unless their creator says otherwise, so a public holiday entered as one would otherwise still be bookable.
+			AllDayEventsBlock  bool `json:"allDayEventsBlock"`
+			BufferAfterMinutes int  `json:"bufferAfterMinutes"`
+
+			// BufferBeforeMinutes Dead time before an appointment, counted as busy.
+			BufferBeforeMinutes int `json:"bufferBeforeMinutes"`
+			DurationMinutes     int `json:"durationMinutes"`
+
+			// HorizonDays How far ahead appointments may be made.
+			HorizonDays int `json:"horizonDays"`
+			Hours       []struct {
+				EndMinute int `json:"endMinute"`
+
+				// StartMinute Minutes from local midnight, in the connection’s timezone.
+				StartMinute int `json:"startMinute"`
+
+				// Weekday ISO weekday: Monday is 1, Sunday is 7.
+				Weekday int `json:"weekday"`
+			} `json:"hours"`
+
+			// MinNoticeMinutes How soon from now an appointment may be made.
+			MinNoticeMinutes int `json:"minNoticeMinutes"`
+
+			// SlotIntervalMinutes The grid slots are offered on, measured from each bookable window’s own start rather than the hour.
+			SlotIntervalMinutes int `json:"slotIntervalMinutes"`
+		} `json:"policy"`
+
+		// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+		RequiresConfirmation bool `json:"requiresConfirmation"`
+
+		// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+		Target PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target `json:"target"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -106413,6 +108320,36 @@ func (c *ClientWithResponses) PostV1IntegrationsCalendarWithResponse(ctx context
 	return ParsePostV1IntegrationsCalendarResponse(rsp)
 }
 
+// PostV1IntegrationsCalendarGoogleAuthorizeUrlWithBodyWithResponse Start connecting a Google Calendar
+//
+// Returns a URL to open in a browser. Google has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies that both calendar permissions were granted, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/calendar/google/authorize-url (the `PostV1IntegrationsCalendarGoogleAuthorizeUrl` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsCalendarGoogleAuthorizeUrlWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse, error) {
+	rsp, err := c.PostV1IntegrationsCalendarGoogleAuthorizeUrlWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsCalendarGoogleAuthorizeUrlResponse(rsp)
+}
+
+// PostV1IntegrationsCalendarGoogleAuthorizeUrlWithResponse Start connecting a Google Calendar
+//
+// Returns a URL to open in a browser. Google has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies that both calendar permissions were granted, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/calendar/google/authorize-url (the `PostV1IntegrationsCalendarGoogleAuthorizeUrl` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsCalendarGoogleAuthorizeUrlWithResponse(ctx context.Context, body PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse, error) {
+	rsp, err := c.PostV1IntegrationsCalendarGoogleAuthorizeUrl(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsCalendarGoogleAuthorizeUrlResponse(rsp)
+}
+
 // DeleteV1IntegrationsCalendarByConnectionIdWithResponse Delete a calendar connection
 //
 // Disconnects the calendar and destroys the stored credential. A credential the customer deleted should stop existing, so this is not an archive. Appointments already recorded against the connection are kept, so a booking stays explainable after the calendar is disconnected. Refused with a 409 while a calendar tool is still bound to the connection, naming the tools: point them at another calendar, or delete them, first. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who disconnected the calendar.
@@ -106473,6 +108410,21 @@ func (c *ClientWithResponses) PatchV1IntegrationsCalendarByConnectionIdWithRespo
 	return ParsePatchV1IntegrationsCalendarByConnectionIdResponse(rsp)
 }
 
+// GetV1IntegrationsCalendarByConnectionIdCalendarsWithResponse List the calendars a bookable target can be created on
+//
+// Only for a connection whose `capabilities.roarkOwnsBookingPolicy` is true: on a scheduling system the bookable things already exist and `GET /targets` returns them. Calendars the account can only read are left out rather than listed and refused: one would answer availability perfectly well and then fail the booking, mid-call, with a caller on the line.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/integrations/calendar/{connectionId}/calendars (the `GetV1IntegrationsCalendarByConnectionIdCalendars` operationId).
+func (c *ClientWithResponses) GetV1IntegrationsCalendarByConnectionIdCalendarsWithResponse(ctx context.Context, connectionId string, reqEditors ...RequestEditorFn) (*GetV1IntegrationsCalendarByConnectionIdCalendarsResponse, error) {
+	rsp, err := c.GetV1IntegrationsCalendarByConnectionIdCalendars(ctx, connectionId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1IntegrationsCalendarByConnectionIdCalendarsResponse(rsp)
+}
+
 // PostV1IntegrationsCalendarByConnectionIdCheckWithResponse Check a calendar connection
 //
 // Re-verifies the stored credential against the provider and records the result on the connection. A credential the provider rejects sets `status` to INVALID_CREDENTIALS. A provider outage is a 500 and leaves the status untouched: being unable to reach the provider is not evidence that the customer’s credential is bad.
@@ -106503,6 +108455,51 @@ func (c *ClientWithResponses) GetV1IntegrationsCalendarByConnectionIdTargetsWith
 	return ParseGetV1IntegrationsCalendarByConnectionIdTargetsResponse(rsp)
 }
 
+// PostV1IntegrationsCalendarByConnectionIdTargetsWithBodyWithResponse Create a bookable target
+//
+// Only for a connection whose `capabilities.roarkOwnsBookingPolicy` is true. A calendar with no scheduling of its own has nothing an agent can be pointed at, so the thing a calendar tool books into is created here: the calendar, how long an appointment runs, and the hours it is offered in. The policy and the hours are written together, because a target with no hours offers nothing. Refused if the calendar is one the account can only read.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/calendar/{connectionId}/targets (the `PostV1IntegrationsCalendarByConnectionIdTargets` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsCalendarByConnectionIdTargetsWithBodyWithResponse(ctx context.Context, connectionId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarByConnectionIdTargetsResponse, error) {
+	rsp, err := c.PostV1IntegrationsCalendarByConnectionIdTargetsWithBody(ctx, connectionId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsCalendarByConnectionIdTargetsResponse(rsp)
+}
+
+// PostV1IntegrationsCalendarByConnectionIdTargetsWithResponse Create a bookable target
+//
+// Only for a connection whose `capabilities.roarkOwnsBookingPolicy` is true. A calendar with no scheduling of its own has nothing an agent can be pointed at, so the thing a calendar tool books into is created here: the calendar, how long an appointment runs, and the hours it is offered in. The policy and the hours are written together, because a target with no hours offers nothing. Refused if the calendar is one the account can only read.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/calendar/{connectionId}/targets (the `PostV1IntegrationsCalendarByConnectionIdTargets` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsCalendarByConnectionIdTargetsWithResponse(ctx context.Context, connectionId string, body PostV1IntegrationsCalendarByConnectionIdTargetsJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarByConnectionIdTargetsResponse, error) {
+	rsp, err := c.PostV1IntegrationsCalendarByConnectionIdTargets(ctx, connectionId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsCalendarByConnectionIdTargetsResponse(rsp)
+}
+
+// DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse Delete a bookable target
+//
+// Refused while a calendar tool still books into it, naming the tools. A dangling binding would otherwise be found by whoever next tried to ship the agent, who is not the person who deleted the target. Appointments already recorded against it are kept.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+func (c *ClientWithResponses) DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse(ctx context.Context, connectionId string, targetId string, reqEditors ...RequestEditorFn) (*DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error) {
+	rsp, err := c.DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId(ctx, connectionId, targetId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp)
+}
+
 // GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse Read one bookable target
 //
 // The same entry as the list, plus what it demands of a booker. `requiresAttendeeEmail` is the field that decides an agent’s design: the attendee object itself needs only a name and a timezone, but an event type can declare email required, and an agent that cannot collect one simply cannot book on it. Read this when configuring a calendar tool, not after a caller is already waiting. Costs one provider call more than the list, which is why the list does not fold it in.
@@ -106516,6 +108513,36 @@ func (c *ClientWithResponses) GetV1IntegrationsCalendarByConnectionIdTargetsByTa
 		return nil, err
 	}
 	return ParseGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp)
+}
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithBodyWithResponse Update a bookable target
+//
+// Changes what agents ALREADY PUBLISHED against this target book, with no new tool version, the same thing editing a Cal.com event type on cal.com does. `hours` replaces the whole week when present, because a rota is described as a week and a partial update of one window has no meaning anybody would expect. The calendar cannot be changed: it is the target’s identity for the booking ledger, so moving it would orphan every appointment made on the old one.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+func (c *ClientWithResponses) PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithBodyWithResponse(ctx context.Context, connectionId string, targetId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error) {
+	rsp, err := c.PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithBody(ctx, connectionId, targetId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp)
+}
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse Update a bookable target
+//
+// Changes what agents ALREADY PUBLISHED against this target book, with no new tool version, the same thing editing a Cal.com event type on cal.com does. `hours` replaces the whole week when present, because a rota is described as a week and a partial update of one window has no meaning anybody would expect. The calendar cannot be changed: it is the target’s identity for the booking ledger, so moving it would orphan every appointment made on the old one.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/integrations/calendar/{connectionId}/targets/{targetId} (the `PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId` operationId).
+func (c *ClientWithResponses) PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse(ctx context.Context, connectionId string, targetId string, body PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error) {
+	rsp, err := c.PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId(ctx, connectionId, targetId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp)
 }
 
 // GetV1IntegrationsMcpServerWithResponse List MCP servers
@@ -117019,7 +119046,7 @@ func ParseGetV1IntegrationsCalendarResponse(rsp *http.Response) (*GetV1Integrati
 
 				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 				Capabilities struct {
-					// Auth How this provider is authenticated.
+					// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 					Auth GetV1IntegrationsCalendar200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -117031,7 +119058,7 @@ func ParseGetV1IntegrationsCalendarResponse(rsp *http.Response) (*GetV1Integrati
 					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -117053,7 +119080,7 @@ func ParseGetV1IntegrationsCalendarResponse(rsp *http.Response) (*GetV1Integrati
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 				Provider GetV1IntegrationsCalendar200JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -117129,7 +119156,7 @@ func ParsePostV1IntegrationsCalendarResponse(rsp *http.Response) (*PostV1Integra
 
 				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 				Capabilities struct {
-					// Auth How this provider is authenticated.
+					// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 					Auth PostV1IntegrationsCalendar201JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -117141,7 +119168,7 @@ func ParsePostV1IntegrationsCalendarResponse(rsp *http.Response) (*PostV1Integra
 					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -117163,7 +119190,7 @@ func ParsePostV1IntegrationsCalendarResponse(rsp *http.Response) (*PostV1Integra
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 				Provider PostV1IntegrationsCalendar201JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -117207,6 +119234,64 @@ func ParsePostV1IntegrationsCalendarResponse(rsp *http.Response) (*PostV1Integra
 			return nil, err
 		}
 		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1IntegrationsCalendarGoogleAuthorizeUrlResponse parses an HTTP response from a PostV1IntegrationsCalendarGoogleAuthorizeUrlWithResponse call
+func ParsePostV1IntegrationsCalendarGoogleAuthorizeUrlResponse(rsp *http.Response) (*PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				// AuthorizeUrl Open this in a browser. After the customer consents, Google returns to Roark, which exchanges the code, verifies the credential and stores the connection. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+				AuthorizeUrl string `json:"authorizeUrl"`
+
+				// ExpiresAt When the link stops working, ISO 8601. Start again after that.
+				ExpiresAt string `json:"expiresAt"`
+
+				// State The opaque single-use value this flow is identified by, echoed so a caller can correlate its own UI. Not a credential and not accepted anywhere as one.
+				State string `json:"state"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse
@@ -117305,7 +119390,7 @@ func ParseGetV1IntegrationsCalendarByConnectionIdResponse(rsp *http.Response) (*
 
 				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 				Capabilities struct {
-					// Auth How this provider is authenticated.
+					// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 					Auth GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -117317,7 +119402,7 @@ func ParseGetV1IntegrationsCalendarByConnectionIdResponse(rsp *http.Response) (*
 					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -117339,7 +119424,7 @@ func ParseGetV1IntegrationsCalendarByConnectionIdResponse(rsp *http.Response) (*
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 				Provider GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -117412,7 +119497,7 @@ func ParsePatchV1IntegrationsCalendarByConnectionIdResponse(rsp *http.Response) 
 
 				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 				Capabilities struct {
-					// Auth How this provider is authenticated.
+					// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 					Auth PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -117424,7 +119509,7 @@ func ParsePatchV1IntegrationsCalendarByConnectionIdResponse(rsp *http.Response) 
 					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -117446,7 +119531,7 @@ func ParsePatchV1IntegrationsCalendarByConnectionIdResponse(rsp *http.Response) 
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 				Provider PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -117510,6 +119595,82 @@ func ParsePatchV1IntegrationsCalendarByConnectionIdResponse(rsp *http.Response) 
 	return response, nil
 }
 
+// ParseGetV1IntegrationsCalendarByConnectionIdCalendarsResponse parses an HTTP response from a GetV1IntegrationsCalendarByConnectionIdCalendarsWithResponse call
+func ParseGetV1IntegrationsCalendarByConnectionIdCalendarsResponse(rsp *http.Response) (*GetV1IntegrationsCalendarByConnectionIdCalendarsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1IntegrationsCalendarByConnectionIdCalendarsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []struct {
+				// CanWrite Always true: a calendar that cannot be written to is not listed.
+				CanWrite bool `json:"canWrite"`
+
+				// Id Pass this as `calendarId` when creating a target.
+				Id        string `json:"id"`
+				IsPrimary bool   `json:"isPrimary"`
+
+				// Label What the calendar is called on the account.
+				Label string `json:"label"`
+
+				// Timezone The calendar’s own timezone, when it reports one.
+				Timezone *string `json:"timezone"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParsePostV1IntegrationsCalendarByConnectionIdCheckResponse parses an HTTP response from a PostV1IntegrationsCalendarByConnectionIdCheckWithResponse call
 func ParsePostV1IntegrationsCalendarByConnectionIdCheckResponse(rsp *http.Response) (*PostV1IntegrationsCalendarByConnectionIdCheckResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -117533,7 +119694,7 @@ func ParsePostV1IntegrationsCalendarByConnectionIdCheckResponse(rsp *http.Respon
 
 				// Capabilities What a calendar provider can actually do. Read this before configuring a calendar tool.
 				Capabilities struct {
-					// Auth How this provider is authenticated.
+					// Auth How a credential is obtained, which is the whole of what connecting looks like: API_KEY takes a key in the create body, OAUTH sends the customer to the provider and Roark stores the result itself.
 					Auth PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataCapabilitiesAuth `json:"auth"`
 
 					// AvailabilityWindowDays Hard cap on the width of one availability query, in days, when the provider has one.
@@ -117545,7 +119706,7 @@ func ParsePostV1IntegrationsCalendarByConnectionIdCheckResponse(rsp *http.Respon
 					// RequiresAttendeeEmail Whether a booking cannot be created without an attendee email address. True for every scheduling system, which decides how an agent has to identify the caller.
 					RequiresAttendeeEmail bool `json:"requiresAttendeeEmail"`
 
-					// RoarkOwnsBookingPolicy True for a raw calendar, which exposes only events and free/busy. Roark then owns bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them.
+					// RoarkOwnsBookingPolicy True for a calendar that exposes only events and free/busy. Roark then owns the bookable hours, duration, buffers, lead time and horizon, because the provider has no notion of them. A tool on one of these is pointed at a bookable target you create through this API, rather than at something that already exists on the account. Read this instead of matching on the provider name.
 					RoarkOwnsBookingPolicy bool `json:"roarkOwnsBookingPolicy"`
 
 					// SlotHold Whether a slot can be held before committing. RESERVATION blocks other bookers in the provider’s own UI but is not consumed by the booking that follows, so it is a courtesy and not a guarantee.
@@ -117567,7 +119728,7 @@ func ParsePostV1IntegrationsCalendarByConnectionIdCheckResponse(rsp *http.Respon
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is the only provider that can be connected today; GOOGLE and CALENDLY are described by `capabilities` but not yet connectable.
+				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
 				Provider PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -117656,14 +119817,40 @@ func ParseGetV1IntegrationsCalendarByConnectionIdTargetsResponse(rsp *http.Respo
 				// Label What the customer called it on the provider.
 				Label string `json:"label"`
 
+				// Policy The booking policy Roark applies, for a calendar with no scheduling of its own. Null on a scheduling system, which owns its own rules, so this one field says which kind of provider you are looking at without matching on the provider name.
+				Policy *struct {
+					// AllDayEventsBlock Whether an all-day event closes the day. On by default: a calendar marks all-day events free unless their creator says otherwise, so a public holiday entered as one would otherwise still be bookable.
+					AllDayEventsBlock  bool `json:"allDayEventsBlock"`
+					BufferAfterMinutes int  `json:"bufferAfterMinutes"`
+
+					// BufferBeforeMinutes Dead time before an appointment, counted as busy.
+					BufferBeforeMinutes int `json:"bufferBeforeMinutes"`
+					DurationMinutes     int `json:"durationMinutes"`
+
+					// HorizonDays How far ahead appointments may be made.
+					HorizonDays int `json:"horizonDays"`
+					Hours       []struct {
+						EndMinute int `json:"endMinute"`
+
+						// StartMinute Minutes from local midnight, in the connection’s timezone.
+						StartMinute int `json:"startMinute"`
+
+						// Weekday ISO weekday: Monday is 1, Sunday is 7.
+						Weekday int `json:"weekday"`
+					} `json:"hours"`
+
+					// MinNoticeMinutes How soon from now an appointment may be made.
+					MinNoticeMinutes int `json:"minNoticeMinutes"`
+
+					// SlotIntervalMinutes The grid slots are offered on, measured from each bookable window’s own start rather than the hour.
+					SlotIntervalMinutes int `json:"slotIntervalMinutes"`
+				} `json:"policy"`
+
 				// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
 				RequiresConfirmation bool `json:"requiresConfirmation"`
 
 				// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
-				Target struct {
-					EventTypeId int                                                                                 `json:"eventTypeId"`
-					Provider    GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTargetProvider `json:"provider"`
-				} `json:"target"`
+				Target GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target `json:"target"`
 			} `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -117704,23 +119891,23 @@ func ParseGetV1IntegrationsCalendarByConnectionIdTargetsResponse(rsp *http.Respo
 	return response, nil
 }
 
-// ParseGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse parses an HTTP response from a GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse call
-func ParseGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp *http.Response) (*GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error) {
+// ParsePostV1IntegrationsCalendarByConnectionIdTargetsResponse parses an HTTP response from a PostV1IntegrationsCalendarByConnectionIdTargetsWithResponse call
+func ParsePostV1IntegrationsCalendarByConnectionIdTargetsResponse(rsp *http.Response) (*PostV1IntegrationsCalendarByConnectionIdTargetsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse{
+	response := &PostV1IntegrationsCalendarByConnectionIdTargetsResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
-			// Data Something on a connected account an agent can be pointed at: a Cal.com event type today, a Google calendar when that lands.
+			// Data Something on a connected account an agent can be pointed at: a Cal.com event type, or a bookable target on a calendar whose booking policy Roark owns.
 			Data struct {
 				// DurationMinutes How long an appointment runs, when the provider fixes one length.
 				DurationMinutes *float64 `json:"durationMinutes"`
@@ -117737,6 +119924,210 @@ func ParseGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp *
 				// Label What the customer called it on the provider.
 				Label string `json:"label"`
 
+				// Policy The booking policy Roark applies, for a calendar with no scheduling of its own. Null on a scheduling system, which owns its own rules, so this one field says which kind of provider you are looking at without matching on the provider name.
+				Policy *struct {
+					// AllDayEventsBlock Whether an all-day event closes the day. On by default: a calendar marks all-day events free unless their creator says otherwise, so a public holiday entered as one would otherwise still be bookable.
+					AllDayEventsBlock  bool `json:"allDayEventsBlock"`
+					BufferAfterMinutes int  `json:"bufferAfterMinutes"`
+
+					// BufferBeforeMinutes Dead time before an appointment, counted as busy.
+					BufferBeforeMinutes int `json:"bufferBeforeMinutes"`
+					DurationMinutes     int `json:"durationMinutes"`
+
+					// HorizonDays How far ahead appointments may be made.
+					HorizonDays int `json:"horizonDays"`
+					Hours       []struct {
+						EndMinute int `json:"endMinute"`
+
+						// StartMinute Minutes from local midnight, in the connection’s timezone.
+						StartMinute int `json:"startMinute"`
+
+						// Weekday ISO weekday: Monday is 1, Sunday is 7.
+						Weekday int `json:"weekday"`
+					} `json:"hours"`
+
+					// MinNoticeMinutes How soon from now an appointment may be made.
+					MinNoticeMinutes int `json:"minNoticeMinutes"`
+
+					// SlotIntervalMinutes The grid slots are offered on, measured from each bookable window’s own start rather than the hour.
+					SlotIntervalMinutes int `json:"slotIntervalMinutes"`
+				} `json:"policy"`
+
+				// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+				RequiresConfirmation bool `json:"requiresConfirmation"`
+
+				// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+				Target PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target `json:"target"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse parses an HTTP response from a DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse call
+func ParseDeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp *http.Response) (*DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				Deleted DeleteV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataDeleted `json:"deleted"`
+
+				// Id Identifier of the deleted target.
+				Id openapi_types.UUID `json:"id"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse parses an HTTP response from a GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse call
+func ParseGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp *http.Response) (*GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data Something on a connected account an agent can be pointed at: a Cal.com event type, or a bookable target on a calendar whose booking policy Roark owns.
+			Data struct {
+				// DurationMinutes How long an appointment runs, when the provider fixes one length.
+				DurationMinutes *float64 `json:"durationMinutes"`
+
+				// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+				DurationOptions []float64 `json:"durationOptions"`
+
+				// Id Identifier within this connection. Pass it back to read one target in detail.
+				Id string `json:"id"`
+
+				// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+				IsHidden bool `json:"isHidden"`
+
+				// Label What the customer called it on the provider.
+				Label string `json:"label"`
+
+				// Policy The booking policy Roark applies, for a calendar with no scheduling of its own. Null on a scheduling system, which owns its own rules, so this one field says which kind of provider you are looking at without matching on the provider name.
+				Policy *struct {
+					// AllDayEventsBlock Whether an all-day event closes the day. On by default: a calendar marks all-day events free unless their creator says otherwise, so a public holiday entered as one would otherwise still be bookable.
+					AllDayEventsBlock  bool `json:"allDayEventsBlock"`
+					BufferAfterMinutes int  `json:"bufferAfterMinutes"`
+
+					// BufferBeforeMinutes Dead time before an appointment, counted as busy.
+					BufferBeforeMinutes int `json:"bufferBeforeMinutes"`
+					DurationMinutes     int `json:"durationMinutes"`
+
+					// HorizonDays How far ahead appointments may be made.
+					HorizonDays int `json:"horizonDays"`
+					Hours       []struct {
+						EndMinute int `json:"endMinute"`
+
+						// StartMinute Minutes from local midnight, in the connection’s timezone.
+						StartMinute int `json:"startMinute"`
+
+						// Weekday ISO weekday: Monday is 1, Sunday is 7.
+						Weekday int `json:"weekday"`
+					} `json:"hours"`
+
+					// MinNoticeMinutes How soon from now an appointment may be made.
+					MinNoticeMinutes int `json:"minNoticeMinutes"`
+
+					// SlotIntervalMinutes The grid slots are offered on, measured from each bookable window’s own start rather than the hour.
+					SlotIntervalMinutes int `json:"slotIntervalMinutes"`
+				} `json:"policy"`
+
 				// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
 				RequiredBookingFields []string `json:"requiredBookingFields"`
 
@@ -117747,10 +120138,7 @@ func ParseGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp *
 				RequiresConfirmation bool `json:"requiresConfirmation"`
 
 				// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
-				Target struct {
-					EventTypeId int                                                                                           `json:"eventTypeId"`
-					Provider    GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTargetProvider `json:"provider"`
-				} `json:"target"`
+				Target GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target `json:"target"`
 			} `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -117778,6 +120166,120 @@ func ParseGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp *
 			return nil, err
 		}
 		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse parses an HTTP response from a PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdWithResponse call
+func ParsePutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp *http.Response) (*PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PutV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data Something on a connected account an agent can be pointed at: a Cal.com event type, or a bookable target on a calendar whose booking policy Roark owns.
+			Data struct {
+				// DurationMinutes How long an appointment runs, when the provider fixes one length.
+				DurationMinutes *float64 `json:"durationMinutes"`
+
+				// DurationOptions Other lengths this target offers, when it offers a choice. A calendar tool pins one of these with `durationMinutes`; an empty list means the length is not the customer’s to choose.
+				DurationOptions []float64 `json:"durationOptions"`
+
+				// Id Identifier within this connection. Pass it back to read one target in detail.
+				Id string `json:"id"`
+
+				// IsHidden Hidden on the provider’s own booking page. Still bookable through this API.
+				IsHidden bool `json:"isHidden"`
+
+				// Label What the customer called it on the provider.
+				Label string `json:"label"`
+
+				// Policy The booking policy Roark applies, for a calendar with no scheduling of its own. Null on a scheduling system, which owns its own rules, so this one field says which kind of provider you are looking at without matching on the provider name.
+				Policy *struct {
+					// AllDayEventsBlock Whether an all-day event closes the day. On by default: a calendar marks all-day events free unless their creator says otherwise, so a public holiday entered as one would otherwise still be bookable.
+					AllDayEventsBlock  bool `json:"allDayEventsBlock"`
+					BufferAfterMinutes int  `json:"bufferAfterMinutes"`
+
+					// BufferBeforeMinutes Dead time before an appointment, counted as busy.
+					BufferBeforeMinutes int `json:"bufferBeforeMinutes"`
+					DurationMinutes     int `json:"durationMinutes"`
+
+					// HorizonDays How far ahead appointments may be made.
+					HorizonDays int `json:"horizonDays"`
+					Hours       []struct {
+						EndMinute int `json:"endMinute"`
+
+						// StartMinute Minutes from local midnight, in the connection’s timezone.
+						StartMinute int `json:"startMinute"`
+
+						// Weekday ISO weekday: Monday is 1, Sunday is 7.
+						Weekday int `json:"weekday"`
+					} `json:"hours"`
+
+					// MinNoticeMinutes How soon from now an appointment may be made.
+					MinNoticeMinutes int `json:"minNoticeMinutes"`
+
+					// SlotIntervalMinutes The grid slots are offered on, measured from each bookable window’s own start rather than the hour.
+					SlotIntervalMinutes int `json:"slotIntervalMinutes"`
+				} `json:"policy"`
+
+				// RequiresConfirmation A human has to accept before it is an appointment. An agent booking one of these must say "requested", never "confirmed".
+				RequiresConfirmation bool `json:"requiresConfirmation"`
+
+				// Target Ready to put on a calendar tool, so nothing has to assemble one by hand.
+				Target PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target `json:"target"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse

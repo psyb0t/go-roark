@@ -2,6 +2,14 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.16.1, 2026-11-13
+
+- Added phone line quality for environments. `CreateEnvironmentInput`, `UpdateEnvironmentInput` and `EnvironmentResponse` gained `LineQuality` and `LineCustom` fields. The values are `CLEAR`, `MINOR_LOSS`, `CELL_EDGE`, `POOR_CONNECTION`, `ONE_WAY_DEGRADED` and `CUSTOM`, for example `CreateEnvironmentInputLineQualityCELLEDGE`, and each enum has a `Valid` method.
+- Added the `LineCustom` type, with `FromAgent` and `ToAgent` fields of the new `LineImpairment` type, which sets packet loss percent and mean burst length per direction for a `CUSTOM` line.
+- Added the optional `CallsPerSecond` and `RampUpSeconds` fields to `CreateRunPlanFromConfig`, `CreateRunPlanFromTemplate`, `InlineRunPlanConfig`, `QaSimulationPlanConfig`, `RunSimulationFromTemplate`, `SimulationPlanConfig`, `UpdateRunPlanInput` and `RunPlanResponse`, to pace how fast a run dials.
+- Added `GetSimulationPlanJobResponse.DialRate`, of the new type `SimulationRunPlanJobDialRate`, which reports the target and achieved calls per second and the ramp up.
+- Added the `LINE_QUALITY` value to comparison and sweep properties, for example `CreateRunPlanFromConfigComparisonPropertyLINEQUALITY`, `RunPlanFlowOverridePropertyLINEQUALITY` and `SimulationTemplateSweepPropertyLINEQUALITY`.
+
 ## v0.16.0, 2026-11-12
 
 - Breaking: calendar targets are now a union of Cal.com and Google targets. In `GetV1IntegrationsCalendarByConnectionIdTargetsResponse` and `GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse`, the `JSON200` and `GetJSON200` types changed. The old `...DataTargetProvider` and `...DataTargetProviderCALCOM` types are removed. The replacements are the `...DataTarget0` (Cal.com, provider `CAL_COM`) and `...DataTarget1` (Google, provider `GOOGLE`) types, with a `Target` union wrapper. Both variants carry `CalendarId` and `Provider`.

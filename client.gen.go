@@ -3682,6 +3682,36 @@ func (e CreateEnvironmentInputBackgroundNoise) Valid() bool {
 	}
 }
 
+// Defines values for CreateEnvironmentInputLineQuality.
+const (
+	CreateEnvironmentInputLineQualityCELLEDGE       CreateEnvironmentInputLineQuality = "CELL_EDGE"
+	CreateEnvironmentInputLineQualityCLEAR          CreateEnvironmentInputLineQuality = "CLEAR"
+	CreateEnvironmentInputLineQualityCUSTOM         CreateEnvironmentInputLineQuality = "CUSTOM"
+	CreateEnvironmentInputLineQualityMINORLOSS      CreateEnvironmentInputLineQuality = "MINOR_LOSS"
+	CreateEnvironmentInputLineQualityONEWAYDEGRADED CreateEnvironmentInputLineQuality = "ONE_WAY_DEGRADED"
+	CreateEnvironmentInputLineQualityPOORCONNECTION CreateEnvironmentInputLineQuality = "POOR_CONNECTION"
+)
+
+// Valid indicates whether the value is a known member of the CreateEnvironmentInputLineQuality enum.
+func (e CreateEnvironmentInputLineQuality) Valid() bool {
+	switch e {
+	case CreateEnvironmentInputLineQualityCELLEDGE:
+		return true
+	case CreateEnvironmentInputLineQualityCLEAR:
+		return true
+	case CreateEnvironmentInputLineQualityCUSTOM:
+		return true
+	case CreateEnvironmentInputLineQualityMINORLOSS:
+		return true
+	case CreateEnvironmentInputLineQualityONEWAYDEGRADED:
+		return true
+	case CreateEnvironmentInputLineQualityPOORCONNECTION:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CreateHttpRequestDefinitionInputMethod.
 const (
 	CreateHttpRequestDefinitionInputMethodGET   CreateHttpRequestDefinitionInputMethod = "GET"
@@ -4000,6 +4030,7 @@ const (
 	CreateRunPlanFromConfigComparisonPropertyINTENTCLARITY         CreateRunPlanFromConfigComparisonProperty = "INTENT_CLARITY"
 	CreateRunPlanFromConfigComparisonPropertyINTERRUPTION          CreateRunPlanFromConfigComparisonProperty = "INTERRUPTION"
 	CreateRunPlanFromConfigComparisonPropertyLANGUAGE              CreateRunPlanFromConfigComparisonProperty = "LANGUAGE"
+	CreateRunPlanFromConfigComparisonPropertyLINEQUALITY           CreateRunPlanFromConfigComparisonProperty = "LINE_QUALITY"
 	CreateRunPlanFromConfigComparisonPropertyMEMORYRELIABILITY     CreateRunPlanFromConfigComparisonProperty = "MEMORY_RELIABILITY"
 	CreateRunPlanFromConfigComparisonPropertyRESPONSETIMING        CreateRunPlanFromConfigComparisonProperty = "RESPONSE_TIMING"
 	CreateRunPlanFromConfigComparisonPropertySPEECHCLARITY         CreateRunPlanFromConfigComparisonProperty = "SPEECH_CLARITY"
@@ -4028,6 +4059,8 @@ func (e CreateRunPlanFromConfigComparisonProperty) Valid() bool {
 	case CreateRunPlanFromConfigComparisonPropertyINTERRUPTION:
 		return true
 	case CreateRunPlanFromConfigComparisonPropertyLANGUAGE:
+		return true
+	case CreateRunPlanFromConfigComparisonPropertyLINEQUALITY:
 		return true
 	case CreateRunPlanFromConfigComparisonPropertyMEMORYRELIABILITY:
 		return true
@@ -8089,6 +8122,36 @@ func (e EnvironmentResponseBackgroundNoise) Valid() bool {
 	}
 }
 
+// Defines values for EnvironmentResponseLineQuality.
+const (
+	EnvironmentResponseLineQualityCELLEDGE       EnvironmentResponseLineQuality = "CELL_EDGE"
+	EnvironmentResponseLineQualityCLEAR          EnvironmentResponseLineQuality = "CLEAR"
+	EnvironmentResponseLineQualityCUSTOM         EnvironmentResponseLineQuality = "CUSTOM"
+	EnvironmentResponseLineQualityMINORLOSS      EnvironmentResponseLineQuality = "MINOR_LOSS"
+	EnvironmentResponseLineQualityONEWAYDEGRADED EnvironmentResponseLineQuality = "ONE_WAY_DEGRADED"
+	EnvironmentResponseLineQualityPOORCONNECTION EnvironmentResponseLineQuality = "POOR_CONNECTION"
+)
+
+// Valid indicates whether the value is a known member of the EnvironmentResponseLineQuality enum.
+func (e EnvironmentResponseLineQuality) Valid() bool {
+	switch e {
+	case EnvironmentResponseLineQualityCELLEDGE:
+		return true
+	case EnvironmentResponseLineQualityCLEAR:
+		return true
+	case EnvironmentResponseLineQualityCUSTOM:
+		return true
+	case EnvironmentResponseLineQualityMINORLOSS:
+		return true
+	case EnvironmentResponseLineQualityONEWAYDEGRADED:
+		return true
+	case EnvironmentResponseLineQualityPOORCONNECTION:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ErrorResponseType.
 const (
 	ErrorResponseTypeAuthentication  ErrorResponseType = "authentication"
@@ -10732,6 +10795,7 @@ const (
 	InlineRunPlanConfigComparisonPropertyINTENTCLARITY         InlineRunPlanConfigComparisonProperty = "INTENT_CLARITY"
 	InlineRunPlanConfigComparisonPropertyINTERRUPTION          InlineRunPlanConfigComparisonProperty = "INTERRUPTION"
 	InlineRunPlanConfigComparisonPropertyLANGUAGE              InlineRunPlanConfigComparisonProperty = "LANGUAGE"
+	InlineRunPlanConfigComparisonPropertyLINEQUALITY           InlineRunPlanConfigComparisonProperty = "LINE_QUALITY"
 	InlineRunPlanConfigComparisonPropertyMEMORYRELIABILITY     InlineRunPlanConfigComparisonProperty = "MEMORY_RELIABILITY"
 	InlineRunPlanConfigComparisonPropertyRESPONSETIMING        InlineRunPlanConfigComparisonProperty = "RESPONSE_TIMING"
 	InlineRunPlanConfigComparisonPropertySPEECHCLARITY         InlineRunPlanConfigComparisonProperty = "SPEECH_CLARITY"
@@ -10760,6 +10824,8 @@ func (e InlineRunPlanConfigComparisonProperty) Valid() bool {
 	case InlineRunPlanConfigComparisonPropertyINTERRUPTION:
 		return true
 	case InlineRunPlanConfigComparisonPropertyLANGUAGE:
+		return true
+	case InlineRunPlanConfigComparisonPropertyLINEQUALITY:
 		return true
 	case InlineRunPlanConfigComparisonPropertyMEMORYRELIABILITY:
 		return true
@@ -14920,6 +14986,7 @@ const (
 	RunPlanFlowOverridePropertyINTENTCLARITY         RunPlanFlowOverrideProperty = "INTENT_CLARITY"
 	RunPlanFlowOverridePropertyINTERRUPTION          RunPlanFlowOverrideProperty = "INTERRUPTION"
 	RunPlanFlowOverridePropertyLANGUAGE              RunPlanFlowOverrideProperty = "LANGUAGE"
+	RunPlanFlowOverridePropertyLINEQUALITY           RunPlanFlowOverrideProperty = "LINE_QUALITY"
 	RunPlanFlowOverridePropertyMEMORYRELIABILITY     RunPlanFlowOverrideProperty = "MEMORY_RELIABILITY"
 	RunPlanFlowOverridePropertyRESPONSETIMING        RunPlanFlowOverrideProperty = "RESPONSE_TIMING"
 	RunPlanFlowOverridePropertySPEECHCLARITY         RunPlanFlowOverrideProperty = "SPEECH_CLARITY"
@@ -14948,6 +15015,8 @@ func (e RunPlanFlowOverrideProperty) Valid() bool {
 	case RunPlanFlowOverridePropertyINTERRUPTION:
 		return true
 	case RunPlanFlowOverridePropertyLANGUAGE:
+		return true
+	case RunPlanFlowOverridePropertyLINEQUALITY:
 		return true
 	case RunPlanFlowOverridePropertyMEMORYRELIABILITY:
 		return true
@@ -15007,6 +15076,7 @@ const (
 	RunPlanResponseComparisonPropertyINTENTCLARITY         RunPlanResponseComparisonProperty = "INTENT_CLARITY"
 	RunPlanResponseComparisonPropertyINTERRUPTION          RunPlanResponseComparisonProperty = "INTERRUPTION"
 	RunPlanResponseComparisonPropertyLANGUAGE              RunPlanResponseComparisonProperty = "LANGUAGE"
+	RunPlanResponseComparisonPropertyLINEQUALITY           RunPlanResponseComparisonProperty = "LINE_QUALITY"
 	RunPlanResponseComparisonPropertyMEMORYRELIABILITY     RunPlanResponseComparisonProperty = "MEMORY_RELIABILITY"
 	RunPlanResponseComparisonPropertyRESPONSETIMING        RunPlanResponseComparisonProperty = "RESPONSE_TIMING"
 	RunPlanResponseComparisonPropertySPEECHCLARITY         RunPlanResponseComparisonProperty = "SPEECH_CLARITY"
@@ -15035,6 +15105,8 @@ func (e RunPlanResponseComparisonProperty) Valid() bool {
 	case RunPlanResponseComparisonPropertyINTERRUPTION:
 		return true
 	case RunPlanResponseComparisonPropertyLANGUAGE:
+		return true
+	case RunPlanResponseComparisonPropertyLINEQUALITY:
 		return true
 	case RunPlanResponseComparisonPropertyMEMORYRELIABILITY:
 		return true
@@ -18205,6 +18277,7 @@ const (
 	SimulationTemplateSweepPropertyINTENTCLARITY         SimulationTemplateSweepProperty = "INTENT_CLARITY"
 	SimulationTemplateSweepPropertyINTERRUPTION          SimulationTemplateSweepProperty = "INTERRUPTION"
 	SimulationTemplateSweepPropertyLANGUAGE              SimulationTemplateSweepProperty = "LANGUAGE"
+	SimulationTemplateSweepPropertyLINEQUALITY           SimulationTemplateSweepProperty = "LINE_QUALITY"
 	SimulationTemplateSweepPropertyMEMORYRELIABILITY     SimulationTemplateSweepProperty = "MEMORY_RELIABILITY"
 	SimulationTemplateSweepPropertyRESPONSETIMING        SimulationTemplateSweepProperty = "RESPONSE_TIMING"
 	SimulationTemplateSweepPropertySPEECHCLARITY         SimulationTemplateSweepProperty = "SPEECH_CLARITY"
@@ -18233,6 +18306,8 @@ func (e SimulationTemplateSweepProperty) Valid() bool {
 	case SimulationTemplateSweepPropertyINTERRUPTION:
 		return true
 	case SimulationTemplateSweepPropertyLANGUAGE:
+		return true
+	case SimulationTemplateSweepPropertyLINEQUALITY:
 		return true
 	case SimulationTemplateSweepPropertyMEMORYRELIABILITY:
 		return true
@@ -20179,6 +20254,36 @@ func (e UpdateEnvironmentInputBackgroundNoise) Valid() bool {
 	}
 }
 
+// Defines values for UpdateEnvironmentInputLineQuality.
+const (
+	UpdateEnvironmentInputLineQualityCELLEDGE       UpdateEnvironmentInputLineQuality = "CELL_EDGE"
+	UpdateEnvironmentInputLineQualityCLEAR          UpdateEnvironmentInputLineQuality = "CLEAR"
+	UpdateEnvironmentInputLineQualityCUSTOM         UpdateEnvironmentInputLineQuality = "CUSTOM"
+	UpdateEnvironmentInputLineQualityMINORLOSS      UpdateEnvironmentInputLineQuality = "MINOR_LOSS"
+	UpdateEnvironmentInputLineQualityONEWAYDEGRADED UpdateEnvironmentInputLineQuality = "ONE_WAY_DEGRADED"
+	UpdateEnvironmentInputLineQualityPOORCONNECTION UpdateEnvironmentInputLineQuality = "POOR_CONNECTION"
+)
+
+// Valid indicates whether the value is a known member of the UpdateEnvironmentInputLineQuality enum.
+func (e UpdateEnvironmentInputLineQuality) Valid() bool {
+	switch e {
+	case UpdateEnvironmentInputLineQualityCELLEDGE:
+		return true
+	case UpdateEnvironmentInputLineQualityCLEAR:
+		return true
+	case UpdateEnvironmentInputLineQualityCUSTOM:
+		return true
+	case UpdateEnvironmentInputLineQualityMINORLOSS:
+		return true
+	case UpdateEnvironmentInputLineQualityONEWAYDEGRADED:
+		return true
+	case UpdateEnvironmentInputLineQualityPOORCONNECTION:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateHttpRequestDefinitionInputMethod.
 const (
 	UpdateHttpRequestDefinitionInputMethodGET   UpdateHttpRequestDefinitionInputMethod = "GET"
@@ -20569,6 +20674,7 @@ const (
 	UpdateRunPlanInputComparisonPropertyINTENTCLARITY         UpdateRunPlanInputComparisonProperty = "INTENT_CLARITY"
 	UpdateRunPlanInputComparisonPropertyINTERRUPTION          UpdateRunPlanInputComparisonProperty = "INTERRUPTION"
 	UpdateRunPlanInputComparisonPropertyLANGUAGE              UpdateRunPlanInputComparisonProperty = "LANGUAGE"
+	UpdateRunPlanInputComparisonPropertyLINEQUALITY           UpdateRunPlanInputComparisonProperty = "LINE_QUALITY"
 	UpdateRunPlanInputComparisonPropertyMEMORYRELIABILITY     UpdateRunPlanInputComparisonProperty = "MEMORY_RELIABILITY"
 	UpdateRunPlanInputComparisonPropertyRESPONSETIMING        UpdateRunPlanInputComparisonProperty = "RESPONSE_TIMING"
 	UpdateRunPlanInputComparisonPropertySPEECHCLARITY         UpdateRunPlanInputComparisonProperty = "SPEECH_CLARITY"
@@ -20597,6 +20703,8 @@ func (e UpdateRunPlanInputComparisonProperty) Valid() bool {
 	case UpdateRunPlanInputComparisonPropertyINTERRUPTION:
 		return true
 	case UpdateRunPlanInputComparisonPropertyLANGUAGE:
+		return true
+	case UpdateRunPlanInputComparisonPropertyLINEQUALITY:
 		return true
 	case UpdateRunPlanInputComparisonPropertyMEMORYRELIABILITY:
 		return true
@@ -30626,6 +30734,14 @@ type CreateEnvironmentInput struct {
 	// Example: Open-plan office at peak hours
 	Description *string `json:"description,omitempty"`
 
+	// LineCustom Required with lineQuality CUSTOM, and refused with any other line.
+	LineCustom *LineCustom `json:"lineCustom,omitempty"`
+
+	// LineQuality The phone line the simulated caller is on: packet loss applied to its 20 ms audio packets, per direction. The loss pattern is seeded per call, so a redial loses the same packets. CLEAR: No loss. MINOR_LOSS: 1% random, both ways. CELL_EDGE: 5% in 80 ms gaps, both ways. POOR_CONNECTION: 10% in 120 ms gaps, both ways. ONE_WAY_DEGRADED: 8% in 80 ms gaps, toward the agent only. CUSTOM: the per-direction loss in `lineCustom`, up to 20% in 0.5 steps, with a mean burst of up to 10 packets (omit it for random loss). Defaults to CLEAR.
+	//
+	// Example: CELL_EDGE
+	LineQuality *CreateEnvironmentInputLineQuality `json:"lineQuality,omitempty"`
+
 	// Name Display name, shown wherever a flow variant references the environment
 	//
 	// Example: Busy call centre
@@ -30636,6 +30752,11 @@ type CreateEnvironmentInput struct {
 //
 // Example: OFFICE
 type CreateEnvironmentInputBackgroundNoise string
+
+// CreateEnvironmentInputLineQuality The phone line the simulated caller is on: packet loss applied to its 20 ms audio packets, per direction. The loss pattern is seeded per call, so a redial loses the same packets. CLEAR: No loss. MINOR_LOSS: 1% random, both ways. CELL_EDGE: 5% in 80 ms gaps, both ways. POOR_CONNECTION: 10% in 120 ms gaps, both ways. ONE_WAY_DEGRADED: 8% in 80 ms gaps, toward the agent only. CUSTOM: the per-direction loss in `lineCustom`, up to 20% in 0.5 steps, with a mean burst of up to 10 packets (omit it for random loss). Defaults to CLEAR.
+//
+// Example: CELL_EDGE
+type CreateEnvironmentInputLineQuality string
 
 // CreateHttpRequestDefinitionInput Input for creating an HTTP request definition
 type CreateHttpRequestDefinitionInput struct {
@@ -30987,6 +31108,11 @@ type CreateRunPlanFromConfig struct {
 	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	AutoRun *bool `json:"autoRun,omitempty"`
 
+	// CallsPerSecond The most simulations a run starts per second (0.01-10), fractional allowed: 0.2 starts one every 5 seconds. Omitted or `null` starts them as fast as `maxConcurrentJobs` allows. The concurrency limit still applies on top, so a run holds the rate only while calls last under `maxConcurrentJobs` / `callsPerSecond` seconds. A run reports the rate it achieved as `dialRate.achievedCallsPerSecond`. A rate above the project's concurrency limit / 30 is refused with 400: that limit could only hold it with calls under 30 seconds.
+	//
+	// Example: 0.5
+	CallsPerSecond *float64 `json:"callsPerSecond,omitempty"`
+
 	// ComparisonBaseline The reference value of `comparisonProperty`, for example `NONE` for `BACKGROUND_NOISE` or
 	// `NORMAL` for `SPEECH_PACE`: shown first in the results. Must be a value that property can take.
 	// Whether a value did significantly worse does not depend on it: that is decided against every
@@ -31164,6 +31290,11 @@ type CreateRunPlanFromConfig struct {
 		Id openapi_types.UUID `json:"id"`
 	} `json:"personas,omitempty"`
 
+	// RampUpSeconds Seconds over which the rate climbs linearly from 0 to `callsPerSecond` (0-3600). Omitted, `null` or 0 starts at the full rate. Only used with `callsPerSecond`.
+	//
+	// Example: 60
+	RampUpSeconds *int `json:"rampUpSeconds,omitempty"`
+
 	// Scenarios Deprecated: use `flows` instead. Scenarios to include in this run plan. The same scenario ID can appear multiple times with different variables.
 	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	Scenarios *[]struct {
@@ -31227,6 +31358,11 @@ type CreateRunPlanFromTemplate struct {
 	AgentEndpoints []struct {
 		Id openapi_types.UUID `json:"id"`
 	} `json:"agentEndpoints"`
+
+	// CallsPerSecond The most simulations a run starts per second (0.01-10), fractional allowed: 0.2 starts one every 5 seconds. Omitted or `null` starts them as fast as `maxConcurrentJobs` allows. The concurrency limit still applies on top, so a run holds the rate only while calls last under `maxConcurrentJobs` / `callsPerSecond` seconds. A run reports the rate it achieved as `dialRate.achievedCallsPerSecond`. A rate above the project's concurrency limit / 30 is refused with 400: that limit could only hold it with calls under 30 seconds.
+	//
+	// Example: 0.5
+	CallsPerSecond *float64 `json:"callsPerSecond,omitempty"`
 
 	// ComparisonBaseline The sweep's reference value, shown first in the results. Defaults to the template's own
 	// baseline, as returned by GET /v1/simulation/template. Whether a value did significantly worse
@@ -31355,6 +31491,11 @@ type CreateRunPlanFromTemplate struct {
 		// Example: We're closed on public holidays.
 		Expect string `json:"expect"`
 	} `json:"questions,omitempty"`
+
+	// RampUpSeconds Seconds over which the rate climbs linearly from 0 to `callsPerSecond` (0-3600). Omitted, `null` or 0 starts at the full rate. Only used with `callsPerSecond`.
+	//
+	// Example: 60
+	RampUpSeconds *int `json:"rampUpSeconds,omitempty"`
 
 	// SilenceTimeoutSeconds Timeout in seconds for silence detection
 	//
@@ -33037,7 +33178,13 @@ type EnvironmentResponse struct {
 	CreatedAt   string             `json:"createdAt"`
 	Description *string            `json:"description,omitempty"`
 	Id          openapi_types.UUID `json:"id"`
-	Name        string             `json:"name"`
+
+	// LineCustom The loss of a CUSTOM line; null on every other.
+	LineCustom *LineCustom `json:"lineCustom"`
+
+	// LineQuality The phone line the simulated caller is on: packet loss applied to its 20 ms audio packets, per direction. The loss pattern is seeded per call, so a redial loses the same packets. CLEAR: No loss. MINOR_LOSS: 1% random, both ways. CELL_EDGE: 5% in 80 ms gaps, both ways. POOR_CONNECTION: 10% in 120 ms gaps, both ways. ONE_WAY_DEGRADED: 8% in 80 ms gaps, toward the agent only. CUSTOM: the per-direction loss in `lineCustom`, up to 20% in 0.5 steps, with a mean burst of up to 10 packets (omit it for random loss).
+	LineQuality EnvironmentResponseLineQuality `json:"lineQuality"`
+	Name        string                         `json:"name"`
 
 	// UpdatedAt Last update timestamp in ISO 8601 format
 	UpdatedAt string `json:"updatedAt"`
@@ -33045,6 +33192,9 @@ type EnvironmentResponse struct {
 
 // EnvironmentResponseBackgroundNoise defines model for EnvironmentResponse.BackgroundNoise.
 type EnvironmentResponseBackgroundNoise string
+
+// EnvironmentResponseLineQuality The phone line the simulated caller is on: packet loss applied to its 20 ms audio packets, per direction. The loss pattern is seeded per call, so a redial loses the same packets. CLEAR: No loss. MINOR_LOSS: 1% random, both ways. CELL_EDGE: 5% in 80 ms gaps, both ways. POOR_CONNECTION: 10% in 120 ms gaps, both ways. ONE_WAY_DEGRADED: 8% in 80 ms gaps, toward the agent only. CUSTOM: the per-direction loss in `lineCustom`, up to 20% in 0.5 steps, with a mean burst of up to 10 packets (omit it for random loss).
+type EnvironmentResponseLineQuality string
 
 // ErrorResponse defines model for ErrorResponse.
 type ErrorResponse struct {
@@ -33698,13 +33848,16 @@ type GetSimulationAudioClipsResponse struct {
 
 // GetSimulationPlanJobResponse Simulation run plan job with all associated simulation jobs
 //
-// Example: {"attemptSummary":{"attemptCount":1,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":1},"createdAt":"2024-01-15T10:30:00Z","endedAt":null,"pendingRetries":[],"simulationJobs":[{"agentEndpoint":{"id":"3c2b1a09-8f7e-6d5c-4b3a-291807060504","name":"PHONE","phoneNumber":"+15555551234","type":"PHONE"},"attemptNumber":1,"backgroundNoise":{"backgroundNoise":"CITY","backgroundNoiseVolume":0.1,"source":"ENVIRONMENT"},"callId":"b2c3d4e5-f6a7-8901-bcde-f23456789012","completedAt":"2024-01-15T10:32:45Z","createdAt":"2024-01-15T10:30:20Z","invalidation":null,"persona":{"accent":"US","age":"ADULT","backgroundNoise":"OFFICE","backstoryPrompt":"A busy professional calling during lunch break","baseEmotion":"FRUSTRATED","confirmationStyle":"EXPLICIT","createdAt":"2025-01-10T12:00:00.000Z","displayName":"Anxious Patient","gender":"FEMALE","hasDisfluencies":false,"id":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","idleMessageMaxSpokenCount":3,"idleMessageResetCountOnUserSpeechEnabled":true,"idleMessages":null,"idleTimeoutSeconds":10,"intentClarity":"CLEAR","interruption":"OCCASIONAL","language":"EN","memoryReliability":"HIGH","name":"Sarah Johnson - Anxious Patient","properties":{"age":"35","zipCode":"94105"},"responseTiming":"NORMAL","secondaryLanguage":null,"speechClarity":"CLEAR","speechPace":"NORMAL","understoodLanguages":["EN"],"updatedAt":"2025-01-10T12:00:00.000Z"},"processingStatus":"COMPLETED","retryOfSimulationJobId":null,"roarkPhoneNumber":"+15551234567","scenario":{"description":"Patient calling to schedule an urgent dental appointment","id":"f8e7d6c5-b4a3-9281-7069-5f4e3d2c1b0a"},"scheduledAt":null,"simulationJobId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","startedAt":"2024-01-15T10:30:25Z","status":"COMPLETED"}],"simulationRunPlanId":"9a8b7c6d-5e4f-3210-abcd-ef9876543210","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","startedAt":"2024-01-15T10:30:15Z","status":"RUNNING_SIMULATIONS"}
+// Example: {"attemptSummary":{"attemptCount":1,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":1},"createdAt":"2024-01-15T10:30:00Z","dialRate":null,"endedAt":null,"pendingRetries":[],"simulationJobs":[{"agentEndpoint":{"id":"3c2b1a09-8f7e-6d5c-4b3a-291807060504","name":"PHONE","phoneNumber":"+15555551234","type":"PHONE"},"attemptNumber":1,"backgroundNoise":{"backgroundNoise":"CITY","backgroundNoiseVolume":0.1,"source":"ENVIRONMENT"},"callId":"b2c3d4e5-f6a7-8901-bcde-f23456789012","completedAt":"2024-01-15T10:32:45Z","createdAt":"2024-01-15T10:30:20Z","invalidation":null,"persona":{"accent":"US","age":"ADULT","backgroundNoise":"OFFICE","backstoryPrompt":"A busy professional calling during lunch break","baseEmotion":"FRUSTRATED","confirmationStyle":"EXPLICIT","createdAt":"2025-01-10T12:00:00.000Z","displayName":"Anxious Patient","gender":"FEMALE","hasDisfluencies":false,"id":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","idleMessageMaxSpokenCount":3,"idleMessageResetCountOnUserSpeechEnabled":true,"idleMessages":null,"idleTimeoutSeconds":10,"intentClarity":"CLEAR","interruption":"OCCASIONAL","language":"EN","memoryReliability":"HIGH","name":"Sarah Johnson - Anxious Patient","properties":{"age":"35","zipCode":"94105"},"responseTiming":"NORMAL","secondaryLanguage":null,"speechClarity":"CLEAR","speechPace":"NORMAL","understoodLanguages":["EN"],"updatedAt":"2025-01-10T12:00:00.000Z"},"processingStatus":"COMPLETED","retryOfSimulationJobId":null,"roarkPhoneNumber":"+15551234567","scenario":{"description":"Patient calling to schedule an urgent dental appointment","id":"f8e7d6c5-b4a3-9281-7069-5f4e3d2c1b0a"},"scheduledAt":null,"simulationJobId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","startedAt":"2024-01-15T10:30:25Z","status":"COMPLETED"}],"simulationRunPlanId":"9a8b7c6d-5e4f-3210-abcd-ef9876543210","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","startedAt":"2024-01-15T10:30:15Z","status":"RUNNING_SIMULATIONS"}
 type GetSimulationPlanJobResponse struct {
 	// AttemptSummary The run’s simulations against its test cases. Differs from a plain job count only when the plan retries simulations your agent never spoke on.
 	AttemptSummary SimulationRunPlanJobAttemptSummary `json:"attemptSummary"`
 
 	// CreatedAt When the job was created
 	CreatedAt string `json:"createdAt"`
+
+	// DialRate The dial rate this run was paced at, and the rate it achieved. `null` for a run started without one.
+	DialRate *SimulationRunPlanJobDialRate `json:"dialRate,omitempty"`
 
 	// EndedAt When the job ended
 	EndedAt *string `json:"endedAt,omitempty"`
@@ -34797,6 +34950,11 @@ type InlineRunPlanConfig struct {
 		Id openapi_types.UUID `json:"id"`
 	} `json:"agentEndpoints"`
 
+	// CallsPerSecond The most simulations a run starts per second (0.01-10), fractional allowed: 0.2 starts one every 5 seconds. Omitted or `null` starts them as fast as `maxConcurrentJobs` allows. The concurrency limit still applies on top, so a run holds the rate only while calls last under `maxConcurrentJobs` / `callsPerSecond` seconds. A run reports the rate it achieved as `dialRate.achievedCallsPerSecond`. A rate above the project's concurrency limit / 30 is refused with 400: that limit could only hold it with calls under 30 seconds.
+	//
+	// Example: 0.5
+	CallsPerSecond *float64 `json:"callsPerSecond,omitempty"`
+
 	// ComparisonBaseline The reference value of `comparisonProperty`, for example `NONE` for `BACKGROUND_NOISE` or
 	// `NORMAL` for `SPEECH_PACE`: shown first in the results. Must be a value that property can take.
 	// Whether a value did significantly worse does not depend on it: that is decided against every
@@ -34968,6 +35126,11 @@ type InlineRunPlanConfig struct {
 	Personas *[]struct {
 		Id openapi_types.UUID `json:"id"`
 	} `json:"personas,omitempty"`
+
+	// RampUpSeconds Seconds over which the rate climbs linearly from 0 to `callsPerSecond` (0-3600). Omitted, `null` or 0 starts at the full rate. Only used with `callsPerSecond`.
+	//
+	// Example: 60
+	RampUpSeconds *int `json:"rampUpSeconds,omitempty"`
 
 	// Scenarios Deprecated: use `flows` instead. Scenarios to include in this run plan. The same scenario ID can appear multiple times with different variables.
 	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
@@ -35220,6 +35383,25 @@ type IssueResolvedWebhookEvent string
 //
 // Example: 1.0
 type IssueResolvedWebhookVersion string
+
+// LineCustom The per-direction loss of a CUSTOM line.
+type LineCustom struct {
+	FromAgent *LineImpairment `json:"fromAgent,omitempty"`
+	ToAgent   *LineImpairment `json:"toAgent,omitempty"`
+}
+
+// LineImpairment defines model for LineImpairment.
+type LineImpairment struct {
+	// MeanBurstPackets Mean length of a loss gap in 20 ms packets, 2 to 10. Omit for random loss.
+	//
+	// Example: 3
+	MeanBurstPackets *int `json:"meanBurstPackets,omitempty"`
+
+	// PacketLossPercent Share of packets lost, 0 to 20 in steps of 0.5.
+	//
+	// Example: 3
+	PacketLossPercent float64 `json:"packetLossPercent"`
+}
 
 // ListAgentVersionsResponse defines model for ListAgentVersionsResponse.
 type ListAgentVersionsResponse struct {
@@ -37822,6 +38004,7 @@ type PublishAgentDraftInput struct {
 // QaSimulationPlanConfig defines model for QaSimulationPlanConfig.
 type QaSimulationPlanConfig struct {
 	AgentEndpoints                []SimulationPlanAgentEndpointConfig  `json:"agentEndpoints"`
+	CallsPerSecond                *float64                             `json:"callsPerSecond,omitempty"`
 	Description                   *string                              `json:"description,omitempty"`
 	Direction                     QaSimulationPlanConfigDirection      `json:"direction"`
 	EndCallPhrases                *[]string                            `json:"endCallPhrases,omitempty"`
@@ -37843,6 +38026,7 @@ type QaSimulationPlanConfig struct {
 	Notify                        *SimulationNotifyConfig              `json:"notify,omitempty"`
 	Persona                       string                               `json:"persona"`
 	Questions                     []SimulationPlanQaQuestion           `json:"questions"`
+	RampUpSeconds                 *int                                 `json:"rampUpSeconds,omitempty"`
 	Schedule                      *SimulationPlanScheduleConfig        `json:"schedule,omitempty"`
 	SilenceTimeoutSeconds         *int                                 `json:"silenceTimeoutSeconds,omitempty"`
 	Template                      QaSimulationPlanConfigTemplate       `json:"template"`
@@ -38092,6 +38276,11 @@ type RunPlanResponse struct {
 		Id openapi_types.UUID `json:"id"`
 	} `json:"agentEndpoints"`
 
+	// CallsPerSecond The most simulations a run starts per second (0.01-10), fractional allowed: 0.2 starts one every 5 seconds. Omitted or `null` starts them as fast as `maxConcurrentJobs` allows. The concurrency limit still applies on top, so a run holds the rate only while calls last under `maxConcurrentJobs` / `callsPerSecond` seconds. A run reports the rate it achieved as `dialRate.achievedCallsPerSecond`. A rate above the project's concurrency limit / 30 is refused with 400: that limit could only hold it with calls under 30 seconds.
+	//
+	// Example: 0.5
+	CallsPerSecond *float64 `json:"callsPerSecond"`
+
 	// ComparisonBaseline The reference value of `comparisonProperty`, such as `NONE` for `BACKGROUND_NOISE`: shown first in the results. Whether a value did significantly worse does not depend on it: that is decided against every other value combined (see `sweepAttribution`). `null` when no comparison is declared, or when the property has no obvious norm and none was chosen.
 	ComparisonBaseline *string `json:"comparisonBaseline"`
 
@@ -38187,6 +38376,11 @@ type RunPlanResponse struct {
 	Personas []struct {
 		Id openapi_types.UUID `json:"id"`
 	} `json:"personas"`
+
+	// RampUpSeconds Seconds over which the rate climbs linearly from 0 to `callsPerSecond` (0-3600). Omitted, `null` or 0 starts at the full rate. Only used with `callsPerSecond`.
+	//
+	// Example: 60
+	RampUpSeconds *int `json:"rampUpSeconds"`
 
 	// Scenarios Deprecated: use `flows` instead. Scenarios included in this run plan.
 	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
@@ -38532,6 +38726,11 @@ type RunSimulationFromTemplate struct {
 		Id openapi_types.UUID `json:"id"`
 	} `json:"agentEndpoints"`
 
+	// CallsPerSecond The most simulations a run starts per second (0.01-10), fractional allowed: 0.2 starts one every 5 seconds. Omitted or `null` starts them as fast as `maxConcurrentJobs` allows. The concurrency limit still applies on top, so a run holds the rate only while calls last under `maxConcurrentJobs` / `callsPerSecond` seconds. A run reports the rate it achieved as `dialRate.achievedCallsPerSecond`. A rate above the project's concurrency limit / 30 is refused with 400: that limit could only hold it with calls under 30 seconds.
+	//
+	// Example: 0.5
+	CallsPerSecond *float64 `json:"callsPerSecond,omitempty"`
+
 	// ComparisonBaseline The sweep's reference value, shown first in the results. Defaults to the template's own
 	// baseline, as returned by GET /v1/simulation/template. Whether a value did significantly worse
 	// does not depend on it: that is decided against every other value combined.
@@ -38654,6 +38853,11 @@ type RunSimulationFromTemplate struct {
 		// Example: We're closed on public holidays.
 		Expect string `json:"expect"`
 	} `json:"questions,omitempty"`
+
+	// RampUpSeconds Seconds over which the rate climbs linearly from 0 to `callsPerSecond` (0-3600). Omitted, `null` or 0 starts at the full rate. Only used with `callsPerSecond`.
+	//
+	// Example: 60
+	RampUpSeconds *int `json:"rampUpSeconds,omitempty"`
 
 	// SaveAsPlan Keeps the resolved configuration as a run plan, listed by GET /v1/simulation/plan and re-runnable with `planId`. Requires `name`.
 	SaveAsPlan *bool `json:"saveAsPlan,omitempty"`
@@ -39718,6 +39922,7 @@ type SimulationPlanAgentEndpointConfigDirection string
 // SimulationPlanConfig defines model for SimulationPlanConfig.
 type SimulationPlanConfig struct {
 	AgentEndpoints                []SimulationPlanAgentEndpointConfig `json:"agentEndpoints"`
+	CallsPerSecond                *float64                            `json:"callsPerSecond,omitempty"`
 	Description                   *string                             `json:"description,omitempty"`
 	Direction                     SimulationPlanConfigDirection       `json:"direction"`
 	EndCallPhrases                *[]string                           `json:"endCallPhrases,omitempty"`
@@ -39736,6 +39941,7 @@ type SimulationPlanConfig struct {
 	Name                          string                              `json:"name"`
 	NoResponseRetryBackoffSeconds *int                                `json:"noResponseRetryBackoffSeconds,omitempty"`
 	Notify                        *SimulationNotifyConfig             `json:"notify,omitempty"`
+	RampUpSeconds                 *int                                `json:"rampUpSeconds,omitempty"`
 	Schedule                      *SimulationPlanScheduleConfig       `json:"schedule,omitempty"`
 	SilenceTimeoutSeconds         *int                                `json:"silenceTimeoutSeconds,omitempty"`
 	Template                      *SimulationPlanConfigTemplate       `json:"template,omitempty"`
@@ -40510,6 +40716,18 @@ type SimulationRunPlanJobCompletedWebhookEvent string
 //
 // Example: 1.0
 type SimulationRunPlanJobCompletedWebhookVersion string
+
+// SimulationRunPlanJobDialRate A paced run: the dial rate it was started with, and the rate it achieved.
+type SimulationRunPlanJobDialRate struct {
+	// AchievedCallsPerSecond Simulations started per second after the ramp, from the first start past it to the last. Below the target when concurrency or phone capacity held the run back. `null` until two have started.
+	AchievedCallsPerSecond *float64 `json:"achievedCallsPerSecond"`
+
+	// RampUpSeconds The ramp up to that rate, in seconds. `null` when the run started at the full rate.
+	RampUpSeconds *int `json:"rampUpSeconds"`
+
+	// TargetCallsPerSecond The `callsPerSecond` the plan asked for when this run started.
+	TargetCallsPerSecond float64 `json:"targetCallsPerSecond"`
+}
 
 // SimulationRunPlanJobFailedWebhook defines model for SimulationRunPlanJobFailedWebhook.
 type SimulationRunPlanJobFailedWebhook struct {
@@ -42326,6 +42544,14 @@ type UpdateEnvironmentInput struct {
 	// Example: Open-plan office at peak hours
 	Description *string `json:"description,omitempty"`
 
+	// LineCustom Required with lineQuality CUSTOM, and refused with any other line.
+	LineCustom *LineCustom `json:"lineCustom,omitempty"`
+
+	// LineQuality The phone line the simulated caller is on: packet loss applied to its 20 ms audio packets, per direction. The loss pattern is seeded per call, so a redial loses the same packets. CLEAR: No loss. MINOR_LOSS: 1% random, both ways. CELL_EDGE: 5% in 80 ms gaps, both ways. POOR_CONNECTION: 10% in 120 ms gaps, both ways. ONE_WAY_DEGRADED: 8% in 80 ms gaps, toward the agent only. CUSTOM: the per-direction loss in `lineCustom`, up to 20% in 0.5 steps, with a mean burst of up to 10 packets (omit it for random loss). Defaults to CLEAR.
+	//
+	// Example: CELL_EDGE
+	LineQuality *UpdateEnvironmentInputLineQuality `json:"lineQuality,omitempty"`
+
 	// Name Display name, shown wherever a flow variant references the environment
 	//
 	// Example: Busy call centre
@@ -42336,6 +42562,11 @@ type UpdateEnvironmentInput struct {
 //
 // Example: OFFICE
 type UpdateEnvironmentInputBackgroundNoise string
+
+// UpdateEnvironmentInputLineQuality The phone line the simulated caller is on: packet loss applied to its 20 ms audio packets, per direction. The loss pattern is seeded per call, so a redial loses the same packets. CLEAR: No loss. MINOR_LOSS: 1% random, both ways. CELL_EDGE: 5% in 80 ms gaps, both ways. POOR_CONNECTION: 10% in 120 ms gaps, both ways. ONE_WAY_DEGRADED: 8% in 80 ms gaps, toward the agent only. CUSTOM: the per-direction loss in `lineCustom`, up to 20% in 0.5 steps, with a mean burst of up to 10 packets (omit it for random loss). Defaults to CLEAR.
+//
+// Example: CELL_EDGE
+type UpdateEnvironmentInputLineQuality string
 
 // UpdateFlowVariantInput Fields to change on a variant. Omitted fields are left alone. Making a variant the default is a separate operation, since it also demotes the current default.
 type UpdateFlowVariantInput struct {
@@ -42708,6 +42939,9 @@ type UpdateRunPlanInput struct {
 		Id openapi_types.UUID `json:"id"`
 	} `json:"agentEndpoints,omitempty"`
 
+	// CallsPerSecond The most simulations a run starts per second (0.01-10), fractional allowed: 0.2 starts one every 5 seconds. Omitted or `null` starts them as fast as `maxConcurrentJobs` allows. The concurrency limit still applies on top, so a run holds the rate only while calls last under `maxConcurrentJobs` / `callsPerSecond` seconds. A run reports the rate it achieved as `dialRate.achievedCallsPerSecond`. A rate above the project's concurrency limit / 30 is refused with 400: that limit could only hold it with calls under 30 seconds. Send `null` to remove the rate; omit to leave it unchanged.
+	CallsPerSecond *float64 `json:"callsPerSecond,omitempty"`
+
 	// ComparisonBaseline The reference value, shown first in the results. See `POST /v1/simulation/plan`.
 	//
 	// A real value cannot be sent on its own: the property it belongs to decides which values are
@@ -42803,6 +43037,9 @@ type UpdateRunPlanInput struct {
 	Personas *[]struct {
 		Id openapi_types.UUID `json:"id"`
 	} `json:"personas,omitempty"`
+
+	// RampUpSeconds Seconds over which the rate climbs linearly from 0 to `callsPerSecond` (0-3600). Omitted, `null` or 0 starts at the full rate. Only used with `callsPerSecond`. Send `null` to remove the ramp; omit to leave it unchanged.
+	RampUpSeconds *int `json:"rampUpSeconds,omitempty"`
 
 	// Scenarios Deprecated: use `flows` instead. Replaces the scenarios on this run plan. Omit to leave them unchanged; send an empty array to detach them all, which is how a scenario-based plan is moved over to flows.
 	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
@@ -103354,7 +103591,7 @@ type GetV1SimulationPlanJobByJobIdResponse struct {
 	JSON200 *struct {
 		// Data Simulation run plan job with all associated simulation jobs
 		//
-		// Example: {"attemptSummary":{"attemptCount":1,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":1},"createdAt":"2024-01-15T10:30:00Z","endedAt":null,"pendingRetries":[],"simulationJobs":[{"agentEndpoint":{"id":"3c2b1a09-8f7e-6d5c-4b3a-291807060504","name":"PHONE","phoneNumber":"+15555551234","type":"PHONE"},"attemptNumber":1,"backgroundNoise":{"backgroundNoise":"CITY","backgroundNoiseVolume":0.1,"source":"ENVIRONMENT"},"callId":"b2c3d4e5-f6a7-8901-bcde-f23456789012","completedAt":"2024-01-15T10:32:45Z","createdAt":"2024-01-15T10:30:20Z","invalidation":null,"persona":{"accent":"US","age":"ADULT","backgroundNoise":"OFFICE","backstoryPrompt":"A busy professional calling during lunch break","baseEmotion":"FRUSTRATED","confirmationStyle":"EXPLICIT","createdAt":"2025-01-10T12:00:00.000Z","displayName":"Anxious Patient","gender":"FEMALE","hasDisfluencies":false,"id":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","idleMessageMaxSpokenCount":3,"idleMessageResetCountOnUserSpeechEnabled":true,"idleMessages":null,"idleTimeoutSeconds":10,"intentClarity":"CLEAR","interruption":"OCCASIONAL","language":"EN","memoryReliability":"HIGH","name":"Sarah Johnson - Anxious Patient","properties":{"age":"35","zipCode":"94105"},"responseTiming":"NORMAL","secondaryLanguage":null,"speechClarity":"CLEAR","speechPace":"NORMAL","understoodLanguages":["EN"],"updatedAt":"2025-01-10T12:00:00.000Z"},"processingStatus":"COMPLETED","retryOfSimulationJobId":null,"roarkPhoneNumber":"+15551234567","scenario":{"description":"Patient calling to schedule an urgent dental appointment","id":"f8e7d6c5-b4a3-9281-7069-5f4e3d2c1b0a"},"scheduledAt":null,"simulationJobId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","startedAt":"2024-01-15T10:30:25Z","status":"COMPLETED"}],"simulationRunPlanId":"9a8b7c6d-5e4f-3210-abcd-ef9876543210","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","startedAt":"2024-01-15T10:30:15Z","status":"RUNNING_SIMULATIONS"}
+		// Example: {"attemptSummary":{"attemptCount":1,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":1},"createdAt":"2024-01-15T10:30:00Z","dialRate":null,"endedAt":null,"pendingRetries":[],"simulationJobs":[{"agentEndpoint":{"id":"3c2b1a09-8f7e-6d5c-4b3a-291807060504","name":"PHONE","phoneNumber":"+15555551234","type":"PHONE"},"attemptNumber":1,"backgroundNoise":{"backgroundNoise":"CITY","backgroundNoiseVolume":0.1,"source":"ENVIRONMENT"},"callId":"b2c3d4e5-f6a7-8901-bcde-f23456789012","completedAt":"2024-01-15T10:32:45Z","createdAt":"2024-01-15T10:30:20Z","invalidation":null,"persona":{"accent":"US","age":"ADULT","backgroundNoise":"OFFICE","backstoryPrompt":"A busy professional calling during lunch break","baseEmotion":"FRUSTRATED","confirmationStyle":"EXPLICIT","createdAt":"2025-01-10T12:00:00.000Z","displayName":"Anxious Patient","gender":"FEMALE","hasDisfluencies":false,"id":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","idleMessageMaxSpokenCount":3,"idleMessageResetCountOnUserSpeechEnabled":true,"idleMessages":null,"idleTimeoutSeconds":10,"intentClarity":"CLEAR","interruption":"OCCASIONAL","language":"EN","memoryReliability":"HIGH","name":"Sarah Johnson - Anxious Patient","properties":{"age":"35","zipCode":"94105"},"responseTiming":"NORMAL","secondaryLanguage":null,"speechClarity":"CLEAR","speechPace":"NORMAL","understoodLanguages":["EN"],"updatedAt":"2025-01-10T12:00:00.000Z"},"processingStatus":"COMPLETED","retryOfSimulationJobId":null,"roarkPhoneNumber":"+15551234567","scenario":{"description":"Patient calling to schedule an urgent dental appointment","id":"f8e7d6c5-b4a3-9281-7069-5f4e3d2c1b0a"},"scheduledAt":null,"simulationJobId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","startedAt":"2024-01-15T10:30:25Z","status":"COMPLETED"}],"simulationRunPlanId":"9a8b7c6d-5e4f-3210-abcd-ef9876543210","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","startedAt":"2024-01-15T10:30:15Z","status":"RUNNING_SIMULATIONS"}
 		Data GetSimulationPlanJobResponse `json:"data"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -103375,7 +103612,7 @@ type GetV1SimulationPlanJobByJobIdResponse struct {
 func (r GetV1SimulationPlanJobByJobIdResponse) GetJSON200() *struct {
 	// Data Simulation run plan job with all associated simulation jobs
 	//
-	// Example: {"attemptSummary":{"attemptCount":1,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":1},"createdAt":"2024-01-15T10:30:00Z","endedAt":null,"pendingRetries":[],"simulationJobs":[{"agentEndpoint":{"id":"3c2b1a09-8f7e-6d5c-4b3a-291807060504","name":"PHONE","phoneNumber":"+15555551234","type":"PHONE"},"attemptNumber":1,"backgroundNoise":{"backgroundNoise":"CITY","backgroundNoiseVolume":0.1,"source":"ENVIRONMENT"},"callId":"b2c3d4e5-f6a7-8901-bcde-f23456789012","completedAt":"2024-01-15T10:32:45Z","createdAt":"2024-01-15T10:30:20Z","invalidation":null,"persona":{"accent":"US","age":"ADULT","backgroundNoise":"OFFICE","backstoryPrompt":"A busy professional calling during lunch break","baseEmotion":"FRUSTRATED","confirmationStyle":"EXPLICIT","createdAt":"2025-01-10T12:00:00.000Z","displayName":"Anxious Patient","gender":"FEMALE","hasDisfluencies":false,"id":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","idleMessageMaxSpokenCount":3,"idleMessageResetCountOnUserSpeechEnabled":true,"idleMessages":null,"idleTimeoutSeconds":10,"intentClarity":"CLEAR","interruption":"OCCASIONAL","language":"EN","memoryReliability":"HIGH","name":"Sarah Johnson - Anxious Patient","properties":{"age":"35","zipCode":"94105"},"responseTiming":"NORMAL","secondaryLanguage":null,"speechClarity":"CLEAR","speechPace":"NORMAL","understoodLanguages":["EN"],"updatedAt":"2025-01-10T12:00:00.000Z"},"processingStatus":"COMPLETED","retryOfSimulationJobId":null,"roarkPhoneNumber":"+15551234567","scenario":{"description":"Patient calling to schedule an urgent dental appointment","id":"f8e7d6c5-b4a3-9281-7069-5f4e3d2c1b0a"},"scheduledAt":null,"simulationJobId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","startedAt":"2024-01-15T10:30:25Z","status":"COMPLETED"}],"simulationRunPlanId":"9a8b7c6d-5e4f-3210-abcd-ef9876543210","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","startedAt":"2024-01-15T10:30:15Z","status":"RUNNING_SIMULATIONS"}
+	// Example: {"attemptSummary":{"attemptCount":1,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":1},"createdAt":"2024-01-15T10:30:00Z","dialRate":null,"endedAt":null,"pendingRetries":[],"simulationJobs":[{"agentEndpoint":{"id":"3c2b1a09-8f7e-6d5c-4b3a-291807060504","name":"PHONE","phoneNumber":"+15555551234","type":"PHONE"},"attemptNumber":1,"backgroundNoise":{"backgroundNoise":"CITY","backgroundNoiseVolume":0.1,"source":"ENVIRONMENT"},"callId":"b2c3d4e5-f6a7-8901-bcde-f23456789012","completedAt":"2024-01-15T10:32:45Z","createdAt":"2024-01-15T10:30:20Z","invalidation":null,"persona":{"accent":"US","age":"ADULT","backgroundNoise":"OFFICE","backstoryPrompt":"A busy professional calling during lunch break","baseEmotion":"FRUSTRATED","confirmationStyle":"EXPLICIT","createdAt":"2025-01-10T12:00:00.000Z","displayName":"Anxious Patient","gender":"FEMALE","hasDisfluencies":false,"id":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","idleMessageMaxSpokenCount":3,"idleMessageResetCountOnUserSpeechEnabled":true,"idleMessages":null,"idleTimeoutSeconds":10,"intentClarity":"CLEAR","interruption":"OCCASIONAL","language":"EN","memoryReliability":"HIGH","name":"Sarah Johnson - Anxious Patient","properties":{"age":"35","zipCode":"94105"},"responseTiming":"NORMAL","secondaryLanguage":null,"speechClarity":"CLEAR","speechPace":"NORMAL","understoodLanguages":["EN"],"updatedAt":"2025-01-10T12:00:00.000Z"},"processingStatus":"COMPLETED","retryOfSimulationJobId":null,"roarkPhoneNumber":"+15551234567","scenario":{"description":"Patient calling to schedule an urgent dental appointment","id":"f8e7d6c5-b4a3-9281-7069-5f4e3d2c1b0a"},"scheduledAt":null,"simulationJobId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","startedAt":"2024-01-15T10:30:25Z","status":"COMPLETED"}],"simulationRunPlanId":"9a8b7c6d-5e4f-3210-abcd-ef9876543210","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","startedAt":"2024-01-15T10:30:15Z","status":"RUNNING_SIMULATIONS"}
 	Data GetSimulationPlanJobResponse `json:"data"`
 } {
 	return r.JSON200
@@ -126451,7 +126688,7 @@ func ParseGetV1SimulationPlanJobByJobIdResponse(rsp *http.Response) (*GetV1Simul
 		var dest struct {
 			// Data Simulation run plan job with all associated simulation jobs
 			//
-			// Example: {"attemptSummary":{"attemptCount":1,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":1},"createdAt":"2024-01-15T10:30:00Z","endedAt":null,"pendingRetries":[],"simulationJobs":[{"agentEndpoint":{"id":"3c2b1a09-8f7e-6d5c-4b3a-291807060504","name":"PHONE","phoneNumber":"+15555551234","type":"PHONE"},"attemptNumber":1,"backgroundNoise":{"backgroundNoise":"CITY","backgroundNoiseVolume":0.1,"source":"ENVIRONMENT"},"callId":"b2c3d4e5-f6a7-8901-bcde-f23456789012","completedAt":"2024-01-15T10:32:45Z","createdAt":"2024-01-15T10:30:20Z","invalidation":null,"persona":{"accent":"US","age":"ADULT","backgroundNoise":"OFFICE","backstoryPrompt":"A busy professional calling during lunch break","baseEmotion":"FRUSTRATED","confirmationStyle":"EXPLICIT","createdAt":"2025-01-10T12:00:00.000Z","displayName":"Anxious Patient","gender":"FEMALE","hasDisfluencies":false,"id":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","idleMessageMaxSpokenCount":3,"idleMessageResetCountOnUserSpeechEnabled":true,"idleMessages":null,"idleTimeoutSeconds":10,"intentClarity":"CLEAR","interruption":"OCCASIONAL","language":"EN","memoryReliability":"HIGH","name":"Sarah Johnson - Anxious Patient","properties":{"age":"35","zipCode":"94105"},"responseTiming":"NORMAL","secondaryLanguage":null,"speechClarity":"CLEAR","speechPace":"NORMAL","understoodLanguages":["EN"],"updatedAt":"2025-01-10T12:00:00.000Z"},"processingStatus":"COMPLETED","retryOfSimulationJobId":null,"roarkPhoneNumber":"+15551234567","scenario":{"description":"Patient calling to schedule an urgent dental appointment","id":"f8e7d6c5-b4a3-9281-7069-5f4e3d2c1b0a"},"scheduledAt":null,"simulationJobId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","startedAt":"2024-01-15T10:30:25Z","status":"COMPLETED"}],"simulationRunPlanId":"9a8b7c6d-5e4f-3210-abcd-ef9876543210","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","startedAt":"2024-01-15T10:30:15Z","status":"RUNNING_SIMULATIONS"}
+			// Example: {"attemptSummary":{"attemptCount":1,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":1},"createdAt":"2024-01-15T10:30:00Z","dialRate":null,"endedAt":null,"pendingRetries":[],"simulationJobs":[{"agentEndpoint":{"id":"3c2b1a09-8f7e-6d5c-4b3a-291807060504","name":"PHONE","phoneNumber":"+15555551234","type":"PHONE"},"attemptNumber":1,"backgroundNoise":{"backgroundNoise":"CITY","backgroundNoiseVolume":0.1,"source":"ENVIRONMENT"},"callId":"b2c3d4e5-f6a7-8901-bcde-f23456789012","completedAt":"2024-01-15T10:32:45Z","createdAt":"2024-01-15T10:30:20Z","invalidation":null,"persona":{"accent":"US","age":"ADULT","backgroundNoise":"OFFICE","backstoryPrompt":"A busy professional calling during lunch break","baseEmotion":"FRUSTRATED","confirmationStyle":"EXPLICIT","createdAt":"2025-01-10T12:00:00.000Z","displayName":"Anxious Patient","gender":"FEMALE","hasDisfluencies":false,"id":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","idleMessageMaxSpokenCount":3,"idleMessageResetCountOnUserSpeechEnabled":true,"idleMessages":null,"idleTimeoutSeconds":10,"intentClarity":"CLEAR","interruption":"OCCASIONAL","language":"EN","memoryReliability":"HIGH","name":"Sarah Johnson - Anxious Patient","properties":{"age":"35","zipCode":"94105"},"responseTiming":"NORMAL","secondaryLanguage":null,"speechClarity":"CLEAR","speechPace":"NORMAL","understoodLanguages":["EN"],"updatedAt":"2025-01-10T12:00:00.000Z"},"processingStatus":"COMPLETED","retryOfSimulationJobId":null,"roarkPhoneNumber":"+15551234567","scenario":{"description":"Patient calling to schedule an urgent dental appointment","id":"f8e7d6c5-b4a3-9281-7069-5f4e3d2c1b0a"},"scheduledAt":null,"simulationJobId":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","startedAt":"2024-01-15T10:30:25Z","status":"COMPLETED"}],"simulationRunPlanId":"9a8b7c6d-5e4f-3210-abcd-ef9876543210","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","startedAt":"2024-01-15T10:30:15Z","status":"RUNNING_SIMULATIONS"}
 			Data GetSimulationPlanJobResponse `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {

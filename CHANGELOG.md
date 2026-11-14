@@ -2,6 +2,17 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.17.0, 2026-11-14
+
+- Breaking: agent responses gained an `Industry` field. The anonymous data struct in the `JSON200` and `GetJSON200` types of `GetV1AgentResponse` and `GetV1AgentByAgentIdResponse` changed, as did `JSON201` and `GetJSON201` of `PostV1AgentResponse` and `PostV1AgentBuildResponse`, and `JSON200` and `GetJSON200` of `PutV1AgentByAgentIdResponse`. The `Agents` element type of `ImprovCustomerFlow`, `ScriptedCustomerFlow` and `VoicemailCustomerFlow` changed too. Code that builds or assigns these struct types must be updated. Code that reads fields by name still compiles.
+- Added agent setup endpoints: `GetV1AgentByAgentIdSetup`, `PostV1AgentByAgentIdSetup`, `GetV1AgentByAgentIdSetupBySetupId`, `PostV1AgentByAgentIdSetupBySetupIdAnswer`, `PostV1AgentByAgentIdSetupBySetupIdGuidance` and `PostV1AgentByAgentIdSetupBySetupIdCancel`. Each has a `WithResponse` variant, a request builder, a response parser and a response type. The ones that send a body also have `WithBody` variants.
+- Added the setup types `AgentSetup`, `AgentSetupItem`, `AgentSetupLayer`, `AgentSetupActivity`, `AgentSetupQuestion`, `RequestAgentSetupInput`, `AgentSetupMessageInput`, `AgentSetupExploreInput` and `AgentAutoSetupInput`, with the `AgentSetupStatus` enum (`PENDING`, `RUNNING`, `NEEDS_INPUT`, `COMPLETED`, `FAILED`, `CANCELLED`).
+- Added the webhook types `AgentSetupCompletedWebhook` and `AgentSetupFailedWebhook`.
+- Added optional `AutoSetup`, `Endpoint`, `Industry`, `Prompt`, `TestingInstructions` and `WebsiteUrl` fields to `PostV1AgentJSONBody` and `PostV1AgentJSONRequestBody`.
+- Added `Industry` enums for agents, for example `PostV1AgentJSONBodyIndustry`, `RequestAgentSetupInputIndustry` and `CreateAgentResponseIndustry`, plus the `NewAgentEndpointInput` type.
+- Added `JSON403`, `GetJSON403`, `JSON409` and `GetJSON409` to `PostV1AgentResponse`.
+- `ClientInterface` and `ClientWithResponsesInterface` gained the new setup methods. Code that implements these interfaces, such as test mocks, must add them.
+
 ## v0.16.1, 2026-11-13
 
 - Added phone line quality for environments. `CreateEnvironmentInput`, `UpdateEnvironmentInput` and `EnvironmentResponse` gained `LineQuality` and `LineCustom` fields. The values are `CLEAR`, `MINOR_LOSS`, `CELL_EDGE`, `POOR_CONNECTION`, `ONE_WAY_DEGRADED` and `CUSTOM`, for example `CreateEnvironmentInputLineQualityCELLEDGE`, and each enum has a `Valid` method.

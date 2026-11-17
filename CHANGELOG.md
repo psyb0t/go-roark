@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.19.0, 2026-11-17
+
+- Breaking: the `/v1/integrations/calendar` and `/v1/integrations/mcp-server` endpoints moved to `/v1/connections/calendar` and `/v1/connections/mcp-server`. Every `...V1Integrations...` method on `Client` and `ClientWithResponses` is removed, for example `GetV1IntegrationsCalendar` and `PostV1IntegrationsMcpServerDiscover`. Use the `...V1Connections...` methods instead, for example `GetV1ConnectionsCalendar` and `PostV1ConnectionsMcpServerDiscover`. The related request builders, parsers and response and enum types are renamed the same way.
+- Breaking: removed `GetV1Conversation`, `PostV1CliAuthToken`, `PostV1CliAuthTokenWithBody`, `PostV1PublicCampaignCreditByCampaignKeyClaim` and `PostV1PublicCampaignCreditVerify`, with their `WithBody`, `WithResponse` variants, request builders, parsers and response types.
+- Added agent connection endpoints under `/v1/connections/agent`: `GetV1ConnectionsAgent`, `PostV1ConnectionsAgent`, `GetV1ConnectionsAgentByConnectionId`, `PatchV1ConnectionsAgentByConnectionId`, `DeleteV1ConnectionsAgentByConnectionId`, `PostV1ConnectionsAgentDiscover`, `GetV1ConnectionsAgentProviders`, and backfill methods such as `GetV1ConnectionsAgentByConnectionIdBackfills` and `PostV1ConnectionsAgentByConnectionIdBackfillsByBackfillIdCancel`.
+- Added agent connection types `AgentConnectionCreateBody`, `AgentConnectionBackfill`, `AgentConnectionCapability`, and per-provider create bodies such as `AgentConnectionCreateBland`, `AgentConnectionCreateElevenLabs`, `AgentConnectionCreateGoogleCes`, `AgentConnectionCreateKore`, `AgentConnectionCreateLeaping` and `AgentConnectionCreateLivekit`.
+- Added customer flow folder endpoints: `GetV1CustomerFlowFolder`, `PostV1CustomerFlowFolder` and `DeleteV1CustomerFlowFolderByFolderId`.
+- Added the `FISHAUDIO` value `AgentConfigTtsProviderFISHAUDIO` to the agent TTS provider enum.
+- `ClientInterface` and `ClientWithResponsesInterface` lost the removed methods and gained the new ones. Code that implements these interfaces, such as test mocks, must be updated.
+
 ## v0.18.0, 2026-11-17
 
 - Breaking: `Label` in `PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONBody` and `PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONRequestBody` changed from `string` to `*string`, so it is now optional. Code that sets or reads it must be updated.

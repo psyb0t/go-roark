@@ -25636,6 +25636,21 @@ func (e GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTar
 	}
 }
 
+// Defines values for GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2Provider.
+const (
+	GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2ProviderCALENDLY GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2Provider = "CALENDLY"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2Provider enum.
+func (e GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2Provider) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2ProviderCALENDLY:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0Provider.
 const (
 	PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0ProviderCALCOM PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0Provider = "CAL_COM"
@@ -25660,6 +25675,21 @@ const (
 func (e PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1Provider) Valid() bool {
 	switch e {
 	case PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1ProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2Provider.
+const (
+	PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2ProviderCALENDLY PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2Provider = "CALENDLY"
+)
+
+// Valid indicates whether the value is a known member of the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2Provider enum.
+func (e PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2Provider) Valid() bool {
+	switch e {
+	case PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2ProviderCALENDLY:
 		return true
 	default:
 		return false
@@ -25711,6 +25741,21 @@ func (e GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseB
 	}
 }
 
+// Defines values for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider.
+const (
+	GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2ProviderCALENDLY GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider = "CALENDLY"
+)
+
+// Valid indicates whether the value is a known member of the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider enum.
+func (e GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider) Valid() bool {
+	switch e {
+	case GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2ProviderCALENDLY:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider.
 const (
 	PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0ProviderCALCOM PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider = "CAL_COM"
@@ -25735,6 +25780,21 @@ const (
 func (e PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider) Valid() bool {
 	switch e {
 	case PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1ProviderGOOGLE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider.
+const (
+	PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2ProviderCALENDLY PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider = "CALENDLY"
+)
+
+// Valid indicates whether the value is a known member of the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider enum.
+func (e PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider) Valid() bool {
+	switch e {
+	case PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2ProviderCALENDLY:
 		return true
 	default:
 		return false
@@ -43174,6 +43234,9 @@ type ToolBody struct {
 			// EventTypeId For Cal.com: the event type to book
 			EventTypeId *int `json:"eventTypeId,omitempty"`
 
+			// EventTypeUri For Calendly: the event type to book, by URI
+			EventTypeUri *string `json:"eventTypeUri,omitempty"`
+
 			// Name Example: checkup
 			Name      string  `json:"name"`
 			WhenToUse *string `json:"whenToUse,omitempty"`
@@ -43281,6 +43344,9 @@ type ToolCalendarAppointmentType struct {
 	// EventTypeId For Cal.com: the event type it books
 	EventTypeId *int `json:"eventTypeId"`
 
+	// EventTypeUri For Calendly: the event type it books, which Calendly names by URI
+	EventTypeUri *string `json:"eventTypeUri"`
+
 	// Name What the agent passes to name it
 	//
 	// Example: checkup
@@ -43353,6 +43419,7 @@ type ToolHandler1 struct {
 		CalendarTarget  *string `json:"calendarTarget,omitempty"`
 		DurationMinutes *int    `json:"durationMinutes,omitempty"`
 		EventTypeId     *int    `json:"eventTypeId,omitempty"`
+		EventTypeUri    *string `json:"eventTypeUri,omitempty"`
 		Name            string  `json:"name"`
 		WhenToUse       *string `json:"whenToUse,omitempty"`
 	} `json:"appointmentTypes"`
@@ -46386,7 +46453,7 @@ type PostV1IntegrationsCalendarJSONBody struct {
 	// Label Customer-facing name for this account, unique within the project. Required.
 	Label string `json:"label"`
 
-	// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+	// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 	Provider PostV1IntegrationsCalendarJSONBodyProvider `json:"provider"`
 
 	// Timezone The named IANA timezone to offer slots in, for example `America/Los_Angeles`. Omit to adopt the provider account’s own timezone. A fixed offset such as `-08:00` is rejected: it does not observe DST.
@@ -46411,10 +46478,25 @@ type PostV1IntegrationsCalendar201JSONResponseBodyDataProvider string
 // PostV1IntegrationsCalendar201JSONResponseBodyDataStatus defines parameters for PostV1IntegrationsCalendar.
 type PostV1IntegrationsCalendar201JSONResponseBodyDataStatus string
 
+// PostV1IntegrationsCalendarCalendlyAuthorizeUrlJSONBody defines parameters for PostV1IntegrationsCalendarCalendlyAuthorizeUrl.
+type PostV1IntegrationsCalendarCalendlyAuthorizeUrlJSONBody struct {
+	// CalendarConnectionId Reconnect an existing connection instead of creating one: the consent screen replaces that connection’s credential in place, so every tool bound to it keeps working. Use this when a connection reports `INVALID_CREDENTIALS`. The connection’s existing name and timezone are kept, so `label` is ignored when this is set.
+	CalendarConnectionId *openapi_types.UUID `json:"calendarConnectionId,omitempty"`
+
+	// Label Customer-facing name for the connection, unique within the project. Required unless `calendarConnectionId` is set, and decided now because the consent screen has nowhere to carry it.
+	Label *string `json:"label,omitempty"`
+
+	// Timezone The named IANA timezone to offer slots in, for example `America/Los_Angeles`. Omit to adopt the Calendly account’s own. A fixed offset such as `-08:00` is rejected: it does not observe DST.
+	Timezone *string `json:"timezone,omitempty"`
+}
+
 // PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONBody defines parameters for PostV1IntegrationsCalendarGoogleAuthorizeUrl.
 type PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONBody struct {
-	// Label Customer-facing name for the connection, unique within the project. Decided now because the consent screen has nowhere to carry it.
-	Label string `json:"label"`
+	// CalendarConnectionId Reconnect an existing connection instead of creating one: the consent screen replaces that connection’s credential in place, so every tool bound to it keeps working. Use this when a connection reports `INVALID_CREDENTIALS`. The connection’s existing name and timezone are kept, so `label` is ignored when this is set.
+	CalendarConnectionId *openapi_types.UUID `json:"calendarConnectionId,omitempty"`
+
+	// Label Customer-facing name for the connection, unique within the project. Required unless `calendarConnectionId` is set, and decided now because the consent screen has nowhere to carry it.
+	Label *string `json:"label,omitempty"`
 
 	// LoginHint The Google account to preselect on the consent screen. A hint only: it is ignored if the user is signed into another account, and nothing is authorized by it.
 	LoginHint *openapi_types.Email `json:"loginHint,omitempty"`
@@ -46502,6 +46584,16 @@ type GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget
 // GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1Provider defines parameters for GetV1IntegrationsCalendarByConnectionIdTargets.
 type GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget1Provider string
 
+// GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2 defines parameters for GetV1IntegrationsCalendarByConnectionIdTargets.
+type GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2 struct {
+	// EventTypeUri The event type, by URI rather than by id: Calendly names every resource with an absolute URL and its own API takes that URL back.
+	EventTypeUri string                                                                               `json:"eventTypeUri"`
+	Provider     GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2Provider `json:"provider"`
+}
+
+// GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2Provider defines parameters for GetV1IntegrationsCalendarByConnectionIdTargets.
+type GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2Provider string
+
 // GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target defines parameters for GetV1IntegrationsCalendarByConnectionIdTargets.
 type GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target struct {
 	union json.RawMessage
@@ -46569,6 +46661,16 @@ type PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarge
 // PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1Provider defines parameters for PostV1IntegrationsCalendarByConnectionIdTargets.
 type PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1Provider string
 
+// PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2 defines parameters for PostV1IntegrationsCalendarByConnectionIdTargets.
+type PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2 struct {
+	// EventTypeUri The event type, by URI rather than by id: Calendly names every resource with an absolute URL and its own API takes that URL back.
+	EventTypeUri string                                                                                `json:"eventTypeUri"`
+	Provider     PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2Provider `json:"provider"`
+}
+
+// PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2Provider defines parameters for PostV1IntegrationsCalendarByConnectionIdTargets.
+type PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2Provider string
+
 // PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target defines parameters for PostV1IntegrationsCalendarByConnectionIdTargets.
 type PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target struct {
 	union json.RawMessage
@@ -46595,6 +46697,16 @@ type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody
 
 // GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider defines parameters for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
 type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider string
+
+// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2 defines parameters for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2 struct {
+	// EventTypeUri The event type, by URI rather than by id: Calendly names every resource with an absolute URL and its own API takes that URL back.
+	EventTypeUri string                                                                                         `json:"eventTypeUri"`
+	Provider     GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider `json:"provider"`
+}
+
+// GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider defines parameters for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider string
 
 // GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target defines parameters for GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
 type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target struct {
@@ -46657,6 +46769,16 @@ type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody
 
 // PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider defines parameters for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
 type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1Provider string
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2 defines parameters for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2 struct {
+	// EventTypeUri The event type, by URI rather than by id: Calendly names every resource with an absolute URL and its own API takes that URL back.
+	EventTypeUri string                                                                                         `json:"eventTypeUri"`
+	Provider     PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider `json:"provider"`
+}
+
+// PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider defines parameters for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
+type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider string
 
 // PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target defines parameters for PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId.
 type PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target struct {
@@ -47510,6 +47632,9 @@ type PutV1HttpRequestDefinitionByDefinitionIdJSONRequestBody = UpdateHttpRequest
 
 // PostV1IntegrationsCalendarJSONRequestBody defines body for PostV1IntegrationsCalendar for application/json ContentType.
 type PostV1IntegrationsCalendarJSONRequestBody PostV1IntegrationsCalendarJSONBody
+
+// PostV1IntegrationsCalendarCalendlyAuthorizeUrlJSONRequestBody defines body for PostV1IntegrationsCalendarCalendlyAuthorizeUrl for application/json ContentType.
+type PostV1IntegrationsCalendarCalendlyAuthorizeUrlJSONRequestBody PostV1IntegrationsCalendarCalendlyAuthorizeUrlJSONBody
 
 // PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONRequestBody defines body for PostV1IntegrationsCalendarGoogleAuthorizeUrl for application/json ContentType.
 type PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONRequestBody PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONBody
@@ -59033,6 +59158,32 @@ func (t *GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_
 	return err
 }
 
+// AsGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2 returns the union data inside the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target as a GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2
+func (t GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) AsGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2() (GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2, error) {
+	var body GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2 overwrites any union data inside the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target as the provided GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2
+func (t *GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) FromGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2(v GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2 performs a merge with any union data inside the GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target, using the provided GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2
+func (t *GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) MergeGetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2(v GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t GetV1IntegrationsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -59085,6 +59236,32 @@ func (t *PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data
 
 // MergePostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1 performs a merge with any union data inside the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target, using the provided PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1
 func (t *PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) MergePostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1(v PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2 returns the union data inside the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target as a PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2
+func (t PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) AsPostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2() (PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2, error) {
+	var body PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2 overwrites any union data inside the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target as the provided PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2
+func (t *PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) FromPostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2(v PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2 performs a merge with any union data inside the PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target, using the provided PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2
+func (t *PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) MergePostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2(v PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -59157,6 +59334,32 @@ func (t *GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponse
 	return err
 }
 
+// AsGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2 returns the union data inside the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as a GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2
+func (t GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) AsGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2() (GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2, error) {
+	var body GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2 overwrites any union data inside the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as the provided GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2
+func (t *GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) FromGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2(v GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2 performs a merge with any union data inside the GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target, using the provided GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2
+func (t *GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MergeGetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2(v GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t GetV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -59209,6 +59412,32 @@ func (t *PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponse
 
 // MergePutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1 performs a merge with any union data inside the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target, using the provided PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1
 func (t *PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MergePutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1(v PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2 returns the union data inside the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as a PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2
+func (t PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) AsPutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2() (PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2, error) {
+	var body PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2 overwrites any union data inside the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as the provided PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2
+func (t *PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) FromPutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2(v PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2 performs a merge with any union data inside the PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target, using the provided PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2
+func (t *PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MergePutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2(v PutV1IntegrationsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -61486,6 +61715,24 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
 	PostV1IntegrationsCalendar(ctx context.Context, body PostV1IntegrationsCalendarJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithBody Start connecting a Calendly account
+	//
+	// Returns a URL to open in a browser. Calendly has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies the credential, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=CALENDLY`.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/integrations/calendar/calendly/authorize-url (the `PostV1IntegrationsCalendarCalendlyAuthorizeUrl` operationId).
+	PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1IntegrationsCalendarCalendlyAuthorizeUrl Start connecting a Calendly account
+	//
+	// Returns a URL to open in a browser. Calendly has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies the credential, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=CALENDLY`.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/integrations/calendar/calendly/authorize-url (the `PostV1IntegrationsCalendarCalendlyAuthorizeUrl` operationId).
+	PostV1IntegrationsCalendarCalendlyAuthorizeUrl(ctx context.Context, body PostV1IntegrationsCalendarCalendlyAuthorizeUrlJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// PostV1IntegrationsCalendarGoogleAuthorizeUrlWithBody Start connecting a Google Calendar
 	//
@@ -66117,6 +66364,44 @@ func (c *Client) PostV1IntegrationsCalendarWithBody(ctx context.Context, content
 // Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
 func (c *Client) PostV1IntegrationsCalendar(ctx context.Context, body PostV1IntegrationsCalendarJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPostV1IntegrationsCalendarRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithBody Start connecting a Calendly account
+//
+// Returns a URL to open in a browser. Calendly has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies the credential, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=CALENDLY`.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/integrations/calendar/calendly/authorize-url (the `PostV1IntegrationsCalendarCalendlyAuthorizeUrl` operationId).
+func (c *Client) PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsCalendarCalendlyAuthorizeUrlRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1IntegrationsCalendarCalendlyAuthorizeUrl Start connecting a Calendly account
+//
+// Returns a URL to open in a browser. Calendly has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies the credential, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=CALENDLY`.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/integrations/calendar/calendly/authorize-url (the `PostV1IntegrationsCalendarCalendlyAuthorizeUrl` operationId).
+func (c *Client) PostV1IntegrationsCalendarCalendlyAuthorizeUrl(ctx context.Context, body PostV1IntegrationsCalendarCalendlyAuthorizeUrlJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1IntegrationsCalendarCalendlyAuthorizeUrlRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -75236,6 +75521,46 @@ func NewPostV1IntegrationsCalendarRequestWithBody(server string, contentType str
 	return req, nil
 }
 
+// NewPostV1IntegrationsCalendarCalendlyAuthorizeUrlRequest calls the generic PostV1IntegrationsCalendarCalendlyAuthorizeUrl builder with application/json body
+func NewPostV1IntegrationsCalendarCalendlyAuthorizeUrlRequest(server string, body PostV1IntegrationsCalendarCalendlyAuthorizeUrlJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1IntegrationsCalendarCalendlyAuthorizeUrlRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1IntegrationsCalendarCalendlyAuthorizeUrlRequestWithBody constructs an http.Request for the PostV1IntegrationsCalendarCalendlyAuthorizeUrl method, with any body, and a specified content type
+func NewPostV1IntegrationsCalendarCalendlyAuthorizeUrlRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/integrations/calendar/calendly/authorize-url")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewPostV1IntegrationsCalendarGoogleAuthorizeUrlRequest calls the generic PostV1IntegrationsCalendarGoogleAuthorizeUrl builder with application/json body
 func NewPostV1IntegrationsCalendarGoogleAuthorizeUrlRequest(server string, body PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -82790,6 +83115,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/integrations/calendar (the `PostV1IntegrationsCalendar` operationId).
 	PostV1IntegrationsCalendarWithResponse(ctx context.Context, body PostV1IntegrationsCalendarJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarResponse, error)
+
+	// PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithBodyWithResponse Start connecting a Calendly account
+	//
+	// Returns a URL to open in a browser. Calendly has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies the credential, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=CALENDLY`.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/calendar/calendly/authorize-url (the `PostV1IntegrationsCalendarCalendlyAuthorizeUrl` operationId).
+	PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse, error)
+
+	// PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithResponse Start connecting a Calendly account
+	//
+	// Returns a URL to open in a browser. Calendly has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies the credential, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=CALENDLY`.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/integrations/calendar/calendly/authorize-url (the `PostV1IntegrationsCalendarCalendlyAuthorizeUrl` operationId).
+	PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithResponse(ctx context.Context, body PostV1IntegrationsCalendarCalendlyAuthorizeUrlJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse, error)
 
 	// PostV1IntegrationsCalendarGoogleAuthorizeUrlWithBodyWithResponse Start connecting a Google Calendar
 	//
@@ -96110,7 +96453,7 @@ type GetV1IntegrationsCalendarResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 			Provider GetV1IntegrationsCalendar200JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96187,7 +96530,7 @@ func (r GetV1IntegrationsCalendarResponse) GetJSON200() *struct {
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 		Provider GetV1IntegrationsCalendar200JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96304,7 +96647,7 @@ type PostV1IntegrationsCalendarResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 			Provider PostV1IntegrationsCalendar201JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96376,7 +96719,7 @@ func (r PostV1IntegrationsCalendarResponse) GetJSON201() *struct {
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 		Provider PostV1IntegrationsCalendar201JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96447,13 +96790,97 @@ func (r PostV1IntegrationsCalendarResponse) ContentType() string {
 	return ""
 }
 
+type PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data struct {
+			// AuthorizeUrl Open this in a browser. After the customer consents, the provider returns to Roark, which exchanges the code, verifies the credential and stores the connection. Read the result with `GET /v1/integrations/calendar?provider=…`.
+			AuthorizeUrl string `json:"authorizeUrl"`
+
+			// ExpiresAt When the link stops working, ISO 8601. Start again after that.
+			ExpiresAt string `json:"expiresAt"`
+
+			// State The opaque single-use value this flow is identified by, echoed so a caller can correlate its own UI. Not a credential and not accepted anywhere as one.
+			State string `json:"state"`
+		} `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse) GetJSON200() *struct {
+	Data struct {
+		// AuthorizeUrl Open this in a browser. After the customer consents, the provider returns to Roark, which exchanges the code, verifies the credential and stores the connection. Read the result with `GET /v1/integrations/calendar?provider=…`.
+		AuthorizeUrl string `json:"authorizeUrl"`
+
+		// ExpiresAt When the link stops working, ISO 8601. Start again after that.
+		ExpiresAt string `json:"expiresAt"`
+
+		// State The opaque single-use value this flow is identified by, echoed so a caller can correlate its own UI. Not a credential and not accepted anywhere as one.
+		State string `json:"state"`
+	} `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
 		Data struct {
-			// AuthorizeUrl Open this in a browser. After the customer consents, Google returns to Roark, which exchanges the code, verifies the credential and stores the connection. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+			// AuthorizeUrl Open this in a browser. After the customer consents, the provider returns to Roark, which exchanges the code, verifies the credential and stores the connection. Read the result with `GET /v1/integrations/calendar?provider=…`.
 			AuthorizeUrl string `json:"authorizeUrl"`
 
 			// ExpiresAt When the link stops working, ISO 8601. Start again after that.
@@ -96474,7 +96901,7 @@ type PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse struct {
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse) GetJSON200() *struct {
 	Data struct {
-		// AuthorizeUrl Open this in a browser. After the customer consents, Google returns to Roark, which exchanges the code, verifies the credential and stores the connection. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+		// AuthorizeUrl Open this in a browser. After the customer consents, the provider returns to Roark, which exchanges the code, verifies the credential and stores the connection. Read the result with `GET /v1/integrations/calendar?provider=…`.
 		AuthorizeUrl string `json:"authorizeUrl"`
 
 		// ExpiresAt When the link stops working, ISO 8601. Start again after that.
@@ -96662,7 +97089,7 @@ type GetV1IntegrationsCalendarByConnectionIdResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 			Provider GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96732,7 +97159,7 @@ func (r GetV1IntegrationsCalendarByConnectionIdResponse) GetJSON200() *struct {
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 		Provider GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96844,7 +97271,7 @@ type PatchV1IntegrationsCalendarByConnectionIdResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 			Provider PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96918,7 +97345,7 @@ func (r PatchV1IntegrationsCalendarByConnectionIdResponse) GetJSON200() *struct 
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 		Provider PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -97146,7 +97573,7 @@ type PostV1IntegrationsCalendarByConnectionIdCheckResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 			Provider PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -97218,7 +97645,7 @@ func (r PostV1IntegrationsCalendarByConnectionIdCheckResponse) GetJSON200() *str
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 		Provider PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -97778,7 +98205,7 @@ type GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse struct {
 				SlotIntervalMinutes int `json:"slotIntervalMinutes"`
 			} `json:"policy"`
 
-			// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
+			// RequiredBookingFields What a booking is refused without, as the provider names it (`email`, `name`, or a Calendly event type’s own required questions). On Cal.com the attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email; on Calendly both are always required.
 			RequiredBookingFields []string `json:"requiredBookingFields"`
 
 			// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
@@ -97849,7 +98276,7 @@ func (r GetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse) GetJSO
 			SlotIntervalMinutes int `json:"slotIntervalMinutes"`
 		} `json:"policy"`
 
-		// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
+		// RequiredBookingFields What a booking is refused without, as the provider names it (`email`, `name`, or a Calendly event type’s own required questions). On Cal.com the attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email; on Calendly both are always required.
 		RequiredBookingFields []string `json:"requiredBookingFields"`
 
 		// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.
@@ -111459,6 +111886,36 @@ func (c *ClientWithResponses) PostV1IntegrationsCalendarWithResponse(ctx context
 	return ParsePostV1IntegrationsCalendarResponse(rsp)
 }
 
+// PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithBodyWithResponse Start connecting a Calendly account
+//
+// Returns a URL to open in a browser. Calendly has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies the credential, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=CALENDLY`.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/calendar/calendly/authorize-url (the `PostV1IntegrationsCalendarCalendlyAuthorizeUrl` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse, error) {
+	rsp, err := c.PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse(rsp)
+}
+
+// PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithResponse Start connecting a Calendly account
+//
+// Returns a URL to open in a browser. Calendly has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies the credential, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=CALENDLY`.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/integrations/calendar/calendly/authorize-url (the `PostV1IntegrationsCalendarCalendlyAuthorizeUrl` operationId).
+func (c *ClientWithResponses) PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithResponse(ctx context.Context, body PostV1IntegrationsCalendarCalendlyAuthorizeUrlJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse, error) {
+	rsp, err := c.PostV1IntegrationsCalendarCalendlyAuthorizeUrl(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse(rsp)
+}
+
 // PostV1IntegrationsCalendarGoogleAuthorizeUrlWithBodyWithResponse Start connecting a Google Calendar
 //
 // Returns a URL to open in a browser. Google has no credential a request body can carry, so connecting one is two steps: ask for this URL, let the customer consent, and Roark finishes the rest server-side (it exchanges the code, verifies that both calendar permissions were granted, reads the account’s own timezone when none was given, and stores the connection). Nothing is created until the customer consents, and a link that is not used expires. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
@@ -122604,7 +123061,7 @@ func ParseGetV1IntegrationsCalendarResponse(rsp *http.Response) (*GetV1Integrati
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 				Provider GetV1IntegrationsCalendar200JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -122714,7 +123171,7 @@ func ParsePostV1IntegrationsCalendarResponse(rsp *http.Response) (*PostV1Integra
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 				Provider PostV1IntegrationsCalendar201JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -122771,6 +123228,64 @@ func ParsePostV1IntegrationsCalendarResponse(rsp *http.Response) (*PostV1Integra
 	return response, nil
 }
 
+// ParsePostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse parses an HTTP response from a PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithResponse call
+func ParsePostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse(rsp *http.Response) (*PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1IntegrationsCalendarCalendlyAuthorizeUrlResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data struct {
+				// AuthorizeUrl Open this in a browser. After the customer consents, the provider returns to Roark, which exchanges the code, verifies the credential and stores the connection. Read the result with `GET /v1/integrations/calendar?provider=…`.
+				AuthorizeUrl string `json:"authorizeUrl"`
+
+				// ExpiresAt When the link stops working, ISO 8601. Start again after that.
+				ExpiresAt string `json:"expiresAt"`
+
+				// State The opaque single-use value this flow is identified by, echoed so a caller can correlate its own UI. Not a credential and not accepted anywhere as one.
+				State string `json:"state"`
+			} `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParsePostV1IntegrationsCalendarGoogleAuthorizeUrlResponse parses an HTTP response from a PostV1IntegrationsCalendarGoogleAuthorizeUrlWithResponse call
 func ParsePostV1IntegrationsCalendarGoogleAuthorizeUrlResponse(rsp *http.Response) (*PostV1IntegrationsCalendarGoogleAuthorizeUrlResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -122788,7 +123303,7 @@ func ParsePostV1IntegrationsCalendarGoogleAuthorizeUrlResponse(rsp *http.Respons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			Data struct {
-				// AuthorizeUrl Open this in a browser. After the customer consents, Google returns to Roark, which exchanges the code, verifies the credential and stores the connection. Read the result with `GET /v1/integrations/calendar?provider=GOOGLE`.
+				// AuthorizeUrl Open this in a browser. After the customer consents, the provider returns to Roark, which exchanges the code, verifies the credential and stores the connection. Read the result with `GET /v1/integrations/calendar?provider=…`.
 				AuthorizeUrl string `json:"authorizeUrl"`
 
 				// ExpiresAt When the link stops working, ISO 8601. Start again after that.
@@ -122948,7 +123463,7 @@ func ParseGetV1IntegrationsCalendarByConnectionIdResponse(rsp *http.Response) (*
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 				Provider GetV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -123055,7 +123570,7 @@ func ParsePatchV1IntegrationsCalendarByConnectionIdResponse(rsp *http.Response) 
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 				Provider PatchV1IntegrationsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -123252,7 +123767,7 @@ func ParsePostV1IntegrationsCalendarByConnectionIdCheckResponse(rsp *http.Respon
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE is connected by consent, through `POST /v1/integrations/calendar/google/authorize-url`. CALENDLY is described by `capabilities` but not yet connectable.
+				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/integrations/calendar/google/authorize-url` and `POST /v1/integrations/calendar/calendly/authorize-url`.
 				Provider PostV1IntegrationsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -123652,7 +124167,7 @@ func ParseGetV1IntegrationsCalendarByConnectionIdTargetsByTargetIdResponse(rsp *
 					SlotIntervalMinutes int `json:"slotIntervalMinutes"`
 				} `json:"policy"`
 
-				// RequiredBookingFields Slugs a booking is refused without, as the provider names them (`email`, `name`). The attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email.
+				// RequiredBookingFields What a booking is refused without, as the provider names it (`email`, `name`, or a Calendly event type’s own required questions). On Cal.com the attendee object itself needs only a name and a timezone, so this is the only place that says whether an agent has to collect an email; on Calendly both are always required.
 				RequiredBookingFields []string `json:"requiredBookingFields"`
 
 				// RequiresAttendeeEmail The common case of the above, lifted out because it decides the agent’s design: an agent that cannot collect an email cannot book on a target that demands one.

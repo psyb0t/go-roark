@@ -2,6 +2,15 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.18.0, 2026-11-17
+
+- Breaking: `Label` in `PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONBody` and `PostV1IntegrationsCalendarGoogleAuthorizeUrlJSONRequestBody` changed from `string` to `*string`, so it is now optional. Code that sets or reads it must be updated.
+- Breaking: the anonymous calendar struct in `ToolBody.Calendar` and the `AppointmentTypes` element type in `ToolHandler1` gained an `EventTypeUri` field. Code that builds or assigns these struct types must be updated.
+- Added Calendly calendar authorization: `PostV1IntegrationsCalendarCalendlyAuthorizeUrl` and `PostV1IntegrationsCalendarCalendlyAuthorizeUrlWithBody` on `Client`, and the matching `WithResponse` methods on `ClientWithResponses`, with request builders, response parsers and response types.
+- `ClientInterface` and `ClientWithResponsesInterface` gained the new Calendly methods. Code that implements these interfaces, such as test mocks, must add them.
+- Added a Calendly variant (`Target2`) to the calendar target response data, with `From...DataTarget2` and `Merge...DataTarget2` methods and a `CALENDLY` provider enum, for example `PostV1IntegrationsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2ProviderCALENDLY`.
+- Added optional `EventTypeUri` to `ToolCalendarAppointmentType`, to name the Calendly event type to book by URI.
+
 ## v0.17.0, 2026-11-14
 
 - Breaking: agent responses gained an `Industry` field. The anonymous data struct in the `JSON200` and `GetJSON200` types of `GetV1AgentResponse` and `GetV1AgentByAgentIdResponse` changed, as did `JSON201` and `GetJSON201` of `PostV1AgentResponse` and `PostV1AgentBuildResponse`, and `JSON200` and `GetJSON200` of `PutV1AgentByAgentIdResponse`. The `Agents` element type of `ImprovCustomerFlow`, `ScriptedCustomerFlow` and `VoicemailCustomerFlow` changed too. Code that builds or assigns these struct types must be updated. Code that reads fields by name still compiles.

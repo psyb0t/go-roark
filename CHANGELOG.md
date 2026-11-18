@@ -2,6 +2,18 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.20.0, 2026-11-18
+
+- Breaking: removed the agent setup endpoints under `/v1/agent/{agentId}/setup`: `GetV1AgentByAgentIdSetup`, `PostV1AgentByAgentIdSetup`, `GetV1AgentByAgentIdSetupBySetupId`, `PostV1AgentByAgentIdSetupBySetupIdAnswer`, `PostV1AgentByAgentIdSetupBySetupIdCancel` and `PostV1AgentByAgentIdSetupBySetupIdGuidance`, with their `WithBody` and `WithResponse` variants.
+- Breaking: removed the `AgentSetup` and `AgentAutoSetupInput` types with their enums, the `AgentSetupCompletedWebhook` and `AgentSetupFailedWebhook` types, and the `WebhookEventJSONBody` methods `AsAgentSetupCompletedWebhook`, `FromAgentSetupCompletedWebhook` and `MergeAgentSetupCompletedWebhook`, plus the matching `AgentSetupFailedWebhook` methods.
+- Breaking: removed the `AutoSetUpAgents` field from the `AgentConnectionCreate*`, `AgentConnectionUpdate*` and `AgentConnectionIntegration` types, and `AgentConnectionProviderInfo.SupportsAutoSetUp`.
+- Breaking: removed the `AGENTSETUPCOMPLETED` and `AGENTSETUPFAILED` event constants, for example `AlertEventTriggerEventsAGENTSETUPCOMPLETED`.
+- Breaking: removed `CreateAgentResponse` and its industry enum. `PostV1AgentResponse.JSON201` and `GetJSON201` now use an inline `Data` struct with the same fields.
+- Added simulation resource generation endpoints under `/v1/simulation-generations/resources`: `GetV1SimulationGenerationsResources`, `PostV1SimulationGenerationsResources`, `GetV1SimulationGenerationsResourcesByGenerationId`, and the `Answer`, `Cancel` and `Guidance` methods, with `WithBody` and `WithResponse` variants.
+- Added the `SimulationResourceGeneration`, `GenerateSimulationResourcesInput` and `SimulationResourceGenerationItem` types with their enums.
+- Added `SimulationResourceGenerationCompletedWebhook` and `SimulationResourceGenerationFailedWebhook`, the matching `WebhookEventJSONBody` `As`, `From` and `Merge` methods, and the `SIMULATIONRESOURCEGENERATIONCOMPLETED` and `SIMULATIONRESOURCEGENERATIONFAILED` event constants.
+- Added the `SMALLEST` provider constant for LLM, STT, TTS and speech-to-speech configs, for example `AgentTtsConfigProviderSMALLEST`.
+
 ## v0.19.0, 2026-11-17
 
 - Breaking: the `/v1/integrations/calendar` and `/v1/integrations/mcp-server` endpoints moved to `/v1/connections/calendar` and `/v1/connections/mcp-server`. Every `...V1Integrations...` method on `Client` and `ClientWithResponses` is removed, for example `GetV1IntegrationsCalendar` and `PostV1IntegrationsMcpServerDiscover`. Use the `...V1Connections...` methods instead, for example `GetV1ConnectionsCalendar` and `PostV1ConnectionsMcpServerDiscover`. The related request builders, parsers and response and enum types are renamed the same way.

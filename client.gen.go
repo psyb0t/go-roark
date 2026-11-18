@@ -19,51 +19,6 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
-// Defines values for AgentAutoSetupInputCapabilities.
-const (
-	AgentAutoSetupInputCapabilitiesACCOUNTMANAGEMENT    AgentAutoSetupInputCapabilities = "ACCOUNT_MANAGEMENT"
-	AgentAutoSetupInputCapabilitiesAPPOINTMENTBOOKING   AgentAutoSetupInputCapabilities = "APPOINTMENT_BOOKING"
-	AgentAutoSetupInputCapabilitiesBILLINGANDPAYMENTS   AgentAutoSetupInputCapabilities = "BILLING_AND_PAYMENTS"
-	AgentAutoSetupInputCapabilitiesCALLROUTING          AgentAutoSetupInputCapabilities = "CALL_ROUTING"
-	AgentAutoSetupInputCapabilitiesCOLLECTIONS          AgentAutoSetupInputCapabilities = "COLLECTIONS"
-	AgentAutoSetupInputCapabilitiesFAQ                  AgentAutoSetupInputCapabilities = "FAQ"
-	AgentAutoSetupInputCapabilitiesIDENTITYVERIFICATION AgentAutoSetupInputCapabilities = "IDENTITY_VERIFICATION"
-	AgentAutoSetupInputCapabilitiesLEADQUALIFICATION    AgentAutoSetupInputCapabilities = "LEAD_QUALIFICATION"
-	AgentAutoSetupInputCapabilitiesORDERMANAGEMENT      AgentAutoSetupInputCapabilities = "ORDER_MANAGEMENT"
-	AgentAutoSetupInputCapabilitiesOUTBOUNDCALLING      AgentAutoSetupInputCapabilities = "OUTBOUND_CALLING"
-	AgentAutoSetupInputCapabilitiesTROUBLESHOOTING      AgentAutoSetupInputCapabilities = "TROUBLESHOOTING"
-)
-
-// Valid indicates whether the value is a known member of the AgentAutoSetupInputCapabilities enum.
-func (e AgentAutoSetupInputCapabilities) Valid() bool {
-	switch e {
-	case AgentAutoSetupInputCapabilitiesACCOUNTMANAGEMENT:
-		return true
-	case AgentAutoSetupInputCapabilitiesAPPOINTMENTBOOKING:
-		return true
-	case AgentAutoSetupInputCapabilitiesBILLINGANDPAYMENTS:
-		return true
-	case AgentAutoSetupInputCapabilitiesCALLROUTING:
-		return true
-	case AgentAutoSetupInputCapabilitiesCOLLECTIONS:
-		return true
-	case AgentAutoSetupInputCapabilitiesFAQ:
-		return true
-	case AgentAutoSetupInputCapabilitiesIDENTITYVERIFICATION:
-		return true
-	case AgentAutoSetupInputCapabilitiesLEADQUALIFICATION:
-		return true
-	case AgentAutoSetupInputCapabilitiesORDERMANAGEMENT:
-		return true
-	case AgentAutoSetupInputCapabilitiesOUTBOUNDCALLING:
-		return true
-	case AgentAutoSetupInputCapabilitiesTROUBLESHOOTING:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for AgentCascadeModelConfigType.
 const (
 	AgentCascadeModelConfigTypeCASCADE AgentCascadeModelConfigType = "CASCADE"
@@ -162,6 +117,7 @@ const (
 	AgentConfigLlmProviderOPENAI     AgentConfigLlmProvider = "OPENAI"
 	AgentConfigLlmProviderPHONIC     AgentConfigLlmProvider = "PHONIC"
 	AgentConfigLlmProviderRIME       AgentConfigLlmProvider = "RIME"
+	AgentConfigLlmProviderSMALLEST   AgentConfigLlmProvider = "SMALLEST"
 	AgentConfigLlmProviderULTRAVOX   AgentConfigLlmProvider = "ULTRAVOX"
 	AgentConfigLlmProviderXAI        AgentConfigLlmProvider = "XAI"
 )
@@ -186,6 +142,8 @@ func (e AgentConfigLlmProvider) Valid() bool {
 	case AgentConfigLlmProviderPHONIC:
 		return true
 	case AgentConfigLlmProviderRIME:
+		return true
+	case AgentConfigLlmProviderSMALLEST:
 		return true
 	case AgentConfigLlmProviderULTRAVOX:
 		return true
@@ -277,6 +235,7 @@ const (
 	AgentConfigSttProviderDEEPGRAM      AgentConfigSttProvider = "DEEPGRAM"
 	AgentConfigSttProviderELEVENLABS    AgentConfigSttProvider = "ELEVENLABS"
 	AgentConfigSttProviderOPENAIWHISPER AgentConfigSttProvider = "OPENAI_WHISPER"
+	AgentConfigSttProviderSMALLEST      AgentConfigSttProvider = "SMALLEST"
 	AgentConfigSttProviderSONIOX        AgentConfigSttProvider = "SONIOX"
 	AgentConfigSttProviderSPEECHMATICS  AgentConfigSttProvider = "SPEECHMATICS"
 )
@@ -291,6 +250,8 @@ func (e AgentConfigSttProvider) Valid() bool {
 	case AgentConfigSttProviderELEVENLABS:
 		return true
 	case AgentConfigSttProviderOPENAIWHISPER:
+		return true
+	case AgentConfigSttProviderSMALLEST:
 		return true
 	case AgentConfigSttProviderSONIOX:
 		return true
@@ -310,6 +271,7 @@ const (
 	AgentConfigTtsProviderFISHAUDIO  AgentConfigTtsProvider = "FISH_AUDIO"
 	AgentConfigTtsProviderOPENAI     AgentConfigTtsProvider = "OPENAI"
 	AgentConfigTtsProviderRIME       AgentConfigTtsProvider = "RIME"
+	AgentConfigTtsProviderSMALLEST   AgentConfigTtsProvider = "SMALLEST"
 )
 
 // Valid indicates whether the value is a known member of the AgentConfigTtsProvider enum.
@@ -328,6 +290,8 @@ func (e AgentConfigTtsProvider) Valid() bool {
 	case AgentConfigTtsProviderOPENAI:
 		return true
 	case AgentConfigTtsProviderRIME:
+		return true
+	case AgentConfigTtsProviderSMALLEST:
 		return true
 	default:
 		return false
@@ -1464,6 +1428,7 @@ const (
 	AgentLlmConfigProviderOPENAI     AgentLlmConfigProvider = "OPENAI"
 	AgentLlmConfigProviderPHONIC     AgentLlmConfigProvider = "PHONIC"
 	AgentLlmConfigProviderRIME       AgentLlmConfigProvider = "RIME"
+	AgentLlmConfigProviderSMALLEST   AgentLlmConfigProvider = "SMALLEST"
 	AgentLlmConfigProviderULTRAVOX   AgentLlmConfigProvider = "ULTRAVOX"
 	AgentLlmConfigProviderXAI        AgentLlmConfigProvider = "XAI"
 )
@@ -1488,6 +1453,8 @@ func (e AgentLlmConfigProvider) Valid() bool {
 	case AgentLlmConfigProviderPHONIC:
 		return true
 	case AgentLlmConfigProviderRIME:
+		return true
+	case AgentLlmConfigProviderSMALLEST:
 		return true
 	case AgentLlmConfigProviderULTRAVOX:
 		return true
@@ -1543,456 +1510,6 @@ func (e AgentPromptResponseSource) Valid() bool {
 	}
 }
 
-// Defines values for AgentSetupCapabilities.
-const (
-	AgentSetupCapabilitiesACCOUNTMANAGEMENT    AgentSetupCapabilities = "ACCOUNT_MANAGEMENT"
-	AgentSetupCapabilitiesAPPOINTMENTBOOKING   AgentSetupCapabilities = "APPOINTMENT_BOOKING"
-	AgentSetupCapabilitiesBILLINGANDPAYMENTS   AgentSetupCapabilities = "BILLING_AND_PAYMENTS"
-	AgentSetupCapabilitiesCALLROUTING          AgentSetupCapabilities = "CALL_ROUTING"
-	AgentSetupCapabilitiesCOLLECTIONS          AgentSetupCapabilities = "COLLECTIONS"
-	AgentSetupCapabilitiesFAQ                  AgentSetupCapabilities = "FAQ"
-	AgentSetupCapabilitiesIDENTITYVERIFICATION AgentSetupCapabilities = "IDENTITY_VERIFICATION"
-	AgentSetupCapabilitiesLEADQUALIFICATION    AgentSetupCapabilities = "LEAD_QUALIFICATION"
-	AgentSetupCapabilitiesORDERMANAGEMENT      AgentSetupCapabilities = "ORDER_MANAGEMENT"
-	AgentSetupCapabilitiesOUTBOUNDCALLING      AgentSetupCapabilities = "OUTBOUND_CALLING"
-	AgentSetupCapabilitiesTROUBLESHOOTING      AgentSetupCapabilities = "TROUBLESHOOTING"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupCapabilities enum.
-func (e AgentSetupCapabilities) Valid() bool {
-	switch e {
-	case AgentSetupCapabilitiesACCOUNTMANAGEMENT:
-		return true
-	case AgentSetupCapabilitiesAPPOINTMENTBOOKING:
-		return true
-	case AgentSetupCapabilitiesBILLINGANDPAYMENTS:
-		return true
-	case AgentSetupCapabilitiesCALLROUTING:
-		return true
-	case AgentSetupCapabilitiesCOLLECTIONS:
-		return true
-	case AgentSetupCapabilitiesFAQ:
-		return true
-	case AgentSetupCapabilitiesIDENTITYVERIFICATION:
-		return true
-	case AgentSetupCapabilitiesLEADQUALIFICATION:
-		return true
-	case AgentSetupCapabilitiesORDERMANAGEMENT:
-		return true
-	case AgentSetupCapabilitiesOUTBOUNDCALLING:
-		return true
-	case AgentSetupCapabilitiesTROUBLESHOOTING:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupIndustry.
-const (
-	AgentSetupIndustryAUTOMOTIVE           AgentSetupIndustry = "AUTOMOTIVE"
-	AgentSetupIndustryDEBTCOLLECTION       AgentSetupIndustry = "DEBT_COLLECTION"
-	AgentSetupIndustryEDUCATION            AgentSetupIndustry = "EDUCATION"
-	AgentSetupIndustryFINANCIALSERVICES    AgentSetupIndustry = "FINANCIAL_SERVICES"
-	AgentSetupIndustryHEALTHCARE           AgentSetupIndustry = "HEALTHCARE"
-	AgentSetupIndustryHOMESERVICES         AgentSetupIndustry = "HOME_SERVICES"
-	AgentSetupIndustryINSURANCE            AgentSetupIndustry = "INSURANCE"
-	AgentSetupIndustryLOGISTICS            AgentSetupIndustry = "LOGISTICS"
-	AgentSetupIndustryOTHER                AgentSetupIndustry = "OTHER"
-	AgentSetupIndustryPUBLICSECTOR         AgentSetupIndustry = "PUBLIC_SECTOR"
-	AgentSetupIndustryRESTAURANTS          AgentSetupIndustry = "RESTAURANTS"
-	AgentSetupIndustryRETAIL               AgentSetupIndustry = "RETAIL"
-	AgentSetupIndustryTECHNOLOGY           AgentSetupIndustry = "TECHNOLOGY"
-	AgentSetupIndustryTELECOMMUNICATIONS   AgentSetupIndustry = "TELECOMMUNICATIONS"
-	AgentSetupIndustryTRAVELANDHOSPITALITY AgentSetupIndustry = "TRAVEL_AND_HOSPITALITY"
-	AgentSetupIndustryUTILITIES            AgentSetupIndustry = "UTILITIES"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupIndustry enum.
-func (e AgentSetupIndustry) Valid() bool {
-	switch e {
-	case AgentSetupIndustryAUTOMOTIVE:
-		return true
-	case AgentSetupIndustryDEBTCOLLECTION:
-		return true
-	case AgentSetupIndustryEDUCATION:
-		return true
-	case AgentSetupIndustryFINANCIALSERVICES:
-		return true
-	case AgentSetupIndustryHEALTHCARE:
-		return true
-	case AgentSetupIndustryHOMESERVICES:
-		return true
-	case AgentSetupIndustryINSURANCE:
-		return true
-	case AgentSetupIndustryLOGISTICS:
-		return true
-	case AgentSetupIndustryOTHER:
-		return true
-	case AgentSetupIndustryPUBLICSECTOR:
-		return true
-	case AgentSetupIndustryRESTAURANTS:
-		return true
-	case AgentSetupIndustryRETAIL:
-		return true
-	case AgentSetupIndustryTECHNOLOGY:
-		return true
-	case AgentSetupIndustryTELECOMMUNICATIONS:
-		return true
-	case AgentSetupIndustryTRAVELANDHOSPITALITY:
-		return true
-	case AgentSetupIndustryUTILITIES:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupStatus.
-const (
-	AgentSetupStatusCANCELLED  AgentSetupStatus = "CANCELLED"
-	AgentSetupStatusCOMPLETED  AgentSetupStatus = "COMPLETED"
-	AgentSetupStatusFAILED     AgentSetupStatus = "FAILED"
-	AgentSetupStatusNEEDSINPUT AgentSetupStatus = "NEEDS_INPUT"
-	AgentSetupStatusPENDING    AgentSetupStatus = "PENDING"
-	AgentSetupStatusRUNNING    AgentSetupStatus = "RUNNING"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupStatus enum.
-func (e AgentSetupStatus) Valid() bool {
-	switch e {
-	case AgentSetupStatusCANCELLED:
-		return true
-	case AgentSetupStatusCOMPLETED:
-		return true
-	case AgentSetupStatusFAILED:
-		return true
-	case AgentSetupStatusNEEDSINPUT:
-		return true
-	case AgentSetupStatusPENDING:
-		return true
-	case AgentSetupStatusRUNNING:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupActivityKind.
-const (
-	AgentSetupActivityKindACTION      AgentSetupActivityKind = "ACTION"
-	AgentSetupActivityKindANSWER      AgentSetupActivityKind = "ANSWER"
-	AgentSetupActivityKindERROR       AgentSetupActivityKind = "ERROR"
-	AgentSetupActivityKindEXPLORATION AgentSetupActivityKind = "EXPLORATION"
-	AgentSetupActivityKindGUIDANCE    AgentSetupActivityKind = "GUIDANCE"
-	AgentSetupActivityKindQUESTION    AgentSetupActivityKind = "QUESTION"
-	AgentSetupActivityKindREASONING   AgentSetupActivityKind = "REASONING"
-	AgentSetupActivityKindSTATUS      AgentSetupActivityKind = "STATUS"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupActivityKind enum.
-func (e AgentSetupActivityKind) Valid() bool {
-	switch e {
-	case AgentSetupActivityKindACTION:
-		return true
-	case AgentSetupActivityKindANSWER:
-		return true
-	case AgentSetupActivityKindERROR:
-		return true
-	case AgentSetupActivityKindEXPLORATION:
-		return true
-	case AgentSetupActivityKindGUIDANCE:
-		return true
-	case AgentSetupActivityKindQUESTION:
-		return true
-	case AgentSetupActivityKindREASONING:
-		return true
-	case AgentSetupActivityKindSTATUS:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupCompletedWebhookEvent.
-const (
-	AgentSetupCompletedWebhookEventAgentSetupCompleted AgentSetupCompletedWebhookEvent = "agent.setup.completed"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupCompletedWebhookEvent enum.
-func (e AgentSetupCompletedWebhookEvent) Valid() bool {
-	switch e {
-	case AgentSetupCompletedWebhookEventAgentSetupCompleted:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupCompletedWebhookVersion.
-const (
-	AgentSetupCompletedWebhookVersionN10 AgentSetupCompletedWebhookVersion = "1.0"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupCompletedWebhookVersion enum.
-func (e AgentSetupCompletedWebhookVersion) Valid() bool {
-	switch e {
-	case AgentSetupCompletedWebhookVersionN10:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupFailedWebhookEvent.
-const (
-	AgentSetupFailedWebhookEventAgentSetupFailed AgentSetupFailedWebhookEvent = "agent.setup.failed"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupFailedWebhookEvent enum.
-func (e AgentSetupFailedWebhookEvent) Valid() bool {
-	switch e {
-	case AgentSetupFailedWebhookEventAgentSetupFailed:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupFailedWebhookVersion.
-const (
-	AgentSetupFailedWebhookVersionN10 AgentSetupFailedWebhookVersion = "1.0"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupFailedWebhookVersion enum.
-func (e AgentSetupFailedWebhookVersion) Valid() bool {
-	switch e {
-	case AgentSetupFailedWebhookVersionN10:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupItemAction.
-const (
-	AgentSetupItemActionCREATED AgentSetupItemAction = "CREATED"
-	AgentSetupItemActionSKIPPED AgentSetupItemAction = "SKIPPED"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupItemAction enum.
-func (e AgentSetupItemAction) Valid() bool {
-	switch e {
-	case AgentSetupItemActionCREATED:
-		return true
-	case AgentSetupItemActionSKIPPED:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupItemCapability.
-const (
-	AgentSetupItemCapabilityACCOUNTMANAGEMENT    AgentSetupItemCapability = "ACCOUNT_MANAGEMENT"
-	AgentSetupItemCapabilityAPPOINTMENTBOOKING   AgentSetupItemCapability = "APPOINTMENT_BOOKING"
-	AgentSetupItemCapabilityBILLINGANDPAYMENTS   AgentSetupItemCapability = "BILLING_AND_PAYMENTS"
-	AgentSetupItemCapabilityCALLROUTING          AgentSetupItemCapability = "CALL_ROUTING"
-	AgentSetupItemCapabilityCOLLECTIONS          AgentSetupItemCapability = "COLLECTIONS"
-	AgentSetupItemCapabilityFAQ                  AgentSetupItemCapability = "FAQ"
-	AgentSetupItemCapabilityIDENTITYVERIFICATION AgentSetupItemCapability = "IDENTITY_VERIFICATION"
-	AgentSetupItemCapabilityLEADQUALIFICATION    AgentSetupItemCapability = "LEAD_QUALIFICATION"
-	AgentSetupItemCapabilityORDERMANAGEMENT      AgentSetupItemCapability = "ORDER_MANAGEMENT"
-	AgentSetupItemCapabilityOUTBOUNDCALLING      AgentSetupItemCapability = "OUTBOUND_CALLING"
-	AgentSetupItemCapabilityTROUBLESHOOTING      AgentSetupItemCapability = "TROUBLESHOOTING"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupItemCapability enum.
-func (e AgentSetupItemCapability) Valid() bool {
-	switch e {
-	case AgentSetupItemCapabilityACCOUNTMANAGEMENT:
-		return true
-	case AgentSetupItemCapabilityAPPOINTMENTBOOKING:
-		return true
-	case AgentSetupItemCapabilityBILLINGANDPAYMENTS:
-		return true
-	case AgentSetupItemCapabilityCALLROUTING:
-		return true
-	case AgentSetupItemCapabilityCOLLECTIONS:
-		return true
-	case AgentSetupItemCapabilityFAQ:
-		return true
-	case AgentSetupItemCapabilityIDENTITYVERIFICATION:
-		return true
-	case AgentSetupItemCapabilityLEADQUALIFICATION:
-		return true
-	case AgentSetupItemCapabilityORDERMANAGEMENT:
-		return true
-	case AgentSetupItemCapabilityOUTBOUNDCALLING:
-		return true
-	case AgentSetupItemCapabilityTROUBLESHOOTING:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupItemKind.
-const (
-	AgentSetupItemKindCHECK  AgentSetupItemKind = "CHECK"
-	AgentSetupItemKindFLOW   AgentSetupItemKind = "FLOW"
-	AgentSetupItemKindLAYER  AgentSetupItemKind = "LAYER"
-	AgentSetupItemKindMETRIC AgentSetupItemKind = "METRIC"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupItemKind enum.
-func (e AgentSetupItemKind) Valid() bool {
-	switch e {
-	case AgentSetupItemKindCHECK:
-		return true
-	case AgentSetupItemKindFLOW:
-		return true
-	case AgentSetupItemKindLAYER:
-		return true
-	case AgentSetupItemKindMETRIC:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupItemLayer.
-const (
-	AgentSetupItemLayerAGENTCONTEXT         AgentSetupItemLayer = "AGENT_CONTEXT"
-	AgentSetupItemLayerCAPABILITY           AgentSetupItemLayer = "CAPABILITY"
-	AgentSetupItemLayerCORE                 AgentSetupItemLayer = "CORE"
-	AgentSetupItemLayerCUSTOMERINSTRUCTIONS AgentSetupItemLayer = "CUSTOMER_INSTRUCTIONS"
-	AgentSetupItemLayerEXPLORATION          AgentSetupItemLayer = "EXPLORATION"
-	AgentSetupItemLayerINDUSTRY             AgentSetupItemLayer = "INDUSTRY"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupItemLayer enum.
-func (e AgentSetupItemLayer) Valid() bool {
-	switch e {
-	case AgentSetupItemLayerAGENTCONTEXT:
-		return true
-	case AgentSetupItemLayerCAPABILITY:
-		return true
-	case AgentSetupItemLayerCORE:
-		return true
-	case AgentSetupItemLayerCUSTOMERINSTRUCTIONS:
-		return true
-	case AgentSetupItemLayerEXPLORATION:
-		return true
-	case AgentSetupItemLayerINDUSTRY:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupItemOrigin.
-const (
-	AgentSetupItemOriginDISCOVERED AgentSetupItemOrigin = "DISCOVERED"
-	AgentSetupItemOriginINFERRED   AgentSetupItemOrigin = "INFERRED"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupItemOrigin enum.
-func (e AgentSetupItemOrigin) Valid() bool {
-	switch e {
-	case AgentSetupItemOriginDISCOVERED:
-		return true
-	case AgentSetupItemOriginINFERRED:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupItemSourceType.
-const (
-	AgentSetupItemSourceTypeCATALOGUE       AgentSetupItemSourceType = "CATALOGUE"
-	AgentSetupItemSourceTypeDESCRIPTION     AgentSetupItemSourceType = "DESCRIPTION"
-	AgentSetupItemSourceTypeEXPLORATIONCALL AgentSetupItemSourceType = "EXPLORATION_CALL"
-	AgentSetupItemSourceTypeINSTRUCTIONS    AgentSetupItemSourceType = "INSTRUCTIONS"
-	AgentSetupItemSourceTypePROMPT          AgentSetupItemSourceType = "PROMPT"
-	AgentSetupItemSourceTypeWEBSITE         AgentSetupItemSourceType = "WEBSITE"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupItemSourceType enum.
-func (e AgentSetupItemSourceType) Valid() bool {
-	switch e {
-	case AgentSetupItemSourceTypeCATALOGUE:
-		return true
-	case AgentSetupItemSourceTypeDESCRIPTION:
-		return true
-	case AgentSetupItemSourceTypeEXPLORATIONCALL:
-		return true
-	case AgentSetupItemSourceTypeINSTRUCTIONS:
-		return true
-	case AgentSetupItemSourceTypePROMPT:
-		return true
-	case AgentSetupItemSourceTypeWEBSITE:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupLayerLayer.
-const (
-	AgentSetupLayerLayerAGENTCONTEXT         AgentSetupLayerLayer = "AGENT_CONTEXT"
-	AgentSetupLayerLayerCAPABILITY           AgentSetupLayerLayer = "CAPABILITY"
-	AgentSetupLayerLayerCORE                 AgentSetupLayerLayer = "CORE"
-	AgentSetupLayerLayerCUSTOMERINSTRUCTIONS AgentSetupLayerLayer = "CUSTOMER_INSTRUCTIONS"
-	AgentSetupLayerLayerEXPLORATION          AgentSetupLayerLayer = "EXPLORATION"
-	AgentSetupLayerLayerINDUSTRY             AgentSetupLayerLayer = "INDUSTRY"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupLayerLayer enum.
-func (e AgentSetupLayerLayer) Valid() bool {
-	switch e {
-	case AgentSetupLayerLayerAGENTCONTEXT:
-		return true
-	case AgentSetupLayerLayerCAPABILITY:
-		return true
-	case AgentSetupLayerLayerCORE:
-		return true
-	case AgentSetupLayerLayerCUSTOMERINSTRUCTIONS:
-		return true
-	case AgentSetupLayerLayerEXPLORATION:
-		return true
-	case AgentSetupLayerLayerINDUSTRY:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for AgentSetupLayerStatus.
-const (
-	AgentSetupLayerStatusCOVERED       AgentSetupLayerStatus = "COVERED"
-	AgentSetupLayerStatusNOTAPPLICABLE AgentSetupLayerStatus = "NOT_APPLICABLE"
-	AgentSetupLayerStatusOPEN          AgentSetupLayerStatus = "OPEN"
-	AgentSetupLayerStatusSKIPPED       AgentSetupLayerStatus = "SKIPPED"
-)
-
-// Valid indicates whether the value is a known member of the AgentSetupLayerStatus enum.
-func (e AgentSetupLayerStatus) Valid() bool {
-	switch e {
-	case AgentSetupLayerStatusCOVERED:
-		return true
-	case AgentSetupLayerStatusNOTAPPLICABLE:
-		return true
-	case AgentSetupLayerStatusOPEN:
-		return true
-	case AgentSetupLayerStatusSKIPPED:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for AgentSpeechToSpeechConfigProvider.
 const (
 	AgentSpeechToSpeechConfigProviderANTHROPIC  AgentSpeechToSpeechConfigProvider = "ANTHROPIC"
@@ -2004,6 +1521,7 @@ const (
 	AgentSpeechToSpeechConfigProviderOPENAI     AgentSpeechToSpeechConfigProvider = "OPENAI"
 	AgentSpeechToSpeechConfigProviderPHONIC     AgentSpeechToSpeechConfigProvider = "PHONIC"
 	AgentSpeechToSpeechConfigProviderRIME       AgentSpeechToSpeechConfigProvider = "RIME"
+	AgentSpeechToSpeechConfigProviderSMALLEST   AgentSpeechToSpeechConfigProvider = "SMALLEST"
 	AgentSpeechToSpeechConfigProviderULTRAVOX   AgentSpeechToSpeechConfigProvider = "ULTRAVOX"
 	AgentSpeechToSpeechConfigProviderXAI        AgentSpeechToSpeechConfigProvider = "XAI"
 )
@@ -2028,6 +1546,8 @@ func (e AgentSpeechToSpeechConfigProvider) Valid() bool {
 	case AgentSpeechToSpeechConfigProviderPHONIC:
 		return true
 	case AgentSpeechToSpeechConfigProviderRIME:
+		return true
+	case AgentSpeechToSpeechConfigProviderSMALLEST:
 		return true
 	case AgentSpeechToSpeechConfigProviderULTRAVOX:
 		return true
@@ -2059,6 +1579,7 @@ const (
 	AgentSttConfigProviderDEEPGRAM      AgentSttConfigProvider = "DEEPGRAM"
 	AgentSttConfigProviderELEVENLABS    AgentSttConfigProvider = "ELEVENLABS"
 	AgentSttConfigProviderOPENAIWHISPER AgentSttConfigProvider = "OPENAI_WHISPER"
+	AgentSttConfigProviderSMALLEST      AgentSttConfigProvider = "SMALLEST"
 	AgentSttConfigProviderSONIOX        AgentSttConfigProvider = "SONIOX"
 	AgentSttConfigProviderSPEECHMATICS  AgentSttConfigProvider = "SPEECHMATICS"
 )
@@ -2073,6 +1594,8 @@ func (e AgentSttConfigProvider) Valid() bool {
 	case AgentSttConfigProviderELEVENLABS:
 		return true
 	case AgentSttConfigProviderOPENAIWHISPER:
+		return true
+	case AgentSttConfigProviderSMALLEST:
 		return true
 	case AgentSttConfigProviderSONIOX:
 		return true
@@ -2110,6 +1633,7 @@ const (
 	AgentTtsConfigProviderFISHAUDIO  AgentTtsConfigProvider = "FISH_AUDIO"
 	AgentTtsConfigProviderOPENAI     AgentTtsConfigProvider = "OPENAI"
 	AgentTtsConfigProviderRIME       AgentTtsConfigProvider = "RIME"
+	AgentTtsConfigProviderSMALLEST   AgentTtsConfigProvider = "SMALLEST"
 )
 
 // Valid indicates whether the value is a known member of the AgentTtsConfigProvider enum.
@@ -2128,6 +1652,8 @@ func (e AgentTtsConfigProvider) Valid() bool {
 	case AgentTtsConfigProviderOPENAI:
 		return true
 	case AgentTtsConfigProviderRIME:
+		return true
+	case AgentTtsConfigProviderSMALLEST:
 		return true
 	default:
 		return false
@@ -2403,34 +1929,30 @@ func (e AlertConfigKind) Valid() bool {
 
 // Defines values for AlertEventTriggerEvents.
 const (
-	AlertEventTriggerEventsAGENTSETUPCOMPLETED           AlertEventTriggerEvents = "AGENT_SETUP_COMPLETED"
-	AlertEventTriggerEventsAGENTSETUPFAILED              AlertEventTriggerEvents = "AGENT_SETUP_FAILED"
-	AlertEventTriggerEventsCALLANALYSISCANCELLED         AlertEventTriggerEvents = "CALL_ANALYSIS_CANCELLED"
-	AlertEventTriggerEventsCALLANALYSISCOMPLETED         AlertEventTriggerEvents = "CALL_ANALYSIS_COMPLETED"
-	AlertEventTriggerEventsCALLANALYSISFAILED            AlertEventTriggerEvents = "CALL_ANALYSIS_FAILED"
-	AlertEventTriggerEventsCHATANALYSISCOMPLETED         AlertEventTriggerEvents = "CHAT_ANALYSIS_COMPLETED"
-	AlertEventTriggerEventsCHATANALYSISFAILED            AlertEventTriggerEvents = "CHAT_ANALYSIS_FAILED"
-	AlertEventTriggerEventsISSUEOPENED                   AlertEventTriggerEvents = "ISSUE_OPENED"
-	AlertEventTriggerEventsISSUERESOLVED                 AlertEventTriggerEvents = "ISSUE_RESOLVED"
-	AlertEventTriggerEventsMETRICCOLLECTIONJOBCOMPLETED  AlertEventTriggerEvents = "METRIC_COLLECTION_JOB_COMPLETED"
-	AlertEventTriggerEventsMETRICCOLLECTIONJOBFAILED     AlertEventTriggerEvents = "METRIC_COLLECTION_JOB_FAILED"
-	AlertEventTriggerEventsSIMULATIONJOBCANCELLED        AlertEventTriggerEvents = "SIMULATION_JOB_CANCELLED"
-	AlertEventTriggerEventsSIMULATIONJOBCOMPLETED        AlertEventTriggerEvents = "SIMULATION_JOB_COMPLETED"
-	AlertEventTriggerEventsSIMULATIONJOBFAILED           AlertEventTriggerEvents = "SIMULATION_JOB_FAILED"
-	AlertEventTriggerEventsSIMULATIONJOBSTARTED          AlertEventTriggerEvents = "SIMULATION_JOB_STARTED"
-	AlertEventTriggerEventsSIMULATIONRUNPLANJOBCANCELLED AlertEventTriggerEvents = "SIMULATION_RUN_PLAN_JOB_CANCELLED"
-	AlertEventTriggerEventsSIMULATIONRUNPLANJOBCOMPLETED AlertEventTriggerEvents = "SIMULATION_RUN_PLAN_JOB_COMPLETED"
-	AlertEventTriggerEventsSIMULATIONRUNPLANJOBFAILED    AlertEventTriggerEvents = "SIMULATION_RUN_PLAN_JOB_FAILED"
-	AlertEventTriggerEventsSIMULATIONRUNPLANJOBSTARTED   AlertEventTriggerEvents = "SIMULATION_RUN_PLAN_JOB_STARTED"
+	AlertEventTriggerEventsCALLANALYSISCANCELLED                 AlertEventTriggerEvents = "CALL_ANALYSIS_CANCELLED"
+	AlertEventTriggerEventsCALLANALYSISCOMPLETED                 AlertEventTriggerEvents = "CALL_ANALYSIS_COMPLETED"
+	AlertEventTriggerEventsCALLANALYSISFAILED                    AlertEventTriggerEvents = "CALL_ANALYSIS_FAILED"
+	AlertEventTriggerEventsCHATANALYSISCOMPLETED                 AlertEventTriggerEvents = "CHAT_ANALYSIS_COMPLETED"
+	AlertEventTriggerEventsCHATANALYSISFAILED                    AlertEventTriggerEvents = "CHAT_ANALYSIS_FAILED"
+	AlertEventTriggerEventsISSUEOPENED                           AlertEventTriggerEvents = "ISSUE_OPENED"
+	AlertEventTriggerEventsISSUERESOLVED                         AlertEventTriggerEvents = "ISSUE_RESOLVED"
+	AlertEventTriggerEventsMETRICCOLLECTIONJOBCOMPLETED          AlertEventTriggerEvents = "METRIC_COLLECTION_JOB_COMPLETED"
+	AlertEventTriggerEventsMETRICCOLLECTIONJOBFAILED             AlertEventTriggerEvents = "METRIC_COLLECTION_JOB_FAILED"
+	AlertEventTriggerEventsSIMULATIONJOBCANCELLED                AlertEventTriggerEvents = "SIMULATION_JOB_CANCELLED"
+	AlertEventTriggerEventsSIMULATIONJOBCOMPLETED                AlertEventTriggerEvents = "SIMULATION_JOB_COMPLETED"
+	AlertEventTriggerEventsSIMULATIONJOBFAILED                   AlertEventTriggerEvents = "SIMULATION_JOB_FAILED"
+	AlertEventTriggerEventsSIMULATIONJOBSTARTED                  AlertEventTriggerEvents = "SIMULATION_JOB_STARTED"
+	AlertEventTriggerEventsSIMULATIONRESOURCEGENERATIONCOMPLETED AlertEventTriggerEvents = "SIMULATION_RESOURCE_GENERATION_COMPLETED"
+	AlertEventTriggerEventsSIMULATIONRESOURCEGENERATIONFAILED    AlertEventTriggerEvents = "SIMULATION_RESOURCE_GENERATION_FAILED"
+	AlertEventTriggerEventsSIMULATIONRUNPLANJOBCANCELLED         AlertEventTriggerEvents = "SIMULATION_RUN_PLAN_JOB_CANCELLED"
+	AlertEventTriggerEventsSIMULATIONRUNPLANJOBCOMPLETED         AlertEventTriggerEvents = "SIMULATION_RUN_PLAN_JOB_COMPLETED"
+	AlertEventTriggerEventsSIMULATIONRUNPLANJOBFAILED            AlertEventTriggerEvents = "SIMULATION_RUN_PLAN_JOB_FAILED"
+	AlertEventTriggerEventsSIMULATIONRUNPLANJOBSTARTED           AlertEventTriggerEvents = "SIMULATION_RUN_PLAN_JOB_STARTED"
 )
 
 // Valid indicates whether the value is a known member of the AlertEventTriggerEvents enum.
 func (e AlertEventTriggerEvents) Valid() bool {
 	switch e {
-	case AlertEventTriggerEventsAGENTSETUPCOMPLETED:
-		return true
-	case AlertEventTriggerEventsAGENTSETUPFAILED:
-		return true
 	case AlertEventTriggerEventsCALLANALYSISCANCELLED:
 		return true
 	case AlertEventTriggerEventsCALLANALYSISCOMPLETED:
@@ -2456,6 +1978,10 @@ func (e AlertEventTriggerEvents) Valid() bool {
 	case AlertEventTriggerEventsSIMULATIONJOBFAILED:
 		return true
 	case AlertEventTriggerEventsSIMULATIONJOBSTARTED:
+		return true
+	case AlertEventTriggerEventsSIMULATIONRESOURCEGENERATIONCOMPLETED:
+		return true
+	case AlertEventTriggerEventsSIMULATIONRESOURCEGENERATIONFAILED:
 		return true
 	case AlertEventTriggerEventsSIMULATIONRUNPLANJOBCANCELLED:
 		return true
@@ -5119,66 +4645,6 @@ func (e CreateAgentEndpointInputOutboundDialType) Valid() bool {
 	}
 }
 
-// Defines values for CreateAgentResponseIndustry.
-const (
-	CreateAgentResponseIndustryAUTOMOTIVE           CreateAgentResponseIndustry = "AUTOMOTIVE"
-	CreateAgentResponseIndustryDEBTCOLLECTION       CreateAgentResponseIndustry = "DEBT_COLLECTION"
-	CreateAgentResponseIndustryEDUCATION            CreateAgentResponseIndustry = "EDUCATION"
-	CreateAgentResponseIndustryFINANCIALSERVICES    CreateAgentResponseIndustry = "FINANCIAL_SERVICES"
-	CreateAgentResponseIndustryHEALTHCARE           CreateAgentResponseIndustry = "HEALTHCARE"
-	CreateAgentResponseIndustryHOMESERVICES         CreateAgentResponseIndustry = "HOME_SERVICES"
-	CreateAgentResponseIndustryINSURANCE            CreateAgentResponseIndustry = "INSURANCE"
-	CreateAgentResponseIndustryLOGISTICS            CreateAgentResponseIndustry = "LOGISTICS"
-	CreateAgentResponseIndustryOTHER                CreateAgentResponseIndustry = "OTHER"
-	CreateAgentResponseIndustryPUBLICSECTOR         CreateAgentResponseIndustry = "PUBLIC_SECTOR"
-	CreateAgentResponseIndustryRESTAURANTS          CreateAgentResponseIndustry = "RESTAURANTS"
-	CreateAgentResponseIndustryRETAIL               CreateAgentResponseIndustry = "RETAIL"
-	CreateAgentResponseIndustryTECHNOLOGY           CreateAgentResponseIndustry = "TECHNOLOGY"
-	CreateAgentResponseIndustryTELECOMMUNICATIONS   CreateAgentResponseIndustry = "TELECOMMUNICATIONS"
-	CreateAgentResponseIndustryTRAVELANDHOSPITALITY CreateAgentResponseIndustry = "TRAVEL_AND_HOSPITALITY"
-	CreateAgentResponseIndustryUTILITIES            CreateAgentResponseIndustry = "UTILITIES"
-)
-
-// Valid indicates whether the value is a known member of the CreateAgentResponseIndustry enum.
-func (e CreateAgentResponseIndustry) Valid() bool {
-	switch e {
-	case CreateAgentResponseIndustryAUTOMOTIVE:
-		return true
-	case CreateAgentResponseIndustryDEBTCOLLECTION:
-		return true
-	case CreateAgentResponseIndustryEDUCATION:
-		return true
-	case CreateAgentResponseIndustryFINANCIALSERVICES:
-		return true
-	case CreateAgentResponseIndustryHEALTHCARE:
-		return true
-	case CreateAgentResponseIndustryHOMESERVICES:
-		return true
-	case CreateAgentResponseIndustryINSURANCE:
-		return true
-	case CreateAgentResponseIndustryLOGISTICS:
-		return true
-	case CreateAgentResponseIndustryOTHER:
-		return true
-	case CreateAgentResponseIndustryPUBLICSECTOR:
-		return true
-	case CreateAgentResponseIndustryRESTAURANTS:
-		return true
-	case CreateAgentResponseIndustryRETAIL:
-		return true
-	case CreateAgentResponseIndustryTECHNOLOGY:
-		return true
-	case CreateAgentResponseIndustryTELECOMMUNICATIONS:
-		return true
-	case CreateAgentResponseIndustryTRAVELANDHOSPITALITY:
-		return true
-	case CreateAgentResponseIndustryUTILITIES:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for CreateAgentWebConversationInputChannel.
 const (
 	CreateAgentWebConversationInputChannelWeb CreateAgentWebConversationInputChannel = "web"
@@ -5928,36 +5394,32 @@ func (e CreateThresholdInputSourceParticipantRole) Valid() bool {
 
 // Defines values for CreateWebhookInputEvents.
 const (
-	CreateWebhookInputEventsAGENTSETUPCOMPLETED           CreateWebhookInputEvents = "AGENT_SETUP_COMPLETED"
-	CreateWebhookInputEventsAGENTSETUPFAILED              CreateWebhookInputEvents = "AGENT_SETUP_FAILED"
-	CreateWebhookInputEventsCALLANALYSISCANCELLED         CreateWebhookInputEvents = "CALL_ANALYSIS_CANCELLED"
-	CreateWebhookInputEventsCALLANALYSISCOMPLETED         CreateWebhookInputEvents = "CALL_ANALYSIS_COMPLETED"
-	CreateWebhookInputEventsCALLANALYSISFAILED            CreateWebhookInputEvents = "CALL_ANALYSIS_FAILED"
-	CreateWebhookInputEventsCALLEVALUATIONCOMPLETED       CreateWebhookInputEvents = "CALL_EVALUATION_COMPLETED"
-	CreateWebhookInputEventsCALLEVALUATIONFAILED          CreateWebhookInputEvents = "CALL_EVALUATION_FAILED"
-	CreateWebhookInputEventsCHATANALYSISCOMPLETED         CreateWebhookInputEvents = "CHAT_ANALYSIS_COMPLETED"
-	CreateWebhookInputEventsCHATANALYSISFAILED            CreateWebhookInputEvents = "CHAT_ANALYSIS_FAILED"
-	CreateWebhookInputEventsISSUEOPENED                   CreateWebhookInputEvents = "ISSUE_OPENED"
-	CreateWebhookInputEventsISSUERESOLVED                 CreateWebhookInputEvents = "ISSUE_RESOLVED"
-	CreateWebhookInputEventsMETRICCOLLECTIONJOBCOMPLETED  CreateWebhookInputEvents = "METRIC_COLLECTION_JOB_COMPLETED"
-	CreateWebhookInputEventsMETRICCOLLECTIONJOBFAILED     CreateWebhookInputEvents = "METRIC_COLLECTION_JOB_FAILED"
-	CreateWebhookInputEventsSIMULATIONJOBCANCELLED        CreateWebhookInputEvents = "SIMULATION_JOB_CANCELLED"
-	CreateWebhookInputEventsSIMULATIONJOBCOMPLETED        CreateWebhookInputEvents = "SIMULATION_JOB_COMPLETED"
-	CreateWebhookInputEventsSIMULATIONJOBFAILED           CreateWebhookInputEvents = "SIMULATION_JOB_FAILED"
-	CreateWebhookInputEventsSIMULATIONJOBSTARTED          CreateWebhookInputEvents = "SIMULATION_JOB_STARTED"
-	CreateWebhookInputEventsSIMULATIONRUNPLANJOBCANCELLED CreateWebhookInputEvents = "SIMULATION_RUN_PLAN_JOB_CANCELLED"
-	CreateWebhookInputEventsSIMULATIONRUNPLANJOBCOMPLETED CreateWebhookInputEvents = "SIMULATION_RUN_PLAN_JOB_COMPLETED"
-	CreateWebhookInputEventsSIMULATIONRUNPLANJOBFAILED    CreateWebhookInputEvents = "SIMULATION_RUN_PLAN_JOB_FAILED"
-	CreateWebhookInputEventsSIMULATIONRUNPLANJOBSTARTED   CreateWebhookInputEvents = "SIMULATION_RUN_PLAN_JOB_STARTED"
+	CreateWebhookInputEventsCALLANALYSISCANCELLED                 CreateWebhookInputEvents = "CALL_ANALYSIS_CANCELLED"
+	CreateWebhookInputEventsCALLANALYSISCOMPLETED                 CreateWebhookInputEvents = "CALL_ANALYSIS_COMPLETED"
+	CreateWebhookInputEventsCALLANALYSISFAILED                    CreateWebhookInputEvents = "CALL_ANALYSIS_FAILED"
+	CreateWebhookInputEventsCALLEVALUATIONCOMPLETED               CreateWebhookInputEvents = "CALL_EVALUATION_COMPLETED"
+	CreateWebhookInputEventsCALLEVALUATIONFAILED                  CreateWebhookInputEvents = "CALL_EVALUATION_FAILED"
+	CreateWebhookInputEventsCHATANALYSISCOMPLETED                 CreateWebhookInputEvents = "CHAT_ANALYSIS_COMPLETED"
+	CreateWebhookInputEventsCHATANALYSISFAILED                    CreateWebhookInputEvents = "CHAT_ANALYSIS_FAILED"
+	CreateWebhookInputEventsISSUEOPENED                           CreateWebhookInputEvents = "ISSUE_OPENED"
+	CreateWebhookInputEventsISSUERESOLVED                         CreateWebhookInputEvents = "ISSUE_RESOLVED"
+	CreateWebhookInputEventsMETRICCOLLECTIONJOBCOMPLETED          CreateWebhookInputEvents = "METRIC_COLLECTION_JOB_COMPLETED"
+	CreateWebhookInputEventsMETRICCOLLECTIONJOBFAILED             CreateWebhookInputEvents = "METRIC_COLLECTION_JOB_FAILED"
+	CreateWebhookInputEventsSIMULATIONJOBCANCELLED                CreateWebhookInputEvents = "SIMULATION_JOB_CANCELLED"
+	CreateWebhookInputEventsSIMULATIONJOBCOMPLETED                CreateWebhookInputEvents = "SIMULATION_JOB_COMPLETED"
+	CreateWebhookInputEventsSIMULATIONJOBFAILED                   CreateWebhookInputEvents = "SIMULATION_JOB_FAILED"
+	CreateWebhookInputEventsSIMULATIONJOBSTARTED                  CreateWebhookInputEvents = "SIMULATION_JOB_STARTED"
+	CreateWebhookInputEventsSIMULATIONRESOURCEGENERATIONCOMPLETED CreateWebhookInputEvents = "SIMULATION_RESOURCE_GENERATION_COMPLETED"
+	CreateWebhookInputEventsSIMULATIONRESOURCEGENERATIONFAILED    CreateWebhookInputEvents = "SIMULATION_RESOURCE_GENERATION_FAILED"
+	CreateWebhookInputEventsSIMULATIONRUNPLANJOBCANCELLED         CreateWebhookInputEvents = "SIMULATION_RUN_PLAN_JOB_CANCELLED"
+	CreateWebhookInputEventsSIMULATIONRUNPLANJOBCOMPLETED         CreateWebhookInputEvents = "SIMULATION_RUN_PLAN_JOB_COMPLETED"
+	CreateWebhookInputEventsSIMULATIONRUNPLANJOBFAILED            CreateWebhookInputEvents = "SIMULATION_RUN_PLAN_JOB_FAILED"
+	CreateWebhookInputEventsSIMULATIONRUNPLANJOBSTARTED           CreateWebhookInputEvents = "SIMULATION_RUN_PLAN_JOB_STARTED"
 )
 
 // Valid indicates whether the value is a known member of the CreateWebhookInputEvents enum.
 func (e CreateWebhookInputEvents) Valid() bool {
 	switch e {
-	case CreateWebhookInputEventsAGENTSETUPCOMPLETED:
-		return true
-	case CreateWebhookInputEventsAGENTSETUPFAILED:
-		return true
 	case CreateWebhookInputEventsCALLANALYSISCANCELLED:
 		return true
 	case CreateWebhookInputEventsCALLANALYSISCOMPLETED:
@@ -5988,6 +5450,10 @@ func (e CreateWebhookInputEvents) Valid() bool {
 		return true
 	case CreateWebhookInputEventsSIMULATIONJOBSTARTED:
 		return true
+	case CreateWebhookInputEventsSIMULATIONRESOURCEGENERATIONCOMPLETED:
+		return true
+	case CreateWebhookInputEventsSIMULATIONRESOURCEGENERATIONFAILED:
+		return true
 	case CreateWebhookInputEventsSIMULATIONRUNPLANJOBCANCELLED:
 		return true
 	case CreateWebhookInputEventsSIMULATIONRUNPLANJOBCOMPLETED:
@@ -6003,36 +5469,32 @@ func (e CreateWebhookInputEvents) Valid() bool {
 
 // Defines values for CreateWebhookResponseEvents.
 const (
-	CreateWebhookResponseEventsAGENTSETUPCOMPLETED           CreateWebhookResponseEvents = "AGENT_SETUP_COMPLETED"
-	CreateWebhookResponseEventsAGENTSETUPFAILED              CreateWebhookResponseEvents = "AGENT_SETUP_FAILED"
-	CreateWebhookResponseEventsCALLANALYSISCANCELLED         CreateWebhookResponseEvents = "CALL_ANALYSIS_CANCELLED"
-	CreateWebhookResponseEventsCALLANALYSISCOMPLETED         CreateWebhookResponseEvents = "CALL_ANALYSIS_COMPLETED"
-	CreateWebhookResponseEventsCALLANALYSISFAILED            CreateWebhookResponseEvents = "CALL_ANALYSIS_FAILED"
-	CreateWebhookResponseEventsCALLEVALUATIONCOMPLETED       CreateWebhookResponseEvents = "CALL_EVALUATION_COMPLETED"
-	CreateWebhookResponseEventsCALLEVALUATIONFAILED          CreateWebhookResponseEvents = "CALL_EVALUATION_FAILED"
-	CreateWebhookResponseEventsCHATANALYSISCOMPLETED         CreateWebhookResponseEvents = "CHAT_ANALYSIS_COMPLETED"
-	CreateWebhookResponseEventsCHATANALYSISFAILED            CreateWebhookResponseEvents = "CHAT_ANALYSIS_FAILED"
-	CreateWebhookResponseEventsISSUEOPENED                   CreateWebhookResponseEvents = "ISSUE_OPENED"
-	CreateWebhookResponseEventsISSUERESOLVED                 CreateWebhookResponseEvents = "ISSUE_RESOLVED"
-	CreateWebhookResponseEventsMETRICCOLLECTIONJOBCOMPLETED  CreateWebhookResponseEvents = "METRIC_COLLECTION_JOB_COMPLETED"
-	CreateWebhookResponseEventsMETRICCOLLECTIONJOBFAILED     CreateWebhookResponseEvents = "METRIC_COLLECTION_JOB_FAILED"
-	CreateWebhookResponseEventsSIMULATIONJOBCANCELLED        CreateWebhookResponseEvents = "SIMULATION_JOB_CANCELLED"
-	CreateWebhookResponseEventsSIMULATIONJOBCOMPLETED        CreateWebhookResponseEvents = "SIMULATION_JOB_COMPLETED"
-	CreateWebhookResponseEventsSIMULATIONJOBFAILED           CreateWebhookResponseEvents = "SIMULATION_JOB_FAILED"
-	CreateWebhookResponseEventsSIMULATIONJOBSTARTED          CreateWebhookResponseEvents = "SIMULATION_JOB_STARTED"
-	CreateWebhookResponseEventsSIMULATIONRUNPLANJOBCANCELLED CreateWebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_CANCELLED"
-	CreateWebhookResponseEventsSIMULATIONRUNPLANJOBCOMPLETED CreateWebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_COMPLETED"
-	CreateWebhookResponseEventsSIMULATIONRUNPLANJOBFAILED    CreateWebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_FAILED"
-	CreateWebhookResponseEventsSIMULATIONRUNPLANJOBSTARTED   CreateWebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_STARTED"
+	CreateWebhookResponseEventsCALLANALYSISCANCELLED                 CreateWebhookResponseEvents = "CALL_ANALYSIS_CANCELLED"
+	CreateWebhookResponseEventsCALLANALYSISCOMPLETED                 CreateWebhookResponseEvents = "CALL_ANALYSIS_COMPLETED"
+	CreateWebhookResponseEventsCALLANALYSISFAILED                    CreateWebhookResponseEvents = "CALL_ANALYSIS_FAILED"
+	CreateWebhookResponseEventsCALLEVALUATIONCOMPLETED               CreateWebhookResponseEvents = "CALL_EVALUATION_COMPLETED"
+	CreateWebhookResponseEventsCALLEVALUATIONFAILED                  CreateWebhookResponseEvents = "CALL_EVALUATION_FAILED"
+	CreateWebhookResponseEventsCHATANALYSISCOMPLETED                 CreateWebhookResponseEvents = "CHAT_ANALYSIS_COMPLETED"
+	CreateWebhookResponseEventsCHATANALYSISFAILED                    CreateWebhookResponseEvents = "CHAT_ANALYSIS_FAILED"
+	CreateWebhookResponseEventsISSUEOPENED                           CreateWebhookResponseEvents = "ISSUE_OPENED"
+	CreateWebhookResponseEventsISSUERESOLVED                         CreateWebhookResponseEvents = "ISSUE_RESOLVED"
+	CreateWebhookResponseEventsMETRICCOLLECTIONJOBCOMPLETED          CreateWebhookResponseEvents = "METRIC_COLLECTION_JOB_COMPLETED"
+	CreateWebhookResponseEventsMETRICCOLLECTIONJOBFAILED             CreateWebhookResponseEvents = "METRIC_COLLECTION_JOB_FAILED"
+	CreateWebhookResponseEventsSIMULATIONJOBCANCELLED                CreateWebhookResponseEvents = "SIMULATION_JOB_CANCELLED"
+	CreateWebhookResponseEventsSIMULATIONJOBCOMPLETED                CreateWebhookResponseEvents = "SIMULATION_JOB_COMPLETED"
+	CreateWebhookResponseEventsSIMULATIONJOBFAILED                   CreateWebhookResponseEvents = "SIMULATION_JOB_FAILED"
+	CreateWebhookResponseEventsSIMULATIONJOBSTARTED                  CreateWebhookResponseEvents = "SIMULATION_JOB_STARTED"
+	CreateWebhookResponseEventsSIMULATIONRESOURCEGENERATIONCOMPLETED CreateWebhookResponseEvents = "SIMULATION_RESOURCE_GENERATION_COMPLETED"
+	CreateWebhookResponseEventsSIMULATIONRESOURCEGENERATIONFAILED    CreateWebhookResponseEvents = "SIMULATION_RESOURCE_GENERATION_FAILED"
+	CreateWebhookResponseEventsSIMULATIONRUNPLANJOBCANCELLED         CreateWebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_CANCELLED"
+	CreateWebhookResponseEventsSIMULATIONRUNPLANJOBCOMPLETED         CreateWebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_COMPLETED"
+	CreateWebhookResponseEventsSIMULATIONRUNPLANJOBFAILED            CreateWebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_FAILED"
+	CreateWebhookResponseEventsSIMULATIONRUNPLANJOBSTARTED           CreateWebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_STARTED"
 )
 
 // Valid indicates whether the value is a known member of the CreateWebhookResponseEvents enum.
 func (e CreateWebhookResponseEvents) Valid() bool {
 	switch e {
-	case CreateWebhookResponseEventsAGENTSETUPCOMPLETED:
-		return true
-	case CreateWebhookResponseEventsAGENTSETUPFAILED:
-		return true
 	case CreateWebhookResponseEventsCALLANALYSISCANCELLED:
 		return true
 	case CreateWebhookResponseEventsCALLANALYSISCOMPLETED:
@@ -6062,6 +5524,10 @@ func (e CreateWebhookResponseEvents) Valid() bool {
 	case CreateWebhookResponseEventsSIMULATIONJOBFAILED:
 		return true
 	case CreateWebhookResponseEventsSIMULATIONJOBSTARTED:
+		return true
+	case CreateWebhookResponseEventsSIMULATIONRESOURCEGENERATIONCOMPLETED:
+		return true
+	case CreateWebhookResponseEventsSIMULATIONRESOURCEGENERATIONFAILED:
 		return true
 	case CreateWebhookResponseEventsSIMULATIONRUNPLANJOBCANCELLED:
 		return true
@@ -10357,6 +9823,111 @@ func (e FormulaMetricResponseType) Valid() bool {
 	case FormulaMetricResponseTypeSCALE:
 		return true
 	case FormulaMetricResponseTypeTEXT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateSimulationResourcesInputCapabilities.
+const (
+	GenerateSimulationResourcesInputCapabilitiesACCOUNTMANAGEMENT    GenerateSimulationResourcesInputCapabilities = "ACCOUNT_MANAGEMENT"
+	GenerateSimulationResourcesInputCapabilitiesAPPOINTMENTBOOKING   GenerateSimulationResourcesInputCapabilities = "APPOINTMENT_BOOKING"
+	GenerateSimulationResourcesInputCapabilitiesBILLINGANDPAYMENTS   GenerateSimulationResourcesInputCapabilities = "BILLING_AND_PAYMENTS"
+	GenerateSimulationResourcesInputCapabilitiesCALLROUTING          GenerateSimulationResourcesInputCapabilities = "CALL_ROUTING"
+	GenerateSimulationResourcesInputCapabilitiesCOLLECTIONS          GenerateSimulationResourcesInputCapabilities = "COLLECTIONS"
+	GenerateSimulationResourcesInputCapabilitiesFAQ                  GenerateSimulationResourcesInputCapabilities = "FAQ"
+	GenerateSimulationResourcesInputCapabilitiesIDENTITYVERIFICATION GenerateSimulationResourcesInputCapabilities = "IDENTITY_VERIFICATION"
+	GenerateSimulationResourcesInputCapabilitiesLEADQUALIFICATION    GenerateSimulationResourcesInputCapabilities = "LEAD_QUALIFICATION"
+	GenerateSimulationResourcesInputCapabilitiesORDERMANAGEMENT      GenerateSimulationResourcesInputCapabilities = "ORDER_MANAGEMENT"
+	GenerateSimulationResourcesInputCapabilitiesOUTBOUNDCALLING      GenerateSimulationResourcesInputCapabilities = "OUTBOUND_CALLING"
+	GenerateSimulationResourcesInputCapabilitiesTROUBLESHOOTING      GenerateSimulationResourcesInputCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the GenerateSimulationResourcesInputCapabilities enum.
+func (e GenerateSimulationResourcesInputCapabilities) Valid() bool {
+	switch e {
+	case GenerateSimulationResourcesInputCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case GenerateSimulationResourcesInputCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case GenerateSimulationResourcesInputCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case GenerateSimulationResourcesInputCapabilitiesCALLROUTING:
+		return true
+	case GenerateSimulationResourcesInputCapabilitiesCOLLECTIONS:
+		return true
+	case GenerateSimulationResourcesInputCapabilitiesFAQ:
+		return true
+	case GenerateSimulationResourcesInputCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case GenerateSimulationResourcesInputCapabilitiesLEADQUALIFICATION:
+		return true
+	case GenerateSimulationResourcesInputCapabilitiesORDERMANAGEMENT:
+		return true
+	case GenerateSimulationResourcesInputCapabilitiesOUTBOUNDCALLING:
+		return true
+	case GenerateSimulationResourcesInputCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateSimulationResourcesInputIndustry.
+const (
+	GenerateSimulationResourcesInputIndustryAUTOMOTIVE           GenerateSimulationResourcesInputIndustry = "AUTOMOTIVE"
+	GenerateSimulationResourcesInputIndustryDEBTCOLLECTION       GenerateSimulationResourcesInputIndustry = "DEBT_COLLECTION"
+	GenerateSimulationResourcesInputIndustryEDUCATION            GenerateSimulationResourcesInputIndustry = "EDUCATION"
+	GenerateSimulationResourcesInputIndustryFINANCIALSERVICES    GenerateSimulationResourcesInputIndustry = "FINANCIAL_SERVICES"
+	GenerateSimulationResourcesInputIndustryHEALTHCARE           GenerateSimulationResourcesInputIndustry = "HEALTHCARE"
+	GenerateSimulationResourcesInputIndustryHOMESERVICES         GenerateSimulationResourcesInputIndustry = "HOME_SERVICES"
+	GenerateSimulationResourcesInputIndustryINSURANCE            GenerateSimulationResourcesInputIndustry = "INSURANCE"
+	GenerateSimulationResourcesInputIndustryLOGISTICS            GenerateSimulationResourcesInputIndustry = "LOGISTICS"
+	GenerateSimulationResourcesInputIndustryOTHER                GenerateSimulationResourcesInputIndustry = "OTHER"
+	GenerateSimulationResourcesInputIndustryPUBLICSECTOR         GenerateSimulationResourcesInputIndustry = "PUBLIC_SECTOR"
+	GenerateSimulationResourcesInputIndustryRESTAURANTS          GenerateSimulationResourcesInputIndustry = "RESTAURANTS"
+	GenerateSimulationResourcesInputIndustryRETAIL               GenerateSimulationResourcesInputIndustry = "RETAIL"
+	GenerateSimulationResourcesInputIndustryTECHNOLOGY           GenerateSimulationResourcesInputIndustry = "TECHNOLOGY"
+	GenerateSimulationResourcesInputIndustryTELECOMMUNICATIONS   GenerateSimulationResourcesInputIndustry = "TELECOMMUNICATIONS"
+	GenerateSimulationResourcesInputIndustryTRAVELANDHOSPITALITY GenerateSimulationResourcesInputIndustry = "TRAVEL_AND_HOSPITALITY"
+	GenerateSimulationResourcesInputIndustryUTILITIES            GenerateSimulationResourcesInputIndustry = "UTILITIES"
+)
+
+// Valid indicates whether the value is a known member of the GenerateSimulationResourcesInputIndustry enum.
+func (e GenerateSimulationResourcesInputIndustry) Valid() bool {
+	switch e {
+	case GenerateSimulationResourcesInputIndustryAUTOMOTIVE:
+		return true
+	case GenerateSimulationResourcesInputIndustryDEBTCOLLECTION:
+		return true
+	case GenerateSimulationResourcesInputIndustryEDUCATION:
+		return true
+	case GenerateSimulationResourcesInputIndustryFINANCIALSERVICES:
+		return true
+	case GenerateSimulationResourcesInputIndustryHEALTHCARE:
+		return true
+	case GenerateSimulationResourcesInputIndustryHOMESERVICES:
+		return true
+	case GenerateSimulationResourcesInputIndustryINSURANCE:
+		return true
+	case GenerateSimulationResourcesInputIndustryLOGISTICS:
+		return true
+	case GenerateSimulationResourcesInputIndustryOTHER:
+		return true
+	case GenerateSimulationResourcesInputIndustryPUBLICSECTOR:
+		return true
+	case GenerateSimulationResourcesInputIndustryRESTAURANTS:
+		return true
+	case GenerateSimulationResourcesInputIndustryRETAIL:
+		return true
+	case GenerateSimulationResourcesInputIndustryTECHNOLOGY:
+		return true
+	case GenerateSimulationResourcesInputIndustryTELECOMMUNICATIONS:
+		return true
+	case GenerateSimulationResourcesInputIndustryTRAVELANDHOSPITALITY:
+		return true
+	case GenerateSimulationResourcesInputIndustryUTILITIES:
 		return true
 	default:
 		return false
@@ -16792,111 +16363,6 @@ func (e ReleasePhoneNumberResponseReleased) Valid() bool {
 	}
 }
 
-// Defines values for RequestAgentSetupInputCapabilities.
-const (
-	RequestAgentSetupInputCapabilitiesACCOUNTMANAGEMENT    RequestAgentSetupInputCapabilities = "ACCOUNT_MANAGEMENT"
-	RequestAgentSetupInputCapabilitiesAPPOINTMENTBOOKING   RequestAgentSetupInputCapabilities = "APPOINTMENT_BOOKING"
-	RequestAgentSetupInputCapabilitiesBILLINGANDPAYMENTS   RequestAgentSetupInputCapabilities = "BILLING_AND_PAYMENTS"
-	RequestAgentSetupInputCapabilitiesCALLROUTING          RequestAgentSetupInputCapabilities = "CALL_ROUTING"
-	RequestAgentSetupInputCapabilitiesCOLLECTIONS          RequestAgentSetupInputCapabilities = "COLLECTIONS"
-	RequestAgentSetupInputCapabilitiesFAQ                  RequestAgentSetupInputCapabilities = "FAQ"
-	RequestAgentSetupInputCapabilitiesIDENTITYVERIFICATION RequestAgentSetupInputCapabilities = "IDENTITY_VERIFICATION"
-	RequestAgentSetupInputCapabilitiesLEADQUALIFICATION    RequestAgentSetupInputCapabilities = "LEAD_QUALIFICATION"
-	RequestAgentSetupInputCapabilitiesORDERMANAGEMENT      RequestAgentSetupInputCapabilities = "ORDER_MANAGEMENT"
-	RequestAgentSetupInputCapabilitiesOUTBOUNDCALLING      RequestAgentSetupInputCapabilities = "OUTBOUND_CALLING"
-	RequestAgentSetupInputCapabilitiesTROUBLESHOOTING      RequestAgentSetupInputCapabilities = "TROUBLESHOOTING"
-)
-
-// Valid indicates whether the value is a known member of the RequestAgentSetupInputCapabilities enum.
-func (e RequestAgentSetupInputCapabilities) Valid() bool {
-	switch e {
-	case RequestAgentSetupInputCapabilitiesACCOUNTMANAGEMENT:
-		return true
-	case RequestAgentSetupInputCapabilitiesAPPOINTMENTBOOKING:
-		return true
-	case RequestAgentSetupInputCapabilitiesBILLINGANDPAYMENTS:
-		return true
-	case RequestAgentSetupInputCapabilitiesCALLROUTING:
-		return true
-	case RequestAgentSetupInputCapabilitiesCOLLECTIONS:
-		return true
-	case RequestAgentSetupInputCapabilitiesFAQ:
-		return true
-	case RequestAgentSetupInputCapabilitiesIDENTITYVERIFICATION:
-		return true
-	case RequestAgentSetupInputCapabilitiesLEADQUALIFICATION:
-		return true
-	case RequestAgentSetupInputCapabilitiesORDERMANAGEMENT:
-		return true
-	case RequestAgentSetupInputCapabilitiesOUTBOUNDCALLING:
-		return true
-	case RequestAgentSetupInputCapabilitiesTROUBLESHOOTING:
-		return true
-	default:
-		return false
-	}
-}
-
-// Defines values for RequestAgentSetupInputIndustry.
-const (
-	RequestAgentSetupInputIndustryAUTOMOTIVE           RequestAgentSetupInputIndustry = "AUTOMOTIVE"
-	RequestAgentSetupInputIndustryDEBTCOLLECTION       RequestAgentSetupInputIndustry = "DEBT_COLLECTION"
-	RequestAgentSetupInputIndustryEDUCATION            RequestAgentSetupInputIndustry = "EDUCATION"
-	RequestAgentSetupInputIndustryFINANCIALSERVICES    RequestAgentSetupInputIndustry = "FINANCIAL_SERVICES"
-	RequestAgentSetupInputIndustryHEALTHCARE           RequestAgentSetupInputIndustry = "HEALTHCARE"
-	RequestAgentSetupInputIndustryHOMESERVICES         RequestAgentSetupInputIndustry = "HOME_SERVICES"
-	RequestAgentSetupInputIndustryINSURANCE            RequestAgentSetupInputIndustry = "INSURANCE"
-	RequestAgentSetupInputIndustryLOGISTICS            RequestAgentSetupInputIndustry = "LOGISTICS"
-	RequestAgentSetupInputIndustryOTHER                RequestAgentSetupInputIndustry = "OTHER"
-	RequestAgentSetupInputIndustryPUBLICSECTOR         RequestAgentSetupInputIndustry = "PUBLIC_SECTOR"
-	RequestAgentSetupInputIndustryRESTAURANTS          RequestAgentSetupInputIndustry = "RESTAURANTS"
-	RequestAgentSetupInputIndustryRETAIL               RequestAgentSetupInputIndustry = "RETAIL"
-	RequestAgentSetupInputIndustryTECHNOLOGY           RequestAgentSetupInputIndustry = "TECHNOLOGY"
-	RequestAgentSetupInputIndustryTELECOMMUNICATIONS   RequestAgentSetupInputIndustry = "TELECOMMUNICATIONS"
-	RequestAgentSetupInputIndustryTRAVELANDHOSPITALITY RequestAgentSetupInputIndustry = "TRAVEL_AND_HOSPITALITY"
-	RequestAgentSetupInputIndustryUTILITIES            RequestAgentSetupInputIndustry = "UTILITIES"
-)
-
-// Valid indicates whether the value is a known member of the RequestAgentSetupInputIndustry enum.
-func (e RequestAgentSetupInputIndustry) Valid() bool {
-	switch e {
-	case RequestAgentSetupInputIndustryAUTOMOTIVE:
-		return true
-	case RequestAgentSetupInputIndustryDEBTCOLLECTION:
-		return true
-	case RequestAgentSetupInputIndustryEDUCATION:
-		return true
-	case RequestAgentSetupInputIndustryFINANCIALSERVICES:
-		return true
-	case RequestAgentSetupInputIndustryHEALTHCARE:
-		return true
-	case RequestAgentSetupInputIndustryHOMESERVICES:
-		return true
-	case RequestAgentSetupInputIndustryINSURANCE:
-		return true
-	case RequestAgentSetupInputIndustryLOGISTICS:
-		return true
-	case RequestAgentSetupInputIndustryOTHER:
-		return true
-	case RequestAgentSetupInputIndustryPUBLICSECTOR:
-		return true
-	case RequestAgentSetupInputIndustryRESTAURANTS:
-		return true
-	case RequestAgentSetupInputIndustryRETAIL:
-		return true
-	case RequestAgentSetupInputIndustryTECHNOLOGY:
-		return true
-	case RequestAgentSetupInputIndustryTELECOMMUNICATIONS:
-		return true
-	case RequestAgentSetupInputIndustryTRAVELANDHOSPITALITY:
-		return true
-	case RequestAgentSetupInputIndustryUTILITIES:
-		return true
-	default:
-		return false
-	}
-}
-
 // Defines values for ResolveManagedConfigResponseChannel.
 const (
 	ResolveManagedConfigResponseChannelProduction ResolveManagedConfigResponseChannel = "production"
@@ -19114,6 +18580,465 @@ func (e SimulationPlanScheduleConfig5Type) Valid() bool {
 	}
 }
 
+// Defines values for SimulationResourceGenerationCapabilities.
+const (
+	SimulationResourceGenerationCapabilitiesACCOUNTMANAGEMENT    SimulationResourceGenerationCapabilities = "ACCOUNT_MANAGEMENT"
+	SimulationResourceGenerationCapabilitiesAPPOINTMENTBOOKING   SimulationResourceGenerationCapabilities = "APPOINTMENT_BOOKING"
+	SimulationResourceGenerationCapabilitiesBILLINGANDPAYMENTS   SimulationResourceGenerationCapabilities = "BILLING_AND_PAYMENTS"
+	SimulationResourceGenerationCapabilitiesCALLROUTING          SimulationResourceGenerationCapabilities = "CALL_ROUTING"
+	SimulationResourceGenerationCapabilitiesCOLLECTIONS          SimulationResourceGenerationCapabilities = "COLLECTIONS"
+	SimulationResourceGenerationCapabilitiesFAQ                  SimulationResourceGenerationCapabilities = "FAQ"
+	SimulationResourceGenerationCapabilitiesIDENTITYVERIFICATION SimulationResourceGenerationCapabilities = "IDENTITY_VERIFICATION"
+	SimulationResourceGenerationCapabilitiesLEADQUALIFICATION    SimulationResourceGenerationCapabilities = "LEAD_QUALIFICATION"
+	SimulationResourceGenerationCapabilitiesORDERMANAGEMENT      SimulationResourceGenerationCapabilities = "ORDER_MANAGEMENT"
+	SimulationResourceGenerationCapabilitiesOUTBOUNDCALLING      SimulationResourceGenerationCapabilities = "OUTBOUND_CALLING"
+	SimulationResourceGenerationCapabilitiesTROUBLESHOOTING      SimulationResourceGenerationCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationCapabilities enum.
+func (e SimulationResourceGenerationCapabilities) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case SimulationResourceGenerationCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case SimulationResourceGenerationCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case SimulationResourceGenerationCapabilitiesCALLROUTING:
+		return true
+	case SimulationResourceGenerationCapabilitiesCOLLECTIONS:
+		return true
+	case SimulationResourceGenerationCapabilitiesFAQ:
+		return true
+	case SimulationResourceGenerationCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case SimulationResourceGenerationCapabilitiesLEADQUALIFICATION:
+		return true
+	case SimulationResourceGenerationCapabilitiesORDERMANAGEMENT:
+		return true
+	case SimulationResourceGenerationCapabilitiesOUTBOUNDCALLING:
+		return true
+	case SimulationResourceGenerationCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationIndustry.
+const (
+	SimulationResourceGenerationIndustryAUTOMOTIVE           SimulationResourceGenerationIndustry = "AUTOMOTIVE"
+	SimulationResourceGenerationIndustryDEBTCOLLECTION       SimulationResourceGenerationIndustry = "DEBT_COLLECTION"
+	SimulationResourceGenerationIndustryEDUCATION            SimulationResourceGenerationIndustry = "EDUCATION"
+	SimulationResourceGenerationIndustryFINANCIALSERVICES    SimulationResourceGenerationIndustry = "FINANCIAL_SERVICES"
+	SimulationResourceGenerationIndustryHEALTHCARE           SimulationResourceGenerationIndustry = "HEALTHCARE"
+	SimulationResourceGenerationIndustryHOMESERVICES         SimulationResourceGenerationIndustry = "HOME_SERVICES"
+	SimulationResourceGenerationIndustryINSURANCE            SimulationResourceGenerationIndustry = "INSURANCE"
+	SimulationResourceGenerationIndustryLOGISTICS            SimulationResourceGenerationIndustry = "LOGISTICS"
+	SimulationResourceGenerationIndustryOTHER                SimulationResourceGenerationIndustry = "OTHER"
+	SimulationResourceGenerationIndustryPUBLICSECTOR         SimulationResourceGenerationIndustry = "PUBLIC_SECTOR"
+	SimulationResourceGenerationIndustryRESTAURANTS          SimulationResourceGenerationIndustry = "RESTAURANTS"
+	SimulationResourceGenerationIndustryRETAIL               SimulationResourceGenerationIndustry = "RETAIL"
+	SimulationResourceGenerationIndustryTECHNOLOGY           SimulationResourceGenerationIndustry = "TECHNOLOGY"
+	SimulationResourceGenerationIndustryTELECOMMUNICATIONS   SimulationResourceGenerationIndustry = "TELECOMMUNICATIONS"
+	SimulationResourceGenerationIndustryTRAVELANDHOSPITALITY SimulationResourceGenerationIndustry = "TRAVEL_AND_HOSPITALITY"
+	SimulationResourceGenerationIndustryUTILITIES            SimulationResourceGenerationIndustry = "UTILITIES"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationIndustry enum.
+func (e SimulationResourceGenerationIndustry) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationIndustryAUTOMOTIVE:
+		return true
+	case SimulationResourceGenerationIndustryDEBTCOLLECTION:
+		return true
+	case SimulationResourceGenerationIndustryEDUCATION:
+		return true
+	case SimulationResourceGenerationIndustryFINANCIALSERVICES:
+		return true
+	case SimulationResourceGenerationIndustryHEALTHCARE:
+		return true
+	case SimulationResourceGenerationIndustryHOMESERVICES:
+		return true
+	case SimulationResourceGenerationIndustryINSURANCE:
+		return true
+	case SimulationResourceGenerationIndustryLOGISTICS:
+		return true
+	case SimulationResourceGenerationIndustryOTHER:
+		return true
+	case SimulationResourceGenerationIndustryPUBLICSECTOR:
+		return true
+	case SimulationResourceGenerationIndustryRESTAURANTS:
+		return true
+	case SimulationResourceGenerationIndustryRETAIL:
+		return true
+	case SimulationResourceGenerationIndustryTECHNOLOGY:
+		return true
+	case SimulationResourceGenerationIndustryTELECOMMUNICATIONS:
+		return true
+	case SimulationResourceGenerationIndustryTRAVELANDHOSPITALITY:
+		return true
+	case SimulationResourceGenerationIndustryUTILITIES:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationStatus.
+const (
+	SimulationResourceGenerationStatusCANCELLED  SimulationResourceGenerationStatus = "CANCELLED"
+	SimulationResourceGenerationStatusCOMPLETED  SimulationResourceGenerationStatus = "COMPLETED"
+	SimulationResourceGenerationStatusFAILED     SimulationResourceGenerationStatus = "FAILED"
+	SimulationResourceGenerationStatusNEEDSINPUT SimulationResourceGenerationStatus = "NEEDS_INPUT"
+	SimulationResourceGenerationStatusPENDING    SimulationResourceGenerationStatus = "PENDING"
+	SimulationResourceGenerationStatusRUNNING    SimulationResourceGenerationStatus = "RUNNING"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationStatus enum.
+func (e SimulationResourceGenerationStatus) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationStatusCANCELLED:
+		return true
+	case SimulationResourceGenerationStatusCOMPLETED:
+		return true
+	case SimulationResourceGenerationStatusFAILED:
+		return true
+	case SimulationResourceGenerationStatusNEEDSINPUT:
+		return true
+	case SimulationResourceGenerationStatusPENDING:
+		return true
+	case SimulationResourceGenerationStatusRUNNING:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationActivityKind.
+const (
+	SimulationResourceGenerationActivityKindACTION      SimulationResourceGenerationActivityKind = "ACTION"
+	SimulationResourceGenerationActivityKindANSWER      SimulationResourceGenerationActivityKind = "ANSWER"
+	SimulationResourceGenerationActivityKindERROR       SimulationResourceGenerationActivityKind = "ERROR"
+	SimulationResourceGenerationActivityKindEXPLORATION SimulationResourceGenerationActivityKind = "EXPLORATION"
+	SimulationResourceGenerationActivityKindGUIDANCE    SimulationResourceGenerationActivityKind = "GUIDANCE"
+	SimulationResourceGenerationActivityKindQUESTION    SimulationResourceGenerationActivityKind = "QUESTION"
+	SimulationResourceGenerationActivityKindREASONING   SimulationResourceGenerationActivityKind = "REASONING"
+	SimulationResourceGenerationActivityKindSTATUS      SimulationResourceGenerationActivityKind = "STATUS"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationActivityKind enum.
+func (e SimulationResourceGenerationActivityKind) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationActivityKindACTION:
+		return true
+	case SimulationResourceGenerationActivityKindANSWER:
+		return true
+	case SimulationResourceGenerationActivityKindERROR:
+		return true
+	case SimulationResourceGenerationActivityKindEXPLORATION:
+		return true
+	case SimulationResourceGenerationActivityKindGUIDANCE:
+		return true
+	case SimulationResourceGenerationActivityKindQUESTION:
+		return true
+	case SimulationResourceGenerationActivityKindREASONING:
+		return true
+	case SimulationResourceGenerationActivityKindSTATUS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationCompletedWebhookEvent.
+const (
+	SimulationResourceGenerationCompletedWebhookEventSimulationResourceGenerationCompleted SimulationResourceGenerationCompletedWebhookEvent = "simulation.resource_generation.completed"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationCompletedWebhookEvent enum.
+func (e SimulationResourceGenerationCompletedWebhookEvent) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationCompletedWebhookEventSimulationResourceGenerationCompleted:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationCompletedWebhookVersion.
+const (
+	SimulationResourceGenerationCompletedWebhookVersionN10 SimulationResourceGenerationCompletedWebhookVersion = "1.0"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationCompletedWebhookVersion enum.
+func (e SimulationResourceGenerationCompletedWebhookVersion) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationCompletedWebhookVersionN10:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationFailedWebhookEvent.
+const (
+	SimulationResourceGenerationFailedWebhookEventSimulationResourceGenerationFailed SimulationResourceGenerationFailedWebhookEvent = "simulation.resource_generation.failed"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationFailedWebhookEvent enum.
+func (e SimulationResourceGenerationFailedWebhookEvent) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationFailedWebhookEventSimulationResourceGenerationFailed:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationFailedWebhookVersion.
+const (
+	SimulationResourceGenerationFailedWebhookVersionN10 SimulationResourceGenerationFailedWebhookVersion = "1.0"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationFailedWebhookVersion enum.
+func (e SimulationResourceGenerationFailedWebhookVersion) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationFailedWebhookVersionN10:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationItemAction.
+const (
+	SimulationResourceGenerationItemActionCREATED SimulationResourceGenerationItemAction = "CREATED"
+	SimulationResourceGenerationItemActionSKIPPED SimulationResourceGenerationItemAction = "SKIPPED"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationItemAction enum.
+func (e SimulationResourceGenerationItemAction) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationItemActionCREATED:
+		return true
+	case SimulationResourceGenerationItemActionSKIPPED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationItemCapability.
+const (
+	SimulationResourceGenerationItemCapabilityACCOUNTMANAGEMENT    SimulationResourceGenerationItemCapability = "ACCOUNT_MANAGEMENT"
+	SimulationResourceGenerationItemCapabilityAPPOINTMENTBOOKING   SimulationResourceGenerationItemCapability = "APPOINTMENT_BOOKING"
+	SimulationResourceGenerationItemCapabilityBILLINGANDPAYMENTS   SimulationResourceGenerationItemCapability = "BILLING_AND_PAYMENTS"
+	SimulationResourceGenerationItemCapabilityCALLROUTING          SimulationResourceGenerationItemCapability = "CALL_ROUTING"
+	SimulationResourceGenerationItemCapabilityCOLLECTIONS          SimulationResourceGenerationItemCapability = "COLLECTIONS"
+	SimulationResourceGenerationItemCapabilityFAQ                  SimulationResourceGenerationItemCapability = "FAQ"
+	SimulationResourceGenerationItemCapabilityIDENTITYVERIFICATION SimulationResourceGenerationItemCapability = "IDENTITY_VERIFICATION"
+	SimulationResourceGenerationItemCapabilityLEADQUALIFICATION    SimulationResourceGenerationItemCapability = "LEAD_QUALIFICATION"
+	SimulationResourceGenerationItemCapabilityORDERMANAGEMENT      SimulationResourceGenerationItemCapability = "ORDER_MANAGEMENT"
+	SimulationResourceGenerationItemCapabilityOUTBOUNDCALLING      SimulationResourceGenerationItemCapability = "OUTBOUND_CALLING"
+	SimulationResourceGenerationItemCapabilityTROUBLESHOOTING      SimulationResourceGenerationItemCapability = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationItemCapability enum.
+func (e SimulationResourceGenerationItemCapability) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationItemCapabilityACCOUNTMANAGEMENT:
+		return true
+	case SimulationResourceGenerationItemCapabilityAPPOINTMENTBOOKING:
+		return true
+	case SimulationResourceGenerationItemCapabilityBILLINGANDPAYMENTS:
+		return true
+	case SimulationResourceGenerationItemCapabilityCALLROUTING:
+		return true
+	case SimulationResourceGenerationItemCapabilityCOLLECTIONS:
+		return true
+	case SimulationResourceGenerationItemCapabilityFAQ:
+		return true
+	case SimulationResourceGenerationItemCapabilityIDENTITYVERIFICATION:
+		return true
+	case SimulationResourceGenerationItemCapabilityLEADQUALIFICATION:
+		return true
+	case SimulationResourceGenerationItemCapabilityORDERMANAGEMENT:
+		return true
+	case SimulationResourceGenerationItemCapabilityOUTBOUNDCALLING:
+		return true
+	case SimulationResourceGenerationItemCapabilityTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationItemKind.
+const (
+	SimulationResourceGenerationItemKindCHECK  SimulationResourceGenerationItemKind = "CHECK"
+	SimulationResourceGenerationItemKindFLOW   SimulationResourceGenerationItemKind = "FLOW"
+	SimulationResourceGenerationItemKindLAYER  SimulationResourceGenerationItemKind = "LAYER"
+	SimulationResourceGenerationItemKindMETRIC SimulationResourceGenerationItemKind = "METRIC"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationItemKind enum.
+func (e SimulationResourceGenerationItemKind) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationItemKindCHECK:
+		return true
+	case SimulationResourceGenerationItemKindFLOW:
+		return true
+	case SimulationResourceGenerationItemKindLAYER:
+		return true
+	case SimulationResourceGenerationItemKindMETRIC:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationItemLayer.
+const (
+	SimulationResourceGenerationItemLayerAGENTCONTEXT         SimulationResourceGenerationItemLayer = "AGENT_CONTEXT"
+	SimulationResourceGenerationItemLayerCAPABILITY           SimulationResourceGenerationItemLayer = "CAPABILITY"
+	SimulationResourceGenerationItemLayerCORE                 SimulationResourceGenerationItemLayer = "CORE"
+	SimulationResourceGenerationItemLayerCUSTOMERINSTRUCTIONS SimulationResourceGenerationItemLayer = "CUSTOMER_INSTRUCTIONS"
+	SimulationResourceGenerationItemLayerEXPLORATION          SimulationResourceGenerationItemLayer = "EXPLORATION"
+	SimulationResourceGenerationItemLayerINDUSTRY             SimulationResourceGenerationItemLayer = "INDUSTRY"
+	SimulationResourceGenerationItemLayerPRODUCTIONCALLS      SimulationResourceGenerationItemLayer = "PRODUCTION_CALLS"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationItemLayer enum.
+func (e SimulationResourceGenerationItemLayer) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationItemLayerAGENTCONTEXT:
+		return true
+	case SimulationResourceGenerationItemLayerCAPABILITY:
+		return true
+	case SimulationResourceGenerationItemLayerCORE:
+		return true
+	case SimulationResourceGenerationItemLayerCUSTOMERINSTRUCTIONS:
+		return true
+	case SimulationResourceGenerationItemLayerEXPLORATION:
+		return true
+	case SimulationResourceGenerationItemLayerINDUSTRY:
+		return true
+	case SimulationResourceGenerationItemLayerPRODUCTIONCALLS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationItemOrigin.
+const (
+	SimulationResourceGenerationItemOriginDISCOVERED SimulationResourceGenerationItemOrigin = "DISCOVERED"
+	SimulationResourceGenerationItemOriginINFERRED   SimulationResourceGenerationItemOrigin = "INFERRED"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationItemOrigin enum.
+func (e SimulationResourceGenerationItemOrigin) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationItemOriginDISCOVERED:
+		return true
+	case SimulationResourceGenerationItemOriginINFERRED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationItemSourceType.
+const (
+	SimulationResourceGenerationItemSourceTypeCATALOGUE       SimulationResourceGenerationItemSourceType = "CATALOGUE"
+	SimulationResourceGenerationItemSourceTypeDESCRIPTION     SimulationResourceGenerationItemSourceType = "DESCRIPTION"
+	SimulationResourceGenerationItemSourceTypeEXPLORATIONCALL SimulationResourceGenerationItemSourceType = "EXPLORATION_CALL"
+	SimulationResourceGenerationItemSourceTypeINSTRUCTIONS    SimulationResourceGenerationItemSourceType = "INSTRUCTIONS"
+	SimulationResourceGenerationItemSourceTypePRODUCTIONCALL  SimulationResourceGenerationItemSourceType = "PRODUCTION_CALL"
+	SimulationResourceGenerationItemSourceTypePROMPT          SimulationResourceGenerationItemSourceType = "PROMPT"
+	SimulationResourceGenerationItemSourceTypeWEBSITE         SimulationResourceGenerationItemSourceType = "WEBSITE"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationItemSourceType enum.
+func (e SimulationResourceGenerationItemSourceType) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationItemSourceTypeCATALOGUE:
+		return true
+	case SimulationResourceGenerationItemSourceTypeDESCRIPTION:
+		return true
+	case SimulationResourceGenerationItemSourceTypeEXPLORATIONCALL:
+		return true
+	case SimulationResourceGenerationItemSourceTypeINSTRUCTIONS:
+		return true
+	case SimulationResourceGenerationItemSourceTypePRODUCTIONCALL:
+		return true
+	case SimulationResourceGenerationItemSourceTypePROMPT:
+		return true
+	case SimulationResourceGenerationItemSourceTypeWEBSITE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationLayerLayer.
+const (
+	SimulationResourceGenerationLayerLayerAGENTCONTEXT         SimulationResourceGenerationLayerLayer = "AGENT_CONTEXT"
+	SimulationResourceGenerationLayerLayerCAPABILITY           SimulationResourceGenerationLayerLayer = "CAPABILITY"
+	SimulationResourceGenerationLayerLayerCORE                 SimulationResourceGenerationLayerLayer = "CORE"
+	SimulationResourceGenerationLayerLayerCUSTOMERINSTRUCTIONS SimulationResourceGenerationLayerLayer = "CUSTOMER_INSTRUCTIONS"
+	SimulationResourceGenerationLayerLayerEXPLORATION          SimulationResourceGenerationLayerLayer = "EXPLORATION"
+	SimulationResourceGenerationLayerLayerINDUSTRY             SimulationResourceGenerationLayerLayer = "INDUSTRY"
+	SimulationResourceGenerationLayerLayerPRODUCTIONCALLS      SimulationResourceGenerationLayerLayer = "PRODUCTION_CALLS"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationLayerLayer enum.
+func (e SimulationResourceGenerationLayerLayer) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationLayerLayerAGENTCONTEXT:
+		return true
+	case SimulationResourceGenerationLayerLayerCAPABILITY:
+		return true
+	case SimulationResourceGenerationLayerLayerCORE:
+		return true
+	case SimulationResourceGenerationLayerLayerCUSTOMERINSTRUCTIONS:
+		return true
+	case SimulationResourceGenerationLayerLayerEXPLORATION:
+		return true
+	case SimulationResourceGenerationLayerLayerINDUSTRY:
+		return true
+	case SimulationResourceGenerationLayerLayerPRODUCTIONCALLS:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationResourceGenerationLayerStatus.
+const (
+	SimulationResourceGenerationLayerStatusCOVERED       SimulationResourceGenerationLayerStatus = "COVERED"
+	SimulationResourceGenerationLayerStatusNOTAPPLICABLE SimulationResourceGenerationLayerStatus = "NOT_APPLICABLE"
+	SimulationResourceGenerationLayerStatusOPEN          SimulationResourceGenerationLayerStatus = "OPEN"
+	SimulationResourceGenerationLayerStatusSKIPPED       SimulationResourceGenerationLayerStatus = "SKIPPED"
+)
+
+// Valid indicates whether the value is a known member of the SimulationResourceGenerationLayerStatus enum.
+func (e SimulationResourceGenerationLayerStatus) Valid() bool {
+	switch e {
+	case SimulationResourceGenerationLayerStatusCOVERED:
+		return true
+	case SimulationResourceGenerationLayerStatusNOTAPPLICABLE:
+		return true
+	case SimulationResourceGenerationLayerStatusOPEN:
+		return true
+	case SimulationResourceGenerationLayerStatusSKIPPED:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for SimulationRunCallResultStatus.
 const (
 	SimulationRunCallResultStatusCANCELLED   SimulationRunCallResultStatus = "CANCELLED"
@@ -21183,6 +21108,7 @@ const (
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderOPENAI     UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "OPENAI"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderPHONIC     UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "PHONIC"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderRIME       UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "RIME"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderSMALLEST   UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "SMALLEST"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderULTRAVOX   UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "ULTRAVOX"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderXAI        UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider = "XAI"
 )
@@ -21208,6 +21134,8 @@ func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProvider) Valid() 
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderRIME:
 		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderSMALLEST:
+		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderULTRAVOX:
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0LlmProviderXAI:
@@ -21223,6 +21151,7 @@ const (
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderDEEPGRAM      UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "DEEPGRAM"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderELEVENLABS    UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "ELEVENLABS"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderOPENAIWHISPER UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "OPENAI_WHISPER"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderSMALLEST      UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "SMALLEST"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderSONIOX        UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "SONIOX"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderSPEECHMATICS  UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider = "SPEECHMATICS"
 )
@@ -21237,6 +21166,8 @@ func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProvider) Valid() 
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderELEVENLABS:
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderOPENAIWHISPER:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderSMALLEST:
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0SttProviderSONIOX:
 		return true
@@ -21274,6 +21205,7 @@ const (
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderFISHAUDIO  UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "FISH_AUDIO"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderOPENAI     UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "OPENAI"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderRIME       UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "RIME"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderSMALLEST   UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider = "SMALLEST"
 )
 
 // Valid indicates whether the value is a known member of the UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider enum.
@@ -21292,6 +21224,8 @@ func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProvider) Valid() 
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderOPENAI:
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderRIME:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs0TtsProviderSMALLEST:
 		return true
 	default:
 		return false
@@ -21324,6 +21258,7 @@ const (
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderOPENAI     UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "OPENAI"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderPHONIC     UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "PHONIC"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderRIME       UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "RIME"
+	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderSMALLEST   UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "SMALLEST"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderULTRAVOX   UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "ULTRAVOX"
 	UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderXAI        UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvider = "XAI"
 )
@@ -21348,6 +21283,8 @@ func (e UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProvide
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderPHONIC:
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderRIME:
+		return true
+	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderSMALLEST:
 		return true
 	case UpdateAgentDraftInputSettingsSubAgentsModelConfigs1SpeechToSpeechProviderULTRAVOX:
 		return true
@@ -23475,36 +23412,32 @@ func (e VoicemailFlowVariantType) Valid() bool {
 
 // Defines values for WebhookResponseEvents.
 const (
-	WebhookResponseEventsAGENTSETUPCOMPLETED           WebhookResponseEvents = "AGENT_SETUP_COMPLETED"
-	WebhookResponseEventsAGENTSETUPFAILED              WebhookResponseEvents = "AGENT_SETUP_FAILED"
-	WebhookResponseEventsCALLANALYSISCANCELLED         WebhookResponseEvents = "CALL_ANALYSIS_CANCELLED"
-	WebhookResponseEventsCALLANALYSISCOMPLETED         WebhookResponseEvents = "CALL_ANALYSIS_COMPLETED"
-	WebhookResponseEventsCALLANALYSISFAILED            WebhookResponseEvents = "CALL_ANALYSIS_FAILED"
-	WebhookResponseEventsCALLEVALUATIONCOMPLETED       WebhookResponseEvents = "CALL_EVALUATION_COMPLETED"
-	WebhookResponseEventsCALLEVALUATIONFAILED          WebhookResponseEvents = "CALL_EVALUATION_FAILED"
-	WebhookResponseEventsCHATANALYSISCOMPLETED         WebhookResponseEvents = "CHAT_ANALYSIS_COMPLETED"
-	WebhookResponseEventsCHATANALYSISFAILED            WebhookResponseEvents = "CHAT_ANALYSIS_FAILED"
-	WebhookResponseEventsISSUEOPENED                   WebhookResponseEvents = "ISSUE_OPENED"
-	WebhookResponseEventsISSUERESOLVED                 WebhookResponseEvents = "ISSUE_RESOLVED"
-	WebhookResponseEventsMETRICCOLLECTIONJOBCOMPLETED  WebhookResponseEvents = "METRIC_COLLECTION_JOB_COMPLETED"
-	WebhookResponseEventsMETRICCOLLECTIONJOBFAILED     WebhookResponseEvents = "METRIC_COLLECTION_JOB_FAILED"
-	WebhookResponseEventsSIMULATIONJOBCANCELLED        WebhookResponseEvents = "SIMULATION_JOB_CANCELLED"
-	WebhookResponseEventsSIMULATIONJOBCOMPLETED        WebhookResponseEvents = "SIMULATION_JOB_COMPLETED"
-	WebhookResponseEventsSIMULATIONJOBFAILED           WebhookResponseEvents = "SIMULATION_JOB_FAILED"
-	WebhookResponseEventsSIMULATIONJOBSTARTED          WebhookResponseEvents = "SIMULATION_JOB_STARTED"
-	WebhookResponseEventsSIMULATIONRUNPLANJOBCANCELLED WebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_CANCELLED"
-	WebhookResponseEventsSIMULATIONRUNPLANJOBCOMPLETED WebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_COMPLETED"
-	WebhookResponseEventsSIMULATIONRUNPLANJOBFAILED    WebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_FAILED"
-	WebhookResponseEventsSIMULATIONRUNPLANJOBSTARTED   WebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_STARTED"
+	WebhookResponseEventsCALLANALYSISCANCELLED                 WebhookResponseEvents = "CALL_ANALYSIS_CANCELLED"
+	WebhookResponseEventsCALLANALYSISCOMPLETED                 WebhookResponseEvents = "CALL_ANALYSIS_COMPLETED"
+	WebhookResponseEventsCALLANALYSISFAILED                    WebhookResponseEvents = "CALL_ANALYSIS_FAILED"
+	WebhookResponseEventsCALLEVALUATIONCOMPLETED               WebhookResponseEvents = "CALL_EVALUATION_COMPLETED"
+	WebhookResponseEventsCALLEVALUATIONFAILED                  WebhookResponseEvents = "CALL_EVALUATION_FAILED"
+	WebhookResponseEventsCHATANALYSISCOMPLETED                 WebhookResponseEvents = "CHAT_ANALYSIS_COMPLETED"
+	WebhookResponseEventsCHATANALYSISFAILED                    WebhookResponseEvents = "CHAT_ANALYSIS_FAILED"
+	WebhookResponseEventsISSUEOPENED                           WebhookResponseEvents = "ISSUE_OPENED"
+	WebhookResponseEventsISSUERESOLVED                         WebhookResponseEvents = "ISSUE_RESOLVED"
+	WebhookResponseEventsMETRICCOLLECTIONJOBCOMPLETED          WebhookResponseEvents = "METRIC_COLLECTION_JOB_COMPLETED"
+	WebhookResponseEventsMETRICCOLLECTIONJOBFAILED             WebhookResponseEvents = "METRIC_COLLECTION_JOB_FAILED"
+	WebhookResponseEventsSIMULATIONJOBCANCELLED                WebhookResponseEvents = "SIMULATION_JOB_CANCELLED"
+	WebhookResponseEventsSIMULATIONJOBCOMPLETED                WebhookResponseEvents = "SIMULATION_JOB_COMPLETED"
+	WebhookResponseEventsSIMULATIONJOBFAILED                   WebhookResponseEvents = "SIMULATION_JOB_FAILED"
+	WebhookResponseEventsSIMULATIONJOBSTARTED                  WebhookResponseEvents = "SIMULATION_JOB_STARTED"
+	WebhookResponseEventsSIMULATIONRESOURCEGENERATIONCOMPLETED WebhookResponseEvents = "SIMULATION_RESOURCE_GENERATION_COMPLETED"
+	WebhookResponseEventsSIMULATIONRESOURCEGENERATIONFAILED    WebhookResponseEvents = "SIMULATION_RESOURCE_GENERATION_FAILED"
+	WebhookResponseEventsSIMULATIONRUNPLANJOBCANCELLED         WebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_CANCELLED"
+	WebhookResponseEventsSIMULATIONRUNPLANJOBCOMPLETED         WebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_COMPLETED"
+	WebhookResponseEventsSIMULATIONRUNPLANJOBFAILED            WebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_FAILED"
+	WebhookResponseEventsSIMULATIONRUNPLANJOBSTARTED           WebhookResponseEvents = "SIMULATION_RUN_PLAN_JOB_STARTED"
 )
 
 // Valid indicates whether the value is a known member of the WebhookResponseEvents enum.
 func (e WebhookResponseEvents) Valid() bool {
 	switch e {
-	case WebhookResponseEventsAGENTSETUPCOMPLETED:
-		return true
-	case WebhookResponseEventsAGENTSETUPFAILED:
-		return true
 	case WebhookResponseEventsCALLANALYSISCANCELLED:
 		return true
 	case WebhookResponseEventsCALLANALYSISCOMPLETED:
@@ -23534,6 +23467,10 @@ func (e WebhookResponseEvents) Valid() bool {
 	case WebhookResponseEventsSIMULATIONJOBFAILED:
 		return true
 	case WebhookResponseEventsSIMULATIONJOBSTARTED:
+		return true
+	case WebhookResponseEventsSIMULATIONRESOURCEGENERATIONCOMPLETED:
+		return true
+	case WebhookResponseEventsSIMULATIONRESOURCEGENERATIONFAILED:
 		return true
 	case WebhookResponseEventsSIMULATIONRUNPLANJOBCANCELLED:
 		return true
@@ -23686,6 +23623,66 @@ func (e PostV1AgentJSONBodyIndustry) Valid() bool {
 	}
 }
 
+// Defines values for PostV1Agent201JSONResponseBodyDataIndustry.
+const (
+	PostV1Agent201JSONResponseBodyDataIndustryAUTOMOTIVE           PostV1Agent201JSONResponseBodyDataIndustry = "AUTOMOTIVE"
+	PostV1Agent201JSONResponseBodyDataIndustryDEBTCOLLECTION       PostV1Agent201JSONResponseBodyDataIndustry = "DEBT_COLLECTION"
+	PostV1Agent201JSONResponseBodyDataIndustryEDUCATION            PostV1Agent201JSONResponseBodyDataIndustry = "EDUCATION"
+	PostV1Agent201JSONResponseBodyDataIndustryFINANCIALSERVICES    PostV1Agent201JSONResponseBodyDataIndustry = "FINANCIAL_SERVICES"
+	PostV1Agent201JSONResponseBodyDataIndustryHEALTHCARE           PostV1Agent201JSONResponseBodyDataIndustry = "HEALTHCARE"
+	PostV1Agent201JSONResponseBodyDataIndustryHOMESERVICES         PostV1Agent201JSONResponseBodyDataIndustry = "HOME_SERVICES"
+	PostV1Agent201JSONResponseBodyDataIndustryINSURANCE            PostV1Agent201JSONResponseBodyDataIndustry = "INSURANCE"
+	PostV1Agent201JSONResponseBodyDataIndustryLOGISTICS            PostV1Agent201JSONResponseBodyDataIndustry = "LOGISTICS"
+	PostV1Agent201JSONResponseBodyDataIndustryOTHER                PostV1Agent201JSONResponseBodyDataIndustry = "OTHER"
+	PostV1Agent201JSONResponseBodyDataIndustryPUBLICSECTOR         PostV1Agent201JSONResponseBodyDataIndustry = "PUBLIC_SECTOR"
+	PostV1Agent201JSONResponseBodyDataIndustryRESTAURANTS          PostV1Agent201JSONResponseBodyDataIndustry = "RESTAURANTS"
+	PostV1Agent201JSONResponseBodyDataIndustryRETAIL               PostV1Agent201JSONResponseBodyDataIndustry = "RETAIL"
+	PostV1Agent201JSONResponseBodyDataIndustryTECHNOLOGY           PostV1Agent201JSONResponseBodyDataIndustry = "TECHNOLOGY"
+	PostV1Agent201JSONResponseBodyDataIndustryTELECOMMUNICATIONS   PostV1Agent201JSONResponseBodyDataIndustry = "TELECOMMUNICATIONS"
+	PostV1Agent201JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY PostV1Agent201JSONResponseBodyDataIndustry = "TRAVEL_AND_HOSPITALITY"
+	PostV1Agent201JSONResponseBodyDataIndustryUTILITIES            PostV1Agent201JSONResponseBodyDataIndustry = "UTILITIES"
+)
+
+// Valid indicates whether the value is a known member of the PostV1Agent201JSONResponseBodyDataIndustry enum.
+func (e PostV1Agent201JSONResponseBodyDataIndustry) Valid() bool {
+	switch e {
+	case PostV1Agent201JSONResponseBodyDataIndustryAUTOMOTIVE:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryDEBTCOLLECTION:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryEDUCATION:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryFINANCIALSERVICES:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryHEALTHCARE:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryHOMESERVICES:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryINSURANCE:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryLOGISTICS:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryOTHER:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryPUBLICSECTOR:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryRESTAURANTS:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryRETAIL:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryTECHNOLOGY:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryTELECOMMUNICATIONS:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY:
+		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryUTILITIES:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PostV1AgentBuildJSONBodyLlmProvider.
 const (
 	PostV1AgentBuildJSONBodyLlmProviderANTHROPIC  PostV1AgentBuildJSONBodyLlmProvider = "ANTHROPIC"
@@ -23697,6 +23694,7 @@ const (
 	PostV1AgentBuildJSONBodyLlmProviderOPENAI     PostV1AgentBuildJSONBodyLlmProvider = "OPENAI"
 	PostV1AgentBuildJSONBodyLlmProviderPHONIC     PostV1AgentBuildJSONBodyLlmProvider = "PHONIC"
 	PostV1AgentBuildJSONBodyLlmProviderRIME       PostV1AgentBuildJSONBodyLlmProvider = "RIME"
+	PostV1AgentBuildJSONBodyLlmProviderSMALLEST   PostV1AgentBuildJSONBodyLlmProvider = "SMALLEST"
 	PostV1AgentBuildJSONBodyLlmProviderULTRAVOX   PostV1AgentBuildJSONBodyLlmProvider = "ULTRAVOX"
 	PostV1AgentBuildJSONBodyLlmProviderXAI        PostV1AgentBuildJSONBodyLlmProvider = "XAI"
 )
@@ -23722,6 +23720,8 @@ func (e PostV1AgentBuildJSONBodyLlmProvider) Valid() bool {
 		return true
 	case PostV1AgentBuildJSONBodyLlmProviderRIME:
 		return true
+	case PostV1AgentBuildJSONBodyLlmProviderSMALLEST:
+		return true
 	case PostV1AgentBuildJSONBodyLlmProviderULTRAVOX:
 		return true
 	case PostV1AgentBuildJSONBodyLlmProviderXAI:
@@ -23737,6 +23737,7 @@ const (
 	PostV1AgentBuildJSONBodySttProviderDEEPGRAM      PostV1AgentBuildJSONBodySttProvider = "DEEPGRAM"
 	PostV1AgentBuildJSONBodySttProviderELEVENLABS    PostV1AgentBuildJSONBodySttProvider = "ELEVENLABS"
 	PostV1AgentBuildJSONBodySttProviderOPENAIWHISPER PostV1AgentBuildJSONBodySttProvider = "OPENAI_WHISPER"
+	PostV1AgentBuildJSONBodySttProviderSMALLEST      PostV1AgentBuildJSONBodySttProvider = "SMALLEST"
 	PostV1AgentBuildJSONBodySttProviderSONIOX        PostV1AgentBuildJSONBodySttProvider = "SONIOX"
 	PostV1AgentBuildJSONBodySttProviderSPEECHMATICS  PostV1AgentBuildJSONBodySttProvider = "SPEECHMATICS"
 )
@@ -23751,6 +23752,8 @@ func (e PostV1AgentBuildJSONBodySttProvider) Valid() bool {
 	case PostV1AgentBuildJSONBodySttProviderELEVENLABS:
 		return true
 	case PostV1AgentBuildJSONBodySttProviderOPENAIWHISPER:
+		return true
+	case PostV1AgentBuildJSONBodySttProviderSMALLEST:
 		return true
 	case PostV1AgentBuildJSONBodySttProviderSONIOX:
 		return true
@@ -23770,6 +23773,7 @@ const (
 	PostV1AgentBuildJSONBodyTtsProviderFISHAUDIO  PostV1AgentBuildJSONBodyTtsProvider = "FISH_AUDIO"
 	PostV1AgentBuildJSONBodyTtsProviderOPENAI     PostV1AgentBuildJSONBodyTtsProvider = "OPENAI"
 	PostV1AgentBuildJSONBodyTtsProviderRIME       PostV1AgentBuildJSONBodyTtsProvider = "RIME"
+	PostV1AgentBuildJSONBodyTtsProviderSMALLEST   PostV1AgentBuildJSONBodyTtsProvider = "SMALLEST"
 )
 
 // Valid indicates whether the value is a known member of the PostV1AgentBuildJSONBodyTtsProvider enum.
@@ -23788,6 +23792,8 @@ func (e PostV1AgentBuildJSONBodyTtsProvider) Valid() bool {
 	case PostV1AgentBuildJSONBodyTtsProviderOPENAI:
 		return true
 	case PostV1AgentBuildJSONBodyTtsProviderRIME:
+		return true
+	case PostV1AgentBuildJSONBodyTtsProviderSMALLEST:
 		return true
 	default:
 		return false
@@ -30520,21 +30526,6 @@ func (e GetV1ToolParamsIncludeBuiltIn) Valid() bool {
 // AddFlowEdgeCaseInput defines model for AddFlowEdgeCaseInput.
 type AddFlowEdgeCaseInput = FlowEdgeCaseInput
 
-// AgentAutoSetupInput Controls the flows, metrics and run plan Roark generates for the agent
-type AgentAutoSetupInput struct {
-	// Capabilities The capabilities to test. Omit to let Roark work them out from the agent.
-	Capabilities *[]AgentAutoSetupInputCapabilities `json:"capabilities,omitempty"`
-
-	// Enabled Set to false to skip setup. When omitted, setup runs if you pass a prompt, endpoint, website or testing instructions.
-	Enabled *bool `json:"enabled,omitempty"`
-
-	// Explore Exploration settings
-	Explore *AgentSetupExploreInput `json:"explore,omitempty"`
-}
-
-// AgentAutoSetupInputCapabilities defines model for AgentAutoSetupInput.Capabilities.
-type AgentAutoSetupInputCapabilities string
-
 // AgentCascadeModelConfig A transcriber, a text model and a voice. A component that fails during a call moves to its next entry; the others stay.
 type AgentCascadeModelConfig struct {
 	// Llm One to three text models, in the order a call tries them.
@@ -30667,9 +30658,6 @@ type AgentConnectionCreateBland struct {
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
 	ApiKey string `json:"apiKey"`
 
-	// AutoSetUpAgents When true, every agent this connection brings in is set up for testing as it arrives: Roark drafts its customer flows and metrics, the same as setting the agent up by hand. Defaults to false.
-	AutoSetUpAgents *bool `json:"autoSetUpAgents,omitempty"`
-
 	// Capabilities What the connection does. Defaults to PULL_AGENTS and PULL_CALLS, plus PUSH_AGENT_CONFIG on Retell, Vapi and ElevenLabs.
 	Capabilities *[]AgentConnectionCapability `json:"capabilities,omitempty"`
 
@@ -30709,9 +30697,6 @@ type AgentConnectionCreateElevenLabs struct {
 
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
 	ApiKey string `json:"apiKey"`
-
-	// AutoSetUpAgents When true, every agent this connection brings in is set up for testing as it arrives: Roark drafts its customer flows and metrics, the same as setting the agent up by hand. Defaults to false.
-	AutoSetUpAgents *bool `json:"autoSetUpAgents,omitempty"`
 
 	// Capabilities What the connection does. Defaults to PULL_AGENTS and PULL_CALLS, plus PUSH_AGENT_CONFIG on Retell, Vapi and ElevenLabs.
 	Capabilities *[]AgentConnectionCapability `json:"capabilities,omitempty"`
@@ -30832,9 +30817,6 @@ type AgentConnectionCreateLivekit struct {
 
 	// ApiSecret LiveKit API secret. Stored encrypted and never returned.
 	ApiSecret string `json:"apiSecret"`
-
-	// AutoSetUpAgents When true, every agent this connection brings in is set up for testing as it arrives: Roark drafts its customer flows and metrics, the same as setting the agent up by hand. Defaults to false.
-	AutoSetUpAgents *bool `json:"autoSetUpAgents,omitempty"`
 
 	// Endpoint Creates a LiveKit endpoint for each agent the connection brings in, so Roark can place test calls to it. Omit to create none; endpoints can be added later on the agent.
 	Endpoint *AgentConnectionLivekitEndpointInput `json:"endpoint,omitempty"`
@@ -30974,9 +30956,6 @@ type AgentConnectionCreateRetell struct {
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
 	ApiKey string `json:"apiKey"`
 
-	// AutoSetUpAgents When true, every agent this connection brings in is set up for testing as it arrives: Roark drafts its customer flows and metrics, the same as setting the agent up by hand. Defaults to false.
-	AutoSetUpAgents *bool `json:"autoSetUpAgents,omitempty"`
-
 	// Capabilities What the connection does. Defaults to PULL_AGENTS and PULL_CALLS, plus PUSH_AGENT_CONFIG on Retell, Vapi and ElevenLabs.
 	Capabilities *[]AgentConnectionCapability `json:"capabilities,omitempty"`
 
@@ -31011,9 +30990,6 @@ type AgentConnectionCreateVapi struct {
 
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
 	ApiKey string `json:"apiKey"`
-
-	// AutoSetUpAgents When true, every agent this connection brings in is set up for testing as it arrives: Roark drafts its customer flows and metrics, the same as setting the agent up by hand. Defaults to false.
-	AutoSetUpAgents *bool `json:"autoSetUpAgents,omitempty"`
 
 	// Capabilities What the connection does. Defaults to PULL_AGENTS and PULL_CALLS, plus PUSH_AGENT_CONFIG on Retell, Vapi and ElevenLabs.
 	Capabilities *[]AgentConnectionCapability `json:"capabilities,omitempty"`
@@ -31086,11 +31062,8 @@ type AgentConnectionIntegration struct {
 	AgentNames []string `json:"agentNames"`
 
 	// AgentScope Null for platforms that do not scope by agent.
-	AgentScope *AgentConnectionIntegrationAgentScope `json:"agentScope"`
-
-	// AutoSetUpAgents When true, every agent this connection brings in is set up for testing as it arrives: Roark drafts its customer flows and metrics, the same as setting the agent up by hand. Defaults to false.
-	AutoSetUpAgents bool                        `json:"autoSetUpAgents"`
-	Capabilities    []AgentConnectionCapability `json:"capabilities"`
+	AgentScope   *AgentConnectionIntegrationAgentScope `json:"agentScope"`
+	Capabilities []AgentConnectionCapability           `json:"capabilities"`
 
 	// CreatedAt ISO 8601
 	//
@@ -31210,9 +31183,6 @@ type AgentConnectionProviderInfo struct {
 	// SupportsAgentDiscovery Whether `discover` can list its agents, so a connection can be scoped by id.
 	SupportsAgentDiscovery bool `json:"supportsAgentDiscovery"`
 
-	// SupportsAutoSetUp Whether `autoSetUpAgents` applies.
-	SupportsAutoSetUp bool `json:"supportsAutoSetUp"`
-
 	// SupportsBackfill Whether past calls can be imported with a backfill.
 	SupportsBackfill bool `json:"supportsBackfill"`
 }
@@ -31288,9 +31258,6 @@ type AgentConnectionUpdateBland struct {
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
 	ApiKey *string `json:"apiKey,omitempty"`
 
-	// AutoSetUpAgents When true, every agent this connection brings in is set up for testing as it arrives: Roark drafts its customer flows and metrics, the same as setting the agent up by hand. Defaults to false.
-	AutoSetUpAgents *bool `json:"autoSetUpAgents,omitempty"`
-
 	// Capabilities What the connection does. Defaults to PULL_AGENTS and PULL_CALLS, plus PUSH_AGENT_CONFIG on Retell, Vapi and ElevenLabs.
 	Capabilities *[]AgentConnectionCapability `json:"capabilities,omitempty"`
 
@@ -31338,9 +31305,6 @@ type AgentConnectionUpdateElevenLabs struct {
 
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
 	ApiKey *string `json:"apiKey,omitempty"`
-
-	// AutoSetUpAgents When true, every agent this connection brings in is set up for testing as it arrives: Roark drafts its customer flows and metrics, the same as setting the agent up by hand. Defaults to false.
-	AutoSetUpAgents *bool `json:"autoSetUpAgents,omitempty"`
 
 	// Capabilities What the connection does. Defaults to PULL_AGENTS and PULL_CALLS, plus PUSH_AGENT_CONFIG on Retell, Vapi and ElevenLabs.
 	Capabilities *[]AgentConnectionCapability `json:"capabilities,omitempty"`
@@ -31494,9 +31458,6 @@ type AgentConnectionUpdateLivekit struct {
 	// ApiSecret LiveKit API secret. Stored encrypted and never returned.
 	ApiSecret *string `json:"apiSecret,omitempty"`
 
-	// AutoSetUpAgents When true, every agent this connection brings in is set up for testing as it arrives: Roark drafts its customer flows and metrics, the same as setting the agent up by hand. Defaults to false.
-	AutoSetUpAgents *bool `json:"autoSetUpAgents,omitempty"`
-
 	// MetadataEgressStrategy When the recording starts for a marked room. EAGER starts it at room creation; DEFERRED waits for the metadata. Needs `metadataFilteringEnabled`. Defaults to DEFERRED.
 	MetadataEgressStrategy *AgentConnectionUpdateLivekitMetadataEgressStrategy `json:"metadataEgressStrategy,omitempty"`
 
@@ -31646,9 +31607,6 @@ type AgentConnectionUpdateRetell struct {
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
 	ApiKey *string `json:"apiKey,omitempty"`
 
-	// AutoSetUpAgents When true, every agent this connection brings in is set up for testing as it arrives: Roark drafts its customer flows and metrics, the same as setting the agent up by hand. Defaults to false.
-	AutoSetUpAgents *bool `json:"autoSetUpAgents,omitempty"`
-
 	// Capabilities What the connection does. Defaults to PULL_AGENTS and PULL_CALLS, plus PUSH_AGENT_CONFIG on Retell, Vapi and ElevenLabs.
 	Capabilities *[]AgentConnectionCapability `json:"capabilities,omitempty"`
 
@@ -31691,9 +31649,6 @@ type AgentConnectionUpdateVapi struct {
 
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
 	ApiKey *string `json:"apiKey,omitempty"`
-
-	// AutoSetUpAgents When true, every agent this connection brings in is set up for testing as it arrives: Roark drafts its customer flows and metrics, the same as setting the agent up by hand. Defaults to false.
-	AutoSetUpAgents *bool `json:"autoSetUpAgents,omitempty"`
 
 	// Capabilities What the connection does. Defaults to PULL_AGENTS and PULL_CALLS, plus PUSH_AGENT_CONFIG on Retell, Vapi and ElevenLabs.
 	Capabilities *[]AgentConnectionCapability `json:"capabilities,omitempty"`
@@ -31883,255 +31838,6 @@ type AgentPromptVersionResponse struct {
 
 	// VersionNumber Version number: 1-based and increasing.
 	VersionNumber int `json:"versionNumber"`
-}
-
-// AgentSetup The tests Roark generated for an agent, and why
-type AgentSetup struct {
-	// Activity What setup did and said, in order
-	Activity     []AgentSetupActivity     `json:"activity"`
-	AgentId      openapi_types.UUID       `json:"agentId"`
-	Capabilities []AgentSetupCapabilities `json:"capabilities"`
-	CompletedAt  *string                  `json:"completedAt"`
-	CreatedAt    string                   `json:"createdAt"`
-	ErrorMessage *string                  `json:"errorMessage"`
-	Explore      struct {
-		ConversationsUsed      int  `json:"conversationsUsed"`
-		Enabled                bool `json:"enabled"`
-		MaxConversationMinutes int  `json:"maxConversationMinutes"`
-		MaxConversations       int  `json:"maxConversations"`
-	} `json:"explore"`
-
-	// Id Setup ID
-	Id       openapi_types.UUID  `json:"id"`
-	Industry *AgentSetupIndustry `json:"industry"`
-	Items    []AgentSetupItem    `json:"items"`
-
-	// Layers The checklist setup works through
-	Layers []AgentSetupLayer `json:"layers"`
-
-	// Question The question setup is waiting on, while NEEDS_INPUT
-	Question *AgentSetupQuestion `json:"question"`
-
-	// RunPlanId The run plan to start once setup completes
-	RunPlanId *openapi_types.UUID `json:"runPlanId"`
-
-	// Status PENDING, RUNNING, NEEDS_INPUT (waiting on a question; it goes ahead with the default if nobody answers), COMPLETED, FAILED or CANCELLED
-	Status AgentSetupStatus `json:"status"`
-
-	// TestDataNeeded Test data the agent asked for that Roark did not have
-	TestDataNeeded []struct {
-		CallId *openapi_types.UUID `json:"callId"`
-		Label  string              `json:"label"`
-		Reason string              `json:"reason"`
-	} `json:"testDataNeeded"`
-}
-
-// AgentSetupCapabilities defines model for AgentSetup.Capabilities.
-type AgentSetupCapabilities string
-
-// AgentSetupIndustry defines model for AgentSetup.Industry.
-type AgentSetupIndustry string
-
-// AgentSetupStatus PENDING, RUNNING, NEEDS_INPUT (waiting on a question; it goes ahead with the default if nobody answers), COMPLETED, FAILED or CANCELLED
-type AgentSetupStatus string
-
-// AgentSetupActivity One thing setup did or said, in order
-type AgentSetupActivity struct {
-	CreatedAt string `json:"createdAt"`
-
-	// Kind STATUS, REASONING, ACTION, GUIDANCE, QUESTION, ANSWER, EXPLORATION or ERROR
-	Kind AgentSetupActivityKind `json:"kind"`
-	Text string                 `json:"text"`
-}
-
-// AgentSetupActivityKind STATUS, REASONING, ACTION, GUIDANCE, QUESTION, ANSWER, EXPLORATION or ERROR
-type AgentSetupActivityKind string
-
-// AgentSetupCompletedWebhook defines model for AgentSetupCompletedWebhook.
-type AgentSetupCompletedWebhook struct {
-	Data struct {
-		// AgentCustomId Your own identifier for the agent, if you set one when creating it
-		AgentCustomId *string `json:"agentCustomId"`
-
-		// AgentId ID of the agent that was set up
-		AgentId openapi_types.UUID `json:"agentId"`
-
-		// AgentSetupId ID of the agent setup
-		AgentSetupId openapi_types.UUID `json:"agentSetupId"`
-
-		// ProjectId Project the agent belongs to
-		ProjectId openapi_types.UUID `json:"projectId"`
-
-		// RunPlanId The run plan setup created. Start a run from it to test the agent.
-		RunPlanId *openapi_types.UUID `json:"runPlanId"`
-	} `json:"data"`
-
-	// Event Event name
-	//
-	// Example: agent.setup.completed
-	Event AgentSetupCompletedWebhookEvent `json:"event"`
-
-	// Timestamp ISO 8601 timestamp when the webhook was generated
-	//
-	// Example: 2026-05-18T09:44:40.971Z
-	Timestamp time.Time `json:"timestamp"`
-
-	// Version Payload schema version
-	//
-	// Example: 1.0
-	Version AgentSetupCompletedWebhookVersion `json:"version"`
-}
-
-// AgentSetupCompletedWebhookEvent Event name
-//
-// Example: agent.setup.completed
-type AgentSetupCompletedWebhookEvent string
-
-// AgentSetupCompletedWebhookVersion Payload schema version
-//
-// Example: 1.0
-type AgentSetupCompletedWebhookVersion string
-
-// AgentSetupExploreInput Exploration settings
-type AgentSetupExploreInput struct {
-	// Enabled Whether Roark calls the agent to discover what it does before finishing setup. Exploration calls are billed.
-	Enabled *bool `json:"enabled,omitempty"`
-
-	// MaxConversationMinutes The longest a single exploration call may last, in minutes.
-	MaxConversationMinutes *int `json:"maxConversationMinutes,omitempty"`
-
-	// MaxConversations The most exploration calls Roark places.
-	MaxConversations *int `json:"maxConversations,omitempty"`
-}
-
-// AgentSetupFailedWebhook defines model for AgentSetupFailedWebhook.
-type AgentSetupFailedWebhook struct {
-	Data struct {
-		// AgentCustomId Your own identifier for the agent, if you set one when creating it
-		AgentCustomId *string `json:"agentCustomId"`
-
-		// AgentId ID of the agent that was set up
-		AgentId openapi_types.UUID `json:"agentId"`
-
-		// AgentSetupId ID of the agent setup
-		AgentSetupId openapi_types.UUID `json:"agentSetupId"`
-
-		// ErrorMessage Why setup failed
-		ErrorMessage string `json:"errorMessage"`
-
-		// ProjectId Project the agent belongs to
-		ProjectId openapi_types.UUID `json:"projectId"`
-	} `json:"data"`
-
-	// Event Event name
-	//
-	// Example: agent.setup.failed
-	Event AgentSetupFailedWebhookEvent `json:"event"`
-
-	// Timestamp ISO 8601 timestamp when the webhook was generated
-	//
-	// Example: 2026-05-18T09:44:40.971Z
-	Timestamp time.Time `json:"timestamp"`
-
-	// Version Payload schema version
-	//
-	// Example: 1.0
-	Version AgentSetupFailedWebhookVersion `json:"version"`
-}
-
-// AgentSetupFailedWebhookEvent Event name
-//
-// Example: agent.setup.failed
-type AgentSetupFailedWebhookEvent string
-
-// AgentSetupFailedWebhookVersion Payload schema version
-//
-// Example: 1.0
-type AgentSetupFailedWebhookVersion string
-
-// AgentSetupItem Something setup created or chose to leave out, and why
-type AgentSetupItem struct {
-	// Action CREATED, or SKIPPED with the reason
-	Action     AgentSetupItemAction      `json:"action"`
-	Capability *AgentSetupItemCapability `json:"capability"`
-	Id         openapi_types.UUID        `json:"id"`
-
-	// Kind A flow, a metric, or a pass or fail check
-	Kind  AgentSetupItemKind `json:"kind"`
-	Label string             `json:"label"`
-
-	// Layer Why it exists: CORE (every agent), INDUSTRY, CAPABILITY, AGENT_CONTEXT (your prompt or website), EXPLORATION or CUSTOMER_INSTRUCTIONS
-	Layer AgentSetupItemLayer `json:"layer"`
-
-	// Origin Exploration only: DISCOVERED on a call, or INFERRED from a path the agent offered
-	Origin *AgentSetupItemOrigin `json:"origin"`
-	Reason string                `json:"reason"`
-
-	// ResourceId The flow or metric it created
-	ResourceId *openapi_types.UUID  `json:"resourceId"`
-	Source     AgentSetupItemSource `json:"source"`
-}
-
-// AgentSetupItemAction CREATED, or SKIPPED with the reason
-type AgentSetupItemAction string
-
-// AgentSetupItemCapability defines model for AgentSetupItem.Capability.
-type AgentSetupItemCapability string
-
-// AgentSetupItemKind A flow, a metric, or a pass or fail check
-type AgentSetupItemKind string
-
-// AgentSetupItemLayer Why it exists: CORE (every agent), INDUSTRY, CAPABILITY, AGENT_CONTEXT (your prompt or website), EXPLORATION or CUSTOMER_INSTRUCTIONS
-type AgentSetupItemLayer string
-
-// AgentSetupItemOrigin Exploration only: DISCOVERED on a call, or INFERRED from a path the agent offered
-type AgentSetupItemOrigin string
-
-// AgentSetupItemSource defines model for AgentSetupItemSource.
-type AgentSetupItemSource struct {
-	// CallId The exploration call it came from
-	CallId *openapi_types.UUID `json:"callId"`
-
-	// OffsetMs Where in the call
-	OffsetMs *int `json:"offsetMs"`
-
-	// Quote The words in the source that led to it
-	Quote *string                  `json:"quote"`
-	Type  AgentSetupItemSourceType `json:"type"`
-
-	// Url The page it came from, for website sources
-	Url *string `json:"url"`
-}
-
-// AgentSetupItemSourceType defines model for AgentSetupItemSource.Type.
-type AgentSetupItemSourceType string
-
-// AgentSetupLayer Where one part of testing the agent stands
-type AgentSetupLayer struct {
-	Layer AgentSetupLayerLayer `json:"layer"`
-
-	// Status COVERED: tests exist for it, or are added when setup finishes. SKIPPED: setup could not test it and said why. OPEN: not covered yet; setup does not finish while a layer is open. NOT_APPLICABLE: nothing to test it from.
-	Status  AgentSetupLayerStatus `json:"status"`
-	Summary string                `json:"summary"`
-}
-
-// AgentSetupLayerLayer defines model for AgentSetupLayer.Layer.
-type AgentSetupLayerLayer string
-
-// AgentSetupLayerStatus COVERED: tests exist for it, or are added when setup finishes. SKIPPED: setup could not test it and said why. OPEN: not covered yet; setup does not finish while a layer is open. NOT_APPLICABLE: nothing to test it from.
-type AgentSetupLayerStatus string
-
-// AgentSetupMessageInput defines model for AgentSetupMessageInput.
-type AgentSetupMessageInput struct {
-	// Text What you want setup to know
-	Text string `json:"text"`
-}
-
-// AgentSetupQuestion The question setup is waiting on, while NEEDS_INPUT
-type AgentSetupQuestion struct {
-	DefaultOption string   `json:"defaultOption"`
-	Options       []string `json:"options"`
-	Question      string   `json:"question"`
 }
 
 // AgentSpeechToSpeechConfig A model that hears the caller and speaks with its own voice. Null settings use the default.
@@ -34352,36 +34058,6 @@ type CreateAgentEndpointInputDirection string
 
 // CreateAgentEndpointInputOutboundDialType Outbound dial type: NONE or HTTP_REQUEST (default: NONE)
 type CreateAgentEndpointInputOutboundDialType string
-
-// CreateAgentResponse defines model for CreateAgentResponse.
-type CreateAgentResponse struct {
-	// CreatedAt Creation timestamp in ISO 8601 format
-	CreatedAt string `json:"createdAt"`
-
-	// CustomId Custom identifier for the agent
-	CustomId *string `json:"customId"`
-
-	// Description Description of the agent
-	Description *string `json:"description"`
-
-	// Id Unique identifier of the agent
-	Id openapi_types.UUID `json:"id"`
-
-	// Industry The industry the agent serves
-	Industry *CreateAgentResponseIndustry `json:"industry"`
-
-	// Name Name of the agent
-	Name string `json:"name"`
-
-	// Setup The setup Roark started for the agent, or null when none started: autoSetup.enabled was false, there was nothing to set up from, or the API key lacks 'simulation:create' and 'metric:create'. Setup runs in the background: watch the agent.setup.completed webhook.
-	Setup *AgentSetup `json:"setup"`
-
-	// UpdatedAt Last update timestamp in ISO 8601 format
-	UpdatedAt string `json:"updatedAt"`
-}
-
-// CreateAgentResponseIndustry The industry the agent serves
-type CreateAgentResponseIndustry string
 
 // CreateAgentWebConversationInput defines model for CreateAgentWebConversationInput.
 type CreateAgentWebConversationInput struct {
@@ -37574,6 +37250,36 @@ type GenerateLiveReportInput struct {
 	// PeriodStart ISO 8601 start of a custom window. Omit both for the latest closed period.
 	PeriodStart *time.Time `json:"periodStart,omitempty"`
 }
+
+// GenerateSimulationResourcesInput Input for generating simulation resources for agents
+type GenerateSimulationResourcesInput struct {
+	// AgentEndpointId The endpoint the run plan calls. Defaults to the agent's newest endpoint.
+	AgentEndpointId *openapi_types.UUID `json:"agentEndpointId,omitempty"`
+
+	// AgentIds The agents to generate simulation resources for. One agent per generation for now.
+	AgentIds []openapi_types.UUID `json:"agentIds"`
+
+	// Capabilities The capabilities to test. Omit to let Roark work them out from the agent.
+	Capabilities *[]GenerateSimulationResourcesInputCapabilities `json:"capabilities,omitempty"`
+
+	// Explore Exploration settings
+	Explore *SimulationResourceGenerationExploreInput `json:"explore,omitempty"`
+
+	// Industry The industry the agent serves.
+	Industry *GenerateSimulationResourcesInputIndustry `json:"industry,omitempty"`
+
+	// TestingInstructions What you want tested, in your own words. Each scenario you describe becomes a flow.
+	TestingInstructions *string `json:"testingInstructions,omitempty"`
+
+	// WebsiteUrl A page Roark reads to learn about the business.
+	WebsiteUrl *string `json:"websiteUrl,omitempty"`
+}
+
+// GenerateSimulationResourcesInputCapabilities defines model for GenerateSimulationResourcesInput.Capabilities.
+type GenerateSimulationResourcesInputCapabilities string
+
+// GenerateSimulationResourcesInputIndustry The industry the agent serves.
+type GenerateSimulationResourcesInputIndustry string
 
 // GenerateSimulationRunDebriefInput defines model for GenerateSimulationRunDebriefInput.
 type GenerateSimulationRunDebriefInput struct {
@@ -41942,33 +41648,6 @@ type ReplaceFlowStepsResponse struct {
 	Warnings         []string `json:"warnings"`
 }
 
-// RequestAgentSetupInput Input for setting up an existing agent
-type RequestAgentSetupInput struct {
-	// AgentEndpointId The endpoint the run plan calls. Defaults to the agent's newest endpoint.
-	AgentEndpointId *openapi_types.UUID `json:"agentEndpointId,omitempty"`
-
-	// Capabilities The capabilities to test. Omit to let Roark work them out from the agent.
-	Capabilities *[]RequestAgentSetupInputCapabilities `json:"capabilities,omitempty"`
-
-	// Explore Exploration settings
-	Explore *AgentSetupExploreInput `json:"explore,omitempty"`
-
-	// Industry The industry the agent serves.
-	Industry *RequestAgentSetupInputIndustry `json:"industry,omitempty"`
-
-	// TestingInstructions What you want tested, in your own words. Each scenario you describe becomes a flow.
-	TestingInstructions *string `json:"testingInstructions,omitempty"`
-
-	// WebsiteUrl A page Roark reads to learn about the business.
-	WebsiteUrl *string `json:"websiteUrl,omitempty"`
-}
-
-// RequestAgentSetupInputCapabilities defines model for RequestAgentSetupInput.Capabilities.
-type RequestAgentSetupInputCapabilities string
-
-// RequestAgentSetupInputIndustry The industry the agent serves.
-type RequestAgentSetupInputIndustry string
-
 // ResolveManagedConfigRequest defines model for ResolveManagedConfigRequest.
 type ResolveManagedConfigRequest struct {
 	// Defaults Your baked-in config. On the first fetch of an unknown key this registers the config and becomes revision 1, so integration is a single call. Ignored once the key exists.
@@ -44001,6 +43680,257 @@ type SimulationPlanScheduleConfig5 struct {
 
 // SimulationPlanScheduleConfig5Type defines model for SimulationPlanScheduleConfig.5.Type.
 type SimulationPlanScheduleConfig5Type string
+
+// SimulationResourceGeneration The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+type SimulationResourceGeneration struct {
+	// Activity What the generation did and said, in order
+	Activity []SimulationResourceGenerationActivity `json:"activity"`
+
+	// AgentIds The agents the inputs were generated for
+	AgentIds     []openapi_types.UUID                       `json:"agentIds"`
+	Capabilities []SimulationResourceGenerationCapabilities `json:"capabilities"`
+	CompletedAt  *string                                    `json:"completedAt"`
+	CreatedAt    string                                     `json:"createdAt"`
+	ErrorMessage *string                                    `json:"errorMessage"`
+	Explore      struct {
+		ConversationsUsed      int  `json:"conversationsUsed"`
+		Enabled                bool `json:"enabled"`
+		MaxConversationMinutes int  `json:"maxConversationMinutes"`
+		MaxConversations       int  `json:"maxConversations"`
+	} `json:"explore"`
+
+	// Id Simulation resource generation ID
+	Id       openapi_types.UUID                    `json:"id"`
+	Industry *SimulationResourceGenerationIndustry `json:"industry"`
+	Items    []SimulationResourceGenerationItem    `json:"items"`
+
+	// Layers The checklist the generation works through
+	Layers []SimulationResourceGenerationLayer `json:"layers"`
+
+	// Question The question the generation is waiting on, while NEEDS_INPUT
+	Question *SimulationResourceGenerationQuestion `json:"question"`
+
+	// RunPlanId The run plan to start once the generation completes
+	RunPlanId *openapi_types.UUID `json:"runPlanId"`
+
+	// Status PENDING, RUNNING, NEEDS_INPUT (waiting on a question; it goes ahead with the default if nobody answers), COMPLETED, FAILED or CANCELLED
+	Status SimulationResourceGenerationStatus `json:"status"`
+
+	// TestDataNeeded Test data the agent asked for that Roark did not have
+	TestDataNeeded []struct {
+		CallId *openapi_types.UUID `json:"callId"`
+		Label  string              `json:"label"`
+		Reason string              `json:"reason"`
+	} `json:"testDataNeeded"`
+}
+
+// SimulationResourceGenerationCapabilities defines model for SimulationResourceGeneration.Capabilities.
+type SimulationResourceGenerationCapabilities string
+
+// SimulationResourceGenerationIndustry defines model for SimulationResourceGeneration.Industry.
+type SimulationResourceGenerationIndustry string
+
+// SimulationResourceGenerationStatus PENDING, RUNNING, NEEDS_INPUT (waiting on a question; it goes ahead with the default if nobody answers), COMPLETED, FAILED or CANCELLED
+type SimulationResourceGenerationStatus string
+
+// SimulationResourceGenerationActivity One thing the generation did or said, in order
+type SimulationResourceGenerationActivity struct {
+	CreatedAt string `json:"createdAt"`
+
+	// Kind STATUS, REASONING, ACTION, GUIDANCE, QUESTION, ANSWER, EXPLORATION or ERROR
+	Kind SimulationResourceGenerationActivityKind `json:"kind"`
+	Text string                                   `json:"text"`
+}
+
+// SimulationResourceGenerationActivityKind STATUS, REASONING, ACTION, GUIDANCE, QUESTION, ANSWER, EXPLORATION or ERROR
+type SimulationResourceGenerationActivityKind string
+
+// SimulationResourceGenerationCompletedWebhook defines model for SimulationResourceGenerationCompletedWebhook.
+type SimulationResourceGenerationCompletedWebhook struct {
+	Data struct {
+		// AgentCustomId Your own identifier for the agent, if you set one when creating it
+		AgentCustomId *string `json:"agentCustomId"`
+
+		// AgentId ID of the agent the resources were generated for
+		AgentId openapi_types.UUID `json:"agentId"`
+
+		// ProjectId Project the agent belongs to
+		ProjectId openapi_types.UUID `json:"projectId"`
+
+		// RunPlanId The run plan the generation created. Start a run from it to test the agent.
+		RunPlanId *openapi_types.UUID `json:"runPlanId"`
+
+		// SimulationResourceGenerationId ID of the simulation resource generation
+		SimulationResourceGenerationId openapi_types.UUID `json:"simulationResourceGenerationId"`
+	} `json:"data"`
+
+	// Event Event name
+	//
+	// Example: simulation.resource_generation.completed
+	Event SimulationResourceGenerationCompletedWebhookEvent `json:"event"`
+
+	// Timestamp ISO 8601 timestamp when the webhook was generated
+	//
+	// Example: 2026-05-18T09:44:40.971Z
+	Timestamp time.Time `json:"timestamp"`
+
+	// Version Payload schema version
+	//
+	// Example: 1.0
+	Version SimulationResourceGenerationCompletedWebhookVersion `json:"version"`
+}
+
+// SimulationResourceGenerationCompletedWebhookEvent Event name
+//
+// Example: simulation.resource_generation.completed
+type SimulationResourceGenerationCompletedWebhookEvent string
+
+// SimulationResourceGenerationCompletedWebhookVersion Payload schema version
+//
+// Example: 1.0
+type SimulationResourceGenerationCompletedWebhookVersion string
+
+// SimulationResourceGenerationExploreInput Exploration settings
+type SimulationResourceGenerationExploreInput struct {
+	// Enabled Whether Roark calls the agent to discover what it does before finishing the generation. Exploration calls are billed.
+	Enabled *bool `json:"enabled,omitempty"`
+
+	// MaxConversationMinutes The longest a single exploration call may last, in minutes.
+	MaxConversationMinutes *int `json:"maxConversationMinutes,omitempty"`
+
+	// MaxConversations The most exploration calls Roark places.
+	MaxConversations *int `json:"maxConversations,omitempty"`
+}
+
+// SimulationResourceGenerationFailedWebhook defines model for SimulationResourceGenerationFailedWebhook.
+type SimulationResourceGenerationFailedWebhook struct {
+	Data struct {
+		// AgentCustomId Your own identifier for the agent, if you set one when creating it
+		AgentCustomId *string `json:"agentCustomId"`
+
+		// AgentId ID of the agent the resources were generated for
+		AgentId openapi_types.UUID `json:"agentId"`
+
+		// ErrorMessage Why the generation failed
+		ErrorMessage string `json:"errorMessage"`
+
+		// ProjectId Project the agent belongs to
+		ProjectId openapi_types.UUID `json:"projectId"`
+
+		// SimulationResourceGenerationId ID of the simulation resource generation
+		SimulationResourceGenerationId openapi_types.UUID `json:"simulationResourceGenerationId"`
+	} `json:"data"`
+
+	// Event Event name
+	//
+	// Example: simulation.resource_generation.failed
+	Event SimulationResourceGenerationFailedWebhookEvent `json:"event"`
+
+	// Timestamp ISO 8601 timestamp when the webhook was generated
+	//
+	// Example: 2026-05-18T09:44:40.971Z
+	Timestamp time.Time `json:"timestamp"`
+
+	// Version Payload schema version
+	//
+	// Example: 1.0
+	Version SimulationResourceGenerationFailedWebhookVersion `json:"version"`
+}
+
+// SimulationResourceGenerationFailedWebhookEvent Event name
+//
+// Example: simulation.resource_generation.failed
+type SimulationResourceGenerationFailedWebhookEvent string
+
+// SimulationResourceGenerationFailedWebhookVersion Payload schema version
+//
+// Example: 1.0
+type SimulationResourceGenerationFailedWebhookVersion string
+
+// SimulationResourceGenerationItem Something the generation created or chose to leave out, and why
+type SimulationResourceGenerationItem struct {
+	// Action CREATED, or SKIPPED with the reason
+	Action     SimulationResourceGenerationItemAction      `json:"action"`
+	Capability *SimulationResourceGenerationItemCapability `json:"capability"`
+	Id         openapi_types.UUID                          `json:"id"`
+
+	// Kind A flow, a metric, or a pass or fail check
+	Kind  SimulationResourceGenerationItemKind `json:"kind"`
+	Label string                               `json:"label"`
+
+	// Layer Why it exists: CORE (every agent), INDUSTRY, CAPABILITY, AGENT_CONTEXT (your prompt or website), EXPLORATION or CUSTOMER_INSTRUCTIONS
+	Layer SimulationResourceGenerationItemLayer `json:"layer"`
+
+	// Origin Exploration only: DISCOVERED on a call, or INFERRED from a path the agent offered
+	Origin *SimulationResourceGenerationItemOrigin `json:"origin"`
+	Reason string                                  `json:"reason"`
+
+	// ResourceId The flow or metric it created
+	ResourceId *openapi_types.UUID                    `json:"resourceId"`
+	Source     SimulationResourceGenerationItemSource `json:"source"`
+}
+
+// SimulationResourceGenerationItemAction CREATED, or SKIPPED with the reason
+type SimulationResourceGenerationItemAction string
+
+// SimulationResourceGenerationItemCapability defines model for SimulationResourceGenerationItem.Capability.
+type SimulationResourceGenerationItemCapability string
+
+// SimulationResourceGenerationItemKind A flow, a metric, or a pass or fail check
+type SimulationResourceGenerationItemKind string
+
+// SimulationResourceGenerationItemLayer Why it exists: CORE (every agent), INDUSTRY, CAPABILITY, AGENT_CONTEXT (your prompt or website), EXPLORATION or CUSTOMER_INSTRUCTIONS
+type SimulationResourceGenerationItemLayer string
+
+// SimulationResourceGenerationItemOrigin Exploration only: DISCOVERED on a call, or INFERRED from a path the agent offered
+type SimulationResourceGenerationItemOrigin string
+
+// SimulationResourceGenerationItemSource defines model for SimulationResourceGenerationItemSource.
+type SimulationResourceGenerationItemSource struct {
+	// CallId The call it came from: an exploration call Roark placed, or one of the agent’s production calls
+	CallId *openapi_types.UUID `json:"callId"`
+
+	// OffsetMs Where in the call
+	OffsetMs *int `json:"offsetMs"`
+
+	// Quote The words in the source that led to it
+	Quote *string                                    `json:"quote"`
+	Type  SimulationResourceGenerationItemSourceType `json:"type"`
+
+	// Url The page it came from, for website sources
+	Url *string `json:"url"`
+}
+
+// SimulationResourceGenerationItemSourceType defines model for SimulationResourceGenerationItemSource.Type.
+type SimulationResourceGenerationItemSourceType string
+
+// SimulationResourceGenerationLayer Where one part of testing the agent stands
+type SimulationResourceGenerationLayer struct {
+	Layer SimulationResourceGenerationLayerLayer `json:"layer"`
+
+	// Status COVERED: tests exist for it, or are added when the generation finishes. SKIPPED: the generation could not test it and said why. OPEN: not covered yet; the generation does not finish while a layer is open. NOT_APPLICABLE: nothing to test it from.
+	Status  SimulationResourceGenerationLayerStatus `json:"status"`
+	Summary string                                  `json:"summary"`
+}
+
+// SimulationResourceGenerationLayerLayer defines model for SimulationResourceGenerationLayer.Layer.
+type SimulationResourceGenerationLayerLayer string
+
+// SimulationResourceGenerationLayerStatus COVERED: tests exist for it, or are added when the generation finishes. SKIPPED: the generation could not test it and said why. OPEN: not covered yet; the generation does not finish while a layer is open. NOT_APPLICABLE: nothing to test it from.
+type SimulationResourceGenerationLayerStatus string
+
+// SimulationResourceGenerationMessageInput defines model for SimulationResourceGenerationMessageInput.
+type SimulationResourceGenerationMessageInput struct {
+	// Text What you want the generation to know
+	Text string `json:"text"`
+}
+
+// SimulationResourceGenerationQuestion The question the generation is waiting on, while NEEDS_INPUT
+type SimulationResourceGenerationQuestion struct {
+	DefaultOption string   `json:"defaultOption"`
+	Options       []string `json:"options"`
+	Question      string   `json:"question"`
+}
 
 // SimulationRunCallCost defines model for SimulationRunCallCost.
 type SimulationRunCallCost struct {
@@ -47407,35 +47337,30 @@ type GetV1Agent200JSONResponseBodyDataIndustry string
 
 // PostV1AgentJSONBody defines parameters for PostV1Agent.
 type PostV1AgentJSONBody struct {
-	AutoSetup *AgentAutoSetupInput `json:"autoSetup,omitempty"`
-
 	// CustomId Custom identifier for the agent. Must be unique in the project.
 	CustomId *string `json:"customId,omitempty"`
 
 	// Description Description of the agent
 	Description *string `json:"description,omitempty"`
 
-	// Endpoint The phone number Roark calls to test the agent. Needed for the run plan and exploration calls.
+	// Endpoint The phone number Roark calls to test the agent.
 	Endpoint *NewAgentEndpointInput `json:"endpoint,omitempty"`
 
-	// Industry The industry the agent serves. Picks the default capabilities and industry checks setup adds.
+	// Industry The industry the agent serves.
 	Industry *PostV1AgentJSONBodyIndustry `json:"industry,omitempty"`
 
 	// Name Name of the agent
 	Name string `json:"name"`
 
-	// Prompt The agent's system prompt. Setup reads it to decide what to test.
+	// Prompt The agent's system prompt.
 	Prompt *string `json:"prompt,omitempty"`
-
-	// TestingInstructions What you want tested, in your own words. Each scenario you describe becomes a flow.
-	TestingInstructions *string `json:"testingInstructions,omitempty"`
-
-	// WebsiteUrl A page Roark reads to learn about the business.
-	WebsiteUrl *string `json:"websiteUrl,omitempty"`
 }
 
 // PostV1AgentJSONBodyIndustry defines parameters for PostV1Agent.
 type PostV1AgentJSONBodyIndustry string
+
+// PostV1Agent201JSONResponseBodyDataIndustry defines parameters for PostV1Agent.
+type PostV1Agent201JSONResponseBodyDataIndustry string
 
 // PostV1AgentBuildJSONBody defines parameters for PostV1AgentBuild.
 type PostV1AgentBuildJSONBody struct {
@@ -49661,6 +49586,12 @@ type GetV1SimulationEnvironmentParams struct {
 	After *string `form:"after,omitempty" json:"after,omitempty"`
 }
 
+// GetV1SimulationGenerationsResourcesParams defines parameters for GetV1SimulationGenerationsResources.
+type GetV1SimulationGenerationsResourcesParams struct {
+	AgentIds *string `form:"agentIds,omitempty" json:"agentIds,omitempty"`
+	Limit    *int    `form:"limit,omitempty" json:"limit,omitempty"`
+}
+
 // GetV1SimulationGroupParams defines parameters for GetV1SimulationGroup.
 type GetV1SimulationGroupParams struct {
 	Limit  *int `form:"limit,omitempty" json:"limit,omitempty"`
@@ -49776,15 +49707,6 @@ type PostV1AgentByAgentIdDraftPublishJSONRequestBody = PublishAgentDraftInput
 
 // PutV1AgentByAgentIdPromptsJSONRequestBody defines body for PutV1AgentByAgentIdPrompts for application/json ContentType.
 type PutV1AgentByAgentIdPromptsJSONRequestBody = SetAgentPromptInput
-
-// PostV1AgentByAgentIdSetupJSONRequestBody defines body for PostV1AgentByAgentIdSetup for application/json ContentType.
-type PostV1AgentByAgentIdSetupJSONRequestBody = RequestAgentSetupInput
-
-// PostV1AgentByAgentIdSetupBySetupIdAnswerJSONRequestBody defines body for PostV1AgentByAgentIdSetupBySetupIdAnswer for application/json ContentType.
-type PostV1AgentByAgentIdSetupBySetupIdAnswerJSONRequestBody = AgentSetupMessageInput
-
-// PostV1AgentByAgentIdSetupBySetupIdGuidanceJSONRequestBody defines body for PostV1AgentByAgentIdSetupBySetupIdGuidance for application/json ContentType.
-type PostV1AgentByAgentIdSetupBySetupIdGuidanceJSONRequestBody = AgentSetupMessageInput
 
 // PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody defines body for PostV1AgentByAgentIdVersionsByVersionIdRollback for application/json ContentType.
 type PostV1AgentByAgentIdVersionsByVersionIdRollbackJSONRequestBody = RollbackAgentVersionInput
@@ -49989,6 +49911,15 @@ type PostV1SimulationEnvironmentJSONRequestBody = CreateEnvironmentInput
 
 // PutV1SimulationEnvironmentByEnvironmentIdJSONRequestBody defines body for PutV1SimulationEnvironmentByEnvironmentId for application/json ContentType.
 type PutV1SimulationEnvironmentByEnvironmentIdJSONRequestBody = UpdateEnvironmentInput
+
+// PostV1SimulationGenerationsResourcesJSONRequestBody defines body for PostV1SimulationGenerationsResources for application/json ContentType.
+type PostV1SimulationGenerationsResourcesJSONRequestBody = GenerateSimulationResourcesInput
+
+// PostV1SimulationGenerationsResourcesByGenerationIdAnswerJSONRequestBody defines body for PostV1SimulationGenerationsResourcesByGenerationIdAnswer for application/json ContentType.
+type PostV1SimulationGenerationsResourcesByGenerationIdAnswerJSONRequestBody = SimulationResourceGenerationMessageInput
+
+// PostV1SimulationGenerationsResourcesByGenerationIdGuidanceJSONRequestBody defines body for PostV1SimulationGenerationsResourcesByGenerationIdGuidance for application/json ContentType.
+type PostV1SimulationGenerationsResourcesByGenerationIdGuidanceJSONRequestBody = SimulationResourceGenerationMessageInput
 
 // PostV1SimulationGroupJSONRequestBody defines body for PostV1SimulationGroup for application/json ContentType.
 type PostV1SimulationGroupJSONRequestBody = CreateSimulationGroupInput
@@ -63206,31 +63137,31 @@ func (t *WebhookEventJSONBody) MergeIssueResolvedWebhook(v IssueResolvedWebhook)
 	return err
 }
 
-// AsAgentSetupCompletedWebhook returns the union data inside the WebhookEventJSONBody as a AgentSetupCompletedWebhook
-func (t WebhookEventJSONBody) AsAgentSetupCompletedWebhook() (AgentSetupCompletedWebhook, error) {
-	var body AgentSetupCompletedWebhook
+// AsSimulationResourceGenerationCompletedWebhook returns the union data inside the WebhookEventJSONBody as a SimulationResourceGenerationCompletedWebhook
+func (t WebhookEventJSONBody) AsSimulationResourceGenerationCompletedWebhook() (SimulationResourceGenerationCompletedWebhook, error) {
+	var body SimulationResourceGenerationCompletedWebhook
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromAgentSetupCompletedWebhook overwrites any union data inside the WebhookEventJSONBody as the provided AgentSetupCompletedWebhook
-func (t *WebhookEventJSONBody) FromAgentSetupCompletedWebhook(v AgentSetupCompletedWebhook) error {
+// FromSimulationResourceGenerationCompletedWebhook overwrites any union data inside the WebhookEventJSONBody as the provided SimulationResourceGenerationCompletedWebhook
+func (t *WebhookEventJSONBody) FromSimulationResourceGenerationCompletedWebhook(v SimulationResourceGenerationCompletedWebhook) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
 	}
-	b, err = runtime.JSONMerge(b, []byte(`{"event":"agent.setup.completed"}`))
+	b, err = runtime.JSONMerge(b, []byte(`{"event":"simulation.resource_generation.completed"}`))
 	t.union = b
 	return err
 }
 
-// MergeAgentSetupCompletedWebhook performs a merge with any union data inside the WebhookEventJSONBody, using the provided AgentSetupCompletedWebhook
-func (t *WebhookEventJSONBody) MergeAgentSetupCompletedWebhook(v AgentSetupCompletedWebhook) error {
+// MergeSimulationResourceGenerationCompletedWebhook performs a merge with any union data inside the WebhookEventJSONBody, using the provided SimulationResourceGenerationCompletedWebhook
+func (t *WebhookEventJSONBody) MergeSimulationResourceGenerationCompletedWebhook(v SimulationResourceGenerationCompletedWebhook) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
 	}
-	b, err = runtime.JSONMerge(b, []byte(`{"event":"agent.setup.completed"}`))
+	b, err = runtime.JSONMerge(b, []byte(`{"event":"simulation.resource_generation.completed"}`))
 	if err != nil {
 		return err
 	}
@@ -63240,31 +63171,31 @@ func (t *WebhookEventJSONBody) MergeAgentSetupCompletedWebhook(v AgentSetupCompl
 	return err
 }
 
-// AsAgentSetupFailedWebhook returns the union data inside the WebhookEventJSONBody as a AgentSetupFailedWebhook
-func (t WebhookEventJSONBody) AsAgentSetupFailedWebhook() (AgentSetupFailedWebhook, error) {
-	var body AgentSetupFailedWebhook
+// AsSimulationResourceGenerationFailedWebhook returns the union data inside the WebhookEventJSONBody as a SimulationResourceGenerationFailedWebhook
+func (t WebhookEventJSONBody) AsSimulationResourceGenerationFailedWebhook() (SimulationResourceGenerationFailedWebhook, error) {
+	var body SimulationResourceGenerationFailedWebhook
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromAgentSetupFailedWebhook overwrites any union data inside the WebhookEventJSONBody as the provided AgentSetupFailedWebhook
-func (t *WebhookEventJSONBody) FromAgentSetupFailedWebhook(v AgentSetupFailedWebhook) error {
+// FromSimulationResourceGenerationFailedWebhook overwrites any union data inside the WebhookEventJSONBody as the provided SimulationResourceGenerationFailedWebhook
+func (t *WebhookEventJSONBody) FromSimulationResourceGenerationFailedWebhook(v SimulationResourceGenerationFailedWebhook) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
 	}
-	b, err = runtime.JSONMerge(b, []byte(`{"event":"agent.setup.failed"}`))
+	b, err = runtime.JSONMerge(b, []byte(`{"event":"simulation.resource_generation.failed"}`))
 	t.union = b
 	return err
 }
 
-// MergeAgentSetupFailedWebhook performs a merge with any union data inside the WebhookEventJSONBody, using the provided AgentSetupFailedWebhook
-func (t *WebhookEventJSONBody) MergeAgentSetupFailedWebhook(v AgentSetupFailedWebhook) error {
+// MergeSimulationResourceGenerationFailedWebhook performs a merge with any union data inside the WebhookEventJSONBody, using the provided SimulationResourceGenerationFailedWebhook
+func (t *WebhookEventJSONBody) MergeSimulationResourceGenerationFailedWebhook(v SimulationResourceGenerationFailedWebhook) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
 	}
-	b, err = runtime.JSONMerge(b, []byte(`{"event":"agent.setup.failed"}`))
+	b, err = runtime.JSONMerge(b, []byte(`{"event":"simulation.resource_generation.failed"}`))
 	if err != nil {
 		return err
 	}
@@ -63288,10 +63219,6 @@ func (t WebhookEventJSONBody) ValueByDiscriminator() (interface{}, error) {
 		return nil, err
 	}
 	switch discriminator {
-	case "agent.setup.completed":
-		return t.AsAgentSetupCompletedWebhook()
-	case "agent.setup.failed":
-		return t.AsAgentSetupFailedWebhook()
 	case "call.analysis.cancelled":
 		return t.AsCallAnalysisCancelledWebhook()
 	case "call.analysis.completed":
@@ -63322,6 +63249,10 @@ func (t WebhookEventJSONBody) ValueByDiscriminator() (interface{}, error) {
 		return t.AsSimulationJobFailedWebhook()
 	case "simulation.job.started":
 		return t.AsSimulationJobStartedWebhook()
+	case "simulation.resource_generation.completed":
+		return t.AsSimulationResourceGenerationCompletedWebhook()
+	case "simulation.resource_generation.failed":
+		return t.AsSimulationResourceGenerationFailedWebhook()
 	case "simulation.run_plan_job.cancelled":
 		return t.AsSimulationRunPlanJobCancelledWebhook()
 	case "simulation.run_plan_job.completed":
@@ -63748,81 +63679,6 @@ type ClientInterface interface {
 	//
 	// Corresponds with GET /v1/agent/{agentId}/prompts/{promptId}/versions (the `GetV1AgentByAgentIdPromptsByPromptIdVersions` operationId).
 	GetV1AgentByAgentIdPromptsByPromptIdVersions(ctx context.Context, agentId openapi_types.UUID, promptId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetV1AgentByAgentIdSetup Get an agent's latest test setup
-	//
-	// Returns the agent's most recent test setup: its progress, the run plan it created, and every flow, metric and check it added or left out, with the reason and the source it came from.
-	//
-	// Corresponds with GET /v1/agent/{agentId}/setup (the `GetV1AgentByAgentIdSetup` operationId).
-	GetV1AgentByAgentIdSetup(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1AgentByAgentIdSetupWithBody Set up tests for an agent
-	//
-	// Works out what to test for an existing agent, then creates the customer flows, metrics and run plan to test it with. It does not create or change the agent. Runs in the background: watch the `agent.setup.completed` webhook, or poll `GET /v1/agent/{agentId}/setup`. Refuses while another setup for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup (the `PostV1AgentByAgentIdSetup` operationId).
-	PostV1AgentByAgentIdSetupWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1AgentByAgentIdSetup Set up tests for an agent
-	//
-	// Works out what to test for an existing agent, then creates the customer flows, metrics and run plan to test it with. It does not create or change the agent. Runs in the background: watch the `agent.setup.completed` webhook, or poll `GET /v1/agent/{agentId}/setup`. Refuses while another setup for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup (the `PostV1AgentByAgentIdSetup` operationId).
-	PostV1AgentByAgentIdSetup(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdSetupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetV1AgentByAgentIdSetupBySetupId Get a test setup
-	//
-	// Returns one test setup, for example the one a webhook named.
-	//
-	// Corresponds with GET /v1/agent/{agentId}/setup/{setupId} (the `GetV1AgentByAgentIdSetupBySetupId` operationId).
-	GetV1AgentByAgentIdSetupBySetupId(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1AgentByAgentIdSetupBySetupIdAnswerWithBody Answer a test setup's question
-	//
-	// Answers the question a setup is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, setup goes ahead with its default.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/answer (the `PostV1AgentByAgentIdSetupBySetupIdAnswer` operationId).
-	PostV1AgentByAgentIdSetupBySetupIdAnswerWithBody(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1AgentByAgentIdSetupBySetupIdAnswer Answer a test setup's question
-	//
-	// Answers the question a setup is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, setup goes ahead with its default.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/answer (the `PostV1AgentByAgentIdSetupBySetupIdAnswer` operationId).
-	PostV1AgentByAgentIdSetupBySetupIdAnswer(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, body PostV1AgentByAgentIdSetupBySetupIdAnswerJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1AgentByAgentIdSetupBySetupIdCancel Cancel a running test setup
-	//
-	// Stops a running test setup. Flows and metrics it already created are kept; no run plan is made. Refused once setup has finished.
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/cancel (the `PostV1AgentByAgentIdSetupBySetupIdCancel` operationId).
-	PostV1AgentByAgentIdSetupBySetupIdCancel(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1AgentByAgentIdSetupBySetupIdGuidanceWithBody Guide a running test setup
-	//
-	// Tells a running test setup what to focus on or avoid, in your own words. It reads it on its next turn and it outranks setup's own plan. Refused once setup has finished.
-	//
-	// Takes any type of body and a specified content type.
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/guidance (the `PostV1AgentByAgentIdSetupBySetupIdGuidance` operationId).
-	PostV1AgentByAgentIdSetupBySetupIdGuidanceWithBody(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// PostV1AgentByAgentIdSetupBySetupIdGuidance Guide a running test setup
-	//
-	// Tells a running test setup what to focus on or avoid, in your own words. It reads it on its next turn and it outranks setup's own plan. Refused once setup has finished.
-	//
-	// Takes a body of the `application/json` content type.
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/guidance (the `PostV1AgentByAgentIdSetupBySetupIdGuidance` operationId).
-	PostV1AgentByAgentIdSetupBySetupIdGuidance(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, body PostV1AgentByAgentIdSetupBySetupIdGuidanceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1AgentByAgentIdVersions List an agent's versions
 	//
@@ -65985,6 +65841,81 @@ type ClientInterface interface {
 	// Corresponds with PUT /v1/simulation/environment/{environmentId} (the `PutV1SimulationEnvironmentByEnvironmentId` operationId).
 	PutV1SimulationEnvironmentByEnvironmentId(ctx context.Context, environmentId openapi_types.UUID, body PutV1SimulationEnvironmentByEnvironmentIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetV1SimulationGenerationsResources List simulation resource generations
+	//
+	// Returns the project's simulation resource generations, newest first, optionally only for some agents: each one's progress, the run plan it created, and every flow, metric and check it added or left out, with the reason and the source it came from.
+	//
+	// Corresponds with GET /v1/simulation/generations/resources (the `GetV1SimulationGenerationsResources` operationId).
+	GetV1SimulationGenerationsResources(ctx context.Context, params *GetV1SimulationGenerationsResourcesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1SimulationGenerationsResourcesWithBody Generate simulation resources
+	//
+	// Works out what to test for an existing agent, then creates the customer flows, metrics and checks to simulate it, and a run plan that runs them. It does not create or change the agent. It also reads the agent's recent production calls and open issues. Run it again and it builds on what earlier generations made, adding only what changed; when nothing has, it finishes straight away and says so. Runs in the background: watch the `simulation.resource_generation.completed` webhook, or poll `GET /v1/simulation/generations/resources/{generationId}`. Takes one agent for now. Refused while another generation for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/simulation/generations/resources (the `PostV1SimulationGenerationsResources` operationId).
+	PostV1SimulationGenerationsResourcesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1SimulationGenerationsResources Generate simulation resources
+	//
+	// Works out what to test for an existing agent, then creates the customer flows, metrics and checks to simulate it, and a run plan that runs them. It does not create or change the agent. It also reads the agent's recent production calls and open issues. Run it again and it builds on what earlier generations made, adding only what changed; when nothing has, it finishes straight away and says so. Runs in the background: watch the `simulation.resource_generation.completed` webhook, or poll `GET /v1/simulation/generations/resources/{generationId}`. Takes one agent for now. Refused while another generation for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/simulation/generations/resources (the `PostV1SimulationGenerationsResources` operationId).
+	PostV1SimulationGenerationsResources(ctx context.Context, body PostV1SimulationGenerationsResourcesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1SimulationGenerationsResourcesByGenerationId Get a simulation resource generation
+	//
+	// Returns one simulation resource generation, for example the one a webhook named.
+	//
+	// Corresponds with GET /v1/simulation/generations/resources/{generationId} (the `GetV1SimulationGenerationsResourcesByGenerationId` operationId).
+	GetV1SimulationGenerationsResourcesByGenerationId(ctx context.Context, generationId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithBody Answer a simulation resource generation's question
+	//
+	// Answers the question a simulation resource generation is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, it goes ahead with its default.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/simulation/generations/resources/{generationId}/answer (the `PostV1SimulationGenerationsResourcesByGenerationIdAnswer` operationId).
+	PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithBody(ctx context.Context, generationId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1SimulationGenerationsResourcesByGenerationIdAnswer Answer a simulation resource generation's question
+	//
+	// Answers the question a simulation resource generation is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, it goes ahead with its default.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/simulation/generations/resources/{generationId}/answer (the `PostV1SimulationGenerationsResourcesByGenerationIdAnswer` operationId).
+	PostV1SimulationGenerationsResourcesByGenerationIdAnswer(ctx context.Context, generationId openapi_types.UUID, body PostV1SimulationGenerationsResourcesByGenerationIdAnswerJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1SimulationGenerationsResourcesByGenerationIdCancel Cancel a running simulation resource generation
+	//
+	// Stops a running simulation resource generation. Flows and metrics it already created are kept; no run plan is made. Refused once the generation has finished.
+	//
+	// Corresponds with POST /v1/simulation/generations/resources/{generationId}/cancel (the `PostV1SimulationGenerationsResourcesByGenerationIdCancel` operationId).
+	PostV1SimulationGenerationsResourcesByGenerationIdCancel(ctx context.Context, generationId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithBody Guide a running simulation resource generation
+	//
+	// Tells a running simulation resource generation what to focus on or avoid, in your own words. It reads it on its next turn and it outranks its own plan. Refused once the generation has finished.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/simulation/generations/resources/{generationId}/guidance (the `PostV1SimulationGenerationsResourcesByGenerationIdGuidance` operationId).
+	PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithBody(ctx context.Context, generationId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1SimulationGenerationsResourcesByGenerationIdGuidance Guide a running simulation resource generation
+	//
+	// Tells a running simulation resource generation what to focus on or avoid, in your own words. It reads it on its next turn and it outranks its own plan. Refused once the generation has finished.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/simulation/generations/resources/{generationId}/guidance (the `PostV1SimulationGenerationsResourcesByGenerationIdGuidance` operationId).
+	PostV1SimulationGenerationsResourcesByGenerationIdGuidance(ctx context.Context, generationId openapi_types.UUID, body PostV1SimulationGenerationsResourcesByGenerationIdGuidanceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetV1SimulationGroup List plan groups
 	//
 	// Returns the saved simulation groups in the project, most recently edited first, each with its plans in run order and notification settings.
@@ -67282,171 +67213,6 @@ func (c *Client) PutV1AgentByAgentIdPrompts(ctx context.Context, agentId openapi
 // Corresponds with GET /v1/agent/{agentId}/prompts/{promptId}/versions (the `GetV1AgentByAgentIdPromptsByPromptIdVersions` operationId).
 func (c *Client) GetV1AgentByAgentIdPromptsByPromptIdVersions(ctx context.Context, agentId openapi_types.UUID, promptId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetV1AgentByAgentIdPromptsByPromptIdVersionsRequest(c.Server, agentId, promptId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetV1AgentByAgentIdSetup Get an agent's latest test setup
-//
-// Returns the agent's most recent test setup: its progress, the run plan it created, and every flow, metric and check it added or left out, with the reason and the source it came from.
-//
-// Corresponds with GET /v1/agent/{agentId}/setup (the `GetV1AgentByAgentIdSetup` operationId).
-func (c *Client) GetV1AgentByAgentIdSetup(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetV1AgentByAgentIdSetupRequest(c.Server, agentId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1AgentByAgentIdSetupWithBody Set up tests for an agent
-//
-// Works out what to test for an existing agent, then creates the customer flows, metrics and run plan to test it with. It does not create or change the agent. Runs in the background: watch the `agent.setup.completed` webhook, or poll `GET /v1/agent/{agentId}/setup`. Refuses while another setup for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/agent/{agentId}/setup (the `PostV1AgentByAgentIdSetup` operationId).
-func (c *Client) PostV1AgentByAgentIdSetupWithBody(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1AgentByAgentIdSetupRequestWithBody(c.Server, agentId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1AgentByAgentIdSetup Set up tests for an agent
-//
-// Works out what to test for an existing agent, then creates the customer flows, metrics and run plan to test it with. It does not create or change the agent. Runs in the background: watch the `agent.setup.completed` webhook, or poll `GET /v1/agent/{agentId}/setup`. Refuses while another setup for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/agent/{agentId}/setup (the `PostV1AgentByAgentIdSetup` operationId).
-func (c *Client) PostV1AgentByAgentIdSetup(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdSetupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1AgentByAgentIdSetupRequest(c.Server, agentId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// GetV1AgentByAgentIdSetupBySetupId Get a test setup
-//
-// Returns one test setup, for example the one a webhook named.
-//
-// Corresponds with GET /v1/agent/{agentId}/setup/{setupId} (the `GetV1AgentByAgentIdSetupBySetupId` operationId).
-func (c *Client) GetV1AgentByAgentIdSetupBySetupId(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetV1AgentByAgentIdSetupBySetupIdRequest(c.Server, agentId, setupId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1AgentByAgentIdSetupBySetupIdAnswerWithBody Answer a test setup's question
-//
-// Answers the question a setup is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, setup goes ahead with its default.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/answer (the `PostV1AgentByAgentIdSetupBySetupIdAnswer` operationId).
-func (c *Client) PostV1AgentByAgentIdSetupBySetupIdAnswerWithBody(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1AgentByAgentIdSetupBySetupIdAnswerRequestWithBody(c.Server, agentId, setupId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1AgentByAgentIdSetupBySetupIdAnswer Answer a test setup's question
-//
-// Answers the question a setup is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, setup goes ahead with its default.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/answer (the `PostV1AgentByAgentIdSetupBySetupIdAnswer` operationId).
-func (c *Client) PostV1AgentByAgentIdSetupBySetupIdAnswer(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, body PostV1AgentByAgentIdSetupBySetupIdAnswerJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1AgentByAgentIdSetupBySetupIdAnswerRequest(c.Server, agentId, setupId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1AgentByAgentIdSetupBySetupIdCancel Cancel a running test setup
-//
-// Stops a running test setup. Flows and metrics it already created are kept; no run plan is made. Refused once setup has finished.
-//
-// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/cancel (the `PostV1AgentByAgentIdSetupBySetupIdCancel` operationId).
-func (c *Client) PostV1AgentByAgentIdSetupBySetupIdCancel(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1AgentByAgentIdSetupBySetupIdCancelRequest(c.Server, agentId, setupId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1AgentByAgentIdSetupBySetupIdGuidanceWithBody Guide a running test setup
-//
-// Tells a running test setup what to focus on or avoid, in your own words. It reads it on its next turn and it outranks setup's own plan. Refused once setup has finished.
-//
-// Takes any type of body and a specified content type.
-//
-// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/guidance (the `PostV1AgentByAgentIdSetupBySetupIdGuidance` operationId).
-func (c *Client) PostV1AgentByAgentIdSetupBySetupIdGuidanceWithBody(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1AgentByAgentIdSetupBySetupIdGuidanceRequestWithBody(c.Server, agentId, setupId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// PostV1AgentByAgentIdSetupBySetupIdGuidance Guide a running test setup
-//
-// Tells a running test setup what to focus on or avoid, in your own words. It reads it on its next turn and it outranks setup's own plan. Refused once setup has finished.
-//
-// Takes a body of the `application/json` content type.
-//
-// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/guidance (the `PostV1AgentByAgentIdSetupBySetupIdGuidance` operationId).
-func (c *Client) PostV1AgentByAgentIdSetupBySetupIdGuidance(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, body PostV1AgentByAgentIdSetupBySetupIdGuidanceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewPostV1AgentByAgentIdSetupBySetupIdGuidanceRequest(c.Server, agentId, setupId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -72098,6 +71864,171 @@ func (c *Client) PutV1SimulationEnvironmentByEnvironmentId(ctx context.Context, 
 	return c.Client.Do(req)
 }
 
+// GetV1SimulationGenerationsResources List simulation resource generations
+//
+// Returns the project's simulation resource generations, newest first, optionally only for some agents: each one's progress, the run plan it created, and every flow, metric and check it added or left out, with the reason and the source it came from.
+//
+// Corresponds with GET /v1/simulation/generations/resources (the `GetV1SimulationGenerationsResources` operationId).
+func (c *Client) GetV1SimulationGenerationsResources(ctx context.Context, params *GetV1SimulationGenerationsResourcesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1SimulationGenerationsResourcesRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1SimulationGenerationsResourcesWithBody Generate simulation resources
+//
+// Works out what to test for an existing agent, then creates the customer flows, metrics and checks to simulate it, and a run plan that runs them. It does not create or change the agent. It also reads the agent's recent production calls and open issues. Run it again and it builds on what earlier generations made, adding only what changed; when nothing has, it finishes straight away and says so. Runs in the background: watch the `simulation.resource_generation.completed` webhook, or poll `GET /v1/simulation/generations/resources/{generationId}`. Takes one agent for now. Refused while another generation for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/simulation/generations/resources (the `PostV1SimulationGenerationsResources` operationId).
+func (c *Client) PostV1SimulationGenerationsResourcesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1SimulationGenerationsResourcesRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1SimulationGenerationsResources Generate simulation resources
+//
+// Works out what to test for an existing agent, then creates the customer flows, metrics and checks to simulate it, and a run plan that runs them. It does not create or change the agent. It also reads the agent's recent production calls and open issues. Run it again and it builds on what earlier generations made, adding only what changed; when nothing has, it finishes straight away and says so. Runs in the background: watch the `simulation.resource_generation.completed` webhook, or poll `GET /v1/simulation/generations/resources/{generationId}`. Takes one agent for now. Refused while another generation for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/simulation/generations/resources (the `PostV1SimulationGenerationsResources` operationId).
+func (c *Client) PostV1SimulationGenerationsResources(ctx context.Context, body PostV1SimulationGenerationsResourcesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1SimulationGenerationsResourcesRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1SimulationGenerationsResourcesByGenerationId Get a simulation resource generation
+//
+// Returns one simulation resource generation, for example the one a webhook named.
+//
+// Corresponds with GET /v1/simulation/generations/resources/{generationId} (the `GetV1SimulationGenerationsResourcesByGenerationId` operationId).
+func (c *Client) GetV1SimulationGenerationsResourcesByGenerationId(ctx context.Context, generationId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1SimulationGenerationsResourcesByGenerationIdRequest(c.Server, generationId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithBody Answer a simulation resource generation's question
+//
+// Answers the question a simulation resource generation is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, it goes ahead with its default.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/simulation/generations/resources/{generationId}/answer (the `PostV1SimulationGenerationsResourcesByGenerationIdAnswer` operationId).
+func (c *Client) PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithBody(ctx context.Context, generationId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1SimulationGenerationsResourcesByGenerationIdAnswerRequestWithBody(c.Server, generationId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1SimulationGenerationsResourcesByGenerationIdAnswer Answer a simulation resource generation's question
+//
+// Answers the question a simulation resource generation is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, it goes ahead with its default.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/simulation/generations/resources/{generationId}/answer (the `PostV1SimulationGenerationsResourcesByGenerationIdAnswer` operationId).
+func (c *Client) PostV1SimulationGenerationsResourcesByGenerationIdAnswer(ctx context.Context, generationId openapi_types.UUID, body PostV1SimulationGenerationsResourcesByGenerationIdAnswerJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1SimulationGenerationsResourcesByGenerationIdAnswerRequest(c.Server, generationId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1SimulationGenerationsResourcesByGenerationIdCancel Cancel a running simulation resource generation
+//
+// Stops a running simulation resource generation. Flows and metrics it already created are kept; no run plan is made. Refused once the generation has finished.
+//
+// Corresponds with POST /v1/simulation/generations/resources/{generationId}/cancel (the `PostV1SimulationGenerationsResourcesByGenerationIdCancel` operationId).
+func (c *Client) PostV1SimulationGenerationsResourcesByGenerationIdCancel(ctx context.Context, generationId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1SimulationGenerationsResourcesByGenerationIdCancelRequest(c.Server, generationId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithBody Guide a running simulation resource generation
+//
+// Tells a running simulation resource generation what to focus on or avoid, in your own words. It reads it on its next turn and it outranks its own plan. Refused once the generation has finished.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/simulation/generations/resources/{generationId}/guidance (the `PostV1SimulationGenerationsResourcesByGenerationIdGuidance` operationId).
+func (c *Client) PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithBody(ctx context.Context, generationId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1SimulationGenerationsResourcesByGenerationIdGuidanceRequestWithBody(c.Server, generationId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1SimulationGenerationsResourcesByGenerationIdGuidance Guide a running simulation resource generation
+//
+// Tells a running simulation resource generation what to focus on or avoid, in your own words. It reads it on its next turn and it outranks its own plan. Refused once the generation has finished.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/simulation/generations/resources/{generationId}/guidance (the `PostV1SimulationGenerationsResourcesByGenerationIdGuidance` operationId).
+func (c *Client) PostV1SimulationGenerationsResourcesByGenerationIdGuidance(ctx context.Context, generationId openapi_types.UUID, body PostV1SimulationGenerationsResourcesByGenerationIdGuidanceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1SimulationGenerationsResourcesByGenerationIdGuidanceRequest(c.Server, generationId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GetV1SimulationGroup List plan groups
 //
 // Returns the saved simulation groups in the project, most recently edited first, each with its plans in run order and notification settings.
@@ -74380,277 +74311,6 @@ func NewGetV1AgentByAgentIdPromptsByPromptIdVersionsRequest(server string, agent
 	if err != nil {
 		return nil, err
 	}
-
-	return req, nil
-}
-
-// NewGetV1AgentByAgentIdSetupRequest constructs an http.Request for the GetV1AgentByAgentIdSetup method
-func NewGetV1AgentByAgentIdSetupRequest(server string, agentId openapi_types.UUID) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/agent/%s/setup", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewPostV1AgentByAgentIdSetupRequest calls the generic PostV1AgentByAgentIdSetup builder with application/json body
-func NewPostV1AgentByAgentIdSetupRequest(server string, agentId openapi_types.UUID, body PostV1AgentByAgentIdSetupJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewPostV1AgentByAgentIdSetupRequestWithBody(server, agentId, "application/json", bodyReader)
-}
-
-// NewPostV1AgentByAgentIdSetupRequestWithBody constructs an http.Request for the PostV1AgentByAgentIdSetup method, with any body, and a specified content type
-func NewPostV1AgentByAgentIdSetupRequestWithBody(server string, agentId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/agent/%s/setup", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewGetV1AgentByAgentIdSetupBySetupIdRequest constructs an http.Request for the GetV1AgentByAgentIdSetupBySetupId method
-func NewGetV1AgentByAgentIdSetupBySetupIdRequest(server string, agentId openapi_types.UUID, setupId openapi_types.UUID) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "setupId", setupId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/agent/%s/setup/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewPostV1AgentByAgentIdSetupBySetupIdAnswerRequest calls the generic PostV1AgentByAgentIdSetupBySetupIdAnswer builder with application/json body
-func NewPostV1AgentByAgentIdSetupBySetupIdAnswerRequest(server string, agentId openapi_types.UUID, setupId openapi_types.UUID, body PostV1AgentByAgentIdSetupBySetupIdAnswerJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewPostV1AgentByAgentIdSetupBySetupIdAnswerRequestWithBody(server, agentId, setupId, "application/json", bodyReader)
-}
-
-// NewPostV1AgentByAgentIdSetupBySetupIdAnswerRequestWithBody constructs an http.Request for the PostV1AgentByAgentIdSetupBySetupIdAnswer method, with any body, and a specified content type
-func NewPostV1AgentByAgentIdSetupBySetupIdAnswerRequestWithBody(server string, agentId openapi_types.UUID, setupId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "setupId", setupId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/agent/%s/setup/%s/answer", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewPostV1AgentByAgentIdSetupBySetupIdCancelRequest constructs an http.Request for the PostV1AgentByAgentIdSetupBySetupIdCancel method
-func NewPostV1AgentByAgentIdSetupBySetupIdCancelRequest(server string, agentId openapi_types.UUID, setupId openapi_types.UUID) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "setupId", setupId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/agent/%s/setup/%s/cancel", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewPostV1AgentByAgentIdSetupBySetupIdGuidanceRequest calls the generic PostV1AgentByAgentIdSetupBySetupIdGuidance builder with application/json body
-func NewPostV1AgentByAgentIdSetupBySetupIdGuidanceRequest(server string, agentId openapi_types.UUID, setupId openapi_types.UUID, body PostV1AgentByAgentIdSetupBySetupIdGuidanceJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewPostV1AgentByAgentIdSetupBySetupIdGuidanceRequestWithBody(server, agentId, setupId, "application/json", bodyReader)
-}
-
-// NewPostV1AgentByAgentIdSetupBySetupIdGuidanceRequestWithBody constructs an http.Request for the PostV1AgentByAgentIdSetupBySetupIdGuidance method, with any body, and a specified content type
-func NewPostV1AgentByAgentIdSetupBySetupIdGuidanceRequestWithBody(server string, agentId openapi_types.UUID, setupId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "agentId", agentId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "setupId", setupId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/v1/agent/%s/setup/%s/guidance", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -83215,6 +82875,274 @@ func NewPutV1SimulationEnvironmentByEnvironmentIdRequestWithBody(server string, 
 	return req, nil
 }
 
+// NewGetV1SimulationGenerationsResourcesRequest constructs an http.Request for the GetV1SimulationGenerationsResources method
+func NewGetV1SimulationGenerationsResourcesRequest(server string, params *GetV1SimulationGenerationsResourcesParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/simulation/generations/resources")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.AgentIds != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "agentIds", *params.AgentIds, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1SimulationGenerationsResourcesRequest calls the generic PostV1SimulationGenerationsResources builder with application/json body
+func NewPostV1SimulationGenerationsResourcesRequest(server string, body PostV1SimulationGenerationsResourcesJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1SimulationGenerationsResourcesRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewPostV1SimulationGenerationsResourcesRequestWithBody constructs an http.Request for the PostV1SimulationGenerationsResources method, with any body, and a specified content type
+func NewPostV1SimulationGenerationsResourcesRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/simulation/generations/resources")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetV1SimulationGenerationsResourcesByGenerationIdRequest constructs an http.Request for the GetV1SimulationGenerationsResourcesByGenerationId method
+func NewGetV1SimulationGenerationsResourcesByGenerationIdRequest(server string, generationId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "generationId", generationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/simulation/generations/resources/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1SimulationGenerationsResourcesByGenerationIdAnswerRequest calls the generic PostV1SimulationGenerationsResourcesByGenerationIdAnswer builder with application/json body
+func NewPostV1SimulationGenerationsResourcesByGenerationIdAnswerRequest(server string, generationId openapi_types.UUID, body PostV1SimulationGenerationsResourcesByGenerationIdAnswerJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1SimulationGenerationsResourcesByGenerationIdAnswerRequestWithBody(server, generationId, "application/json", bodyReader)
+}
+
+// NewPostV1SimulationGenerationsResourcesByGenerationIdAnswerRequestWithBody constructs an http.Request for the PostV1SimulationGenerationsResourcesByGenerationIdAnswer method, with any body, and a specified content type
+func NewPostV1SimulationGenerationsResourcesByGenerationIdAnswerRequestWithBody(server string, generationId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "generationId", generationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/simulation/generations/resources/%s/answer", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewPostV1SimulationGenerationsResourcesByGenerationIdCancelRequest constructs an http.Request for the PostV1SimulationGenerationsResourcesByGenerationIdCancel method
+func NewPostV1SimulationGenerationsResourcesByGenerationIdCancelRequest(server string, generationId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "generationId", generationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/simulation/generations/resources/%s/cancel", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1SimulationGenerationsResourcesByGenerationIdGuidanceRequest calls the generic PostV1SimulationGenerationsResourcesByGenerationIdGuidance builder with application/json body
+func NewPostV1SimulationGenerationsResourcesByGenerationIdGuidanceRequest(server string, generationId openapi_types.UUID, body PostV1SimulationGenerationsResourcesByGenerationIdGuidanceJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPostV1SimulationGenerationsResourcesByGenerationIdGuidanceRequestWithBody(server, generationId, "application/json", bodyReader)
+}
+
+// NewPostV1SimulationGenerationsResourcesByGenerationIdGuidanceRequestWithBody constructs an http.Request for the PostV1SimulationGenerationsResourcesByGenerationIdGuidance method, with any body, and a specified content type
+func NewPostV1SimulationGenerationsResourcesByGenerationIdGuidanceRequestWithBody(server string, generationId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "generationId", generationId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/simulation/generations/resources/%s/guidance", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGetV1SimulationGroupRequest constructs an http.Request for the GetV1SimulationGroup method
 func NewGetV1SimulationGroupRequest(server string, params *GetV1SimulationGroupParams) (*http.Request, error) {
 	var err error
@@ -85607,87 +85535,6 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /v1/agent/{agentId}/prompts/{promptId}/versions (the `GetV1AgentByAgentIdPromptsByPromptIdVersions` operationId).
 	GetV1AgentByAgentIdPromptsByPromptIdVersionsWithResponse(ctx context.Context, agentId openapi_types.UUID, promptId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdPromptsByPromptIdVersionsResponse, error)
 
-	// GetV1AgentByAgentIdSetupWithResponse Get an agent's latest test setup
-	//
-	// Returns the agent's most recent test setup: its progress, the run plan it created, and every flow, metric and check it added or left out, with the reason and the source it came from.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/agent/{agentId}/setup (the `GetV1AgentByAgentIdSetup` operationId).
-	GetV1AgentByAgentIdSetupWithResponse(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdSetupResponse, error)
-
-	// PostV1AgentByAgentIdSetupWithBodyWithResponse Set up tests for an agent
-	//
-	// Works out what to test for an existing agent, then creates the customer flows, metrics and run plan to test it with. It does not create or change the agent. Runs in the background: watch the `agent.setup.completed` webhook, or poll `GET /v1/agent/{agentId}/setup`. Refuses while another setup for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup (the `PostV1AgentByAgentIdSetup` operationId).
-	PostV1AgentByAgentIdSetupWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupResponse, error)
-
-	// PostV1AgentByAgentIdSetupWithResponse Set up tests for an agent
-	//
-	// Works out what to test for an existing agent, then creates the customer flows, metrics and run plan to test it with. It does not create or change the agent. Runs in the background: watch the `agent.setup.completed` webhook, or poll `GET /v1/agent/{agentId}/setup`. Refuses while another setup for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup (the `PostV1AgentByAgentIdSetup` operationId).
-	PostV1AgentByAgentIdSetupWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdSetupJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupResponse, error)
-
-	// GetV1AgentByAgentIdSetupBySetupIdWithResponse Get a test setup
-	//
-	// Returns one test setup, for example the one a webhook named.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /v1/agent/{agentId}/setup/{setupId} (the `GetV1AgentByAgentIdSetupBySetupId` operationId).
-	GetV1AgentByAgentIdSetupBySetupIdWithResponse(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdSetupBySetupIdResponse, error)
-
-	// PostV1AgentByAgentIdSetupBySetupIdAnswerWithBodyWithResponse Answer a test setup's question
-	//
-	// Answers the question a setup is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, setup goes ahead with its default.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/answer (the `PostV1AgentByAgentIdSetupBySetupIdAnswer` operationId).
-	PostV1AgentByAgentIdSetupBySetupIdAnswerWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupBySetupIdAnswerResponse, error)
-
-	// PostV1AgentByAgentIdSetupBySetupIdAnswerWithResponse Answer a test setup's question
-	//
-	// Answers the question a setup is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, setup goes ahead with its default.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/answer (the `PostV1AgentByAgentIdSetupBySetupIdAnswer` operationId).
-	PostV1AgentByAgentIdSetupBySetupIdAnswerWithResponse(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, body PostV1AgentByAgentIdSetupBySetupIdAnswerJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupBySetupIdAnswerResponse, error)
-
-	// PostV1AgentByAgentIdSetupBySetupIdCancelWithResponse Cancel a running test setup
-	//
-	// Stops a running test setup. Flows and metrics it already created are kept; no run plan is made. Refused once setup has finished.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/cancel (the `PostV1AgentByAgentIdSetupBySetupIdCancel` operationId).
-	PostV1AgentByAgentIdSetupBySetupIdCancelWithResponse(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupBySetupIdCancelResponse, error)
-
-	// PostV1AgentByAgentIdSetupBySetupIdGuidanceWithBodyWithResponse Guide a running test setup
-	//
-	// Tells a running test setup what to focus on or avoid, in your own words. It reads it on its next turn and it outranks setup's own plan. Refused once setup has finished.
-	//
-	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/guidance (the `PostV1AgentByAgentIdSetupBySetupIdGuidance` operationId).
-	PostV1AgentByAgentIdSetupBySetupIdGuidanceWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse, error)
-
-	// PostV1AgentByAgentIdSetupBySetupIdGuidanceWithResponse Guide a running test setup
-	//
-	// Tells a running test setup what to focus on or avoid, in your own words. It reads it on its next turn and it outranks setup's own plan. Refused once setup has finished.
-	//
-	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/guidance (the `PostV1AgentByAgentIdSetupBySetupIdGuidance` operationId).
-	PostV1AgentByAgentIdSetupBySetupIdGuidanceWithResponse(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, body PostV1AgentByAgentIdSetupBySetupIdGuidanceJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse, error)
-
 	// GetV1AgentByAgentIdVersionsWithResponse List an agent's versions
 	//
 	// The open draft first, if there is one, then published versions newest first. Paginated: pass `pagination.nextCursor` as `after` for the next page.
@@ -88073,6 +87920,87 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with PUT /v1/simulation/environment/{environmentId} (the `PutV1SimulationEnvironmentByEnvironmentId` operationId).
 	PutV1SimulationEnvironmentByEnvironmentIdWithResponse(ctx context.Context, environmentId openapi_types.UUID, body PutV1SimulationEnvironmentByEnvironmentIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1SimulationEnvironmentByEnvironmentIdResponse, error)
 
+	// GetV1SimulationGenerationsResourcesWithResponse List simulation resource generations
+	//
+	// Returns the project's simulation resource generations, newest first, optionally only for some agents: each one's progress, the run plan it created, and every flow, metric and check it added or left out, with the reason and the source it came from.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/simulation/generations/resources (the `GetV1SimulationGenerationsResources` operationId).
+	GetV1SimulationGenerationsResourcesWithResponse(ctx context.Context, params *GetV1SimulationGenerationsResourcesParams, reqEditors ...RequestEditorFn) (*GetV1SimulationGenerationsResourcesResponse, error)
+
+	// PostV1SimulationGenerationsResourcesWithBodyWithResponse Generate simulation resources
+	//
+	// Works out what to test for an existing agent, then creates the customer flows, metrics and checks to simulate it, and a run plan that runs them. It does not create or change the agent. It also reads the agent's recent production calls and open issues. Run it again and it builds on what earlier generations made, adding only what changed; when nothing has, it finishes straight away and says so. Runs in the background: watch the `simulation.resource_generation.completed` webhook, or poll `GET /v1/simulation/generations/resources/{generationId}`. Takes one agent for now. Refused while another generation for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/simulation/generations/resources (the `PostV1SimulationGenerationsResources` operationId).
+	PostV1SimulationGenerationsResourcesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesResponse, error)
+
+	// PostV1SimulationGenerationsResourcesWithResponse Generate simulation resources
+	//
+	// Works out what to test for an existing agent, then creates the customer flows, metrics and checks to simulate it, and a run plan that runs them. It does not create or change the agent. It also reads the agent's recent production calls and open issues. Run it again and it builds on what earlier generations made, adding only what changed; when nothing has, it finishes straight away and says so. Runs in the background: watch the `simulation.resource_generation.completed` webhook, or poll `GET /v1/simulation/generations/resources/{generationId}`. Takes one agent for now. Refused while another generation for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/simulation/generations/resources (the `PostV1SimulationGenerationsResources` operationId).
+	PostV1SimulationGenerationsResourcesWithResponse(ctx context.Context, body PostV1SimulationGenerationsResourcesJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesResponse, error)
+
+	// GetV1SimulationGenerationsResourcesByGenerationIdWithResponse Get a simulation resource generation
+	//
+	// Returns one simulation resource generation, for example the one a webhook named.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/simulation/generations/resources/{generationId} (the `GetV1SimulationGenerationsResourcesByGenerationId` operationId).
+	GetV1SimulationGenerationsResourcesByGenerationIdWithResponse(ctx context.Context, generationId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1SimulationGenerationsResourcesByGenerationIdResponse, error)
+
+	// PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithBodyWithResponse Answer a simulation resource generation's question
+	//
+	// Answers the question a simulation resource generation is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, it goes ahead with its default.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/simulation/generations/resources/{generationId}/answer (the `PostV1SimulationGenerationsResourcesByGenerationIdAnswer` operationId).
+	PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithBodyWithResponse(ctx context.Context, generationId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse, error)
+
+	// PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithResponse Answer a simulation resource generation's question
+	//
+	// Answers the question a simulation resource generation is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, it goes ahead with its default.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/simulation/generations/resources/{generationId}/answer (the `PostV1SimulationGenerationsResourcesByGenerationIdAnswer` operationId).
+	PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithResponse(ctx context.Context, generationId openapi_types.UUID, body PostV1SimulationGenerationsResourcesByGenerationIdAnswerJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse, error)
+
+	// PostV1SimulationGenerationsResourcesByGenerationIdCancelWithResponse Cancel a running simulation resource generation
+	//
+	// Stops a running simulation resource generation. Flows and metrics it already created are kept; no run plan is made. Refused once the generation has finished.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/simulation/generations/resources/{generationId}/cancel (the `PostV1SimulationGenerationsResourcesByGenerationIdCancel` operationId).
+	PostV1SimulationGenerationsResourcesByGenerationIdCancelWithResponse(ctx context.Context, generationId openapi_types.UUID, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse, error)
+
+	// PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithBodyWithResponse Guide a running simulation resource generation
+	//
+	// Tells a running simulation resource generation what to focus on or avoid, in your own words. It reads it on its next turn and it outranks its own plan. Refused once the generation has finished.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/simulation/generations/resources/{generationId}/guidance (the `PostV1SimulationGenerationsResourcesByGenerationIdGuidance` operationId).
+	PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithBodyWithResponse(ctx context.Context, generationId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse, error)
+
+	// PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithResponse Guide a running simulation resource generation
+	//
+	// Tells a running simulation resource generation what to focus on or avoid, in your own words. It reads it on its next turn and it outranks its own plan. Refused once the generation has finished.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/simulation/generations/resources/{generationId}/guidance (the `PostV1SimulationGenerationsResourcesByGenerationIdGuidance` operationId).
+	PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithResponse(ctx context.Context, generationId openapi_types.UUID, body PostV1SimulationGenerationsResourcesByGenerationIdGuidanceJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse, error)
+
 	// GetV1SimulationGroupWithResponse List plan groups
 	//
 	// Returns the saved simulation groups in the project, most recently edited first, each with its plans in run order and notification settings.
@@ -88921,7 +88849,28 @@ type PostV1AgentResponse struct {
 	HTTPResponse *http.Response
 	// JSON201 the response for an HTTP 201 `application/json` response
 	JSON201 *struct {
-		Data CreateAgentResponse `json:"data"`
+		Data struct {
+			// CreatedAt Creation timestamp in ISO 8601 format
+			CreatedAt string `json:"createdAt"`
+
+			// CustomId Custom identifier for the agent
+			CustomId *string `json:"customId"`
+
+			// Description Description of the agent
+			Description *string `json:"description"`
+
+			// Id Unique identifier of the agent
+			Id openapi_types.UUID `json:"id"`
+
+			// Industry The industry the agent serves
+			Industry *PostV1Agent201JSONResponseBodyDataIndustry `json:"industry"`
+
+			// Name Name of the agent
+			Name string `json:"name"`
+
+			// UpdatedAt Last update timestamp in ISO 8601 format
+			UpdatedAt string `json:"updatedAt"`
+		} `json:"data"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
 	JSON400 *ErrorResponse
@@ -88937,7 +88886,28 @@ type PostV1AgentResponse struct {
 
 // GetJSON201 returns the response for an HTTP 201 `application/json` response
 func (r PostV1AgentResponse) GetJSON201() *struct {
-	Data CreateAgentResponse `json:"data"`
+	Data struct {
+		// CreatedAt Creation timestamp in ISO 8601 format
+		CreatedAt string `json:"createdAt"`
+
+		// CustomId Custom identifier for the agent
+		CustomId *string `json:"customId"`
+
+		// Description Description of the agent
+		Description *string `json:"description"`
+
+		// Id Unique identifier of the agent
+		Id openapi_types.UUID `json:"id"`
+
+		// Industry The industry the agent serves
+		Industry *PostV1Agent201JSONResponseBodyDataIndustry `json:"industry"`
+
+		// Name Name of the agent
+		Name string `json:"name"`
+
+		// UpdatedAt Last update timestamp in ISO 8601 format
+		UpdatedAt string `json:"updatedAt"`
+	} `json:"data"`
 } {
 	return r.JSON201
 }
@@ -90932,491 +90902,6 @@ func (r GetV1AgentByAgentIdPromptsByPromptIdVersionsResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetV1AgentByAgentIdPromptsByPromptIdVersionsResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetV1AgentByAgentIdSetupResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Data The tests Roark generated for an agent, and why
-		Data AgentSetup `json:"data"`
-	}
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetV1AgentByAgentIdSetupResponse) GetJSON200() *struct {
-	// Data The tests Roark generated for an agent, and why
-	Data AgentSetup `json:"data"`
-} {
-	return r.JSON200
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r GetV1AgentByAgentIdSetupResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetV1AgentByAgentIdSetupResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r GetV1AgentByAgentIdSetupResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r GetV1AgentByAgentIdSetupResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetV1AgentByAgentIdSetupResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetV1AgentByAgentIdSetupResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetV1AgentByAgentIdSetupResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PostV1AgentByAgentIdSetupResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON202 the response for an HTTP 202 `application/json` response
-	JSON202 *struct {
-		// Data The tests Roark generated for an agent, and why
-		Data AgentSetup `json:"data"`
-	}
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ErrorResponse
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON202 returns the response for an HTTP 202 `application/json` response
-func (r PostV1AgentByAgentIdSetupResponse) GetJSON202() *struct {
-	// Data The tests Roark generated for an agent, and why
-	Data AgentSetup `json:"data"`
-} {
-	return r.JSON202
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r PostV1AgentByAgentIdSetupResponse) GetJSON400() *ErrorResponse {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r PostV1AgentByAgentIdSetupResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r PostV1AgentByAgentIdSetupResponse) GetJSON403() *ErrorResponse {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r PostV1AgentByAgentIdSetupResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r PostV1AgentByAgentIdSetupResponse) GetJSON409() *ErrorResponse {
-	return r.JSON409
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r PostV1AgentByAgentIdSetupResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r PostV1AgentByAgentIdSetupResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PostV1AgentByAgentIdSetupResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PostV1AgentByAgentIdSetupResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PostV1AgentByAgentIdSetupResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type GetV1AgentByAgentIdSetupBySetupIdResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *struct {
-		// Data The tests Roark generated for an agent, and why
-		Data AgentSetup `json:"data"`
-	}
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r GetV1AgentByAgentIdSetupBySetupIdResponse) GetJSON200() *struct {
-	// Data The tests Roark generated for an agent, and why
-	Data AgentSetup `json:"data"`
-} {
-	return r.JSON200
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r GetV1AgentByAgentIdSetupBySetupIdResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetV1AgentByAgentIdSetupBySetupIdResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r GetV1AgentByAgentIdSetupBySetupIdResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r GetV1AgentByAgentIdSetupBySetupIdResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r GetV1AgentByAgentIdSetupBySetupIdResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetV1AgentByAgentIdSetupBySetupIdResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r GetV1AgentByAgentIdSetupBySetupIdResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PostV1AgentByAgentIdSetupBySetupIdAnswerResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON202 the response for an HTTP 202 `application/json` response
-	JSON202 *struct {
-		// Data The tests Roark generated for an agent, and why
-		Data AgentSetup `json:"data"`
-	}
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ErrorResponse
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON202 returns the response for an HTTP 202 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdAnswerResponse) GetJSON202() *struct {
-	// Data The tests Roark generated for an agent, and why
-	Data AgentSetup `json:"data"`
-} {
-	return r.JSON202
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdAnswerResponse) GetJSON400() *ErrorResponse {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdAnswerResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdAnswerResponse) GetJSON403() *ErrorResponse {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdAnswerResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdAnswerResponse) GetJSON409() *ErrorResponse {
-	return r.JSON409
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdAnswerResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r PostV1AgentByAgentIdSetupBySetupIdAnswerResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PostV1AgentByAgentIdSetupBySetupIdAnswerResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PostV1AgentByAgentIdSetupBySetupIdAnswerResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PostV1AgentByAgentIdSetupBySetupIdAnswerResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PostV1AgentByAgentIdSetupBySetupIdCancelResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON202 the response for an HTTP 202 `application/json` response
-	JSON202 *struct {
-		// Data The tests Roark generated for an agent, and why
-		Data AgentSetup `json:"data"`
-	}
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON202 returns the response for an HTTP 202 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdCancelResponse) GetJSON202() *struct {
-	// Data The tests Roark generated for an agent, and why
-	Data AgentSetup `json:"data"`
-} {
-	return r.JSON202
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdCancelResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdCancelResponse) GetJSON403() *ErrorResponse {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdCancelResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdCancelResponse) GetJSON409() *ErrorResponse {
-	return r.JSON409
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdCancelResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r PostV1AgentByAgentIdSetupBySetupIdCancelResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PostV1AgentByAgentIdSetupBySetupIdCancelResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PostV1AgentByAgentIdSetupBySetupIdCancelResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PostV1AgentByAgentIdSetupBySetupIdCancelResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON202 the response for an HTTP 202 `application/json` response
-	JSON202 *struct {
-		// Data The tests Roark generated for an agent, and why
-		Data AgentSetup `json:"data"`
-	}
-	// JSON400 the response for an HTTP 400 `application/json` response
-	JSON400 *ErrorResponse
-	// JSON401 the response for an HTTP 401 `application/json` response
-	JSON401 *ErrorResponse
-	// JSON403 the response for an HTTP 403 `application/json` response
-	JSON403 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
-	// JSON409 the response for an HTTP 409 `application/json` response
-	JSON409 *ErrorResponse
-	// JSON500 the response for an HTTP 500 `application/json` response
-	JSON500 *ErrorResponse
-}
-
-// GetJSON202 returns the response for an HTTP 202 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse) GetJSON202() *struct {
-	// Data The tests Roark generated for an agent, and why
-	Data AgentSetup `json:"data"`
-} {
-	return r.JSON202
-}
-
-// GetJSON400 returns the response for an HTTP 400 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse) GetJSON400() *ErrorResponse {
-	return r.JSON400
-}
-
-// GetJSON401 returns the response for an HTTP 401 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse) GetJSON401() *ErrorResponse {
-	return r.JSON401
-}
-
-// GetJSON403 returns the response for an HTTP 403 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse) GetJSON403() *ErrorResponse {
-	return r.JSON403
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
-}
-
-// GetJSON409 returns the response for an HTTP 409 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse) GetJSON409() *ErrorResponse {
-	return r.JSON409
-}
-
-// GetJSON500 returns the response for an HTTP 500 `application/json` response
-func (r PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse) GetJSON500() *ErrorResponse {
-	return r.JSON500
-}
-
-// GetBody returns the raw response body bytes
-func (r PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -110073,6 +109558,496 @@ func (r PutV1SimulationEnvironmentByEnvironmentIdResponse) ContentType() string 
 	return ""
 }
 
+type GetV1SimulationGenerationsResourcesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data []SimulationResourceGeneration `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1SimulationGenerationsResourcesResponse) GetJSON200() *struct {
+	Data []SimulationResourceGeneration `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetV1SimulationGenerationsResourcesResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1SimulationGenerationsResourcesResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1SimulationGenerationsResourcesResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1SimulationGenerationsResourcesResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1SimulationGenerationsResourcesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1SimulationGenerationsResourcesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1SimulationGenerationsResourcesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1SimulationGenerationsResourcesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1SimulationGenerationsResourcesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON202 the response for an HTTP 202 `application/json` response
+	JSON202 *struct {
+		// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+		Data SimulationResourceGeneration `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON202 returns the response for an HTTP 202 `application/json` response
+func (r PostV1SimulationGenerationsResourcesResponse) GetJSON202() *struct {
+	// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+	Data SimulationResourceGeneration `json:"data"`
+} {
+	return r.JSON202
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1SimulationGenerationsResourcesResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1SimulationGenerationsResourcesResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1SimulationGenerationsResourcesResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1SimulationGenerationsResourcesResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1SimulationGenerationsResourcesResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1SimulationGenerationsResourcesResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1SimulationGenerationsResourcesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1SimulationGenerationsResourcesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1SimulationGenerationsResourcesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1SimulationGenerationsResourcesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetV1SimulationGenerationsResourcesByGenerationIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+		Data SimulationResourceGeneration `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1SimulationGenerationsResourcesByGenerationIdResponse) GetJSON200() *struct {
+	// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+	Data SimulationResourceGeneration `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1SimulationGenerationsResourcesByGenerationIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1SimulationGenerationsResourcesByGenerationIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1SimulationGenerationsResourcesByGenerationIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1SimulationGenerationsResourcesByGenerationIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1SimulationGenerationsResourcesByGenerationIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1SimulationGenerationsResourcesByGenerationIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1SimulationGenerationsResourcesByGenerationIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON202 the response for an HTTP 202 `application/json` response
+	JSON202 *struct {
+		// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+		Data SimulationResourceGeneration `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON202 returns the response for an HTTP 202 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse) GetJSON202() *struct {
+	// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+	Data SimulationResourceGeneration `json:"data"`
+} {
+	return r.JSON202
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON202 the response for an HTTP 202 `application/json` response
+	JSON202 *struct {
+		// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+		Data SimulationResourceGeneration `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON202 returns the response for an HTTP 202 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse) GetJSON202() *struct {
+	// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+	Data SimulationResourceGeneration `json:"data"`
+} {
+	return r.JSON202
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON202 the response for an HTTP 202 `application/json` response
+	JSON202 *struct {
+		// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+		Data SimulationResourceGeneration `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON202 returns the response for an HTTP 202 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse) GetJSON202() *struct {
+	// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+	Data SimulationResourceGeneration `json:"data"`
+} {
+	return r.JSON202
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GetV1SimulationGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -114340,141 +114315,6 @@ func (c *ClientWithResponses) GetV1AgentByAgentIdPromptsByPromptIdVersionsWithRe
 	return ParseGetV1AgentByAgentIdPromptsByPromptIdVersionsResponse(rsp)
 }
 
-// GetV1AgentByAgentIdSetupWithResponse Get an agent's latest test setup
-//
-// Returns the agent's most recent test setup: its progress, the run plan it created, and every flow, metric and check it added or left out, with the reason and the source it came from.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/agent/{agentId}/setup (the `GetV1AgentByAgentIdSetup` operationId).
-func (c *ClientWithResponses) GetV1AgentByAgentIdSetupWithResponse(ctx context.Context, agentId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdSetupResponse, error) {
-	rsp, err := c.GetV1AgentByAgentIdSetup(ctx, agentId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetV1AgentByAgentIdSetupResponse(rsp)
-}
-
-// PostV1AgentByAgentIdSetupWithBodyWithResponse Set up tests for an agent
-//
-// Works out what to test for an existing agent, then creates the customer flows, metrics and run plan to test it with. It does not create or change the agent. Runs in the background: watch the `agent.setup.completed` webhook, or poll `GET /v1/agent/{agentId}/setup`. Refuses while another setup for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/agent/{agentId}/setup (the `PostV1AgentByAgentIdSetup` operationId).
-func (c *ClientWithResponses) PostV1AgentByAgentIdSetupWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupResponse, error) {
-	rsp, err := c.PostV1AgentByAgentIdSetupWithBody(ctx, agentId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1AgentByAgentIdSetupResponse(rsp)
-}
-
-// PostV1AgentByAgentIdSetupWithResponse Set up tests for an agent
-//
-// Works out what to test for an existing agent, then creates the customer flows, metrics and run plan to test it with. It does not create or change the agent. Runs in the background: watch the `agent.setup.completed` webhook, or poll `GET /v1/agent/{agentId}/setup`. Refuses while another setup for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/agent/{agentId}/setup (the `PostV1AgentByAgentIdSetup` operationId).
-func (c *ClientWithResponses) PostV1AgentByAgentIdSetupWithResponse(ctx context.Context, agentId openapi_types.UUID, body PostV1AgentByAgentIdSetupJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupResponse, error) {
-	rsp, err := c.PostV1AgentByAgentIdSetup(ctx, agentId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1AgentByAgentIdSetupResponse(rsp)
-}
-
-// GetV1AgentByAgentIdSetupBySetupIdWithResponse Get a test setup
-//
-// Returns one test setup, for example the one a webhook named.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /v1/agent/{agentId}/setup/{setupId} (the `GetV1AgentByAgentIdSetupBySetupId` operationId).
-func (c *ClientWithResponses) GetV1AgentByAgentIdSetupBySetupIdWithResponse(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1AgentByAgentIdSetupBySetupIdResponse, error) {
-	rsp, err := c.GetV1AgentByAgentIdSetupBySetupId(ctx, agentId, setupId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetV1AgentByAgentIdSetupBySetupIdResponse(rsp)
-}
-
-// PostV1AgentByAgentIdSetupBySetupIdAnswerWithBodyWithResponse Answer a test setup's question
-//
-// Answers the question a setup is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, setup goes ahead with its default.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/answer (the `PostV1AgentByAgentIdSetupBySetupIdAnswer` operationId).
-func (c *ClientWithResponses) PostV1AgentByAgentIdSetupBySetupIdAnswerWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupBySetupIdAnswerResponse, error) {
-	rsp, err := c.PostV1AgentByAgentIdSetupBySetupIdAnswerWithBody(ctx, agentId, setupId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1AgentByAgentIdSetupBySetupIdAnswerResponse(rsp)
-}
-
-// PostV1AgentByAgentIdSetupBySetupIdAnswerWithResponse Answer a test setup's question
-//
-// Answers the question a setup is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, setup goes ahead with its default.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/answer (the `PostV1AgentByAgentIdSetupBySetupIdAnswer` operationId).
-func (c *ClientWithResponses) PostV1AgentByAgentIdSetupBySetupIdAnswerWithResponse(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, body PostV1AgentByAgentIdSetupBySetupIdAnswerJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupBySetupIdAnswerResponse, error) {
-	rsp, err := c.PostV1AgentByAgentIdSetupBySetupIdAnswer(ctx, agentId, setupId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1AgentByAgentIdSetupBySetupIdAnswerResponse(rsp)
-}
-
-// PostV1AgentByAgentIdSetupBySetupIdCancelWithResponse Cancel a running test setup
-//
-// Stops a running test setup. Flows and metrics it already created are kept; no run plan is made. Refused once setup has finished.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/cancel (the `PostV1AgentByAgentIdSetupBySetupIdCancel` operationId).
-func (c *ClientWithResponses) PostV1AgentByAgentIdSetupBySetupIdCancelWithResponse(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupBySetupIdCancelResponse, error) {
-	rsp, err := c.PostV1AgentByAgentIdSetupBySetupIdCancel(ctx, agentId, setupId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1AgentByAgentIdSetupBySetupIdCancelResponse(rsp)
-}
-
-// PostV1AgentByAgentIdSetupBySetupIdGuidanceWithBodyWithResponse Guide a running test setup
-//
-// Tells a running test setup what to focus on or avoid, in your own words. It reads it on its next turn and it outranks setup's own plan. Refused once setup has finished.
-//
-// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/guidance (the `PostV1AgentByAgentIdSetupBySetupIdGuidance` operationId).
-func (c *ClientWithResponses) PostV1AgentByAgentIdSetupBySetupIdGuidanceWithBodyWithResponse(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse, error) {
-	rsp, err := c.PostV1AgentByAgentIdSetupBySetupIdGuidanceWithBody(ctx, agentId, setupId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1AgentByAgentIdSetupBySetupIdGuidanceResponse(rsp)
-}
-
-// PostV1AgentByAgentIdSetupBySetupIdGuidanceWithResponse Guide a running test setup
-//
-// Tells a running test setup what to focus on or avoid, in your own words. It reads it on its next turn and it outranks setup's own plan. Refused once setup has finished.
-//
-// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
-//
-// Corresponds with POST /v1/agent/{agentId}/setup/{setupId}/guidance (the `PostV1AgentByAgentIdSetupBySetupIdGuidance` operationId).
-func (c *ClientWithResponses) PostV1AgentByAgentIdSetupBySetupIdGuidanceWithResponse(ctx context.Context, agentId openapi_types.UUID, setupId openapi_types.UUID, body PostV1AgentByAgentIdSetupBySetupIdGuidanceJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse, error) {
-	rsp, err := c.PostV1AgentByAgentIdSetupBySetupIdGuidance(ctx, agentId, setupId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParsePostV1AgentByAgentIdSetupBySetupIdGuidanceResponse(rsp)
-}
-
 // GetV1AgentByAgentIdVersionsWithResponse List an agent's versions
 //
 // The open draft first, if there is one, then published versions newest first. Paginated: pass `pagination.nextCursor` as `after` for the next page.
@@ -118348,6 +118188,141 @@ func (c *ClientWithResponses) PutV1SimulationEnvironmentByEnvironmentIdWithRespo
 	return ParsePutV1SimulationEnvironmentByEnvironmentIdResponse(rsp)
 }
 
+// GetV1SimulationGenerationsResourcesWithResponse List simulation resource generations
+//
+// Returns the project's simulation resource generations, newest first, optionally only for some agents: each one's progress, the run plan it created, and every flow, metric and check it added or left out, with the reason and the source it came from.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/simulation/generations/resources (the `GetV1SimulationGenerationsResources` operationId).
+func (c *ClientWithResponses) GetV1SimulationGenerationsResourcesWithResponse(ctx context.Context, params *GetV1SimulationGenerationsResourcesParams, reqEditors ...RequestEditorFn) (*GetV1SimulationGenerationsResourcesResponse, error) {
+	rsp, err := c.GetV1SimulationGenerationsResources(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1SimulationGenerationsResourcesResponse(rsp)
+}
+
+// PostV1SimulationGenerationsResourcesWithBodyWithResponse Generate simulation resources
+//
+// Works out what to test for an existing agent, then creates the customer flows, metrics and checks to simulate it, and a run plan that runs them. It does not create or change the agent. It also reads the agent's recent production calls and open issues. Run it again and it builds on what earlier generations made, adding only what changed; when nothing has, it finishes straight away and says so. Runs in the background: watch the `simulation.resource_generation.completed` webhook, or poll `GET /v1/simulation/generations/resources/{generationId}`. Takes one agent for now. Refused while another generation for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/simulation/generations/resources (the `PostV1SimulationGenerationsResources` operationId).
+func (c *ClientWithResponses) PostV1SimulationGenerationsResourcesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesResponse, error) {
+	rsp, err := c.PostV1SimulationGenerationsResourcesWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1SimulationGenerationsResourcesResponse(rsp)
+}
+
+// PostV1SimulationGenerationsResourcesWithResponse Generate simulation resources
+//
+// Works out what to test for an existing agent, then creates the customer flows, metrics and checks to simulate it, and a run plan that runs them. It does not create or change the agent. It also reads the agent's recent production calls and open issues. Run it again and it builds on what earlier generations made, adding only what changed; when nothing has, it finishes straight away and says so. Runs in the background: watch the `simulation.resource_generation.completed` webhook, or poll `GET /v1/simulation/generations/resources/{generationId}`. Takes one agent for now. Refused while another generation for the agent is running. Needs the 'simulation:create' and 'metric:create' permissions. Exploration also needs 'simulation:run', and is turned off for keys without it unless explore.enabled is set.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/simulation/generations/resources (the `PostV1SimulationGenerationsResources` operationId).
+func (c *ClientWithResponses) PostV1SimulationGenerationsResourcesWithResponse(ctx context.Context, body PostV1SimulationGenerationsResourcesJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesResponse, error) {
+	rsp, err := c.PostV1SimulationGenerationsResources(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1SimulationGenerationsResourcesResponse(rsp)
+}
+
+// GetV1SimulationGenerationsResourcesByGenerationIdWithResponse Get a simulation resource generation
+//
+// Returns one simulation resource generation, for example the one a webhook named.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/simulation/generations/resources/{generationId} (the `GetV1SimulationGenerationsResourcesByGenerationId` operationId).
+func (c *ClientWithResponses) GetV1SimulationGenerationsResourcesByGenerationIdWithResponse(ctx context.Context, generationId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1SimulationGenerationsResourcesByGenerationIdResponse, error) {
+	rsp, err := c.GetV1SimulationGenerationsResourcesByGenerationId(ctx, generationId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1SimulationGenerationsResourcesByGenerationIdResponse(rsp)
+}
+
+// PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithBodyWithResponse Answer a simulation resource generation's question
+//
+// Answers the question a simulation resource generation is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, it goes ahead with its default.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/simulation/generations/resources/{generationId}/answer (the `PostV1SimulationGenerationsResourcesByGenerationIdAnswer` operationId).
+func (c *ClientWithResponses) PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithBodyWithResponse(ctx context.Context, generationId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse, error) {
+	rsp, err := c.PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithBody(ctx, generationId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse(rsp)
+}
+
+// PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithResponse Answer a simulation resource generation's question
+//
+// Answers the question a simulation resource generation is waiting on (status NEEDS_INPUT). If nobody answers within 15 minutes, it goes ahead with its default.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/simulation/generations/resources/{generationId}/answer (the `PostV1SimulationGenerationsResourcesByGenerationIdAnswer` operationId).
+func (c *ClientWithResponses) PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithResponse(ctx context.Context, generationId openapi_types.UUID, body PostV1SimulationGenerationsResourcesByGenerationIdAnswerJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse, error) {
+	rsp, err := c.PostV1SimulationGenerationsResourcesByGenerationIdAnswer(ctx, generationId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse(rsp)
+}
+
+// PostV1SimulationGenerationsResourcesByGenerationIdCancelWithResponse Cancel a running simulation resource generation
+//
+// Stops a running simulation resource generation. Flows and metrics it already created are kept; no run plan is made. Refused once the generation has finished.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/simulation/generations/resources/{generationId}/cancel (the `PostV1SimulationGenerationsResourcesByGenerationIdCancel` operationId).
+func (c *ClientWithResponses) PostV1SimulationGenerationsResourcesByGenerationIdCancelWithResponse(ctx context.Context, generationId openapi_types.UUID, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse, error) {
+	rsp, err := c.PostV1SimulationGenerationsResourcesByGenerationIdCancel(ctx, generationId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1SimulationGenerationsResourcesByGenerationIdCancelResponse(rsp)
+}
+
+// PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithBodyWithResponse Guide a running simulation resource generation
+//
+// Tells a running simulation resource generation what to focus on or avoid, in your own words. It reads it on its next turn and it outranks its own plan. Refused once the generation has finished.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/simulation/generations/resources/{generationId}/guidance (the `PostV1SimulationGenerationsResourcesByGenerationIdGuidance` operationId).
+func (c *ClientWithResponses) PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithBodyWithResponse(ctx context.Context, generationId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse, error) {
+	rsp, err := c.PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithBody(ctx, generationId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse(rsp)
+}
+
+// PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithResponse Guide a running simulation resource generation
+//
+// Tells a running simulation resource generation what to focus on or avoid, in your own words. It reads it on its next turn and it outranks its own plan. Refused once the generation has finished.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/simulation/generations/resources/{generationId}/guidance (the `PostV1SimulationGenerationsResourcesByGenerationIdGuidance` operationId).
+func (c *ClientWithResponses) PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithResponse(ctx context.Context, generationId openapi_types.UUID, body PostV1SimulationGenerationsResourcesByGenerationIdGuidanceJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse, error) {
+	rsp, err := c.PostV1SimulationGenerationsResourcesByGenerationIdGuidance(ctx, generationId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse(rsp)
+}
+
 // GetV1SimulationGroupWithResponse List plan groups
 //
 // Returns the saved simulation groups in the project, most recently edited first, each with its plans in run order and notification settings.
@@ -119488,7 +119463,28 @@ func ParsePostV1AgentResponse(rsp *http.Response) (*PostV1AgentResponse, error) 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
-			Data CreateAgentResponse `json:"data"`
+			Data struct {
+				// CreatedAt Creation timestamp in ISO 8601 format
+				CreatedAt string `json:"createdAt"`
+
+				// CustomId Custom identifier for the agent
+				CustomId *string `json:"customId"`
+
+				// Description Description of the agent
+				Description *string `json:"description"`
+
+				// Id Unique identifier of the agent
+				Id openapi_types.UUID `json:"id"`
+
+				// Industry The industry the agent serves
+				Industry *PostV1Agent201JSONResponseBodyDataIndustry `json:"industry"`
+
+				// Name Name of the agent
+				Name string `json:"name"`
+
+				// UpdatedAt Last update timestamp in ISO 8601 format
+				UpdatedAt string `json:"updatedAt"`
+			} `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -120987,383 +120983,6 @@ func ParseGetV1AgentByAgentIdPromptsByPromptIdVersionsResponse(rsp *http.Respons
 			return nil, err
 		}
 		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetV1AgentByAgentIdSetupResponse parses an HTTP response from a GetV1AgentByAgentIdSetupWithResponse call
-func ParseGetV1AgentByAgentIdSetupResponse(rsp *http.Response) (*GetV1AgentByAgentIdSetupResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetV1AgentByAgentIdSetupResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Data The tests Roark generated for an agent, and why
-			Data AgentSetup `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParsePostV1AgentByAgentIdSetupResponse parses an HTTP response from a PostV1AgentByAgentIdSetupWithResponse call
-func ParsePostV1AgentByAgentIdSetupResponse(rsp *http.Response) (*PostV1AgentByAgentIdSetupResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &PostV1AgentByAgentIdSetupResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest struct {
-			// Data The tests Roark generated for an agent, and why
-			Data AgentSetup `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON202 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON409 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetV1AgentByAgentIdSetupBySetupIdResponse parses an HTTP response from a GetV1AgentByAgentIdSetupBySetupIdWithResponse call
-func ParseGetV1AgentByAgentIdSetupBySetupIdResponse(rsp *http.Response) (*GetV1AgentByAgentIdSetupBySetupIdResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetV1AgentByAgentIdSetupBySetupIdResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Data The tests Roark generated for an agent, and why
-			Data AgentSetup `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParsePostV1AgentByAgentIdSetupBySetupIdAnswerResponse parses an HTTP response from a PostV1AgentByAgentIdSetupBySetupIdAnswerWithResponse call
-func ParsePostV1AgentByAgentIdSetupBySetupIdAnswerResponse(rsp *http.Response) (*PostV1AgentByAgentIdSetupBySetupIdAnswerResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &PostV1AgentByAgentIdSetupBySetupIdAnswerResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest struct {
-			// Data The tests Roark generated for an agent, and why
-			Data AgentSetup `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON202 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON409 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParsePostV1AgentByAgentIdSetupBySetupIdCancelResponse parses an HTTP response from a PostV1AgentByAgentIdSetupBySetupIdCancelWithResponse call
-func ParsePostV1AgentByAgentIdSetupBySetupIdCancelResponse(rsp *http.Response) (*PostV1AgentByAgentIdSetupBySetupIdCancelResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &PostV1AgentByAgentIdSetupBySetupIdCancelResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest struct {
-			// Data The tests Roark generated for an agent, and why
-			Data AgentSetup `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON202 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON409 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParsePostV1AgentByAgentIdSetupBySetupIdGuidanceResponse parses an HTTP response from a PostV1AgentByAgentIdSetupBySetupIdGuidanceWithResponse call
-func ParsePostV1AgentByAgentIdSetupBySetupIdGuidanceResponse(rsp *http.Response) (*PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &PostV1AgentByAgentIdSetupBySetupIdGuidanceResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest struct {
-			// Data The tests Roark generated for an agent, and why
-			Data AgentSetup `json:"data"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON202 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse
@@ -134598,6 +134217,389 @@ func ParsePutV1SimulationEnvironmentByEnvironmentIdResponse(rsp *http.Response) 
 			return nil, err
 		}
 		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1SimulationGenerationsResourcesResponse parses an HTTP response from a GetV1SimulationGenerationsResourcesWithResponse call
+func ParseGetV1SimulationGenerationsResourcesResponse(rsp *http.Response) (*GetV1SimulationGenerationsResourcesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1SimulationGenerationsResourcesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []SimulationResourceGeneration `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1SimulationGenerationsResourcesResponse parses an HTTP response from a PostV1SimulationGenerationsResourcesWithResponse call
+func ParsePostV1SimulationGenerationsResourcesResponse(rsp *http.Response) (*PostV1SimulationGenerationsResourcesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1SimulationGenerationsResourcesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest struct {
+			// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+			Data SimulationResourceGeneration `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1SimulationGenerationsResourcesByGenerationIdResponse parses an HTTP response from a GetV1SimulationGenerationsResourcesByGenerationIdWithResponse call
+func ParseGetV1SimulationGenerationsResourcesByGenerationIdResponse(rsp *http.Response) (*GetV1SimulationGenerationsResourcesByGenerationIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1SimulationGenerationsResourcesByGenerationIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+			Data SimulationResourceGeneration `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse parses an HTTP response from a PostV1SimulationGenerationsResourcesByGenerationIdAnswerWithResponse call
+func ParsePostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse(rsp *http.Response) (*PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1SimulationGenerationsResourcesByGenerationIdAnswerResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest struct {
+			// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+			Data SimulationResourceGeneration `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1SimulationGenerationsResourcesByGenerationIdCancelResponse parses an HTTP response from a PostV1SimulationGenerationsResourcesByGenerationIdCancelWithResponse call
+func ParsePostV1SimulationGenerationsResourcesByGenerationIdCancelResponse(rsp *http.Response) (*PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1SimulationGenerationsResourcesByGenerationIdCancelResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest struct {
+			// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+			Data SimulationResourceGeneration `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse parses an HTTP response from a PostV1SimulationGenerationsResourcesByGenerationIdGuidanceWithResponse call
+func ParsePostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse(rsp *http.Response) (*PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1SimulationGenerationsResourcesByGenerationIdGuidanceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest struct {
+			// Data The simulation resources Roark generated for agents: the flows, metrics, checks and run plan, and why
+			Data SimulationResourceGeneration `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest ErrorResponse

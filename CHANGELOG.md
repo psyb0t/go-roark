@@ -2,6 +2,15 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.21.0, 2026-11-19
+
+- Add `GetV1SimulationPhoneNumber` to `Client` and `ClientWithResponses` (as `GetV1SimulationPhoneNumberWithResponse`), plus `NewGetV1SimulationPhoneNumberRequest`, `ParseGetV1SimulationPhoneNumberResponse`, `GetV1SimulationPhoneNumberResponse` and the `SimulationPhoneNumberResponse` type (`E164`, `LocalityCode`, `ReservedForProject`).
+- Add the `GO_HIGH_LEVEL` calendar provider, with `GoHighLevelLocation` on `PostV1ConnectionsCalendarJSONBody` and `PatchV1ConnectionsCalendarByConnectionIdJSONBody`, and `GetV1ConnectionsCalendarParamsProviderGOHIGHLEVEL` for filtering.
+- Add a `DataTarget3` variant, with `As`, `From` and `Merge` helpers, to the calendar target responses for list, get, create and update.
+- Add `GoHighLevelCalendar` to `ToolCalendarAppointmentType`, to `ToolHandler1.AppointmentTypes` items and to `ToolBody.Calendar.AppointmentTypes` items. The anonymous struct types of `ToolHandler1.AppointmentTypes` and `ToolBody.Calendar` changed, so code assigning those values needs updating.
+- Add `DraftRunPlanId` to `SimulationResourceGeneration`, the quick test run plan, and the `SimulationResourceGenerationItemActionUPDATED` value.
+- `ClientInterface` and `ClientWithResponsesInterface` gained methods, so custom implementations must add `GetV1SimulationPhoneNumber` and `GetV1SimulationPhoneNumberWithResponse`.
+
 ## v0.20.0, 2026-11-18
 
 - Breaking: removed the agent setup endpoints under `/v1/agent/{agentId}/setup`: `GetV1AgentByAgentIdSetup`, `PostV1AgentByAgentIdSetup`, `GetV1AgentByAgentIdSetupBySetupId`, `PostV1AgentByAgentIdSetupBySetupIdAnswer`, `PostV1AgentByAgentIdSetupBySetupIdCancel` and `PostV1AgentByAgentIdSetupBySetupIdGuidance`, with their `WithBody` and `WithResponse` variants.

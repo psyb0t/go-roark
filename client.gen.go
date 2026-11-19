@@ -18815,6 +18815,7 @@ func (e SimulationResourceGenerationFailedWebhookVersion) Valid() bool {
 const (
 	SimulationResourceGenerationItemActionCREATED SimulationResourceGenerationItemAction = "CREATED"
 	SimulationResourceGenerationItemActionSKIPPED SimulationResourceGenerationItemAction = "SKIPPED"
+	SimulationResourceGenerationItemActionUPDATED SimulationResourceGenerationItemAction = "UPDATED"
 )
 
 // Valid indicates whether the value is a known member of the SimulationResourceGenerationItemAction enum.
@@ -18823,6 +18824,8 @@ func (e SimulationResourceGenerationItemAction) Valid() bool {
 	case SimulationResourceGenerationItemActionCREATED:
 		return true
 	case SimulationResourceGenerationItemActionSKIPPED:
+		return true
+	case SimulationResourceGenerationItemActionUPDATED:
 		return true
 	default:
 		return false
@@ -25227,9 +25230,10 @@ func (e GetV1ChatByIdTranscript200JSONResponseBodyDataParticipants3Type) Valid()
 
 // Defines values for GetV1ConnectionsCalendarParamsProvider.
 const (
-	GetV1ConnectionsCalendarParamsProviderCALCOM   GetV1ConnectionsCalendarParamsProvider = "CAL_COM"
-	GetV1ConnectionsCalendarParamsProviderCALENDLY GetV1ConnectionsCalendarParamsProvider = "CALENDLY"
-	GetV1ConnectionsCalendarParamsProviderGOOGLE   GetV1ConnectionsCalendarParamsProvider = "GOOGLE"
+	GetV1ConnectionsCalendarParamsProviderCALCOM      GetV1ConnectionsCalendarParamsProvider = "CAL_COM"
+	GetV1ConnectionsCalendarParamsProviderCALENDLY    GetV1ConnectionsCalendarParamsProvider = "CALENDLY"
+	GetV1ConnectionsCalendarParamsProviderGOHIGHLEVEL GetV1ConnectionsCalendarParamsProvider = "GO_HIGH_LEVEL"
+	GetV1ConnectionsCalendarParamsProviderGOOGLE      GetV1ConnectionsCalendarParamsProvider = "GOOGLE"
 )
 
 // Valid indicates whether the value is a known member of the GetV1ConnectionsCalendarParamsProvider enum.
@@ -25238,6 +25242,8 @@ func (e GetV1ConnectionsCalendarParamsProvider) Valid() bool {
 	case GetV1ConnectionsCalendarParamsProviderCALCOM:
 		return true
 	case GetV1ConnectionsCalendarParamsProviderCALENDLY:
+		return true
+	case GetV1ConnectionsCalendarParamsProviderGOHIGHLEVEL:
 		return true
 	case GetV1ConnectionsCalendarParamsProviderGOOGLE:
 		return true
@@ -25314,9 +25320,10 @@ func (e GetV1ConnectionsCalendar200JSONResponseBodyDataCapabilitiesSlotHold) Val
 
 // Defines values for GetV1ConnectionsCalendar200JSONResponseBodyDataProvider.
 const (
-	GetV1ConnectionsCalendar200JSONResponseBodyDataProviderCALCOM   GetV1ConnectionsCalendar200JSONResponseBodyDataProvider = "CAL_COM"
-	GetV1ConnectionsCalendar200JSONResponseBodyDataProviderCALENDLY GetV1ConnectionsCalendar200JSONResponseBodyDataProvider = "CALENDLY"
-	GetV1ConnectionsCalendar200JSONResponseBodyDataProviderGOOGLE   GetV1ConnectionsCalendar200JSONResponseBodyDataProvider = "GOOGLE"
+	GetV1ConnectionsCalendar200JSONResponseBodyDataProviderCALCOM      GetV1ConnectionsCalendar200JSONResponseBodyDataProvider = "CAL_COM"
+	GetV1ConnectionsCalendar200JSONResponseBodyDataProviderCALENDLY    GetV1ConnectionsCalendar200JSONResponseBodyDataProvider = "CALENDLY"
+	GetV1ConnectionsCalendar200JSONResponseBodyDataProviderGOHIGHLEVEL GetV1ConnectionsCalendar200JSONResponseBodyDataProvider = "GO_HIGH_LEVEL"
+	GetV1ConnectionsCalendar200JSONResponseBodyDataProviderGOOGLE      GetV1ConnectionsCalendar200JSONResponseBodyDataProvider = "GOOGLE"
 )
 
 // Valid indicates whether the value is a known member of the GetV1ConnectionsCalendar200JSONResponseBodyDataProvider enum.
@@ -25325,6 +25332,8 @@ func (e GetV1ConnectionsCalendar200JSONResponseBodyDataProvider) Valid() bool {
 	case GetV1ConnectionsCalendar200JSONResponseBodyDataProviderCALCOM:
 		return true
 	case GetV1ConnectionsCalendar200JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case GetV1ConnectionsCalendar200JSONResponseBodyDataProviderGOHIGHLEVEL:
 		return true
 	case GetV1ConnectionsCalendar200JSONResponseBodyDataProviderGOOGLE:
 		return true
@@ -25356,9 +25365,10 @@ func (e GetV1ConnectionsCalendar200JSONResponseBodyDataStatus) Valid() bool {
 
 // Defines values for PostV1ConnectionsCalendarJSONBodyProvider.
 const (
-	PostV1ConnectionsCalendarJSONBodyProviderCALCOM   PostV1ConnectionsCalendarJSONBodyProvider = "CAL_COM"
-	PostV1ConnectionsCalendarJSONBodyProviderCALENDLY PostV1ConnectionsCalendarJSONBodyProvider = "CALENDLY"
-	PostV1ConnectionsCalendarJSONBodyProviderGOOGLE   PostV1ConnectionsCalendarJSONBodyProvider = "GOOGLE"
+	PostV1ConnectionsCalendarJSONBodyProviderCALCOM      PostV1ConnectionsCalendarJSONBodyProvider = "CAL_COM"
+	PostV1ConnectionsCalendarJSONBodyProviderCALENDLY    PostV1ConnectionsCalendarJSONBodyProvider = "CALENDLY"
+	PostV1ConnectionsCalendarJSONBodyProviderGOHIGHLEVEL PostV1ConnectionsCalendarJSONBodyProvider = "GO_HIGH_LEVEL"
+	PostV1ConnectionsCalendarJSONBodyProviderGOOGLE      PostV1ConnectionsCalendarJSONBodyProvider = "GOOGLE"
 )
 
 // Valid indicates whether the value is a known member of the PostV1ConnectionsCalendarJSONBodyProvider enum.
@@ -25367,6 +25377,8 @@ func (e PostV1ConnectionsCalendarJSONBodyProvider) Valid() bool {
 	case PostV1ConnectionsCalendarJSONBodyProviderCALCOM:
 		return true
 	case PostV1ConnectionsCalendarJSONBodyProviderCALENDLY:
+		return true
+	case PostV1ConnectionsCalendarJSONBodyProviderGOHIGHLEVEL:
 		return true
 	case PostV1ConnectionsCalendarJSONBodyProviderGOOGLE:
 		return true
@@ -25443,9 +25455,10 @@ func (e PostV1ConnectionsCalendar201JSONResponseBodyDataCapabilitiesSlotHold) Va
 
 // Defines values for PostV1ConnectionsCalendar201JSONResponseBodyDataProvider.
 const (
-	PostV1ConnectionsCalendar201JSONResponseBodyDataProviderCALCOM   PostV1ConnectionsCalendar201JSONResponseBodyDataProvider = "CAL_COM"
-	PostV1ConnectionsCalendar201JSONResponseBodyDataProviderCALENDLY PostV1ConnectionsCalendar201JSONResponseBodyDataProvider = "CALENDLY"
-	PostV1ConnectionsCalendar201JSONResponseBodyDataProviderGOOGLE   PostV1ConnectionsCalendar201JSONResponseBodyDataProvider = "GOOGLE"
+	PostV1ConnectionsCalendar201JSONResponseBodyDataProviderCALCOM      PostV1ConnectionsCalendar201JSONResponseBodyDataProvider = "CAL_COM"
+	PostV1ConnectionsCalendar201JSONResponseBodyDataProviderCALENDLY    PostV1ConnectionsCalendar201JSONResponseBodyDataProvider = "CALENDLY"
+	PostV1ConnectionsCalendar201JSONResponseBodyDataProviderGOHIGHLEVEL PostV1ConnectionsCalendar201JSONResponseBodyDataProvider = "GO_HIGH_LEVEL"
+	PostV1ConnectionsCalendar201JSONResponseBodyDataProviderGOOGLE      PostV1ConnectionsCalendar201JSONResponseBodyDataProvider = "GOOGLE"
 )
 
 // Valid indicates whether the value is a known member of the PostV1ConnectionsCalendar201JSONResponseBodyDataProvider enum.
@@ -25454,6 +25467,8 @@ func (e PostV1ConnectionsCalendar201JSONResponseBodyDataProvider) Valid() bool {
 	case PostV1ConnectionsCalendar201JSONResponseBodyDataProviderCALCOM:
 		return true
 	case PostV1ConnectionsCalendar201JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case PostV1ConnectionsCalendar201JSONResponseBodyDataProviderGOHIGHLEVEL:
 		return true
 	case PostV1ConnectionsCalendar201JSONResponseBodyDataProviderGOOGLE:
 		return true
@@ -25566,9 +25581,10 @@ func (e GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataCapabilitie
 
 // Defines values for GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider.
 const (
-	GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderCALCOM   GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "CAL_COM"
-	GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderCALENDLY GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "CALENDLY"
-	GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderGOOGLE   GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "GOOGLE"
+	GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderCALCOM      GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "CAL_COM"
+	GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderCALENDLY    GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "CALENDLY"
+	GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderGOHIGHLEVEL GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "GO_HIGH_LEVEL"
+	GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderGOOGLE      GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "GOOGLE"
 )
 
 // Valid indicates whether the value is a known member of the GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider enum.
@@ -25577,6 +25593,8 @@ func (e GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider) V
 	case GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderCALCOM:
 		return true
 	case GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderGOHIGHLEVEL:
 		return true
 	case GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderGOOGLE:
 		return true
@@ -25674,9 +25692,10 @@ func (e PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataCapabilit
 
 // Defines values for PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider.
 const (
-	PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderCALCOM   PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "CAL_COM"
-	PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderCALENDLY PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "CALENDLY"
-	PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderGOOGLE   PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "GOOGLE"
+	PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderCALCOM      PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "CAL_COM"
+	PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderCALENDLY    PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "CALENDLY"
+	PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderGOHIGHLEVEL PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "GO_HIGH_LEVEL"
+	PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderGOOGLE      PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider = "GOOGLE"
 )
 
 // Valid indicates whether the value is a known member of the PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider enum.
@@ -25685,6 +25704,8 @@ func (e PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider)
 	case PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderCALCOM:
 		return true
 	case PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderGOHIGHLEVEL:
 		return true
 	case PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProviderGOOGLE:
 		return true
@@ -25782,9 +25803,10 @@ func (e PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataCapab
 
 // Defines values for PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider.
 const (
-	PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderCALCOM   PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider = "CAL_COM"
-	PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderCALENDLY PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider = "CALENDLY"
-	PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderGOOGLE   PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider = "GOOGLE"
+	PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderCALCOM      PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider = "CAL_COM"
+	PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderCALENDLY    PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider = "CALENDLY"
+	PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderGOHIGHLEVEL PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider = "GO_HIGH_LEVEL"
+	PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderGOOGLE      PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider = "GOOGLE"
 )
 
 // Valid indicates whether the value is a known member of the PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider enum.
@@ -25793,6 +25815,8 @@ func (e PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvi
 	case PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderCALCOM:
 		return true
 	case PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderCALENDLY:
+		return true
+	case PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderGOHIGHLEVEL:
 		return true
 	case PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProviderGOOGLE:
 		return true
@@ -25867,6 +25891,21 @@ func (e GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarg
 	}
 }
 
+// Defines values for GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3Provider.
+const (
+	GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3ProviderGOHIGHLEVEL GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3Provider = "GO_HIGH_LEVEL"
+)
+
+// Valid indicates whether the value is a known member of the GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3Provider enum.
+func (e GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3Provider) Valid() bool {
+	switch e {
+	case GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3ProviderGOHIGHLEVEL:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0Provider.
 const (
 	PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0ProviderCALCOM PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget0Provider = "CAL_COM"
@@ -25906,6 +25945,21 @@ const (
 func (e PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2Provider) Valid() bool {
 	switch e {
 	case PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2ProviderCALENDLY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3Provider.
+const (
+	PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3ProviderGOHIGHLEVEL PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3Provider = "GO_HIGH_LEVEL"
+)
+
+// Valid indicates whether the value is a known member of the PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3Provider enum.
+func (e PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3Provider) Valid() bool {
+	switch e {
+	case PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3ProviderGOHIGHLEVEL:
 		return true
 	default:
 		return false
@@ -25972,6 +26026,21 @@ func (e GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBo
 	}
 }
 
+// Defines values for GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider.
+const (
+	GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3ProviderGOHIGHLEVEL GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider = "GO_HIGH_LEVEL"
+)
+
+// Valid indicates whether the value is a known member of the GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider enum.
+func (e GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider) Valid() bool {
+	switch e {
+	case GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3ProviderGOHIGHLEVEL:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider.
 const (
 	PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0ProviderCALCOM PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget0Provider = "CAL_COM"
@@ -26011,6 +26080,21 @@ const (
 func (e PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider) Valid() bool {
 	switch e {
 	case PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2ProviderCALENDLY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider.
+const (
+	PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3ProviderGOHIGHLEVEL PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider = "GO_HIGH_LEVEL"
+)
+
+// Valid indicates whether the value is a known member of the PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider enum.
+func (e PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider) Valid() bool {
+	switch e {
+	case PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3ProviderGOHIGHLEVEL:
 		return true
 	default:
 		return false
@@ -43486,6 +43570,22 @@ type SimulationNotifyConfig_Email struct {
 	union json.RawMessage
 }
 
+// SimulationPhoneNumberResponse A number Roark may place simulation calls from
+type SimulationPhoneNumberResponse struct {
+	// E164 The number in E.164 format
+	//
+	// Example: +14155550123
+	E164 string `json:"e164"`
+
+	// LocalityCode ISO 3166-2 code of the region the number is from, when known
+	//
+	// Example: US-CA
+	LocalityCode *string `json:"localityCode"`
+
+	// ReservedForProject True when the number is reserved for this project: only personas that pin it call from it. False for the shared pool, which any simulation call may use.
+	ReservedForProject bool `json:"reservedForProject"`
+}
+
 // SimulationPlanAgentEndpointConfig defines model for SimulationPlanAgentEndpointConfig.
 type SimulationPlanAgentEndpointConfig struct {
 	Agent       string                                      `json:"agent"`
@@ -43691,8 +43791,11 @@ type SimulationResourceGeneration struct {
 	Capabilities []SimulationResourceGenerationCapabilities `json:"capabilities"`
 	CompletedAt  *string                                    `json:"completedAt"`
 	CreatedAt    string                                     `json:"createdAt"`
-	ErrorMessage *string                                    `json:"errorMessage"`
-	Explore      struct {
+
+	// DraftRunPlanId The quick test: a smaller run plan built from the agent’s own material before Roark calls the agent. You can start it while the generation is still running. Null when the generation does not call the agent.
+	DraftRunPlanId *openapi_types.UUID `json:"draftRunPlanId"`
+	ErrorMessage   *string             `json:"errorMessage"`
+	Explore        struct {
 		ConversationsUsed      int  `json:"conversationsUsed"`
 		Enabled                bool `json:"enabled"`
 		MaxConversationMinutes int  `json:"maxConversationMinutes"`
@@ -43710,7 +43813,7 @@ type SimulationResourceGeneration struct {
 	// Question The question the generation is waiting on, while NEEDS_INPUT
 	Question *SimulationResourceGenerationQuestion `json:"question"`
 
-	// RunPlanId The run plan to start once the generation completes
+	// RunPlanId The full suite: the run plan to start once the generation completes
 	RunPlanId *openapi_types.UUID `json:"runPlanId"`
 
 	// Status PENDING, RUNNING, NEEDS_INPUT (waiting on a question; it goes ahead with the default if nobody answers), COMPLETED, FAILED or CANCELLED
@@ -43849,7 +43952,7 @@ type SimulationResourceGenerationFailedWebhookVersion string
 
 // SimulationResourceGenerationItem Something the generation created or chose to leave out, and why
 type SimulationResourceGenerationItem struct {
-	// Action CREATED, or SKIPPED with the reason
+	// Action CREATED, SKIPPED with the reason, or UPDATED when scenarios were added to a flow it built
 	Action     SimulationResourceGenerationItemAction      `json:"action"`
 	Capability *SimulationResourceGenerationItemCapability `json:"capability"`
 	Id         openapi_types.UUID                          `json:"id"`
@@ -43870,7 +43973,7 @@ type SimulationResourceGenerationItem struct {
 	Source     SimulationResourceGenerationItemSource `json:"source"`
 }
 
-// SimulationResourceGenerationItemAction CREATED, or SKIPPED with the reason
+// SimulationResourceGenerationItemAction CREATED, SKIPPED with the reason, or UPDATED when scenarios were added to a flow it built
 type SimulationResourceGenerationItemAction string
 
 // SimulationResourceGenerationItemCapability defines model for SimulationResourceGenerationItem.Capability.
@@ -45437,6 +45540,9 @@ type ToolBody struct {
 			// EventTypeUri For Calendly: the event type to book, by URI
 			EventTypeUri *string `json:"eventTypeUri,omitempty"`
 
+			// GoHighLevelCalendar For GoHighLevel: the calendar to book into, by its own id
+			GoHighLevelCalendar *string `json:"goHighLevelCalendar,omitempty"`
+
 			// Name Example: checkup
 			Name      string  `json:"name"`
 			WhenToUse *string `json:"whenToUse,omitempty"`
@@ -45547,6 +45653,9 @@ type ToolCalendarAppointmentType struct {
 	// EventTypeUri For Calendly: the event type it books, which Calendly names by URI
 	EventTypeUri *string `json:"eventTypeUri"`
 
+	// GoHighLevelCalendar For GoHighLevel: the calendar it books into, by its own id
+	GoHighLevelCalendar *string `json:"goHighLevelCalendar"`
+
 	// Name What the agent passes to name it
 	//
 	// Example: checkup
@@ -45616,12 +45725,13 @@ type ToolHandler0Type string
 // ToolHandler1 defines model for ToolHandler.1.
 type ToolHandler1 struct {
 	AppointmentTypes []struct {
-		CalendarTarget  *string `json:"calendarTarget,omitempty"`
-		DurationMinutes *int    `json:"durationMinutes,omitempty"`
-		EventTypeId     *int    `json:"eventTypeId,omitempty"`
-		EventTypeUri    *string `json:"eventTypeUri,omitempty"`
-		Name            string  `json:"name"`
-		WhenToUse       *string `json:"whenToUse,omitempty"`
+		CalendarTarget      *string `json:"calendarTarget,omitempty"`
+		DurationMinutes     *int    `json:"durationMinutes,omitempty"`
+		EventTypeId         *int    `json:"eventTypeId,omitempty"`
+		EventTypeUri        *string `json:"eventTypeUri,omitempty"`
+		GoHighLevelCalendar *string `json:"goHighLevelCalendar,omitempty"`
+		Name                string  `json:"name"`
+		WhenToUse           *string `json:"whenToUse,omitempty"`
 	} `json:"appointmentTypes"`
 	CalendarConnection openapi_types.UUID    `json:"calendarConnection"`
 	Operation          ToolHandler1Operation `json:"operation"`
@@ -48434,13 +48544,16 @@ type GetV1ConnectionsCalendar200JSONResponseBodyDataStatus string
 
 // PostV1ConnectionsCalendarJSONBody defines parameters for PostV1ConnectionsCalendar.
 type PostV1ConnectionsCalendarJSONBody struct {
-	// ApiKey The provider account’s API key. For CAL_COM, a Cal.com API key (starts with `cal_`). It is verified against the provider before anything is stored, so an invalid key is a 400 and no connection is created. Stored encrypted and never returned.
+	// ApiKey The provider account’s API key. For CAL_COM, a Cal.com API key (starts with `cal_`). For GO_HIGH_LEVEL, a sub-account Private Integration Token, which must carry the `calendars.readonly`, `calendars/events.readonly`, `calendars/events.write`, `contacts.readonly`, `contacts.write` and `locations.readonly` scopes. It is verified against the provider before anything is stored, so an invalid key is a 400 and no connection is created. Stored encrypted and never returned.
 	ApiKey string `json:"apiKey"`
+
+	// GoHighLevelLocation Required for GO_HIGH_LEVEL and ignored by every other provider: the sub-account the token belongs to, for example `ve9EPM428h8vShlRW1KT`. A Private Integration Token does not name its own sub-account and every calendar call needs one, so the two are stored and verified together: a token minted in a different sub-account is a 400.
+	GoHighLevelLocation *string `json:"goHighLevelLocation,omitempty"`
 
 	// Label Customer-facing name for this account, unique within the project. Required.
 	Label string `json:"label"`
 
-	// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+	// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 	Provider PostV1ConnectionsCalendarJSONBodyProvider `json:"provider"`
 
 	// Timezone The named IANA timezone to offer slots in, for example `America/Los_Angeles`. Omit to adopt the provider account’s own timezone. A fixed offset such as `-08:00` is rejected: it does not observe DST.
@@ -48515,6 +48628,9 @@ type PatchV1ConnectionsCalendarByConnectionIdJSONBody struct {
 	// ApiKey Rotate the credential. The new key is verified before it is stored, and a verified key returns the connection to ACTIVE, which is how a connection recovers from INVALID_CREDENTIALS.
 	ApiKey *string `json:"apiKey,omitempty"`
 
+	// GoHighLevelLocation Only with `apiKey`, and only for GO_HIGH_LEVEL: the sub-account the rotated token belongs to. Required there because the token and the sub-account are one credential, so a rotation has to name both.
+	GoHighLevelLocation *string `json:"goHighLevelLocation,omitempty"`
+
 	// Label Rename the connection.
 	Label *string `json:"label,omitempty"`
 
@@ -48580,6 +48696,19 @@ type GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2
 
 // GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2Provider defines parameters for GetV1ConnectionsCalendarByConnectionIdTargets.
 type GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget2Provider string
+
+// GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3 defines parameters for GetV1ConnectionsCalendarByConnectionIdTargets.
+type GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3 struct {
+	// DurationMinutes The length to book, for a calendar offering the booker a choice. GoHighLevel takes it on the availability read, so it decides which slots are offered. Omit to use the calendar’s own length.
+	DurationMinutes *int `json:"durationMinutes,omitempty"`
+
+	// GoHighLevelCalendar The calendar, by its own GoHighLevel id.
+	GoHighLevelCalendar string                                                                              `json:"goHighLevelCalendar"`
+	Provider            GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3Provider `json:"provider"`
+}
+
+// GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3Provider defines parameters for GetV1ConnectionsCalendarByConnectionIdTargets.
+type GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3Provider string
 
 // GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target defines parameters for GetV1ConnectionsCalendarByConnectionIdTargets.
 type GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target struct {
@@ -48658,6 +48787,19 @@ type PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget
 // PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2Provider defines parameters for PostV1ConnectionsCalendarByConnectionIdTargets.
 type PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2Provider string
 
+// PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3 defines parameters for PostV1ConnectionsCalendarByConnectionIdTargets.
+type PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3 struct {
+	// DurationMinutes The length to book, for a calendar offering the booker a choice. GoHighLevel takes it on the availability read, so it decides which slots are offered. Omit to use the calendar’s own length.
+	DurationMinutes *int `json:"durationMinutes,omitempty"`
+
+	// GoHighLevelCalendar The calendar, by its own GoHighLevel id.
+	GoHighLevelCalendar string                                                                               `json:"goHighLevelCalendar"`
+	Provider            PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3Provider `json:"provider"`
+}
+
+// PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3Provider defines parameters for PostV1ConnectionsCalendarByConnectionIdTargets.
+type PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3Provider string
+
 // PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target defines parameters for PostV1ConnectionsCalendarByConnectionIdTargets.
 type PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target struct {
 	union json.RawMessage
@@ -48694,6 +48836,19 @@ type GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyD
 
 // GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider defines parameters for GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId.
 type GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider string
+
+// GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3 defines parameters for GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId.
+type GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3 struct {
+	// DurationMinutes The length to book, for a calendar offering the booker a choice. GoHighLevel takes it on the availability read, so it decides which slots are offered. Omit to use the calendar’s own length.
+	DurationMinutes *int `json:"durationMinutes,omitempty"`
+
+	// GoHighLevelCalendar The calendar, by its own GoHighLevel id.
+	GoHighLevelCalendar string                                                                                        `json:"goHighLevelCalendar"`
+	Provider            GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider `json:"provider"`
+}
+
+// GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider defines parameters for GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId.
+type GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider string
 
 // GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target defines parameters for GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId.
 type GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target struct {
@@ -48766,6 +48921,19 @@ type PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyD
 
 // PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider defines parameters for PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId.
 type PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2Provider string
+
+// PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3 defines parameters for PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId.
+type PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3 struct {
+	// DurationMinutes The length to book, for a calendar offering the booker a choice. GoHighLevel takes it on the availability read, so it decides which slots are offered. Omit to use the calendar’s own length.
+	DurationMinutes *int `json:"durationMinutes,omitempty"`
+
+	// GoHighLevelCalendar The calendar, by its own GoHighLevel id.
+	GoHighLevelCalendar string                                                                                        `json:"goHighLevelCalendar"`
+	Provider            PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider `json:"provider"`
+}
+
+// PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider defines parameters for PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId.
+type PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3Provider string
 
 // PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target defines parameters for PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId.
 type PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target struct {
@@ -62217,6 +62385,32 @@ func (t *GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBody_Data_T
 	return err
 }
 
+// AsGetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3 returns the union data inside the GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target as a GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3
+func (t GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) AsGetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3() (GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3, error) {
+	var body GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3 overwrites any union data inside the GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target as the provided GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3
+func (t *GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) FromGetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3(v GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3 performs a merge with any union data inside the GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target, using the provided GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3
+func (t *GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) MergeGetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3(v GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBodyDataTarget3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t GetV1ConnectionsCalendarByConnectionIdTargets200JSONResponseBody_Data_Target) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -62295,6 +62489,32 @@ func (t *PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBody_Data_
 
 // MergePostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2 performs a merge with any union data inside the PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target, using the provided PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2
 func (t *PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) MergePostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2(v PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3 returns the union data inside the PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target as a PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3
+func (t PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) AsPostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3() (PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3, error) {
+	var body PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3 overwrites any union data inside the PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target as the provided PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3
+func (t *PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) FromPostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3(v PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3 performs a merge with any union data inside the PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target, using the provided PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3
+func (t *PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBody_Data_Target) MergePostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3(v PostV1ConnectionsCalendarByConnectionIdTargets201JSONResponseBodyDataTarget3) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -62393,6 +62613,32 @@ func (t *GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseB
 	return err
 }
 
+// AsGetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3 returns the union data inside the GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as a GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3
+func (t GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) AsGetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3() (GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3, error) {
+	var body GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3 overwrites any union data inside the GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as the provided GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3
+func (t *GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) FromGetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3(v GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3 performs a merge with any union data inside the GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target, using the provided GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3
+func (t *GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MergeGetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3(v GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t GetV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -62471,6 +62717,32 @@ func (t *PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseB
 
 // MergePutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2 performs a merge with any union data inside the PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target, using the provided PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2
 func (t *PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MergePutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2(v PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3 returns the union data inside the PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as a PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3
+func (t PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) AsPutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3() (PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3, error) {
+	var body PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3 overwrites any union data inside the PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target as the provided PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3
+func (t *PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) FromPutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3(v PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3 performs a merge with any union data inside the PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target, using the provided PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3
+func (t *PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBody_Data_Target) MergePutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3(v PutV1ConnectionsCalendarByConnectionIdTargetsByTargetId200JSONResponseBodyDataTarget3) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -64143,7 +64415,7 @@ type ClientInterface interface {
 
 	// PostV1ConnectionsAgentDiscoverWithBody Discover agents with a platform API key
 	//
-	// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. A key the platform refuses returns 400.
+	// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. Any failure returns 400: `invalid_credentials` when the platform refuses the key, `too_many_requests` when it rate limits the request, and `dependency_failure` when it returns an error.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -64152,7 +64424,7 @@ type ClientInterface interface {
 
 	// PostV1ConnectionsAgentDiscover Discover agents with a platform API key
 	//
-	// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. A key the platform refuses returns 400.
+	// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. Any failure returns 400: `invalid_credentials` when the platform refuses the key, `too_many_requests` when it rate limits the request, and `dependency_failure` when it returns an error.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -66023,6 +66295,15 @@ type ClientInterface interface {
 	//
 	// Corresponds with GET /v1/simulation/job/{jobId}/tool-mock (the `GetV1SimulationJobByJobIdToolMock` operationId).
 	GetV1SimulationJobByJobIdToolMock(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetV1SimulationPhoneNumber List simulation phone numbers
+	//
+	// Returns every number Roark may place simulation calls to your agent from, ordered by number.
+	// Use it to allowlist simulation traffic or to tell it apart from real callers.
+	// The shared pool changes as Roark adds and retires numbers, so fetch the list again before you update an allowlist.
+	//
+	// Corresponds with GET /v1/simulation/phone-number (the `GetV1SimulationPhoneNumber` operationId).
+	GetV1SimulationPhoneNumber(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetV1SimulationPlan List run plans
 	//
@@ -68206,7 +68487,7 @@ func (c *Client) PostV1ConnectionsAgent(ctx context.Context, body PostV1Connecti
 
 // PostV1ConnectionsAgentDiscoverWithBody Discover agents with a platform API key
 //
-// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. A key the platform refuses returns 400.
+// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. Any failure returns 400: `invalid_credentials` when the platform refuses the key, `too_many_requests` when it rate limits the request, and `dependency_failure` when it returns an error.
 //
 // Takes any type of body and a specified content type.
 //
@@ -68225,7 +68506,7 @@ func (c *Client) PostV1ConnectionsAgentDiscoverWithBody(ctx context.Context, con
 
 // PostV1ConnectionsAgentDiscover Discover agents with a platform API key
 //
-// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. A key the platform refuses returns 400.
+// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. Any failure returns 400: `invalid_credentials` when the platform refuses the key, `too_many_requests` when it rate limits the request, and `dependency_failure` when it returns an error.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -72237,6 +72518,25 @@ func (c *Client) GetV1SimulationJobByJobId(ctx context.Context, jobId openapi_ty
 // Corresponds with GET /v1/simulation/job/{jobId}/tool-mock (the `GetV1SimulationJobByJobIdToolMock` operationId).
 func (c *Client) GetV1SimulationJobByJobIdToolMock(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetV1SimulationJobByJobIdToolMockRequest(c.Server, jobId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1SimulationPhoneNumber List simulation phone numbers
+//
+// Returns every number Roark may place simulation calls to your agent from, ordered by number.
+// Use it to allowlist simulation traffic or to tell it apart from real callers.
+// The shared pool changes as Roark adds and retires numbers, so fetch the list again before you update an allowlist.
+//
+// Corresponds with GET /v1/simulation/phone-number (the `GetV1SimulationPhoneNumber` operationId).
+func (c *Client) GetV1SimulationPhoneNumber(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1SimulationPhoneNumberRequest(c.Server)
 	if err != nil {
 		return nil, err
 	}
@@ -83528,6 +83828,33 @@ func NewGetV1SimulationJobByJobIdToolMockRequest(server string, jobId openapi_ty
 	return req, nil
 }
 
+// NewGetV1SimulationPhoneNumberRequest constructs an http.Request for the GetV1SimulationPhoneNumber method
+func NewGetV1SimulationPhoneNumberRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/simulation/phone-number")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewGetV1SimulationPlanRequest constructs an http.Request for the GetV1SimulationPlan method
 func NewGetV1SimulationPlanRequest(server string, params *GetV1SimulationPlanParams) (*http.Request, error) {
 	var err error
@@ -86050,7 +86377,7 @@ type ClientWithResponsesInterface interface {
 
 	// PostV1ConnectionsAgentDiscoverWithBodyWithResponse Discover agents with a platform API key
 	//
-	// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. A key the platform refuses returns 400.
+	// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. Any failure returns 400: `invalid_credentials` when the platform refuses the key, `too_many_requests` when it rate limits the request, and `dependency_failure` when it returns an error.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -86059,7 +86386,7 @@ type ClientWithResponsesInterface interface {
 
 	// PostV1ConnectionsAgentDiscoverWithResponse Discover agents with a platform API key
 	//
-	// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. A key the platform refuses returns 400.
+	// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. Any failure returns 400: `invalid_credentials` when the platform refuses the key, `too_many_requests` when it rate limits the request, and `dependency_failure` when it returns an error.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -88122,6 +88449,17 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with GET /v1/simulation/job/{jobId}/tool-mock (the `GetV1SimulationJobByJobIdToolMock` operationId).
 	GetV1SimulationJobByJobIdToolMockWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1SimulationJobByJobIdToolMockResponse, error)
+
+	// GetV1SimulationPhoneNumberWithResponse List simulation phone numbers
+	//
+	// Returns every number Roark may place simulation calls to your agent from, ordered by number.
+	// Use it to allowlist simulation traffic or to tell it apart from real callers.
+	// The shared pool changes as Roark adds and retires numbers, so fetch the list again before you update an allowlist.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/simulation/phone-number (the `GetV1SimulationPhoneNumber` operationId).
+	GetV1SimulationPhoneNumberWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1SimulationPhoneNumberResponse, error)
 
 	// GetV1SimulationPlanWithResponse List run plans
 	//
@@ -96095,7 +96433,7 @@ type GetV1ConnectionsCalendarResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+			// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 			Provider GetV1ConnectionsCalendar200JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96172,7 +96510,7 @@ func (r GetV1ConnectionsCalendarResponse) GetJSON200() *struct {
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+		// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 		Provider GetV1ConnectionsCalendar200JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96289,7 +96627,7 @@ type PostV1ConnectionsCalendarResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+			// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 			Provider PostV1ConnectionsCalendar201JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96361,7 +96699,7 @@ func (r PostV1ConnectionsCalendarResponse) GetJSON201() *struct {
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+		// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 		Provider PostV1ConnectionsCalendar201JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96731,7 +97069,7 @@ type GetV1ConnectionsCalendarByConnectionIdResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+			// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 			Provider GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96801,7 +97139,7 @@ func (r GetV1ConnectionsCalendarByConnectionIdResponse) GetJSON200() *struct {
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+		// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 		Provider GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96913,7 +97251,7 @@ type PatchV1ConnectionsCalendarByConnectionIdResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+			// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 			Provider PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -96987,7 +97325,7 @@ func (r PatchV1ConnectionsCalendarByConnectionIdResponse) GetJSON200() *struct {
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+		// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 		Provider PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -97215,7 +97553,7 @@ type PostV1ConnectionsCalendarByConnectionIdCheckResponse struct {
 			// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 			LastCheckedAt *string `json:"lastCheckedAt"`
 
-			// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+			// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 			Provider PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
 
 			// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -97287,7 +97625,7 @@ func (r PostV1ConnectionsCalendarByConnectionIdCheckResponse) GetJSON200() *stru
 		// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 		LastCheckedAt *string `json:"lastCheckedAt"`
 
-		// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+		// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 		Provider PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
 
 		// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -110846,6 +111184,79 @@ func (r GetV1SimulationJobByJobIdToolMockResponse) ContentType() string {
 	return ""
 }
 
+type GetV1SimulationPhoneNumberResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data []SimulationPhoneNumberResponse `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1SimulationPhoneNumberResponse) GetJSON200() *struct {
+	Data []SimulationPhoneNumberResponse `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1SimulationPhoneNumberResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1SimulationPhoneNumberResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1SimulationPhoneNumberResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1SimulationPhoneNumberResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1SimulationPhoneNumberResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1SimulationPhoneNumberResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1SimulationPhoneNumberResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1SimulationPhoneNumberResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GetV1SimulationPlanResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -115142,7 +115553,7 @@ func (c *ClientWithResponses) PostV1ConnectionsAgentWithResponse(ctx context.Con
 
 // PostV1ConnectionsAgentDiscoverWithBodyWithResponse Discover agents with a platform API key
 //
-// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. A key the platform refuses returns 400.
+// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. Any failure returns 400: `invalid_credentials` when the platform refuses the key, `too_many_requests` when it rate limits the request, and `dependency_failure` when it returns an error.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -115157,7 +115568,7 @@ func (c *ClientWithResponses) PostV1ConnectionsAgentDiscoverWithBodyWithResponse
 
 // PostV1ConnectionsAgentDiscoverWithResponse Discover agents with a platform API key
 //
-// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. A key the platform refuses returns 400.
+// Lists the agents a Retell, Vapi, ElevenLabs or Bland API key can see, without storing anything. Use it to check a key and to pick `agentIds` before connecting. Any failure returns 400: `invalid_credentials` when the platform refuses the key, `too_many_requests` when it rate limits the request, and `dependency_failure` when it returns an error.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -118509,6 +118920,23 @@ func (c *ClientWithResponses) GetV1SimulationJobByJobIdToolMockWithResponse(ctx 
 		return nil, err
 	}
 	return ParseGetV1SimulationJobByJobIdToolMockResponse(rsp)
+}
+
+// GetV1SimulationPhoneNumberWithResponse List simulation phone numbers
+//
+// Returns every number Roark may place simulation calls to your agent from, ordered by number.
+// Use it to allowlist simulation traffic or to tell it apart from real callers.
+// The shared pool changes as Roark adds and retires numbers, so fetch the list again before you update an allowlist.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/simulation/phone-number (the `GetV1SimulationPhoneNumber` operationId).
+func (c *ClientWithResponses) GetV1SimulationPhoneNumberWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetV1SimulationPhoneNumberResponse, error) {
+	rsp, err := c.GetV1SimulationPhoneNumber(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1SimulationPhoneNumberResponse(rsp)
 }
 
 // GetV1SimulationPlanWithResponse List run plans
@@ -124655,7 +125083,7 @@ func ParseGetV1ConnectionsCalendarResponse(rsp *http.Response) (*GetV1Connection
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+				// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 				Provider GetV1ConnectionsCalendar200JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -124765,7 +125193,7 @@ func ParsePostV1ConnectionsCalendarResponse(rsp *http.Response) (*PostV1Connecti
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+				// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 				Provider PostV1ConnectionsCalendar201JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -125057,7 +125485,7 @@ func ParseGetV1ConnectionsCalendarByConnectionIdResponse(rsp *http.Response) (*G
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+				// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 				Provider GetV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -125164,7 +125592,7 @@ func ParsePatchV1ConnectionsCalendarByConnectionIdResponse(rsp *http.Response) (
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+				// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 				Provider PatchV1ConnectionsCalendarByConnectionId200JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -125361,7 +125789,7 @@ func ParsePostV1ConnectionsCalendarByConnectionIdCheckResponse(rsp *http.Respons
 				// LastCheckedAt When the credential was last verified against the provider, ISO 8601.
 				LastCheckedAt *string `json:"lastCheckedAt"`
 
-				// Provider Who holds the calendar. CAL_COM is connected with an API key; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
+				// Provider Who holds the calendar. CAL_COM and GO_HIGH_LEVEL are connected with a key, GO_HIGH_LEVEL also needing the sub-account the key belongs to; GOOGLE and CALENDLY are connected by consent, through `POST /v1/connections/calendar/google/authorize-url` and `POST /v1/connections/calendar/calendly/authorize-url`.
 				Provider PostV1ConnectionsCalendarByConnectionIdCheck200JSONResponseBodyDataProvider `json:"provider"`
 
 				// Scopes Scopes the credential carries, when the provider issues scoped credentials. Null for an API key.
@@ -135227,6 +135655,62 @@ func ParseGetV1SimulationJobByJobIdToolMockResponse(rsp *http.Response) (*GetV1S
 			return nil, err
 		}
 		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetV1SimulationPhoneNumberResponse parses an HTTP response from a GetV1SimulationPhoneNumberWithResponse call
+func ParseGetV1SimulationPhoneNumberResponse(rsp *http.Response) (*GetV1SimulationPhoneNumberResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1SimulationPhoneNumberResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data []SimulationPhoneNumberResponse `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
 		var dest ErrorResponse

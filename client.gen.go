@@ -63796,7 +63796,7 @@ type ClientInterface interface {
 
 	// DeleteV1AgentByAgentId Delete an agent
 	//
-	// Soft-deletes an agent by its ID. The agent is hidden from all reads and stops being attributed to new calls, but its record and history are retained. Fails with 409 if the agent is still referenced by simulation run plans: cancel those run plans first. Note: if the agent syncs from a provider integration, also exclude it in the integration settings (or delete the integration) so its calls stop reaching Roark.
+	// Soft-deletes an agent by its ID. The agent is hidden from all reads and stops being attributed to new calls, but its record and history are retained. Fails with 409 if the agent is still used by saved simulation run plans; the error names each one with its id. Remove the agent from those plans or delete them first (GET /v1/simulation/plan?agentId=... lists them). Runs started without `saveAsPlan` never block deletion. Note: if the agent syncs from a provider integration, also exclude it in the integration settings (or delete the integration) so its calls stop reaching Roark.
 	//
 	// Corresponds with DELETE /v1/agent/{agentId} (the `DeleteV1AgentByAgentId` operationId).
 	DeleteV1AgentByAgentId(ctx context.Context, agentId string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -67168,7 +67168,7 @@ func (c *Client) PutV1AgentEndpointByEndpointId(ctx context.Context, endpointId 
 
 // DeleteV1AgentByAgentId Delete an agent
 //
-// Soft-deletes an agent by its ID. The agent is hidden from all reads and stops being attributed to new calls, but its record and history are retained. Fails with 409 if the agent is still referenced by simulation run plans: cancel those run plans first. Note: if the agent syncs from a provider integration, also exclude it in the integration settings (or delete the integration) so its calls stop reaching Roark.
+// Soft-deletes an agent by its ID. The agent is hidden from all reads and stops being attributed to new calls, but its record and history are retained. Fails with 409 if the agent is still used by saved simulation run plans; the error names each one with its id. Remove the agent from those plans or delete them first (GET /v1/simulation/plan?agentId=... lists them). Runs started without `saveAsPlan` never block deletion. Note: if the agent syncs from a provider integration, also exclude it in the integration settings (or delete the integration) so its calls stop reaching Roark.
 //
 // Corresponds with DELETE /v1/agent/{agentId} (the `DeleteV1AgentByAgentId` operationId).
 func (c *Client) DeleteV1AgentByAgentId(ctx context.Context, agentId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -85694,7 +85694,7 @@ type ClientWithResponsesInterface interface {
 
 	// DeleteV1AgentByAgentIdWithResponse Delete an agent
 	//
-	// Soft-deletes an agent by its ID. The agent is hidden from all reads and stops being attributed to new calls, but its record and history are retained. Fails with 409 if the agent is still referenced by simulation run plans: cancel those run plans first. Note: if the agent syncs from a provider integration, also exclude it in the integration settings (or delete the integration) so its calls stop reaching Roark.
+	// Soft-deletes an agent by its ID. The agent is hidden from all reads and stops being attributed to new calls, but its record and history are retained. Fails with 409 if the agent is still used by saved simulation run plans; the error names each one with its id. Remove the agent from those plans or delete them first (GET /v1/simulation/plan?agentId=... lists them). Runs started without `saveAsPlan` never block deletion. Note: if the agent syncs from a provider integration, also exclude it in the integration settings (or delete the integration) so its calls stop reaching Roark.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -114450,7 +114450,7 @@ func (c *ClientWithResponses) PutV1AgentEndpointByEndpointIdWithResponse(ctx con
 
 // DeleteV1AgentByAgentIdWithResponse Delete an agent
 //
-// Soft-deletes an agent by its ID. The agent is hidden from all reads and stops being attributed to new calls, but its record and history are retained. Fails with 409 if the agent is still referenced by simulation run plans: cancel those run plans first. Note: if the agent syncs from a provider integration, also exclude it in the integration settings (or delete the integration) so its calls stop reaching Roark.
+// Soft-deletes an agent by its ID. The agent is hidden from all reads and stops being attributed to new calls, but its record and history are retained. Fails with 409 if the agent is still used by saved simulation run plans; the error names each one with its id. Remove the agent from those plans or delete them first (GET /v1/simulation/plan?agentId=... lists them). Runs started without `saveAsPlan` never block deletion. Note: if the agent syncs from a provider integration, also exclude it in the integration settings (or delete the integration) so its calls stop reaching Roark.
 //
 // Returns a wrapper object for the known response body format(s).
 //

@@ -2,6 +2,10 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.21.1, 2026-11-21
+
+- Update the doc comments on `DeleteV1AgentByAgentId` and `DeleteV1AgentByAgentIdWithResponse` (on `ClientInterface`, `Client`, `ClientWithResponsesInterface` and `ClientWithResponses`). The 409 error now applies to saved simulation run plans, names each plan with its id, and points to `GET /v1/simulation/plan?agentId=...` to list them. Runs started without `saveAsPlan` never block deletion.
+
 ## v0.21.0, 2026-11-19
 
 - Add `GetV1SimulationPhoneNumber` to `Client` and `ClientWithResponses` (as `GetV1SimulationPhoneNumberWithResponse`), plus `NewGetV1SimulationPhoneNumberRequest`, `ParseGetV1SimulationPhoneNumberResponse`, `GetV1SimulationPhoneNumberResponse` and the `SimulationPhoneNumberResponse` type (`E164`, `LocalityCode`, `ReservedForProject`).

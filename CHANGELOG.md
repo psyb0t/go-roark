@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.22.0, 2026-11-24
+
+- Add customer flow folder updates: `PutV1CustomerFlowFolderByFolderId` and `PutV1CustomerFlowFolderByFolderIdWithBody` on `Client`, and `PutV1CustomerFlowFolderByFolderIdWithResponse` and `PutV1CustomerFlowFolderByFolderIdWithBodyWithResponse` on `ClientWithResponses`. Also add `NewPutV1CustomerFlowFolderByFolderIdRequest`, `NewPutV1CustomerFlowFolderByFolderIdRequestWithBody`, `ParsePutV1CustomerFlowFolderByFolderIdResponse`, `PutV1CustomerFlowFolderByFolderIdResponse` and `PutV1CustomerFlowFolderByFolderIdJSONRequestBody`.
+- Add `UpdateCustomerFlowFolderInput` (`Color`, `Description`, `Name`, `ParentId`) and the `UpdateCustomerFlowFolderInputColor` enum with its values (`UpdateCustomerFlowFolderInputColorAMBER`, `BLUE`, `CYAN`, `GREEN`, `GREY`, `INDIGO`, `ORANGE`, `PEACH`, `PURPLE`, `RED`, `ROSE`, `TEAL`). Sending `ParentId` moves a folder, and null moves it to the top level.
+- Folders can now nest, up to 5 levels deep. Add `ParentId` to `CreateCustomerFlowFolderInput`, `CustomerFlowFolder` and `CustomerFlowFolderWithCount`. Folder names are now unique within their parent folder.
+- Add `IncludeSubfolders` to `GetV1CustomerFlowParams`, with the `GetV1CustomerFlowParamsIncludeSubfolders` type and its `GetV1CustomerFlowParamsIncludeSubfoldersTrue` and `GetV1CustomerFlowParamsIncludeSubfoldersFalse` values. Use it with `FolderId` to include flows in subfolders.
+- Add `Folder` to `ScriptedFlowConfig` and `ImprovFlowConfig`.
+- Add `JSON409` and `GetJSON409` to `DeleteV1CustomerFlowFolderByFolderIdResponse`, and `JSON404` and `GetJSON404` to `PostV1CustomerFlowFolderResponse`.
+- `ClientInterface` and `ClientWithResponsesInterface` gained methods, so custom implementations must add `PutV1CustomerFlowFolderByFolderId`, `PutV1CustomerFlowFolderByFolderIdWithBody`, `PutV1CustomerFlowFolderByFolderIdWithResponse` and `PutV1CustomerFlowFolderByFolderIdWithBodyWithResponse`.
+
 ## v0.21.1, 2026-11-21
 
 - Update the doc comments on `DeleteV1AgentByAgentId` and `DeleteV1AgentByAgentIdWithResponse` (on `ClientInterface`, `Client`, `ClientWithResponsesInterface` and `ClientWithResponses`). The 409 error now applies to saved simulation run plans, names each plan with its id, and points to `GET /v1/simulation/plan?agentId=...` to list them. Runs started without `saveAsPlan` never block deletion.

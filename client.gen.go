@@ -21331,6 +21331,54 @@ func (e UpdateAgentEndpointInputOutboundDialType) Valid() bool {
 	}
 }
 
+// Defines values for UpdateCustomerFlowFolderInputColor.
+const (
+	UpdateCustomerFlowFolderInputColorAMBER  UpdateCustomerFlowFolderInputColor = "AMBER"
+	UpdateCustomerFlowFolderInputColorBLUE   UpdateCustomerFlowFolderInputColor = "BLUE"
+	UpdateCustomerFlowFolderInputColorCYAN   UpdateCustomerFlowFolderInputColor = "CYAN"
+	UpdateCustomerFlowFolderInputColorGREEN  UpdateCustomerFlowFolderInputColor = "GREEN"
+	UpdateCustomerFlowFolderInputColorGREY   UpdateCustomerFlowFolderInputColor = "GREY"
+	UpdateCustomerFlowFolderInputColorINDIGO UpdateCustomerFlowFolderInputColor = "INDIGO"
+	UpdateCustomerFlowFolderInputColorORANGE UpdateCustomerFlowFolderInputColor = "ORANGE"
+	UpdateCustomerFlowFolderInputColorPEACH  UpdateCustomerFlowFolderInputColor = "PEACH"
+	UpdateCustomerFlowFolderInputColorPURPLE UpdateCustomerFlowFolderInputColor = "PURPLE"
+	UpdateCustomerFlowFolderInputColorRED    UpdateCustomerFlowFolderInputColor = "RED"
+	UpdateCustomerFlowFolderInputColorROSE   UpdateCustomerFlowFolderInputColor = "ROSE"
+	UpdateCustomerFlowFolderInputColorTEAL   UpdateCustomerFlowFolderInputColor = "TEAL"
+)
+
+// Valid indicates whether the value is a known member of the UpdateCustomerFlowFolderInputColor enum.
+func (e UpdateCustomerFlowFolderInputColor) Valid() bool {
+	switch e {
+	case UpdateCustomerFlowFolderInputColorAMBER:
+		return true
+	case UpdateCustomerFlowFolderInputColorBLUE:
+		return true
+	case UpdateCustomerFlowFolderInputColorCYAN:
+		return true
+	case UpdateCustomerFlowFolderInputColorGREEN:
+		return true
+	case UpdateCustomerFlowFolderInputColorGREY:
+		return true
+	case UpdateCustomerFlowFolderInputColorINDIGO:
+		return true
+	case UpdateCustomerFlowFolderInputColorORANGE:
+		return true
+	case UpdateCustomerFlowFolderInputColorPEACH:
+		return true
+	case UpdateCustomerFlowFolderInputColorPURPLE:
+		return true
+	case UpdateCustomerFlowFolderInputColorRED:
+		return true
+	case UpdateCustomerFlowFolderInputColorROSE:
+		return true
+	case UpdateCustomerFlowFolderInputColorTEAL:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateCustomerFlowInputBranchingMode.
 const (
 	UpdateCustomerFlowInputBranchingModeADAPTIVE      UpdateCustomerFlowInputBranchingMode = "ADAPTIVE"
@@ -26275,6 +26323,24 @@ func (e GetV1CustomerFlowParamsType) Valid() bool {
 	case GetV1CustomerFlowParamsTypeSCRIPTED:
 		return true
 	case GetV1CustomerFlowParamsTypeVOICEMAIL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetV1CustomerFlowParamsIncludeSubfolders.
+const (
+	GetV1CustomerFlowParamsIncludeSubfoldersFalse GetV1CustomerFlowParamsIncludeSubfolders = "false"
+	GetV1CustomerFlowParamsIncludeSubfoldersTrue  GetV1CustomerFlowParamsIncludeSubfolders = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetV1CustomerFlowParamsIncludeSubfolders enum.
+func (e GetV1CustomerFlowParamsIncludeSubfolders) Valid() bool {
+	switch e {
+	case GetV1CustomerFlowParamsIncludeSubfoldersFalse:
+		return true
+	case GetV1CustomerFlowParamsIncludeSubfoldersTrue:
 		return true
 	default:
 		return false
@@ -34218,8 +34284,11 @@ type CreateCustomerFlowFolderInput struct {
 	// Description What belongs in this folder.
 	Description *string `json:"description,omitempty"`
 
-	// Name The folder name. Must be unique in the project.
+	// Name The folder name. Must be unique within its parent folder, ignoring case.
 	Name string `json:"name"`
+
+	// ParentId Create the folder inside this folder. Omit it, or send null, for a top-level folder.
+	ParentId *openapi_types.UUID `json:"parentId,omitempty"`
 }
 
 // CreateCustomerFlowFolderInputColor The color the folder is shown with in the app. Folders share the palette labels use. Defaults to GREY.
@@ -35233,7 +35302,7 @@ type CustomerFlow struct {
 	union json.RawMessage
 }
 
-// CustomerFlowFolder A folder that groups customer flows. A flow sits in at most one folder.
+// CustomerFlowFolder A folder that groups customer flows. A flow sits in at most one folder. Folders can sit inside other folders, up to 5 levels deep.
 type CustomerFlowFolder struct {
 	// BuiltIn Whether Roark curates this folder. Built-in folders cannot be deleted or have your flows filed in them.
 	BuiltIn bool `json:"builtIn"`
@@ -35248,10 +35317,13 @@ type CustomerFlowFolder struct {
 	Description *string            `json:"description"`
 	Id          openapi_types.UUID `json:"id"`
 
-	// Name The folder name, unique within the project.
+	// Name The folder name, unique within its parent folder.
 	//
 	// Example: Billing
 	Name string `json:"name"`
+
+	// ParentId The folder this one sits inside, or null when it is a top-level folder.
+	ParentId *openapi_types.UUID `json:"parentId"`
 
 	// UpdatedAt Last update timestamp in ISO 8601 format
 	UpdatedAt string `json:"updatedAt"`
@@ -35274,14 +35346,17 @@ type CustomerFlowFolderWithCount struct {
 	// Description What belongs in this folder.
 	Description *string `json:"description"`
 
-	// FlowCount How many flows are in this folder.
+	// FlowCount How many flows are directly in this folder, not counting its subfolders.
 	FlowCount int                `json:"flowCount"`
 	Id        openapi_types.UUID `json:"id"`
 
-	// Name The folder name, unique within the project.
+	// Name The folder name, unique within its parent folder.
 	//
 	// Example: Billing
 	Name string `json:"name"`
+
+	// ParentId The folder this one sits inside, or null when it is a top-level folder.
+	ParentId *openapi_types.UUID `json:"parentId"`
 
 	// UpdatedAt Last update timestamp in ISO 8601 format
 	UpdatedAt string `json:"updatedAt"`
@@ -37381,7 +37456,7 @@ type GetAgentPromptsResponse struct {
 	Data []AgentPromptResponse `json:"data"`
 }
 
-// GetCustomerFlowFoldersResponse The project's customer flow folders, in the order the app shows them.
+// GetCustomerFlowFoldersResponse The project's customer flow folders, in the order the app shows them. Subfolders are listed with the rest; rebuild the tree from each folder's `parentId`.
 type GetCustomerFlowFoldersResponse struct {
 	Data []CustomerFlowFolderWithCount `json:"data"`
 }
@@ -38233,6 +38308,7 @@ type ImprovFlowConfig struct {
 		Title                   *string   `json:"title,omitempty"`
 	} `json:"edgeCases,omitempty"`
 	Expectations *[]string `json:"expectations,omitempty"`
+	Folder       *string   `json:"folder,omitempty"`
 	HappyPath    struct {
 		Environment  string    `json:"environment"`
 		Expectations *[]string `json:"expectations,omitempty"`
@@ -42814,6 +42890,7 @@ type ScriptedFlowConfig struct {
 	Description   *string                          `json:"description,omitempty"`
 	Environment   *string                          `json:"environment,omitempty"`
 	Expectations  *[]string                        `json:"expectations,omitempty"`
+	Folder        *string                          `json:"folder,omitempty"`
 	Graph         []ConfigFlowStep                 `json:"graph"`
 	Kind          ScriptedFlowConfigKind           `json:"kind"`
 	Name          string                           `json:"name"`
@@ -46136,6 +46213,24 @@ type UpdateCallPropertiesResponse struct {
 	Updated []string `json:"updated"`
 }
 
+// UpdateCustomerFlowFolderInput Example: {"parentId":"3f1c2d4e-5a6b-4c7d-8e9f-0a1b2c3d4e5f"}
+type UpdateCustomerFlowFolderInput struct {
+	// Color The color the folder is shown with in the app. Folders share the palette labels use.
+	Color *UpdateCustomerFlowFolderInputColor `json:"color,omitempty"`
+
+	// Description What belongs in this folder. Null clears it.
+	Description *string `json:"description,omitempty"`
+
+	// Name A new name. Must be unique within the parent folder, ignoring case.
+	Name *string `json:"name,omitempty"`
+
+	// ParentId Moves the folder, with everything in it, inside this folder. Null moves it to the top level; omit it to leave it where it is.
+	ParentId *openapi_types.UUID `json:"parentId,omitempty"`
+}
+
+// UpdateCustomerFlowFolderInputColor The color the folder is shown with in the app. Folders share the palette labels use.
+type UpdateCustomerFlowFolderInputColor string
+
 // UpdateCustomerFlowInput Fields to change on a customer flow. The step graph is edited through PUT /graph instead.
 type UpdateCustomerFlowInput struct {
 	// AgentExpectations Replaces the flow-level expectations. Omit to leave them unchanged.
@@ -48978,16 +49073,20 @@ type GetV1Customer200JSONResponseBodyDataItemsAttributesSource string
 
 // GetV1CustomerFlowParams defines parameters for GetV1CustomerFlow.
 type GetV1CustomerFlowParams struct {
-	Limit         *int                                  `form:"limit,omitempty" json:"limit,omitempty"`
-	After         *string                               `form:"after,omitempty" json:"after,omitempty"`
-	SearchText    *string                               `form:"searchText,omitempty" json:"searchText,omitempty"`
-	Type          *GetV1CustomerFlowParamsType          `form:"type,omitempty" json:"type,omitempty"`
-	FolderId      *openapi_types.UUID                   `form:"folderId,omitempty" json:"folderId,omitempty"`
-	IncludeSystem *GetV1CustomerFlowParamsIncludeSystem `form:"includeSystem,omitempty" json:"includeSystem,omitempty"`
+	Limit             *int                                      `form:"limit,omitempty" json:"limit,omitempty"`
+	After             *string                                   `form:"after,omitempty" json:"after,omitempty"`
+	SearchText        *string                                   `form:"searchText,omitempty" json:"searchText,omitempty"`
+	Type              *GetV1CustomerFlowParamsType              `form:"type,omitempty" json:"type,omitempty"`
+	FolderId          *openapi_types.UUID                       `form:"folderId,omitempty" json:"folderId,omitempty"`
+	IncludeSubfolders *GetV1CustomerFlowParamsIncludeSubfolders `form:"includeSubfolders,omitempty" json:"includeSubfolders,omitempty"`
+	IncludeSystem     *GetV1CustomerFlowParamsIncludeSystem     `form:"includeSystem,omitempty" json:"includeSystem,omitempty"`
 }
 
 // GetV1CustomerFlowParamsType defines parameters for GetV1CustomerFlow.
 type GetV1CustomerFlowParamsType string
+
+// GetV1CustomerFlowParamsIncludeSubfolders defines parameters for GetV1CustomerFlow.
+type GetV1CustomerFlowParamsIncludeSubfolders string
 
 // GetV1CustomerFlowParamsIncludeSystem defines parameters for GetV1CustomerFlow.
 type GetV1CustomerFlowParamsIncludeSystem string
@@ -49956,6 +50055,9 @@ type PostV1CustomerFlowJSONRequestBody = CreateCustomerFlowInput
 
 // PostV1CustomerFlowFolderJSONRequestBody defines body for PostV1CustomerFlowFolder for application/json ContentType.
 type PostV1CustomerFlowFolderJSONRequestBody = CreateCustomerFlowFolderInput
+
+// PutV1CustomerFlowFolderByFolderIdJSONRequestBody defines body for PutV1CustomerFlowFolderByFolderId for application/json ContentType.
+type PutV1CustomerFlowFolderByFolderIdJSONRequestBody = UpdateCustomerFlowFolderInput
 
 // PutV1CustomerFlowByFlowIdJSONRequestBody defines body for PutV1CustomerFlowByFlowId for application/json ContentType.
 type PutV1CustomerFlowByFlowIdJSONRequestBody = UpdateCustomerFlowInput
@@ -64789,14 +64891,14 @@ type ClientInterface interface {
 
 	// GetV1CustomerFlowFolder List customer flow folders
 	//
-	// Returns every folder the project groups its customer flows into, with how many flows each holds, in the order the app shows them. Filter the flow list to one folder with `GET /v1/customer-flow?folderId=`. Customer flows were previously called scenarios.
+	// Returns every folder the project groups its customer flows into, with how many flows each holds, in the order the app shows them. Subfolders are included, each with the `parentId` of the folder it sits in. Filter the flow list to one folder with `GET /v1/customer-flow?folderId=`, adding `includeSubfolders=true` to take in the folders inside it. Customer flows were previously called scenarios.
 	//
 	// Corresponds with GET /v1/customer-flow/folder (the `GetV1CustomerFlowFolder` operationId).
 	GetV1CustomerFlowFolder(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// PostV1CustomerFlowFolderWithBody Create a customer flow folder
 	//
-	// Creates a folder to group customer flows. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within a project, ignoring case. Customer flows were previously called scenarios.
+	// Creates a folder to group customer flows, at the top level or inside another folder with `parentId`. Folders nest up to 5 levels deep. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within their parent folder, ignoring case. Customer flows were previously called scenarios.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -64805,7 +64907,7 @@ type ClientInterface interface {
 
 	// PostV1CustomerFlowFolder Create a customer flow folder
 	//
-	// Creates a folder to group customer flows. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within a project, ignoring case. Customer flows were previously called scenarios.
+	// Creates a folder to group customer flows, at the top level or inside another folder with `parentId`. Folders nest up to 5 levels deep. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within their parent folder, ignoring case. Customer flows were previously called scenarios.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -64814,10 +64916,28 @@ type ClientInterface interface {
 
 	// DeleteV1CustomerFlowFolderByFolderId Delete a customer flow folder
 	//
-	// Deletes a folder. The flows in it are kept and no longer sit in any folder. Built-in folders cannot be deleted.
+	// Deletes a folder. Its flows and subfolders are kept and move up one level: into the folder it sat in, or out of any folder when it was a top-level folder. Built-in folders cannot be deleted.
 	//
 	// Corresponds with DELETE /v1/customer-flow/folder/{folderId} (the `DeleteV1CustomerFlowFolderByFolderId` operationId).
 	DeleteV1CustomerFlowFolderByFolderId(ctx context.Context, folderId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1CustomerFlowFolderByFolderIdWithBody Update a customer flow folder
+	//
+	// Renames, recolors or moves a folder. Send `parentId` to move it, with its flows and subfolders, inside another folder, or null to move it to the top level. Fields you omit are left as they are. Built-in folders cannot be changed. Customer flows were previously called scenarios.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v1/customer-flow/folder/{folderId} (the `PutV1CustomerFlowFolderByFolderId` operationId).
+	PutV1CustomerFlowFolderByFolderIdWithBody(ctx context.Context, folderId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutV1CustomerFlowFolderByFolderId Update a customer flow folder
+	//
+	// Renames, recolors or moves a folder. Send `parentId` to move it, with its flows and subfolders, inside another folder, or null to move it to the top level. Fields you omit are left as they are. Built-in folders cannot be changed. Customer flows were previously called scenarios.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /v1/customer-flow/folder/{folderId} (the `PutV1CustomerFlowFolderByFolderId` operationId).
+	PutV1CustomerFlowFolderByFolderId(ctx context.Context, folderId openapi_types.UUID, body PutV1CustomerFlowFolderByFolderIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DeleteV1CustomerFlowByFlowId Delete a customer flow
 	//
@@ -69321,7 +69441,7 @@ func (c *Client) PostV1CustomerFlow(ctx context.Context, body PostV1CustomerFlow
 
 // GetV1CustomerFlowFolder List customer flow folders
 //
-// Returns every folder the project groups its customer flows into, with how many flows each holds, in the order the app shows them. Filter the flow list to one folder with `GET /v1/customer-flow?folderId=`. Customer flows were previously called scenarios.
+// Returns every folder the project groups its customer flows into, with how many flows each holds, in the order the app shows them. Subfolders are included, each with the `parentId` of the folder it sits in. Filter the flow list to one folder with `GET /v1/customer-flow?folderId=`, adding `includeSubfolders=true` to take in the folders inside it. Customer flows were previously called scenarios.
 //
 // Corresponds with GET /v1/customer-flow/folder (the `GetV1CustomerFlowFolder` operationId).
 func (c *Client) GetV1CustomerFlowFolder(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -69338,7 +69458,7 @@ func (c *Client) GetV1CustomerFlowFolder(ctx context.Context, reqEditors ...Requ
 
 // PostV1CustomerFlowFolderWithBody Create a customer flow folder
 //
-// Creates a folder to group customer flows. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within a project, ignoring case. Customer flows were previously called scenarios.
+// Creates a folder to group customer flows, at the top level or inside another folder with `parentId`. Folders nest up to 5 levels deep. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within their parent folder, ignoring case. Customer flows were previously called scenarios.
 //
 // Takes any type of body and a specified content type.
 //
@@ -69357,7 +69477,7 @@ func (c *Client) PostV1CustomerFlowFolderWithBody(ctx context.Context, contentTy
 
 // PostV1CustomerFlowFolder Create a customer flow folder
 //
-// Creates a folder to group customer flows. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within a project, ignoring case. Customer flows were previously called scenarios.
+// Creates a folder to group customer flows, at the top level or inside another folder with `parentId`. Folders nest up to 5 levels deep. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within their parent folder, ignoring case. Customer flows were previously called scenarios.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -69376,11 +69496,49 @@ func (c *Client) PostV1CustomerFlowFolder(ctx context.Context, body PostV1Custom
 
 // DeleteV1CustomerFlowFolderByFolderId Delete a customer flow folder
 //
-// Deletes a folder. The flows in it are kept and no longer sit in any folder. Built-in folders cannot be deleted.
+// Deletes a folder. Its flows and subfolders are kept and move up one level: into the folder it sat in, or out of any folder when it was a top-level folder. Built-in folders cannot be deleted.
 //
 // Corresponds with DELETE /v1/customer-flow/folder/{folderId} (the `DeleteV1CustomerFlowFolderByFolderId` operationId).
 func (c *Client) DeleteV1CustomerFlowFolderByFolderId(ctx context.Context, folderId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewDeleteV1CustomerFlowFolderByFolderIdRequest(c.Server, folderId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1CustomerFlowFolderByFolderIdWithBody Update a customer flow folder
+//
+// Renames, recolors or moves a folder. Send `parentId` to move it, with its flows and subfolders, inside another folder, or null to move it to the top level. Fields you omit are left as they are. Built-in folders cannot be changed. Customer flows were previously called scenarios.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v1/customer-flow/folder/{folderId} (the `PutV1CustomerFlowFolderByFolderId` operationId).
+func (c *Client) PutV1CustomerFlowFolderByFolderIdWithBody(ctx context.Context, folderId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1CustomerFlowFolderByFolderIdRequestWithBody(c.Server, folderId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PutV1CustomerFlowFolderByFolderId Update a customer flow folder
+//
+// Renames, recolors or moves a folder. Send `parentId` to move it, with its flows and subfolders, inside another folder, or null to move it to the top level. Fields you omit are left as they are. Built-in folders cannot be changed. Customer flows were previously called scenarios.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v1/customer-flow/folder/{folderId} (the `PutV1CustomerFlowFolderByFolderId` operationId).
+func (c *Client) PutV1CustomerFlowFolderByFolderId(ctx context.Context, folderId openapi_types.UUID, body PutV1CustomerFlowFolderByFolderIdJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutV1CustomerFlowFolderByFolderIdRequest(c.Server, folderId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -78202,6 +78360,18 @@ func NewGetV1CustomerFlowRequest(server string, params *GetV1CustomerFlowParams)
 
 		}
 
+		if params.IncludeSubfolders != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeSubfolders", *params.IncludeSubfolders, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if params.IncludeSystem != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "includeSystem", *params.IncludeSystem, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
@@ -78365,6 +78535,53 @@ func NewDeleteV1CustomerFlowFolderByFolderIdRequest(server string, folderId open
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewPutV1CustomerFlowFolderByFolderIdRequest calls the generic PutV1CustomerFlowFolderByFolderId builder with application/json body
+func NewPutV1CustomerFlowFolderByFolderIdRequest(server string, folderId openapi_types.UUID, body PutV1CustomerFlowFolderByFolderIdJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPutV1CustomerFlowFolderByFolderIdRequestWithBody(server, folderId, "application/json", bodyReader)
+}
+
+// NewPutV1CustomerFlowFolderByFolderIdRequestWithBody constructs an http.Request for the PutV1CustomerFlowFolderByFolderId method, with any body, and a specified content type
+func NewPutV1CustomerFlowFolderByFolderIdRequestWithBody(server string, folderId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "folderId", folderId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/customer-flow/folder/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -86791,7 +87008,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetV1CustomerFlowFolderWithResponse List customer flow folders
 	//
-	// Returns every folder the project groups its customer flows into, with how many flows each holds, in the order the app shows them. Filter the flow list to one folder with `GET /v1/customer-flow?folderId=`. Customer flows were previously called scenarios.
+	// Returns every folder the project groups its customer flows into, with how many flows each holds, in the order the app shows them. Subfolders are included, each with the `parentId` of the folder it sits in. Filter the flow list to one folder with `GET /v1/customer-flow?folderId=`, adding `includeSubfolders=true` to take in the folders inside it. Customer flows were previously called scenarios.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -86800,7 +87017,7 @@ type ClientWithResponsesInterface interface {
 
 	// PostV1CustomerFlowFolderWithBodyWithResponse Create a customer flow folder
 	//
-	// Creates a folder to group customer flows. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within a project, ignoring case. Customer flows were previously called scenarios.
+	// Creates a folder to group customer flows, at the top level or inside another folder with `parentId`. Folders nest up to 5 levels deep. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within their parent folder, ignoring case. Customer flows were previously called scenarios.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -86809,7 +87026,7 @@ type ClientWithResponsesInterface interface {
 
 	// PostV1CustomerFlowFolderWithResponse Create a customer flow folder
 	//
-	// Creates a folder to group customer flows. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within a project, ignoring case. Customer flows were previously called scenarios.
+	// Creates a folder to group customer flows, at the top level or inside another folder with `parentId`. Folders nest up to 5 levels deep. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within their parent folder, ignoring case. Customer flows were previously called scenarios.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -86818,12 +87035,30 @@ type ClientWithResponsesInterface interface {
 
 	// DeleteV1CustomerFlowFolderByFolderIdWithResponse Delete a customer flow folder
 	//
-	// Deletes a folder. The flows in it are kept and no longer sit in any folder. Built-in folders cannot be deleted.
+	// Deletes a folder. Its flows and subfolders are kept and move up one level: into the folder it sat in, or out of any folder when it was a top-level folder. Built-in folders cannot be deleted.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with DELETE /v1/customer-flow/folder/{folderId} (the `DeleteV1CustomerFlowFolderByFolderId` operationId).
 	DeleteV1CustomerFlowFolderByFolderIdWithResponse(ctx context.Context, folderId openapi_types.UUID, reqEditors ...RequestEditorFn) (*DeleteV1CustomerFlowFolderByFolderIdResponse, error)
+
+	// PutV1CustomerFlowFolderByFolderIdWithBodyWithResponse Update a customer flow folder
+	//
+	// Renames, recolors or moves a folder. Send `parentId` to move it, with its flows and subfolders, inside another folder, or null to move it to the top level. Fields you omit are left as they are. Built-in folders cannot be changed. Customer flows were previously called scenarios.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/customer-flow/folder/{folderId} (the `PutV1CustomerFlowFolderByFolderId` operationId).
+	PutV1CustomerFlowFolderByFolderIdWithBodyWithResponse(ctx context.Context, folderId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1CustomerFlowFolderByFolderIdResponse, error)
+
+	// PutV1CustomerFlowFolderByFolderIdWithResponse Update a customer flow folder
+	//
+	// Renames, recolors or moves a folder. Send `parentId` to move it, with its flows and subfolders, inside another folder, or null to move it to the top level. Fields you omit are left as they are. Built-in folders cannot be changed. Customer flows were previously called scenarios.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v1/customer-flow/folder/{folderId} (the `PutV1CustomerFlowFolderByFolderId` operationId).
+	PutV1CustomerFlowFolderByFolderIdWithResponse(ctx context.Context, folderId openapi_types.UUID, body PutV1CustomerFlowFolderByFolderIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1CustomerFlowFolderByFolderIdResponse, error)
 
 	// DeleteV1CustomerFlowByFlowIdWithResponse Delete a customer flow
 	//
@@ -99468,7 +99703,7 @@ type PostV1CustomerFlowFolderResponse struct {
 	HTTPResponse *http.Response
 	// JSON201 the response for an HTTP 201 `application/json` response
 	JSON201 *struct {
-		// Data A folder that groups customer flows. A flow sits in at most one folder.
+		// Data A folder that groups customer flows. A flow sits in at most one folder. Folders can sit inside other folders, up to 5 levels deep.
 		Data CustomerFlowFolder `json:"data"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -99477,6 +99712,8 @@ type PostV1CustomerFlowFolderResponse struct {
 	JSON401 *ErrorResponse
 	// JSON403 the response for an HTTP 403 `application/json` response
 	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
 	// JSON409 the response for an HTTP 409 `application/json` response
 	JSON409 *ErrorResponse
 	// JSON429 the response for an HTTP 429 `application/json` response
@@ -99487,7 +99724,7 @@ type PostV1CustomerFlowFolderResponse struct {
 
 // GetJSON201 returns the response for an HTTP 201 `application/json` response
 func (r PostV1CustomerFlowFolderResponse) GetJSON201() *struct {
-	// Data A folder that groups customer flows. A flow sits in at most one folder.
+	// Data A folder that groups customer flows. A flow sits in at most one folder. Folders can sit inside other folders, up to 5 levels deep.
 	Data CustomerFlowFolder `json:"data"`
 } {
 	return r.JSON201
@@ -99506,6 +99743,11 @@ func (r PostV1CustomerFlowFolderResponse) GetJSON401() *ErrorResponse {
 // GetJSON403 returns the response for an HTTP 403 `application/json` response
 func (r PostV1CustomerFlowFolderResponse) GetJSON403() *ErrorResponse {
 	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1CustomerFlowFolderResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
 }
 
 // GetJSON409 returns the response for an HTTP 409 `application/json` response
@@ -99570,6 +99812,8 @@ type DeleteV1CustomerFlowFolderByFolderIdResponse struct {
 	JSON403 *ErrorResponse
 	// JSON404 the response for an HTTP 404 `application/json` response
 	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
 	// JSON429 the response for an HTTP 429 `application/json` response
 	JSON429 *ErrorResponse
 	// JSON500 the response for an HTTP 500 `application/json` response
@@ -99606,6 +99850,11 @@ func (r DeleteV1CustomerFlowFolderByFolderIdResponse) GetJSON404() *ErrorRespons
 	return r.JSON404
 }
 
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r DeleteV1CustomerFlowFolderByFolderIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
 // GetJSON429 returns the response for an HTTP 429 `application/json` response
 func (r DeleteV1CustomerFlowFolderByFolderIdResponse) GetJSON429() *ErrorResponse {
 	return r.JSON429
@@ -99639,6 +99888,102 @@ func (r DeleteV1CustomerFlowFolderByFolderIdResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r DeleteV1CustomerFlowFolderByFolderIdResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PutV1CustomerFlowFolderByFolderIdResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Data A folder that groups customer flows. A flow sits in at most one folder. Folders can sit inside other folders, up to 5 levels deep.
+		Data CustomerFlowFolder `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r PutV1CustomerFlowFolderByFolderIdResponse) GetJSON200() *struct {
+	// Data A folder that groups customer flows. A flow sits in at most one folder. Folders can sit inside other folders, up to 5 levels deep.
+	Data CustomerFlowFolder `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PutV1CustomerFlowFolderByFolderIdResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PutV1CustomerFlowFolderByFolderIdResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PutV1CustomerFlowFolderByFolderIdResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PutV1CustomerFlowFolderByFolderIdResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PutV1CustomerFlowFolderByFolderIdResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PutV1CustomerFlowFolderByFolderIdResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PutV1CustomerFlowFolderByFolderIdResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PutV1CustomerFlowFolderByFolderIdResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PutV1CustomerFlowFolderByFolderIdResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutV1CustomerFlowFolderByFolderIdResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PutV1CustomerFlowFolderByFolderIdResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -116243,7 +116588,7 @@ func (c *ClientWithResponses) PostV1CustomerFlowWithResponse(ctx context.Context
 
 // GetV1CustomerFlowFolderWithResponse List customer flow folders
 //
-// Returns every folder the project groups its customer flows into, with how many flows each holds, in the order the app shows them. Filter the flow list to one folder with `GET /v1/customer-flow?folderId=`. Customer flows were previously called scenarios.
+// Returns every folder the project groups its customer flows into, with how many flows each holds, in the order the app shows them. Subfolders are included, each with the `parentId` of the folder it sits in. Filter the flow list to one folder with `GET /v1/customer-flow?folderId=`, adding `includeSubfolders=true` to take in the folders inside it. Customer flows were previously called scenarios.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -116258,7 +116603,7 @@ func (c *ClientWithResponses) GetV1CustomerFlowFolderWithResponse(ctx context.Co
 
 // PostV1CustomerFlowFolderWithBodyWithResponse Create a customer flow folder
 //
-// Creates a folder to group customer flows. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within a project, ignoring case. Customer flows were previously called scenarios.
+// Creates a folder to group customer flows, at the top level or inside another folder with `parentId`. Folders nest up to 5 levels deep. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within their parent folder, ignoring case. Customer flows were previously called scenarios.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -116273,7 +116618,7 @@ func (c *ClientWithResponses) PostV1CustomerFlowFolderWithBodyWithResponse(ctx c
 
 // PostV1CustomerFlowFolderWithResponse Create a customer flow folder
 //
-// Creates a folder to group customer flows. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within a project, ignoring case. Customer flows were previously called scenarios.
+// Creates a folder to group customer flows, at the top level or inside another folder with `parentId`. Folders nest up to 5 levels deep. File a flow into it by sending its `folderId` when you create or update the flow. Names are unique within their parent folder, ignoring case. Customer flows were previously called scenarios.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -116288,7 +116633,7 @@ func (c *ClientWithResponses) PostV1CustomerFlowFolderWithResponse(ctx context.C
 
 // DeleteV1CustomerFlowFolderByFolderIdWithResponse Delete a customer flow folder
 //
-// Deletes a folder. The flows in it are kept and no longer sit in any folder. Built-in folders cannot be deleted.
+// Deletes a folder. Its flows and subfolders are kept and move up one level: into the folder it sat in, or out of any folder when it was a top-level folder. Built-in folders cannot be deleted.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -116299,6 +116644,36 @@ func (c *ClientWithResponses) DeleteV1CustomerFlowFolderByFolderIdWithResponse(c
 		return nil, err
 	}
 	return ParseDeleteV1CustomerFlowFolderByFolderIdResponse(rsp)
+}
+
+// PutV1CustomerFlowFolderByFolderIdWithBodyWithResponse Update a customer flow folder
+//
+// Renames, recolors or moves a folder. Send `parentId` to move it, with its flows and subfolders, inside another folder, or null to move it to the top level. Fields you omit are left as they are. Built-in folders cannot be changed. Customer flows were previously called scenarios.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/customer-flow/folder/{folderId} (the `PutV1CustomerFlowFolderByFolderId` operationId).
+func (c *ClientWithResponses) PutV1CustomerFlowFolderByFolderIdWithBodyWithResponse(ctx context.Context, folderId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutV1CustomerFlowFolderByFolderIdResponse, error) {
+	rsp, err := c.PutV1CustomerFlowFolderByFolderIdWithBody(ctx, folderId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1CustomerFlowFolderByFolderIdResponse(rsp)
+}
+
+// PutV1CustomerFlowFolderByFolderIdWithResponse Update a customer flow folder
+//
+// Renames, recolors or moves a folder. Send `parentId` to move it, with its flows and subfolders, inside another folder, or null to move it to the top level. Fields you omit are left as they are. Built-in folders cannot be changed. Customer flows were previously called scenarios.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v1/customer-flow/folder/{folderId} (the `PutV1CustomerFlowFolderByFolderId` operationId).
+func (c *ClientWithResponses) PutV1CustomerFlowFolderByFolderIdWithResponse(ctx context.Context, folderId openapi_types.UUID, body PutV1CustomerFlowFolderByFolderIdJSONRequestBody, reqEditors ...RequestEditorFn) (*PutV1CustomerFlowFolderByFolderIdResponse, error) {
+	rsp, err := c.PutV1CustomerFlowFolderByFolderId(ctx, folderId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutV1CustomerFlowFolderByFolderIdResponse(rsp)
 }
 
 // DeleteV1CustomerFlowByFlowIdWithResponse Delete a customer flow
@@ -127070,7 +127445,7 @@ func ParsePostV1CustomerFlowFolderResponse(rsp *http.Response) (*PostV1CustomerF
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
-			// Data A folder that groups customer flows. A flow sits in at most one folder.
+			// Data A folder that groups customer flows. A flow sits in at most one folder. Folders can sit inside other folders, up to 5 levels deep.
 			Data CustomerFlowFolder `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -127098,6 +127473,13 @@ func ParsePostV1CustomerFlowFolderResponse(rsp *http.Response) (*PostV1CustomerF
 			return nil, err
 		}
 		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
 		var dest ErrorResponse
@@ -127178,6 +127560,91 @@ func ParseDeleteV1CustomerFlowFolderByFolderIdResponse(rsp *http.Response) (*Del
 			return nil, err
 		}
 		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePutV1CustomerFlowFolderByFolderIdResponse parses an HTTP response from a PutV1CustomerFlowFolderByFolderIdWithResponse call
+func ParsePutV1CustomerFlowFolderByFolderIdResponse(rsp *http.Response) (*PutV1CustomerFlowFolderByFolderIdResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PutV1CustomerFlowFolderByFolderIdResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Data A folder that groups customer flows. A flow sits in at most one folder. Folders can sit inside other folders, up to 5 levels deep.
+			Data CustomerFlowFolder `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
 		var dest ErrorResponse

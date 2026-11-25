@@ -3436,6 +3436,27 @@ func (e AutoimproveLogEntryKind) Valid() bool {
 	}
 }
 
+// Defines values for AutoimproveLogEntrySentVia.
+const (
+	AutoimproveLogEntrySentViaAPI      AutoimproveLogEntrySentVia = "API"
+	AutoimproveLogEntrySentViaPLATFORM AutoimproveLogEntrySentVia = "PLATFORM"
+	AutoimproveLogEntrySentViaROARKY   AutoimproveLogEntrySentVia = "ROARKY"
+)
+
+// Valid indicates whether the value is a known member of the AutoimproveLogEntrySentVia enum.
+func (e AutoimproveLogEntrySentVia) Valid() bool {
+	switch e {
+	case AutoimproveLogEntrySentViaAPI:
+		return true
+	case AutoimproveLogEntrySentViaPLATFORM:
+		return true
+	case AutoimproveLogEntrySentViaROARKY:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for BenchmarkMetricGoal.
 const (
 	BenchmarkMetricGoalHigher  BenchmarkMetricGoal = "higher"
@@ -30802,7 +30823,7 @@ type AgentConnectionCreateBland struct {
 	// AgentNames Agents to create by name rather than by id, for agents the platform does not list. On LiveKit Cloud this is the agent name your worker dispatches as.
 	AgentNames *[]string `json:"agentNames,omitempty"`
 
-	// AgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+	// AgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 	AgentScope *AgentConnectionCreateBlandAgentScope `json:"agentScope,omitempty"`
 
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
@@ -30823,7 +30844,7 @@ type AgentConnectionCreateBland struct {
 	SamplingRate *float64 `json:"samplingRate,omitempty"`
 }
 
-// AgentConnectionCreateBlandAgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+// AgentConnectionCreateBlandAgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 type AgentConnectionCreateBlandAgentScope string
 
 // AgentConnectionCreateBlandProvider defines model for AgentConnectionCreateBland.Provider.
@@ -30842,7 +30863,7 @@ type AgentConnectionCreateElevenLabs struct {
 	// AgentNames Agents to create by name rather than by id, for agents the platform does not list. On LiveKit Cloud this is the agent name your worker dispatches as.
 	AgentNames *[]string `json:"agentNames,omitempty"`
 
-	// AgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+	// AgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 	AgentScope *AgentConnectionCreateElevenLabsAgentScope `json:"agentScope,omitempty"`
 
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
@@ -30863,7 +30884,7 @@ type AgentConnectionCreateElevenLabs struct {
 	SamplingRate *float64 `json:"samplingRate,omitempty"`
 }
 
-// AgentConnectionCreateElevenLabsAgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+// AgentConnectionCreateElevenLabsAgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 type AgentConnectionCreateElevenLabsAgentScope string
 
 // AgentConnectionCreateElevenLabsProvider defines model for AgentConnectionCreateElevenLabs.Provider.
@@ -30959,7 +30980,7 @@ type AgentConnectionCreateLivekit struct {
 	// AgentNames Agents to create by name rather than by id, for agents the platform does not list. On LiveKit Cloud this is the agent name your worker dispatches as.
 	AgentNames *[]string `json:"agentNames,omitempty"`
 
-	// AgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+	// AgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 	AgentScope *AgentConnectionCreateLivekitAgentScope `json:"agentScope,omitempty"`
 
 	// ApiKey LiveKit API key. Stored encrypted and never returned.
@@ -30994,7 +31015,7 @@ type AgentConnectionCreateLivekit struct {
 	Url string `json:"url"`
 }
 
-// AgentConnectionCreateLivekitAgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+// AgentConnectionCreateLivekitAgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 type AgentConnectionCreateLivekitAgentScope string
 
 // AgentConnectionCreateLivekitMetadataEgressStrategy When the recording starts for a marked room. EAGER starts it at room creation; DEFERRED waits for the metadata. Needs `metadataFilteringEnabled`. Defaults to DEFERRED.
@@ -31100,7 +31121,7 @@ type AgentConnectionCreateRetell struct {
 	// AgentNames Agents to create by name rather than by id, for agents the platform does not list. On LiveKit Cloud this is the agent name your worker dispatches as.
 	AgentNames *[]string `json:"agentNames,omitempty"`
 
-	// AgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+	// AgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 	AgentScope *AgentConnectionCreateRetellAgentScope `json:"agentScope,omitempty"`
 
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
@@ -31121,7 +31142,7 @@ type AgentConnectionCreateRetell struct {
 	SamplingRate *float64 `json:"samplingRate,omitempty"`
 }
 
-// AgentConnectionCreateRetellAgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+// AgentConnectionCreateRetellAgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 type AgentConnectionCreateRetellAgentScope string
 
 // AgentConnectionCreateRetellProvider defines model for AgentConnectionCreateRetell.Provider.
@@ -31135,7 +31156,7 @@ type AgentConnectionCreateVapi struct {
 	// AgentNames Agents to create by name rather than by id, for agents the platform does not list. On LiveKit Cloud this is the agent name your worker dispatches as.
 	AgentNames *[]string `json:"agentNames,omitempty"`
 
-	// AgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+	// AgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 	AgentScope *AgentConnectionCreateVapiAgentScope `json:"agentScope,omitempty"`
 
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
@@ -31159,7 +31180,7 @@ type AgentConnectionCreateVapi struct {
 	SamplingRate *float64 `json:"samplingRate,omitempty"`
 }
 
-// AgentConnectionCreateVapiAgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+// AgentConnectionCreateVapiAgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 type AgentConnectionCreateVapiAgentScope string
 
 // AgentConnectionCreateVapiProvider defines model for AgentConnectionCreateVapi.Provider.
@@ -31402,7 +31423,7 @@ type AgentConnectionUpdateBland struct {
 	// AgentNames Agents to create by name rather than by id, for agents the platform does not list. On LiveKit Cloud this is the agent name your worker dispatches as.
 	AgentNames *[]string `json:"agentNames,omitempty"`
 
-	// AgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+	// AgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 	AgentScope *AgentConnectionUpdateBlandAgentScope `json:"agentScope,omitempty"`
 
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
@@ -31428,7 +31449,7 @@ type AgentConnectionUpdateBland struct {
 	Status *AgentConnectionUpdateBlandStatus `json:"status,omitempty"`
 }
 
-// AgentConnectionUpdateBlandAgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+// AgentConnectionUpdateBlandAgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 type AgentConnectionUpdateBlandAgentScope string
 
 // AgentConnectionUpdateBlandProvider The connection's provider. It cannot change.
@@ -31450,7 +31471,7 @@ type AgentConnectionUpdateElevenLabs struct {
 	// AgentNames Agents to create by name rather than by id, for agents the platform does not list. On LiveKit Cloud this is the agent name your worker dispatches as.
 	AgentNames *[]string `json:"agentNames,omitempty"`
 
-	// AgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+	// AgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 	AgentScope *AgentConnectionUpdateElevenLabsAgentScope `json:"agentScope,omitempty"`
 
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
@@ -31476,7 +31497,7 @@ type AgentConnectionUpdateElevenLabs struct {
 	Status *AgentConnectionUpdateElevenLabsStatus `json:"status,omitempty"`
 }
 
-// AgentConnectionUpdateElevenLabsAgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+// AgentConnectionUpdateElevenLabsAgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 type AgentConnectionUpdateElevenLabsAgentScope string
 
 // AgentConnectionUpdateElevenLabsProvider The connection's provider. It cannot change.
@@ -31599,7 +31620,7 @@ type AgentConnectionUpdateLivekit struct {
 	// AgentNames Agents to create by name rather than by id, for agents the platform does not list. On LiveKit Cloud this is the agent name your worker dispatches as.
 	AgentNames *[]string `json:"agentNames,omitempty"`
 
-	// AgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+	// AgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 	AgentScope *AgentConnectionUpdateLivekitAgentScope `json:"agentScope,omitempty"`
 
 	// ApiKey LiveKit API key. Stored encrypted and never returned.
@@ -31636,7 +31657,7 @@ type AgentConnectionUpdateLivekit struct {
 	Url *string `json:"url,omitempty"`
 }
 
-// AgentConnectionUpdateLivekitAgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+// AgentConnectionUpdateLivekitAgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 type AgentConnectionUpdateLivekitAgentScope string
 
 // AgentConnectionUpdateLivekitMetadataEgressStrategy When the recording starts for a marked room. EAGER starts it at room creation; DEFERRED waits for the metadata. Needs `metadataFilteringEnabled`. Defaults to DEFERRED.
@@ -31751,7 +31772,7 @@ type AgentConnectionUpdateRetell struct {
 	// AgentNames Agents to create by name rather than by id, for agents the platform does not list. On LiveKit Cloud this is the agent name your worker dispatches as.
 	AgentNames *[]string `json:"agentNames,omitempty"`
 
-	// AgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+	// AgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 	AgentScope *AgentConnectionUpdateRetellAgentScope `json:"agentScope,omitempty"`
 
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
@@ -31777,7 +31798,7 @@ type AgentConnectionUpdateRetell struct {
 	Status *AgentConnectionUpdateRetellStatus `json:"status,omitempty"`
 }
 
-// AgentConnectionUpdateRetellAgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+// AgentConnectionUpdateRetellAgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 type AgentConnectionUpdateRetellAgentScope string
 
 // AgentConnectionUpdateRetellProvider The connection's provider. It cannot change.
@@ -31794,7 +31815,7 @@ type AgentConnectionUpdateVapi struct {
 	// AgentNames Agents to create by name rather than by id, for agents the platform does not list. On LiveKit Cloud this is the agent name your worker dispatches as.
 	AgentNames *[]string `json:"agentNames,omitempty"`
 
-	// AgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+	// AgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 	AgentScope *AgentConnectionUpdateVapiAgentScope `json:"agentScope,omitempty"`
 
 	// ApiKey The platform's API key. Checked against the platform before anything is stored. Stored encrypted and never returned.
@@ -31823,7 +31844,7 @@ type AgentConnectionUpdateVapi struct {
 	Status *AgentConnectionUpdateVapiStatus `json:"status,omitempty"`
 }
 
-// AgentConnectionUpdateVapiAgentScope ALL brings in every agent on the account. SELECTED brings in only `agentIds` and `agentNames`.
+// AgentConnectionUpdateVapiAgentScope ALL brings in every agent on the account, and is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). SELECTED brings in only `agentIds` and `agentNames`, up to 1,000.
 type AgentConnectionUpdateVapiAgentScope string
 
 // AgentConnectionUpdateVapiProvider The connection's provider. It cannot change.
@@ -32941,20 +32962,25 @@ type AutoimproveLogEntry struct {
 	ConfigPushId *openapi_types.UUID `json:"configPushId"`
 
 	// CreatedAt When the entry was written (ISO 8601).
-	CreatedAt              string                  `json:"createdAt"`
-	Id                     openapi_types.UUID      `json:"id"`
-	Kind                   AutoimproveLogEntryKind `json:"kind"`
-	OrderIndex             int                     `json:"orderIndex"`
-	PassRateAfter          *float64                `json:"passRateAfter"`
-	PassRateBefore         *float64                `json:"passRateBefore"`
-	QuestionOptions        *[]string               `json:"questionOptions"`
-	SimulationRunPlanJobId *openapi_types.UUID     `json:"simulationRunPlanJobId"`
-	Text                   string                  `json:"text"`
-	TrialCount             *int                    `json:"trialCount"`
+	CreatedAt              string                      `json:"createdAt"`
+	Id                     openapi_types.UUID          `json:"id"`
+	Kind                   AutoimproveLogEntryKind     `json:"kind"`
+	OrderIndex             int                         `json:"orderIndex"`
+	PassRateAfter          *float64                    `json:"passRateAfter"`
+	PassRateBefore         *float64                    `json:"passRateBefore"`
+	QuestionOptions        *[]string                   `json:"questionOptions"`
+	SentById               *openapi_types.UUID         `json:"sentById"`
+	SentVia                *AutoimproveLogEntrySentVia `json:"sentVia"`
+	SimulationRunPlanJobId *openapi_types.UUID         `json:"simulationRunPlanJobId"`
+	Text                   string                      `json:"text"`
+	TrialCount             *int                        `json:"trialCount"`
 }
 
 // AutoimproveLogEntryKind defines model for AutoimproveLogEntry.Kind.
 type AutoimproveLogEntryKind string
+
+// AutoimproveLogEntrySentVia defines model for AutoimproveLogEntry.SentVia.
+type AutoimproveLogEntrySentVia string
 
 // AutoimproveTextInput defines model for AutoimproveTextInput.
 type AutoimproveTextInput struct {
@@ -64499,7 +64525,7 @@ type ClientInterface interface {
 
 	// PostV1ConnectionsAgentWithBody Connect an agent
 	//
-	// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
+	// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. An account with more agents than the project allows for `agentScope` ALL (25 unless raised for the project) returns 400 `too_many_agents`, including when `agentScope` is left out: send SELECTED with the `agentIds` to bring in, up to 1,000. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -64508,7 +64534,7 @@ type ClientInterface interface {
 
 	// PostV1ConnectionsAgent Connect an agent
 	//
-	// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
+	// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. An account with more agents than the project allows for `agentScope` ALL (25 unless raised for the project) returns 400 `too_many_agents`, including when `agentScope` is left out: send SELECTED with the `agentIds` to bring in, up to 1,000. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -64556,7 +64582,7 @@ type ClientInterface interface {
 
 	// PatchV1ConnectionsAgentByConnectionIdWithBody Update an agent connection
 	//
-	// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Set `status` to INACTIVE to pause syncing without deleting anything.
+	// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Moving to `agentScope` ALL, or giving an ALL connection a new key, on an account with more agents than the project allows returns 400 `too_many_agents`, as does selecting more than 1,000. Set `status` to INACTIVE to pause syncing without deleting anything.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -64565,7 +64591,7 @@ type ClientInterface interface {
 
 	// PatchV1ConnectionsAgentByConnectionId Update an agent connection
 	//
-	// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Set `status` to INACTIVE to pause syncing without deleting anything.
+	// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Moving to `agentScope` ALL, or giving an ALL connection a new key, on an account with more agents than the project allows returns 400 `too_many_agents`, as does selecting more than 1,000. Set `status` to INACTIVE to pause syncing without deleting anything.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -68569,7 +68595,7 @@ func (c *Client) GetV1ConnectionsAgent(ctx context.Context, params *GetV1Connect
 
 // PostV1ConnectionsAgentWithBody Connect an agent
 //
-// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
+// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. An account with more agents than the project allows for `agentScope` ALL (25 unless raised for the project) returns 400 `too_many_agents`, including when `agentScope` is left out: send SELECTED with the `agentIds` to bring in, up to 1,000. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
 //
 // Takes any type of body and a specified content type.
 //
@@ -68588,7 +68614,7 @@ func (c *Client) PostV1ConnectionsAgentWithBody(ctx context.Context, contentType
 
 // PostV1ConnectionsAgent Connect an agent
 //
-// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
+// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. An account with more agents than the project allows for `agentScope` ALL (25 unless raised for the project) returns 400 `too_many_agents`, including when `agentScope` is left out: send SELECTED with the `agentIds` to bring in, up to 1,000. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -68696,7 +68722,7 @@ func (c *Client) GetV1ConnectionsAgentByConnectionId(ctx context.Context, connec
 
 // PatchV1ConnectionsAgentByConnectionIdWithBody Update an agent connection
 //
-// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Set `status` to INACTIVE to pause syncing without deleting anything.
+// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Moving to `agentScope` ALL, or giving an ALL connection a new key, on an account with more agents than the project allows returns 400 `too_many_agents`, as does selecting more than 1,000. Set `status` to INACTIVE to pause syncing without deleting anything.
 //
 // Takes any type of body and a specified content type.
 //
@@ -68715,7 +68741,7 @@ func (c *Client) PatchV1ConnectionsAgentByConnectionIdWithBody(ctx context.Conte
 
 // PatchV1ConnectionsAgentByConnectionId Update an agent connection
 //
-// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Set `status` to INACTIVE to pause syncing without deleting anything.
+// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Moving to `agentScope` ALL, or giving an ALL connection a new key, on an account with more agents than the project allows returns 400 `too_many_agents`, as does selecting more than 1,000. Set `status` to INACTIVE to pause syncing without deleting anything.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -86576,7 +86602,7 @@ type ClientWithResponsesInterface interface {
 
 	// PostV1ConnectionsAgentWithBodyWithResponse Connect an agent
 	//
-	// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
+	// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. An account with more agents than the project allows for `agentScope` ALL (25 unless raised for the project) returns 400 `too_many_agents`, including when `agentScope` is left out: send SELECTED with the `agentIds` to bring in, up to 1,000. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -86585,7 +86611,7 @@ type ClientWithResponsesInterface interface {
 
 	// PostV1ConnectionsAgentWithResponse Connect an agent
 	//
-	// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
+	// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. An account with more agents than the project allows for `agentScope` ALL (25 unless raised for the project) returns 400 `too_many_agents`, including when `agentScope` is left out: send SELECTED with the `agentIds` to bring in, up to 1,000. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -86639,7 +86665,7 @@ type ClientWithResponsesInterface interface {
 
 	// PatchV1ConnectionsAgentByConnectionIdWithBodyWithResponse Update an agent connection
 	//
-	// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Set `status` to INACTIVE to pause syncing without deleting anything.
+	// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Moving to `agentScope` ALL, or giving an ALL connection a new key, on an account with more agents than the project allows returns 400 `too_many_agents`, as does selecting more than 1,000. Set `status` to INACTIVE to pause syncing without deleting anything.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -86648,7 +86674,7 @@ type ClientWithResponsesInterface interface {
 
 	// PatchV1ConnectionsAgentByConnectionIdWithResponse Update an agent connection
 	//
-	// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Set `status` to INACTIVE to pause syncing without deleting anything.
+	// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Moving to `agentScope` ALL, or giving an ALL connection a new key, on an account with more agents than the project allows returns 400 `too_many_agents`, as does selecting more than 1,000. Set `status` to INACTIVE to pause syncing without deleting anything.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -115868,7 +115894,7 @@ func (c *ClientWithResponses) GetV1ConnectionsAgentWithResponse(ctx context.Cont
 
 // PostV1ConnectionsAgentWithBodyWithResponse Connect an agent
 //
-// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
+// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. An account with more agents than the project allows for `agentScope` ALL (25 unless raised for the project) returns 400 `too_many_agents`, including when `agentScope` is left out: send SELECTED with the `agentIds` to bring in, up to 1,000. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -115883,7 +115909,7 @@ func (c *ClientWithResponses) PostV1ConnectionsAgentWithBodyWithResponse(ctx con
 
 // PostV1ConnectionsAgentWithResponse Connect an agent
 //
-// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
+// Connects the platform a project’s agents run on. The body is shaped by `provider`; `GET /v1/connections/agent/providers` lists what each needs. Retell, Vapi, ElevenLabs and Bland keys are checked by listing agents first, so a refused key returns 400 and nothing is stored. An account with more agents than the project allows for `agentScope` ALL (25 unless raised for the project) returns 400 `too_many_agents`, including when `agentScope` is left out: send SELECTED with the `agentIds` to bring in, up to 1,000. Platforms that pull agents start syncing straight away. For LIVEKIT_SELF_HOSTED and the Pipecat providers, the response carries `observerApiKey`, shown once, for your SDK to report calls with. Most platforms connect once per project, and a second create returns 409; LiveKit Cloud may connect several accounts.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -115973,7 +115999,7 @@ func (c *ClientWithResponses) GetV1ConnectionsAgentByConnectionIdWithResponse(ct
 
 // PatchV1ConnectionsAgentByConnectionIdWithBodyWithResponse Update an agent connection
 //
-// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Set `status` to INACTIVE to pause syncing without deleting anything.
+// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Moving to `agentScope` ALL, or giving an ALL connection a new key, on an account with more agents than the project allows returns 400 `too_many_agents`, as does selecting more than 1,000. Set `status` to INACTIVE to pause syncing without deleting anything.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -115988,7 +116014,7 @@ func (c *ClientWithResponses) PatchV1ConnectionsAgentByConnectionIdWithBodyWithR
 
 // PatchV1ConnectionsAgentByConnectionIdWithResponse Update an agent connection
 //
-// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Set `status` to INACTIVE to pause syncing without deleting anything.
+// Changes a connection’s settings or rotates its credential. Send `provider` (it must match the connection’s) and only the fields to change; the rest keep their stored values. A new Retell, Vapi, ElevenLabs or Bland key is checked by listing agents first. Moving to `agentScope` ALL, or giving an ALL connection a new key, on an account with more agents than the project allows returns 400 `too_many_agents`, as does selecting more than 1,000. Set `status` to INACTIVE to pause syncing without deleting anything.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //

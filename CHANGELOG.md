@@ -2,6 +2,12 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.22.1, 2026-11-25
+
+- Add `SentById` and `SentVia` to `AutoimproveLogEntry`. Both are nullable pointers.
+- Add the `AutoimproveLogEntrySentVia` enum with `AutoimproveLogEntrySentViaAPI`, `AutoimproveLogEntrySentViaPLATFORM` and `AutoimproveLogEntrySentViaROARKY`, and its `Valid` method.
+- Update the doc comments on `AgentScope` and the `AgentConnectionCreate*AgentScope` types. `ALL` is refused with `too_many_agents` when the account has more agents than the project allows (25 unless raised for the project). `SELECTED` accepts up to 1,000 agents.
+
 ## v0.22.0, 2026-11-24
 
 - Add customer flow folder updates: `PutV1CustomerFlowFolderByFolderId` and `PutV1CustomerFlowFolderByFolderIdWithBody` on `Client`, and `PutV1CustomerFlowFolderByFolderIdWithResponse` and `PutV1CustomerFlowFolderByFolderIdWithBodyWithResponse` on `ClientWithResponses`. Also add `NewPutV1CustomerFlowFolderByFolderIdRequest`, `NewPutV1CustomerFlowFolderByFolderIdRequestWithBody`, `ParsePutV1CustomerFlowFolderByFolderIdResponse`, `PutV1CustomerFlowFolderByFolderIdResponse` and `PutV1CustomerFlowFolderByFolderIdJSONRequestBody`.

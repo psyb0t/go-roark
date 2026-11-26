@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.23.0, 2026-11-26
+
+- Add the simulation job rescore endpoints: `GetV1SimulationPlanJobByJobIdRescore` and `PostV1SimulationPlanJobByJobIdRescore` on `Client` and `ClientInterface`, and the matching `...WithResponse` methods on `ClientWithResponses` and `ClientWithResponsesInterface`. Also add the `New...Request` and `Parse...Response` helpers and `GetV1SimulationPlanJobByJobIdRescoreResponse` and `PostV1SimulationPlanJobByJobIdRescoreResponse`.
+- Add `SimulationRunRescore`, `SimulationRunRescoreMetric` and the `SimulationRunRescoreStatus` enum (`COMPLETED`, `FAILED`, `RUNNING`) with its `Valid` method.
+- Add `MaxAttempts` (1 to 5, default 3) and `TimeoutMs` (1000 to 300000, default 30000) to the HTTP request types: `ApiCheckRequestConfig`, `CreateHttpRequestDefinitionInput`, `UpdateHttpRequestDefinitionInput`, `HttpRequestDefinitionConfig`, `HttpRequestDefinitionResponse`, `HttpRequestDefinitionCreateResponse`, `HttpRequestMetricConfig` and `HttpRequestMetricDetails`. The inline `HttpRequest` struct on `HttpRequestMetricInput` gains both fields too, so code that names that struct type must change.
+- Add `ApplicabilityCondition` to the metric input and response types, including `MetricConfig`, `PromptMetricInput`, `UpdateMetricDefinitionInput`, `UpdateMetricVariantInput`, `LlmJudgeMetricResponse` and `FormulaMetricResponse`. A conversation that does not meet the condition records `NOT_APPLICABLE` instead of a verdict.
+- Add `CustomerFlows` and `InScopeCalls` to `SimulationRunMetricResult`, `CustomerFlows`, `InScopeSims` and `NotApplicable` to `SimulationRunPlanJobCheck`, and `CountedSims` to `SimulationRunPlanJobVerdict`. Add the `SimulationRunMetricFlow` type.
+- Add `MetricDefinitionIds` and `ThemeSlugs` to the inline item types of `SimulationRunDebriefReport.KeyFindings` and `WentWell`, and `MetricDefinitionIds` to `ExecutiveSummary` sections. The anonymous struct types of these fields and of `LiveReportDocument.Document` changed, so code that names them must change.
+- Add the two rescore methods to `ClientInterface` and `ClientWithResponsesInterface`, so custom implementations of those interfaces must add them.
+
 ## v0.22.1, 2026-11-25
 
 - Add `SentById` and `SentVia` to `AutoimproveLogEntry`. Both are nullable pointers.

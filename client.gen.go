@@ -20074,6 +20074,27 @@ func (e SimulationRunPlanJobVerdictFailure4Type) Valid() bool {
 	}
 }
 
+// Defines values for SimulationRunRescoreStatus.
+const (
+	SimulationRunRescoreStatusCOMPLETED SimulationRunRescoreStatus = "COMPLETED"
+	SimulationRunRescoreStatusFAILED    SimulationRunRescoreStatus = "FAILED"
+	SimulationRunRescoreStatusRUNNING   SimulationRunRescoreStatus = "RUNNING"
+)
+
+// Valid indicates whether the value is a known member of the SimulationRunRescoreStatus enum.
+func (e SimulationRunRescoreStatus) Valid() bool {
+	switch e {
+	case SimulationRunRescoreStatusCOMPLETED:
+		return true
+	case SimulationRunRescoreStatusFAILED:
+		return true
+	case SimulationRunRescoreStatusRUNNING:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for SimulationRunResultsComparisonBaselineRunStatus.
 const (
 	SimulationRunResultsComparisonBaselineRunStatusCANCELLED           SimulationRunResultsComparisonBaselineRunStatus = "CANCELLED"
@@ -32767,10 +32788,12 @@ type ApiCheckMetricConfigKind string
 
 // ApiCheckRequestConfig defines model for ApiCheckRequestConfig.
 type ApiCheckRequestConfig struct {
-	Body    *string                      `json:"body,omitempty"`
-	Headers *map[string]string           `json:"headers,omitempty"`
-	Method  *ApiCheckRequestConfigMethod `json:"method,omitempty"`
-	Url     string                       `json:"url"`
+	Body        *string                      `json:"body,omitempty"`
+	Headers     *map[string]string           `json:"headers,omitempty"`
+	MaxAttempts *int                         `json:"maxAttempts,omitempty"`
+	Method      *ApiCheckRequestConfigMethod `json:"method,omitempty"`
+	TimeoutMs   *int                         `json:"timeoutMs,omitempty"`
+	Url         string                       `json:"url"`
 }
 
 // ApiCheckRequestConfigMethod defines model for ApiCheckRequestConfig.Method.
@@ -34377,11 +34400,21 @@ type CreateHttpRequestDefinitionInput struct {
 	// Headers Request headers as key-value pairs
 	Headers *map[string]string `json:"headers,omitempty"`
 
+	// MaxAttempts How many times to send the request, from 1 to 5. Set 1 so a slow answer is never sent again, which would start a second call. Null or omitted is the default, 3.
+	//
+	// Example: 1
+	MaxAttempts *int `json:"maxAttempts,omitempty"`
+
 	// Method HTTP method (default: POST)
 	Method *CreateHttpRequestDefinitionInputMethod `json:"method,omitempty"`
 
 	// Scope Scope: AGENT_OUTBOUND_DIAL
 	Scope CreateHttpRequestDefinitionInputScope `json:"scope"`
+
+	// TimeoutMs How long to wait for each attempt, in milliseconds, from 1000 to 300000. Raise it while you debug your endpoint. Null or omitted is the default, 30000.
+	//
+	// Example: 120000
+	TimeoutMs *int `json:"timeoutMs,omitempty"`
 
 	// Url URL for the HTTP request
 	Url string `json:"url"`
@@ -37347,6 +37380,9 @@ type FormulaMetricInputOutputType string
 
 // FormulaMetricResponse defines model for FormulaMetricResponse.
 type FormulaMetricResponse struct {
+	// ApplicabilityCondition When this metric applies, in plain words (for example "the caller asks to stop being contacted"). BOOLEAN LLM metrics only. On a conversation that does not meet it, the metric records `captureStatus: NOT_APPLICABLE` instead of a verdict, and checks on it count only the conversations it applies to. Null or empty: it applies to every conversation.
+	ApplicabilityCondition *string `json:"applicabilityCondition"`
+
 	// CalculationType Metric computed by evaluating an expression over other metrics.
 	CalculationType FormulaMetricResponseCalculationType `json:"calculationType"`
 
@@ -37866,8 +37902,10 @@ type HttpRequestDefinitionConfig struct {
 	Description *string                            `json:"description,omitempty"`
 	Headers     *map[string]string                 `json:"headers,omitempty"`
 	Kind        HttpRequestDefinitionConfigKind    `json:"kind"`
+	MaxAttempts *int                               `json:"maxAttempts,omitempty"`
 	Method      *HttpRequestDefinitionConfigMethod `json:"method,omitempty"`
 	Name        string                             `json:"name"`
+	TimeoutMs   *int                               `json:"timeoutMs,omitempty"`
 	Url         string                             `json:"url"`
 }
 
@@ -37897,6 +37935,11 @@ type HttpRequestDefinitionCreateResponse struct {
 	// IsConfigManaged Whether this definition is managed by config-as-code. A managed definition is reconciled from your config: PUT returns 409, and changes belong in the config file (or detach it first).
 	IsConfigManaged bool `json:"isConfigManaged"`
 
+	// MaxAttempts How many times Roark sends the request before the simulation fails: once, plus a retry after each timeout or failed response. Null is the default, 3.
+	//
+	// Example: 3
+	MaxAttempts *int `json:"maxAttempts"`
+
 	// Method HTTP method: POST, PUT, PATCH, or GET
 	Method HttpRequestDefinitionCreateResponseMethod `json:"method"`
 
@@ -37908,6 +37951,11 @@ type HttpRequestDefinitionCreateResponse struct {
 
 	// SigningSecret Signing secret (only returned on creation)
 	SigningSecret string `json:"signingSecret"`
+
+	// TimeoutMs How long Roark waits for each attempt, in milliseconds. Null is the default, 30000.
+	//
+	// Example: 30000
+	TimeoutMs *int `json:"timeoutMs"`
 
 	// UpdatedAt Last update timestamp
 	UpdatedAt string `json:"updatedAt"`
@@ -37953,6 +38001,11 @@ type HttpRequestDefinitionResponse struct {
 	// IsConfigManaged Whether this definition is managed by config-as-code. A managed definition is reconciled from your config: PUT returns 409, and changes belong in the config file (or detach it first).
 	IsConfigManaged bool `json:"isConfigManaged"`
 
+	// MaxAttempts How many times Roark sends the request before the simulation fails: once, plus a retry after each timeout or failed response. Null is the default, 3.
+	//
+	// Example: 3
+	MaxAttempts *int `json:"maxAttempts"`
+
 	// Method HTTP method: POST, PUT, PATCH, or GET
 	Method HttpRequestDefinitionResponseMethod `json:"method"`
 
@@ -37961,6 +38014,11 @@ type HttpRequestDefinitionResponse struct {
 
 	// Scope Scope of the HTTP request definition
 	Scope HttpRequestDefinitionResponseScope `json:"scope"`
+
+	// TimeoutMs How long Roark waits for each attempt, in milliseconds. Null is the default, 30000.
+	//
+	// Example: 30000
+	TimeoutMs *int `json:"timeoutMs"`
 
 	// UpdatedAt Last update timestamp
 	UpdatedAt string `json:"updatedAt"`
@@ -37996,8 +38054,18 @@ type HttpRequestMetricConfig struct {
 	// Example: {"Authorization":"Bearer sk_live_..."}
 	Headers *map[string]string `json:"headers,omitempty"`
 
+	// MaxAttempts How many times to send the request before recording an error: once, plus retries after a timeout, a connection failure or an HTTP 5xx. At most 5. Omit or pass null for 3.
+	//
+	// Example: 1
+	MaxAttempts *int `json:"maxAttempts,omitempty"`
+
 	// Method GET or POST (default POST). A GET request has no body.
 	Method *HttpRequestMetricConfigMethod `json:"method,omitempty"`
+
+	// TimeoutMs How long to wait for each attempt, in milliseconds. At most 300000. Omit or pass null for 30000.
+	//
+	// Example: 60000
+	TimeoutMs *int `json:"timeoutMs,omitempty"`
 
 	// Url Public http(s) URL. May contain {{path}} placeholders into the request payload, which are URL-encoded.
 	//
@@ -38014,8 +38082,14 @@ type HttpRequestMetricDetails struct {
 	Body *string `json:"body"`
 
 	// Headers Request headers as key-value pairs
-	Headers map[string]string              `json:"headers"`
-	Method  HttpRequestMetricDetailsMethod `json:"method"`
+	Headers map[string]string `json:"headers"`
+
+	// MaxAttempts How many times Roark sends the request before recording an error. Null is the default, 3.
+	MaxAttempts *int                           `json:"maxAttempts"`
+	Method      HttpRequestMetricDetailsMethod `json:"method"`
+
+	// TimeoutMs How long Roark waits for each attempt, in milliseconds. Null is the default, 30000.
+	TimeoutMs *int `json:"timeoutMs"`
 
 	// Url The URL the request is sent to, placeholders included
 	Url string `json:"url"`
@@ -38051,8 +38125,18 @@ type HttpRequestMetricInput struct {
 		// Example: {"Authorization":"Bearer sk_live_..."}
 		Headers *map[string]string `json:"headers,omitempty"`
 
+		// MaxAttempts How many times to send the request before recording an error: once, plus retries after a timeout, a connection failure or an HTTP 5xx. At most 5. Omit or pass null for 3.
+		//
+		// Example: 1
+		MaxAttempts *int `json:"maxAttempts,omitempty"`
+
 		// Method GET or POST (default POST). A GET request has no body.
 		Method *HttpRequestMetricInputHttpRequestMethod `json:"method,omitempty"`
+
+		// TimeoutMs How long to wait for each attempt, in milliseconds. At most 300000. Omit or pass null for 30000.
+		//
+		// Example: 60000
+		TimeoutMs *int `json:"timeoutMs,omitempty"`
 
 		// Url Public http(s) URL. May contain {{path}} placeholders into the request payload, which are URL-encoded.
 		//
@@ -38164,6 +38248,9 @@ type HttpRequestMetricPayloadVersion string
 
 // HttpRequestMetricResponse defines model for HttpRequestMetricResponse.
 type HttpRequestMetricResponse struct {
+	// ApplicabilityCondition When this metric applies, in plain words (for example "the caller asks to stop being contacted"). BOOLEAN LLM metrics only. On a conversation that does not meet it, the metric records `captureStatus: NOT_APPLICABLE` instead of a verdict, and checks on it count only the conversations it applies to. Null or empty: it applies to every conversation.
+	ApplicabilityCondition *string `json:"applicabilityCondition"`
+
 	// BooleanFalseLabel What a failed check is called
 	BooleanFalseLabel *string `json:"booleanFalseLabel"`
 
@@ -39474,12 +39561,16 @@ type LiveReportDocument struct {
 					CueMs          *int    `json:"cueMs"`
 					PersonaName    *string `json:"personaName"`
 				} `json:"calls,omitempty"`
-				Title string `json:"title"`
+				MetricDefinitionIds *[]string `json:"metricDefinitionIds,omitempty"`
+				ThemeSlugs          *[]string `json:"themeSlugs,omitempty"`
+				Title               string    `json:"title"`
 			} `json:"keyFindings"`
 			Paragraphs []string `json:"paragraphs"`
 			Sections   *[]struct {
-				Body    string  `json:"body"`
-				Heading *string `json:"heading"`
+				Body                string    `json:"body"`
+				Heading             *string   `json:"heading"`
+				MetricDefinitionIds *[]string `json:"metricDefinitionIds,omitempty"`
+				ThemeSlugs          *[]string `json:"themeSlugs,omitempty"`
 			} `json:"sections,omitempty"`
 		} `json:"executiveSummary"`
 		GeneratedAtIso string `json:"generatedAtIso"`
@@ -39547,7 +39638,12 @@ type LiveReportDocument struct {
 			AffectedConversationCount int      `json:"affectedConversationCount"`
 			Analysis                  string   `json:"analysis"`
 			CheckNames                []string `json:"checkNames"`
-			CollectorQuote            *struct {
+			Checks                    *[]struct {
+				CheckName          string   `json:"checkName"`
+				ConversationIds    []string `json:"conversationIds"`
+				MetricDefinitionId string   `json:"metricDefinitionId"`
+			} `json:"checks,omitempty"`
+			CollectorQuote *struct {
 				ConversationId string `json:"conversationId"`
 				MetricName     string `json:"metricName"`
 				Quote          string `json:"quote"`
@@ -39589,6 +39685,7 @@ type LiveReportDocument struct {
 			RootCauseChannel       *LiveReportDocumentDocumentThemesRootCauseChannel `json:"rootCauseChannel"`
 			Severity               LiveReportDocumentDocumentThemesSeverity          `json:"severity"`
 			Slug                   string                                            `json:"slug"`
+			SupportedByTranscript  *bool                                             `json:"supportedByTranscript,omitempty"`
 			Title                  string                                            `json:"title"`
 			TotalConversationCount int                                               `json:"totalConversationCount"`
 		} `json:"themes"`
@@ -39923,6 +40020,9 @@ type LiveReportTargetConfig_PassValue struct {
 
 // LlmJudgeMetricResponse defines model for LlmJudgeMetricResponse.
 type LlmJudgeMetricResponse struct {
+	// ApplicabilityCondition When this metric applies, in plain words (for example "the caller asks to stop being contacted"). BOOLEAN LLM metrics only. On a conversation that does not meet it, the metric records `captureStatus: NOT_APPLICABLE` instead of a verdict, and checks on it count only the conversations it applies to. Null or empty: it applies to every conversation.
+	ApplicabilityCondition *string `json:"applicabilityCondition"`
+
 	// BooleanFalseLabel For a BOOLEAN metric, what a `false` value means. Also given to the judge as its polarity rule.
 	BooleanFalseLabel *string `json:"booleanFalseLabel"`
 
@@ -40837,15 +40937,16 @@ type MetricCollectionJobResponseTriggeredBy string
 
 // MetricConfig defines model for MetricConfig.
 type MetricConfig struct {
-	CalculationType  *MetricConfigCalculationType `json:"calculationType,omitempty"`
-	Contexts         *[]MetricConfigContexts      `json:"contexts,omitempty"`
-	DisplayName      *string                      `json:"displayName,omitempty"`
-	FalseLabel       *string                      `json:"falseLabel,omitempty"`
-	GradesShortCalls *bool                        `json:"gradesShortCalls,omitempty"`
-	Kind             MetricConfigKind             `json:"kind"`
-	MaxSelections    *int                         `json:"maxSelections,omitempty"`
-	Name             string                       `json:"name"`
-	Options          *[]struct {
+	ApplicabilityCondition *string                      `json:"applicabilityCondition,omitempty"`
+	CalculationType        *MetricConfigCalculationType `json:"calculationType,omitempty"`
+	Contexts               *[]MetricConfigContexts      `json:"contexts,omitempty"`
+	DisplayName            *string                      `json:"displayName,omitempty"`
+	FalseLabel             *string                      `json:"falseLabel,omitempty"`
+	GradesShortCalls       *bool                        `json:"gradesShortCalls,omitempty"`
+	Kind                   MetricConfigKind             `json:"kind"`
+	MaxSelections          *int                         `json:"maxSelections,omitempty"`
+	Name                   string                       `json:"name"`
+	Options                *[]struct {
 		Description  *string `json:"description,omitempty"`
 		DisplayOrder int     `json:"displayOrder"`
 		Label        string  `json:"label"`
@@ -41232,6 +41333,9 @@ type PatternMetricInputWindowMode string
 
 // PatternMetricResponse defines model for PatternMetricResponse.
 type PatternMetricResponse struct {
+	// ApplicabilityCondition When this metric applies, in plain words (for example "the caller asks to stop being contacted"). BOOLEAN LLM metrics only. On a conversation that does not meet it, the metric records `captureStatus: NOT_APPLICABLE` instead of a verdict, and checks on it count only the conversations it applies to. Null or empty: it applies to every conversation.
+	ApplicabilityCondition *string `json:"applicabilityCondition"`
+
 	// CalculationType Metric detecting a trigger condition followed by an outcome within a window.
 	CalculationType PatternMetricResponseCalculationType `json:"calculationType"`
 
@@ -41559,6 +41663,9 @@ type PromptMetricInput struct {
 	// AnalysisPackageId ID of the analysis package to add this metric to. Optional: when omitted, the metric is added to a default "Custom Metrics" package for your project (created automatically the first time).
 	AnalysisPackageId *openapi_types.UUID `json:"analysisPackageId,omitempty"`
 
+	// ApplicabilityCondition When this metric applies, in plain words (for example "the caller asks to stop being contacted"). BOOLEAN LLM metrics only. On a conversation that does not meet it, the metric records `captureStatus: NOT_APPLICABLE` instead of a verdict, and checks on it count only the conversations it applies to. Null or empty: it applies to every conversation.
+	ApplicabilityCondition *string `json:"applicabilityCondition,omitempty"`
+
 	// BooleanFalseLabel Label for the false case (only for BOOLEAN type)
 	BooleanFalseLabel *string `json:"booleanFalseLabel,omitempty"`
 
@@ -41668,6 +41775,9 @@ type PromptMetricInputSupportedContexts string
 
 // ProviderMetricResponse defines model for ProviderMetricResponse.
 type ProviderMetricResponse struct {
+	// ApplicabilityCondition When this metric applies, in plain words (for example "the caller asks to stop being contacted"). BOOLEAN LLM metrics only. On a conversation that does not meet it, the metric records `captureStatus: NOT_APPLICABLE` instead of a verdict, and checks on it count only the conversations it applies to. Null or empty: it applies to every conversation.
+	ApplicabilityCondition *string `json:"applicabilityCondition"`
+
 	// CalculationType System-managed metric produced by an analysis provider.
 	CalculationType ProviderMetricResponseCalculationType `json:"calculationType"`
 
@@ -44253,6 +44363,12 @@ type SimulationRunDebriefReport struct {
 		Sections   []struct {
 			Body    string  `json:"body"`
 			Heading *string `json:"heading"`
+
+			// MetricDefinitionIds Ids of the checks this text names. Empty when it names none, and on reports generated before references were recorded.
+			MetricDefinitionIds []string `json:"metricDefinitionIds"`
+
+			// ThemeSlugs Slugs of the failure themes this text is about. Each matches a `slug` in `themes`, which lists the calls. Empty when it is about none, and on reports generated before references were recorded.
+			ThemeSlugs []string `json:"themeSlugs"`
 		} `json:"sections"`
 	} `json:"executiveSummary"`
 	GeneratedAt string `json:"generatedAt"`
@@ -44261,7 +44377,13 @@ type SimulationRunDebriefReport struct {
 
 		// CallIds The calls the finding is about.
 		CallIds []string `json:"callIds"`
-		Title   string   `json:"title"`
+
+		// MetricDefinitionIds Ids of the checks this text names. Empty when it names none, and on reports generated before references were recorded.
+		MetricDefinitionIds []string `json:"metricDefinitionIds"`
+
+		// ThemeSlugs Slugs of the failure themes this text is about. Each matches a `slug` in `themes`, which lists the calls. Empty when it is about none, and on reports generated before references were recorded.
+		ThemeSlugs []string `json:"themeSlugs"`
+		Title      string   `json:"title"`
 	} `json:"keyFindings"`
 	Recommendations []struct {
 		Body    string                                            `json:"body"`
@@ -44314,7 +44436,13 @@ type SimulationRunDebriefReport struct {
 
 		// CallIds The calls the finding is about.
 		CallIds []string `json:"callIds"`
-		Title   string   `json:"title"`
+
+		// MetricDefinitionIds Ids of the checks this text names. Empty when it names none, and on reports generated before references were recorded.
+		MetricDefinitionIds []string `json:"metricDefinitionIds"`
+
+		// ThemeSlugs Slugs of the failure themes this text is about. Each matches a `slug` in `themes`, which lists the calls. Empty when it is about none, and on reports generated before references were recorded.
+		ThemeSlugs []string `json:"themeSlugs"`
+		Title      string   `json:"title"`
 	} `json:"wentWell"`
 }
 
@@ -44594,6 +44722,15 @@ type SimulationRunGroupRun struct {
 // SimulationRunGroupRunStatus defines model for SimulationRunGroupRun.Status.
 type SimulationRunGroupRunStatus string
 
+// SimulationRunMetricFlow A flow one of the run's metrics is attached to.
+type SimulationRunMetricFlow struct {
+	// Id The flow.
+	Id openapi_types.UUID `json:"id"`
+
+	// Name The flow as the run ran it. Null when no simulation of the run ran the flow.
+	Name *string `json:"name"`
+}
+
 // SimulationRunMetricResult defines model for SimulationRunMetricResult.
 type SimulationRunMetricResult struct {
 	// Check The check’s tally. Null for a metric that is not a check.
@@ -44606,6 +44743,9 @@ type SimulationRunMetricResult struct {
 		PassedCalls int      `json:"passedCalls"`
 	} `json:"check"`
 
+	// CustomerFlows The flows the metric is attached to: it is collected only on simulations of these flows. Null when it is run-wide, collected on every simulation.
+	CustomerFlows *[]SimulationRunMetricFlow `json:"customerFlows"`
+
 	// Distribution How many values took each reading, for BOOLEAN, SCALE and CLASSIFICATION metrics. Null without the `metric:read` permission.
 	Distribution *[]struct {
 		Count int    `json:"count"`
@@ -44614,6 +44754,9 @@ type SimulationRunMetricResult struct {
 
 	// EvaluatedCalls Counted simulations with at least one value.
 	EvaluatedCalls int `json:"evaluatedCalls"`
+
+	// InScopeCalls Counted simulations the metric applies to: all of them for a run-wide metric, those of `customerFlows` otherwise.
+	InScopeCalls int `json:"inScopeCalls"`
 
 	// IsCheck A threshold: one of the checks the run is judged on.
 	IsCheck            bool               `json:"isCheck"`
@@ -44701,7 +44844,16 @@ type SimulationRunPlanJobCancelledWebhookVersion string
 // observations, not checks: their `true` is whatever the underlying field happens to mean, so
 // they carry no passing side and never appear here. Put a threshold on one to judge it.
 type SimulationRunPlanJobCheck struct {
-	EvaluatedSims int `json:"evaluatedSims"`
+	// CustomerFlows The flows this check is attached to. It is evaluated only on simulations of these flows, and the
+	// rest of the run is out of its scope. Null when the check is run-wide: attached to the run plan, so
+	// every simulation is in scope.
+	CustomerFlows *[]SimulationRunMetricFlow `json:"customerFlows"`
+	EvaluatedSims int                        `json:"evaluatedSims"`
+
+	// InScopeSims Simulations the check applies to: every counted simulation for a run-wide check, those of
+	// `customerFlows` otherwise. `evaluatedSims` can be lower: a check returns no verdict on a simulation
+	// with nothing for it to grade, and that simulation is left out of `passRate`.
+	InScopeSims int `json:"inScopeSims"`
 
 	// Inherited Whether `minPassRate` is the 80% default (`true`) or a minimum this metric set for itself.
 	Inherited          bool               `json:"inherited"`
@@ -44711,10 +44863,13 @@ type SimulationRunPlanJobCheck struct {
 	// MinPassRate THE BAR it was judged against: the share of the run's simulations it had to pass.
 	MinPassRate float64 `json:"minPassRate"`
 
+	// NotApplicable Present and `true` when every call the check graded was not applicable to it (each value has `captureStatus: NOT_APPLICABLE`). It neither passes nor fails the run, and `passRate` is null.
+	NotApplicable *bool `json:"notApplicable,omitempty"`
+
 	// PassRate This check's own pass rate, 0-100: the share of sims it evaluated that passed it. Null when it evaluated nothing.
 	PassRate *float64 `json:"passRate"`
 
-	// Passed `passRate >= minPassRate`.
+	// Passed `passRate >= minPassRate`. True for a check that was not applicable to any call.
 	Passed     bool `json:"passed"`
 	PassedSims int  `json:"passedSims"`
 }
@@ -44995,13 +45150,16 @@ type SimulationRunPlanJobSweepNeverSpokeValue struct {
 
 // SimulationRunPlanJobVerdict Pass/fail verdict for the run, judged against the success criteria pinned on the run plan when the run started.
 //
-// Example: {"checks":[{"evaluatedSims":10,"inherited":false,"metricDefinitionId":"aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa","metricName":"silence duration \u003c 500ms","minPassRate":40,"passRate":100,"passed":true,"passedSims":10},{"evaluatedSims":10,"inherited":false,"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricName":"word count \u003c 1000","minPassRate":80,"passRate":70,"passed":false,"passedSims":7}],"failures":[{"inherited":false,"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricName":"word count \u003c 1000","minPassRate":80,"passRate":70,"type":"METRIC_BELOW_MIN_PASS_RATE"}],"passed":false,"score":85}
+// Example: {"checks":[{"customerFlows":null,"evaluatedSims":10,"inScopeSims":10,"inherited":false,"metricDefinitionId":"aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa","metricName":"silence duration \u003c 500ms","minPassRate":40,"passRate":100,"passed":true,"passedSims":10},{"customerFlows":null,"evaluatedSims":10,"inScopeSims":10,"inherited":false,"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricName":"word count \u003c 1000","minPassRate":80,"passRate":70,"passed":false,"passedSims":7}],"countedSims":10,"failures":[{"inherited":false,"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricName":"word count \u003c 1000","minPassRate":80,"passRate":70,"type":"METRIC_BELOW_MIN_PASS_RATE"}],"passed":false,"score":85}
 type SimulationRunPlanJobVerdict struct {
 	// Checks Every check the run was judged on, with its rate and the minimum it had to reach.
 	//
 	// Thresholds and authored yes/no metrics only. See `SimulationRunPlanJobCheck` for why a
 	// provider reading is not one.
 	Checks []SimulationRunPlanJobCheck `json:"checks"`
+
+	// CountedSims Every simulation of the run that counts: the most any check can have in scope. Compare a check's `inScopeSims` against it to see how much of the run the check covers.
+	CountedSims int `json:"countedSims"`
 
 	// Failures Every criterion the run missed. Empty when it passed.
 	Failures []SimulationRunPlanJobVerdictFailure `json:"failures"`
@@ -45112,9 +45270,65 @@ type SimulationRunPlanRef struct {
 	Variables map[string]string `json:"variables"`
 }
 
+// SimulationRunRescore defines model for SimulationRunRescore.
+type SimulationRunRescore struct {
+	// CompletedAt When the grading finished. Null while it runs.
+	CompletedAt *time.Time `json:"completedAt"`
+
+	// CreatedAt When the re-score was requested
+	CreatedAt time.Time `json:"createdAt"`
+
+	// DebriefRequestedAt When the run's debrief was queued for a rewrite after this re-score. Null until then, and for a run without a debrief.
+	DebriefRequestedAt *time.Time `json:"debriefRequestedAt"`
+
+	// ErrorMessage Why the re-score failed to start, when it did
+	ErrorMessage *string `json:"errorMessage"`
+
+	// JobId The simulation run plan job that was re-scored
+	JobId openapi_types.UUID `json:"jobId"`
+
+	// Metrics The metrics this re-score grades, one per metric and scope: the run plan's metrics when it was requested. They become the run's metric set.
+	Metrics []SimulationRunRescoreMetric `json:"metrics"`
+
+	// RescoreId Re-score ID
+	RescoreId openapi_types.UUID `json:"rescoreId"`
+
+	// ScoredConversations Conversations whose grading has finished
+	//
+	// Example: 12
+	ScoredConversations int `json:"scoredConversations"`
+
+	// Status RUNNING while the calls are graded again, then COMPLETED. FAILED when the re-score could not start or its grading failed.
+	//
+	// Example: RUNNING
+	Status SimulationRunRescoreStatus `json:"status"`
+
+	// TotalConversations Conversations this re-score grades
+	//
+	// Example: 40
+	TotalConversations int `json:"totalConversations"`
+}
+
+// SimulationRunRescoreStatus RUNNING while the calls are graded again, then COMPLETED. FAILED when the re-score could not start or its grading failed.
+//
+// Example: RUNNING
+type SimulationRunRescoreStatus string
+
+// SimulationRunRescoreMetric defines model for SimulationRunRescoreMetric.
+type SimulationRunRescoreMetric struct {
+	// CustomerFlowId The flow whose simulations it grades. Null when it grades every simulation of the run.
+	CustomerFlowId *openapi_types.UUID `json:"customerFlowId"`
+
+	// CustomerFlowName The flow's title. Null for a run-wide metric.
+	CustomerFlowName *string `json:"customerFlowName"`
+
+	// MetricDefinitionId The metric graded
+	MetricDefinitionId openapi_types.UUID `json:"metricDefinitionId"`
+}
+
 // SimulationRunResults Everything the run report shows, in one response.
 //
-// Example: {"attemptSummary":{"attemptCount":10,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":10},"breakdowns":{"byAgent":[],"byPersona":[]},"calls":[{"agentName":"Front desk","attemptNumber":1,"callId":"6e7f8a9b-0c1d-4e2f-9a3b-4c5d6e7f8a9b","checks":[{"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricName":"Booked appointment","passed":false}],"counted":true,"durationMs":94000,"passed":false,"personaName":"Ana","retryOfSimulationJobId":null,"simulationJobId":"1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d","status":"COMPLETED","values":[]}],"comparison":null,"debrief":null,"metrics":[{"check":{"evaluatedCalls":10,"failedCalls":3,"passRate":70,"passedCalls":7},"distribution":[{"count":7,"value":"true"},{"count":3,"value":"false"}],"evaluatedCalls":10,"isCheck":true,"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricId":"booked_appointment_check","name":"Booked appointment","numeric":null,"outputType":"BOOLEAN","sampleSize":10,"unitSymbol":null}],"run":{"createdAt":"2026-10-11T14:00:00.000Z","durationMs":278000,"endedAt":"2026-10-11T14:04:41.000Z","runNumber":42,"simulationRunPlanId":"550e8400-e29b-41d4-a716-446655440000","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","simulationRunPlanName":"Appointment booking regression","startedAt":"2026-10-11T14:00:03.000Z","status":"COMPLETED","triggeredBy":"TRIGGERED_FROM_API"},"summary":{"callPassRate":70,"checkPassRate":85,"completedCalls":10,"countedCalls":10,"evaluatedCalls":10,"failedCalls":3,"passedCalls":7,"score":85,"totalCalls":10},"sweepAttribution":null,"verdict":null}
+// Example: {"attemptSummary":{"attemptCount":10,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":10},"breakdowns":{"byAgent":[],"byPersona":[]},"calls":[{"agentName":"Front desk","attemptNumber":1,"callId":"6e7f8a9b-0c1d-4e2f-9a3b-4c5d6e7f8a9b","checks":[{"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricName":"Booked appointment","passed":false}],"counted":true,"durationMs":94000,"passed":false,"personaName":"Ana","retryOfSimulationJobId":null,"simulationJobId":"1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d","status":"COMPLETED","values":[]}],"comparison":null,"debrief":null,"metrics":[{"check":{"evaluatedCalls":10,"failedCalls":3,"passRate":70,"passedCalls":7},"customerFlows":null,"distribution":[{"count":7,"value":"true"},{"count":3,"value":"false"}],"evaluatedCalls":10,"inScopeCalls":10,"isCheck":true,"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricId":"booked_appointment_check","name":"Booked appointment","numeric":null,"outputType":"BOOLEAN","sampleSize":10,"unitSymbol":null}],"run":{"createdAt":"2026-10-11T14:00:00.000Z","durationMs":278000,"endedAt":"2026-10-11T14:04:41.000Z","runNumber":42,"simulationRunPlanId":"550e8400-e29b-41d4-a716-446655440000","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","simulationRunPlanName":"Appointment booking regression","startedAt":"2026-10-11T14:00:03.000Z","status":"COMPLETED","triggeredBy":"TRIGGERED_FROM_API"},"summary":{"callPassRate":70,"checkPassRate":85,"completedCalls":10,"countedCalls":10,"evaluatedCalls":10,"failedCalls":3,"passedCalls":7,"score":85,"totalCalls":10},"sweepAttribution":null,"verdict":null}
 type SimulationRunResults struct {
 	// AttemptSummary The run’s simulations against its test cases. Differs from a plain job count only when the plan retries simulations your agent never spoke on.
 	AttemptSummary SimulationRunPlanJobAttemptSummary `json:"attemptSummary"`
@@ -45546,6 +45760,9 @@ type ThresholdMetricDetailsSourceParticipantRole string
 
 // ThresholdMetricResponse defines model for ThresholdMetricResponse.
 type ThresholdMetricResponse struct {
+	// ApplicabilityCondition When this metric applies, in plain words (for example "the caller asks to stop being contacted"). BOOLEAN LLM metrics only. On a conversation that does not meet it, the metric records `captureStatus: NOT_APPLICABLE` instead of a verdict, and checks on it count only the conversations it applies to. Null or empty: it applies to every conversation.
+	ApplicabilityCondition *string `json:"applicabilityCondition"`
+
 	// CalculationType Boolean metric derived by comparing a source metric against a threshold.
 	CalculationType ThresholdMetricResponseCalculationType `json:"calculationType"`
 
@@ -46669,8 +46886,18 @@ type UpdateHttpRequestDefinitionInput struct {
 	// Headers Request headers as key-value pairs
 	Headers *map[string]string `json:"headers,omitempty"`
 
+	// MaxAttempts How many times to send the request, from 1 to 5. Set 1 so a slow answer is never sent again, which would start a second call. Null or omitted is the default, 3.
+	//
+	// Example: 1
+	MaxAttempts *int `json:"maxAttempts,omitempty"`
+
 	// Method HTTP method: POST, PUT, PATCH, or GET
 	Method *UpdateHttpRequestDefinitionInputMethod `json:"method,omitempty"`
+
+	// TimeoutMs How long to wait for each attempt, in milliseconds, from 1000 to 300000. Raise it while you debug your endpoint. Null or omitted is the default, 30000.
+	//
+	// Example: 120000
+	TimeoutMs *int `json:"timeoutMs,omitempty"`
 
 	// Url URL for the HTTP request
 	Url *string `json:"url,omitempty"`
@@ -46803,6 +47030,9 @@ type UpdateLiveReportInput_Targets_PassValue struct {
 // UpdateMetricDefinitionInput Editable subset of a metric definition. Every update creates a new immutable version. Immutable fields (slug, scope, outputType, calcType, …) are rejected with a 400.
 type UpdateMetricDefinitionInput struct {
 	AnalysisPackageId interface{} `json:"analysisPackageId,omitempty"`
+
+	// ApplicabilityCondition When this metric applies, in plain words (for example "the caller asks to stop being contacted"). BOOLEAN LLM metrics only. On a conversation that does not meet it, the metric records `captureStatus: NOT_APPLICABLE` instead of a verdict, and checks on it count only the conversations it applies to. Null or empty: it applies to every conversation. Send null or an empty string to remove it.
+	ApplicabilityCondition *string `json:"applicabilityCondition,omitempty"`
 
 	// BooleanFalseLabel New label for the false case (BOOLEAN output only)
 	BooleanFalseLabel *string `json:"booleanFalseLabel,omitempty"`
@@ -46949,6 +47179,9 @@ type UpdateMetricPolicyInputStatus string
 //
 // Example: {"llmPrompt":"Did the agent verify identity before disclosing anything? {{transcript}} Context: {{world_context}}"}
 type UpdateMetricVariantInput struct {
+	// ApplicabilityCondition When this metric applies, in plain words (for example "the caller asks to stop being contacted"). BOOLEAN LLM metrics only. On a conversation that does not meet it, the metric records `captureStatus: NOT_APPLICABLE` instead of a verdict, and checks on it count only the conversations it applies to. Null or empty: it applies to every conversation.
+	ApplicabilityCondition *string `json:"applicabilityCondition,omitempty"`
+
 	// BooleanFalseLabel What a `false` value means. Given to the judge as its polarity rule, so keep it accurate.
 	BooleanFalseLabel *string `json:"booleanFalseLabel,omitempty"`
 
@@ -66562,6 +66795,33 @@ type ClientInterface interface {
 	// Corresponds with POST /v1/simulation/plan/job/{jobId}/debrief (the `PostV1SimulationPlanJobByJobIdDebrief` operationId).
 	PostV1SimulationPlanJobByJobIdDebrief(ctx context.Context, jobId openapi_types.UUID, body PostV1SimulationPlanJobByJobIdDebriefJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetV1SimulationPlanJobByJobIdRescore Get a simulation run's latest re-score
+	//
+	// The run's most recent re-score, with its status and how many conversations have been graded.
+	//
+	// Corresponds with GET /v1/simulation/plan/job/{jobId}/rescore (the `GetV1SimulationPlanJobByJobIdRescore` operationId).
+	GetV1SimulationPlanJobByJobIdRescore(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PostV1SimulationPlanJobByJobIdRescore Re-score a simulation run
+	//
+	// Grade a finished run's calls again, without placing new calls: the same calls, graded on the run plan's
+	// metrics as they are now. Metrics on the plan grade every call of the run, metrics attached to a flow grade
+	// that flow's calls, each at its current version, and Agent Expectations grades against the flows' current
+	// expectations. Use it after changing a plan's metrics, a metric, or a flow's expectations, to see how the
+	// run you already have scores against them.
+	//
+	// The metrics graded are listed in `metrics` and become the run's metric set: the run's results, checks
+	// and report read them from then on. The new values replace the run's current ones; earlier values stay
+	// in each metric value's history.
+	// The grading is billed like any metric collection. A run is re-scored one at a time: while one
+	// re-score runs, another is refused with 409.
+	//
+	// Returns immediately. Poll GET /v1/simulation/plan/job/{jobId}/rescore until `status` is COMPLETED or
+	// FAILED, then read the new values from GET /v1/simulation/plan/job/{jobId}/results.
+	//
+	// Corresponds with POST /v1/simulation/plan/job/{jobId}/rescore (the `PostV1SimulationPlanJobByJobIdRescore` operationId).
+	PostV1SimulationPlanJobByJobIdRescore(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetV1SimulationPlanJobByJobIdResults Get a simulation run's results
 	//
 	// Everything the run report shows, in one request: the summary and score, the pass/fail verdict,
@@ -72922,6 +73182,53 @@ func (c *Client) PostV1SimulationPlanJobByJobIdDebriefWithBody(ctx context.Conte
 // Corresponds with POST /v1/simulation/plan/job/{jobId}/debrief (the `PostV1SimulationPlanJobByJobIdDebrief` operationId).
 func (c *Client) PostV1SimulationPlanJobByJobIdDebrief(ctx context.Context, jobId openapi_types.UUID, body PostV1SimulationPlanJobByJobIdDebriefJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPostV1SimulationPlanJobByJobIdDebriefRequest(c.Server, jobId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetV1SimulationPlanJobByJobIdRescore Get a simulation run's latest re-score
+//
+// The run's most recent re-score, with its status and how many conversations have been graded.
+//
+// Corresponds with GET /v1/simulation/plan/job/{jobId}/rescore (the `GetV1SimulationPlanJobByJobIdRescore` operationId).
+func (c *Client) GetV1SimulationPlanJobByJobIdRescore(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetV1SimulationPlanJobByJobIdRescoreRequest(c.Server, jobId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// PostV1SimulationPlanJobByJobIdRescore Re-score a simulation run
+//
+// Grade a finished run's calls again, without placing new calls: the same calls, graded on the run plan's
+// metrics as they are now. Metrics on the plan grade every call of the run, metrics attached to a flow grade
+// that flow's calls, each at its current version, and Agent Expectations grades against the flows' current
+// expectations. Use it after changing a plan's metrics, a metric, or a flow's expectations, to see how the
+// run you already have scores against them.
+//
+// The metrics graded are listed in `metrics` and become the run's metric set: the run's results, checks
+// and report read them from then on. The new values replace the run's current ones; earlier values stay
+// in each metric value's history.
+// The grading is billed like any metric collection. A run is re-scored one at a time: while one
+// re-score runs, another is refused with 409.
+//
+// Returns immediately. Poll GET /v1/simulation/plan/job/{jobId}/rescore until `status` is COMPLETED or
+// FAILED, then read the new values from GET /v1/simulation/plan/job/{jobId}/results.
+//
+// Corresponds with POST /v1/simulation/plan/job/{jobId}/rescore (the `PostV1SimulationPlanJobByJobIdRescore` operationId).
+func (c *Client) PostV1SimulationPlanJobByJobIdRescore(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPostV1SimulationPlanJobByJobIdRescoreRequest(c.Server, jobId)
 	if err != nil {
 		return nil, err
 	}
@@ -84411,6 +84718,74 @@ func NewPostV1SimulationPlanJobByJobIdDebriefRequestWithBody(server string, jobI
 	return req, nil
 }
 
+// NewGetV1SimulationPlanJobByJobIdRescoreRequest constructs an http.Request for the GetV1SimulationPlanJobByJobIdRescore method
+func NewGetV1SimulationPlanJobByJobIdRescoreRequest(server string, jobId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/simulation/plan/job/%s/rescore", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPostV1SimulationPlanJobByJobIdRescoreRequest constructs an http.Request for the PostV1SimulationPlanJobByJobIdRescore method
+func NewPostV1SimulationPlanJobByJobIdRescoreRequest(server string, jobId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/simulation/plan/job/%s/rescore", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewGetV1SimulationPlanJobByJobIdResultsRequest constructs an http.Request for the GetV1SimulationPlanJobByJobIdResults method
 func NewGetV1SimulationPlanJobByJobIdResultsRequest(server string, jobId string, params *GetV1SimulationPlanJobByJobIdResultsParams) (*http.Request, error) {
 	var err error
@@ -88842,6 +89217,37 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /v1/simulation/plan/job/{jobId}/debrief (the `PostV1SimulationPlanJobByJobIdDebrief` operationId).
 	PostV1SimulationPlanJobByJobIdDebriefWithResponse(ctx context.Context, jobId openapi_types.UUID, body PostV1SimulationPlanJobByJobIdDebriefJSONRequestBody, reqEditors ...RequestEditorFn) (*PostV1SimulationPlanJobByJobIdDebriefResponse, error)
+
+	// GetV1SimulationPlanJobByJobIdRescoreWithResponse Get a simulation run's latest re-score
+	//
+	// The run's most recent re-score, with its status and how many conversations have been graded.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/simulation/plan/job/{jobId}/rescore (the `GetV1SimulationPlanJobByJobIdRescore` operationId).
+	GetV1SimulationPlanJobByJobIdRescoreWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1SimulationPlanJobByJobIdRescoreResponse, error)
+
+	// PostV1SimulationPlanJobByJobIdRescoreWithResponse Re-score a simulation run
+	//
+	// Grade a finished run's calls again, without placing new calls: the same calls, graded on the run plan's
+	// metrics as they are now. Metrics on the plan grade every call of the run, metrics attached to a flow grade
+	// that flow's calls, each at its current version, and Agent Expectations grades against the flows' current
+	// expectations. Use it after changing a plan's metrics, a metric, or a flow's expectations, to see how the
+	// run you already have scores against them.
+	//
+	// The metrics graded are listed in `metrics` and become the run's metric set: the run's results, checks
+	// and report read them from then on. The new values replace the run's current ones; earlier values stay
+	// in each metric value's history.
+	// The grading is billed like any metric collection. A run is re-scored one at a time: while one
+	// re-score runs, another is refused with 409.
+	//
+	// Returns immediately. Poll GET /v1/simulation/plan/job/{jobId}/rescore until `status` is COMPLETED or
+	// FAILED, then read the new values from GET /v1/simulation/plan/job/{jobId}/results.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/simulation/plan/job/{jobId}/rescore (the `PostV1SimulationPlanJobByJobIdRescore` operationId).
+	PostV1SimulationPlanJobByJobIdRescoreWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*PostV1SimulationPlanJobByJobIdRescoreResponse, error)
 
 	// GetV1SimulationPlanJobByJobIdResultsWithResponse Get a simulation run's results
 	//
@@ -112248,6 +112654,187 @@ func (r PostV1SimulationPlanJobByJobIdDebriefResponse) ContentType() string {
 	return ""
 }
 
+type GetV1SimulationPlanJobByJobIdRescoreResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		Data SimulationRunRescore `json:"data"`
+	}
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetV1SimulationPlanJobByJobIdRescoreResponse) GetJSON200() *struct {
+	Data SimulationRunRescore `json:"data"`
+} {
+	return r.JSON200
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetV1SimulationPlanJobByJobIdRescoreResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetV1SimulationPlanJobByJobIdRescoreResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetV1SimulationPlanJobByJobIdRescoreResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetV1SimulationPlanJobByJobIdRescoreResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetV1SimulationPlanJobByJobIdRescoreResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetV1SimulationPlanJobByJobIdRescoreResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetV1SimulationPlanJobByJobIdRescoreResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetV1SimulationPlanJobByJobIdRescoreResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetV1SimulationPlanJobByJobIdRescoreResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type PostV1SimulationPlanJobByJobIdRescoreResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON202 the response for an HTTP 202 `application/json` response
+	JSON202 *struct {
+		Data SimulationRunRescore `json:"data"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON402 the response for an HTTP 402 `application/json` response
+	JSON402 *ErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+}
+
+// GetJSON202 returns the response for an HTTP 202 `application/json` response
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) GetJSON202() *struct {
+	Data SimulationRunRescore `json:"data"`
+} {
+	return r.JSON202
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON402 returns the response for an HTTP 402 `application/json` response
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) GetJSON402() *ErrorResponse {
+	return r.JSON402
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) GetJSON403() *ErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) GetJSON404() *ErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) GetJSON409() *ErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r PostV1SimulationPlanJobByJobIdRescoreResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GetV1SimulationPlanJobByJobIdResultsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -112255,7 +112842,7 @@ type GetV1SimulationPlanJobByJobIdResultsResponse struct {
 	JSON200 *struct {
 		// Data Everything the run report shows, in one response.
 		//
-		// Example: {"attemptSummary":{"attemptCount":10,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":10},"breakdowns":{"byAgent":[],"byPersona":[]},"calls":[{"agentName":"Front desk","attemptNumber":1,"callId":"6e7f8a9b-0c1d-4e2f-9a3b-4c5d6e7f8a9b","checks":[{"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricName":"Booked appointment","passed":false}],"counted":true,"durationMs":94000,"passed":false,"personaName":"Ana","retryOfSimulationJobId":null,"simulationJobId":"1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d","status":"COMPLETED","values":[]}],"comparison":null,"debrief":null,"metrics":[{"check":{"evaluatedCalls":10,"failedCalls":3,"passRate":70,"passedCalls":7},"distribution":[{"count":7,"value":"true"},{"count":3,"value":"false"}],"evaluatedCalls":10,"isCheck":true,"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricId":"booked_appointment_check","name":"Booked appointment","numeric":null,"outputType":"BOOLEAN","sampleSize":10,"unitSymbol":null}],"run":{"createdAt":"2026-10-11T14:00:00.000Z","durationMs":278000,"endedAt":"2026-10-11T14:04:41.000Z","runNumber":42,"simulationRunPlanId":"550e8400-e29b-41d4-a716-446655440000","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","simulationRunPlanName":"Appointment booking regression","startedAt":"2026-10-11T14:00:03.000Z","status":"COMPLETED","triggeredBy":"TRIGGERED_FROM_API"},"summary":{"callPassRate":70,"checkPassRate":85,"completedCalls":10,"countedCalls":10,"evaluatedCalls":10,"failedCalls":3,"passedCalls":7,"score":85,"totalCalls":10},"sweepAttribution":null,"verdict":null}
+		// Example: {"attemptSummary":{"attemptCount":10,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":10},"breakdowns":{"byAgent":[],"byPersona":[]},"calls":[{"agentName":"Front desk","attemptNumber":1,"callId":"6e7f8a9b-0c1d-4e2f-9a3b-4c5d6e7f8a9b","checks":[{"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricName":"Booked appointment","passed":false}],"counted":true,"durationMs":94000,"passed":false,"personaName":"Ana","retryOfSimulationJobId":null,"simulationJobId":"1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d","status":"COMPLETED","values":[]}],"comparison":null,"debrief":null,"metrics":[{"check":{"evaluatedCalls":10,"failedCalls":3,"passRate":70,"passedCalls":7},"customerFlows":null,"distribution":[{"count":7,"value":"true"},{"count":3,"value":"false"}],"evaluatedCalls":10,"inScopeCalls":10,"isCheck":true,"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricId":"booked_appointment_check","name":"Booked appointment","numeric":null,"outputType":"BOOLEAN","sampleSize":10,"unitSymbol":null}],"run":{"createdAt":"2026-10-11T14:00:00.000Z","durationMs":278000,"endedAt":"2026-10-11T14:04:41.000Z","runNumber":42,"simulationRunPlanId":"550e8400-e29b-41d4-a716-446655440000","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","simulationRunPlanName":"Appointment booking regression","startedAt":"2026-10-11T14:00:03.000Z","status":"COMPLETED","triggeredBy":"TRIGGERED_FROM_API"},"summary":{"callPassRate":70,"checkPassRate":85,"completedCalls":10,"countedCalls":10,"evaluatedCalls":10,"failedCalls":3,"passedCalls":7,"score":85,"totalCalls":10},"sweepAttribution":null,"verdict":null}
 		Data SimulationRunResults `json:"data"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -112276,7 +112863,7 @@ type GetV1SimulationPlanJobByJobIdResultsResponse struct {
 func (r GetV1SimulationPlanJobByJobIdResultsResponse) GetJSON200() *struct {
 	// Data Everything the run report shows, in one response.
 	//
-	// Example: {"attemptSummary":{"attemptCount":10,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":10},"breakdowns":{"byAgent":[],"byPersona":[]},"calls":[{"agentName":"Front desk","attemptNumber":1,"callId":"6e7f8a9b-0c1d-4e2f-9a3b-4c5d6e7f8a9b","checks":[{"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricName":"Booked appointment","passed":false}],"counted":true,"durationMs":94000,"passed":false,"personaName":"Ana","retryOfSimulationJobId":null,"simulationJobId":"1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d","status":"COMPLETED","values":[]}],"comparison":null,"debrief":null,"metrics":[{"check":{"evaluatedCalls":10,"failedCalls":3,"passRate":70,"passedCalls":7},"distribution":[{"count":7,"value":"true"},{"count":3,"value":"false"}],"evaluatedCalls":10,"isCheck":true,"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricId":"booked_appointment_check","name":"Booked appointment","numeric":null,"outputType":"BOOLEAN","sampleSize":10,"unitSymbol":null}],"run":{"createdAt":"2026-10-11T14:00:00.000Z","durationMs":278000,"endedAt":"2026-10-11T14:04:41.000Z","runNumber":42,"simulationRunPlanId":"550e8400-e29b-41d4-a716-446655440000","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","simulationRunPlanName":"Appointment booking regression","startedAt":"2026-10-11T14:00:03.000Z","status":"COMPLETED","triggeredBy":"TRIGGERED_FROM_API"},"summary":{"callPassRate":70,"checkPassRate":85,"completedCalls":10,"countedCalls":10,"evaluatedCalls":10,"failedCalls":3,"passedCalls":7,"score":85,"totalCalls":10},"sweepAttribution":null,"verdict":null}
+	// Example: {"attemptSummary":{"attemptCount":10,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":10},"breakdowns":{"byAgent":[],"byPersona":[]},"calls":[{"agentName":"Front desk","attemptNumber":1,"callId":"6e7f8a9b-0c1d-4e2f-9a3b-4c5d6e7f8a9b","checks":[{"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricName":"Booked appointment","passed":false}],"counted":true,"durationMs":94000,"passed":false,"personaName":"Ana","retryOfSimulationJobId":null,"simulationJobId":"1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d","status":"COMPLETED","values":[]}],"comparison":null,"debrief":null,"metrics":[{"check":{"evaluatedCalls":10,"failedCalls":3,"passRate":70,"passedCalls":7},"customerFlows":null,"distribution":[{"count":7,"value":"true"},{"count":3,"value":"false"}],"evaluatedCalls":10,"inScopeCalls":10,"isCheck":true,"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricId":"booked_appointment_check","name":"Booked appointment","numeric":null,"outputType":"BOOLEAN","sampleSize":10,"unitSymbol":null}],"run":{"createdAt":"2026-10-11T14:00:00.000Z","durationMs":278000,"endedAt":"2026-10-11T14:04:41.000Z","runNumber":42,"simulationRunPlanId":"550e8400-e29b-41d4-a716-446655440000","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","simulationRunPlanName":"Appointment booking regression","startedAt":"2026-10-11T14:00:03.000Z","status":"COMPLETED","triggeredBy":"TRIGGERED_FROM_API"},"summary":{"callPassRate":70,"checkPassRate":85,"completedCalls":10,"countedCalls":10,"evaluatedCalls":10,"failedCalls":3,"passedCalls":7,"score":85,"totalCalls":10},"sweepAttribution":null,"verdict":null}
 	Data SimulationRunResults `json:"data"`
 } {
 	return r.JSON200
@@ -119513,6 +120100,49 @@ func (c *ClientWithResponses) PostV1SimulationPlanJobByJobIdDebriefWithResponse(
 		return nil, err
 	}
 	return ParsePostV1SimulationPlanJobByJobIdDebriefResponse(rsp)
+}
+
+// GetV1SimulationPlanJobByJobIdRescoreWithResponse Get a simulation run's latest re-score
+//
+// The run's most recent re-score, with its status and how many conversations have been graded.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/simulation/plan/job/{jobId}/rescore (the `GetV1SimulationPlanJobByJobIdRescore` operationId).
+func (c *ClientWithResponses) GetV1SimulationPlanJobByJobIdRescoreWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetV1SimulationPlanJobByJobIdRescoreResponse, error) {
+	rsp, err := c.GetV1SimulationPlanJobByJobIdRescore(ctx, jobId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetV1SimulationPlanJobByJobIdRescoreResponse(rsp)
+}
+
+// PostV1SimulationPlanJobByJobIdRescoreWithResponse Re-score a simulation run
+//
+// Grade a finished run's calls again, without placing new calls: the same calls, graded on the run plan's
+// metrics as they are now. Metrics on the plan grade every call of the run, metrics attached to a flow grade
+// that flow's calls, each at its current version, and Agent Expectations grades against the flows' current
+// expectations. Use it after changing a plan's metrics, a metric, or a flow's expectations, to see how the
+// run you already have scores against them.
+//
+// The metrics graded are listed in `metrics` and become the run's metric set: the run's results, checks
+// and report read them from then on. The new values replace the run's current ones; earlier values stay
+// in each metric value's history.
+// The grading is billed like any metric collection. A run is re-scored one at a time: while one
+// re-score runs, another is refused with 409.
+//
+// Returns immediately. Poll GET /v1/simulation/plan/job/{jobId}/rescore until `status` is COMPLETED or
+// FAILED, then read the new values from GET /v1/simulation/plan/job/{jobId}/results.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/simulation/plan/job/{jobId}/rescore (the `PostV1SimulationPlanJobByJobIdRescore` operationId).
+func (c *ClientWithResponses) PostV1SimulationPlanJobByJobIdRescoreWithResponse(ctx context.Context, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*PostV1SimulationPlanJobByJobIdRescoreResponse, error) {
+	rsp, err := c.PostV1SimulationPlanJobByJobIdRescore(ctx, jobId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePostV1SimulationPlanJobByJobIdRescoreResponse(rsp)
 }
 
 // GetV1SimulationPlanJobByJobIdResultsWithResponse Get a simulation run's results
@@ -136716,6 +137346,153 @@ func ParsePostV1SimulationPlanJobByJobIdDebriefResponse(rsp *http.Response) (*Po
 	return response, nil
 }
 
+// ParseGetV1SimulationPlanJobByJobIdRescoreResponse parses an HTTP response from a GetV1SimulationPlanJobByJobIdRescoreWithResponse call
+func ParseGetV1SimulationPlanJobByJobIdRescoreResponse(rsp *http.Response) (*GetV1SimulationPlanJobByJobIdRescoreResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetV1SimulationPlanJobByJobIdRescoreResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Data SimulationRunRescore `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePostV1SimulationPlanJobByJobIdRescoreResponse parses an HTTP response from a PostV1SimulationPlanJobByJobIdRescoreWithResponse call
+func ParsePostV1SimulationPlanJobByJobIdRescoreResponse(rsp *http.Response) (*PostV1SimulationPlanJobByJobIdRescoreResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PostV1SimulationPlanJobByJobIdRescoreResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest struct {
+			Data SimulationRunRescore `json:"data"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 402:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON402 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseGetV1SimulationPlanJobByJobIdResultsResponse parses an HTTP response from a GetV1SimulationPlanJobByJobIdResultsWithResponse call
 func ParseGetV1SimulationPlanJobByJobIdResultsResponse(rsp *http.Response) (*GetV1SimulationPlanJobByJobIdResultsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -136734,7 +137511,7 @@ func ParseGetV1SimulationPlanJobByJobIdResultsResponse(rsp *http.Response) (*Get
 		var dest struct {
 			// Data Everything the run report shows, in one response.
 			//
-			// Example: {"attemptSummary":{"attemptCount":10,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":10},"breakdowns":{"byAgent":[],"byPersona":[]},"calls":[{"agentName":"Front desk","attemptNumber":1,"callId":"6e7f8a9b-0c1d-4e2f-9a3b-4c5d6e7f8a9b","checks":[{"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricName":"Booked appointment","passed":false}],"counted":true,"durationMs":94000,"passed":false,"personaName":"Ana","retryOfSimulationJobId":null,"simulationJobId":"1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d","status":"COMPLETED","values":[]}],"comparison":null,"debrief":null,"metrics":[{"check":{"evaluatedCalls":10,"failedCalls":3,"passRate":70,"passedCalls":7},"distribution":[{"count":7,"value":"true"},{"count":3,"value":"false"}],"evaluatedCalls":10,"isCheck":true,"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricId":"booked_appointment_check","name":"Booked appointment","numeric":null,"outputType":"BOOLEAN","sampleSize":10,"unitSymbol":null}],"run":{"createdAt":"2026-10-11T14:00:00.000Z","durationMs":278000,"endedAt":"2026-10-11T14:04:41.000Z","runNumber":42,"simulationRunPlanId":"550e8400-e29b-41d4-a716-446655440000","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","simulationRunPlanName":"Appointment booking regression","startedAt":"2026-10-11T14:00:03.000Z","status":"COMPLETED","triggeredBy":"TRIGGERED_FROM_API"},"summary":{"callPassRate":70,"checkPassRate":85,"completedCalls":10,"countedCalls":10,"evaluatedCalls":10,"failedCalls":3,"passedCalls":7,"score":85,"totalCalls":10},"sweepAttribution":null,"verdict":null}
+			// Example: {"attemptSummary":{"attemptCount":10,"retryCount":0,"silentAttemptCount":0,"stillSilentTestCaseCount":0,"testCaseCount":10},"breakdowns":{"byAgent":[],"byPersona":[]},"calls":[{"agentName":"Front desk","attemptNumber":1,"callId":"6e7f8a9b-0c1d-4e2f-9a3b-4c5d6e7f8a9b","checks":[{"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricName":"Booked appointment","passed":false}],"counted":true,"durationMs":94000,"passed":false,"personaName":"Ana","retryOfSimulationJobId":null,"simulationJobId":"1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d","status":"COMPLETED","values":[]}],"comparison":null,"debrief":null,"metrics":[{"check":{"evaluatedCalls":10,"failedCalls":3,"passRate":70,"passedCalls":7},"customerFlows":null,"distribution":[{"count":7,"value":"true"},{"count":3,"value":"false"}],"evaluatedCalls":10,"inScopeCalls":10,"isCheck":true,"metricDefinitionId":"bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb","metricId":"booked_appointment_check","name":"Booked appointment","numeric":null,"outputType":"BOOLEAN","sampleSize":10,"unitSymbol":null}],"run":{"createdAt":"2026-10-11T14:00:00.000Z","durationMs":278000,"endedAt":"2026-10-11T14:04:41.000Z","runNumber":42,"simulationRunPlanId":"550e8400-e29b-41d4-a716-446655440000","simulationRunPlanJobId":"7f3e4d2c-8a91-4b5c-9e6f-1a2b3c4d5e6f","simulationRunPlanName":"Appointment booking regression","startedAt":"2026-10-11T14:00:03.000Z","status":"COMPLETED","triggeredBy":"TRIGGERED_FROM_API"},"summary":{"callPassRate":70,"checkPassRate":85,"completedCalls":10,"countedCalls":10,"evaluatedCalls":10,"failedCalls":3,"passedCalls":7,"score":85,"totalCalls":10},"sweepAttribution":null,"verdict":null}
 			Data SimulationRunResults `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {

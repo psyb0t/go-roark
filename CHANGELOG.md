@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.24.0, 2026-11-27
+
+- Add `Capabilities` (a list of enum values such as `FAQ`, `CALLROUTING` and `APPOINTMENTBOOKING`), `IndustryDescription` and `WebsiteUrl` to the agent response data. This changes the anonymous struct types behind `GetV1AgentResponse.JSON200`, `GetV1AgentByAgentIdResponse.JSON200`, `PostV1AgentResponse.JSON201`, `PostV1AgentBuildResponse.JSON201` and `PutV1AgentByAgentIdResponse.JSON200`, plus `Agents` on `ImprovCustomerFlow`, `ScriptedCustomerFlow` and `VoicemailCustomerFlow`. Code that names those struct types must change.
+- Add `IndustryDescription` and `WebsiteUrl` to `PostV1AgentJSONBody`, `PostV1AgentBuildJSONBody`, `PutV1AgentByAgentIdJSONBody` and their request body aliases. Add `IndustryDescription` to `GenerateSimulationResourcesInput` and `SimulationResourceGeneration`.
+- Add the `RECRUITINGANDSTAFFING` industry enum value for agents and `GenerateSimulationResourcesInput`.
+- Add `Phone` (`BLUETOOTH`, `LANDLINE`, `MOBILE`) and `LineNoise` to `CreateEnvironmentInput`, `UpdateEnvironmentInput` and `EnvironmentResponse`.
+- Add the `GU` and `MR` language enum values to persona `Language` and `UnderstoodLanguages` types, including `PersonaConfig` and the persona request and response bodies.
+- Add the `SUM` value `AlertThresholdTriggerAggregationSUM`.
+- Add `NonZeroCount` to the aggregates of `SimulationRunGroupReportDocument`. Its anonymous element struct type changes.
+
 ## v0.23.0, 2026-11-26
 
 - Add the simulation job rescore endpoints: `GetV1SimulationPlanJobByJobIdRescore` and `PostV1SimulationPlanJobByJobIdRescore` on `Client` and `ClientInterface`, and the matching `...WithResponse` methods on `ClientWithResponses` and `ClientWithResponsesInterface`. Also add the `New...Request` and `Parse...Response` helpers and `GetV1SimulationPlanJobByJobIdRescoreResponse` and `PostV1SimulationPlanJobByJobIdRescoreResponse`.

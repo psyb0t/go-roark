@@ -2070,6 +2070,7 @@ const (
 	AlertThresholdTriggerAggregationCOUNT         AlertThresholdTriggerAggregation = "COUNT"
 	AlertThresholdTriggerAggregationMEAN          AlertThresholdTriggerAggregation = "MEAN"
 	AlertThresholdTriggerAggregationRATEPERMINUTE AlertThresholdTriggerAggregation = "RATE_PER_MINUTE"
+	AlertThresholdTriggerAggregationSUM           AlertThresholdTriggerAggregation = "SUM"
 )
 
 // Valid indicates whether the value is a known member of the AlertThresholdTriggerAggregation enum.
@@ -2080,6 +2081,8 @@ func (e AlertThresholdTriggerAggregation) Valid() bool {
 	case AlertThresholdTriggerAggregationMEAN:
 		return true
 	case AlertThresholdTriggerAggregationRATEPERMINUTE:
+		return true
+	case AlertThresholdTriggerAggregationSUM:
 		return true
 	default:
 		return false
@@ -4822,6 +4825,27 @@ func (e CreateEnvironmentInputLineQuality) Valid() bool {
 	case CreateEnvironmentInputLineQualityONEWAYDEGRADED:
 		return true
 	case CreateEnvironmentInputLineQualityPOORCONNECTION:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CreateEnvironmentInputPhone.
+const (
+	CreateEnvironmentInputPhoneBLUETOOTH CreateEnvironmentInputPhone = "BLUETOOTH"
+	CreateEnvironmentInputPhoneLANDLINE  CreateEnvironmentInputPhone = "LANDLINE"
+	CreateEnvironmentInputPhoneMOBILE    CreateEnvironmentInputPhone = "MOBILE"
+)
+
+// Valid indicates whether the value is a known member of the CreateEnvironmentInputPhone enum.
+func (e CreateEnvironmentInputPhone) Valid() bool {
+	switch e {
+	case CreateEnvironmentInputPhoneBLUETOOTH:
+		return true
+	case CreateEnvironmentInputPhoneLANDLINE:
+		return true
+	case CreateEnvironmentInputPhoneMOBILE:
 		return true
 	default:
 		return false
@@ -9376,6 +9400,27 @@ func (e EnvironmentResponseLineQuality) Valid() bool {
 	}
 }
 
+// Defines values for EnvironmentResponsePhone.
+const (
+	EnvironmentResponsePhoneBLUETOOTH EnvironmentResponsePhone = "BLUETOOTH"
+	EnvironmentResponsePhoneLANDLINE  EnvironmentResponsePhone = "LANDLINE"
+	EnvironmentResponsePhoneMOBILE    EnvironmentResponsePhone = "MOBILE"
+)
+
+// Valid indicates whether the value is a known member of the EnvironmentResponsePhone enum.
+func (e EnvironmentResponsePhone) Valid() bool {
+	switch e {
+	case EnvironmentResponsePhoneBLUETOOTH:
+		return true
+	case EnvironmentResponsePhoneLANDLINE:
+		return true
+	case EnvironmentResponsePhoneMOBILE:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ErrorResponseType.
 const (
 	ErrorResponseTypeAuthentication  ErrorResponseType = "authentication"
@@ -9897,22 +9942,23 @@ func (e GenerateSimulationResourcesInputCapabilities) Valid() bool {
 
 // Defines values for GenerateSimulationResourcesInputIndustry.
 const (
-	GenerateSimulationResourcesInputIndustryAUTOMOTIVE           GenerateSimulationResourcesInputIndustry = "AUTOMOTIVE"
-	GenerateSimulationResourcesInputIndustryDEBTCOLLECTION       GenerateSimulationResourcesInputIndustry = "DEBT_COLLECTION"
-	GenerateSimulationResourcesInputIndustryEDUCATION            GenerateSimulationResourcesInputIndustry = "EDUCATION"
-	GenerateSimulationResourcesInputIndustryFINANCIALSERVICES    GenerateSimulationResourcesInputIndustry = "FINANCIAL_SERVICES"
-	GenerateSimulationResourcesInputIndustryHEALTHCARE           GenerateSimulationResourcesInputIndustry = "HEALTHCARE"
-	GenerateSimulationResourcesInputIndustryHOMESERVICES         GenerateSimulationResourcesInputIndustry = "HOME_SERVICES"
-	GenerateSimulationResourcesInputIndustryINSURANCE            GenerateSimulationResourcesInputIndustry = "INSURANCE"
-	GenerateSimulationResourcesInputIndustryLOGISTICS            GenerateSimulationResourcesInputIndustry = "LOGISTICS"
-	GenerateSimulationResourcesInputIndustryOTHER                GenerateSimulationResourcesInputIndustry = "OTHER"
-	GenerateSimulationResourcesInputIndustryPUBLICSECTOR         GenerateSimulationResourcesInputIndustry = "PUBLIC_SECTOR"
-	GenerateSimulationResourcesInputIndustryRESTAURANTS          GenerateSimulationResourcesInputIndustry = "RESTAURANTS"
-	GenerateSimulationResourcesInputIndustryRETAIL               GenerateSimulationResourcesInputIndustry = "RETAIL"
-	GenerateSimulationResourcesInputIndustryTECHNOLOGY           GenerateSimulationResourcesInputIndustry = "TECHNOLOGY"
-	GenerateSimulationResourcesInputIndustryTELECOMMUNICATIONS   GenerateSimulationResourcesInputIndustry = "TELECOMMUNICATIONS"
-	GenerateSimulationResourcesInputIndustryTRAVELANDHOSPITALITY GenerateSimulationResourcesInputIndustry = "TRAVEL_AND_HOSPITALITY"
-	GenerateSimulationResourcesInputIndustryUTILITIES            GenerateSimulationResourcesInputIndustry = "UTILITIES"
+	GenerateSimulationResourcesInputIndustryAUTOMOTIVE            GenerateSimulationResourcesInputIndustry = "AUTOMOTIVE"
+	GenerateSimulationResourcesInputIndustryDEBTCOLLECTION        GenerateSimulationResourcesInputIndustry = "DEBT_COLLECTION"
+	GenerateSimulationResourcesInputIndustryEDUCATION             GenerateSimulationResourcesInputIndustry = "EDUCATION"
+	GenerateSimulationResourcesInputIndustryFINANCIALSERVICES     GenerateSimulationResourcesInputIndustry = "FINANCIAL_SERVICES"
+	GenerateSimulationResourcesInputIndustryHEALTHCARE            GenerateSimulationResourcesInputIndustry = "HEALTHCARE"
+	GenerateSimulationResourcesInputIndustryHOMESERVICES          GenerateSimulationResourcesInputIndustry = "HOME_SERVICES"
+	GenerateSimulationResourcesInputIndustryINSURANCE             GenerateSimulationResourcesInputIndustry = "INSURANCE"
+	GenerateSimulationResourcesInputIndustryLOGISTICS             GenerateSimulationResourcesInputIndustry = "LOGISTICS"
+	GenerateSimulationResourcesInputIndustryOTHER                 GenerateSimulationResourcesInputIndustry = "OTHER"
+	GenerateSimulationResourcesInputIndustryPUBLICSECTOR          GenerateSimulationResourcesInputIndustry = "PUBLIC_SECTOR"
+	GenerateSimulationResourcesInputIndustryRECRUITINGANDSTAFFING GenerateSimulationResourcesInputIndustry = "RECRUITING_AND_STAFFING"
+	GenerateSimulationResourcesInputIndustryRESTAURANTS           GenerateSimulationResourcesInputIndustry = "RESTAURANTS"
+	GenerateSimulationResourcesInputIndustryRETAIL                GenerateSimulationResourcesInputIndustry = "RETAIL"
+	GenerateSimulationResourcesInputIndustryTECHNOLOGY            GenerateSimulationResourcesInputIndustry = "TECHNOLOGY"
+	GenerateSimulationResourcesInputIndustryTELECOMMUNICATIONS    GenerateSimulationResourcesInputIndustry = "TELECOMMUNICATIONS"
+	GenerateSimulationResourcesInputIndustryTRAVELANDHOSPITALITY  GenerateSimulationResourcesInputIndustry = "TRAVEL_AND_HOSPITALITY"
+	GenerateSimulationResourcesInputIndustryUTILITIES             GenerateSimulationResourcesInputIndustry = "UTILITIES"
 )
 
 // Valid indicates whether the value is a known member of the GenerateSimulationResourcesInputIndustry enum.
@@ -9937,6 +9983,8 @@ func (e GenerateSimulationResourcesInputIndustry) Valid() bool {
 	case GenerateSimulationResourcesInputIndustryOTHER:
 		return true
 	case GenerateSimulationResourcesInputIndustryPUBLICSECTOR:
+		return true
+	case GenerateSimulationResourcesInputIndustryRECRUITINGANDSTAFFING:
 		return true
 	case GenerateSimulationResourcesInputIndustryRESTAURANTS:
 		return true
@@ -10239,11 +10287,13 @@ const (
 	GetSimulationPlanJobResponseSimulationJobsPersonaLanguageEN GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "EN"
 	GetSimulationPlanJobResponseSimulationJobsPersonaLanguageES GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "ES"
 	GetSimulationPlanJobResponseSimulationJobsPersonaLanguageFR GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "FR"
+	GetSimulationPlanJobResponseSimulationJobsPersonaLanguageGU GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "GU"
 	GetSimulationPlanJobResponseSimulationJobsPersonaLanguageHE GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "HE"
 	GetSimulationPlanJobResponseSimulationJobsPersonaLanguageHI GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "HI"
 	GetSimulationPlanJobResponseSimulationJobsPersonaLanguageID GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "ID"
 	GetSimulationPlanJobResponseSimulationJobsPersonaLanguageIT GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "IT"
 	GetSimulationPlanJobResponseSimulationJobsPersonaLanguageJA GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "JA"
+	GetSimulationPlanJobResponseSimulationJobsPersonaLanguageMR GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "MR"
 	GetSimulationPlanJobResponseSimulationJobsPersonaLanguageMS GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "MS"
 	GetSimulationPlanJobResponseSimulationJobsPersonaLanguageNL GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "NL"
 	GetSimulationPlanJobResponseSimulationJobsPersonaLanguagePT GetSimulationPlanJobResponseSimulationJobsPersonaLanguage = "PT"
@@ -10268,6 +10318,8 @@ func (e GetSimulationPlanJobResponseSimulationJobsPersonaLanguage) Valid() bool 
 		return true
 	case GetSimulationPlanJobResponseSimulationJobsPersonaLanguageFR:
 		return true
+	case GetSimulationPlanJobResponseSimulationJobsPersonaLanguageGU:
+		return true
 	case GetSimulationPlanJobResponseSimulationJobsPersonaLanguageHE:
 		return true
 	case GetSimulationPlanJobResponseSimulationJobsPersonaLanguageHI:
@@ -10277,6 +10329,8 @@ func (e GetSimulationPlanJobResponseSimulationJobsPersonaLanguage) Valid() bool 
 	case GetSimulationPlanJobResponseSimulationJobsPersonaLanguageIT:
 		return true
 	case GetSimulationPlanJobResponseSimulationJobsPersonaLanguageJA:
+		return true
+	case GetSimulationPlanJobResponseSimulationJobsPersonaLanguageMR:
 		return true
 	case GetSimulationPlanJobResponseSimulationJobsPersonaLanguageMS:
 		return true
@@ -10410,11 +10464,13 @@ const (
 	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesEN GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "EN"
 	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesES GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "ES"
 	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesFR GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "FR"
+	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesGU GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "GU"
 	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesHE GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "HE"
 	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesHI GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "HI"
 	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesID GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "ID"
 	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesIT GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "IT"
 	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesJA GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "JA"
+	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesMR GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "MR"
 	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesMS GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "MS"
 	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesNL GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "NL"
 	GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesPT GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages = "PT"
@@ -10439,6 +10495,8 @@ func (e GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages) Va
 		return true
 	case GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesFR:
 		return true
+	case GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesGU:
+		return true
 	case GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesHE:
 		return true
 	case GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesHI:
@@ -10448,6 +10506,8 @@ func (e GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguages) Va
 	case GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesIT:
 		return true
 	case GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesJA:
+		return true
+	case GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesMR:
 		return true
 	case GetSimulationPlanJobResponseSimulationJobsPersonaUnderstoodLanguagesMS:
 		return true
@@ -11008,24 +11068,70 @@ func (e HttpRequestMetricResponseType) Valid() bool {
 	}
 }
 
+// Defines values for ImprovCustomerFlowAgentsCapabilities.
+const (
+	ImprovCustomerFlowAgentsCapabilitiesACCOUNTMANAGEMENT    ImprovCustomerFlowAgentsCapabilities = "ACCOUNT_MANAGEMENT"
+	ImprovCustomerFlowAgentsCapabilitiesAPPOINTMENTBOOKING   ImprovCustomerFlowAgentsCapabilities = "APPOINTMENT_BOOKING"
+	ImprovCustomerFlowAgentsCapabilitiesBILLINGANDPAYMENTS   ImprovCustomerFlowAgentsCapabilities = "BILLING_AND_PAYMENTS"
+	ImprovCustomerFlowAgentsCapabilitiesCALLROUTING          ImprovCustomerFlowAgentsCapabilities = "CALL_ROUTING"
+	ImprovCustomerFlowAgentsCapabilitiesCOLLECTIONS          ImprovCustomerFlowAgentsCapabilities = "COLLECTIONS"
+	ImprovCustomerFlowAgentsCapabilitiesFAQ                  ImprovCustomerFlowAgentsCapabilities = "FAQ"
+	ImprovCustomerFlowAgentsCapabilitiesIDENTITYVERIFICATION ImprovCustomerFlowAgentsCapabilities = "IDENTITY_VERIFICATION"
+	ImprovCustomerFlowAgentsCapabilitiesLEADQUALIFICATION    ImprovCustomerFlowAgentsCapabilities = "LEAD_QUALIFICATION"
+	ImprovCustomerFlowAgentsCapabilitiesORDERMANAGEMENT      ImprovCustomerFlowAgentsCapabilities = "ORDER_MANAGEMENT"
+	ImprovCustomerFlowAgentsCapabilitiesOUTBOUNDCALLING      ImprovCustomerFlowAgentsCapabilities = "OUTBOUND_CALLING"
+	ImprovCustomerFlowAgentsCapabilitiesTROUBLESHOOTING      ImprovCustomerFlowAgentsCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the ImprovCustomerFlowAgentsCapabilities enum.
+func (e ImprovCustomerFlowAgentsCapabilities) Valid() bool {
+	switch e {
+	case ImprovCustomerFlowAgentsCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case ImprovCustomerFlowAgentsCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case ImprovCustomerFlowAgentsCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case ImprovCustomerFlowAgentsCapabilitiesCALLROUTING:
+		return true
+	case ImprovCustomerFlowAgentsCapabilitiesCOLLECTIONS:
+		return true
+	case ImprovCustomerFlowAgentsCapabilitiesFAQ:
+		return true
+	case ImprovCustomerFlowAgentsCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case ImprovCustomerFlowAgentsCapabilitiesLEADQUALIFICATION:
+		return true
+	case ImprovCustomerFlowAgentsCapabilitiesORDERMANAGEMENT:
+		return true
+	case ImprovCustomerFlowAgentsCapabilitiesOUTBOUNDCALLING:
+		return true
+	case ImprovCustomerFlowAgentsCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ImprovCustomerFlowAgentsIndustry.
 const (
-	ImprovCustomerFlowAgentsIndustryAUTOMOTIVE           ImprovCustomerFlowAgentsIndustry = "AUTOMOTIVE"
-	ImprovCustomerFlowAgentsIndustryDEBTCOLLECTION       ImprovCustomerFlowAgentsIndustry = "DEBT_COLLECTION"
-	ImprovCustomerFlowAgentsIndustryEDUCATION            ImprovCustomerFlowAgentsIndustry = "EDUCATION"
-	ImprovCustomerFlowAgentsIndustryFINANCIALSERVICES    ImprovCustomerFlowAgentsIndustry = "FINANCIAL_SERVICES"
-	ImprovCustomerFlowAgentsIndustryHEALTHCARE           ImprovCustomerFlowAgentsIndustry = "HEALTHCARE"
-	ImprovCustomerFlowAgentsIndustryHOMESERVICES         ImprovCustomerFlowAgentsIndustry = "HOME_SERVICES"
-	ImprovCustomerFlowAgentsIndustryINSURANCE            ImprovCustomerFlowAgentsIndustry = "INSURANCE"
-	ImprovCustomerFlowAgentsIndustryLOGISTICS            ImprovCustomerFlowAgentsIndustry = "LOGISTICS"
-	ImprovCustomerFlowAgentsIndustryOTHER                ImprovCustomerFlowAgentsIndustry = "OTHER"
-	ImprovCustomerFlowAgentsIndustryPUBLICSECTOR         ImprovCustomerFlowAgentsIndustry = "PUBLIC_SECTOR"
-	ImprovCustomerFlowAgentsIndustryRESTAURANTS          ImprovCustomerFlowAgentsIndustry = "RESTAURANTS"
-	ImprovCustomerFlowAgentsIndustryRETAIL               ImprovCustomerFlowAgentsIndustry = "RETAIL"
-	ImprovCustomerFlowAgentsIndustryTECHNOLOGY           ImprovCustomerFlowAgentsIndustry = "TECHNOLOGY"
-	ImprovCustomerFlowAgentsIndustryTELECOMMUNICATIONS   ImprovCustomerFlowAgentsIndustry = "TELECOMMUNICATIONS"
-	ImprovCustomerFlowAgentsIndustryTRAVELANDHOSPITALITY ImprovCustomerFlowAgentsIndustry = "TRAVEL_AND_HOSPITALITY"
-	ImprovCustomerFlowAgentsIndustryUTILITIES            ImprovCustomerFlowAgentsIndustry = "UTILITIES"
+	ImprovCustomerFlowAgentsIndustryAUTOMOTIVE            ImprovCustomerFlowAgentsIndustry = "AUTOMOTIVE"
+	ImprovCustomerFlowAgentsIndustryDEBTCOLLECTION        ImprovCustomerFlowAgentsIndustry = "DEBT_COLLECTION"
+	ImprovCustomerFlowAgentsIndustryEDUCATION             ImprovCustomerFlowAgentsIndustry = "EDUCATION"
+	ImprovCustomerFlowAgentsIndustryFINANCIALSERVICES     ImprovCustomerFlowAgentsIndustry = "FINANCIAL_SERVICES"
+	ImprovCustomerFlowAgentsIndustryHEALTHCARE            ImprovCustomerFlowAgentsIndustry = "HEALTHCARE"
+	ImprovCustomerFlowAgentsIndustryHOMESERVICES          ImprovCustomerFlowAgentsIndustry = "HOME_SERVICES"
+	ImprovCustomerFlowAgentsIndustryINSURANCE             ImprovCustomerFlowAgentsIndustry = "INSURANCE"
+	ImprovCustomerFlowAgentsIndustryLOGISTICS             ImprovCustomerFlowAgentsIndustry = "LOGISTICS"
+	ImprovCustomerFlowAgentsIndustryOTHER                 ImprovCustomerFlowAgentsIndustry = "OTHER"
+	ImprovCustomerFlowAgentsIndustryPUBLICSECTOR          ImprovCustomerFlowAgentsIndustry = "PUBLIC_SECTOR"
+	ImprovCustomerFlowAgentsIndustryRECRUITINGANDSTAFFING ImprovCustomerFlowAgentsIndustry = "RECRUITING_AND_STAFFING"
+	ImprovCustomerFlowAgentsIndustryRESTAURANTS           ImprovCustomerFlowAgentsIndustry = "RESTAURANTS"
+	ImprovCustomerFlowAgentsIndustryRETAIL                ImprovCustomerFlowAgentsIndustry = "RETAIL"
+	ImprovCustomerFlowAgentsIndustryTECHNOLOGY            ImprovCustomerFlowAgentsIndustry = "TECHNOLOGY"
+	ImprovCustomerFlowAgentsIndustryTELECOMMUNICATIONS    ImprovCustomerFlowAgentsIndustry = "TELECOMMUNICATIONS"
+	ImprovCustomerFlowAgentsIndustryTRAVELANDHOSPITALITY  ImprovCustomerFlowAgentsIndustry = "TRAVEL_AND_HOSPITALITY"
+	ImprovCustomerFlowAgentsIndustryUTILITIES             ImprovCustomerFlowAgentsIndustry = "UTILITIES"
 )
 
 // Valid indicates whether the value is a known member of the ImprovCustomerFlowAgentsIndustry enum.
@@ -11050,6 +11156,8 @@ func (e ImprovCustomerFlowAgentsIndustry) Valid() bool {
 	case ImprovCustomerFlowAgentsIndustryOTHER:
 		return true
 	case ImprovCustomerFlowAgentsIndustryPUBLICSECTOR:
+		return true
+	case ImprovCustomerFlowAgentsIndustryRECRUITINGANDSTAFFING:
 		return true
 	case ImprovCustomerFlowAgentsIndustryRESTAURANTS:
 		return true
@@ -11415,11 +11523,13 @@ const (
 	ImprovFlowVariantHandoffPersonasLanguageEN ImprovFlowVariantHandoffPersonasLanguage = "EN"
 	ImprovFlowVariantHandoffPersonasLanguageES ImprovFlowVariantHandoffPersonasLanguage = "ES"
 	ImprovFlowVariantHandoffPersonasLanguageFR ImprovFlowVariantHandoffPersonasLanguage = "FR"
+	ImprovFlowVariantHandoffPersonasLanguageGU ImprovFlowVariantHandoffPersonasLanguage = "GU"
 	ImprovFlowVariantHandoffPersonasLanguageHE ImprovFlowVariantHandoffPersonasLanguage = "HE"
 	ImprovFlowVariantHandoffPersonasLanguageHI ImprovFlowVariantHandoffPersonasLanguage = "HI"
 	ImprovFlowVariantHandoffPersonasLanguageID ImprovFlowVariantHandoffPersonasLanguage = "ID"
 	ImprovFlowVariantHandoffPersonasLanguageIT ImprovFlowVariantHandoffPersonasLanguage = "IT"
 	ImprovFlowVariantHandoffPersonasLanguageJA ImprovFlowVariantHandoffPersonasLanguage = "JA"
+	ImprovFlowVariantHandoffPersonasLanguageMR ImprovFlowVariantHandoffPersonasLanguage = "MR"
 	ImprovFlowVariantHandoffPersonasLanguageMS ImprovFlowVariantHandoffPersonasLanguage = "MS"
 	ImprovFlowVariantHandoffPersonasLanguageNL ImprovFlowVariantHandoffPersonasLanguage = "NL"
 	ImprovFlowVariantHandoffPersonasLanguagePT ImprovFlowVariantHandoffPersonasLanguage = "PT"
@@ -11444,6 +11554,8 @@ func (e ImprovFlowVariantHandoffPersonasLanguage) Valid() bool {
 		return true
 	case ImprovFlowVariantHandoffPersonasLanguageFR:
 		return true
+	case ImprovFlowVariantHandoffPersonasLanguageGU:
+		return true
 	case ImprovFlowVariantHandoffPersonasLanguageHE:
 		return true
 	case ImprovFlowVariantHandoffPersonasLanguageHI:
@@ -11453,6 +11565,8 @@ func (e ImprovFlowVariantHandoffPersonasLanguage) Valid() bool {
 	case ImprovFlowVariantHandoffPersonasLanguageIT:
 		return true
 	case ImprovFlowVariantHandoffPersonasLanguageJA:
+		return true
+	case ImprovFlowVariantHandoffPersonasLanguageMR:
 		return true
 	case ImprovFlowVariantHandoffPersonasLanguageMS:
 		return true
@@ -11586,11 +11700,13 @@ const (
 	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesEN ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "EN"
 	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesES ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "ES"
 	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesFR ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "FR"
+	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesGU ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "GU"
 	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesHE ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "HE"
 	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesHI ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "HI"
 	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesID ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "ID"
 	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesIT ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "IT"
 	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesJA ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "JA"
+	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesMR ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "MR"
 	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesMS ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "MS"
 	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesNL ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "NL"
 	ImprovFlowVariantHandoffPersonasUnderstoodLanguagesPT ImprovFlowVariantHandoffPersonasUnderstoodLanguages = "PT"
@@ -11615,6 +11731,8 @@ func (e ImprovFlowVariantHandoffPersonasUnderstoodLanguages) Valid() bool {
 		return true
 	case ImprovFlowVariantHandoffPersonasUnderstoodLanguagesFR:
 		return true
+	case ImprovFlowVariantHandoffPersonasUnderstoodLanguagesGU:
+		return true
 	case ImprovFlowVariantHandoffPersonasUnderstoodLanguagesHE:
 		return true
 	case ImprovFlowVariantHandoffPersonasUnderstoodLanguagesHI:
@@ -11624,6 +11742,8 @@ func (e ImprovFlowVariantHandoffPersonasUnderstoodLanguages) Valid() bool {
 	case ImprovFlowVariantHandoffPersonasUnderstoodLanguagesIT:
 		return true
 	case ImprovFlowVariantHandoffPersonasUnderstoodLanguagesJA:
+		return true
+	case ImprovFlowVariantHandoffPersonasUnderstoodLanguagesMR:
 		return true
 	case ImprovFlowVariantHandoffPersonasUnderstoodLanguagesMS:
 		return true
@@ -11928,11 +12048,13 @@ const (
 	ImprovFlowVariantPersonaOverrideLanguageEN ImprovFlowVariantPersonaOverrideLanguage = "EN"
 	ImprovFlowVariantPersonaOverrideLanguageES ImprovFlowVariantPersonaOverrideLanguage = "ES"
 	ImprovFlowVariantPersonaOverrideLanguageFR ImprovFlowVariantPersonaOverrideLanguage = "FR"
+	ImprovFlowVariantPersonaOverrideLanguageGU ImprovFlowVariantPersonaOverrideLanguage = "GU"
 	ImprovFlowVariantPersonaOverrideLanguageHE ImprovFlowVariantPersonaOverrideLanguage = "HE"
 	ImprovFlowVariantPersonaOverrideLanguageHI ImprovFlowVariantPersonaOverrideLanguage = "HI"
 	ImprovFlowVariantPersonaOverrideLanguageID ImprovFlowVariantPersonaOverrideLanguage = "ID"
 	ImprovFlowVariantPersonaOverrideLanguageIT ImprovFlowVariantPersonaOverrideLanguage = "IT"
 	ImprovFlowVariantPersonaOverrideLanguageJA ImprovFlowVariantPersonaOverrideLanguage = "JA"
+	ImprovFlowVariantPersonaOverrideLanguageMR ImprovFlowVariantPersonaOverrideLanguage = "MR"
 	ImprovFlowVariantPersonaOverrideLanguageMS ImprovFlowVariantPersonaOverrideLanguage = "MS"
 	ImprovFlowVariantPersonaOverrideLanguageNL ImprovFlowVariantPersonaOverrideLanguage = "NL"
 	ImprovFlowVariantPersonaOverrideLanguagePT ImprovFlowVariantPersonaOverrideLanguage = "PT"
@@ -11957,6 +12079,8 @@ func (e ImprovFlowVariantPersonaOverrideLanguage) Valid() bool {
 		return true
 	case ImprovFlowVariantPersonaOverrideLanguageFR:
 		return true
+	case ImprovFlowVariantPersonaOverrideLanguageGU:
+		return true
 	case ImprovFlowVariantPersonaOverrideLanguageHE:
 		return true
 	case ImprovFlowVariantPersonaOverrideLanguageHI:
@@ -11966,6 +12090,8 @@ func (e ImprovFlowVariantPersonaOverrideLanguage) Valid() bool {
 	case ImprovFlowVariantPersonaOverrideLanguageIT:
 		return true
 	case ImprovFlowVariantPersonaOverrideLanguageJA:
+		return true
+	case ImprovFlowVariantPersonaOverrideLanguageMR:
 		return true
 	case ImprovFlowVariantPersonaOverrideLanguageMS:
 		return true
@@ -12099,11 +12225,13 @@ const (
 	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesEN ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "EN"
 	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesES ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "ES"
 	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesFR ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "FR"
+	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesGU ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "GU"
 	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesHE ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "HE"
 	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesHI ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "HI"
 	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesID ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "ID"
 	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesIT ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "IT"
 	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesJA ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "JA"
+	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesMR ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "MR"
 	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesMS ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "MS"
 	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesNL ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "NL"
 	ImprovFlowVariantPersonaOverrideUnderstoodLanguagesPT ImprovFlowVariantPersonaOverrideUnderstoodLanguages = "PT"
@@ -12128,6 +12256,8 @@ func (e ImprovFlowVariantPersonaOverrideUnderstoodLanguages) Valid() bool {
 		return true
 	case ImprovFlowVariantPersonaOverrideUnderstoodLanguagesFR:
 		return true
+	case ImprovFlowVariantPersonaOverrideUnderstoodLanguagesGU:
+		return true
 	case ImprovFlowVariantPersonaOverrideUnderstoodLanguagesHE:
 		return true
 	case ImprovFlowVariantPersonaOverrideUnderstoodLanguagesHI:
@@ -12137,6 +12267,8 @@ func (e ImprovFlowVariantPersonaOverrideUnderstoodLanguages) Valid() bool {
 	case ImprovFlowVariantPersonaOverrideUnderstoodLanguagesIT:
 		return true
 	case ImprovFlowVariantPersonaOverrideUnderstoodLanguagesJA:
+		return true
+	case ImprovFlowVariantPersonaOverrideUnderstoodLanguagesMR:
 		return true
 	case ImprovFlowVariantPersonaOverrideUnderstoodLanguagesMS:
 		return true
@@ -15702,11 +15834,13 @@ const (
 	PersonaConfigLanguageEN PersonaConfigLanguage = "EN"
 	PersonaConfigLanguageES PersonaConfigLanguage = "ES"
 	PersonaConfigLanguageFR PersonaConfigLanguage = "FR"
+	PersonaConfigLanguageGU PersonaConfigLanguage = "GU"
 	PersonaConfigLanguageHE PersonaConfigLanguage = "HE"
 	PersonaConfigLanguageHI PersonaConfigLanguage = "HI"
 	PersonaConfigLanguageID PersonaConfigLanguage = "ID"
 	PersonaConfigLanguageIT PersonaConfigLanguage = "IT"
 	PersonaConfigLanguageJA PersonaConfigLanguage = "JA"
+	PersonaConfigLanguageMR PersonaConfigLanguage = "MR"
 	PersonaConfigLanguageMS PersonaConfigLanguage = "MS"
 	PersonaConfigLanguageNL PersonaConfigLanguage = "NL"
 	PersonaConfigLanguagePT PersonaConfigLanguage = "PT"
@@ -15731,6 +15865,8 @@ func (e PersonaConfigLanguage) Valid() bool {
 		return true
 	case PersonaConfigLanguageFR:
 		return true
+	case PersonaConfigLanguageGU:
+		return true
 	case PersonaConfigLanguageHE:
 		return true
 	case PersonaConfigLanguageHI:
@@ -15740,6 +15876,8 @@ func (e PersonaConfigLanguage) Valid() bool {
 	case PersonaConfigLanguageIT:
 		return true
 	case PersonaConfigLanguageJA:
+		return true
+	case PersonaConfigLanguageMR:
 		return true
 	case PersonaConfigLanguageMS:
 		return true
@@ -15873,11 +16011,13 @@ const (
 	PersonaConfigUnderstoodLanguagesEN PersonaConfigUnderstoodLanguages = "EN"
 	PersonaConfigUnderstoodLanguagesES PersonaConfigUnderstoodLanguages = "ES"
 	PersonaConfigUnderstoodLanguagesFR PersonaConfigUnderstoodLanguages = "FR"
+	PersonaConfigUnderstoodLanguagesGU PersonaConfigUnderstoodLanguages = "GU"
 	PersonaConfigUnderstoodLanguagesHE PersonaConfigUnderstoodLanguages = "HE"
 	PersonaConfigUnderstoodLanguagesHI PersonaConfigUnderstoodLanguages = "HI"
 	PersonaConfigUnderstoodLanguagesID PersonaConfigUnderstoodLanguages = "ID"
 	PersonaConfigUnderstoodLanguagesIT PersonaConfigUnderstoodLanguages = "IT"
 	PersonaConfigUnderstoodLanguagesJA PersonaConfigUnderstoodLanguages = "JA"
+	PersonaConfigUnderstoodLanguagesMR PersonaConfigUnderstoodLanguages = "MR"
 	PersonaConfigUnderstoodLanguagesMS PersonaConfigUnderstoodLanguages = "MS"
 	PersonaConfigUnderstoodLanguagesNL PersonaConfigUnderstoodLanguages = "NL"
 	PersonaConfigUnderstoodLanguagesPT PersonaConfigUnderstoodLanguages = "PT"
@@ -15902,6 +16042,8 @@ func (e PersonaConfigUnderstoodLanguages) Valid() bool {
 		return true
 	case PersonaConfigUnderstoodLanguagesFR:
 		return true
+	case PersonaConfigUnderstoodLanguagesGU:
+		return true
 	case PersonaConfigUnderstoodLanguagesHE:
 		return true
 	case PersonaConfigUnderstoodLanguagesHI:
@@ -15911,6 +16053,8 @@ func (e PersonaConfigUnderstoodLanguages) Valid() bool {
 	case PersonaConfigUnderstoodLanguagesIT:
 		return true
 	case PersonaConfigUnderstoodLanguagesJA:
+		return true
+	case PersonaConfigUnderstoodLanguagesMR:
 		return true
 	case PersonaConfigUnderstoodLanguagesMS:
 		return true
@@ -16816,24 +16960,70 @@ func (e RunSimulationResponseStatus) Valid() bool {
 	}
 }
 
+// Defines values for ScriptedCustomerFlowAgentsCapabilities.
+const (
+	ScriptedCustomerFlowAgentsCapabilitiesACCOUNTMANAGEMENT    ScriptedCustomerFlowAgentsCapabilities = "ACCOUNT_MANAGEMENT"
+	ScriptedCustomerFlowAgentsCapabilitiesAPPOINTMENTBOOKING   ScriptedCustomerFlowAgentsCapabilities = "APPOINTMENT_BOOKING"
+	ScriptedCustomerFlowAgentsCapabilitiesBILLINGANDPAYMENTS   ScriptedCustomerFlowAgentsCapabilities = "BILLING_AND_PAYMENTS"
+	ScriptedCustomerFlowAgentsCapabilitiesCALLROUTING          ScriptedCustomerFlowAgentsCapabilities = "CALL_ROUTING"
+	ScriptedCustomerFlowAgentsCapabilitiesCOLLECTIONS          ScriptedCustomerFlowAgentsCapabilities = "COLLECTIONS"
+	ScriptedCustomerFlowAgentsCapabilitiesFAQ                  ScriptedCustomerFlowAgentsCapabilities = "FAQ"
+	ScriptedCustomerFlowAgentsCapabilitiesIDENTITYVERIFICATION ScriptedCustomerFlowAgentsCapabilities = "IDENTITY_VERIFICATION"
+	ScriptedCustomerFlowAgentsCapabilitiesLEADQUALIFICATION    ScriptedCustomerFlowAgentsCapabilities = "LEAD_QUALIFICATION"
+	ScriptedCustomerFlowAgentsCapabilitiesORDERMANAGEMENT      ScriptedCustomerFlowAgentsCapabilities = "ORDER_MANAGEMENT"
+	ScriptedCustomerFlowAgentsCapabilitiesOUTBOUNDCALLING      ScriptedCustomerFlowAgentsCapabilities = "OUTBOUND_CALLING"
+	ScriptedCustomerFlowAgentsCapabilitiesTROUBLESHOOTING      ScriptedCustomerFlowAgentsCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the ScriptedCustomerFlowAgentsCapabilities enum.
+func (e ScriptedCustomerFlowAgentsCapabilities) Valid() bool {
+	switch e {
+	case ScriptedCustomerFlowAgentsCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case ScriptedCustomerFlowAgentsCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case ScriptedCustomerFlowAgentsCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case ScriptedCustomerFlowAgentsCapabilitiesCALLROUTING:
+		return true
+	case ScriptedCustomerFlowAgentsCapabilitiesCOLLECTIONS:
+		return true
+	case ScriptedCustomerFlowAgentsCapabilitiesFAQ:
+		return true
+	case ScriptedCustomerFlowAgentsCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case ScriptedCustomerFlowAgentsCapabilitiesLEADQUALIFICATION:
+		return true
+	case ScriptedCustomerFlowAgentsCapabilitiesORDERMANAGEMENT:
+		return true
+	case ScriptedCustomerFlowAgentsCapabilitiesOUTBOUNDCALLING:
+		return true
+	case ScriptedCustomerFlowAgentsCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ScriptedCustomerFlowAgentsIndustry.
 const (
-	ScriptedCustomerFlowAgentsIndustryAUTOMOTIVE           ScriptedCustomerFlowAgentsIndustry = "AUTOMOTIVE"
-	ScriptedCustomerFlowAgentsIndustryDEBTCOLLECTION       ScriptedCustomerFlowAgentsIndustry = "DEBT_COLLECTION"
-	ScriptedCustomerFlowAgentsIndustryEDUCATION            ScriptedCustomerFlowAgentsIndustry = "EDUCATION"
-	ScriptedCustomerFlowAgentsIndustryFINANCIALSERVICES    ScriptedCustomerFlowAgentsIndustry = "FINANCIAL_SERVICES"
-	ScriptedCustomerFlowAgentsIndustryHEALTHCARE           ScriptedCustomerFlowAgentsIndustry = "HEALTHCARE"
-	ScriptedCustomerFlowAgentsIndustryHOMESERVICES         ScriptedCustomerFlowAgentsIndustry = "HOME_SERVICES"
-	ScriptedCustomerFlowAgentsIndustryINSURANCE            ScriptedCustomerFlowAgentsIndustry = "INSURANCE"
-	ScriptedCustomerFlowAgentsIndustryLOGISTICS            ScriptedCustomerFlowAgentsIndustry = "LOGISTICS"
-	ScriptedCustomerFlowAgentsIndustryOTHER                ScriptedCustomerFlowAgentsIndustry = "OTHER"
-	ScriptedCustomerFlowAgentsIndustryPUBLICSECTOR         ScriptedCustomerFlowAgentsIndustry = "PUBLIC_SECTOR"
-	ScriptedCustomerFlowAgentsIndustryRESTAURANTS          ScriptedCustomerFlowAgentsIndustry = "RESTAURANTS"
-	ScriptedCustomerFlowAgentsIndustryRETAIL               ScriptedCustomerFlowAgentsIndustry = "RETAIL"
-	ScriptedCustomerFlowAgentsIndustryTECHNOLOGY           ScriptedCustomerFlowAgentsIndustry = "TECHNOLOGY"
-	ScriptedCustomerFlowAgentsIndustryTELECOMMUNICATIONS   ScriptedCustomerFlowAgentsIndustry = "TELECOMMUNICATIONS"
-	ScriptedCustomerFlowAgentsIndustryTRAVELANDHOSPITALITY ScriptedCustomerFlowAgentsIndustry = "TRAVEL_AND_HOSPITALITY"
-	ScriptedCustomerFlowAgentsIndustryUTILITIES            ScriptedCustomerFlowAgentsIndustry = "UTILITIES"
+	ScriptedCustomerFlowAgentsIndustryAUTOMOTIVE            ScriptedCustomerFlowAgentsIndustry = "AUTOMOTIVE"
+	ScriptedCustomerFlowAgentsIndustryDEBTCOLLECTION        ScriptedCustomerFlowAgentsIndustry = "DEBT_COLLECTION"
+	ScriptedCustomerFlowAgentsIndustryEDUCATION             ScriptedCustomerFlowAgentsIndustry = "EDUCATION"
+	ScriptedCustomerFlowAgentsIndustryFINANCIALSERVICES     ScriptedCustomerFlowAgentsIndustry = "FINANCIAL_SERVICES"
+	ScriptedCustomerFlowAgentsIndustryHEALTHCARE            ScriptedCustomerFlowAgentsIndustry = "HEALTHCARE"
+	ScriptedCustomerFlowAgentsIndustryHOMESERVICES          ScriptedCustomerFlowAgentsIndustry = "HOME_SERVICES"
+	ScriptedCustomerFlowAgentsIndustryINSURANCE             ScriptedCustomerFlowAgentsIndustry = "INSURANCE"
+	ScriptedCustomerFlowAgentsIndustryLOGISTICS             ScriptedCustomerFlowAgentsIndustry = "LOGISTICS"
+	ScriptedCustomerFlowAgentsIndustryOTHER                 ScriptedCustomerFlowAgentsIndustry = "OTHER"
+	ScriptedCustomerFlowAgentsIndustryPUBLICSECTOR          ScriptedCustomerFlowAgentsIndustry = "PUBLIC_SECTOR"
+	ScriptedCustomerFlowAgentsIndustryRECRUITINGANDSTAFFING ScriptedCustomerFlowAgentsIndustry = "RECRUITING_AND_STAFFING"
+	ScriptedCustomerFlowAgentsIndustryRESTAURANTS           ScriptedCustomerFlowAgentsIndustry = "RESTAURANTS"
+	ScriptedCustomerFlowAgentsIndustryRETAIL                ScriptedCustomerFlowAgentsIndustry = "RETAIL"
+	ScriptedCustomerFlowAgentsIndustryTECHNOLOGY            ScriptedCustomerFlowAgentsIndustry = "TECHNOLOGY"
+	ScriptedCustomerFlowAgentsIndustryTELECOMMUNICATIONS    ScriptedCustomerFlowAgentsIndustry = "TELECOMMUNICATIONS"
+	ScriptedCustomerFlowAgentsIndustryTRAVELANDHOSPITALITY  ScriptedCustomerFlowAgentsIndustry = "TRAVEL_AND_HOSPITALITY"
+	ScriptedCustomerFlowAgentsIndustryUTILITIES             ScriptedCustomerFlowAgentsIndustry = "UTILITIES"
 )
 
 // Valid indicates whether the value is a known member of the ScriptedCustomerFlowAgentsIndustry enum.
@@ -16858,6 +17048,8 @@ func (e ScriptedCustomerFlowAgentsIndustry) Valid() bool {
 	case ScriptedCustomerFlowAgentsIndustryOTHER:
 		return true
 	case ScriptedCustomerFlowAgentsIndustryPUBLICSECTOR:
+		return true
+	case ScriptedCustomerFlowAgentsIndustryRECRUITINGANDSTAFFING:
 		return true
 	case ScriptedCustomerFlowAgentsIndustryRESTAURANTS:
 		return true
@@ -17295,11 +17487,13 @@ const (
 	ScriptedFlowVariantPersonaOverrideLanguageEN ScriptedFlowVariantPersonaOverrideLanguage = "EN"
 	ScriptedFlowVariantPersonaOverrideLanguageES ScriptedFlowVariantPersonaOverrideLanguage = "ES"
 	ScriptedFlowVariantPersonaOverrideLanguageFR ScriptedFlowVariantPersonaOverrideLanguage = "FR"
+	ScriptedFlowVariantPersonaOverrideLanguageGU ScriptedFlowVariantPersonaOverrideLanguage = "GU"
 	ScriptedFlowVariantPersonaOverrideLanguageHE ScriptedFlowVariantPersonaOverrideLanguage = "HE"
 	ScriptedFlowVariantPersonaOverrideLanguageHI ScriptedFlowVariantPersonaOverrideLanguage = "HI"
 	ScriptedFlowVariantPersonaOverrideLanguageID ScriptedFlowVariantPersonaOverrideLanguage = "ID"
 	ScriptedFlowVariantPersonaOverrideLanguageIT ScriptedFlowVariantPersonaOverrideLanguage = "IT"
 	ScriptedFlowVariantPersonaOverrideLanguageJA ScriptedFlowVariantPersonaOverrideLanguage = "JA"
+	ScriptedFlowVariantPersonaOverrideLanguageMR ScriptedFlowVariantPersonaOverrideLanguage = "MR"
 	ScriptedFlowVariantPersonaOverrideLanguageMS ScriptedFlowVariantPersonaOverrideLanguage = "MS"
 	ScriptedFlowVariantPersonaOverrideLanguageNL ScriptedFlowVariantPersonaOverrideLanguage = "NL"
 	ScriptedFlowVariantPersonaOverrideLanguagePT ScriptedFlowVariantPersonaOverrideLanguage = "PT"
@@ -17324,6 +17518,8 @@ func (e ScriptedFlowVariantPersonaOverrideLanguage) Valid() bool {
 		return true
 	case ScriptedFlowVariantPersonaOverrideLanguageFR:
 		return true
+	case ScriptedFlowVariantPersonaOverrideLanguageGU:
+		return true
 	case ScriptedFlowVariantPersonaOverrideLanguageHE:
 		return true
 	case ScriptedFlowVariantPersonaOverrideLanguageHI:
@@ -17333,6 +17529,8 @@ func (e ScriptedFlowVariantPersonaOverrideLanguage) Valid() bool {
 	case ScriptedFlowVariantPersonaOverrideLanguageIT:
 		return true
 	case ScriptedFlowVariantPersonaOverrideLanguageJA:
+		return true
+	case ScriptedFlowVariantPersonaOverrideLanguageMR:
 		return true
 	case ScriptedFlowVariantPersonaOverrideLanguageMS:
 		return true
@@ -17466,11 +17664,13 @@ const (
 	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesEN ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "EN"
 	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesES ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "ES"
 	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesFR ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "FR"
+	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesGU ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "GU"
 	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesHE ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "HE"
 	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesHI ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "HI"
 	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesID ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "ID"
 	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesIT ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "IT"
 	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesJA ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "JA"
+	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesMR ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "MR"
 	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesMS ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "MS"
 	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesNL ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "NL"
 	ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesPT ScriptedFlowVariantPersonaOverrideUnderstoodLanguages = "PT"
@@ -17495,6 +17695,8 @@ func (e ScriptedFlowVariantPersonaOverrideUnderstoodLanguages) Valid() bool {
 		return true
 	case ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesFR:
 		return true
+	case ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesGU:
+		return true
 	case ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesHE:
 		return true
 	case ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesHI:
@@ -17504,6 +17706,8 @@ func (e ScriptedFlowVariantPersonaOverrideUnderstoodLanguages) Valid() bool {
 	case ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesIT:
 		return true
 	case ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesJA:
+		return true
+	case ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesMR:
 		return true
 	case ScriptedFlowVariantPersonaOverrideUnderstoodLanguagesMS:
 		return true
@@ -18129,11 +18333,13 @@ const (
 	SimulationJobResponsePersonaLanguageEN SimulationJobResponsePersonaLanguage = "EN"
 	SimulationJobResponsePersonaLanguageES SimulationJobResponsePersonaLanguage = "ES"
 	SimulationJobResponsePersonaLanguageFR SimulationJobResponsePersonaLanguage = "FR"
+	SimulationJobResponsePersonaLanguageGU SimulationJobResponsePersonaLanguage = "GU"
 	SimulationJobResponsePersonaLanguageHE SimulationJobResponsePersonaLanguage = "HE"
 	SimulationJobResponsePersonaLanguageHI SimulationJobResponsePersonaLanguage = "HI"
 	SimulationJobResponsePersonaLanguageID SimulationJobResponsePersonaLanguage = "ID"
 	SimulationJobResponsePersonaLanguageIT SimulationJobResponsePersonaLanguage = "IT"
 	SimulationJobResponsePersonaLanguageJA SimulationJobResponsePersonaLanguage = "JA"
+	SimulationJobResponsePersonaLanguageMR SimulationJobResponsePersonaLanguage = "MR"
 	SimulationJobResponsePersonaLanguageMS SimulationJobResponsePersonaLanguage = "MS"
 	SimulationJobResponsePersonaLanguageNL SimulationJobResponsePersonaLanguage = "NL"
 	SimulationJobResponsePersonaLanguagePT SimulationJobResponsePersonaLanguage = "PT"
@@ -18158,6 +18364,8 @@ func (e SimulationJobResponsePersonaLanguage) Valid() bool {
 		return true
 	case SimulationJobResponsePersonaLanguageFR:
 		return true
+	case SimulationJobResponsePersonaLanguageGU:
+		return true
 	case SimulationJobResponsePersonaLanguageHE:
 		return true
 	case SimulationJobResponsePersonaLanguageHI:
@@ -18167,6 +18375,8 @@ func (e SimulationJobResponsePersonaLanguage) Valid() bool {
 	case SimulationJobResponsePersonaLanguageIT:
 		return true
 	case SimulationJobResponsePersonaLanguageJA:
+		return true
+	case SimulationJobResponsePersonaLanguageMR:
 		return true
 	case SimulationJobResponsePersonaLanguageMS:
 		return true
@@ -18300,11 +18510,13 @@ const (
 	SimulationJobResponsePersonaUnderstoodLanguagesEN SimulationJobResponsePersonaUnderstoodLanguages = "EN"
 	SimulationJobResponsePersonaUnderstoodLanguagesES SimulationJobResponsePersonaUnderstoodLanguages = "ES"
 	SimulationJobResponsePersonaUnderstoodLanguagesFR SimulationJobResponsePersonaUnderstoodLanguages = "FR"
+	SimulationJobResponsePersonaUnderstoodLanguagesGU SimulationJobResponsePersonaUnderstoodLanguages = "GU"
 	SimulationJobResponsePersonaUnderstoodLanguagesHE SimulationJobResponsePersonaUnderstoodLanguages = "HE"
 	SimulationJobResponsePersonaUnderstoodLanguagesHI SimulationJobResponsePersonaUnderstoodLanguages = "HI"
 	SimulationJobResponsePersonaUnderstoodLanguagesID SimulationJobResponsePersonaUnderstoodLanguages = "ID"
 	SimulationJobResponsePersonaUnderstoodLanguagesIT SimulationJobResponsePersonaUnderstoodLanguages = "IT"
 	SimulationJobResponsePersonaUnderstoodLanguagesJA SimulationJobResponsePersonaUnderstoodLanguages = "JA"
+	SimulationJobResponsePersonaUnderstoodLanguagesMR SimulationJobResponsePersonaUnderstoodLanguages = "MR"
 	SimulationJobResponsePersonaUnderstoodLanguagesMS SimulationJobResponsePersonaUnderstoodLanguages = "MS"
 	SimulationJobResponsePersonaUnderstoodLanguagesNL SimulationJobResponsePersonaUnderstoodLanguages = "NL"
 	SimulationJobResponsePersonaUnderstoodLanguagesPT SimulationJobResponsePersonaUnderstoodLanguages = "PT"
@@ -18329,6 +18541,8 @@ func (e SimulationJobResponsePersonaUnderstoodLanguages) Valid() bool {
 		return true
 	case SimulationJobResponsePersonaUnderstoodLanguagesFR:
 		return true
+	case SimulationJobResponsePersonaUnderstoodLanguagesGU:
+		return true
 	case SimulationJobResponsePersonaUnderstoodLanguagesHE:
 		return true
 	case SimulationJobResponsePersonaUnderstoodLanguagesHI:
@@ -18338,6 +18552,8 @@ func (e SimulationJobResponsePersonaUnderstoodLanguages) Valid() bool {
 	case SimulationJobResponsePersonaUnderstoodLanguagesIT:
 		return true
 	case SimulationJobResponsePersonaUnderstoodLanguagesJA:
+		return true
+	case SimulationJobResponsePersonaUnderstoodLanguagesMR:
 		return true
 	case SimulationJobResponsePersonaUnderstoodLanguagesMS:
 		return true
@@ -18648,22 +18864,23 @@ func (e SimulationResourceGenerationCapabilities) Valid() bool {
 
 // Defines values for SimulationResourceGenerationIndustry.
 const (
-	SimulationResourceGenerationIndustryAUTOMOTIVE           SimulationResourceGenerationIndustry = "AUTOMOTIVE"
-	SimulationResourceGenerationIndustryDEBTCOLLECTION       SimulationResourceGenerationIndustry = "DEBT_COLLECTION"
-	SimulationResourceGenerationIndustryEDUCATION            SimulationResourceGenerationIndustry = "EDUCATION"
-	SimulationResourceGenerationIndustryFINANCIALSERVICES    SimulationResourceGenerationIndustry = "FINANCIAL_SERVICES"
-	SimulationResourceGenerationIndustryHEALTHCARE           SimulationResourceGenerationIndustry = "HEALTHCARE"
-	SimulationResourceGenerationIndustryHOMESERVICES         SimulationResourceGenerationIndustry = "HOME_SERVICES"
-	SimulationResourceGenerationIndustryINSURANCE            SimulationResourceGenerationIndustry = "INSURANCE"
-	SimulationResourceGenerationIndustryLOGISTICS            SimulationResourceGenerationIndustry = "LOGISTICS"
-	SimulationResourceGenerationIndustryOTHER                SimulationResourceGenerationIndustry = "OTHER"
-	SimulationResourceGenerationIndustryPUBLICSECTOR         SimulationResourceGenerationIndustry = "PUBLIC_SECTOR"
-	SimulationResourceGenerationIndustryRESTAURANTS          SimulationResourceGenerationIndustry = "RESTAURANTS"
-	SimulationResourceGenerationIndustryRETAIL               SimulationResourceGenerationIndustry = "RETAIL"
-	SimulationResourceGenerationIndustryTECHNOLOGY           SimulationResourceGenerationIndustry = "TECHNOLOGY"
-	SimulationResourceGenerationIndustryTELECOMMUNICATIONS   SimulationResourceGenerationIndustry = "TELECOMMUNICATIONS"
-	SimulationResourceGenerationIndustryTRAVELANDHOSPITALITY SimulationResourceGenerationIndustry = "TRAVEL_AND_HOSPITALITY"
-	SimulationResourceGenerationIndustryUTILITIES            SimulationResourceGenerationIndustry = "UTILITIES"
+	SimulationResourceGenerationIndustryAUTOMOTIVE            SimulationResourceGenerationIndustry = "AUTOMOTIVE"
+	SimulationResourceGenerationIndustryDEBTCOLLECTION        SimulationResourceGenerationIndustry = "DEBT_COLLECTION"
+	SimulationResourceGenerationIndustryEDUCATION             SimulationResourceGenerationIndustry = "EDUCATION"
+	SimulationResourceGenerationIndustryFINANCIALSERVICES     SimulationResourceGenerationIndustry = "FINANCIAL_SERVICES"
+	SimulationResourceGenerationIndustryHEALTHCARE            SimulationResourceGenerationIndustry = "HEALTHCARE"
+	SimulationResourceGenerationIndustryHOMESERVICES          SimulationResourceGenerationIndustry = "HOME_SERVICES"
+	SimulationResourceGenerationIndustryINSURANCE             SimulationResourceGenerationIndustry = "INSURANCE"
+	SimulationResourceGenerationIndustryLOGISTICS             SimulationResourceGenerationIndustry = "LOGISTICS"
+	SimulationResourceGenerationIndustryOTHER                 SimulationResourceGenerationIndustry = "OTHER"
+	SimulationResourceGenerationIndustryPUBLICSECTOR          SimulationResourceGenerationIndustry = "PUBLIC_SECTOR"
+	SimulationResourceGenerationIndustryRECRUITINGANDSTAFFING SimulationResourceGenerationIndustry = "RECRUITING_AND_STAFFING"
+	SimulationResourceGenerationIndustryRESTAURANTS           SimulationResourceGenerationIndustry = "RESTAURANTS"
+	SimulationResourceGenerationIndustryRETAIL                SimulationResourceGenerationIndustry = "RETAIL"
+	SimulationResourceGenerationIndustryTECHNOLOGY            SimulationResourceGenerationIndustry = "TECHNOLOGY"
+	SimulationResourceGenerationIndustryTELECOMMUNICATIONS    SimulationResourceGenerationIndustry = "TELECOMMUNICATIONS"
+	SimulationResourceGenerationIndustryTRAVELANDHOSPITALITY  SimulationResourceGenerationIndustry = "TRAVEL_AND_HOSPITALITY"
+	SimulationResourceGenerationIndustryUTILITIES             SimulationResourceGenerationIndustry = "UTILITIES"
 )
 
 // Valid indicates whether the value is a known member of the SimulationResourceGenerationIndustry enum.
@@ -18688,6 +18905,8 @@ func (e SimulationResourceGenerationIndustry) Valid() bool {
 	case SimulationResourceGenerationIndustryOTHER:
 		return true
 	case SimulationResourceGenerationIndustryPUBLICSECTOR:
+		return true
+	case SimulationResourceGenerationIndustryRECRUITINGANDSTAFFING:
 		return true
 	case SimulationResourceGenerationIndustryRESTAURANTS:
 		return true
@@ -22318,6 +22537,27 @@ func (e UpdateEnvironmentInputLineQuality) Valid() bool {
 	}
 }
 
+// Defines values for UpdateEnvironmentInputPhone.
+const (
+	UpdateEnvironmentInputPhoneBLUETOOTH UpdateEnvironmentInputPhone = "BLUETOOTH"
+	UpdateEnvironmentInputPhoneLANDLINE  UpdateEnvironmentInputPhone = "LANDLINE"
+	UpdateEnvironmentInputPhoneMOBILE    UpdateEnvironmentInputPhone = "MOBILE"
+)
+
+// Valid indicates whether the value is a known member of the UpdateEnvironmentInputPhone enum.
+func (e UpdateEnvironmentInputPhone) Valid() bool {
+	switch e {
+	case UpdateEnvironmentInputPhoneBLUETOOTH:
+		return true
+	case UpdateEnvironmentInputPhoneLANDLINE:
+		return true
+	case UpdateEnvironmentInputPhoneMOBILE:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateHttpRequestDefinitionInputMethod.
 const (
 	UpdateHttpRequestDefinitionInputMethodGET   UpdateHttpRequestDefinitionInputMethod = "GET"
@@ -22882,24 +23122,70 @@ func (e UsageReportCurrency) Valid() bool {
 	}
 }
 
+// Defines values for VoicemailCustomerFlowAgentsCapabilities.
+const (
+	VoicemailCustomerFlowAgentsCapabilitiesACCOUNTMANAGEMENT    VoicemailCustomerFlowAgentsCapabilities = "ACCOUNT_MANAGEMENT"
+	VoicemailCustomerFlowAgentsCapabilitiesAPPOINTMENTBOOKING   VoicemailCustomerFlowAgentsCapabilities = "APPOINTMENT_BOOKING"
+	VoicemailCustomerFlowAgentsCapabilitiesBILLINGANDPAYMENTS   VoicemailCustomerFlowAgentsCapabilities = "BILLING_AND_PAYMENTS"
+	VoicemailCustomerFlowAgentsCapabilitiesCALLROUTING          VoicemailCustomerFlowAgentsCapabilities = "CALL_ROUTING"
+	VoicemailCustomerFlowAgentsCapabilitiesCOLLECTIONS          VoicemailCustomerFlowAgentsCapabilities = "COLLECTIONS"
+	VoicemailCustomerFlowAgentsCapabilitiesFAQ                  VoicemailCustomerFlowAgentsCapabilities = "FAQ"
+	VoicemailCustomerFlowAgentsCapabilitiesIDENTITYVERIFICATION VoicemailCustomerFlowAgentsCapabilities = "IDENTITY_VERIFICATION"
+	VoicemailCustomerFlowAgentsCapabilitiesLEADQUALIFICATION    VoicemailCustomerFlowAgentsCapabilities = "LEAD_QUALIFICATION"
+	VoicemailCustomerFlowAgentsCapabilitiesORDERMANAGEMENT      VoicemailCustomerFlowAgentsCapabilities = "ORDER_MANAGEMENT"
+	VoicemailCustomerFlowAgentsCapabilitiesOUTBOUNDCALLING      VoicemailCustomerFlowAgentsCapabilities = "OUTBOUND_CALLING"
+	VoicemailCustomerFlowAgentsCapabilitiesTROUBLESHOOTING      VoicemailCustomerFlowAgentsCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the VoicemailCustomerFlowAgentsCapabilities enum.
+func (e VoicemailCustomerFlowAgentsCapabilities) Valid() bool {
+	switch e {
+	case VoicemailCustomerFlowAgentsCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case VoicemailCustomerFlowAgentsCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case VoicemailCustomerFlowAgentsCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case VoicemailCustomerFlowAgentsCapabilitiesCALLROUTING:
+		return true
+	case VoicemailCustomerFlowAgentsCapabilitiesCOLLECTIONS:
+		return true
+	case VoicemailCustomerFlowAgentsCapabilitiesFAQ:
+		return true
+	case VoicemailCustomerFlowAgentsCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case VoicemailCustomerFlowAgentsCapabilitiesLEADQUALIFICATION:
+		return true
+	case VoicemailCustomerFlowAgentsCapabilitiesORDERMANAGEMENT:
+		return true
+	case VoicemailCustomerFlowAgentsCapabilitiesOUTBOUNDCALLING:
+		return true
+	case VoicemailCustomerFlowAgentsCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for VoicemailCustomerFlowAgentsIndustry.
 const (
-	VoicemailCustomerFlowAgentsIndustryAUTOMOTIVE           VoicemailCustomerFlowAgentsIndustry = "AUTOMOTIVE"
-	VoicemailCustomerFlowAgentsIndustryDEBTCOLLECTION       VoicemailCustomerFlowAgentsIndustry = "DEBT_COLLECTION"
-	VoicemailCustomerFlowAgentsIndustryEDUCATION            VoicemailCustomerFlowAgentsIndustry = "EDUCATION"
-	VoicemailCustomerFlowAgentsIndustryFINANCIALSERVICES    VoicemailCustomerFlowAgentsIndustry = "FINANCIAL_SERVICES"
-	VoicemailCustomerFlowAgentsIndustryHEALTHCARE           VoicemailCustomerFlowAgentsIndustry = "HEALTHCARE"
-	VoicemailCustomerFlowAgentsIndustryHOMESERVICES         VoicemailCustomerFlowAgentsIndustry = "HOME_SERVICES"
-	VoicemailCustomerFlowAgentsIndustryINSURANCE            VoicemailCustomerFlowAgentsIndustry = "INSURANCE"
-	VoicemailCustomerFlowAgentsIndustryLOGISTICS            VoicemailCustomerFlowAgentsIndustry = "LOGISTICS"
-	VoicemailCustomerFlowAgentsIndustryOTHER                VoicemailCustomerFlowAgentsIndustry = "OTHER"
-	VoicemailCustomerFlowAgentsIndustryPUBLICSECTOR         VoicemailCustomerFlowAgentsIndustry = "PUBLIC_SECTOR"
-	VoicemailCustomerFlowAgentsIndustryRESTAURANTS          VoicemailCustomerFlowAgentsIndustry = "RESTAURANTS"
-	VoicemailCustomerFlowAgentsIndustryRETAIL               VoicemailCustomerFlowAgentsIndustry = "RETAIL"
-	VoicemailCustomerFlowAgentsIndustryTECHNOLOGY           VoicemailCustomerFlowAgentsIndustry = "TECHNOLOGY"
-	VoicemailCustomerFlowAgentsIndustryTELECOMMUNICATIONS   VoicemailCustomerFlowAgentsIndustry = "TELECOMMUNICATIONS"
-	VoicemailCustomerFlowAgentsIndustryTRAVELANDHOSPITALITY VoicemailCustomerFlowAgentsIndustry = "TRAVEL_AND_HOSPITALITY"
-	VoicemailCustomerFlowAgentsIndustryUTILITIES            VoicemailCustomerFlowAgentsIndustry = "UTILITIES"
+	VoicemailCustomerFlowAgentsIndustryAUTOMOTIVE            VoicemailCustomerFlowAgentsIndustry = "AUTOMOTIVE"
+	VoicemailCustomerFlowAgentsIndustryDEBTCOLLECTION        VoicemailCustomerFlowAgentsIndustry = "DEBT_COLLECTION"
+	VoicemailCustomerFlowAgentsIndustryEDUCATION             VoicemailCustomerFlowAgentsIndustry = "EDUCATION"
+	VoicemailCustomerFlowAgentsIndustryFINANCIALSERVICES     VoicemailCustomerFlowAgentsIndustry = "FINANCIAL_SERVICES"
+	VoicemailCustomerFlowAgentsIndustryHEALTHCARE            VoicemailCustomerFlowAgentsIndustry = "HEALTHCARE"
+	VoicemailCustomerFlowAgentsIndustryHOMESERVICES          VoicemailCustomerFlowAgentsIndustry = "HOME_SERVICES"
+	VoicemailCustomerFlowAgentsIndustryINSURANCE             VoicemailCustomerFlowAgentsIndustry = "INSURANCE"
+	VoicemailCustomerFlowAgentsIndustryLOGISTICS             VoicemailCustomerFlowAgentsIndustry = "LOGISTICS"
+	VoicemailCustomerFlowAgentsIndustryOTHER                 VoicemailCustomerFlowAgentsIndustry = "OTHER"
+	VoicemailCustomerFlowAgentsIndustryPUBLICSECTOR          VoicemailCustomerFlowAgentsIndustry = "PUBLIC_SECTOR"
+	VoicemailCustomerFlowAgentsIndustryRECRUITINGANDSTAFFING VoicemailCustomerFlowAgentsIndustry = "RECRUITING_AND_STAFFING"
+	VoicemailCustomerFlowAgentsIndustryRESTAURANTS           VoicemailCustomerFlowAgentsIndustry = "RESTAURANTS"
+	VoicemailCustomerFlowAgentsIndustryRETAIL                VoicemailCustomerFlowAgentsIndustry = "RETAIL"
+	VoicemailCustomerFlowAgentsIndustryTECHNOLOGY            VoicemailCustomerFlowAgentsIndustry = "TECHNOLOGY"
+	VoicemailCustomerFlowAgentsIndustryTELECOMMUNICATIONS    VoicemailCustomerFlowAgentsIndustry = "TELECOMMUNICATIONS"
+	VoicemailCustomerFlowAgentsIndustryTRAVELANDHOSPITALITY  VoicemailCustomerFlowAgentsIndustry = "TRAVEL_AND_HOSPITALITY"
+	VoicemailCustomerFlowAgentsIndustryUTILITIES             VoicemailCustomerFlowAgentsIndustry = "UTILITIES"
 )
 
 // Valid indicates whether the value is a known member of the VoicemailCustomerFlowAgentsIndustry enum.
@@ -22924,6 +23210,8 @@ func (e VoicemailCustomerFlowAgentsIndustry) Valid() bool {
 	case VoicemailCustomerFlowAgentsIndustryOTHER:
 		return true
 	case VoicemailCustomerFlowAgentsIndustryPUBLICSECTOR:
+		return true
+	case VoicemailCustomerFlowAgentsIndustryRECRUITINGANDSTAFFING:
 		return true
 	case VoicemailCustomerFlowAgentsIndustryRESTAURANTS:
 		return true
@@ -23259,11 +23547,13 @@ const (
 	VoicemailFlowVariantPersonaOverrideLanguageEN VoicemailFlowVariantPersonaOverrideLanguage = "EN"
 	VoicemailFlowVariantPersonaOverrideLanguageES VoicemailFlowVariantPersonaOverrideLanguage = "ES"
 	VoicemailFlowVariantPersonaOverrideLanguageFR VoicemailFlowVariantPersonaOverrideLanguage = "FR"
+	VoicemailFlowVariantPersonaOverrideLanguageGU VoicemailFlowVariantPersonaOverrideLanguage = "GU"
 	VoicemailFlowVariantPersonaOverrideLanguageHE VoicemailFlowVariantPersonaOverrideLanguage = "HE"
 	VoicemailFlowVariantPersonaOverrideLanguageHI VoicemailFlowVariantPersonaOverrideLanguage = "HI"
 	VoicemailFlowVariantPersonaOverrideLanguageID VoicemailFlowVariantPersonaOverrideLanguage = "ID"
 	VoicemailFlowVariantPersonaOverrideLanguageIT VoicemailFlowVariantPersonaOverrideLanguage = "IT"
 	VoicemailFlowVariantPersonaOverrideLanguageJA VoicemailFlowVariantPersonaOverrideLanguage = "JA"
+	VoicemailFlowVariantPersonaOverrideLanguageMR VoicemailFlowVariantPersonaOverrideLanguage = "MR"
 	VoicemailFlowVariantPersonaOverrideLanguageMS VoicemailFlowVariantPersonaOverrideLanguage = "MS"
 	VoicemailFlowVariantPersonaOverrideLanguageNL VoicemailFlowVariantPersonaOverrideLanguage = "NL"
 	VoicemailFlowVariantPersonaOverrideLanguagePT VoicemailFlowVariantPersonaOverrideLanguage = "PT"
@@ -23288,6 +23578,8 @@ func (e VoicemailFlowVariantPersonaOverrideLanguage) Valid() bool {
 		return true
 	case VoicemailFlowVariantPersonaOverrideLanguageFR:
 		return true
+	case VoicemailFlowVariantPersonaOverrideLanguageGU:
+		return true
 	case VoicemailFlowVariantPersonaOverrideLanguageHE:
 		return true
 	case VoicemailFlowVariantPersonaOverrideLanguageHI:
@@ -23297,6 +23589,8 @@ func (e VoicemailFlowVariantPersonaOverrideLanguage) Valid() bool {
 	case VoicemailFlowVariantPersonaOverrideLanguageIT:
 		return true
 	case VoicemailFlowVariantPersonaOverrideLanguageJA:
+		return true
+	case VoicemailFlowVariantPersonaOverrideLanguageMR:
 		return true
 	case VoicemailFlowVariantPersonaOverrideLanguageMS:
 		return true
@@ -23430,11 +23724,13 @@ const (
 	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesEN VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "EN"
 	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesES VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "ES"
 	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesFR VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "FR"
+	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesGU VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "GU"
 	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesHE VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "HE"
 	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesHI VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "HI"
 	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesID VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "ID"
 	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesIT VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "IT"
 	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesJA VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "JA"
+	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesMR VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "MR"
 	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesMS VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "MS"
 	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesNL VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "NL"
 	VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesPT VoicemailFlowVariantPersonaOverrideUnderstoodLanguages = "PT"
@@ -23459,6 +23755,8 @@ func (e VoicemailFlowVariantPersonaOverrideUnderstoodLanguages) Valid() bool {
 		return true
 	case VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesFR:
 		return true
+	case VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesGU:
+		return true
 	case VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesHE:
 		return true
 	case VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesHI:
@@ -23468,6 +23766,8 @@ func (e VoicemailFlowVariantPersonaOverrideUnderstoodLanguages) Valid() bool {
 	case VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesIT:
 		return true
 	case VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesJA:
+		return true
+	case VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesMR:
 		return true
 	case VoicemailFlowVariantPersonaOverrideUnderstoodLanguagesMS:
 		return true
@@ -23596,24 +23896,70 @@ func (e WriteManagedConfigRequestChannel) Valid() bool {
 	}
 }
 
+// Defines values for GetV1Agent200JSONResponseBodyDataCapabilities.
+const (
+	GetV1Agent200JSONResponseBodyDataCapabilitiesACCOUNTMANAGEMENT    GetV1Agent200JSONResponseBodyDataCapabilities = "ACCOUNT_MANAGEMENT"
+	GetV1Agent200JSONResponseBodyDataCapabilitiesAPPOINTMENTBOOKING   GetV1Agent200JSONResponseBodyDataCapabilities = "APPOINTMENT_BOOKING"
+	GetV1Agent200JSONResponseBodyDataCapabilitiesBILLINGANDPAYMENTS   GetV1Agent200JSONResponseBodyDataCapabilities = "BILLING_AND_PAYMENTS"
+	GetV1Agent200JSONResponseBodyDataCapabilitiesCALLROUTING          GetV1Agent200JSONResponseBodyDataCapabilities = "CALL_ROUTING"
+	GetV1Agent200JSONResponseBodyDataCapabilitiesCOLLECTIONS          GetV1Agent200JSONResponseBodyDataCapabilities = "COLLECTIONS"
+	GetV1Agent200JSONResponseBodyDataCapabilitiesFAQ                  GetV1Agent200JSONResponseBodyDataCapabilities = "FAQ"
+	GetV1Agent200JSONResponseBodyDataCapabilitiesIDENTITYVERIFICATION GetV1Agent200JSONResponseBodyDataCapabilities = "IDENTITY_VERIFICATION"
+	GetV1Agent200JSONResponseBodyDataCapabilitiesLEADQUALIFICATION    GetV1Agent200JSONResponseBodyDataCapabilities = "LEAD_QUALIFICATION"
+	GetV1Agent200JSONResponseBodyDataCapabilitiesORDERMANAGEMENT      GetV1Agent200JSONResponseBodyDataCapabilities = "ORDER_MANAGEMENT"
+	GetV1Agent200JSONResponseBodyDataCapabilitiesOUTBOUNDCALLING      GetV1Agent200JSONResponseBodyDataCapabilities = "OUTBOUND_CALLING"
+	GetV1Agent200JSONResponseBodyDataCapabilitiesTROUBLESHOOTING      GetV1Agent200JSONResponseBodyDataCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the GetV1Agent200JSONResponseBodyDataCapabilities enum.
+func (e GetV1Agent200JSONResponseBodyDataCapabilities) Valid() bool {
+	switch e {
+	case GetV1Agent200JSONResponseBodyDataCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case GetV1Agent200JSONResponseBodyDataCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case GetV1Agent200JSONResponseBodyDataCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case GetV1Agent200JSONResponseBodyDataCapabilitiesCALLROUTING:
+		return true
+	case GetV1Agent200JSONResponseBodyDataCapabilitiesCOLLECTIONS:
+		return true
+	case GetV1Agent200JSONResponseBodyDataCapabilitiesFAQ:
+		return true
+	case GetV1Agent200JSONResponseBodyDataCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case GetV1Agent200JSONResponseBodyDataCapabilitiesLEADQUALIFICATION:
+		return true
+	case GetV1Agent200JSONResponseBodyDataCapabilitiesORDERMANAGEMENT:
+		return true
+	case GetV1Agent200JSONResponseBodyDataCapabilitiesOUTBOUNDCALLING:
+		return true
+	case GetV1Agent200JSONResponseBodyDataCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetV1Agent200JSONResponseBodyDataIndustry.
 const (
-	GetV1Agent200JSONResponseBodyDataIndustryAUTOMOTIVE           GetV1Agent200JSONResponseBodyDataIndustry = "AUTOMOTIVE"
-	GetV1Agent200JSONResponseBodyDataIndustryDEBTCOLLECTION       GetV1Agent200JSONResponseBodyDataIndustry = "DEBT_COLLECTION"
-	GetV1Agent200JSONResponseBodyDataIndustryEDUCATION            GetV1Agent200JSONResponseBodyDataIndustry = "EDUCATION"
-	GetV1Agent200JSONResponseBodyDataIndustryFINANCIALSERVICES    GetV1Agent200JSONResponseBodyDataIndustry = "FINANCIAL_SERVICES"
-	GetV1Agent200JSONResponseBodyDataIndustryHEALTHCARE           GetV1Agent200JSONResponseBodyDataIndustry = "HEALTHCARE"
-	GetV1Agent200JSONResponseBodyDataIndustryHOMESERVICES         GetV1Agent200JSONResponseBodyDataIndustry = "HOME_SERVICES"
-	GetV1Agent200JSONResponseBodyDataIndustryINSURANCE            GetV1Agent200JSONResponseBodyDataIndustry = "INSURANCE"
-	GetV1Agent200JSONResponseBodyDataIndustryLOGISTICS            GetV1Agent200JSONResponseBodyDataIndustry = "LOGISTICS"
-	GetV1Agent200JSONResponseBodyDataIndustryOTHER                GetV1Agent200JSONResponseBodyDataIndustry = "OTHER"
-	GetV1Agent200JSONResponseBodyDataIndustryPUBLICSECTOR         GetV1Agent200JSONResponseBodyDataIndustry = "PUBLIC_SECTOR"
-	GetV1Agent200JSONResponseBodyDataIndustryRESTAURANTS          GetV1Agent200JSONResponseBodyDataIndustry = "RESTAURANTS"
-	GetV1Agent200JSONResponseBodyDataIndustryRETAIL               GetV1Agent200JSONResponseBodyDataIndustry = "RETAIL"
-	GetV1Agent200JSONResponseBodyDataIndustryTECHNOLOGY           GetV1Agent200JSONResponseBodyDataIndustry = "TECHNOLOGY"
-	GetV1Agent200JSONResponseBodyDataIndustryTELECOMMUNICATIONS   GetV1Agent200JSONResponseBodyDataIndustry = "TELECOMMUNICATIONS"
-	GetV1Agent200JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY GetV1Agent200JSONResponseBodyDataIndustry = "TRAVEL_AND_HOSPITALITY"
-	GetV1Agent200JSONResponseBodyDataIndustryUTILITIES            GetV1Agent200JSONResponseBodyDataIndustry = "UTILITIES"
+	GetV1Agent200JSONResponseBodyDataIndustryAUTOMOTIVE            GetV1Agent200JSONResponseBodyDataIndustry = "AUTOMOTIVE"
+	GetV1Agent200JSONResponseBodyDataIndustryDEBTCOLLECTION        GetV1Agent200JSONResponseBodyDataIndustry = "DEBT_COLLECTION"
+	GetV1Agent200JSONResponseBodyDataIndustryEDUCATION             GetV1Agent200JSONResponseBodyDataIndustry = "EDUCATION"
+	GetV1Agent200JSONResponseBodyDataIndustryFINANCIALSERVICES     GetV1Agent200JSONResponseBodyDataIndustry = "FINANCIAL_SERVICES"
+	GetV1Agent200JSONResponseBodyDataIndustryHEALTHCARE            GetV1Agent200JSONResponseBodyDataIndustry = "HEALTHCARE"
+	GetV1Agent200JSONResponseBodyDataIndustryHOMESERVICES          GetV1Agent200JSONResponseBodyDataIndustry = "HOME_SERVICES"
+	GetV1Agent200JSONResponseBodyDataIndustryINSURANCE             GetV1Agent200JSONResponseBodyDataIndustry = "INSURANCE"
+	GetV1Agent200JSONResponseBodyDataIndustryLOGISTICS             GetV1Agent200JSONResponseBodyDataIndustry = "LOGISTICS"
+	GetV1Agent200JSONResponseBodyDataIndustryOTHER                 GetV1Agent200JSONResponseBodyDataIndustry = "OTHER"
+	GetV1Agent200JSONResponseBodyDataIndustryPUBLICSECTOR          GetV1Agent200JSONResponseBodyDataIndustry = "PUBLIC_SECTOR"
+	GetV1Agent200JSONResponseBodyDataIndustryRECRUITINGANDSTAFFING GetV1Agent200JSONResponseBodyDataIndustry = "RECRUITING_AND_STAFFING"
+	GetV1Agent200JSONResponseBodyDataIndustryRESTAURANTS           GetV1Agent200JSONResponseBodyDataIndustry = "RESTAURANTS"
+	GetV1Agent200JSONResponseBodyDataIndustryRETAIL                GetV1Agent200JSONResponseBodyDataIndustry = "RETAIL"
+	GetV1Agent200JSONResponseBodyDataIndustryTECHNOLOGY            GetV1Agent200JSONResponseBodyDataIndustry = "TECHNOLOGY"
+	GetV1Agent200JSONResponseBodyDataIndustryTELECOMMUNICATIONS    GetV1Agent200JSONResponseBodyDataIndustry = "TELECOMMUNICATIONS"
+	GetV1Agent200JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY  GetV1Agent200JSONResponseBodyDataIndustry = "TRAVEL_AND_HOSPITALITY"
+	GetV1Agent200JSONResponseBodyDataIndustryUTILITIES             GetV1Agent200JSONResponseBodyDataIndustry = "UTILITIES"
 )
 
 // Valid indicates whether the value is a known member of the GetV1Agent200JSONResponseBodyDataIndustry enum.
@@ -23639,6 +23985,8 @@ func (e GetV1Agent200JSONResponseBodyDataIndustry) Valid() bool {
 		return true
 	case GetV1Agent200JSONResponseBodyDataIndustryPUBLICSECTOR:
 		return true
+	case GetV1Agent200JSONResponseBodyDataIndustryRECRUITINGANDSTAFFING:
+		return true
 	case GetV1Agent200JSONResponseBodyDataIndustryRESTAURANTS:
 		return true
 	case GetV1Agent200JSONResponseBodyDataIndustryRETAIL:
@@ -23656,24 +24004,70 @@ func (e GetV1Agent200JSONResponseBodyDataIndustry) Valid() bool {
 	}
 }
 
+// Defines values for PostV1AgentJSONBodyCapabilities.
+const (
+	PostV1AgentJSONBodyCapabilitiesACCOUNTMANAGEMENT    PostV1AgentJSONBodyCapabilities = "ACCOUNT_MANAGEMENT"
+	PostV1AgentJSONBodyCapabilitiesAPPOINTMENTBOOKING   PostV1AgentJSONBodyCapabilities = "APPOINTMENT_BOOKING"
+	PostV1AgentJSONBodyCapabilitiesBILLINGANDPAYMENTS   PostV1AgentJSONBodyCapabilities = "BILLING_AND_PAYMENTS"
+	PostV1AgentJSONBodyCapabilitiesCALLROUTING          PostV1AgentJSONBodyCapabilities = "CALL_ROUTING"
+	PostV1AgentJSONBodyCapabilitiesCOLLECTIONS          PostV1AgentJSONBodyCapabilities = "COLLECTIONS"
+	PostV1AgentJSONBodyCapabilitiesFAQ                  PostV1AgentJSONBodyCapabilities = "FAQ"
+	PostV1AgentJSONBodyCapabilitiesIDENTITYVERIFICATION PostV1AgentJSONBodyCapabilities = "IDENTITY_VERIFICATION"
+	PostV1AgentJSONBodyCapabilitiesLEADQUALIFICATION    PostV1AgentJSONBodyCapabilities = "LEAD_QUALIFICATION"
+	PostV1AgentJSONBodyCapabilitiesORDERMANAGEMENT      PostV1AgentJSONBodyCapabilities = "ORDER_MANAGEMENT"
+	PostV1AgentJSONBodyCapabilitiesOUTBOUNDCALLING      PostV1AgentJSONBodyCapabilities = "OUTBOUND_CALLING"
+	PostV1AgentJSONBodyCapabilitiesTROUBLESHOOTING      PostV1AgentJSONBodyCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the PostV1AgentJSONBodyCapabilities enum.
+func (e PostV1AgentJSONBodyCapabilities) Valid() bool {
+	switch e {
+	case PostV1AgentJSONBodyCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case PostV1AgentJSONBodyCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case PostV1AgentJSONBodyCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case PostV1AgentJSONBodyCapabilitiesCALLROUTING:
+		return true
+	case PostV1AgentJSONBodyCapabilitiesCOLLECTIONS:
+		return true
+	case PostV1AgentJSONBodyCapabilitiesFAQ:
+		return true
+	case PostV1AgentJSONBodyCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case PostV1AgentJSONBodyCapabilitiesLEADQUALIFICATION:
+		return true
+	case PostV1AgentJSONBodyCapabilitiesORDERMANAGEMENT:
+		return true
+	case PostV1AgentJSONBodyCapabilitiesOUTBOUNDCALLING:
+		return true
+	case PostV1AgentJSONBodyCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PostV1AgentJSONBodyIndustry.
 const (
-	PostV1AgentJSONBodyIndustryAUTOMOTIVE           PostV1AgentJSONBodyIndustry = "AUTOMOTIVE"
-	PostV1AgentJSONBodyIndustryDEBTCOLLECTION       PostV1AgentJSONBodyIndustry = "DEBT_COLLECTION"
-	PostV1AgentJSONBodyIndustryEDUCATION            PostV1AgentJSONBodyIndustry = "EDUCATION"
-	PostV1AgentJSONBodyIndustryFINANCIALSERVICES    PostV1AgentJSONBodyIndustry = "FINANCIAL_SERVICES"
-	PostV1AgentJSONBodyIndustryHEALTHCARE           PostV1AgentJSONBodyIndustry = "HEALTHCARE"
-	PostV1AgentJSONBodyIndustryHOMESERVICES         PostV1AgentJSONBodyIndustry = "HOME_SERVICES"
-	PostV1AgentJSONBodyIndustryINSURANCE            PostV1AgentJSONBodyIndustry = "INSURANCE"
-	PostV1AgentJSONBodyIndustryLOGISTICS            PostV1AgentJSONBodyIndustry = "LOGISTICS"
-	PostV1AgentJSONBodyIndustryOTHER                PostV1AgentJSONBodyIndustry = "OTHER"
-	PostV1AgentJSONBodyIndustryPUBLICSECTOR         PostV1AgentJSONBodyIndustry = "PUBLIC_SECTOR"
-	PostV1AgentJSONBodyIndustryRESTAURANTS          PostV1AgentJSONBodyIndustry = "RESTAURANTS"
-	PostV1AgentJSONBodyIndustryRETAIL               PostV1AgentJSONBodyIndustry = "RETAIL"
-	PostV1AgentJSONBodyIndustryTECHNOLOGY           PostV1AgentJSONBodyIndustry = "TECHNOLOGY"
-	PostV1AgentJSONBodyIndustryTELECOMMUNICATIONS   PostV1AgentJSONBodyIndustry = "TELECOMMUNICATIONS"
-	PostV1AgentJSONBodyIndustryTRAVELANDHOSPITALITY PostV1AgentJSONBodyIndustry = "TRAVEL_AND_HOSPITALITY"
-	PostV1AgentJSONBodyIndustryUTILITIES            PostV1AgentJSONBodyIndustry = "UTILITIES"
+	PostV1AgentJSONBodyIndustryAUTOMOTIVE            PostV1AgentJSONBodyIndustry = "AUTOMOTIVE"
+	PostV1AgentJSONBodyIndustryDEBTCOLLECTION        PostV1AgentJSONBodyIndustry = "DEBT_COLLECTION"
+	PostV1AgentJSONBodyIndustryEDUCATION             PostV1AgentJSONBodyIndustry = "EDUCATION"
+	PostV1AgentJSONBodyIndustryFINANCIALSERVICES     PostV1AgentJSONBodyIndustry = "FINANCIAL_SERVICES"
+	PostV1AgentJSONBodyIndustryHEALTHCARE            PostV1AgentJSONBodyIndustry = "HEALTHCARE"
+	PostV1AgentJSONBodyIndustryHOMESERVICES          PostV1AgentJSONBodyIndustry = "HOME_SERVICES"
+	PostV1AgentJSONBodyIndustryINSURANCE             PostV1AgentJSONBodyIndustry = "INSURANCE"
+	PostV1AgentJSONBodyIndustryLOGISTICS             PostV1AgentJSONBodyIndustry = "LOGISTICS"
+	PostV1AgentJSONBodyIndustryOTHER                 PostV1AgentJSONBodyIndustry = "OTHER"
+	PostV1AgentJSONBodyIndustryPUBLICSECTOR          PostV1AgentJSONBodyIndustry = "PUBLIC_SECTOR"
+	PostV1AgentJSONBodyIndustryRECRUITINGANDSTAFFING PostV1AgentJSONBodyIndustry = "RECRUITING_AND_STAFFING"
+	PostV1AgentJSONBodyIndustryRESTAURANTS           PostV1AgentJSONBodyIndustry = "RESTAURANTS"
+	PostV1AgentJSONBodyIndustryRETAIL                PostV1AgentJSONBodyIndustry = "RETAIL"
+	PostV1AgentJSONBodyIndustryTECHNOLOGY            PostV1AgentJSONBodyIndustry = "TECHNOLOGY"
+	PostV1AgentJSONBodyIndustryTELECOMMUNICATIONS    PostV1AgentJSONBodyIndustry = "TELECOMMUNICATIONS"
+	PostV1AgentJSONBodyIndustryTRAVELANDHOSPITALITY  PostV1AgentJSONBodyIndustry = "TRAVEL_AND_HOSPITALITY"
+	PostV1AgentJSONBodyIndustryUTILITIES             PostV1AgentJSONBodyIndustry = "UTILITIES"
 )
 
 // Valid indicates whether the value is a known member of the PostV1AgentJSONBodyIndustry enum.
@@ -23699,6 +24093,8 @@ func (e PostV1AgentJSONBodyIndustry) Valid() bool {
 		return true
 	case PostV1AgentJSONBodyIndustryPUBLICSECTOR:
 		return true
+	case PostV1AgentJSONBodyIndustryRECRUITINGANDSTAFFING:
+		return true
 	case PostV1AgentJSONBodyIndustryRESTAURANTS:
 		return true
 	case PostV1AgentJSONBodyIndustryRETAIL:
@@ -23716,24 +24112,70 @@ func (e PostV1AgentJSONBodyIndustry) Valid() bool {
 	}
 }
 
+// Defines values for PostV1Agent201JSONResponseBodyDataCapabilities.
+const (
+	PostV1Agent201JSONResponseBodyDataCapabilitiesACCOUNTMANAGEMENT    PostV1Agent201JSONResponseBodyDataCapabilities = "ACCOUNT_MANAGEMENT"
+	PostV1Agent201JSONResponseBodyDataCapabilitiesAPPOINTMENTBOOKING   PostV1Agent201JSONResponseBodyDataCapabilities = "APPOINTMENT_BOOKING"
+	PostV1Agent201JSONResponseBodyDataCapabilitiesBILLINGANDPAYMENTS   PostV1Agent201JSONResponseBodyDataCapabilities = "BILLING_AND_PAYMENTS"
+	PostV1Agent201JSONResponseBodyDataCapabilitiesCALLROUTING          PostV1Agent201JSONResponseBodyDataCapabilities = "CALL_ROUTING"
+	PostV1Agent201JSONResponseBodyDataCapabilitiesCOLLECTIONS          PostV1Agent201JSONResponseBodyDataCapabilities = "COLLECTIONS"
+	PostV1Agent201JSONResponseBodyDataCapabilitiesFAQ                  PostV1Agent201JSONResponseBodyDataCapabilities = "FAQ"
+	PostV1Agent201JSONResponseBodyDataCapabilitiesIDENTITYVERIFICATION PostV1Agent201JSONResponseBodyDataCapabilities = "IDENTITY_VERIFICATION"
+	PostV1Agent201JSONResponseBodyDataCapabilitiesLEADQUALIFICATION    PostV1Agent201JSONResponseBodyDataCapabilities = "LEAD_QUALIFICATION"
+	PostV1Agent201JSONResponseBodyDataCapabilitiesORDERMANAGEMENT      PostV1Agent201JSONResponseBodyDataCapabilities = "ORDER_MANAGEMENT"
+	PostV1Agent201JSONResponseBodyDataCapabilitiesOUTBOUNDCALLING      PostV1Agent201JSONResponseBodyDataCapabilities = "OUTBOUND_CALLING"
+	PostV1Agent201JSONResponseBodyDataCapabilitiesTROUBLESHOOTING      PostV1Agent201JSONResponseBodyDataCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the PostV1Agent201JSONResponseBodyDataCapabilities enum.
+func (e PostV1Agent201JSONResponseBodyDataCapabilities) Valid() bool {
+	switch e {
+	case PostV1Agent201JSONResponseBodyDataCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case PostV1Agent201JSONResponseBodyDataCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case PostV1Agent201JSONResponseBodyDataCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case PostV1Agent201JSONResponseBodyDataCapabilitiesCALLROUTING:
+		return true
+	case PostV1Agent201JSONResponseBodyDataCapabilitiesCOLLECTIONS:
+		return true
+	case PostV1Agent201JSONResponseBodyDataCapabilitiesFAQ:
+		return true
+	case PostV1Agent201JSONResponseBodyDataCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case PostV1Agent201JSONResponseBodyDataCapabilitiesLEADQUALIFICATION:
+		return true
+	case PostV1Agent201JSONResponseBodyDataCapabilitiesORDERMANAGEMENT:
+		return true
+	case PostV1Agent201JSONResponseBodyDataCapabilitiesOUTBOUNDCALLING:
+		return true
+	case PostV1Agent201JSONResponseBodyDataCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PostV1Agent201JSONResponseBodyDataIndustry.
 const (
-	PostV1Agent201JSONResponseBodyDataIndustryAUTOMOTIVE           PostV1Agent201JSONResponseBodyDataIndustry = "AUTOMOTIVE"
-	PostV1Agent201JSONResponseBodyDataIndustryDEBTCOLLECTION       PostV1Agent201JSONResponseBodyDataIndustry = "DEBT_COLLECTION"
-	PostV1Agent201JSONResponseBodyDataIndustryEDUCATION            PostV1Agent201JSONResponseBodyDataIndustry = "EDUCATION"
-	PostV1Agent201JSONResponseBodyDataIndustryFINANCIALSERVICES    PostV1Agent201JSONResponseBodyDataIndustry = "FINANCIAL_SERVICES"
-	PostV1Agent201JSONResponseBodyDataIndustryHEALTHCARE           PostV1Agent201JSONResponseBodyDataIndustry = "HEALTHCARE"
-	PostV1Agent201JSONResponseBodyDataIndustryHOMESERVICES         PostV1Agent201JSONResponseBodyDataIndustry = "HOME_SERVICES"
-	PostV1Agent201JSONResponseBodyDataIndustryINSURANCE            PostV1Agent201JSONResponseBodyDataIndustry = "INSURANCE"
-	PostV1Agent201JSONResponseBodyDataIndustryLOGISTICS            PostV1Agent201JSONResponseBodyDataIndustry = "LOGISTICS"
-	PostV1Agent201JSONResponseBodyDataIndustryOTHER                PostV1Agent201JSONResponseBodyDataIndustry = "OTHER"
-	PostV1Agent201JSONResponseBodyDataIndustryPUBLICSECTOR         PostV1Agent201JSONResponseBodyDataIndustry = "PUBLIC_SECTOR"
-	PostV1Agent201JSONResponseBodyDataIndustryRESTAURANTS          PostV1Agent201JSONResponseBodyDataIndustry = "RESTAURANTS"
-	PostV1Agent201JSONResponseBodyDataIndustryRETAIL               PostV1Agent201JSONResponseBodyDataIndustry = "RETAIL"
-	PostV1Agent201JSONResponseBodyDataIndustryTECHNOLOGY           PostV1Agent201JSONResponseBodyDataIndustry = "TECHNOLOGY"
-	PostV1Agent201JSONResponseBodyDataIndustryTELECOMMUNICATIONS   PostV1Agent201JSONResponseBodyDataIndustry = "TELECOMMUNICATIONS"
-	PostV1Agent201JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY PostV1Agent201JSONResponseBodyDataIndustry = "TRAVEL_AND_HOSPITALITY"
-	PostV1Agent201JSONResponseBodyDataIndustryUTILITIES            PostV1Agent201JSONResponseBodyDataIndustry = "UTILITIES"
+	PostV1Agent201JSONResponseBodyDataIndustryAUTOMOTIVE            PostV1Agent201JSONResponseBodyDataIndustry = "AUTOMOTIVE"
+	PostV1Agent201JSONResponseBodyDataIndustryDEBTCOLLECTION        PostV1Agent201JSONResponseBodyDataIndustry = "DEBT_COLLECTION"
+	PostV1Agent201JSONResponseBodyDataIndustryEDUCATION             PostV1Agent201JSONResponseBodyDataIndustry = "EDUCATION"
+	PostV1Agent201JSONResponseBodyDataIndustryFINANCIALSERVICES     PostV1Agent201JSONResponseBodyDataIndustry = "FINANCIAL_SERVICES"
+	PostV1Agent201JSONResponseBodyDataIndustryHEALTHCARE            PostV1Agent201JSONResponseBodyDataIndustry = "HEALTHCARE"
+	PostV1Agent201JSONResponseBodyDataIndustryHOMESERVICES          PostV1Agent201JSONResponseBodyDataIndustry = "HOME_SERVICES"
+	PostV1Agent201JSONResponseBodyDataIndustryINSURANCE             PostV1Agent201JSONResponseBodyDataIndustry = "INSURANCE"
+	PostV1Agent201JSONResponseBodyDataIndustryLOGISTICS             PostV1Agent201JSONResponseBodyDataIndustry = "LOGISTICS"
+	PostV1Agent201JSONResponseBodyDataIndustryOTHER                 PostV1Agent201JSONResponseBodyDataIndustry = "OTHER"
+	PostV1Agent201JSONResponseBodyDataIndustryPUBLICSECTOR          PostV1Agent201JSONResponseBodyDataIndustry = "PUBLIC_SECTOR"
+	PostV1Agent201JSONResponseBodyDataIndustryRECRUITINGANDSTAFFING PostV1Agent201JSONResponseBodyDataIndustry = "RECRUITING_AND_STAFFING"
+	PostV1Agent201JSONResponseBodyDataIndustryRESTAURANTS           PostV1Agent201JSONResponseBodyDataIndustry = "RESTAURANTS"
+	PostV1Agent201JSONResponseBodyDataIndustryRETAIL                PostV1Agent201JSONResponseBodyDataIndustry = "RETAIL"
+	PostV1Agent201JSONResponseBodyDataIndustryTECHNOLOGY            PostV1Agent201JSONResponseBodyDataIndustry = "TECHNOLOGY"
+	PostV1Agent201JSONResponseBodyDataIndustryTELECOMMUNICATIONS    PostV1Agent201JSONResponseBodyDataIndustry = "TELECOMMUNICATIONS"
+	PostV1Agent201JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY  PostV1Agent201JSONResponseBodyDataIndustry = "TRAVEL_AND_HOSPITALITY"
+	PostV1Agent201JSONResponseBodyDataIndustryUTILITIES             PostV1Agent201JSONResponseBodyDataIndustry = "UTILITIES"
 )
 
 // Valid indicates whether the value is a known member of the PostV1Agent201JSONResponseBodyDataIndustry enum.
@@ -23759,6 +24201,8 @@ func (e PostV1Agent201JSONResponseBodyDataIndustry) Valid() bool {
 		return true
 	case PostV1Agent201JSONResponseBodyDataIndustryPUBLICSECTOR:
 		return true
+	case PostV1Agent201JSONResponseBodyDataIndustryRECRUITINGANDSTAFFING:
+		return true
 	case PostV1Agent201JSONResponseBodyDataIndustryRESTAURANTS:
 		return true
 	case PostV1Agent201JSONResponseBodyDataIndustryRETAIL:
@@ -23770,6 +24214,114 @@ func (e PostV1Agent201JSONResponseBodyDataIndustry) Valid() bool {
 	case PostV1Agent201JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY:
 		return true
 	case PostV1Agent201JSONResponseBodyDataIndustryUTILITIES:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1AgentBuildJSONBodyCapabilities.
+const (
+	PostV1AgentBuildJSONBodyCapabilitiesACCOUNTMANAGEMENT    PostV1AgentBuildJSONBodyCapabilities = "ACCOUNT_MANAGEMENT"
+	PostV1AgentBuildJSONBodyCapabilitiesAPPOINTMENTBOOKING   PostV1AgentBuildJSONBodyCapabilities = "APPOINTMENT_BOOKING"
+	PostV1AgentBuildJSONBodyCapabilitiesBILLINGANDPAYMENTS   PostV1AgentBuildJSONBodyCapabilities = "BILLING_AND_PAYMENTS"
+	PostV1AgentBuildJSONBodyCapabilitiesCALLROUTING          PostV1AgentBuildJSONBodyCapabilities = "CALL_ROUTING"
+	PostV1AgentBuildJSONBodyCapabilitiesCOLLECTIONS          PostV1AgentBuildJSONBodyCapabilities = "COLLECTIONS"
+	PostV1AgentBuildJSONBodyCapabilitiesFAQ                  PostV1AgentBuildJSONBodyCapabilities = "FAQ"
+	PostV1AgentBuildJSONBodyCapabilitiesIDENTITYVERIFICATION PostV1AgentBuildJSONBodyCapabilities = "IDENTITY_VERIFICATION"
+	PostV1AgentBuildJSONBodyCapabilitiesLEADQUALIFICATION    PostV1AgentBuildJSONBodyCapabilities = "LEAD_QUALIFICATION"
+	PostV1AgentBuildJSONBodyCapabilitiesORDERMANAGEMENT      PostV1AgentBuildJSONBodyCapabilities = "ORDER_MANAGEMENT"
+	PostV1AgentBuildJSONBodyCapabilitiesOUTBOUNDCALLING      PostV1AgentBuildJSONBodyCapabilities = "OUTBOUND_CALLING"
+	PostV1AgentBuildJSONBodyCapabilitiesTROUBLESHOOTING      PostV1AgentBuildJSONBodyCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the PostV1AgentBuildJSONBodyCapabilities enum.
+func (e PostV1AgentBuildJSONBodyCapabilities) Valid() bool {
+	switch e {
+	case PostV1AgentBuildJSONBodyCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case PostV1AgentBuildJSONBodyCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case PostV1AgentBuildJSONBodyCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case PostV1AgentBuildJSONBodyCapabilitiesCALLROUTING:
+		return true
+	case PostV1AgentBuildJSONBodyCapabilitiesCOLLECTIONS:
+		return true
+	case PostV1AgentBuildJSONBodyCapabilitiesFAQ:
+		return true
+	case PostV1AgentBuildJSONBodyCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case PostV1AgentBuildJSONBodyCapabilitiesLEADQUALIFICATION:
+		return true
+	case PostV1AgentBuildJSONBodyCapabilitiesORDERMANAGEMENT:
+		return true
+	case PostV1AgentBuildJSONBodyCapabilitiesOUTBOUNDCALLING:
+		return true
+	case PostV1AgentBuildJSONBodyCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PostV1AgentBuildJSONBodyIndustry.
+const (
+	PostV1AgentBuildJSONBodyIndustryAUTOMOTIVE            PostV1AgentBuildJSONBodyIndustry = "AUTOMOTIVE"
+	PostV1AgentBuildJSONBodyIndustryDEBTCOLLECTION        PostV1AgentBuildJSONBodyIndustry = "DEBT_COLLECTION"
+	PostV1AgentBuildJSONBodyIndustryEDUCATION             PostV1AgentBuildJSONBodyIndustry = "EDUCATION"
+	PostV1AgentBuildJSONBodyIndustryFINANCIALSERVICES     PostV1AgentBuildJSONBodyIndustry = "FINANCIAL_SERVICES"
+	PostV1AgentBuildJSONBodyIndustryHEALTHCARE            PostV1AgentBuildJSONBodyIndustry = "HEALTHCARE"
+	PostV1AgentBuildJSONBodyIndustryHOMESERVICES          PostV1AgentBuildJSONBodyIndustry = "HOME_SERVICES"
+	PostV1AgentBuildJSONBodyIndustryINSURANCE             PostV1AgentBuildJSONBodyIndustry = "INSURANCE"
+	PostV1AgentBuildJSONBodyIndustryLOGISTICS             PostV1AgentBuildJSONBodyIndustry = "LOGISTICS"
+	PostV1AgentBuildJSONBodyIndustryOTHER                 PostV1AgentBuildJSONBodyIndustry = "OTHER"
+	PostV1AgentBuildJSONBodyIndustryPUBLICSECTOR          PostV1AgentBuildJSONBodyIndustry = "PUBLIC_SECTOR"
+	PostV1AgentBuildJSONBodyIndustryRECRUITINGANDSTAFFING PostV1AgentBuildJSONBodyIndustry = "RECRUITING_AND_STAFFING"
+	PostV1AgentBuildJSONBodyIndustryRESTAURANTS           PostV1AgentBuildJSONBodyIndustry = "RESTAURANTS"
+	PostV1AgentBuildJSONBodyIndustryRETAIL                PostV1AgentBuildJSONBodyIndustry = "RETAIL"
+	PostV1AgentBuildJSONBodyIndustryTECHNOLOGY            PostV1AgentBuildJSONBodyIndustry = "TECHNOLOGY"
+	PostV1AgentBuildJSONBodyIndustryTELECOMMUNICATIONS    PostV1AgentBuildJSONBodyIndustry = "TELECOMMUNICATIONS"
+	PostV1AgentBuildJSONBodyIndustryTRAVELANDHOSPITALITY  PostV1AgentBuildJSONBodyIndustry = "TRAVEL_AND_HOSPITALITY"
+	PostV1AgentBuildJSONBodyIndustryUTILITIES             PostV1AgentBuildJSONBodyIndustry = "UTILITIES"
+)
+
+// Valid indicates whether the value is a known member of the PostV1AgentBuildJSONBodyIndustry enum.
+func (e PostV1AgentBuildJSONBodyIndustry) Valid() bool {
+	switch e {
+	case PostV1AgentBuildJSONBodyIndustryAUTOMOTIVE:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryDEBTCOLLECTION:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryEDUCATION:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryFINANCIALSERVICES:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryHEALTHCARE:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryHOMESERVICES:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryINSURANCE:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryLOGISTICS:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryOTHER:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryPUBLICSECTOR:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryRECRUITINGANDSTAFFING:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryRESTAURANTS:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryRETAIL:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryTECHNOLOGY:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryTELECOMMUNICATIONS:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryTRAVELANDHOSPITALITY:
+		return true
+	case PostV1AgentBuildJSONBodyIndustryUTILITIES:
 		return true
 	default:
 		return false
@@ -23893,24 +24445,70 @@ func (e PostV1AgentBuildJSONBodyTtsProvider) Valid() bool {
 	}
 }
 
+// Defines values for PostV1AgentBuild201JSONResponseBodyDataCapabilities.
+const (
+	PostV1AgentBuild201JSONResponseBodyDataCapabilitiesACCOUNTMANAGEMENT    PostV1AgentBuild201JSONResponseBodyDataCapabilities = "ACCOUNT_MANAGEMENT"
+	PostV1AgentBuild201JSONResponseBodyDataCapabilitiesAPPOINTMENTBOOKING   PostV1AgentBuild201JSONResponseBodyDataCapabilities = "APPOINTMENT_BOOKING"
+	PostV1AgentBuild201JSONResponseBodyDataCapabilitiesBILLINGANDPAYMENTS   PostV1AgentBuild201JSONResponseBodyDataCapabilities = "BILLING_AND_PAYMENTS"
+	PostV1AgentBuild201JSONResponseBodyDataCapabilitiesCALLROUTING          PostV1AgentBuild201JSONResponseBodyDataCapabilities = "CALL_ROUTING"
+	PostV1AgentBuild201JSONResponseBodyDataCapabilitiesCOLLECTIONS          PostV1AgentBuild201JSONResponseBodyDataCapabilities = "COLLECTIONS"
+	PostV1AgentBuild201JSONResponseBodyDataCapabilitiesFAQ                  PostV1AgentBuild201JSONResponseBodyDataCapabilities = "FAQ"
+	PostV1AgentBuild201JSONResponseBodyDataCapabilitiesIDENTITYVERIFICATION PostV1AgentBuild201JSONResponseBodyDataCapabilities = "IDENTITY_VERIFICATION"
+	PostV1AgentBuild201JSONResponseBodyDataCapabilitiesLEADQUALIFICATION    PostV1AgentBuild201JSONResponseBodyDataCapabilities = "LEAD_QUALIFICATION"
+	PostV1AgentBuild201JSONResponseBodyDataCapabilitiesORDERMANAGEMENT      PostV1AgentBuild201JSONResponseBodyDataCapabilities = "ORDER_MANAGEMENT"
+	PostV1AgentBuild201JSONResponseBodyDataCapabilitiesOUTBOUNDCALLING      PostV1AgentBuild201JSONResponseBodyDataCapabilities = "OUTBOUND_CALLING"
+	PostV1AgentBuild201JSONResponseBodyDataCapabilitiesTROUBLESHOOTING      PostV1AgentBuild201JSONResponseBodyDataCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the PostV1AgentBuild201JSONResponseBodyDataCapabilities enum.
+func (e PostV1AgentBuild201JSONResponseBodyDataCapabilities) Valid() bool {
+	switch e {
+	case PostV1AgentBuild201JSONResponseBodyDataCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case PostV1AgentBuild201JSONResponseBodyDataCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case PostV1AgentBuild201JSONResponseBodyDataCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case PostV1AgentBuild201JSONResponseBodyDataCapabilitiesCALLROUTING:
+		return true
+	case PostV1AgentBuild201JSONResponseBodyDataCapabilitiesCOLLECTIONS:
+		return true
+	case PostV1AgentBuild201JSONResponseBodyDataCapabilitiesFAQ:
+		return true
+	case PostV1AgentBuild201JSONResponseBodyDataCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case PostV1AgentBuild201JSONResponseBodyDataCapabilitiesLEADQUALIFICATION:
+		return true
+	case PostV1AgentBuild201JSONResponseBodyDataCapabilitiesORDERMANAGEMENT:
+		return true
+	case PostV1AgentBuild201JSONResponseBodyDataCapabilitiesOUTBOUNDCALLING:
+		return true
+	case PostV1AgentBuild201JSONResponseBodyDataCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PostV1AgentBuild201JSONResponseBodyDataIndustry.
 const (
-	PostV1AgentBuild201JSONResponseBodyDataIndustryAUTOMOTIVE           PostV1AgentBuild201JSONResponseBodyDataIndustry = "AUTOMOTIVE"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryDEBTCOLLECTION       PostV1AgentBuild201JSONResponseBodyDataIndustry = "DEBT_COLLECTION"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryEDUCATION            PostV1AgentBuild201JSONResponseBodyDataIndustry = "EDUCATION"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryFINANCIALSERVICES    PostV1AgentBuild201JSONResponseBodyDataIndustry = "FINANCIAL_SERVICES"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryHEALTHCARE           PostV1AgentBuild201JSONResponseBodyDataIndustry = "HEALTHCARE"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryHOMESERVICES         PostV1AgentBuild201JSONResponseBodyDataIndustry = "HOME_SERVICES"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryINSURANCE            PostV1AgentBuild201JSONResponseBodyDataIndustry = "INSURANCE"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryLOGISTICS            PostV1AgentBuild201JSONResponseBodyDataIndustry = "LOGISTICS"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryOTHER                PostV1AgentBuild201JSONResponseBodyDataIndustry = "OTHER"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryPUBLICSECTOR         PostV1AgentBuild201JSONResponseBodyDataIndustry = "PUBLIC_SECTOR"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryRESTAURANTS          PostV1AgentBuild201JSONResponseBodyDataIndustry = "RESTAURANTS"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryRETAIL               PostV1AgentBuild201JSONResponseBodyDataIndustry = "RETAIL"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryTECHNOLOGY           PostV1AgentBuild201JSONResponseBodyDataIndustry = "TECHNOLOGY"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryTELECOMMUNICATIONS   PostV1AgentBuild201JSONResponseBodyDataIndustry = "TELECOMMUNICATIONS"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY PostV1AgentBuild201JSONResponseBodyDataIndustry = "TRAVEL_AND_HOSPITALITY"
-	PostV1AgentBuild201JSONResponseBodyDataIndustryUTILITIES            PostV1AgentBuild201JSONResponseBodyDataIndustry = "UTILITIES"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryAUTOMOTIVE            PostV1AgentBuild201JSONResponseBodyDataIndustry = "AUTOMOTIVE"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryDEBTCOLLECTION        PostV1AgentBuild201JSONResponseBodyDataIndustry = "DEBT_COLLECTION"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryEDUCATION             PostV1AgentBuild201JSONResponseBodyDataIndustry = "EDUCATION"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryFINANCIALSERVICES     PostV1AgentBuild201JSONResponseBodyDataIndustry = "FINANCIAL_SERVICES"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryHEALTHCARE            PostV1AgentBuild201JSONResponseBodyDataIndustry = "HEALTHCARE"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryHOMESERVICES          PostV1AgentBuild201JSONResponseBodyDataIndustry = "HOME_SERVICES"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryINSURANCE             PostV1AgentBuild201JSONResponseBodyDataIndustry = "INSURANCE"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryLOGISTICS             PostV1AgentBuild201JSONResponseBodyDataIndustry = "LOGISTICS"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryOTHER                 PostV1AgentBuild201JSONResponseBodyDataIndustry = "OTHER"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryPUBLICSECTOR          PostV1AgentBuild201JSONResponseBodyDataIndustry = "PUBLIC_SECTOR"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryRECRUITINGANDSTAFFING PostV1AgentBuild201JSONResponseBodyDataIndustry = "RECRUITING_AND_STAFFING"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryRESTAURANTS           PostV1AgentBuild201JSONResponseBodyDataIndustry = "RESTAURANTS"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryRETAIL                PostV1AgentBuild201JSONResponseBodyDataIndustry = "RETAIL"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryTECHNOLOGY            PostV1AgentBuild201JSONResponseBodyDataIndustry = "TECHNOLOGY"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryTELECOMMUNICATIONS    PostV1AgentBuild201JSONResponseBodyDataIndustry = "TELECOMMUNICATIONS"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY  PostV1AgentBuild201JSONResponseBodyDataIndustry = "TRAVEL_AND_HOSPITALITY"
+	PostV1AgentBuild201JSONResponseBodyDataIndustryUTILITIES             PostV1AgentBuild201JSONResponseBodyDataIndustry = "UTILITIES"
 )
 
 // Valid indicates whether the value is a known member of the PostV1AgentBuild201JSONResponseBodyDataIndustry enum.
@@ -23935,6 +24533,8 @@ func (e PostV1AgentBuild201JSONResponseBodyDataIndustry) Valid() bool {
 	case PostV1AgentBuild201JSONResponseBodyDataIndustryOTHER:
 		return true
 	case PostV1AgentBuild201JSONResponseBodyDataIndustryPUBLICSECTOR:
+		return true
+	case PostV1AgentBuild201JSONResponseBodyDataIndustryRECRUITINGANDSTAFFING:
 		return true
 	case PostV1AgentBuild201JSONResponseBodyDataIndustryRESTAURANTS:
 		return true
@@ -23968,24 +24568,70 @@ func (e DeleteV1AgentByAgentId200JSONResponseBodyDataDeleted) Valid() bool {
 	}
 }
 
+// Defines values for GetV1AgentByAgentId200JSONResponseBodyDataCapabilities.
+const (
+	GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesACCOUNTMANAGEMENT    GetV1AgentByAgentId200JSONResponseBodyDataCapabilities = "ACCOUNT_MANAGEMENT"
+	GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesAPPOINTMENTBOOKING   GetV1AgentByAgentId200JSONResponseBodyDataCapabilities = "APPOINTMENT_BOOKING"
+	GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesBILLINGANDPAYMENTS   GetV1AgentByAgentId200JSONResponseBodyDataCapabilities = "BILLING_AND_PAYMENTS"
+	GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesCALLROUTING          GetV1AgentByAgentId200JSONResponseBodyDataCapabilities = "CALL_ROUTING"
+	GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesCOLLECTIONS          GetV1AgentByAgentId200JSONResponseBodyDataCapabilities = "COLLECTIONS"
+	GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesFAQ                  GetV1AgentByAgentId200JSONResponseBodyDataCapabilities = "FAQ"
+	GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesIDENTITYVERIFICATION GetV1AgentByAgentId200JSONResponseBodyDataCapabilities = "IDENTITY_VERIFICATION"
+	GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesLEADQUALIFICATION    GetV1AgentByAgentId200JSONResponseBodyDataCapabilities = "LEAD_QUALIFICATION"
+	GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesORDERMANAGEMENT      GetV1AgentByAgentId200JSONResponseBodyDataCapabilities = "ORDER_MANAGEMENT"
+	GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesOUTBOUNDCALLING      GetV1AgentByAgentId200JSONResponseBodyDataCapabilities = "OUTBOUND_CALLING"
+	GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesTROUBLESHOOTING      GetV1AgentByAgentId200JSONResponseBodyDataCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the GetV1AgentByAgentId200JSONResponseBodyDataCapabilities enum.
+func (e GetV1AgentByAgentId200JSONResponseBodyDataCapabilities) Valid() bool {
+	switch e {
+	case GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesCALLROUTING:
+		return true
+	case GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesCOLLECTIONS:
+		return true
+	case GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesFAQ:
+		return true
+	case GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesLEADQUALIFICATION:
+		return true
+	case GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesORDERMANAGEMENT:
+		return true
+	case GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesOUTBOUNDCALLING:
+		return true
+	case GetV1AgentByAgentId200JSONResponseBodyDataCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetV1AgentByAgentId200JSONResponseBodyDataIndustry.
 const (
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryAUTOMOTIVE           GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "AUTOMOTIVE"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryDEBTCOLLECTION       GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "DEBT_COLLECTION"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryEDUCATION            GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "EDUCATION"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryFINANCIALSERVICES    GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "FINANCIAL_SERVICES"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryHEALTHCARE           GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "HEALTHCARE"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryHOMESERVICES         GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "HOME_SERVICES"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryINSURANCE            GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "INSURANCE"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryLOGISTICS            GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "LOGISTICS"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryOTHER                GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "OTHER"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryPUBLICSECTOR         GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "PUBLIC_SECTOR"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryRESTAURANTS          GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "RESTAURANTS"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryRETAIL               GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "RETAIL"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryTECHNOLOGY           GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "TECHNOLOGY"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryTELECOMMUNICATIONS   GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "TELECOMMUNICATIONS"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "TRAVEL_AND_HOSPITALITY"
-	GetV1AgentByAgentId200JSONResponseBodyDataIndustryUTILITIES            GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "UTILITIES"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryAUTOMOTIVE            GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "AUTOMOTIVE"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryDEBTCOLLECTION        GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "DEBT_COLLECTION"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryEDUCATION             GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "EDUCATION"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryFINANCIALSERVICES     GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "FINANCIAL_SERVICES"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryHEALTHCARE            GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "HEALTHCARE"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryHOMESERVICES          GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "HOME_SERVICES"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryINSURANCE             GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "INSURANCE"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryLOGISTICS             GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "LOGISTICS"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryOTHER                 GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "OTHER"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryPUBLICSECTOR          GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "PUBLIC_SECTOR"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryRECRUITINGANDSTAFFING GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "RECRUITING_AND_STAFFING"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryRESTAURANTS           GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "RESTAURANTS"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryRETAIL                GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "RETAIL"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryTECHNOLOGY            GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "TECHNOLOGY"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryTELECOMMUNICATIONS    GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "TELECOMMUNICATIONS"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY  GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "TRAVEL_AND_HOSPITALITY"
+	GetV1AgentByAgentId200JSONResponseBodyDataIndustryUTILITIES             GetV1AgentByAgentId200JSONResponseBodyDataIndustry = "UTILITIES"
 )
 
 // Valid indicates whether the value is a known member of the GetV1AgentByAgentId200JSONResponseBodyDataIndustry enum.
@@ -24011,6 +24657,8 @@ func (e GetV1AgentByAgentId200JSONResponseBodyDataIndustry) Valid() bool {
 		return true
 	case GetV1AgentByAgentId200JSONResponseBodyDataIndustryPUBLICSECTOR:
 		return true
+	case GetV1AgentByAgentId200JSONResponseBodyDataIndustryRECRUITINGANDSTAFFING:
+		return true
 	case GetV1AgentByAgentId200JSONResponseBodyDataIndustryRESTAURANTS:
 		return true
 	case GetV1AgentByAgentId200JSONResponseBodyDataIndustryRETAIL:
@@ -24028,24 +24676,178 @@ func (e GetV1AgentByAgentId200JSONResponseBodyDataIndustry) Valid() bool {
 	}
 }
 
+// Defines values for PutV1AgentByAgentIdJSONBodyCapabilities.
+const (
+	PutV1AgentByAgentIdJSONBodyCapabilitiesACCOUNTMANAGEMENT    PutV1AgentByAgentIdJSONBodyCapabilities = "ACCOUNT_MANAGEMENT"
+	PutV1AgentByAgentIdJSONBodyCapabilitiesAPPOINTMENTBOOKING   PutV1AgentByAgentIdJSONBodyCapabilities = "APPOINTMENT_BOOKING"
+	PutV1AgentByAgentIdJSONBodyCapabilitiesBILLINGANDPAYMENTS   PutV1AgentByAgentIdJSONBodyCapabilities = "BILLING_AND_PAYMENTS"
+	PutV1AgentByAgentIdJSONBodyCapabilitiesCALLROUTING          PutV1AgentByAgentIdJSONBodyCapabilities = "CALL_ROUTING"
+	PutV1AgentByAgentIdJSONBodyCapabilitiesCOLLECTIONS          PutV1AgentByAgentIdJSONBodyCapabilities = "COLLECTIONS"
+	PutV1AgentByAgentIdJSONBodyCapabilitiesFAQ                  PutV1AgentByAgentIdJSONBodyCapabilities = "FAQ"
+	PutV1AgentByAgentIdJSONBodyCapabilitiesIDENTITYVERIFICATION PutV1AgentByAgentIdJSONBodyCapabilities = "IDENTITY_VERIFICATION"
+	PutV1AgentByAgentIdJSONBodyCapabilitiesLEADQUALIFICATION    PutV1AgentByAgentIdJSONBodyCapabilities = "LEAD_QUALIFICATION"
+	PutV1AgentByAgentIdJSONBodyCapabilitiesORDERMANAGEMENT      PutV1AgentByAgentIdJSONBodyCapabilities = "ORDER_MANAGEMENT"
+	PutV1AgentByAgentIdJSONBodyCapabilitiesOUTBOUNDCALLING      PutV1AgentByAgentIdJSONBodyCapabilities = "OUTBOUND_CALLING"
+	PutV1AgentByAgentIdJSONBodyCapabilitiesTROUBLESHOOTING      PutV1AgentByAgentIdJSONBodyCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the PutV1AgentByAgentIdJSONBodyCapabilities enum.
+func (e PutV1AgentByAgentIdJSONBodyCapabilities) Valid() bool {
+	switch e {
+	case PutV1AgentByAgentIdJSONBodyCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case PutV1AgentByAgentIdJSONBodyCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case PutV1AgentByAgentIdJSONBodyCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case PutV1AgentByAgentIdJSONBodyCapabilitiesCALLROUTING:
+		return true
+	case PutV1AgentByAgentIdJSONBodyCapabilitiesCOLLECTIONS:
+		return true
+	case PutV1AgentByAgentIdJSONBodyCapabilitiesFAQ:
+		return true
+	case PutV1AgentByAgentIdJSONBodyCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case PutV1AgentByAgentIdJSONBodyCapabilitiesLEADQUALIFICATION:
+		return true
+	case PutV1AgentByAgentIdJSONBodyCapabilitiesORDERMANAGEMENT:
+		return true
+	case PutV1AgentByAgentIdJSONBodyCapabilitiesOUTBOUNDCALLING:
+		return true
+	case PutV1AgentByAgentIdJSONBodyCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PutV1AgentByAgentIdJSONBodyIndustry.
+const (
+	PutV1AgentByAgentIdJSONBodyIndustryAUTOMOTIVE            PutV1AgentByAgentIdJSONBodyIndustry = "AUTOMOTIVE"
+	PutV1AgentByAgentIdJSONBodyIndustryDEBTCOLLECTION        PutV1AgentByAgentIdJSONBodyIndustry = "DEBT_COLLECTION"
+	PutV1AgentByAgentIdJSONBodyIndustryEDUCATION             PutV1AgentByAgentIdJSONBodyIndustry = "EDUCATION"
+	PutV1AgentByAgentIdJSONBodyIndustryFINANCIALSERVICES     PutV1AgentByAgentIdJSONBodyIndustry = "FINANCIAL_SERVICES"
+	PutV1AgentByAgentIdJSONBodyIndustryHEALTHCARE            PutV1AgentByAgentIdJSONBodyIndustry = "HEALTHCARE"
+	PutV1AgentByAgentIdJSONBodyIndustryHOMESERVICES          PutV1AgentByAgentIdJSONBodyIndustry = "HOME_SERVICES"
+	PutV1AgentByAgentIdJSONBodyIndustryINSURANCE             PutV1AgentByAgentIdJSONBodyIndustry = "INSURANCE"
+	PutV1AgentByAgentIdJSONBodyIndustryLOGISTICS             PutV1AgentByAgentIdJSONBodyIndustry = "LOGISTICS"
+	PutV1AgentByAgentIdJSONBodyIndustryOTHER                 PutV1AgentByAgentIdJSONBodyIndustry = "OTHER"
+	PutV1AgentByAgentIdJSONBodyIndustryPUBLICSECTOR          PutV1AgentByAgentIdJSONBodyIndustry = "PUBLIC_SECTOR"
+	PutV1AgentByAgentIdJSONBodyIndustryRECRUITINGANDSTAFFING PutV1AgentByAgentIdJSONBodyIndustry = "RECRUITING_AND_STAFFING"
+	PutV1AgentByAgentIdJSONBodyIndustryRESTAURANTS           PutV1AgentByAgentIdJSONBodyIndustry = "RESTAURANTS"
+	PutV1AgentByAgentIdJSONBodyIndustryRETAIL                PutV1AgentByAgentIdJSONBodyIndustry = "RETAIL"
+	PutV1AgentByAgentIdJSONBodyIndustryTECHNOLOGY            PutV1AgentByAgentIdJSONBodyIndustry = "TECHNOLOGY"
+	PutV1AgentByAgentIdJSONBodyIndustryTELECOMMUNICATIONS    PutV1AgentByAgentIdJSONBodyIndustry = "TELECOMMUNICATIONS"
+	PutV1AgentByAgentIdJSONBodyIndustryTRAVELANDHOSPITALITY  PutV1AgentByAgentIdJSONBodyIndustry = "TRAVEL_AND_HOSPITALITY"
+	PutV1AgentByAgentIdJSONBodyIndustryUTILITIES             PutV1AgentByAgentIdJSONBodyIndustry = "UTILITIES"
+)
+
+// Valid indicates whether the value is a known member of the PutV1AgentByAgentIdJSONBodyIndustry enum.
+func (e PutV1AgentByAgentIdJSONBodyIndustry) Valid() bool {
+	switch e {
+	case PutV1AgentByAgentIdJSONBodyIndustryAUTOMOTIVE:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryDEBTCOLLECTION:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryEDUCATION:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryFINANCIALSERVICES:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryHEALTHCARE:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryHOMESERVICES:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryINSURANCE:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryLOGISTICS:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryOTHER:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryPUBLICSECTOR:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryRECRUITINGANDSTAFFING:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryRESTAURANTS:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryRETAIL:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryTECHNOLOGY:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryTELECOMMUNICATIONS:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryTRAVELANDHOSPITALITY:
+		return true
+	case PutV1AgentByAgentIdJSONBodyIndustryUTILITIES:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PutV1AgentByAgentId200JSONResponseBodyDataCapabilities.
+const (
+	PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesACCOUNTMANAGEMENT    PutV1AgentByAgentId200JSONResponseBodyDataCapabilities = "ACCOUNT_MANAGEMENT"
+	PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesAPPOINTMENTBOOKING   PutV1AgentByAgentId200JSONResponseBodyDataCapabilities = "APPOINTMENT_BOOKING"
+	PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesBILLINGANDPAYMENTS   PutV1AgentByAgentId200JSONResponseBodyDataCapabilities = "BILLING_AND_PAYMENTS"
+	PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesCALLROUTING          PutV1AgentByAgentId200JSONResponseBodyDataCapabilities = "CALL_ROUTING"
+	PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesCOLLECTIONS          PutV1AgentByAgentId200JSONResponseBodyDataCapabilities = "COLLECTIONS"
+	PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesFAQ                  PutV1AgentByAgentId200JSONResponseBodyDataCapabilities = "FAQ"
+	PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesIDENTITYVERIFICATION PutV1AgentByAgentId200JSONResponseBodyDataCapabilities = "IDENTITY_VERIFICATION"
+	PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesLEADQUALIFICATION    PutV1AgentByAgentId200JSONResponseBodyDataCapabilities = "LEAD_QUALIFICATION"
+	PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesORDERMANAGEMENT      PutV1AgentByAgentId200JSONResponseBodyDataCapabilities = "ORDER_MANAGEMENT"
+	PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesOUTBOUNDCALLING      PutV1AgentByAgentId200JSONResponseBodyDataCapabilities = "OUTBOUND_CALLING"
+	PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesTROUBLESHOOTING      PutV1AgentByAgentId200JSONResponseBodyDataCapabilities = "TROUBLESHOOTING"
+)
+
+// Valid indicates whether the value is a known member of the PutV1AgentByAgentId200JSONResponseBodyDataCapabilities enum.
+func (e PutV1AgentByAgentId200JSONResponseBodyDataCapabilities) Valid() bool {
+	switch e {
+	case PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesACCOUNTMANAGEMENT:
+		return true
+	case PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesAPPOINTMENTBOOKING:
+		return true
+	case PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesBILLINGANDPAYMENTS:
+		return true
+	case PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesCALLROUTING:
+		return true
+	case PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesCOLLECTIONS:
+		return true
+	case PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesFAQ:
+		return true
+	case PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesIDENTITYVERIFICATION:
+		return true
+	case PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesLEADQUALIFICATION:
+		return true
+	case PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesORDERMANAGEMENT:
+		return true
+	case PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesOUTBOUNDCALLING:
+		return true
+	case PutV1AgentByAgentId200JSONResponseBodyDataCapabilitiesTROUBLESHOOTING:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for PutV1AgentByAgentId200JSONResponseBodyDataIndustry.
 const (
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryAUTOMOTIVE           PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "AUTOMOTIVE"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryDEBTCOLLECTION       PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "DEBT_COLLECTION"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryEDUCATION            PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "EDUCATION"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryFINANCIALSERVICES    PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "FINANCIAL_SERVICES"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryHEALTHCARE           PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "HEALTHCARE"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryHOMESERVICES         PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "HOME_SERVICES"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryINSURANCE            PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "INSURANCE"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryLOGISTICS            PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "LOGISTICS"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryOTHER                PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "OTHER"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryPUBLICSECTOR         PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "PUBLIC_SECTOR"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryRESTAURANTS          PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "RESTAURANTS"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryRETAIL               PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "RETAIL"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryTECHNOLOGY           PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "TECHNOLOGY"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryTELECOMMUNICATIONS   PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "TELECOMMUNICATIONS"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "TRAVEL_AND_HOSPITALITY"
-	PutV1AgentByAgentId200JSONResponseBodyDataIndustryUTILITIES            PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "UTILITIES"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryAUTOMOTIVE            PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "AUTOMOTIVE"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryDEBTCOLLECTION        PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "DEBT_COLLECTION"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryEDUCATION             PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "EDUCATION"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryFINANCIALSERVICES     PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "FINANCIAL_SERVICES"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryHEALTHCARE            PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "HEALTHCARE"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryHOMESERVICES          PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "HOME_SERVICES"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryINSURANCE             PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "INSURANCE"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryLOGISTICS             PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "LOGISTICS"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryOTHER                 PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "OTHER"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryPUBLICSECTOR          PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "PUBLIC_SECTOR"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryRECRUITINGANDSTAFFING PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "RECRUITING_AND_STAFFING"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryRESTAURANTS           PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "RESTAURANTS"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryRETAIL                PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "RETAIL"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryTECHNOLOGY            PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "TECHNOLOGY"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryTELECOMMUNICATIONS    PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "TELECOMMUNICATIONS"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryTRAVELANDHOSPITALITY  PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "TRAVEL_AND_HOSPITALITY"
+	PutV1AgentByAgentId200JSONResponseBodyDataIndustryUTILITIES             PutV1AgentByAgentId200JSONResponseBodyDataIndustry = "UTILITIES"
 )
 
 // Valid indicates whether the value is a known member of the PutV1AgentByAgentId200JSONResponseBodyDataIndustry enum.
@@ -24070,6 +24872,8 @@ func (e PutV1AgentByAgentId200JSONResponseBodyDataIndustry) Valid() bool {
 	case PutV1AgentByAgentId200JSONResponseBodyDataIndustryOTHER:
 		return true
 	case PutV1AgentByAgentId200JSONResponseBodyDataIndustryPUBLICSECTOR:
+		return true
+	case PutV1AgentByAgentId200JSONResponseBodyDataIndustryRECRUITINGANDSTAFFING:
 		return true
 	case PutV1AgentByAgentId200JSONResponseBodyDataIndustryRESTAURANTS:
 		return true
@@ -27804,11 +28608,13 @@ const (
 	GetV1Persona200JSONResponseBodyDataLanguageEN GetV1Persona200JSONResponseBodyDataLanguage = "EN"
 	GetV1Persona200JSONResponseBodyDataLanguageES GetV1Persona200JSONResponseBodyDataLanguage = "ES"
 	GetV1Persona200JSONResponseBodyDataLanguageFR GetV1Persona200JSONResponseBodyDataLanguage = "FR"
+	GetV1Persona200JSONResponseBodyDataLanguageGU GetV1Persona200JSONResponseBodyDataLanguage = "GU"
 	GetV1Persona200JSONResponseBodyDataLanguageHE GetV1Persona200JSONResponseBodyDataLanguage = "HE"
 	GetV1Persona200JSONResponseBodyDataLanguageHI GetV1Persona200JSONResponseBodyDataLanguage = "HI"
 	GetV1Persona200JSONResponseBodyDataLanguageID GetV1Persona200JSONResponseBodyDataLanguage = "ID"
 	GetV1Persona200JSONResponseBodyDataLanguageIT GetV1Persona200JSONResponseBodyDataLanguage = "IT"
 	GetV1Persona200JSONResponseBodyDataLanguageJA GetV1Persona200JSONResponseBodyDataLanguage = "JA"
+	GetV1Persona200JSONResponseBodyDataLanguageMR GetV1Persona200JSONResponseBodyDataLanguage = "MR"
 	GetV1Persona200JSONResponseBodyDataLanguageMS GetV1Persona200JSONResponseBodyDataLanguage = "MS"
 	GetV1Persona200JSONResponseBodyDataLanguageNL GetV1Persona200JSONResponseBodyDataLanguage = "NL"
 	GetV1Persona200JSONResponseBodyDataLanguagePT GetV1Persona200JSONResponseBodyDataLanguage = "PT"
@@ -27833,6 +28639,8 @@ func (e GetV1Persona200JSONResponseBodyDataLanguage) Valid() bool {
 		return true
 	case GetV1Persona200JSONResponseBodyDataLanguageFR:
 		return true
+	case GetV1Persona200JSONResponseBodyDataLanguageGU:
+		return true
 	case GetV1Persona200JSONResponseBodyDataLanguageHE:
 		return true
 	case GetV1Persona200JSONResponseBodyDataLanguageHI:
@@ -27842,6 +28650,8 @@ func (e GetV1Persona200JSONResponseBodyDataLanguage) Valid() bool {
 	case GetV1Persona200JSONResponseBodyDataLanguageIT:
 		return true
 	case GetV1Persona200JSONResponseBodyDataLanguageJA:
+		return true
+	case GetV1Persona200JSONResponseBodyDataLanguageMR:
 		return true
 	case GetV1Persona200JSONResponseBodyDataLanguageMS:
 		return true
@@ -27975,11 +28785,13 @@ const (
 	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesEN GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "EN"
 	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesES GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "ES"
 	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesFR GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "FR"
+	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesGU GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "GU"
 	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesHE GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "HE"
 	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesHI GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "HI"
 	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesID GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "ID"
 	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesIT GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "IT"
 	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesJA GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "JA"
+	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesMR GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "MR"
 	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesMS GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "MS"
 	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesNL GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "NL"
 	GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesPT GetV1Persona200JSONResponseBodyDataUnderstoodLanguages = "PT"
@@ -28004,6 +28816,8 @@ func (e GetV1Persona200JSONResponseBodyDataUnderstoodLanguages) Valid() bool {
 		return true
 	case GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesFR:
 		return true
+	case GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesGU:
+		return true
 	case GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesHE:
 		return true
 	case GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesHI:
@@ -28013,6 +28827,8 @@ func (e GetV1Persona200JSONResponseBodyDataUnderstoodLanguages) Valid() bool {
 	case GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesIT:
 		return true
 	case GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesJA:
+		return true
+	case GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesMR:
 		return true
 	case GetV1Persona200JSONResponseBodyDataUnderstoodLanguagesMS:
 		return true
@@ -28317,11 +29133,13 @@ const (
 	PostV1PersonaJSONBodyLanguageEN PostV1PersonaJSONBodyLanguage = "EN"
 	PostV1PersonaJSONBodyLanguageES PostV1PersonaJSONBodyLanguage = "ES"
 	PostV1PersonaJSONBodyLanguageFR PostV1PersonaJSONBodyLanguage = "FR"
+	PostV1PersonaJSONBodyLanguageGU PostV1PersonaJSONBodyLanguage = "GU"
 	PostV1PersonaJSONBodyLanguageHE PostV1PersonaJSONBodyLanguage = "HE"
 	PostV1PersonaJSONBodyLanguageHI PostV1PersonaJSONBodyLanguage = "HI"
 	PostV1PersonaJSONBodyLanguageID PostV1PersonaJSONBodyLanguage = "ID"
 	PostV1PersonaJSONBodyLanguageIT PostV1PersonaJSONBodyLanguage = "IT"
 	PostV1PersonaJSONBodyLanguageJA PostV1PersonaJSONBodyLanguage = "JA"
+	PostV1PersonaJSONBodyLanguageMR PostV1PersonaJSONBodyLanguage = "MR"
 	PostV1PersonaJSONBodyLanguageMS PostV1PersonaJSONBodyLanguage = "MS"
 	PostV1PersonaJSONBodyLanguageNL PostV1PersonaJSONBodyLanguage = "NL"
 	PostV1PersonaJSONBodyLanguagePT PostV1PersonaJSONBodyLanguage = "PT"
@@ -28346,6 +29164,8 @@ func (e PostV1PersonaJSONBodyLanguage) Valid() bool {
 		return true
 	case PostV1PersonaJSONBodyLanguageFR:
 		return true
+	case PostV1PersonaJSONBodyLanguageGU:
+		return true
 	case PostV1PersonaJSONBodyLanguageHE:
 		return true
 	case PostV1PersonaJSONBodyLanguageHI:
@@ -28355,6 +29175,8 @@ func (e PostV1PersonaJSONBodyLanguage) Valid() bool {
 	case PostV1PersonaJSONBodyLanguageIT:
 		return true
 	case PostV1PersonaJSONBodyLanguageJA:
+		return true
+	case PostV1PersonaJSONBodyLanguageMR:
 		return true
 	case PostV1PersonaJSONBodyLanguageMS:
 		return true
@@ -28488,11 +29310,13 @@ const (
 	PostV1PersonaJSONBodyUnderstoodLanguagesEN PostV1PersonaJSONBodyUnderstoodLanguages = "EN"
 	PostV1PersonaJSONBodyUnderstoodLanguagesES PostV1PersonaJSONBodyUnderstoodLanguages = "ES"
 	PostV1PersonaJSONBodyUnderstoodLanguagesFR PostV1PersonaJSONBodyUnderstoodLanguages = "FR"
+	PostV1PersonaJSONBodyUnderstoodLanguagesGU PostV1PersonaJSONBodyUnderstoodLanguages = "GU"
 	PostV1PersonaJSONBodyUnderstoodLanguagesHE PostV1PersonaJSONBodyUnderstoodLanguages = "HE"
 	PostV1PersonaJSONBodyUnderstoodLanguagesHI PostV1PersonaJSONBodyUnderstoodLanguages = "HI"
 	PostV1PersonaJSONBodyUnderstoodLanguagesID PostV1PersonaJSONBodyUnderstoodLanguages = "ID"
 	PostV1PersonaJSONBodyUnderstoodLanguagesIT PostV1PersonaJSONBodyUnderstoodLanguages = "IT"
 	PostV1PersonaJSONBodyUnderstoodLanguagesJA PostV1PersonaJSONBodyUnderstoodLanguages = "JA"
+	PostV1PersonaJSONBodyUnderstoodLanguagesMR PostV1PersonaJSONBodyUnderstoodLanguages = "MR"
 	PostV1PersonaJSONBodyUnderstoodLanguagesMS PostV1PersonaJSONBodyUnderstoodLanguages = "MS"
 	PostV1PersonaJSONBodyUnderstoodLanguagesNL PostV1PersonaJSONBodyUnderstoodLanguages = "NL"
 	PostV1PersonaJSONBodyUnderstoodLanguagesPT PostV1PersonaJSONBodyUnderstoodLanguages = "PT"
@@ -28517,6 +29341,8 @@ func (e PostV1PersonaJSONBodyUnderstoodLanguages) Valid() bool {
 		return true
 	case PostV1PersonaJSONBodyUnderstoodLanguagesFR:
 		return true
+	case PostV1PersonaJSONBodyUnderstoodLanguagesGU:
+		return true
 	case PostV1PersonaJSONBodyUnderstoodLanguagesHE:
 		return true
 	case PostV1PersonaJSONBodyUnderstoodLanguagesHI:
@@ -28526,6 +29352,8 @@ func (e PostV1PersonaJSONBodyUnderstoodLanguages) Valid() bool {
 	case PostV1PersonaJSONBodyUnderstoodLanguagesIT:
 		return true
 	case PostV1PersonaJSONBodyUnderstoodLanguagesJA:
+		return true
+	case PostV1PersonaJSONBodyUnderstoodLanguagesMR:
 		return true
 	case PostV1PersonaJSONBodyUnderstoodLanguagesMS:
 		return true
@@ -28830,11 +29658,13 @@ const (
 	PostV1Persona201JSONResponseBodyDataLanguageEN PostV1Persona201JSONResponseBodyDataLanguage = "EN"
 	PostV1Persona201JSONResponseBodyDataLanguageES PostV1Persona201JSONResponseBodyDataLanguage = "ES"
 	PostV1Persona201JSONResponseBodyDataLanguageFR PostV1Persona201JSONResponseBodyDataLanguage = "FR"
+	PostV1Persona201JSONResponseBodyDataLanguageGU PostV1Persona201JSONResponseBodyDataLanguage = "GU"
 	PostV1Persona201JSONResponseBodyDataLanguageHE PostV1Persona201JSONResponseBodyDataLanguage = "HE"
 	PostV1Persona201JSONResponseBodyDataLanguageHI PostV1Persona201JSONResponseBodyDataLanguage = "HI"
 	PostV1Persona201JSONResponseBodyDataLanguageID PostV1Persona201JSONResponseBodyDataLanguage = "ID"
 	PostV1Persona201JSONResponseBodyDataLanguageIT PostV1Persona201JSONResponseBodyDataLanguage = "IT"
 	PostV1Persona201JSONResponseBodyDataLanguageJA PostV1Persona201JSONResponseBodyDataLanguage = "JA"
+	PostV1Persona201JSONResponseBodyDataLanguageMR PostV1Persona201JSONResponseBodyDataLanguage = "MR"
 	PostV1Persona201JSONResponseBodyDataLanguageMS PostV1Persona201JSONResponseBodyDataLanguage = "MS"
 	PostV1Persona201JSONResponseBodyDataLanguageNL PostV1Persona201JSONResponseBodyDataLanguage = "NL"
 	PostV1Persona201JSONResponseBodyDataLanguagePT PostV1Persona201JSONResponseBodyDataLanguage = "PT"
@@ -28859,6 +29689,8 @@ func (e PostV1Persona201JSONResponseBodyDataLanguage) Valid() bool {
 		return true
 	case PostV1Persona201JSONResponseBodyDataLanguageFR:
 		return true
+	case PostV1Persona201JSONResponseBodyDataLanguageGU:
+		return true
 	case PostV1Persona201JSONResponseBodyDataLanguageHE:
 		return true
 	case PostV1Persona201JSONResponseBodyDataLanguageHI:
@@ -28868,6 +29700,8 @@ func (e PostV1Persona201JSONResponseBodyDataLanguage) Valid() bool {
 	case PostV1Persona201JSONResponseBodyDataLanguageIT:
 		return true
 	case PostV1Persona201JSONResponseBodyDataLanguageJA:
+		return true
+	case PostV1Persona201JSONResponseBodyDataLanguageMR:
 		return true
 	case PostV1Persona201JSONResponseBodyDataLanguageMS:
 		return true
@@ -29001,11 +29835,13 @@ const (
 	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesEN PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "EN"
 	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesES PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "ES"
 	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesFR PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "FR"
+	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesGU PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "GU"
 	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesHE PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "HE"
 	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesHI PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "HI"
 	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesID PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "ID"
 	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesIT PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "IT"
 	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesJA PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "JA"
+	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesMR PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "MR"
 	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesMS PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "MS"
 	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesNL PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "NL"
 	PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesPT PostV1Persona201JSONResponseBodyDataUnderstoodLanguages = "PT"
@@ -29030,6 +29866,8 @@ func (e PostV1Persona201JSONResponseBodyDataUnderstoodLanguages) Valid() bool {
 		return true
 	case PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesFR:
 		return true
+	case PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesGU:
+		return true
 	case PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesHE:
 		return true
 	case PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesHI:
@@ -29039,6 +29877,8 @@ func (e PostV1Persona201JSONResponseBodyDataUnderstoodLanguages) Valid() bool {
 	case PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesIT:
 		return true
 	case PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesJA:
+		return true
+	case PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesMR:
 		return true
 	case PostV1Persona201JSONResponseBodyDataUnderstoodLanguagesMS:
 		return true
@@ -29358,11 +30198,13 @@ const (
 	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageEN GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "EN"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageES GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "ES"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageFR GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "FR"
+	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageGU GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "GU"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageHE GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "HE"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageHI GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "HI"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageID GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "ID"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageIT GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "IT"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageJA GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "JA"
+	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageMR GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "MR"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageMS GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "MS"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageNL GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "NL"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataLanguagePT GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "PT"
@@ -29387,6 +30229,8 @@ func (e GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage) Valid() bool {
 		return true
 	case GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageFR:
 		return true
+	case GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageGU:
+		return true
 	case GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageHE:
 		return true
 	case GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageHI:
@@ -29396,6 +30240,8 @@ func (e GetV1PersonaByPersonaId200JSONResponseBodyDataLanguage) Valid() bool {
 	case GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageIT:
 		return true
 	case GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageJA:
+		return true
+	case GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageMR:
 		return true
 	case GetV1PersonaByPersonaId200JSONResponseBodyDataLanguageMS:
 		return true
@@ -29529,11 +30375,13 @@ const (
 	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesEN GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "EN"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesES GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "ES"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesFR GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "FR"
+	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesGU GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "GU"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesHE GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "HE"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesHI GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "HI"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesID GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "ID"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesIT GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "IT"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesJA GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "JA"
+	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesMR GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "MR"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesMS GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "MS"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesNL GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "NL"
 	GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesPT GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "PT"
@@ -29558,6 +30406,8 @@ func (e GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages) Valid
 		return true
 	case GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesFR:
 		return true
+	case GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesGU:
+		return true
 	case GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesHE:
 		return true
 	case GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesHI:
@@ -29567,6 +30417,8 @@ func (e GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages) Valid
 	case GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesIT:
 		return true
 	case GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesJA:
+		return true
+	case GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesMR:
 		return true
 	case GetV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesMS:
 		return true
@@ -29871,11 +30723,13 @@ const (
 	PutV1PersonaByPersonaIdJSONBodyLanguageEN PutV1PersonaByPersonaIdJSONBodyLanguage = "EN"
 	PutV1PersonaByPersonaIdJSONBodyLanguageES PutV1PersonaByPersonaIdJSONBodyLanguage = "ES"
 	PutV1PersonaByPersonaIdJSONBodyLanguageFR PutV1PersonaByPersonaIdJSONBodyLanguage = "FR"
+	PutV1PersonaByPersonaIdJSONBodyLanguageGU PutV1PersonaByPersonaIdJSONBodyLanguage = "GU"
 	PutV1PersonaByPersonaIdJSONBodyLanguageHE PutV1PersonaByPersonaIdJSONBodyLanguage = "HE"
 	PutV1PersonaByPersonaIdJSONBodyLanguageHI PutV1PersonaByPersonaIdJSONBodyLanguage = "HI"
 	PutV1PersonaByPersonaIdJSONBodyLanguageID PutV1PersonaByPersonaIdJSONBodyLanguage = "ID"
 	PutV1PersonaByPersonaIdJSONBodyLanguageIT PutV1PersonaByPersonaIdJSONBodyLanguage = "IT"
 	PutV1PersonaByPersonaIdJSONBodyLanguageJA PutV1PersonaByPersonaIdJSONBodyLanguage = "JA"
+	PutV1PersonaByPersonaIdJSONBodyLanguageMR PutV1PersonaByPersonaIdJSONBodyLanguage = "MR"
 	PutV1PersonaByPersonaIdJSONBodyLanguageMS PutV1PersonaByPersonaIdJSONBodyLanguage = "MS"
 	PutV1PersonaByPersonaIdJSONBodyLanguageNL PutV1PersonaByPersonaIdJSONBodyLanguage = "NL"
 	PutV1PersonaByPersonaIdJSONBodyLanguagePT PutV1PersonaByPersonaIdJSONBodyLanguage = "PT"
@@ -29900,6 +30754,8 @@ func (e PutV1PersonaByPersonaIdJSONBodyLanguage) Valid() bool {
 		return true
 	case PutV1PersonaByPersonaIdJSONBodyLanguageFR:
 		return true
+	case PutV1PersonaByPersonaIdJSONBodyLanguageGU:
+		return true
 	case PutV1PersonaByPersonaIdJSONBodyLanguageHE:
 		return true
 	case PutV1PersonaByPersonaIdJSONBodyLanguageHI:
@@ -29909,6 +30765,8 @@ func (e PutV1PersonaByPersonaIdJSONBodyLanguage) Valid() bool {
 	case PutV1PersonaByPersonaIdJSONBodyLanguageIT:
 		return true
 	case PutV1PersonaByPersonaIdJSONBodyLanguageJA:
+		return true
+	case PutV1PersonaByPersonaIdJSONBodyLanguageMR:
 		return true
 	case PutV1PersonaByPersonaIdJSONBodyLanguageMS:
 		return true
@@ -30042,11 +30900,13 @@ const (
 	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesEN PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "EN"
 	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesES PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "ES"
 	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesFR PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "FR"
+	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesGU PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "GU"
 	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesHE PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "HE"
 	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesHI PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "HI"
 	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesID PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "ID"
 	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesIT PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "IT"
 	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesJA PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "JA"
+	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesMR PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "MR"
 	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesMS PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "MS"
 	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesNL PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "NL"
 	PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesPT PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages = "PT"
@@ -30071,6 +30931,8 @@ func (e PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages) Valid() bool {
 		return true
 	case PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesFR:
 		return true
+	case PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesGU:
+		return true
 	case PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesHE:
 		return true
 	case PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesHI:
@@ -30080,6 +30942,8 @@ func (e PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguages) Valid() bool {
 	case PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesIT:
 		return true
 	case PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesJA:
+		return true
+	case PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesMR:
 		return true
 	case PutV1PersonaByPersonaIdJSONBodyUnderstoodLanguagesMS:
 		return true
@@ -30384,11 +31248,13 @@ const (
 	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageEN PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "EN"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageES PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "ES"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageFR PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "FR"
+	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageGU PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "GU"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageHE PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "HE"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageHI PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "HI"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageID PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "ID"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageIT PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "IT"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageJA PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "JA"
+	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageMR PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "MR"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageMS PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "MS"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageNL PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "NL"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataLanguagePT PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage = "PT"
@@ -30413,6 +31279,8 @@ func (e PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage) Valid() bool {
 		return true
 	case PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageFR:
 		return true
+	case PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageGU:
+		return true
 	case PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageHE:
 		return true
 	case PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageHI:
@@ -30422,6 +31290,8 @@ func (e PutV1PersonaByPersonaId200JSONResponseBodyDataLanguage) Valid() bool {
 	case PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageIT:
 		return true
 	case PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageJA:
+		return true
+	case PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageMR:
 		return true
 	case PutV1PersonaByPersonaId200JSONResponseBodyDataLanguageMS:
 		return true
@@ -30555,11 +31425,13 @@ const (
 	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesEN PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "EN"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesES PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "ES"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesFR PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "FR"
+	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesGU PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "GU"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesHE PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "HE"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesHI PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "HI"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesID PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "ID"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesIT PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "IT"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesJA PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "JA"
+	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesMR PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "MR"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesMS PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "MS"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesNL PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "NL"
 	PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesPT PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages = "PT"
@@ -30584,6 +31456,8 @@ func (e PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages) Valid
 		return true
 	case PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesFR:
 		return true
+	case PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesGU:
+		return true
 	case PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesHE:
 		return true
 	case PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesHI:
@@ -30593,6 +31467,8 @@ func (e PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguages) Valid
 	case PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesIT:
 		return true
 	case PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesJA:
+		return true
+	case PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesMR:
 		return true
 	case PutV1PersonaByPersonaId200JSONResponseBodyDataUnderstoodLanguagesMS:
 		return true
@@ -34368,6 +35244,11 @@ type CreateEnvironmentInput struct {
 	// LineCustom Required with lineQuality CUSTOM, and refused with any other line.
 	LineCustom *LineCustom `json:"lineCustom,omitempty"`
 
+	// LineNoise Hiss on the line, both ways, from 0 (none) to 1 (heavy, about 10 dB under phone speech). Combines with the phone and lineQuality. Defaults to 0.
+	//
+	// Example: 0.4
+	LineNoise *float64 `json:"lineNoise,omitempty"`
+
 	// LineQuality The phone line the simulated caller is on: packet loss applied to its 20 ms audio packets, per direction. The loss pattern is seeded per call, so a redial loses the same packets. CLEAR: No loss. MINOR_LOSS: 1% random, both ways. CELL_EDGE: 5% in 80 ms gaps, both ways. POOR_CONNECTION: 10% in 120 ms gaps, both ways. ONE_WAY_DEGRADED: 8% in 80 ms gaps, toward the agent only. CUSTOM: the per-direction loss in `lineCustom`, up to 20% in 0.5 steps, with a mean burst of up to 10 packets (omit it for random loss). Defaults to CLEAR.
 	//
 	// Example: CELL_EDGE
@@ -34377,6 +35258,11 @@ type CreateEnvironmentInput struct {
 	//
 	// Example: Busy call centre
 	Name string `json:"name"`
+
+	// Phone The phone the simulated caller is on: the codecs the call passes through, both ways, on top of any loss in lineQuality. Null is no phone. LANDLINE: The narrow band of a phone handset and the codec of the phone network. MOBILE: The narrow band and the compressed voice codec of a mobile call. BLUETOOTH: A mobile on a car kit or headset: the Bluetooth link adds fizz under the voice, then the mobile codec. Defaults to null.
+	//
+	// Example: MOBILE
+	Phone *CreateEnvironmentInputPhone `json:"phone,omitempty"`
 }
 
 // CreateEnvironmentInputBackgroundNoise The noise bed played underneath the simulated caller. NONE plays nothing.
@@ -34388,6 +35274,11 @@ type CreateEnvironmentInputBackgroundNoise string
 //
 // Example: CELL_EDGE
 type CreateEnvironmentInputLineQuality string
+
+// CreateEnvironmentInputPhone The phone the simulated caller is on: the codecs the call passes through, both ways, on top of any loss in lineQuality. Null is no phone. LANDLINE: The narrow band of a phone handset and the codec of the phone network. MOBILE: The narrow band and the compressed voice codec of a mobile call. BLUETOOTH: A mobile on a car kit or headset: the Bluetooth link adds fizz under the voice, then the mobile codec. Defaults to null.
+//
+// Example: MOBILE
+type CreateEnvironmentInputPhone string
 
 // CreateHttpRequestDefinitionInput Input for creating an HTTP request definition
 type CreateHttpRequestDefinitionInput struct {
@@ -36892,9 +37783,15 @@ type EnvironmentResponse struct {
 	// LineCustom The loss of a CUSTOM line; null on every other.
 	LineCustom *LineCustom `json:"lineCustom"`
 
+	// LineNoise Hiss on the line, both ways, from 0 (none) to 1 (heavy, about 10 dB under phone speech). Combines with the phone and lineQuality.
+	LineNoise float64 `json:"lineNoise"`
+
 	// LineQuality The phone line the simulated caller is on: packet loss applied to its 20 ms audio packets, per direction. The loss pattern is seeded per call, so a redial loses the same packets. CLEAR: No loss. MINOR_LOSS: 1% random, both ways. CELL_EDGE: 5% in 80 ms gaps, both ways. POOR_CONNECTION: 10% in 120 ms gaps, both ways. ONE_WAY_DEGRADED: 8% in 80 ms gaps, toward the agent only. CUSTOM: the per-direction loss in `lineCustom`, up to 20% in 0.5 steps, with a mean burst of up to 10 packets (omit it for random loss).
 	LineQuality EnvironmentResponseLineQuality `json:"lineQuality"`
 	Name        string                         `json:"name"`
+
+	// Phone The phone the simulated caller is on: the codecs the call passes through, both ways, on top of any loss in lineQuality. Null is no phone. LANDLINE: The narrow band of a phone handset and the codec of the phone network. MOBILE: The narrow band and the compressed voice codec of a mobile call. BLUETOOTH: A mobile on a car kit or headset: the Bluetooth link adds fizz under the voice, then the mobile codec.
+	Phone *EnvironmentResponsePhone `json:"phone"`
 
 	// UpdatedAt Last update timestamp in ISO 8601 format
 	UpdatedAt string `json:"updatedAt"`
@@ -36905,6 +37802,9 @@ type EnvironmentResponseBackgroundNoise string
 
 // EnvironmentResponseLineQuality The phone line the simulated caller is on: packet loss applied to its 20 ms audio packets, per direction. The loss pattern is seeded per call, so a redial loses the same packets. CLEAR: No loss. MINOR_LOSS: 1% random, both ways. CELL_EDGE: 5% in 80 ms gaps, both ways. POOR_CONNECTION: 10% in 120 ms gaps, both ways. ONE_WAY_DEGRADED: 8% in 80 ms gaps, toward the agent only. CUSTOM: the per-direction loss in `lineCustom`, up to 20% in 0.5 steps, with a mean burst of up to 10 packets (omit it for random loss).
 type EnvironmentResponseLineQuality string
+
+// EnvironmentResponsePhone The phone the simulated caller is on: the codecs the call passes through, both ways, on top of any loss in lineQuality. Null is no phone. LANDLINE: The narrow band of a phone handset and the codec of the phone network. MOBILE: The narrow band and the compressed voice codec of a mobile call. BLUETOOTH: A mobile on a car kit or headset: the Bluetooth link adds fizz under the voice, then the mobile codec.
+type EnvironmentResponsePhone string
 
 // ErrorResponse defines model for ErrorResponse.
 type ErrorResponse struct {
@@ -37488,6 +38388,11 @@ type GenerateSimulationResourcesInput struct {
 
 	// Industry The industry the agent serves.
 	Industry *GenerateSimulationResourcesInputIndustry `json:"industry,omitempty"`
+
+	// IndustryDescription The industry in your own words, when none of the listed ones fits. Use it with industry OTHER.
+	//
+	// Example: Funeral services
+	IndustryDescription *string `json:"industryDescription,omitempty"`
 
 	// TestingInstructions What you want tested, in your own words. Each scenario you describe becomes a flow.
 	TestingInstructions *string `json:"testingInstructions,omitempty"`
@@ -38354,6 +39259,9 @@ type ImprovCustomerFlow struct {
 
 	// Agents The agents this flow is run against.
 	Agents []struct {
+		// Capabilities What the agent handles. Null until it has been said.
+		Capabilities *[]ImprovCustomerFlowAgentsCapabilities `json:"capabilities"`
+
 		// CreatedAt Creation timestamp in ISO 8601 format
 		CreatedAt string `json:"createdAt"`
 
@@ -38369,11 +39277,17 @@ type ImprovCustomerFlow struct {
 		// Industry The industry the agent serves
 		Industry *ImprovCustomerFlowAgentsIndustry `json:"industry"`
 
+		// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+		IndustryDescription *string `json:"industryDescription"`
+
 		// Name Name of the agent
 		Name string `json:"name"`
 
 		// UpdatedAt Last update timestamp in ISO 8601 format
 		UpdatedAt string `json:"updatedAt"`
+
+		// WebsiteUrl The business's website, which simulation setup reads
+		WebsiteUrl *string `json:"websiteUrl"`
 	} `json:"agents"`
 
 	// CreatedAt Creation timestamp in ISO 8601 format
@@ -38396,6 +39310,9 @@ type ImprovCustomerFlow struct {
 	// UpdatedAt Last update timestamp in ISO 8601 format
 	UpdatedAt string `json:"updatedAt"`
 }
+
+// ImprovCustomerFlowAgentsCapabilities defines model for ImprovCustomerFlow.Agents.Capabilities.
+type ImprovCustomerFlowAgentsCapabilities string
 
 // ImprovCustomerFlowAgentsIndustry The industry the agent serves
 type ImprovCustomerFlowAgentsIndustry string
@@ -41606,7 +42523,7 @@ type PolicyMetricSettings struct {
 	// ScreeningBrief Call screening metrics: what the agent should say when a screener asks who is calling and why.
 	ScreeningBrief *string `json:"screeningBrief,omitempty"`
 
-	// ToolDefinitionIds Tool invocation metrics: the tool definitions to score. Empty or omitted scores every tool the agent has.
+	// ToolDefinitionIds Tool invocation metrics: the tool definitions to score. Required, with at least one tool, for Tool Invocation Correct, Order Correct, Parameters Correct and Result Correct, which score only the tools listed (a tool added to the agent later is not scored until it is listed). Tool Invocation Count and Tool Hallucination score every tool call when it is empty or omitted.
 	ToolDefinitionIds *[]openapi_types.UUID `json:"toolDefinitionIds,omitempty"`
 
 	// VerifiedProperties Property Verification metrics: the conversation properties to check against the transcript. Empty or omitted checks every custom property.
@@ -42950,6 +43867,9 @@ type ScriptedCustomerFlow struct {
 
 	// Agents The agents this flow is run against.
 	Agents []struct {
+		// Capabilities What the agent handles. Null until it has been said.
+		Capabilities *[]ScriptedCustomerFlowAgentsCapabilities `json:"capabilities"`
+
 		// CreatedAt Creation timestamp in ISO 8601 format
 		CreatedAt string `json:"createdAt"`
 
@@ -42965,11 +43885,17 @@ type ScriptedCustomerFlow struct {
 		// Industry The industry the agent serves
 		Industry *ScriptedCustomerFlowAgentsIndustry `json:"industry"`
 
+		// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+		IndustryDescription *string `json:"industryDescription"`
+
 		// Name Name of the agent
 		Name string `json:"name"`
 
 		// UpdatedAt Last update timestamp in ISO 8601 format
 		UpdatedAt string `json:"updatedAt"`
+
+		// WebsiteUrl The business's website, which simulation setup reads
+		WebsiteUrl *string `json:"websiteUrl"`
 	} `json:"agents"`
 
 	// BranchingMode How a run walks the graph. DETERMINISTIC ("Simulate every path" in the app) places one call per variant, each following its path exactly whatever the agent says. ADAPTIVE ("Adapt to your agent") collapses the paths into one call PER PERSONA, on which the simulated customer picks a branch from what the agent actually said. Both modes speak the exact authored lines, and neither changes how metrics or expectations grade.
@@ -43002,6 +43928,9 @@ type ScriptedCustomerFlow struct {
 	// UpdatedAt Last update timestamp in ISO 8601 format
 	UpdatedAt string `json:"updatedAt"`
 }
+
+// ScriptedCustomerFlowAgentsCapabilities defines model for ScriptedCustomerFlow.Agents.Capabilities.
+type ScriptedCustomerFlowAgentsCapabilities string
 
 // ScriptedCustomerFlowAgentsIndustry The industry the agent serves
 type ScriptedCustomerFlowAgentsIndustry string
@@ -44018,7 +44947,10 @@ type SimulationResourceGeneration struct {
 	// Id Simulation resource generation ID
 	Id       openapi_types.UUID                    `json:"id"`
 	Industry *SimulationResourceGenerationIndustry `json:"industry"`
-	Items    []SimulationResourceGenerationItem    `json:"items"`
+
+	// IndustryDescription The industry in your own words, when none of the listed ones fits
+	IndustryDescription *string                            `json:"industryDescription"`
+	Items               []SimulationResourceGenerationItem `json:"items"`
 
 	// Layers The checklist the generation works through
 	Layers []SimulationResourceGenerationLayer `json:"layers"`
@@ -44526,6 +45458,7 @@ type SimulationRunGroupReportDocument struct {
 		EvaluatedCount int     `json:"evaluatedCount"`
 		MedianLabel    *string `json:"medianLabel"`
 		MetricName     string  `json:"metricName"`
+		NonZeroCount   *int    `json:"nonZeroCount,omitempty"`
 		P95Label       *string `json:"p95Label"`
 	} `json:"aggregates"`
 	ExecutiveSummary []struct {
@@ -46834,6 +47767,11 @@ type UpdateEnvironmentInput struct {
 	// LineCustom Required with lineQuality CUSTOM, and refused with any other line.
 	LineCustom *LineCustom `json:"lineCustom,omitempty"`
 
+	// LineNoise Hiss on the line, both ways, from 0 (none) to 1 (heavy, about 10 dB under phone speech). Combines with the phone and lineQuality. Defaults to 0.
+	//
+	// Example: 0.4
+	LineNoise *float64 `json:"lineNoise,omitempty"`
+
 	// LineQuality The phone line the simulated caller is on: packet loss applied to its 20 ms audio packets, per direction. The loss pattern is seeded per call, so a redial loses the same packets. CLEAR: No loss. MINOR_LOSS: 1% random, both ways. CELL_EDGE: 5% in 80 ms gaps, both ways. POOR_CONNECTION: 10% in 120 ms gaps, both ways. ONE_WAY_DEGRADED: 8% in 80 ms gaps, toward the agent only. CUSTOM: the per-direction loss in `lineCustom`, up to 20% in 0.5 steps, with a mean burst of up to 10 packets (omit it for random loss). Defaults to CLEAR.
 	//
 	// Example: CELL_EDGE
@@ -46843,6 +47781,11 @@ type UpdateEnvironmentInput struct {
 	//
 	// Example: Busy call centre
 	Name *string `json:"name,omitempty"`
+
+	// Phone The phone the simulated caller is on: the codecs the call passes through, both ways, on top of any loss in lineQuality. Null is no phone. LANDLINE: The narrow band of a phone handset and the codec of the phone network. MOBILE: The narrow band and the compressed voice codec of a mobile call. BLUETOOTH: A mobile on a car kit or headset: the Bluetooth link adds fizz under the voice, then the mobile codec. Defaults to null.
+	//
+	// Example: MOBILE
+	Phone *UpdateEnvironmentInputPhone `json:"phone,omitempty"`
 }
 
 // UpdateEnvironmentInputBackgroundNoise The noise bed played underneath the simulated caller. NONE plays nothing.
@@ -46854,6 +47797,11 @@ type UpdateEnvironmentInputBackgroundNoise string
 //
 // Example: CELL_EDGE
 type UpdateEnvironmentInputLineQuality string
+
+// UpdateEnvironmentInputPhone The phone the simulated caller is on: the codecs the call passes through, both ways, on top of any loss in lineQuality. Null is no phone. LANDLINE: The narrow band of a phone handset and the codec of the phone network. MOBILE: The narrow band and the compressed voice codec of a mobile call. BLUETOOTH: A mobile on a car kit or headset: the Bluetooth link adds fizz under the voice, then the mobile codec. Defaults to null.
+//
+// Example: MOBILE
+type UpdateEnvironmentInputPhone string
 
 // UpdateFlowVariantInput Fields to change on a variant. Omitted fields are left alone. Making a variant the default is a separate operation, since it also demotes the current default.
 type UpdateFlowVariantInput struct {
@@ -47519,6 +48467,9 @@ type VoicemailCustomerFlow struct {
 
 	// Agents The agents this flow is run against.
 	Agents []struct {
+		// Capabilities What the agent handles. Null until it has been said.
+		Capabilities *[]VoicemailCustomerFlowAgentsCapabilities `json:"capabilities"`
+
 		// CreatedAt Creation timestamp in ISO 8601 format
 		CreatedAt string `json:"createdAt"`
 
@@ -47534,11 +48485,17 @@ type VoicemailCustomerFlow struct {
 		// Industry The industry the agent serves
 		Industry *VoicemailCustomerFlowAgentsIndustry `json:"industry"`
 
+		// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+		IndustryDescription *string `json:"industryDescription"`
+
 		// Name Name of the agent
 		Name string `json:"name"`
 
 		// UpdatedAt Last update timestamp in ISO 8601 format
 		UpdatedAt string `json:"updatedAt"`
+
+		// WebsiteUrl The business's website, which simulation setup reads
+		WebsiteUrl *string `json:"websiteUrl"`
 	} `json:"agents"`
 
 	// CreatedAt Creation timestamp in ISO 8601 format
@@ -47561,6 +48518,9 @@ type VoicemailCustomerFlow struct {
 	// UpdatedAt Last update timestamp in ISO 8601 format
 	UpdatedAt string `json:"updatedAt"`
 }
+
+// VoicemailCustomerFlowAgentsCapabilities defines model for VoicemailCustomerFlow.Agents.Capabilities.
+type VoicemailCustomerFlowAgentsCapabilities string
 
 // VoicemailCustomerFlowAgentsIndustry The industry the agent serves
 type VoicemailCustomerFlowAgentsIndustry string
@@ -47796,11 +48756,17 @@ type GetV1AgentParams struct {
 	SearchText *string `form:"searchText,omitempty" json:"searchText,omitempty"`
 }
 
+// GetV1Agent200JSONResponseBodyDataCapabilities defines parameters for GetV1Agent.
+type GetV1Agent200JSONResponseBodyDataCapabilities string
+
 // GetV1Agent200JSONResponseBodyDataIndustry defines parameters for GetV1Agent.
 type GetV1Agent200JSONResponseBodyDataIndustry string
 
 // PostV1AgentJSONBody defines parameters for PostV1Agent.
 type PostV1AgentJSONBody struct {
+	// Capabilities What the agent handles. Simulation setup tests each one.
+	Capabilities *[]PostV1AgentJSONBodyCapabilities `json:"capabilities,omitempty"`
+
 	// CustomId Custom identifier for the agent. Must be unique in the project.
 	CustomId *string `json:"customId,omitempty"`
 
@@ -47813,21 +48779,42 @@ type PostV1AgentJSONBody struct {
 	// Industry The industry the agent serves.
 	Industry *PostV1AgentJSONBodyIndustry `json:"industry,omitempty"`
 
+	// IndustryDescription The industry in your own words, when none of the listed ones fits. Use it with industry OTHER.
+	IndustryDescription *string `json:"industryDescription,omitempty"`
+
 	// Name Name of the agent
 	Name string `json:"name"`
 
 	// Prompt The agent's system prompt.
 	Prompt *string `json:"prompt,omitempty"`
+
+	// WebsiteUrl The business's website. Simulation setup reads it.
+	WebsiteUrl *string `json:"websiteUrl,omitempty"`
 }
+
+// PostV1AgentJSONBodyCapabilities defines parameters for PostV1Agent.
+type PostV1AgentJSONBodyCapabilities string
 
 // PostV1AgentJSONBodyIndustry defines parameters for PostV1Agent.
 type PostV1AgentJSONBodyIndustry string
+
+// PostV1Agent201JSONResponseBodyDataCapabilities defines parameters for PostV1Agent.
+type PostV1Agent201JSONResponseBodyDataCapabilities string
 
 // PostV1Agent201JSONResponseBodyDataIndustry defines parameters for PostV1Agent.
 type PostV1Agent201JSONResponseBodyDataIndustry string
 
 // PostV1AgentBuildJSONBody defines parameters for PostV1AgentBuild.
 type PostV1AgentBuildJSONBody struct {
+	// Capabilities What the agent handles. Recorded on the agent, so its simulation setup tests each.
+	Capabilities *[]PostV1AgentBuildJSONBodyCapabilities `json:"capabilities,omitempty"`
+
+	// Industry The industry the agent serves. Recorded on the agent, so its simulation setup starts from that industry.
+	Industry *PostV1AgentBuildJSONBodyIndustry `json:"industry,omitempty"`
+
+	// IndustryDescription The industry in your own words, when none of the listed ones fits. Use it with industry OTHER.
+	IndustryDescription *string `json:"industryDescription,omitempty"`
+
 	// JobDescription One-line description of what the agent should do. Roark authors the system prompt from this.
 	JobDescription string `json:"jobDescription"`
 
@@ -47866,7 +48853,16 @@ type PostV1AgentBuildJSONBody struct {
 
 	// Voice Optional display name of the agent's voice. The authored prompt matches its delivery to it.
 	Voice *string `json:"voice,omitempty"`
+
+	// WebsiteUrl The business's website. The agent's prompt is written from the facts it states.
+	WebsiteUrl *string `json:"websiteUrl,omitempty"`
 }
+
+// PostV1AgentBuildJSONBodyCapabilities defines parameters for PostV1AgentBuild.
+type PostV1AgentBuildJSONBodyCapabilities string
+
+// PostV1AgentBuildJSONBodyIndustry defines parameters for PostV1AgentBuild.
+type PostV1AgentBuildJSONBodyIndustry string
 
 // PostV1AgentBuildJSONBodyLlmProvider defines parameters for PostV1AgentBuild.
 type PostV1AgentBuildJSONBodyLlmProvider string
@@ -47876,6 +48872,9 @@ type PostV1AgentBuildJSONBodySttProvider string
 
 // PostV1AgentBuildJSONBodyTtsProvider defines parameters for PostV1AgentBuild.
 type PostV1AgentBuildJSONBodyTtsProvider string
+
+// PostV1AgentBuild201JSONResponseBodyDataCapabilities defines parameters for PostV1AgentBuild.
+type PostV1AgentBuild201JSONResponseBodyDataCapabilities string
 
 // PostV1AgentBuild201JSONResponseBodyDataIndustry defines parameters for PostV1AgentBuild.
 type PostV1AgentBuild201JSONResponseBodyDataIndustry string
@@ -47891,17 +48890,41 @@ type GetV1AgentEndpointParams struct {
 // DeleteV1AgentByAgentId200JSONResponseBodyDataDeleted defines parameters for DeleteV1AgentByAgentId.
 type DeleteV1AgentByAgentId200JSONResponseBodyDataDeleted bool
 
+// GetV1AgentByAgentId200JSONResponseBodyDataCapabilities defines parameters for GetV1AgentByAgentId.
+type GetV1AgentByAgentId200JSONResponseBodyDataCapabilities string
+
 // GetV1AgentByAgentId200JSONResponseBodyDataIndustry defines parameters for GetV1AgentByAgentId.
 type GetV1AgentByAgentId200JSONResponseBodyDataIndustry string
 
 // PutV1AgentByAgentIdJSONBody defines parameters for PutV1AgentByAgentId.
 type PutV1AgentByAgentIdJSONBody struct {
+	// Capabilities What the agent handles. Simulation setup tests each one.
+	Capabilities *[]PutV1AgentByAgentIdJSONBodyCapabilities `json:"capabilities,omitempty"`
+
 	// Description Description of the agent
 	Description *string `json:"description,omitempty"`
 
+	// Industry The industry the agent serves.
+	Industry *PutV1AgentByAgentIdJSONBodyIndustry `json:"industry,omitempty"`
+
+	// IndustryDescription The industry in your own words, when none of the listed ones fits. Use it with industry OTHER.
+	IndustryDescription *string `json:"industryDescription,omitempty"`
+
 	// Name Name of the agent
 	Name *string `json:"name,omitempty"`
+
+	// WebsiteUrl The business's website. Simulation setup reads it.
+	WebsiteUrl *string `json:"websiteUrl,omitempty"`
 }
+
+// PutV1AgentByAgentIdJSONBodyCapabilities defines parameters for PutV1AgentByAgentId.
+type PutV1AgentByAgentIdJSONBodyCapabilities string
+
+// PutV1AgentByAgentIdJSONBodyIndustry defines parameters for PutV1AgentByAgentId.
+type PutV1AgentByAgentIdJSONBodyIndustry string
+
+// PutV1AgentByAgentId200JSONResponseBodyDataCapabilities defines parameters for PutV1AgentByAgentId.
+type PutV1AgentByAgentId200JSONResponseBodyDataCapabilities string
 
 // PutV1AgentByAgentId200JSONResponseBodyDataIndustry defines parameters for PutV1AgentByAgentId.
 type PutV1AgentByAgentId200JSONResponseBodyDataIndustry string
@@ -89734,6 +90757,9 @@ type GetV1AgentResponse struct {
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
 		Data []struct {
+			// Capabilities What the agent handles. Null until it has been said.
+			Capabilities *[]GetV1Agent200JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 			// CreatedAt Creation timestamp in ISO 8601 format
 			CreatedAt string `json:"createdAt"`
 
@@ -89749,11 +90775,17 @@ type GetV1AgentResponse struct {
 			// Industry The industry the agent serves
 			Industry *GetV1Agent200JSONResponseBodyDataIndustry `json:"industry"`
 
+			// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+			IndustryDescription *string `json:"industryDescription"`
+
 			// Name Name of the agent
 			Name string `json:"name"`
 
 			// UpdatedAt Last update timestamp in ISO 8601 format
 			UpdatedAt string `json:"updatedAt"`
+
+			// WebsiteUrl The business's website, which simulation setup reads
+			WebsiteUrl *string `json:"websiteUrl"`
 		} `json:"data"`
 		Pagination struct {
 			// HasMore Whether there are more items to fetch
@@ -89775,6 +90807,9 @@ type GetV1AgentResponse struct {
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetV1AgentResponse) GetJSON200() *struct {
 	Data []struct {
+		// Capabilities What the agent handles. Null until it has been said.
+		Capabilities *[]GetV1Agent200JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 		// CreatedAt Creation timestamp in ISO 8601 format
 		CreatedAt string `json:"createdAt"`
 
@@ -89790,11 +90825,17 @@ func (r GetV1AgentResponse) GetJSON200() *struct {
 		// Industry The industry the agent serves
 		Industry *GetV1Agent200JSONResponseBodyDataIndustry `json:"industry"`
 
+		// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+		IndustryDescription *string `json:"industryDescription"`
+
 		// Name Name of the agent
 		Name string `json:"name"`
 
 		// UpdatedAt Last update timestamp in ISO 8601 format
 		UpdatedAt string `json:"updatedAt"`
+
+		// WebsiteUrl The business's website, which simulation setup reads
+		WebsiteUrl *string `json:"websiteUrl"`
 	} `json:"data"`
 	Pagination struct {
 		// HasMore Whether there are more items to fetch
@@ -89855,6 +90896,9 @@ type PostV1AgentResponse struct {
 	// JSON201 the response for an HTTP 201 `application/json` response
 	JSON201 *struct {
 		Data struct {
+			// Capabilities What the agent handles. Null until it has been said.
+			Capabilities *[]PostV1Agent201JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 			// CreatedAt Creation timestamp in ISO 8601 format
 			CreatedAt string `json:"createdAt"`
 
@@ -89870,11 +90914,17 @@ type PostV1AgentResponse struct {
 			// Industry The industry the agent serves
 			Industry *PostV1Agent201JSONResponseBodyDataIndustry `json:"industry"`
 
+			// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+			IndustryDescription *string `json:"industryDescription"`
+
 			// Name Name of the agent
 			Name string `json:"name"`
 
 			// UpdatedAt Last update timestamp in ISO 8601 format
 			UpdatedAt string `json:"updatedAt"`
+
+			// WebsiteUrl The business's website, which simulation setup reads
+			WebsiteUrl *string `json:"websiteUrl"`
 		} `json:"data"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -89892,6 +90942,9 @@ type PostV1AgentResponse struct {
 // GetJSON201 returns the response for an HTTP 201 `application/json` response
 func (r PostV1AgentResponse) GetJSON201() *struct {
 	Data struct {
+		// Capabilities What the agent handles. Null until it has been said.
+		Capabilities *[]PostV1Agent201JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 		// CreatedAt Creation timestamp in ISO 8601 format
 		CreatedAt string `json:"createdAt"`
 
@@ -89907,11 +90960,17 @@ func (r PostV1AgentResponse) GetJSON201() *struct {
 		// Industry The industry the agent serves
 		Industry *PostV1Agent201JSONResponseBodyDataIndustry `json:"industry"`
 
+		// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+		IndustryDescription *string `json:"industryDescription"`
+
 		// Name Name of the agent
 		Name string `json:"name"`
 
 		// UpdatedAt Last update timestamp in ISO 8601 format
 		UpdatedAt string `json:"updatedAt"`
+
+		// WebsiteUrl The business's website, which simulation setup reads
+		WebsiteUrl *string `json:"websiteUrl"`
 	} `json:"data"`
 } {
 	return r.JSON201
@@ -90498,6 +91557,9 @@ type PostV1AgentBuildResponse struct {
 	// JSON201 the response for an HTTP 201 `application/json` response
 	JSON201 *struct {
 		Data struct {
+			// Capabilities What the agent handles. Null until it has been said.
+			Capabilities *[]PostV1AgentBuild201JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 			// CreatedAt Creation timestamp in ISO 8601 format
 			CreatedAt string `json:"createdAt"`
 
@@ -90513,11 +91575,17 @@ type PostV1AgentBuildResponse struct {
 			// Industry The industry the agent serves
 			Industry *PostV1AgentBuild201JSONResponseBodyDataIndustry `json:"industry"`
 
+			// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+			IndustryDescription *string `json:"industryDescription"`
+
 			// Name Name of the agent
 			Name string `json:"name"`
 
 			// UpdatedAt Last update timestamp in ISO 8601 format
 			UpdatedAt string `json:"updatedAt"`
+
+			// WebsiteUrl The business's website, which simulation setup reads
+			WebsiteUrl *string `json:"websiteUrl"`
 		} `json:"data"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -90533,6 +91601,9 @@ type PostV1AgentBuildResponse struct {
 // GetJSON201 returns the response for an HTTP 201 `application/json` response
 func (r PostV1AgentBuildResponse) GetJSON201() *struct {
 	Data struct {
+		// Capabilities What the agent handles. Null until it has been said.
+		Capabilities *[]PostV1AgentBuild201JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 		// CreatedAt Creation timestamp in ISO 8601 format
 		CreatedAt string `json:"createdAt"`
 
@@ -90548,11 +91619,17 @@ func (r PostV1AgentBuildResponse) GetJSON201() *struct {
 		// Industry The industry the agent serves
 		Industry *PostV1AgentBuild201JSONResponseBodyDataIndustry `json:"industry"`
 
+		// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+		IndustryDescription *string `json:"industryDescription"`
+
 		// Name Name of the agent
 		Name string `json:"name"`
 
 		// UpdatedAt Last update timestamp in ISO 8601 format
 		UpdatedAt string `json:"updatedAt"`
+
+		// WebsiteUrl The business's website, which simulation setup reads
+		WebsiteUrl *string `json:"websiteUrl"`
 	} `json:"data"`
 } {
 	return r.JSON201
@@ -90995,6 +92072,9 @@ type GetV1AgentByAgentIdResponse struct {
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
 		Data struct {
+			// Capabilities What the agent handles. Null until it has been said.
+			Capabilities *[]GetV1AgentByAgentId200JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 			// CreatedAt Creation timestamp in ISO 8601 format
 			CreatedAt string `json:"createdAt"`
 
@@ -91010,11 +92090,17 @@ type GetV1AgentByAgentIdResponse struct {
 			// Industry The industry the agent serves
 			Industry *GetV1AgentByAgentId200JSONResponseBodyDataIndustry `json:"industry"`
 
+			// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+			IndustryDescription *string `json:"industryDescription"`
+
 			// Name Name of the agent
 			Name string `json:"name"`
 
 			// UpdatedAt Last update timestamp in ISO 8601 format
 			UpdatedAt string `json:"updatedAt"`
+
+			// WebsiteUrl The business's website, which simulation setup reads
+			WebsiteUrl *string `json:"websiteUrl"`
 		} `json:"data"`
 	}
 	// JSON401 the response for an HTTP 401 `application/json` response
@@ -91028,6 +92114,9 @@ type GetV1AgentByAgentIdResponse struct {
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetV1AgentByAgentIdResponse) GetJSON200() *struct {
 	Data struct {
+		// Capabilities What the agent handles. Null until it has been said.
+		Capabilities *[]GetV1AgentByAgentId200JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 		// CreatedAt Creation timestamp in ISO 8601 format
 		CreatedAt string `json:"createdAt"`
 
@@ -91043,11 +92132,17 @@ func (r GetV1AgentByAgentIdResponse) GetJSON200() *struct {
 		// Industry The industry the agent serves
 		Industry *GetV1AgentByAgentId200JSONResponseBodyDataIndustry `json:"industry"`
 
+		// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+		IndustryDescription *string `json:"industryDescription"`
+
 		// Name Name of the agent
 		Name string `json:"name"`
 
 		// UpdatedAt Last update timestamp in ISO 8601 format
 		UpdatedAt string `json:"updatedAt"`
+
+		// WebsiteUrl The business's website, which simulation setup reads
+		WebsiteUrl *string `json:"websiteUrl"`
 	} `json:"data"`
 } {
 	return r.JSON200
@@ -91103,6 +92198,9 @@ type PutV1AgentByAgentIdResponse struct {
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
 		Data struct {
+			// Capabilities What the agent handles. Null until it has been said.
+			Capabilities *[]PutV1AgentByAgentId200JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 			// CreatedAt Creation timestamp in ISO 8601 format
 			CreatedAt string `json:"createdAt"`
 
@@ -91118,11 +92216,17 @@ type PutV1AgentByAgentIdResponse struct {
 			// Industry The industry the agent serves
 			Industry *PutV1AgentByAgentId200JSONResponseBodyDataIndustry `json:"industry"`
 
+			// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+			IndustryDescription *string `json:"industryDescription"`
+
 			// Name Name of the agent
 			Name string `json:"name"`
 
 			// UpdatedAt Last update timestamp in ISO 8601 format
 			UpdatedAt string `json:"updatedAt"`
+
+			// WebsiteUrl The business's website, which simulation setup reads
+			WebsiteUrl *string `json:"websiteUrl"`
 		} `json:"data"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -91138,6 +92242,9 @@ type PutV1AgentByAgentIdResponse struct {
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r PutV1AgentByAgentIdResponse) GetJSON200() *struct {
 	Data struct {
+		// Capabilities What the agent handles. Null until it has been said.
+		Capabilities *[]PutV1AgentByAgentId200JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 		// CreatedAt Creation timestamp in ISO 8601 format
 		CreatedAt string `json:"createdAt"`
 
@@ -91153,11 +92260,17 @@ func (r PutV1AgentByAgentIdResponse) GetJSON200() *struct {
 		// Industry The industry the agent serves
 		Industry *PutV1AgentByAgentId200JSONResponseBodyDataIndustry `json:"industry"`
 
+		// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+		IndustryDescription *string `json:"industryDescription"`
+
 		// Name Name of the agent
 		Name string `json:"name"`
 
 		// UpdatedAt Last update timestamp in ISO 8601 format
 		UpdatedAt string `json:"updatedAt"`
+
+		// WebsiteUrl The business's website, which simulation setup reads
+		WebsiteUrl *string `json:"websiteUrl"`
 	} `json:"data"`
 } {
 	return r.JSON200
@@ -120850,6 +121963,9 @@ func ParseGetV1AgentResponse(rsp *http.Response) (*GetV1AgentResponse, error) {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			Data []struct {
+				// Capabilities What the agent handles. Null until it has been said.
+				Capabilities *[]GetV1Agent200JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 				// CreatedAt Creation timestamp in ISO 8601 format
 				CreatedAt string `json:"createdAt"`
 
@@ -120865,11 +121981,17 @@ func ParseGetV1AgentResponse(rsp *http.Response) (*GetV1AgentResponse, error) {
 				// Industry The industry the agent serves
 				Industry *GetV1Agent200JSONResponseBodyDataIndustry `json:"industry"`
 
+				// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+				IndustryDescription *string `json:"industryDescription"`
+
 				// Name Name of the agent
 				Name string `json:"name"`
 
 				// UpdatedAt Last update timestamp in ISO 8601 format
 				UpdatedAt string `json:"updatedAt"`
+
+				// WebsiteUrl The business's website, which simulation setup reads
+				WebsiteUrl *string `json:"websiteUrl"`
 			} `json:"data"`
 			Pagination struct {
 				// HasMore Whether there are more items to fetch
@@ -120923,6 +122045,9 @@ func ParsePostV1AgentResponse(rsp *http.Response) (*PostV1AgentResponse, error) 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			Data struct {
+				// Capabilities What the agent handles. Null until it has been said.
+				Capabilities *[]PostV1Agent201JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 				// CreatedAt Creation timestamp in ISO 8601 format
 				CreatedAt string `json:"createdAt"`
 
@@ -120938,11 +122063,17 @@ func ParsePostV1AgentResponse(rsp *http.Response) (*PostV1AgentResponse, error) 
 				// Industry The industry the agent serves
 				Industry *PostV1Agent201JSONResponseBodyDataIndustry `json:"industry"`
 
+				// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+				IndustryDescription *string `json:"industryDescription"`
+
 				// Name Name of the agent
 				Name string `json:"name"`
 
 				// UpdatedAt Last update timestamp in ISO 8601 format
 				UpdatedAt string `json:"updatedAt"`
+
+				// WebsiteUrl The business's website, which simulation setup reads
+				WebsiteUrl *string `json:"websiteUrl"`
 			} `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -121423,6 +122554,9 @@ func ParsePostV1AgentBuildResponse(rsp *http.Response) (*PostV1AgentBuildRespons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			Data struct {
+				// Capabilities What the agent handles. Null until it has been said.
+				Capabilities *[]PostV1AgentBuild201JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 				// CreatedAt Creation timestamp in ISO 8601 format
 				CreatedAt string `json:"createdAt"`
 
@@ -121438,11 +122572,17 @@ func ParsePostV1AgentBuildResponse(rsp *http.Response) (*PostV1AgentBuildRespons
 				// Industry The industry the agent serves
 				Industry *PostV1AgentBuild201JSONResponseBodyDataIndustry `json:"industry"`
 
+				// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+				IndustryDescription *string `json:"industryDescription"`
+
 				// Name Name of the agent
 				Name string `json:"name"`
 
 				// UpdatedAt Last update timestamp in ISO 8601 format
 				UpdatedAt string `json:"updatedAt"`
+
+				// WebsiteUrl The business's website, which simulation setup reads
+				WebsiteUrl *string `json:"websiteUrl"`
 			} `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -121778,6 +122918,9 @@ func ParseGetV1AgentByAgentIdResponse(rsp *http.Response) (*GetV1AgentByAgentIdR
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			Data struct {
+				// Capabilities What the agent handles. Null until it has been said.
+				Capabilities *[]GetV1AgentByAgentId200JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 				// CreatedAt Creation timestamp in ISO 8601 format
 				CreatedAt string `json:"createdAt"`
 
@@ -121793,11 +122936,17 @@ func ParseGetV1AgentByAgentIdResponse(rsp *http.Response) (*GetV1AgentByAgentIdR
 				// Industry The industry the agent serves
 				Industry *GetV1AgentByAgentId200JSONResponseBodyDataIndustry `json:"industry"`
 
+				// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+				IndustryDescription *string `json:"industryDescription"`
+
 				// Name Name of the agent
 				Name string `json:"name"`
 
 				// UpdatedAt Last update timestamp in ISO 8601 format
 				UpdatedAt string `json:"updatedAt"`
+
+				// WebsiteUrl The business's website, which simulation setup reads
+				WebsiteUrl *string `json:"websiteUrl"`
 			} `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -121848,6 +122997,9 @@ func ParsePutV1AgentByAgentIdResponse(rsp *http.Response) (*PutV1AgentByAgentIdR
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			Data struct {
+				// Capabilities What the agent handles. Null until it has been said.
+				Capabilities *[]PutV1AgentByAgentId200JSONResponseBodyDataCapabilities `json:"capabilities"`
+
 				// CreatedAt Creation timestamp in ISO 8601 format
 				CreatedAt string `json:"createdAt"`
 
@@ -121863,11 +123015,17 @@ func ParsePutV1AgentByAgentIdResponse(rsp *http.Response) (*PutV1AgentByAgentIdR
 				// Industry The industry the agent serves
 				Industry *PutV1AgentByAgentId200JSONResponseBodyDataIndustry `json:"industry"`
 
+				// IndustryDescription The industry in the customer's own words, when none of the listed ones fits (industry OTHER)
+				IndustryDescription *string `json:"industryDescription"`
+
 				// Name Name of the agent
 				Name string `json:"name"`
 
 				// UpdatedAt Last update timestamp in ISO 8601 format
 				UpdatedAt string `json:"updatedAt"`
+
+				// WebsiteUrl The business's website, which simulation setup reads
+				WebsiteUrl *string `json:"websiteUrl"`
 			} `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {

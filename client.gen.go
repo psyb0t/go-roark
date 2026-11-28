@@ -9457,6 +9457,48 @@ func (e ErrorResponseType) Valid() bool {
 	}
 }
 
+// Defines values for FlowEdgeCaseInputHoldMode.
+const (
+	FlowEdgeCaseInputHoldModeCUSTOM  FlowEdgeCaseInputHoldMode = "CUSTOM"
+	FlowEdgeCaseInputHoldModeDEFAULT FlowEdgeCaseInputHoldMode = "DEFAULT"
+	FlowEdgeCaseInputHoldModeNEVER   FlowEdgeCaseInputHoldMode = "NEVER"
+)
+
+// Valid indicates whether the value is a known member of the FlowEdgeCaseInputHoldMode enum.
+func (e FlowEdgeCaseInputHoldMode) Valid() bool {
+	switch e {
+	case FlowEdgeCaseInputHoldModeCUSTOM:
+		return true
+	case FlowEdgeCaseInputHoldModeDEFAULT:
+		return true
+	case FlowEdgeCaseInputHoldModeNEVER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FlowHappyPathInputHoldMode.
+const (
+	FlowHappyPathInputHoldModeCUSTOM  FlowHappyPathInputHoldMode = "CUSTOM"
+	FlowHappyPathInputHoldModeDEFAULT FlowHappyPathInputHoldMode = "DEFAULT"
+	FlowHappyPathInputHoldModeNEVER   FlowHappyPathInputHoldMode = "NEVER"
+)
+
+// Valid indicates whether the value is a known member of the FlowHappyPathInputHoldMode enum.
+func (e FlowHappyPathInputHoldMode) Valid() bool {
+	switch e {
+	case FlowHappyPathInputHoldModeCUSTOM:
+		return true
+	case FlowHappyPathInputHoldModeDEFAULT:
+		return true
+	case FlowHappyPathInputHoldModeNEVER:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FlowStep0OffScriptPolicyReaction.
 const (
 	FlowStep0OffScriptPolicyReactionREPEAT     FlowStep0OffScriptPolicyReaction = "REPEAT"
@@ -11209,6 +11251,48 @@ func (e ImprovCustomerFlowType) Valid() bool {
 	}
 }
 
+// Defines values for ImprovFlowConfigEdgeCasesHoldMode.
+const (
+	ImprovFlowConfigEdgeCasesHoldModeCUSTOM  ImprovFlowConfigEdgeCasesHoldMode = "CUSTOM"
+	ImprovFlowConfigEdgeCasesHoldModeDEFAULT ImprovFlowConfigEdgeCasesHoldMode = "DEFAULT"
+	ImprovFlowConfigEdgeCasesHoldModeNEVER   ImprovFlowConfigEdgeCasesHoldMode = "NEVER"
+)
+
+// Valid indicates whether the value is a known member of the ImprovFlowConfigEdgeCasesHoldMode enum.
+func (e ImprovFlowConfigEdgeCasesHoldMode) Valid() bool {
+	switch e {
+	case ImprovFlowConfigEdgeCasesHoldModeCUSTOM:
+		return true
+	case ImprovFlowConfigEdgeCasesHoldModeDEFAULT:
+		return true
+	case ImprovFlowConfigEdgeCasesHoldModeNEVER:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ImprovFlowConfigHappyPathHoldMode.
+const (
+	ImprovFlowConfigHappyPathHoldModeCUSTOM  ImprovFlowConfigHappyPathHoldMode = "CUSTOM"
+	ImprovFlowConfigHappyPathHoldModeDEFAULT ImprovFlowConfigHappyPathHoldMode = "DEFAULT"
+	ImprovFlowConfigHappyPathHoldModeNEVER   ImprovFlowConfigHappyPathHoldMode = "NEVER"
+)
+
+// Valid indicates whether the value is a known member of the ImprovFlowConfigHappyPathHoldMode enum.
+func (e ImprovFlowConfigHappyPathHoldMode) Valid() bool {
+	switch e {
+	case ImprovFlowConfigHappyPathHoldModeCUSTOM:
+		return true
+	case ImprovFlowConfigHappyPathHoldModeDEFAULT:
+		return true
+	case ImprovFlowConfigHappyPathHoldModeNEVER:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ImprovFlowConfigKind.
 const (
 	ImprovFlowConfigKindFlow ImprovFlowConfigKind = "flow"
@@ -11758,6 +11842,27 @@ func (e ImprovFlowVariantHandoffPersonasUnderstoodLanguages) Valid() bool {
 	case ImprovFlowVariantHandoffPersonasUnderstoodLanguagesTR:
 		return true
 	case ImprovFlowVariantHandoffPersonasUnderstoodLanguagesZH:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ImprovFlowVariantHoldMode.
+const (
+	ImprovFlowVariantHoldModeCUSTOM  ImprovFlowVariantHoldMode = "CUSTOM"
+	ImprovFlowVariantHoldModeDEFAULT ImprovFlowVariantHoldMode = "DEFAULT"
+	ImprovFlowVariantHoldModeNEVER   ImprovFlowVariantHoldMode = "NEVER"
+)
+
+// Valid indicates whether the value is a known member of the ImprovFlowVariantHoldMode enum.
+func (e ImprovFlowVariantHoldMode) Valid() bool {
+	switch e {
+	case ImprovFlowVariantHoldModeCUSTOM:
+		return true
+	case ImprovFlowVariantHoldModeDEFAULT:
+		return true
+	case ImprovFlowVariantHoldModeNEVER:
 		return true
 	default:
 		return false
@@ -12493,6 +12598,117 @@ func (e IssueStatus) Valid() bool {
 	case IssueStatusOPEN:
 		return true
 	case IssueStatusRESOLVED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for IssueConversationMetricValuesParticipantRole.
+const (
+	IssueConversationMetricValuesParticipantRoleAgent    IssueConversationMetricValuesParticipantRole = "agent"
+	IssueConversationMetricValuesParticipantRoleCustomer IssueConversationMetricValuesParticipantRole = "customer"
+)
+
+// Valid indicates whether the value is a known member of the IssueConversationMetricValuesParticipantRole enum.
+func (e IssueConversationMetricValuesParticipantRole) Valid() bool {
+	switch e {
+	case IssueConversationMetricValuesParticipantRoleAgent:
+		return true
+	case IssueConversationMetricValuesParticipantRoleCustomer:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for IssueConversationSourceMetricValuesParticipantRole.
+const (
+	IssueConversationSourceMetricValuesParticipantRoleAgent    IssueConversationSourceMetricValuesParticipantRole = "agent"
+	IssueConversationSourceMetricValuesParticipantRoleCustomer IssueConversationSourceMetricValuesParticipantRole = "customer"
+)
+
+// Valid indicates whether the value is a known member of the IssueConversationSourceMetricValuesParticipantRole enum.
+func (e IssueConversationSourceMetricValuesParticipantRole) Valid() bool {
+	switch e {
+	case IssueConversationSourceMetricValuesParticipantRoleAgent:
+		return true
+	case IssueConversationSourceMetricValuesParticipantRoleCustomer:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for IssueDetailSeverity.
+const (
+	IssueDetailSeverityCRITICAL IssueDetailSeverity = "CRITICAL"
+	IssueDetailSeverityHIGH     IssueDetailSeverity = "HIGH"
+	IssueDetailSeverityLOW      IssueDetailSeverity = "LOW"
+	IssueDetailSeverityMEDIUM   IssueDetailSeverity = "MEDIUM"
+)
+
+// Valid indicates whether the value is a known member of the IssueDetailSeverity enum.
+func (e IssueDetailSeverity) Valid() bool {
+	switch e {
+	case IssueDetailSeverityCRITICAL:
+		return true
+	case IssueDetailSeverityHIGH:
+		return true
+	case IssueDetailSeverityLOW:
+		return true
+	case IssueDetailSeverityMEDIUM:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for IssueDetailSource.
+const (
+	IssueDetailSourceAGENT           IssueDetailSource = "AGENT"
+	IssueDetailSourceAPI             IssueDetailSource = "API"
+	IssueDetailSourceMANUAL          IssueDetailSource = "MANUAL"
+	IssueDetailSourceSINGLECALLALERT IssueDetailSource = "SINGLE_CALL_ALERT"
+	IssueDetailSourceTRACEFAILURE    IssueDetailSource = "TRACE_FAILURE"
+	IssueDetailSourceTRENDALERT      IssueDetailSource = "TREND_ALERT"
+)
+
+// Valid indicates whether the value is a known member of the IssueDetailSource enum.
+func (e IssueDetailSource) Valid() bool {
+	switch e {
+	case IssueDetailSourceAGENT:
+		return true
+	case IssueDetailSourceAPI:
+		return true
+	case IssueDetailSourceMANUAL:
+		return true
+	case IssueDetailSourceSINGLECALLALERT:
+		return true
+	case IssueDetailSourceTRACEFAILURE:
+		return true
+	case IssueDetailSourceTRENDALERT:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for IssueDetailStatus.
+const (
+	IssueDetailStatusACKED    IssueDetailStatus = "ACKED"
+	IssueDetailStatusOPEN     IssueDetailStatus = "OPEN"
+	IssueDetailStatusRESOLVED IssueDetailStatus = "RESOLVED"
+)
+
+// Valid indicates whether the value is a known member of the IssueDetailStatus enum.
+func (e IssueDetailStatus) Valid() bool {
+	switch e {
+	case IssueDetailStatusACKED:
+		return true
+	case IssueDetailStatusOPEN:
+		return true
+	case IssueDetailStatusRESOLVED:
 		return true
 	default:
 		return false
@@ -17203,6 +17419,27 @@ func (e ScriptedFlowConfigType) Valid() bool {
 	}
 }
 
+// Defines values for ScriptedFlowVariantHoldMode.
+const (
+	ScriptedFlowVariantHoldModeCUSTOM  ScriptedFlowVariantHoldMode = "CUSTOM"
+	ScriptedFlowVariantHoldModeDEFAULT ScriptedFlowVariantHoldMode = "DEFAULT"
+	ScriptedFlowVariantHoldModeNEVER   ScriptedFlowVariantHoldMode = "NEVER"
+)
+
+// Valid indicates whether the value is a known member of the ScriptedFlowVariantHoldMode enum.
+func (e ScriptedFlowVariantHoldMode) Valid() bool {
+	switch e {
+	case ScriptedFlowVariantHoldModeCUSTOM:
+		return true
+	case ScriptedFlowVariantHoldModeDEFAULT:
+		return true
+	case ScriptedFlowVariantHoldModeNEVER:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ScriptedFlowVariantPersonaOverrideAccent.
 const (
 	ScriptedFlowVariantPersonaOverrideAccentAU       ScriptedFlowVariantPersonaOverrideAccent = "AU"
@@ -19657,6 +19894,21 @@ func (e SimulationRunGroupReportStatus) Valid() bool {
 	case SimulationRunGroupReportStatusPENDING:
 		return true
 	case SimulationRunGroupReportStatusREADY:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SimulationRunGroupReportDocumentAggregatesIsCore.
+const (
+	SimulationRunGroupReportDocumentAggregatesIsCoreTrue SimulationRunGroupReportDocumentAggregatesIsCore = true
+)
+
+// Valid indicates whether the value is a known member of the SimulationRunGroupReportDocumentAggregatesIsCore enum.
+func (e SimulationRunGroupReportDocumentAggregatesIsCore) Valid() bool {
+	switch e {
+	case SimulationRunGroupReportDocumentAggregatesIsCoreTrue:
 		return true
 	default:
 		return false
@@ -22558,6 +22810,27 @@ func (e UpdateEnvironmentInputPhone) Valid() bool {
 	}
 }
 
+// Defines values for UpdateFlowVariantInputHoldMode.
+const (
+	UpdateFlowVariantInputHoldModeCUSTOM  UpdateFlowVariantInputHoldMode = "CUSTOM"
+	UpdateFlowVariantInputHoldModeDEFAULT UpdateFlowVariantInputHoldMode = "DEFAULT"
+	UpdateFlowVariantInputHoldModeNEVER   UpdateFlowVariantInputHoldMode = "NEVER"
+)
+
+// Valid indicates whether the value is a known member of the UpdateFlowVariantInputHoldMode enum.
+func (e UpdateFlowVariantInputHoldMode) Valid() bool {
+	switch e {
+	case UpdateFlowVariantInputHoldModeCUSTOM:
+		return true
+	case UpdateFlowVariantInputHoldModeDEFAULT:
+		return true
+	case UpdateFlowVariantInputHoldModeNEVER:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UpdateHttpRequestDefinitionInputMethod.
 const (
 	UpdateHttpRequestDefinitionInputMethodGET   UpdateHttpRequestDefinitionInputMethod = "GET"
@@ -23257,6 +23530,27 @@ const (
 func (e VoicemailCustomerFlowType) Valid() bool {
 	switch e {
 	case VoicemailCustomerFlowTypeVOICEMAIL:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for VoicemailFlowVariantHoldMode.
+const (
+	VoicemailFlowVariantHoldModeCUSTOM  VoicemailFlowVariantHoldMode = "CUSTOM"
+	VoicemailFlowVariantHoldModeDEFAULT VoicemailFlowVariantHoldMode = "DEFAULT"
+	VoicemailFlowVariantHoldModeNEVER   VoicemailFlowVariantHoldMode = "NEVER"
+)
+
+// Valid indicates whether the value is a known member of the VoicemailFlowVariantHoldMode enum.
+func (e VoicemailFlowVariantHoldMode) Valid() bool {
+	switch e {
+	case VoicemailFlowVariantHoldModeCUSTOM:
+		return true
+	case VoicemailFlowVariantHoldModeDEFAULT:
+		return true
+	case VoicemailFlowVariantHoldModeNEVER:
 		return true
 	default:
 		return false
@@ -35754,9 +36048,10 @@ type CreateRunPlanFromConfig struct {
 	// Both grade something authored on the flow that nothing else measures, which is why it is on by
 	// default.
 	//
-	// Set false when the `metrics` list is meant to be exhaustive: a plan testing only whether the caller
-	// can complete the flow may not want the agent graded on its expectations as well. False also pins
-	// the plan against any automatic metric Roark adds later.
+	// Set false when no flow-earned metric should be added: a plan testing only whether the caller can
+	// complete the flow may not want the agent graded on its expectations as well. False also pins the
+	// plan against any flow-earned metric Roark adds later. It does not affect the Core Analysis metrics
+	// (`coreMetrics` on the plan), which every run collects and which never decide pass or fail.
 	//
 	// Example: true
 	IncludeAutomaticMetrics *bool `json:"includeAutomaticMetrics,omitempty"`
@@ -37843,6 +38138,21 @@ type FlowEdgeCaseInput struct {
 	AdditionalExpectations *[]FlowExpectationInput `json:"additionalExpectations,omitempty"`
 	EnvironmentId          *openapi_types.UUID     `json:"environmentId,omitempty"`
 
+	// HoldInstructions CUSTOM only: when the simulated customer waits quietly, written as instructions it follows. It stays silent until the agent speaks again or the longest wait runs out, then takes the turn back. Required when holdMode is CUSTOM. Up to 4000 characters.
+	//
+	// Example: Hold whenever the agent is processing a credit card number and says okay.
+	HoldInstructions *string `json:"holdInstructions,omitempty"`
+
+	// HoldMaxSeconds The longest one wait on hold can run, in seconds, from 5 to 600. When it runs out the simulated customer takes the turn back. Null uses the default, 180. Ignored when holdMode is NEVER.
+	//
+	// Example: 30
+	HoldMaxSeconds *int `json:"holdMaxSeconds,omitempty"`
+
+	// HoldMode How the simulated customer waits quietly on hold while your agent is busy. DEFAULT follows Roark's built-in rules: wait when the agent asks for a moment ("bear with me", "let me pull that up"), and never in place of answering a question. CUSTOM follows holdInstructions. NEVER means this customer never holds. Null on an edge case uses the happy path's mode, instructions and longest wait together; null on the happy path is DEFAULT. Applies to improv variants and to the improvised turns of scripted ones.
+	//
+	// Example: CUSTOM
+	HoldMode *FlowEdgeCaseInputHoldMode `json:"holdMode,omitempty"`
+
 	// IncludeFlowExpectations Whether this edge case is graded on the flow's agentExpectations as well as its own additionalExpectations. Defaults to true; false grades it on its additionalExpectations only.
 	IncludeFlowExpectations *bool   `json:"includeFlowExpectations,omitempty"`
 	OpeningLine             *string `json:"openingLine,omitempty"`
@@ -37856,6 +38166,11 @@ type FlowEdgeCaseInput struct {
 	Prompt *string `json:"prompt,omitempty"`
 	Title  string  `json:"title"`
 }
+
+// FlowEdgeCaseInputHoldMode How the simulated customer waits quietly on hold while your agent is busy. DEFAULT follows Roark's built-in rules: wait when the agent asks for a moment ("bear with me", "let me pull that up"), and never in place of answering a question. CUSTOM follows holdInstructions. NEVER means this customer never holds. Null on an edge case uses the happy path's mode, instructions and longest wait together; null on the happy path is DEFAULT. Applies to improv variants and to the improvised turns of scripted ones.
+//
+// Example: CUSTOM
+type FlowEdgeCaseInputHoldMode string
 
 // FlowExpectation One thing the agent under test is graded against.
 type FlowExpectation struct {
@@ -37885,7 +38200,22 @@ type FlowHappyPathInput struct {
 
 	// EnvironmentId The conditions this flow runs under. Edge cases inherit them unless they name their own.
 	EnvironmentId openapi_types.UUID `json:"environmentId"`
-	OpeningLine   *string            `json:"openingLine,omitempty"`
+
+	// HoldInstructions CUSTOM only: when the simulated customer waits quietly, written as instructions it follows. It stays silent until the agent speaks again or the longest wait runs out, then takes the turn back. Required when holdMode is CUSTOM. Up to 4000 characters.
+	//
+	// Example: Hold whenever the agent is processing a credit card number and says okay.
+	HoldInstructions *string `json:"holdInstructions,omitempty"`
+
+	// HoldMaxSeconds The longest one wait on hold can run, in seconds, from 5 to 600. When it runs out the simulated customer takes the turn back. Null uses the default, 180. Ignored when holdMode is NEVER.
+	//
+	// Example: 30
+	HoldMaxSeconds *int `json:"holdMaxSeconds,omitempty"`
+
+	// HoldMode How the simulated customer waits quietly on hold while your agent is busy. DEFAULT follows Roark's built-in rules: wait when the agent asks for a moment ("bear with me", "let me pull that up"), and never in place of answering a question. CUSTOM follows holdInstructions. NEVER means this customer never holds. Null on an edge case uses the happy path's mode, instructions and longest wait together; null on the happy path is DEFAULT. Applies to improv variants and to the improvised turns of scripted ones.
+	//
+	// Example: CUSTOM
+	HoldMode    *FlowHappyPathInputHoldMode `json:"holdMode,omitempty"`
+	OpeningLine *string                     `json:"openingLine,omitempty"`
 
 	// PersonaOverrideId The persona this flow runs as. Edge cases inherit it unless they name their own.
 	PersonaOverrideId               openapi_types.UUID  `json:"personaOverrideId"`
@@ -37896,6 +38226,11 @@ type FlowHappyPathInput struct {
 	Prompt *string `json:"prompt,omitempty"`
 	Title  string  `json:"title"`
 }
+
+// FlowHappyPathInputHoldMode How the simulated customer waits quietly on hold while your agent is busy. DEFAULT follows Roark's built-in rules: wait when the agent asks for a moment ("bear with me", "let me pull that up"), and never in place of answering a question. CUSTOM follows holdInstructions. NEVER means this customer never holds. Null on an edge case uses the happy path's mode, instructions and longest wait together; null on the happy path is DEFAULT. Applies to improv variants and to the improvised turns of scripted ones.
+//
+// Example: CUSTOM
+type FlowHappyPathInputHoldMode string
 
 // FlowStep One step in a scripted flow's conversation.
 //
@@ -39328,30 +39663,42 @@ type ImprovFlowConfig struct {
 	Agents      []string `json:"agents"`
 	Description *string  `json:"description,omitempty"`
 	EdgeCases   *[]struct {
-		Environment             *string   `json:"environment,omitempty"`
-		Expectations            *[]string `json:"expectations,omitempty"`
-		IncludeFlowExpectations *bool     `json:"includeFlowExpectations,omitempty"`
-		Name                    string    `json:"name"`
-		OpeningLine             *string   `json:"openingLine,omitempty"`
-		Persona                 *string   `json:"persona,omitempty"`
-		Prompt                  *string   `json:"prompt,omitempty"`
-		Title                   *string   `json:"title,omitempty"`
+		Environment             *string                            `json:"environment,omitempty"`
+		Expectations            *[]string                          `json:"expectations,omitempty"`
+		HoldInstructions        *string                            `json:"holdInstructions,omitempty"`
+		HoldMaxSeconds          *int                               `json:"holdMaxSeconds,omitempty"`
+		HoldMode                *ImprovFlowConfigEdgeCasesHoldMode `json:"holdMode,omitempty"`
+		IncludeFlowExpectations *bool                              `json:"includeFlowExpectations,omitempty"`
+		Name                    string                             `json:"name"`
+		OpeningLine             *string                            `json:"openingLine,omitempty"`
+		Persona                 *string                            `json:"persona,omitempty"`
+		Prompt                  *string                            `json:"prompt,omitempty"`
+		Title                   *string                            `json:"title,omitempty"`
 	} `json:"edgeCases,omitempty"`
 	Expectations *[]string `json:"expectations,omitempty"`
 	Folder       *string   `json:"folder,omitempty"`
 	HappyPath    struct {
-		Environment  string    `json:"environment"`
-		Expectations *[]string `json:"expectations,omitempty"`
-		OpeningLine  *string   `json:"openingLine,omitempty"`
-		Persona      string    `json:"persona"`
-		Prompt       *string   `json:"prompt,omitempty"`
-		Title        *string   `json:"title,omitempty"`
+		Environment      string                             `json:"environment"`
+		Expectations     *[]string                          `json:"expectations,omitempty"`
+		HoldInstructions *string                            `json:"holdInstructions,omitempty"`
+		HoldMaxSeconds   *int                               `json:"holdMaxSeconds,omitempty"`
+		HoldMode         *ImprovFlowConfigHappyPathHoldMode `json:"holdMode,omitempty"`
+		OpeningLine      *string                            `json:"openingLine,omitempty"`
+		Persona          string                             `json:"persona"`
+		Prompt           *string                            `json:"prompt,omitempty"`
+		Title            *string                            `json:"title,omitempty"`
 	} `json:"happyPath"`
 	Kind  ImprovFlowConfigKind `json:"kind"`
 	Name  string               `json:"name"`
 	Title *string              `json:"title,omitempty"`
 	Type  ImprovFlowConfigType `json:"type"`
 }
+
+// ImprovFlowConfigEdgeCasesHoldMode defines model for ImprovFlowConfig.EdgeCases.HoldMode.
+type ImprovFlowConfigEdgeCasesHoldMode string
+
+// ImprovFlowConfigHappyPathHoldMode defines model for ImprovFlowConfig.HappyPath.HoldMode.
+type ImprovFlowConfigHappyPathHoldMode string
 
 // ImprovFlowConfigKind defines model for ImprovFlowConfig.Kind.
 type ImprovFlowConfigKind string
@@ -39468,7 +39815,22 @@ type ImprovFlowVariant struct {
 		// UpdatedAt Last update timestamp
 		UpdatedAt string `json:"updatedAt"`
 	} `json:"handoffPersonas"`
-	Id openapi_types.UUID `json:"id"`
+
+	// HoldInstructions CUSTOM only: when the simulated customer waits quietly, written as instructions it follows. It stays silent until the agent speaks again or the longest wait runs out, then takes the turn back. Required when holdMode is CUSTOM. Up to 4000 characters.
+	//
+	// Example: Hold whenever the agent is processing a credit card number and says okay.
+	HoldInstructions *string `json:"holdInstructions"`
+
+	// HoldMaxSeconds The longest one wait on hold can run, in seconds, from 5 to 600. When it runs out the simulated customer takes the turn back. Null uses the default, 180. Ignored when holdMode is NEVER.
+	//
+	// Example: 30
+	HoldMaxSeconds *int `json:"holdMaxSeconds"`
+
+	// HoldMode How the simulated customer waits quietly on hold while your agent is busy. DEFAULT follows Roark's built-in rules: wait when the agent asks for a moment ("bear with me", "let me pull that up"), and never in place of answering a question. CUSTOM follows holdInstructions. NEVER means this customer never holds. Null on an edge case uses the happy path's mode, instructions and longest wait together; null on the happy path is DEFAULT. Applies to improv variants and to the improvised turns of scripted ones.
+	//
+	// Example: CUSTOM
+	HoldMode *ImprovFlowVariantHoldMode `json:"holdMode"`
+	Id       openapi_types.UUID         `json:"id"`
 
 	// IncludeFlowExpectations Whether this variant is graded on the flow's agentExpectations as well as its additionalExpectations. False grades it on its additionalExpectations only. Always true on the happy path.
 	IncludeFlowExpectations bool `json:"includeFlowExpectations"`
@@ -39629,6 +39991,11 @@ type ImprovFlowVariantHandoffPersonasSpeechPace string
 
 // ImprovFlowVariantHandoffPersonasUnderstoodLanguages defines model for ImprovFlowVariant.HandoffPersonas.UnderstoodLanguages.
 type ImprovFlowVariantHandoffPersonasUnderstoodLanguages string
+
+// ImprovFlowVariantHoldMode How the simulated customer waits quietly on hold while your agent is busy. DEFAULT follows Roark's built-in rules: wait when the agent asks for a moment ("bear with me", "let me pull that up"), and never in place of answering a question. CUSTOM follows holdInstructions. NEVER means this customer never holds. Null on an edge case uses the happy path's mode, instructions and longest wait together; null on the happy path is DEFAULT. Applies to improv variants and to the improvised turns of scripted ones.
+//
+// Example: CUSTOM
+type ImprovFlowVariantHoldMode string
 
 // ImprovFlowVariantPersonaOverrideAccent Accent of the persona, defined using ISO 3166-1 alpha-2 country codes with optional variants
 type ImprovFlowVariantPersonaOverrideAccent string
@@ -39796,9 +40163,10 @@ type InlineRunPlanConfig struct {
 	// Both grade something authored on the flow that nothing else measures, which is why it is on by
 	// default.
 	//
-	// Set false when the `metrics` list is meant to be exhaustive: a plan testing only whether the caller
-	// can complete the flow may not want the agent graded on its expectations as well. False also pins
-	// the plan against any automatic metric Roark adds later.
+	// Set false when no flow-earned metric should be added: a plan testing only whether the caller can
+	// complete the flow may not want the agent graded on its expectations as well. False also pins the
+	// plan against any flow-earned metric Roark adds later. It does not affect the Core Analysis metrics
+	// (`coreMetrics` on the plan), which every run collects and which never decide pass or fail.
 	//
 	// Example: true
 	IncludeAutomaticMetrics *bool `json:"includeAutomaticMetrics,omitempty"`
@@ -39933,10 +40301,19 @@ type InviteOrgProjectMemberInputRole string
 
 // Issue An issue surfaced on the Roark Issues page
 type Issue struct {
+	// AgentId For an issue opened by a failing check: the agent its failing calls were on. Otherwise null.
+	AgentId *openapi_types.UUID `json:"agentId"`
+
+	// AgentName That agent's name, or null when there is no agent or it has been deleted.
+	AgentName *string `json:"agentName"`
+
 	// AlertId Only set when source is an alert
 	AlertId        *openapi_types.UUID `json:"alertId"`
 	AssigneeUserId *openapi_types.UUID `json:"assigneeUserId"`
-	CreatedAt      string              `json:"createdAt"`
+
+	// Check For an issue opened by a failing check: the check that failed. Otherwise null.
+	Check     *IssueCheck `json:"check"`
+	CreatedAt string      `json:"createdAt"`
 
 	// EventCount How many times this issue has been observed.
 	EventCount int `json:"eventCount"`
@@ -39976,6 +40353,159 @@ type IssueSource string
 
 // IssueStatus Lifecycle state
 type IssueStatus string
+
+// IssueCheck The pass/fail check an issue is about
+type IssueCheck struct {
+	// CheckName The check's current name, or null when the check no longer exists
+	CheckName *string `json:"checkName"`
+
+	// MetricDefinitionId The pass/fail metric that failed
+	MetricDefinitionId openapi_types.UUID `json:"metricDefinitionId"`
+
+	// MetricVariantId The variant of that metric that failed
+	MetricVariantId openapi_types.UUID `json:"metricVariantId"`
+}
+
+// IssueConversation defines model for IssueConversation.
+type IssueConversation struct {
+	// Agents Agents that handled the conversation
+	Agents []struct {
+		Id   openapi_types.UUID `json:"id"`
+		Name string             `json:"name"`
+	} `json:"agents"`
+
+	// CallId The call, or null for a chat
+	CallId *openapi_types.UUID `json:"callId"`
+
+	// ChatId The chat, or null for a call
+	ChatId *openapi_types.UUID `json:"chatId"`
+
+	// Contributed Whether the conversation's own value pushed the alert toward firing. True when that cannot be judged, such as for issues that do not come from a trend alert.
+	Contributed bool `json:"contributed"`
+
+	// EventCount How many of the issue's occurrences include this conversation
+	EventCount      int    `json:"eventCount"`
+	FirstObservedAt string `json:"firstObservedAt"`
+
+	// IsSimulated True when the conversation came from a Roark simulation
+	IsSimulated    bool   `json:"isSimulated"`
+	LastObservedAt string `json:"lastObservedAt"`
+
+	// MetricValues What the issue holds against this conversation. For a trend alert, the alert's metric, worst first. For any other issue, the values its occurrences cite, such as a failing check's verdict.
+	MetricValues []struct {
+		// MetricDefinitionId The metric the value is for
+		MetricDefinitionId openapi_types.UUID `json:"metricDefinitionId"`
+
+		// ParticipantRole Side of the conversation the value was measured on: `agent`, or `customer` (including a simulated customer). Null when the metric is not per participant or the value is for a background speaker.
+		ParticipantRole *IssueConversationMetricValuesParticipantRole `json:"participantRole"`
+
+		// Reasoning Why the value was given, such as the judge’s explanation. Null when none was recorded.
+		Reasoning *string                               `json:"reasoning"`
+		Value     *IssueConversation_MetricValues_Value `json:"value"`
+	} `json:"metricValues"`
+
+	// SourceMetricValues For a cited check graded on another metric, that metric's values on this conversation: the score the check judged, with its reasoning. Empty otherwise.
+	SourceMetricValues []struct {
+		// MetricDefinitionId The metric the value is for
+		MetricDefinitionId openapi_types.UUID `json:"metricDefinitionId"`
+
+		// ParticipantRole Side of the conversation the value was measured on: `agent`, or `customer` (including a simulated customer). Null when the metric is not per participant or the value is for a background speaker.
+		ParticipantRole *IssueConversationSourceMetricValuesParticipantRole `json:"participantRole"`
+
+		// Reasoning Why the value was given, such as the judge’s explanation. Null when none was recorded.
+		Reasoning *string                                     `json:"reasoning"`
+		Value     *IssueConversation_SourceMetricValues_Value `json:"value"`
+	} `json:"sourceMetricValues"`
+
+	// StartedAt When the call or chat started (ISO-8601). Null if it was deleted.
+	StartedAt *string `json:"startedAt"`
+}
+
+// IssueConversationMetricValuesParticipantRole Side of the conversation the value was measured on: `agent`, or `customer` (including a simulated customer). Null when the metric is not per participant or the value is for a background speaker.
+type IssueConversationMetricValuesParticipantRole string
+
+// IssueConversationMetricValuesValue0 defines model for IssueConversation.MetricValues.Value.0.
+type IssueConversationMetricValuesValue0 = float64
+
+// IssueConversationMetricValuesValue1 defines model for IssueConversation.MetricValues.Value.1.
+type IssueConversationMetricValuesValue1 = bool
+
+// IssueConversation_MetricValues_Value defines model for IssueConversation.MetricValues.Value.
+type IssueConversation_MetricValues_Value struct {
+	union json.RawMessage
+}
+
+// IssueConversationSourceMetricValuesParticipantRole Side of the conversation the value was measured on: `agent`, or `customer` (including a simulated customer). Null when the metric is not per participant or the value is for a background speaker.
+type IssueConversationSourceMetricValuesParticipantRole string
+
+// IssueConversationSourceMetricValuesValue0 defines model for IssueConversation.SourceMetricValues.Value.0.
+type IssueConversationSourceMetricValuesValue0 = float64
+
+// IssueConversationSourceMetricValuesValue1 defines model for IssueConversation.SourceMetricValues.Value.1.
+type IssueConversationSourceMetricValuesValue1 = bool
+
+// IssueConversation_SourceMetricValues_Value defines model for IssueConversation.SourceMetricValues.Value.
+type IssueConversation_SourceMetricValues_Value struct {
+	union json.RawMessage
+}
+
+// IssueDetail An issue with the calls and chats attached to it
+type IssueDetail struct {
+	// AgentId For an issue opened by a failing check: the agent its failing calls were on. Otherwise null.
+	AgentId *openapi_types.UUID `json:"agentId"`
+
+	// AgentName That agent's name, or null when there is no agent or it has been deleted.
+	AgentName *string `json:"agentName"`
+
+	// AlertId Only set when source is an alert
+	AlertId        *openapi_types.UUID `json:"alertId"`
+	AssigneeUserId *openapi_types.UUID `json:"assigneeUserId"`
+
+	// Check For an issue opened by a failing check: the check that failed. Otherwise null.
+	Check *IssueCheck `json:"check"`
+
+	// Conversations Calls and chats attached to the issue, each listed once (the newest 500). Conversations whose own value pushed the alert toward firing come first, worst first.
+	Conversations []IssueConversation `json:"conversations"`
+	CreatedAt     string              `json:"createdAt"`
+
+	// EventCount How many times this issue has been observed.
+	EventCount int `json:"eventCount"`
+
+	// Evidence Calls / chats attached as evidence
+	Evidence []IssueEvidence `json:"evidence"`
+
+	// Fingerprint Producer-supplied dedup key. Same fingerprint coalesces into the same issue.
+	Fingerprint string             `json:"fingerprint"`
+	Id          openapi_types.UUID `json:"id"`
+
+	// LastEventAt Timestamp of the most recent occurrence, or null if no events yet.
+	LastEventAt    *string            `json:"lastEventAt"`
+	OpenedAt       string             `json:"openedAt"`
+	OrganizationId openapi_types.UUID `json:"organizationId"`
+	ProjectId      openapi_types.UUID `json:"projectId"`
+	ResolvedAt     *string            `json:"resolvedAt"`
+
+	// Severity Coarse priority — LOW / MEDIUM / HIGH / CRITICAL
+	Severity *IssueDetailSeverity `json:"severity"`
+
+	// Source Who opened the issue
+	Source IssueDetailSource `json:"source"`
+
+	// Status Lifecycle state
+	Status    IssueDetailStatus `json:"status"`
+	Summary   *string           `json:"summary"`
+	Title     string            `json:"title"`
+	UpdatedAt *string           `json:"updatedAt"`
+}
+
+// IssueDetailSeverity Coarse priority — LOW / MEDIUM / HIGH / CRITICAL
+type IssueDetailSeverity string
+
+// IssueDetailSource Who opened the issue
+type IssueDetailSource string
+
+// IssueDetailStatus Lifecycle state
+type IssueDetailStatus string
 
 // IssueEvidence defines model for IssueEvidence.
 type IssueEvidence struct {
@@ -43069,6 +43599,12 @@ type RunPlanResponse struct {
 	// ComparisonProperty The property of the caller or their surroundings this plan investigates, such as `BACKGROUND_NOISE`. The run report compares the arms on it. `null` means the report works out for itself which property varies.
 	ComparisonProperty *RunPlanResponseComparisonProperty `json:"comparisonProperty"`
 
+	// CoreMetrics The Core Analysis metrics every run collects on every simulation, on top of `metrics`: timing, latency,
+	// turn-taking and how the call ended. Read-only: a run adds them by itself, and a simulation collects only
+	// the ones that apply to it (a chat skips the call-only ones). They cost nothing and never decide pass or
+	// fail. To gate a run on one, add its check to `metrics`, such as `agent_responsive_check`.
+	CoreMetrics []SimulationCoreMetricRef `json:"coreMetrics"`
+
 	// CreatedAt When the run plan was created
 	CreatedAt string `json:"createdAt"`
 
@@ -43101,7 +43637,7 @@ type RunPlanResponse struct {
 	// Id Unique identifier of the run plan
 	Id openapi_types.UUID `json:"id"`
 
-	// IncludeAutomaticMetrics Whether this plan lets a run add metrics by itself off the attached flows, on top of its own list. False means the `metrics` list is the whole answer.
+	// IncludeAutomaticMetrics Whether this plan lets a run add metrics by itself off the attached flows (Agent Expectations, Keypad Entry), on top of its own list. False means no flow-earned metrics: the run collects `metrics` plus the Core Analysis set in `coreMetrics`, which every run collects whatever this is set to.
 	IncludeAutomaticMetrics bool `json:"includeAutomaticMetrics"`
 
 	// IncludeFlowMetrics Whether this plan also collects each attached flow's own metrics, on top of its own list.
@@ -43990,7 +44526,22 @@ type ScriptedFlowVariant struct {
 
 	// Environment The conditions this runs under. Null means it inherits the happy path's.
 	Environment *EnvironmentResponse `json:"environment"`
-	Id          openapi_types.UUID   `json:"id"`
+
+	// HoldInstructions CUSTOM only: when the simulated customer waits quietly, written as instructions it follows. It stays silent until the agent speaks again or the longest wait runs out, then takes the turn back. Required when holdMode is CUSTOM. Up to 4000 characters.
+	//
+	// Example: Hold whenever the agent is processing a credit card number and says okay.
+	HoldInstructions *string `json:"holdInstructions"`
+
+	// HoldMaxSeconds The longest one wait on hold can run, in seconds, from 5 to 600. When it runs out the simulated customer takes the turn back. Null uses the default, 180. Ignored when holdMode is NEVER.
+	//
+	// Example: 30
+	HoldMaxSeconds *int `json:"holdMaxSeconds"`
+
+	// HoldMode How the simulated customer waits quietly on hold while your agent is busy. DEFAULT follows Roark's built-in rules: wait when the agent asks for a moment ("bear with me", "let me pull that up"), and never in place of answering a question. CUSTOM follows holdInstructions. NEVER means this customer never holds. Null on an edge case uses the happy path's mode, instructions and longest wait together; null on the happy path is DEFAULT. Applies to improv variants and to the improvised turns of scripted ones.
+	//
+	// Example: CUSTOM
+	HoldMode *ScriptedFlowVariantHoldMode `json:"holdMode"`
+	Id       openapi_types.UUID           `json:"id"`
 
 	// IncludeFlowExpectations Whether this variant is graded on the flow's agentExpectations as well as its additionalExpectations. False grades it on its additionalExpectations only. Always true on the happy path.
 	IncludeFlowExpectations bool    `json:"includeFlowExpectations"`
@@ -44105,6 +44656,11 @@ type ScriptedFlowVariant struct {
 	UpdatedAt string `json:"updatedAt"`
 }
 
+// ScriptedFlowVariantHoldMode How the simulated customer waits quietly on hold while your agent is busy. DEFAULT follows Roark's built-in rules: wait when the agent asks for a moment ("bear with me", "let me pull that up"), and never in place of answering a question. CUSTOM follows holdInstructions. NEVER means this customer never holds. Null on an edge case uses the happy path's mode, instructions and longest wait together; null on the happy path is DEFAULT. Applies to improv variants and to the improvised turns of scripted ones.
+//
+// Example: CUSTOM
+type ScriptedFlowVariantHoldMode string
+
 // ScriptedFlowVariantPersonaOverrideAccent Accent of the persona, defined using ISO 3166-1 alpha-2 country codes with optional variants
 type ScriptedFlowVariantPersonaOverrideAccent string
 
@@ -44201,6 +44757,17 @@ type SimulationAudioClipCategory string
 //
 // Example: HOLD_MUSIC_CLASSICAL_PIANO
 type SimulationAudioClipClip string
+
+// SimulationCoreMetricRef defines model for SimulationCoreMetricRef.
+type SimulationCoreMetricRef struct {
+	// Id Metric definition ID
+	Id openapi_types.UUID `json:"id"`
+
+	// Slug Stable metric slug
+	//
+	// Example: response_time
+	Slug string `json:"slug"`
+}
 
 // SimulationGroup A saved, repeatable set of plans that run together. Each run starts one run of every plan and groups them into a run group with one combined report.
 type SimulationGroup struct {
@@ -45454,12 +46021,13 @@ type SimulationRunGroupReportStatus string
 // SimulationRunGroupReportDocument The group report: the runs it covers, a scorecard summed across them, what went well, and the issues found, each merged from the per-run debriefs with call-level evidence. Every figure is computed from the runs; the prose is AI-written around those facts.
 type SimulationRunGroupReportDocument struct {
 	Aggregates []struct {
-		AverageLabel   *string `json:"averageLabel"`
-		EvaluatedCount int     `json:"evaluatedCount"`
-		MedianLabel    *string `json:"medianLabel"`
-		MetricName     string  `json:"metricName"`
-		NonZeroCount   *int    `json:"nonZeroCount,omitempty"`
-		P95Label       *string `json:"p95Label"`
+		AverageLabel   *string                                           `json:"averageLabel"`
+		EvaluatedCount int                                               `json:"evaluatedCount"`
+		IsCore         *SimulationRunGroupReportDocumentAggregatesIsCore `json:"isCore,omitempty"`
+		MedianLabel    *string                                           `json:"medianLabel"`
+		MetricName     string                                            `json:"metricName"`
+		NonZeroCount   *int                                              `json:"nonZeroCount,omitempty"`
+		P95Label       *string                                           `json:"p95Label"`
 	} `json:"aggregates"`
 	ExecutiveSummary []struct {
 		Body    string `json:"body"`
@@ -45585,6 +46153,9 @@ type SimulationRunGroupReportDocument struct {
 		Title string `json:"title"`
 	} `json:"wentWell"`
 }
+
+// SimulationRunGroupReportDocumentAggregatesIsCore defines model for SimulationRunGroupReportDocument.Aggregates.IsCore.
+type SimulationRunGroupReportDocumentAggregatesIsCore bool
 
 // SimulationRunGroupReportDocumentHeadlineStatTilesDeltaDirection defines model for SimulationRunGroupReportDocument.Headline.StatTiles.DeltaDirection.
 type SimulationRunGroupReportDocumentHeadlineStatTilesDeltaDirection string
@@ -46401,12 +46972,18 @@ type SimulationRunResultsSummary struct {
 
 // SimulationTemplate A built-in simulation template, resolved against this project: what it measures and what it runs.
 //
-// Example: {"category":"Safety","defaultEndCallReasons":[],"defaultMaxSimulationDurationSeconds":900,"description":"Adversarial probing. Tests refusals, jailbreak resistance, and whether the agent’s policy holds.","flows":[{"edgeCases":[{"id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","slug":"data-embedded-injection","title":"Encoded payload"}],"happyPath":{"title":"Direct attempt"},"id":"550e8400-e29b-41d4-a716-446655440000","slug":"sf-prompt-injection","title":"Prompt injection"}],"includeFlowMetrics":false,"metrics":[{"id":"9c1e2f3a-4b5c-4d6e-8f70-1a2b3c4d5e6f","slug":"compliance_prompt_injection_resistance"}],"slug":"red-teaming","sweep":null,"thresholds":[{"id":"a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d","slug":"compliance_prompt_injection_resistance_check"}],"title":"Red teaming"}
+// Example: {"category":"Safety","coreMetrics":[{"id":"3f6d2a1b-8c4e-4f5a-9b7d-2e1c0a9f8b7c","slug":"call_duration"},{"id":"5b8e1c2d-7f3a-4e6b-a9c1-4d2e3f5a6b7c","slug":"response_time"}],"defaultEndCallReasons":[],"defaultMaxSimulationDurationSeconds":900,"description":"Adversarial probing. Tests refusals, jailbreak resistance, and whether the agent’s policy holds.","flows":[{"edgeCases":[{"id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","slug":"data-embedded-injection","title":"Encoded payload"}],"happyPath":{"title":"Direct attempt"},"id":"550e8400-e29b-41d4-a716-446655440000","slug":"sf-prompt-injection","title":"Prompt injection"}],"includeFlowMetrics":false,"metrics":[{"id":"9c1e2f3a-4b5c-4d6e-8f70-1a2b3c4d5e6f","slug":"compliance_prompt_injection_resistance"}],"slug":"red-teaming","sweep":null,"thresholds":[{"id":"a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d","slug":"compliance_prompt_injection_resistance_check"}],"title":"Red teaming"}
 type SimulationTemplate struct {
 	// Category Grouping used in the dashboard library
 	//
 	// Example: Performance
 	Category string `json:"category"`
+
+	// CoreMetrics The Core Analysis metrics every run collects on every simulation, on top of `metrics`: timing, latency,
+	// turn-taking and how the call ended. Read-only: a run adds them by itself, and a simulation collects only
+	// the ones that apply to it (a chat skips the call-only ones). They cost nothing and never decide pass or
+	// fail. To gate a run on one, add its check to `metrics`, such as `agent_responsive_check`.
+	CoreMetrics []SimulationCoreMetricRef `json:"coreMetrics"`
 
 	// DefaultEndCallReasons The end-call conditions a run from this template uses unless the request sets its own.
 	//
@@ -47809,6 +48386,21 @@ type UpdateFlowVariantInput struct {
 	AdditionalExpectations *[]FlowExpectationInput `json:"additionalExpectations,omitempty"`
 	EnvironmentId          *openapi_types.UUID     `json:"environmentId,omitempty"`
 
+	// HoldInstructions CUSTOM only: when the simulated customer waits quietly, written as instructions it follows. It stays silent until the agent speaks again or the longest wait runs out, then takes the turn back. Required when holdMode is CUSTOM. Up to 4000 characters.
+	//
+	// Example: Hold whenever the agent is processing a credit card number and says okay.
+	HoldInstructions *string `json:"holdInstructions,omitempty"`
+
+	// HoldMaxSeconds The longest one wait on hold can run, in seconds, from 5 to 600. When it runs out the simulated customer takes the turn back. Null uses the default, 180. Ignored when holdMode is NEVER.
+	//
+	// Example: 30
+	HoldMaxSeconds *int `json:"holdMaxSeconds,omitempty"`
+
+	// HoldMode How the simulated customer waits quietly on hold while your agent is busy. DEFAULT follows Roark's built-in rules: wait when the agent asks for a moment ("bear with me", "let me pull that up"), and never in place of answering a question. CUSTOM follows holdInstructions. NEVER means this customer never holds. Null on an edge case uses the happy path's mode, instructions and longest wait together; null on the happy path is DEFAULT. Applies to improv variants and to the improvised turns of scripted ones.
+	//
+	// Example: CUSTOM
+	HoldMode *UpdateFlowVariantInputHoldMode `json:"holdMode,omitempty"`
+
 	// IncludeFlowExpectations Whether this edge case is graded on the flow's agentExpectations as well as its own additionalExpectations. Defaults to true; false grades it on its additionalExpectations only.
 	IncludeFlowExpectations *bool   `json:"includeFlowExpectations,omitempty"`
 	OpeningLine             *string `json:"openingLine,omitempty"`
@@ -47822,6 +48414,11 @@ type UpdateFlowVariantInput struct {
 	Prompt *string `json:"prompt,omitempty"`
 	Title  *string `json:"title,omitempty"`
 }
+
+// UpdateFlowVariantInputHoldMode How the simulated customer waits quietly on hold while your agent is busy. DEFAULT follows Roark's built-in rules: wait when the agent asks for a moment ("bear with me", "let me pull that up"), and never in place of answering a question. CUSTOM follows holdInstructions. NEVER means this customer never holds. Null on an edge case uses the happy path's mode, instructions and longest wait together; null on the happy path is DEFAULT. Applies to improv variants and to the improvised turns of scripted ones.
+//
+// Example: CUSTOM
+type UpdateFlowVariantInputHoldMode string
 
 // UpdateHttpRequestDefinitionInput Input for updating an HTTP request definition
 type UpdateHttpRequestDefinitionInput struct {
@@ -48544,7 +49141,22 @@ type VoicemailFlowVariant struct {
 
 	// Environment The conditions this runs under. Null means it inherits the happy path's.
 	Environment *EnvironmentResponse `json:"environment"`
-	Id          openapi_types.UUID   `json:"id"`
+
+	// HoldInstructions CUSTOM only: when the simulated customer waits quietly, written as instructions it follows. It stays silent until the agent speaks again or the longest wait runs out, then takes the turn back. Required when holdMode is CUSTOM. Up to 4000 characters.
+	//
+	// Example: Hold whenever the agent is processing a credit card number and says okay.
+	HoldInstructions *string `json:"holdInstructions"`
+
+	// HoldMaxSeconds The longest one wait on hold can run, in seconds, from 5 to 600. When it runs out the simulated customer takes the turn back. Null uses the default, 180. Ignored when holdMode is NEVER.
+	//
+	// Example: 30
+	HoldMaxSeconds *int `json:"holdMaxSeconds"`
+
+	// HoldMode How the simulated customer waits quietly on hold while your agent is busy. DEFAULT follows Roark's built-in rules: wait when the agent asks for a moment ("bear with me", "let me pull that up"), and never in place of answering a question. CUSTOM follows holdInstructions. NEVER means this customer never holds. Null on an edge case uses the happy path's mode, instructions and longest wait together; null on the happy path is DEFAULT. Applies to improv variants and to the improvised turns of scripted ones.
+	//
+	// Example: CUSTOM
+	HoldMode *VoicemailFlowVariantHoldMode `json:"holdMode"`
+	Id       openapi_types.UUID            `json:"id"`
 
 	// IncludeFlowExpectations Whether this variant is graded on the flow's agentExpectations as well as its additionalExpectations. False grades it on its additionalExpectations only. Always true on the happy path.
 	IncludeFlowExpectations bool    `json:"includeFlowExpectations"`
@@ -48655,6 +49267,11 @@ type VoicemailFlowVariant struct {
 	// UpdatedAt Last update timestamp in ISO 8601 format
 	UpdatedAt string `json:"updatedAt"`
 }
+
+// VoicemailFlowVariantHoldMode How the simulated customer waits quietly on hold while your agent is busy. DEFAULT follows Roark's built-in rules: wait when the agent asks for a moment ("bear with me", "let me pull that up"), and never in place of answering a question. CUSTOM follows holdInstructions. NEVER means this customer never holds. Null on an edge case uses the happy path's mode, instructions and longest wait together; null on the happy path is DEFAULT. Applies to improv variants and to the improvised turns of scripted ones.
+//
+// Example: CUSTOM
+type VoicemailFlowVariantHoldMode string
 
 // VoicemailFlowVariantPersonaOverrideAccent Accent of the persona, defined using ISO 3166-1 alpha-2 country codes with optional variants
 type VoicemailFlowVariantPersonaOverrideAccent string
@@ -58629,6 +59246,130 @@ func (t *InlineRunPlanConfig_ComparisonValues_Item) UnmarshalJSON(b []byte) erro
 	return err
 }
 
+// AsIssueConversationMetricValuesValue0 returns the union data inside the IssueConversation_MetricValues_Value as a IssueConversationMetricValuesValue0
+func (t IssueConversation_MetricValues_Value) AsIssueConversationMetricValuesValue0() (IssueConversationMetricValuesValue0, error) {
+	var body IssueConversationMetricValuesValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromIssueConversationMetricValuesValue0 overwrites any union data inside the IssueConversation_MetricValues_Value as the provided IssueConversationMetricValuesValue0
+func (t *IssueConversation_MetricValues_Value) FromIssueConversationMetricValuesValue0(v IssueConversationMetricValuesValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeIssueConversationMetricValuesValue0 performs a merge with any union data inside the IssueConversation_MetricValues_Value, using the provided IssueConversationMetricValuesValue0
+func (t *IssueConversation_MetricValues_Value) MergeIssueConversationMetricValuesValue0(v IssueConversationMetricValuesValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsIssueConversationMetricValuesValue1 returns the union data inside the IssueConversation_MetricValues_Value as a IssueConversationMetricValuesValue1
+func (t IssueConversation_MetricValues_Value) AsIssueConversationMetricValuesValue1() (IssueConversationMetricValuesValue1, error) {
+	var body IssueConversationMetricValuesValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromIssueConversationMetricValuesValue1 overwrites any union data inside the IssueConversation_MetricValues_Value as the provided IssueConversationMetricValuesValue1
+func (t *IssueConversation_MetricValues_Value) FromIssueConversationMetricValuesValue1(v IssueConversationMetricValuesValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeIssueConversationMetricValuesValue1 performs a merge with any union data inside the IssueConversation_MetricValues_Value, using the provided IssueConversationMetricValuesValue1
+func (t *IssueConversation_MetricValues_Value) MergeIssueConversationMetricValuesValue1(v IssueConversationMetricValuesValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t IssueConversation_MetricValues_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *IssueConversation_MetricValues_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsIssueConversationSourceMetricValuesValue0 returns the union data inside the IssueConversation_SourceMetricValues_Value as a IssueConversationSourceMetricValuesValue0
+func (t IssueConversation_SourceMetricValues_Value) AsIssueConversationSourceMetricValuesValue0() (IssueConversationSourceMetricValuesValue0, error) {
+	var body IssueConversationSourceMetricValuesValue0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromIssueConversationSourceMetricValuesValue0 overwrites any union data inside the IssueConversation_SourceMetricValues_Value as the provided IssueConversationSourceMetricValuesValue0
+func (t *IssueConversation_SourceMetricValues_Value) FromIssueConversationSourceMetricValuesValue0(v IssueConversationSourceMetricValuesValue0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeIssueConversationSourceMetricValuesValue0 performs a merge with any union data inside the IssueConversation_SourceMetricValues_Value, using the provided IssueConversationSourceMetricValuesValue0
+func (t *IssueConversation_SourceMetricValues_Value) MergeIssueConversationSourceMetricValuesValue0(v IssueConversationSourceMetricValuesValue0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsIssueConversationSourceMetricValuesValue1 returns the union data inside the IssueConversation_SourceMetricValues_Value as a IssueConversationSourceMetricValuesValue1
+func (t IssueConversation_SourceMetricValues_Value) AsIssueConversationSourceMetricValuesValue1() (IssueConversationSourceMetricValuesValue1, error) {
+	var body IssueConversationSourceMetricValuesValue1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromIssueConversationSourceMetricValuesValue1 overwrites any union data inside the IssueConversation_SourceMetricValues_Value as the provided IssueConversationSourceMetricValuesValue1
+func (t *IssueConversation_SourceMetricValues_Value) FromIssueConversationSourceMetricValuesValue1(v IssueConversationSourceMetricValuesValue1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeIssueConversationSourceMetricValuesValue1 performs a merge with any union data inside the IssueConversation_SourceMetricValues_Value, using the provided IssueConversationSourceMetricValuesValue1
+func (t *IssueConversation_SourceMetricValues_Value) MergeIssueConversationSourceMetricValuesValue1(v IssueConversationSourceMetricValuesValue1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t IssueConversation_SourceMetricValues_Value) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *IssueConversation_SourceMetricValues_Value) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsLiveReportFiltersValue0 returns the union data inside the LiveReport_Filters_Value as a LiveReportFiltersValue0
 func (t LiveReport_Filters_Value) AsLiveReportFiltersValue0() (LiveReportFiltersValue0, error) {
 	var body LiveReportFiltersValue0
@@ -66278,7 +67019,8 @@ type ClientInterface interface {
 	// A scripted flow's variants are owned by the path engine, one per path through the graph, so they are
 	// created by editing the graph through PUT /v1/customer-flow/{flowId}/graph rather than here.
 	//
-	// Leave personaOverrideId or environmentId unset to inherit the happy path's.
+	// Leave personaOverrideId or environmentId unset to inherit the happy path's, and holdMode unset to wait on
+	// hold the way the happy path does.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -66292,7 +67034,8 @@ type ClientInterface interface {
 	// A scripted flow's variants are owned by the path engine, one per path through the graph, so they are
 	// created by editing the graph through PUT /v1/customer-flow/{flowId}/graph rather than here.
 	//
-	// Leave personaOverrideId or environmentId unset to inherit the happy path's.
+	// Leave personaOverrideId or environmentId unset to inherit the happy path's, and holdMode unset to wait on
+	// hold the way the happy path does.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -66308,7 +67051,7 @@ type ClientInterface interface {
 
 	// PutV1CustomerFlowByFlowIdEdgeCaseByEdgeCaseIdWithBody Update an edge case
 	//
-	// Updates an edge case's title, persona, environment, brief, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
+	// Updates an edge case's title, persona, environment, brief, hold settings, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -66317,7 +67060,7 @@ type ClientInterface interface {
 
 	// PutV1CustomerFlowByFlowIdEdgeCaseByEdgeCaseId Update an edge case
 	//
-	// Updates an edge case's title, persona, environment, brief, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
+	// Updates an edge case's title, persona, environment, brief, hold settings, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -66367,11 +67110,11 @@ type ClientInterface interface {
 
 	// PutV1CustomerFlowByFlowIdHappyPathWithBody Update a flow's happy path
 	//
-	// Updates the happy path's title, persona, environment, brief or expectations. Omitted fields are left
-	// alone; `additionalExpectations` replaces the set wholesale rather than appending.
+	// Updates the happy path's title, persona, environment, brief, hold settings or expectations. Omitted fields
+	// are left alone; `additionalExpectations` replaces the set wholesale rather than appending.
 	//
-	// Its persona and environment are what the edge cases inherit, so changing them here changes every edge
-	// case that does not name its own.
+	// Its persona, environment and hold settings are what the edge cases inherit, so changing them here changes
+	// every edge case that does not name its own.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -66380,11 +67123,11 @@ type ClientInterface interface {
 
 	// PutV1CustomerFlowByFlowIdHappyPath Update a flow's happy path
 	//
-	// Updates the happy path's title, persona, environment, brief or expectations. Omitted fields are left
-	// alone; `additionalExpectations` replaces the set wholesale rather than appending.
+	// Updates the happy path's title, persona, environment, brief, hold settings or expectations. Omitted fields
+	// are left alone; `additionalExpectations` replaces the set wholesale rather than appending.
 	//
-	// Its persona and environment are what the edge cases inherit, so changing them here changes every edge
-	// case that does not name its own.
+	// Its persona, environment and hold settings are what the edge cases inherit, so changing them here changes
+	// every edge case that does not name its own.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -66717,7 +67460,7 @@ type ClientInterface interface {
 
 	// GetV1IssueByIssueId Get an issue
 	//
-	// Returns a single issue with its evidence rows.
+	// Returns a single issue with its evidence rows and its calls and chats, each listed once with its agents, whether it was simulated, and its value for the alert's metric.
 	//
 	// Corresponds with GET /v1/issue/{issueId} (the `GetV1IssueByIssueId` operationId).
 	GetV1IssueByIssueId(ctx context.Context, issueId string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -70975,7 +71718,8 @@ func (c *Client) PostV1CustomerFlowByFlowIdDuplicate(ctx context.Context, flowId
 // A scripted flow's variants are owned by the path engine, one per path through the graph, so they are
 // created by editing the graph through PUT /v1/customer-flow/{flowId}/graph rather than here.
 //
-// Leave personaOverrideId or environmentId unset to inherit the happy path's.
+// Leave personaOverrideId or environmentId unset to inherit the happy path's, and holdMode unset to wait on
+// hold the way the happy path does.
 //
 // Takes any type of body and a specified content type.
 //
@@ -70999,7 +71743,8 @@ func (c *Client) PostV1CustomerFlowByFlowIdEdgeCaseWithBody(ctx context.Context,
 // A scripted flow's variants are owned by the path engine, one per path through the graph, so they are
 // created by editing the graph through PUT /v1/customer-flow/{flowId}/graph rather than here.
 //
-// Leave personaOverrideId or environmentId unset to inherit the happy path's.
+// Leave personaOverrideId or environmentId unset to inherit the happy path's, and holdMode unset to wait on
+// hold the way the happy path does.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -71035,7 +71780,7 @@ func (c *Client) DeleteV1CustomerFlowByFlowIdEdgeCaseByEdgeCaseId(ctx context.Co
 
 // PutV1CustomerFlowByFlowIdEdgeCaseByEdgeCaseIdWithBody Update an edge case
 //
-// Updates an edge case's title, persona, environment, brief, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
+// Updates an edge case's title, persona, environment, brief, hold settings, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
 //
 // Takes any type of body and a specified content type.
 //
@@ -71054,7 +71799,7 @@ func (c *Client) PutV1CustomerFlowByFlowIdEdgeCaseByEdgeCaseIdWithBody(ctx conte
 
 // PutV1CustomerFlowByFlowIdEdgeCaseByEdgeCaseId Update an edge case
 //
-// Updates an edge case's title, persona, environment, brief, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
+// Updates an edge case's title, persona, environment, brief, hold settings, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -71144,11 +71889,11 @@ func (c *Client) PutV1CustomerFlowByFlowIdGraph(ctx context.Context, flowId open
 
 // PutV1CustomerFlowByFlowIdHappyPathWithBody Update a flow's happy path
 //
-// Updates the happy path's title, persona, environment, brief or expectations. Omitted fields are left
-// alone; `additionalExpectations` replaces the set wholesale rather than appending.
+// Updates the happy path's title, persona, environment, brief, hold settings or expectations. Omitted fields
+// are left alone; `additionalExpectations` replaces the set wholesale rather than appending.
 //
-// Its persona and environment are what the edge cases inherit, so changing them here changes every edge
-// case that does not name its own.
+// Its persona, environment and hold settings are what the edge cases inherit, so changing them here changes
+// every edge case that does not name its own.
 //
 // Takes any type of body and a specified content type.
 //
@@ -71167,11 +71912,11 @@ func (c *Client) PutV1CustomerFlowByFlowIdHappyPathWithBody(ctx context.Context,
 
 // PutV1CustomerFlowByFlowIdHappyPath Update a flow's happy path
 //
-// Updates the happy path's title, persona, environment, brief or expectations. Omitted fields are left
-// alone; `additionalExpectations` replaces the set wholesale rather than appending.
+// Updates the happy path's title, persona, environment, brief, hold settings or expectations. Omitted fields
+// are left alone; `additionalExpectations` replaces the set wholesale rather than appending.
 //
-// Its persona and environment are what the edge cases inherit, so changing them here changes every edge
-// case that does not name its own.
+// Its persona, environment and hold settings are what the edge cases inherit, so changing them here changes
+// every edge case that does not name its own.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -71894,7 +72639,7 @@ func (c *Client) PostV1Issue(ctx context.Context, body PostV1IssueJSONRequestBod
 
 // GetV1IssueByIssueId Get an issue
 //
-// Returns a single issue with its evidence rows.
+// Returns a single issue with its evidence rows and its calls and chats, each listed once with its agents, whether it was simulated, and its value for the alert's metric.
 //
 // Corresponds with GET /v1/issue/{issueId} (the `GetV1IssueByIssueId` operationId).
 func (c *Client) GetV1IssueByIssueId(ctx context.Context, issueId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -88545,7 +89290,8 @@ type ClientWithResponsesInterface interface {
 	// A scripted flow's variants are owned by the path engine, one per path through the graph, so they are
 	// created by editing the graph through PUT /v1/customer-flow/{flowId}/graph rather than here.
 	//
-	// Leave personaOverrideId or environmentId unset to inherit the happy path's.
+	// Leave personaOverrideId or environmentId unset to inherit the happy path's, and holdMode unset to wait on
+	// hold the way the happy path does.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -88559,7 +89305,8 @@ type ClientWithResponsesInterface interface {
 	// A scripted flow's variants are owned by the path engine, one per path through the graph, so they are
 	// created by editing the graph through PUT /v1/customer-flow/{flowId}/graph rather than here.
 	//
-	// Leave personaOverrideId or environmentId unset to inherit the happy path's.
+	// Leave personaOverrideId or environmentId unset to inherit the happy path's, and holdMode unset to wait on
+	// hold the way the happy path does.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -88577,7 +89324,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutV1CustomerFlowByFlowIdEdgeCaseByEdgeCaseIdWithBodyWithResponse Update an edge case
 	//
-	// Updates an edge case's title, persona, environment, brief, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
+	// Updates an edge case's title, persona, environment, brief, hold settings, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -88586,7 +89333,7 @@ type ClientWithResponsesInterface interface {
 
 	// PutV1CustomerFlowByFlowIdEdgeCaseByEdgeCaseIdWithResponse Update an edge case
 	//
-	// Updates an edge case's title, persona, environment, brief, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
+	// Updates an edge case's title, persona, environment, brief, hold settings, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -88638,11 +89385,11 @@ type ClientWithResponsesInterface interface {
 
 	// PutV1CustomerFlowByFlowIdHappyPathWithBodyWithResponse Update a flow's happy path
 	//
-	// Updates the happy path's title, persona, environment, brief or expectations. Omitted fields are left
-	// alone; `additionalExpectations` replaces the set wholesale rather than appending.
+	// Updates the happy path's title, persona, environment, brief, hold settings or expectations. Omitted fields
+	// are left alone; `additionalExpectations` replaces the set wholesale rather than appending.
 	//
-	// Its persona and environment are what the edge cases inherit, so changing them here changes every edge
-	// case that does not name its own.
+	// Its persona, environment and hold settings are what the edge cases inherit, so changing them here changes
+	// every edge case that does not name its own.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -88651,11 +89398,11 @@ type ClientWithResponsesInterface interface {
 
 	// PutV1CustomerFlowByFlowIdHappyPathWithResponse Update a flow's happy path
 	//
-	// Updates the happy path's title, persona, environment, brief or expectations. Omitted fields are left
-	// alone; `additionalExpectations` replaces the set wholesale rather than appending.
+	// Updates the happy path's title, persona, environment, brief, hold settings or expectations. Omitted fields
+	// are left alone; `additionalExpectations` replaces the set wholesale rather than appending.
 	//
-	// Its persona and environment are what the edge cases inherit, so changing them here changes every edge
-	// case that does not name its own.
+	// Its persona, environment and hold settings are what the edge cases inherit, so changing them here changes
+	// every edge case that does not name its own.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -89020,7 +89767,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetV1IssueByIssueIdWithResponse Get an issue
 	//
-	// Returns a single issue with its evidence rows.
+	// Returns a single issue with its evidence rows and its calls and chats, each listed once with its agents, whether it was simulated, and its value for the alert's metric.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -105264,8 +106011,8 @@ type PostV1IssueResponse struct {
 	HTTPResponse *http.Response
 	// JSON201 the response for an HTTP 201 `application/json` response
 	JSON201 *struct {
-		// Data An issue surfaced on the Roark Issues page
-		Data Issue `json:"data"`
+		// Data An issue with the calls and chats attached to it
+		Data IssueDetail `json:"data"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
 	JSON400 *ErrorResponse
@@ -105277,8 +106024,8 @@ type PostV1IssueResponse struct {
 
 // GetJSON201 returns the response for an HTTP 201 `application/json` response
 func (r PostV1IssueResponse) GetJSON201() *struct {
-	// Data An issue surfaced on the Roark Issues page
-	Data Issue `json:"data"`
+	// Data An issue with the calls and chats attached to it
+	Data IssueDetail `json:"data"`
 } {
 	return r.JSON201
 }
@@ -105332,8 +106079,8 @@ type GetV1IssueByIssueIdResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Data An issue surfaced on the Roark Issues page
-		Data Issue `json:"data"`
+		// Data An issue with the calls and chats attached to it
+		Data IssueDetail `json:"data"`
 	}
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
@@ -105345,8 +106092,8 @@ type GetV1IssueByIssueIdResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetV1IssueByIssueIdResponse) GetJSON200() *struct {
-	// Data An issue surfaced on the Roark Issues page
-	Data Issue `json:"data"`
+	// Data An issue with the calls and chats attached to it
+	Data IssueDetail `json:"data"`
 } {
 	return r.JSON200
 }
@@ -118499,7 +119246,8 @@ func (c *ClientWithResponses) PostV1CustomerFlowByFlowIdDuplicateWithResponse(ct
 // A scripted flow's variants are owned by the path engine, one per path through the graph, so they are
 // created by editing the graph through PUT /v1/customer-flow/{flowId}/graph rather than here.
 //
-// Leave personaOverrideId or environmentId unset to inherit the happy path's.
+// Leave personaOverrideId or environmentId unset to inherit the happy path's, and holdMode unset to wait on
+// hold the way the happy path does.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -118519,7 +119267,8 @@ func (c *ClientWithResponses) PostV1CustomerFlowByFlowIdEdgeCaseWithBodyWithResp
 // A scripted flow's variants are owned by the path engine, one per path through the graph, so they are
 // created by editing the graph through PUT /v1/customer-flow/{flowId}/graph rather than here.
 //
-// Leave personaOverrideId or environmentId unset to inherit the happy path's.
+// Leave personaOverrideId or environmentId unset to inherit the happy path's, and holdMode unset to wait on
+// hold the way the happy path does.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -118549,7 +119298,7 @@ func (c *ClientWithResponses) DeleteV1CustomerFlowByFlowIdEdgeCaseByEdgeCaseIdWi
 
 // PutV1CustomerFlowByFlowIdEdgeCaseByEdgeCaseIdWithBodyWithResponse Update an edge case
 //
-// Updates an edge case's title, persona, environment, brief, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
+// Updates an edge case's title, persona, environment, brief, hold settings, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -118564,7 +119313,7 @@ func (c *ClientWithResponses) PutV1CustomerFlowByFlowIdEdgeCaseByEdgeCaseIdWithB
 
 // PutV1CustomerFlowByFlowIdEdgeCaseByEdgeCaseIdWithResponse Update an edge case
 //
-// Updates an edge case's title, persona, environment, brief, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
+// Updates an edge case's title, persona, environment, brief, hold settings, preceded-by link or expectations. Omitted fields are left alone; `additionalExpectations` replaces the set wholesale rather than appending. Promoting it to the happy path is a separate call, since that also demotes the incumbent.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -118640,11 +119389,11 @@ func (c *ClientWithResponses) PutV1CustomerFlowByFlowIdGraphWithResponse(ctx con
 
 // PutV1CustomerFlowByFlowIdHappyPathWithBodyWithResponse Update a flow's happy path
 //
-// Updates the happy path's title, persona, environment, brief or expectations. Omitted fields are left
-// alone; `additionalExpectations` replaces the set wholesale rather than appending.
+// Updates the happy path's title, persona, environment, brief, hold settings or expectations. Omitted fields
+// are left alone; `additionalExpectations` replaces the set wholesale rather than appending.
 //
-// Its persona and environment are what the edge cases inherit, so changing them here changes every edge
-// case that does not name its own.
+// Its persona, environment and hold settings are what the edge cases inherit, so changing them here changes
+// every edge case that does not name its own.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -118659,11 +119408,11 @@ func (c *ClientWithResponses) PutV1CustomerFlowByFlowIdHappyPathWithBodyWithResp
 
 // PutV1CustomerFlowByFlowIdHappyPathWithResponse Update a flow's happy path
 //
-// Updates the happy path's title, persona, environment, brief or expectations. Omitted fields are left
-// alone; `additionalExpectations` replaces the set wholesale rather than appending.
+// Updates the happy path's title, persona, environment, brief, hold settings or expectations. Omitted fields
+// are left alone; `additionalExpectations` replaces the set wholesale rather than appending.
 //
-// Its persona and environment are what the edge cases inherit, so changing them here changes every edge
-// case that does not name its own.
+// Its persona, environment and hold settings are what the edge cases inherit, so changing them here changes
+// every edge case that does not name its own.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -119262,7 +120011,7 @@ func (c *ClientWithResponses) PostV1IssueWithResponse(ctx context.Context, body 
 
 // GetV1IssueByIssueIdWithResponse Get an issue
 //
-// Returns a single issue with its evidence rows.
+// Returns a single issue with its evidence rows and its calls and chats, each listed once with its agents, whether it was simulated, and its value for the alert's metric.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -132157,8 +132906,8 @@ func ParsePostV1IssueResponse(rsp *http.Response) (*PostV1IssueResponse, error) 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
-			// Data An issue surfaced on the Roark Issues page
-			Data Issue `json:"data"`
+			// Data An issue with the calls and chats attached to it
+			Data IssueDetail `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -132207,8 +132956,8 @@ func ParseGetV1IssueByIssueIdResponse(rsp *http.Response) (*GetV1IssueByIssueIdR
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Data An issue surfaced on the Roark Issues page
-			Data Issue `json:"data"`
+			// Data An issue with the calls and chats attached to it
+			Data IssueDetail `json:"data"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err

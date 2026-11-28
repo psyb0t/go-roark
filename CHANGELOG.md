@@ -2,6 +2,16 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.25.0, 2026-11-28
+
+- Add `HoldMode` (`CUSTOM`, `DEFAULT`, `NEVER`), `HoldInstructions` and `HoldMaxSeconds` to `FlowHappyPathInput`, `FlowEdgeCaseInput`, `UpdateFlowVariantInput`, `ImprovFlowVariant`, `ScriptedFlowVariant` and `VoicemailFlowVariant`, each with its own `...HoldMode` enum type and `Valid` method.
+- Add the same three fields to `HappyPath` and `EdgeCases` on `ImprovFlowConfig`. This changes their anonymous struct types, so code that names those types must change.
+- Add `IssueDetail` (with `IssueDetailSeverity`, `IssueDetailSource` and `IssueDetailStatus` enums), `IssueCheck` and `IssueConversation`. Add `AgentId`, `AgentName`, `Check` and `Conversations` to `Issue`. The anonymous struct type behind `GetV1IssueResponse.JSON200` changes, so code that names it must change.
+- Add `IssueConversation_MetricValues_Value` and `IssueConversation_SourceMetricValues_Value`, union types holding a number or a bool, with `As...`, `From...` and `Merge...` methods and JSON marshaling.
+- Add `CoreMetrics` (a list of `SimulationCoreMetricRef`) to `RunPlanResponse` and `SimulationTemplate`.
+- Add `IsCore` (`SimulationRunGroupReportDocumentAggregatesIsCore`) to the aggregates of `SimulationRunGroupReportDocument`. Its anonymous element struct type changes.
+- Update doc comments on the simulation flow, plan and issue methods.
+
 ## v0.24.0, 2026-11-27
 
 - Add `Capabilities` (a list of enum values such as `FAQ`, `CALLROUTING` and `APPOINTMENTBOOKING`), `IndustryDescription` and `WebsiteUrl` to the agent response data. This changes the anonymous struct types behind `GetV1AgentResponse.JSON200`, `GetV1AgentByAgentIdResponse.JSON200`, `PostV1AgentResponse.JSON201`, `PostV1AgentBuildResponse.JSON201` and `PutV1AgentByAgentIdResponse.JSON200`, plus `Agents` on `ImprovCustomerFlow`, `ScriptedCustomerFlow` and `VoicemailCustomerFlow`. Code that names those struct types must change.
